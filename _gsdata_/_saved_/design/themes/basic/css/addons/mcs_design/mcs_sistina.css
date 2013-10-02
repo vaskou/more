@@ -229,17 +229,8 @@
 	80%	{width:80%;opacity:0.7;}
 	100%{width:80%;opacity:0.7;}
 }*/
-.icon-mcs-products-multicolumns{
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-.icon-mcs-products-multicolumns:before{content:"\e2a4";}
+
+.icon-mcs-products-multicolumns:before{content:"\f009";}
 
 .mcs_sistina .quick-view{
 	visibility:visible;

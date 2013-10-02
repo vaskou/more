@@ -15,7 +15,7 @@
 	</queries>
 	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
 		<sections>
-			<section id="mcs_design_tabs">
+		 <section id="mcs_design_tabs">
                 <name>Tabs</name>       
                 <items>
                     <item id="mcs_design_tabs_vertical">
