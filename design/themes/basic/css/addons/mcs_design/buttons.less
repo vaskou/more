@@ -1,0 +1,222 @@
+/******************************* base.css ************************************/
+.button a, .button-action a, 
+.button-big a, .button-submit-action input, 
+.button-submit input, .button-submit-big input {
+    border: 1px solid #ccc;
+}
+
+.go-button {
+    border: 1px solid #ccc;
+}
+
+/***************************** styles.css ***********************************/
+.button-submit.button-wrap-left.b-click input, 
+.button.button-wrap-left.b-click input {
+    text-shadow: none;														/*text-shadow: 0px 1px 0px #e5e5e5;*/
+}
+
+.button a, .button-action a, 
+.button-big a, .button-submit-action input, 
+.button-submit input, .button-submit-big input {
+    border: 0 none;
+}
+
+.button-submit-action.button-wrap-left,
+.button-submit.button-wrap-left,
+.button-action.button-wrap-left,
+.button.button-wrap-left, 
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+    border: 1px solid #a6a6a6;
+}
+
+.go-button {
+    border-left: none; 
+}
+
+.sort-dropdown {
+    border: 1px solid #b3b3b3;
+    -webkit-border-radius: 3px;    
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.views-icons a {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.views-icons a:hover, .views-icons .active {
+    box-shadow: none;														/*box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);*/
+    text-shadow: none;														/*text-shadow: 0 1px 0 #fff;*/
+}
+.views-icons .active, .views-icons .active:hover {
+    box-shadow: none;														/*box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);*/
+    text-shadow: none;
+}
+
+
+/****************************** scheme.less ********************************/
+
+/**************************** TEXT OF BUTTONS ******************************/
+/************************* text-shadow and color ***************************/
+
+.button_text (@b) when (lightness(@b) >= 30%) {
+	input, a {
+	color: darken(@b, 100%);												/*color: darken(@b, 45%);*/
+	text-shadow: none;														/*text-shadow: 0px 1px 0px lighten(@b, 50%);*/
+	}
+	i {
+	color: darken(@b, 100%);												/*color: darken(@b, 40%);*/
+	text-shadow: none;														/*text-shadow: 0px 1px 0px lighten(@b, 50%);*/
+	}
+}
+.button_text (@b) when (lightness(@b) < 70%) {
+	input, a {
+	color: lighten(@b, 100%);												/*color: lighten(@b, 70%);*/
+	text-shadow: none;														/*text-shadow: 0px 1px 0px darken(@b, 15%);*/
+	}
+	i {
+	color: lighten(@b, 100%);												/*color: lighten(@b, 80%);*/
+	text-shadow: none;														/*text-shadow: 0px 1px 0px darken(@b, 15%);*/
+	}
+}
+
+/************** PRIMARY BUTTONS *********************/
+
+.button-action.button-wrap-left, 
+.button-submit-action.button-wrap-left,
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+	.gradient(@primary_button,@primary_button);								/*.gradient (lighten(spin(@primary_button, 7), 10%), @primary_button);*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow (0, 1px, 0, 0, 0.45);*/
+	border-color: darken(@primary_button, 100%);							/*border-color: darken(@primary_button, 12%);*/
+}
+
+.button-action.button-wrap-left:hover, 
+.button-submit-action.button-wrap-left:hover,
+.button-submit-big.button-wrap-left:hover,
+.button-big.button-wrap-left:hover {
+	.gradient(@primary_button,@primary_button);								/*.gradient (lighten(spin(@primary_button, 7), 6%), darken(@primary_button, 4%));*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow (0, 1px, 0, 0, 0.41);*/
+	border-color: darken(@primary_button, 100%);							/*border-color: darken(@primary_button, 16%);*/
+}
+
+.button-action.button-wrap-left:hover:active, 
+.button-submit-action.button-wrap-left:hover:active,
+.button-submit-big.button-wrap-left:hover:active,
+.button-big.button-wrap-left:hover:active {
+	.gradient(@primary_button,@primary_button);								/*.gradient (darken(@primary_button, 4%), lighten(spin(@primary_button, 7), 6%));*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow-dark (0, 1px, 3px, 0, 0.2);*/
+	border-color: darken(@primary_button, 100%);							/*border-color: darken(@primary_button, 16%);*/
+}
+
+.button-submit-action.button-wrap-left,
+.button-action.button-wrap-left,
+.qv-buttons-container .button-action.button-wrap-left,
+.buttons-container .button-action.button-wrap-left,
+.buttons-container-item .button-action.button-wrap-left,
+.button-submit-big.button-wrap-right,
+.sidebox-body .button-action.button-wrap-left,
+.button-big.button-wrap-left {
+	.button_text (@primary_button);
+}
+
+
+/************** SECONDARY BUTTONS *******************/
+
+.button-submit.button-wrap-left,
+.button.button-wrap-left,
+.go-button {
+	.gradient(@secondary_button,@secondary_button);							/*.gradient (lighten(@secondary_button, 15%), lighten(@secondary_button, 3%));*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow (0, 1px, 0, 0, 0.45);*/
+	border-color: darken(@secondary_button, 100%);							/*border-color: darken(@secondary_button, 5%);*/
+}
+
+.button-submit.button-wrap-left:hover,
+.button.button-wrap-left:hover,
+.go-button:hover  {
+	.gradient(@secondary_button,@secondary_button);							/*.gradient (lighten(@secondary_button, 10%), @secondary_button);*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow (0, 1px, 0, 0, 0.41);*/
+	border-color: darken(@secondary_button, 100%);							/*border-color: darken(@secondary_button, 8%);*/
+}
+.button-submit.button-wrap-left:hover:active,
+.button.button-wrap-left:hover:active,
+.go-button:active {
+	.gradient(@secondary_button,@secondary_button);							/*.gradient (darken(@secondary_button, 2%), lighten(@secondary_button, 8%));*/
+	.inner-shadow(0, 0, 0, 0, 0);											/*.inner-shadow-dark (0, 1px, 3px, 0, 0.2);*/
+	border-color: darken(@secondary_button, 100%);							/*border-color: darken(@secondary_button, 8%);*/
+}
+
+.button-submit.button-wrap-left,
+.button.button-wrap-left,
+.go-button {
+	.button_text (@secondary_button);							/*.button_text (lighten(@secondary_button, 5%));*/
+}
+
+
+/******************* GENERAL BUTTONS ************************/
+
+.button a, .button-action a, 
+.button-big a, .button-submit-action input, 
+.button-submit input, .button-submit-big input {
+	border-color: lighten(@base, 30%);
+}
+
+
+/******************** SORTING BUTTONS ***********************/
+.sort-dropdown {
+	.gradient (@secondary_button,@secondary_button);			/*.gradient (lighten(@secondary_button, 15%), lighten(@secondary_button, 3%));*/
+	border-color: darken(@secondary_button, 100%);				/*border-color: darken(@secondary_button, 5%);*/
+}
+.sort-dropdown.cm-combo-off {
+	.gradient (@secondary_button,@secondary_button);			/*.gradient (@secondary_button, lighten(@secondary_button, 10%));*/
+	border-color: darken(@secondary_button, 100%);				/*border-color: darken(@secondary_button, 8%);*/
+}
+.sort-dropdown.cm-combo-off, .sort-dropdown:hover {
+	border-color: darken(@secondary_button, 100%);				/*border-color: darken(@secondary_button, 8%);*/
+}
+.views-icons a:hover {
+	.gradient (@base, @base);									/*.gradient (lighten(@base, 43%), lighten(@base, 33%));*/
+	.gradient (@secondary_button,@secondary_button);			/*.gradient (lighten(@secondary_button, 10%), lighten(@secondary_button, 3%));*/
+}
+.views-icons .active, .views-icons .active:hover {
+	.gradient (@base, @base);									/*.gradient (lighten(@base, 33%), lighten(@base, 45%));*/
+	.gradient (@secondary_button,@secondary_button);			/*.gradient (@secondary_button, lighten(@secondary_button, 10%));*/
+}
+
+.sort-dropdown, .sort-dropdown a, 
+.views-icons .active, .views-icons > a:hover {
+	.button_text (@secondary_button);							/*.button_text (lighten(@secondary_button, 5%));*/
+}
+
+/******************** BUTTONS CONTAINER *********************/
+
+.buttons-container, 
+.buttons-container-item, 
+.buttons-container.wrap {
+	background-color: lighten(@base, 100%);						/*background-color: lighten(@base, 45%);*/
+}
+
+/************************ MY CUSTOMS ************************/
+
+.button-action.button-wrap-left, 
+.button-submit-action.button-wrap-left,
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+	.drop-shadow(0, 0, 0, 0, 0);
+}
+
+.button-action.button-wrap-left:hover, 
+.button-submit-action.button-wrap-left:hover,
+.button-submit-big.button-wrap-left:hover,
+.button-big.button-wrap-left:hover {
+	.drop-shadow(0, 0, 0,0, 0);
+}
+
+.button-action.button-wrap-left:hover:active, 
+.button-submit-action.button-wrap-left:hover:active,
+.button-submit-big.button-wrap-left:hover:active,
+.button-big.button-wrap-left:hover:active {
+	.drop-shadow(0, 0, 0, 0, 0);
+}

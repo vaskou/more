@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+    <id>mcs_responsive</id>
+    <name>More CS-Cart Responsive</name>
+    <description>Makes the site template responsive</description>
+    <version>1.0</version>
+    <priority>2800</priority>
+    <position>100</position>
+    <status>active</status>
+	<settings edition_type="ROOT,ULT:VENDOR">
+		<sections>
+			<section id="general">
+				<items>
+					<item id="mcs_max_width">
+						<name>Enter maximum width of the page</name>
+						<type>input</type>
+						<default_value>945</default_value>         
+					</item>
+					<item id="mcs_responsive_enabled">
+						<name>Enable responsive template</name>
+						<type>selectbox</type>
+						<default_value>true</default_value>
+						<variants>
+							<item id="true">
+								<name>Enabled</name>                            
+							</item>
+							<item id="false">
+								<name>Disable</name>
+							</item>
+						</variants>
+					</item>
+					<item id="mcs_fluid_enabled">
+						<name>Enable fluid template</name>
+						<type>selectbox</type>
+						<default_value>true</default_value>
+						<variants>
+							<item id="true">
+								<name>Enabled</name>                            
+							</item>
+							<item id="false">
+								<name>Disable</name>
+							</item>
+						</variants>
+					</item>
+				</items>
+			</section>
+		</sections>
+	</settings>
+	<language_variables>
+        <item lang="en" id="block_mcs_responsive">More CS-Cart Responsive</item>
+        <item lang="en" id="block_mcs_responsive_description">Responsive Template</item>
+	</language_variables>
+</addon>

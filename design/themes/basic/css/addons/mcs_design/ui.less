@@ -1,0 +1,58 @@
+/******************************* base.css ************************************/
+
+
+/****************************** styles.css ***********************************/
+
+
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+.ui-widget-content a {
+	color: @links;
+}
+
+.ui-dialog .ui-dialog-titlebar  {
+	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
+}
+
+.ui-widget-header .ui-icon-closethick {
+	color: lighten(@menu, 30%);
+}
+.ui-widget-header .ui-dialog-titlebar-close.ui-state-hover span:before {
+	color: lighten(@menu, 50%);
+}
+
+@slider: desaturate(@links, 30%);
+.ui-slider .ui-slider-range.ui-widget-header {
+	.gradient (lighten(@slider, 30%), lighten(@slider, 10%));
+	.inner-shadow (0, 1px, 0, 0, 0.25);
+	border-color: @slider;
+	border-top-color: lighten(@slider, 20%);
+}
+
+.ui-slider .ui-slider-handle {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 48%), lighten(@base, 40%));*/
+	border: 1px solid lighten(@base, 0%);										/*border: 1px solid lighten(@base, 20%);*/
+	.drop-shadow (0, 0, 0px, 0, 0);												/*.drop-shadow (0, 0, 1px, 0, 0.3);*/
+}
+.cm-range-slider.ui-slider.ui-slider-horizontal {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 30%), lighten(@base, 40%));*/
+	border: 1px solid lighten(@base, 20%);
+	border-right: none;
+}
+
+.ui-dialog .buttons-container.picker {
+	border-color: lighten(@base, 42%);
+}
+
+.el-dialogform-content .ui-widget-content, 
+.ui-dialog .ui-dialog-buttonpane {
+    background-color: lighten(@base, 47%);
+}
+
+.ui-dialog .ui-dialog-content {
+	background-color: lighten(@base, 45%);
+}
+/****************************** MY CUSTOMS ***********************************/

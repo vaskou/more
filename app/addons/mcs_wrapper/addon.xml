@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+    <id>mcs_wrapper</id>
+    <name>More CS-Cart Wrapper</name>
+    <description>Adds theme options</description>
+    <version>1.0</version>
+    <priority>2800</priority>
+    <position>100</position>
+    <status>active</status>
+	<queries>
+		<item for="install">ALTER TABLE ?:bm_snapping ADD icon_class_pre VARCHAR(128);</item>
+		<item for="install">ALTER TABLE ?:bm_snapping ADD icon_class_post VARCHAR(128);</item>
+		<item for="uninstall">ALTER TABLE ?:bm_snapping DROP COLUMN icon_class_pre;</item>
+		<item for="uninstall">ALTER TABLE ?:bm_snapping DROP COLUMN icon_class_post;</item>
+	</queries>
+</addon>

@@ -1,0 +1,120 @@
+/******************************* base.css ************************************/
+
+.tabs {
+    margin-top: 30px;
+    vertical-align: bottom;
+}
+.tabs ul {
+    vertical-align: bottom;
+}
+.tabs ul li, .tabs ul li.active, .tabs ul li.cm-active {
+    float: left;
+    vertical-align: bottom;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tabs ul li.active a, .tabs ul li.active a:visited, .tabs ul li.active a:hover, .tabs ul li.active a:active {
+    text-decoration: none;
+}
+.tabs ul li a {
+    display: block;
+    padding: 11px 21px 2px 18px;
+    height: 23px;
+}
+.tabs ul li a:hover {
+    text-decoration: none;
+}
+.cm-tabs-content {
+    padding: 15px 0;
+}
+.product-main-info .cm-tabs-content {
+    padding: 15px 5px;
+}
+.tab-list-title {
+    margin: 50px 0 15px 0px;
+    padding-bottom: 5px;
+    font-weight: normal;
+    font-size: 170%;
+}
+
+/****************************** styles.css ***********************************/
+
+.tabs {
+    border-bottom: 1px solid #ddd;
+}
+.tabs ul li, .tabs ul li.active {
+    margin: 0 2px 0 0;
+    margin-bottom: -1px;
+    padding: 0 0 0 3px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+.tabs ul li a, .tabs ul li a:visited, .tabs ul li a:hover {
+    text-decoration: none;
+}
+.tabs ul li a:hover, .tabs ul li:active a:hover {
+    text-decoration: none;
+}
+.cm-tabs-content {
+    border-top: 1px solid #ddd;
+    border-top-width: 0;
+}
+.tab-list-title {
+    border-bottom: 1px dotted #999;
+}
+
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+.cm-tabs-content div.cvv2{
+	color: @links;
+}
+
+.tabs, .tabs ul li, .tabs ul li.active, .cm-tabs-content {
+	border-color: lighten(@base, 36%);
+}
+.tabs ul li {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));							/*.gradient (lighten(@base, 50%), lighten(@base, 44%));*/
+}
+.tabs ul li:hover {
+	.gradient (lighten(@base, 40%), lighten(@base, 40%));							/*.gradient (lighten(@base, 47%), lighten(@base, 41%));*/
+}
+.tabs ul li.active, .tabs ul li.cm-active {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 100%), lighten(@base, 100%));*/
+}
+.tabs ul li.active, .tabs ul li.cm-active {
+	border-bottom-color: lighten(@base, 100%);
+}
+
+.tabs ul li.cm-active a, 
+.tabs ul li.cm-active a:visited, 
+.tabs ul li.cm-active a:hover, 
+.tabs ul li.cm-active a:active {
+	color: @font;
+}
+
+.tabs ul li a:hover, 
+.tabs ul li:active a:hover, 
+.cm-tabs-content .paym-methods li div.radio1 h5, 
+.cm-tabs-content .paym-methods li div.radio1.active h5 {
+    color: darken(@base, 30%);
+}
+
+.tabs ul li a, 
+.tabs ul li a:visited, 
+.tabs ul li a:hover, 
+.cm-tabs-content .paym-methods li div.radio1 {
+	color: darken(@base, 4%);
+}
+
+/****************************** MY CUSTOMS ***********************************/
+
+.tab-icon {
+	float:left;
+	margin:0px 0px 0px 9px;
+	line-height:38px;
+}

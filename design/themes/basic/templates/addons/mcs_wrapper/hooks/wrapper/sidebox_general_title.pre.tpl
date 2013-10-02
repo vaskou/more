@@ -1,0 +1,1 @@
+{if $block.icon_class_pre}<i class="{$block.icon_class_pre}"></i>{/if}

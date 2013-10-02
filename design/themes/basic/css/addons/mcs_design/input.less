@@ -1,0 +1,44 @@
+/******************************* base.css ************************************/
+
+
+/****************************** styles.css ***********************************/
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+textarea:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+input[type="text"], 
+input[type="password"], 
+form .captcha-input-text, .object-image {
+	border-color: lighten(@base, 30%);
+}
+
+html input.search-input:focus {
+	color: darken(@font, 10%);
+}
+
+#step_four_body .control-group input form .captcha-input-text, 
+input[type="text"], input[type="password"], 
+.helper-container .search-input:focus {
+    color: darken(@base, 10%);
+}
+
+.helper-container .search-input {
+	color: lighten(@base, 20%);
+}
+
+.helper-container .search-input {
+	.gradient (#f7f7f7, #fdfdfd);
+}
+
+/****************************** MY CUSTOMS ***********************************/

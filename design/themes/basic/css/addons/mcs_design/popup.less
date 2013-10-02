@@ -1,0 +1,65 @@
+/******************************* base.css ************************************/
+
+
+/****************************** styles.css ***********************************/
+
+.popup-content {
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius:6px 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.popup-content ul.account-info li a {
+    color: #555;
+    text-shadow: none;															/*text-shadow: 0 1px 0 #fff;*/
+}
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+.top_panel_dropdown_border (@top_panel_bg_color_dropdown_border) when (lightness(@top_panel_bg_color_dropdown_border) < 90%) {
+	border-color: darken(@top_panel_bg_color, 0%);								/*border-color: darken(@top_panel_bg_color, 7%);*/
+}
+
+.top-links-grid .cm-popup-title:hover, 
+.top-links-grid .cm-popup-title, 
+.top-links-grid .popup-content {
+	.top_panel_dropdown_border(@top_panel_bg_color);
+}
+
+.top-links-grid .cm-popup-title:hover > a, 
+.top-links-grid .dropdown-box.dropdown-box-on .cm-popup-title > a, 
+.top-links-grid .dropdown-box .cm-popup-title:hover i, 
+.top-links-grid .dropdown-box.dropdown-box-on .cm-popup-title i, 
+.top-links-grid .cm-popup-title.logged:hover > a, 
+.top-links-grid .dropdown-box.dropdown-box-on .cm-popup-title.logged > a, 
+.top-links-grid .dropdown-box .cm-popup-title.logged:hover i, 
+.top-links-grid .dropdown-box.dropdown-box-on .cm-popup-title.logged i {
+	color: @font;
+}
+.cm-popup-title, 
+.cm-popup-title.unlogged a i {
+    color: lighten(@base, 0%);													/* color: lighten(@base, 20%);*/
+}
+
+.cm-popup-title.logged a, 
+.login-popup .control-group label {
+	color: darken(@font, 10%);
+}
+
+.popup-content ul.account-info li a:hover, 
+.cm-popup-title a {
+    color: darken(@base, 30%);
+}
+
+.cm-popup-title.unlogged a {
+	color: darken(@base, 4%);
+}
+
+.popup-content ul.account-info li a:hover{
+	.gradient (lighten(@base, 0%), lighten(@base, 0%));							/*.gradient (lighten(@base, 43%), lighten(@base, 37%));*/
+}
+/****************************** MY CUSTOMS ***********************************/

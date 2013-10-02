@@ -1,0 +1,73 @@
+.mcs_hover .products {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.mcs_hover .products .product {
+	overflow: hidden;
+	position: relative;
+	display: inline;
+	float: left;
+	border: 1px solid #E6E6E6;
+	margin-bottom: 30px;
+}
+.mcs_hover .products li.first {
+	clear: both;
+	margin-left:0;
+}
+.mcs_hover .products li.first_offset {
+	margin-left:3%;
+}
+.mcs_hover .products li.last {
+	margin-right: 0;
+}
+
+.mcs_hover .products .product .thumb-discount-label{
+	position:absolute;
+	padding:7px 14px;
+	z-index:1;
+	right:0px;
+	top:2px;
+}
+
+.mcs_hover .products .product .prod_img a,
+.mcs_hover .products .product .prod_img a img {
+	display: block;
+//	position: relative;
+	margin:auto;
+}
+.mcs_hover .products .product .prod_img a {
+	overflow: hidden;
+}
+.mcs_hover .products .product .prod_img h3 {
+	white-space:nowrap;
+	overflow:hidden;
+}
+.mcs_hover .products .product:hover .prod_img h3,
+.mcs_hover .products .product:hover .prod_img .price-wrapper {
+	visibility:hidden;
+}
+
+.mcs_hover .products .product .prod_info {
+	position: absolute;
+	background: #333;
+	background: rgba(75,75,75,0.7);
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+.mcs_hover .products .product .prod_info_wrapper{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align:center;
+	padding:10px;
+}
+.mcs_hover .products .product .prod_info .quick-view{
+	visibility:visible;
+	text-align:inherit;
+}
+
+.icon-mcs-products-multicolumns-hover:before{content:"\f009";}
