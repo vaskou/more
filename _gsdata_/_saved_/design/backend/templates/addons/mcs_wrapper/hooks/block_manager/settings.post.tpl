@@ -15,31 +15,22 @@
 <script>
 $(function(){
 	
-	initBindings();
+	check_selected();
 	
-	$( document ).ajaxComplete(function() 
+	$('#{/literal}block_{$html_id}_wrapper{literal}').change(function(){
+    	check_selected();
+    });
+	
+	function check_selected()
 	{
-		initBindings();
-	});
-	
-	function initBindings(){
-		check_selected();
-		
-		$('#{/literal}block_{$html_id}_wrapper{literal}').change(function(){
-			check_selected();
-		});
-		
-		function check_selected()
-		{
-			if($('#{/literal}block_{$html_id}_wrapper{literal} option:selected').text()=='Sidebox general')
-			{
-				$('.mcs_side').show();
-			}
-			else
-			{
-				$('.mcs_side').hide();
-			}	
-		}
+		if($('#{/literal}block_{$html_id}_wrapper{literal} option:selected').text()=='Sidebox general')
+        {
+        	$('.mcs_side').show();
+        }
+        else
+        {
+        	$('.mcs_side').hide();
+        }	
 	}
 });
 </script>

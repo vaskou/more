@@ -1,5 +1,5 @@
 {** block-description:myslider **}
-{*style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'*}
+{style src='addons/mcs_banners/bxslider.pager.css'}
 
 {if $items}
 	<ul class="bxslider" id="bxslider_{$block.snapping_id}">
@@ -67,10 +67,10 @@
 
 {*$block.properties.mcs_useCSS*}
 {if $mcs_useCSS=="false"}
-	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/plugins/jquery.easing.1.3.js"}
+	{script src="js/addons/mcs_banners/bxslider/plugins/jquery.easing.1.3.js"}
 {/if}
 {if $block.properties.mcs_video=='true'}
-	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/plugins/jquery.fitvids.js"}
+	{script src="js/addons/mcs_banners/bxslider/plugins/jquery.fitvids.js"}
 {/if}
 
 <script type="text/javascript">
