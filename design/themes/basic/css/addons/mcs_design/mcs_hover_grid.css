@@ -56,6 +56,7 @@
 	width: 100%;
 	height: 100%;
 	display:none;
+	z-index:310;
 }
 .mcs_hover .products .product .prod_info_wrapper{
 	position:absolute;

@@ -1,0 +1,63 @@
+.top-menu{
+	height:88px;
+	line-height:88px;
+}
+.logo-container{
+	min-height:10px;
+};
+.logo-container .logo{
+	margin:0;
+};
+.top-menu .main-menu{
+	z-index: 100;
+	line-height: 30px;
+	height:100%;
+}
+
+.dropdown-multicolumns{
+	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
+}
+
+ul.dropdown-multicolumns > li.active {
+	background-color: lighten(@menu, 4%);
+}
+
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth,
+ul.dropdown-multicolumns {
+	border-color: darken(@menu, 0%);											/*border-color: darken(@menu, 10%);*/
+}
+ul.dropdown-multicolumns {
+	border-top-color: @menu;
+	padding:0;
+}
+
+ul.dropdown-multicolumns li{
+	margin:0;
+}
+ul.dropdown-multicolumns > li:hover {
+	background-color: #fff;
+}
+ul.dropdown-multicolumns li a {
+	text-shadow:none;															/*text-shadow: 0 1px 0 darken(@menu, 30%);*/
+	color: @menu_links;
+	padding:0;
+	margin:0;
+	text-transform:none;
+	vertical-align:baseline;
+}
+ul.dropdown-multicolumns li a.drop,
+ul.dropdown-multicolumns li.nodrop a{
+	text-transform:none;
+	padding:0 13px;
+	height:88px;
+	line-height:88px;
+}
+
+ul.dropdown-multicolumns li:hover a {
+	color: darken(@menu, 30%);													/*color: darken(@menu, 30%);*/
+}

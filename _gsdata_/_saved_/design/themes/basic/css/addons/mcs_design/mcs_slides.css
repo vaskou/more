@@ -21,7 +21,7 @@
 	width: 0%; 
 	height: 5px;
 	background: #000;
-	z-index:300;
+	z-index:500;
 }
 
 .hover-container:hover .progress-bar{
