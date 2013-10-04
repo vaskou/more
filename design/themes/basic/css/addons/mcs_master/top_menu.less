@@ -1,6 +1,14 @@
 .top-menu{
-	height:88px;
-	line-height:88px;
+//	height:90px;
+	line-height:90px;
+	border-bottom:1px solid #e6e6e6;
+	background-color:#fff;
+}
+.top-menu *{
+	box-sizing:content-box !important;
+	-ms-box-sizing:content-box !important;
+	-moz-box-sizing:content-box !important;
+	-webkit-box-sizing:content-box !important;
 }
 .logo-container{
 	min-height:10px;
@@ -11,15 +19,17 @@
 .top-menu .main-menu{
 	z-index: 100;
 	line-height: 30px;
-	height:100%;
+//	height:100%;
 }
 
-.dropdown-multicolumns{
-	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
-}
-
-ul.dropdown-multicolumns > li.active {
-	background-color: lighten(@menu, 4%);
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth{
+	top:90px !important;
+	border:none;
 }
 
 .dropdown-1column, 
@@ -32,15 +42,24 @@ ul.dropdown-multicolumns {
 	border-color: darken(@menu, 0%);											/*border-color: darken(@menu, 10%);*/
 }
 ul.dropdown-multicolumns {
+	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
 	border-top-color: @menu;
+	min-height:0px;
 	padding:0;
+	border:none;
 }
 
 ul.dropdown-multicolumns li{
 	margin:0;
 }
+ul.dropdown-multicolumns > li.active {
+//	background-color: lighten(@menu, 4%);
+	border-bottom:2px solid;
+	border-bottom-color:darken(@menu_links, 10%);
+}
 ul.dropdown-multicolumns > li:hover {
 	background-color: #fff;
+	height:90px;
 }
 ul.dropdown-multicolumns li a {
 	text-shadow:none;															/*text-shadow: 0 1px 0 darken(@menu, 30%);*/
@@ -50,14 +69,36 @@ ul.dropdown-multicolumns li a {
 	text-transform:none;
 	vertical-align:baseline;
 }
+
+ul.dropdown-multicolumns li a .icon-down-micro{
+	display:none;
+}
+
+ul.dropdown-multicolumns li drop,
+ul.dropdown-multicolumns li:hover .drop{
+	padding:0 13px;
+}
+
 ul.dropdown-multicolumns li a.drop,
 ul.dropdown-multicolumns li.nodrop a{
 	text-transform:none;
 	padding:0 13px;
-	height:88px;
-	line-height:88px;
+//	height:90px;
+	line-height:90px;
 }
 
 ul.dropdown-multicolumns li:hover a {
-	color: darken(@menu, 30%);													/*color: darken(@menu, 30%);*/
+	color: darken(@menu_links, 10%);											/*color: darken(@menu, 30%);*/
+	border-bottom-color:darken(@menu_links, 10%);
+	border-bottom-width:2px;
+}
+ul.dropdown-multicolumns > li.active a{
+	color: darken(@menu_links, 10%);
+}
+ul.dropdown-multicolumns li > div{
+	margin:0;
+	border-top:2px solid;
+	border-top-color:darken(@menu_links, 10%);
+	box-shadow:0 30px 60px rgb(0,0,0,0.1);
+	-webkit-box-shadow:0 30px 60px rgba(0,0,0,0.1);
 }
