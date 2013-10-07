@@ -1,26 +1,15 @@
 .top-menu{
-//	height:90px;
 	line-height:90px;
 	border-bottom:1px solid #e6e6e6;
 	background-color:#fff;
 }
-.top-menu *{
-	box-sizing:content-box !important;
-	-ms-box-sizing:content-box !important;
-	-moz-box-sizing:content-box !important;
-	-webkit-box-sizing:content-box !important;
-}
+
 .logo-container{
 	min-height:10px;
 };
 .logo-container .logo{
 	margin:0;
 };
-.top-menu .main-menu{
-	z-index: 100;
-	line-height: 30px;
-//	height:100%;
-}
 
 .dropdown-1column, 
 .dropdown-2columns, 
@@ -47,6 +36,7 @@ ul.dropdown-multicolumns {
 	min-height:0px;
 	padding:0;
 	border:none;
+	float:right;
 }
 
 ul.dropdown-multicolumns li{
@@ -59,7 +49,8 @@ ul.dropdown-multicolumns > li.active {
 }
 ul.dropdown-multicolumns > li:hover {
 	background-color: #fff;
-	height:90px;
+	border-bottom:2px solid;
+	border-bottom-color:darken(@menu_links, 10%);
 }
 ul.dropdown-multicolumns li a {
 	text-shadow:none;															/*text-shadow: 0 1px 0 darken(@menu, 30%);*/
@@ -75,28 +66,29 @@ ul.dropdown-multicolumns li a .icon-down-micro{
 }
 
 ul.dropdown-multicolumns li drop,
-ul.dropdown-multicolumns li:hover .drop{
+ul.dropdown-multicolumns li:hover .drop,
+ul.dropdown-multicolumns li.nodrop:hover{
 	padding:0 13px;
+	margin:0;
 }
 
 ul.dropdown-multicolumns li a.drop,
 ul.dropdown-multicolumns li.nodrop a{
 	text-transform:none;
 	padding:0 13px;
-//	height:90px;
-	line-height:90px;
+	line-height:88px;
 }
 
 ul.dropdown-multicolumns li:hover a {
 	color: darken(@menu_links, 10%);											/*color: darken(@menu, 30%);*/
-	border-bottom-color:darken(@menu_links, 10%);
-	border-bottom-width:2px;
+	border:none;
 }
 ul.dropdown-multicolumns > li.active a{
 	color: darken(@menu_links, 10%);
 }
 ul.dropdown-multicolumns li > div{
 	margin:0;
+	margin-top:-2px;
 	border-top:2px solid;
 	border-top-color:darken(@menu_links, 10%);
 	box-shadow:0 30px 60px rgb(0,0,0,0.1);

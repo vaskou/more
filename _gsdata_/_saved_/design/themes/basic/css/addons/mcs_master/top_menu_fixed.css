@@ -1,0 +1,14 @@
+.menu-fixed{
+	position:fixed;
+	width:100%;
+	z-index:999;
+}
+
+.menu-fixed.scrolled-up .top-menu{
+	line-height:46px;
+}
+
+.menu-fixed.scrolled-up ul.dropdown-multicolumns li a.drop,
+.menu-fixed.scrolled-up ul.dropdown-multicolumns li.nodrop a{
+	line-height:44px;
+}

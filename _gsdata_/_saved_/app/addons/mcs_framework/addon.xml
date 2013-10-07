@@ -11,11 +11,6 @@
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
-<!-- Element type: 
-	input, textarea, password, checkbox, selectbox, multiple select, 
-	multiple checkboxes, countries list, states list, 
-	file, info, header, template
--->  
                     <item id="mcs_fontawesome">
                         <type>checkbox</type>
                         <name>Font-Awesome</name>
@@ -26,7 +21,21 @@
                     </item>
 				</items>
             </section>
+			<section id="mcs_sliders">
+                <name>bxSlider</name>
+                <items>
+                    <item id="mcs_bxslider">
+                        <type>checkbox</type>
+                        <name>Enable bxSlider</name>
+                    </item>
+				</items>
+            </section>
         </sections>
     </settings>
 </addon>
 
+<!-- Element type: 
+	input, textarea, password, checkbox, selectbox, multiple select, 
+	multiple checkboxes, countries list, states list, 
+	file, info, header, template
+--> 
