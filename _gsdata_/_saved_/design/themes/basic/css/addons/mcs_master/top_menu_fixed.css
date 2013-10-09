@@ -12,3 +12,12 @@
 .menu-fixed.scrolled-up ul.dropdown-multicolumns li.nodrop a{
 	line-height:44px;
 }
+
+.menu-fixed.scrolled-up .dropdown-1column, 
+.menu-fixed.scrolled-up .dropdown-2columns, 
+.menu-fixed.scrolled-up .dropdown-3columns, 
+.menu-fixed.scrolled-up .dropdown-4columns,
+.menu-fixed.scrolled-up .dropdown-5columns,
+.menu-fixed.scrolled-up .dropdown-fullwidth{
+	top:46px !important;
+}
