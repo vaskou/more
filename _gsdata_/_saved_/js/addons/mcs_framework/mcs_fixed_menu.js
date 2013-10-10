@@ -7,12 +7,11 @@ $(function(){
 	
 	
 	$(window).scroll(function(){
-		var top_distance=$(window).scrollTop();
-		if(top_distance>top_panel_height){
+		if($(window).scrollTop()>top_panel_height){
 			$(".menu-fixed").css({"top":0});
 			$(".menu-fixed").addClass("scrolled-up");
 		}else{
-			$(".menu-fixed").css({"top":top_panel_height-top_distance});
+			$(".menu-fixed").css({"top":top_panel_height+"px"});
 			$(".menu-fixed").removeClass("scrolled-up");
 		}
 	});
