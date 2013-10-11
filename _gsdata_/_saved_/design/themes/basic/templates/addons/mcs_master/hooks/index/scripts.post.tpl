@@ -1,0 +1,1 @@
+{script src="js/addons/mcs_master/mcs_menu.js"}

@@ -8,16 +8,28 @@
     <status>active</status>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
+			<section id="mcs_top_menu">
+                <name>Top Menu</name>
+                <items>
+                    <item id="mcs_fixed_menu">
+                        <type>checkbox</type>
+                        <name>Enable fixed menu</name>
+						<default_value>Y</default_value>
+                    </item>
+				</items>
+            </section>
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
                     <item id="mcs_fontawesome">
                         <type>checkbox</type>
                         <name>Font-Awesome</name>
+						<default_value>Y</default_value>
                     </item>
 					<item id="mcs_icomoon">
                         <type>checkbox</type>
                         <name>Icomoon</name>
+						<default_value>Y</default_value>
                     </item>
 				</items>
             </section>
@@ -27,6 +39,7 @@
                     <item id="mcs_bxslider">
                         <type>checkbox</type>
                         <name>Enable bxSlider</name>
+						<default_value>Y</default_value>
                     </item>
 				</items>
             </section>

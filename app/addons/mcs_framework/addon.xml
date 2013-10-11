@@ -6,6 +6,12 @@
     <description>More CS-Cart Framework</description>
     <priority>100</priority>
     <status>active</status>
+	<queries>
+		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
+		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
+		<item for="uninstall">ALTER TABLE ?:product_tabs DROP COLUMN icon;</item>
+		<item for="uninstall">ALTER TABLE ?:product_tabs DROP COLUMN icon;</item>
+	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
 			<section id="mcs_top_menu">
@@ -18,6 +24,22 @@
                     </item>
 				</items>
             </section>
+			<section id="mcs_product_tabs">
+                <name>Tabs</name>       
+                <items>
+                    <item id="mcs_product_tabs_vertical">
+                        <type>checkbox</type>
+                        <name>Vertical Tabs</name>
+                        <tooltip>Check to show vertical tabs</tooltip>
+                    </item>
+					<item id="mcs_product_tabs_width">
+                        <type>input</type>
+                        <name>Vertical tabs width(%)</name>
+                        <tooltip>Width of the tabs in %(limits:10-50)</tooltip>
+						<default_value>36</default_value>
+                    </item>
+				</items>
+			</section>
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>

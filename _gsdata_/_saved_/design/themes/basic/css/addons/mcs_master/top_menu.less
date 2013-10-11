@@ -1,7 +1,7 @@
 .top-menu{
 	line-height:90px;
 	border-bottom:1px solid #e1e1e1;
-	background-color:#fff;
+	background-color:@menu;
 	position:relative;
 }
 
@@ -103,9 +103,9 @@ ul.dropdown-multicolumns li > div{
 
 
 
-/*******************************************************/
-ul.dropdown-multicolumns li.fullwidth{
-	position:relative !important;
+/********************** TOP MENU - SUB MENU RESET *********************************/
+.dropdown-multicolumns li:hover .dropdown-fullwidth{
+	left:auto;
 }
 ul.dropdown-multicolumns li > div{
 	padding:0;
@@ -132,7 +132,7 @@ ul.dropdown-multicolumns li > div .col-1 ul li{
 	float:none;
 }
 
-@col_width: 200px;
+@col_width: 195px;
 .dropdown-1column {width: @col_width;}
 .dropdown-2columns {width: @col_width*2;}
 .dropdown-3columns {width: @col_width*3;}
@@ -141,7 +141,8 @@ ul.dropdown-multicolumns li > div .col-1 ul li{
 .dropdown-fullwidth {
     width: @col_width*6;
 }
-/***********************************************************/
+
+/************************** TOP MENU - SUB MENU **************************************/
 
 ul.dropdown-multicolumns > li.edge{
 	position:static !important;
@@ -151,15 +152,43 @@ ul.dropdown-multicolumns > li.edge:hover > div{
 	right:0px;
 	left:auto;
 }
+ul.dropdown-multicolumns li > div{
+	opacity:0;
+	transition:opacity 500ms ease-out;
+	-moz-transition:opacity 500ms ease-out;
+	-webkit-transition:opacity 500ms ease-out;
+	
+}
+ul.dropdown-multicolumns li:hover > div{
+	opacity:1;
+}
+ul.dropdown-multicolumns li > div,
+ul.dropdown-multicolumns .fullwidth .dropdown-fullwidth{
+	padding:20px 15px 30px;
+}
 
-ul.dropdown-multicolumns .col-1{
+ul.dropdown-multicolumns li > div .col-1{
 	width:@col_width;
+	padding:10px 0px;
+}
+ul.dropdown-multicolumns li > div h3{
+	padding: 8px 0px;
+}
+ul.dropdown-multicolumns li:hover > div a{
+	display:block;
+	width:100%;
+}
+ul.dropdown-multicolumns li:hover > div a:hover{
+	text-decoration:none;
+}
+ul.dropdown-multicolumns li > div h3 a{
+	font-size:1.2em;
 }
 ul.dropdown-multicolumns li ul li{
-	width:@col_width;
 	line-height: 23px;
-	padding: 8px 15px;
+	padding: 8px 0px;
+	width:100%
 }
 ul.dropdown-multicolumns li ul li:hover{
-	padding: 8px 15px;
+	padding: 8px 0px;
 }
