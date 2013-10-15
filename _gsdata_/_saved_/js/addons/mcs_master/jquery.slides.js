@@ -1,10 +1,10 @@
-(function ($) {
+(function ( $ ) {
  
     $.fn.slides = function( options ) {
  
         var settings = $.extend({
-            slide_element: ".slide",
-			slides_container: ""            
+            element: ".slide",
+			container: ""            
         }, options );
  
         var interv;
@@ -16,8 +16,8 @@
 		
 		this.addClass('hover-container');
 		
-		if(settings.slides_container!=''){
-			this.find(settings.slides_container).addClass('slides-container');
+		if(settings.container!=''){
+			this.find(settings.container).addClass('slides-container');
 		}else{
 			this.addClass('slides-container');
 		}
@@ -33,11 +33,11 @@
 			}
 			
 			if(!isIE() || isIE()>9){
-				$this.children(settings.slide_element+':first').appendTo($this);
+				$this.children(settings.element+':first').appendTo($this);
 			}
 			
 			interv=setInterval(function() {
-				$this.children(settings.slide_element+':first').hide(1,function(){
+				$this.children(settings.element+':first').hide(1,function(){
 					$(this).appendTo($this).fadeIn();
 				});
 			}, 2000);

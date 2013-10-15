@@ -1,0 +1,62 @@
+.hover_hide .product-wrapper {
+	border: 1px solid #e1e1e1;
+	border-bottom-width: 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.hover_hide .product-meta {
+	border-top: 1px solid #e1e1e1;
+}
+.hover_hide:hover .product-meta {
+	border-bottom: 1px solid #e1e1e1;
+	border-top: 0;
+}
+.hover_hide:hover .product-wrapper, 
+.hover_hide .product-meta-wrapper {
+	-webkit-box-shadow: 1px 1px 6px rgba(0,0,0,0.33);
+	-moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.33);
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.33);
+}
+.hover_hide:hover {
+	z-index: 250;
+}
+.hover_hide .product-wrapper, 
+.hover_hide .product-meta-wrapper {
+	background: #fff;
+}
+.hover_hide .product-meta {
+	display: block;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	height: 20px;
+	background: #fff;
+}
+.hover_hide .product-meta-wrapper {
+	padding: 10px;
+	border-top: 0;
+	/*visibility: hidden;*/
+	overflow: hidden;
+	border: solid #e1e1e1;
+	border-width: 0 1px 1px;
+}
+.hover_hide:hover .product-meta-wrapper {
+	visibility: visible;
+}
+.hover_hide .product-meta-wrapper:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	height: 2px;
+	background: #fff;
+	border: solid #e1e1e1;
+	border-width: 0 1px;
+}
+.hover_hide .product-wrapper {
+	border-bottom: 0 !important;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}

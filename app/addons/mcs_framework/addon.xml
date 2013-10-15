@@ -24,6 +24,16 @@
                     </item>
 				</items>
             </section>
+			<section id="mcs_product_categories">
+                <name>Product Categories</name>
+                <items>
+                    <item id="mcs_product_categories_hidden_info">
+                        <type>checkbox</type>
+                        <name>Check to hide info and show on hover</name>
+						<default_value>N</default_value>
+                    </item>
+				</items>
+            </section>
 			<section id="mcs_product_tabs">
                 <name>Tabs</name>       
                 <items>
