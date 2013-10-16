@@ -150,20 +150,22 @@
 
 {capture name="mainbox_title"}{$title}{/capture}
 
+{if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
 {literal}
 <script>
 $(function(){
 	
 	initBindings();
 	
-	$( document ).ajaxComplete(function() 
+	$( document ).ajaxStop(function() 
 	{
 		initBindings();
 	});
 	
 	function initBindings(){
 		$('.mcs_enfold_grid .product').hover_hide();
-	}	
+	};	
 });
 </script>
 {/literal}
+{/if}

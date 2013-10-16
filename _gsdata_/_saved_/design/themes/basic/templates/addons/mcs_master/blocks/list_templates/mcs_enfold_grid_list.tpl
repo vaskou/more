@@ -37,7 +37,7 @@
 	{$i=1}
 {/if}
 {$k=$k+1}
-    <li class="product fadein span{$span_no} {if $i==1}{if $modulus!=0}first_offset{else}first{/if}{/if} {if $i==$columns}last{/if}">
+    <li class="product span{$span_no} {if $i==1}{if $modulus!=0}first_offset{else}first{/if}{/if} {if $i==$columns}last{/if}">
     {if $product}
         {assign var="obj_id" value=$product.product_id}
         {assign var="obj_id_prefix" value="`$obj_prefix``$product.product_id`"}
@@ -153,7 +153,17 @@
 {literal}
 <script>
 $(function(){
-	$('.mcs_enfold_grid .products .multi_img').slides();
+	
+	initBindings();
+	
+	$( document ).ajaxComplete(function() 
+	{
+		initBindings();
+	});
+	
+	function initBindings(){
+		$('.mcs_enfold_grid .product').hover_hide();
+	}	
 });
 </script>
 {/literal}
