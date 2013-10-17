@@ -126,49 +126,26 @@
 }
 /*************************** buttons **********************************/
 
-.mcs_enfold_grid .button a:before,
-.mcs_enfold_grid .button-action a:before{
-	content:"\e2dc";
-	font-family: 'icomoon';
-	speak: none;
-	font-size:1.5em;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	padding:5px;
-	vertical-align:sub;
-}
-.mcs_enfold_grid .button a{
-	padding:10px 0px;
-	font-size:11px;
-	text-align:center;
-	color:#666;
-	width:100%;
-	line-height:3em;
-}
-.mcs_enfold_grid .button-action a{
-	padding:10px 0px;
-	font-size:11px;
-	text-align:center;
-	color:#666 !important;
-	width:100%;
-	border-left:1px solid;
-	border-left-color:#e1e1e1;
-	line-height:3em;
-}
+.mcs_enfold_grid .button a,
+.mcs_enfold_grid .button-action a,
 .mcs_enfold_grid .button-submit-action input{
-	padding:10px 0px;
 	font-size:11px;
-	text-align:center;
 	color:#666 !important;
 	width:80%;
-	border-left:1px solid;
-	border-left-color:#e1e1e1;
 	white-space:normal;
+	padding:0;
+	padding-left:20%;
 }
+.mcs_enfold_grid .button-submit-action input{
+	width:100%;
+}
+.mcs_enfold_grid .button-action a{
+	margin-top:2px;
+}
+.mcs_enfold_grid .button-action:hover a{
+	margin-top:2px;	
+}
+
 .mcs_enfold_grid .buttons-list-wrapper{
 	height:auto;
 	opacity:0.2;
@@ -181,16 +158,57 @@
 .mcs_enfold_grid .quick-view{
 	visibility:visible;
 	display:inline-block;
-	width:49%;
+	width:48%;
 	height:100%;
+	border-right:1px solid;
+	border-right-color:#e1e1e1;
 }
 
 .mcs_enfold_grid .add_cart_button{
 	display:inline-block;
-	width:49%;
+	width:48%;
 	height:100%;	
 }
 
 .mcs_enfold_grid .add_cart_button span{
 	width:100%;	
+}
+/*********************************************/
+.mcs_enfold_grid .button-wrap-right{
+	/*width:80% !important;
+	vertical-align:middle;
+	padding-left:20%;*/
+	position:relative;
+}
+
+.mcs_enfold_grid .icon_wrap:before{
+	content:"\e2dc";
+	font-family: 'icomoon';
+	speak: none;
+	font-size:1.2em;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	position:absolute;
+	/*line-height: 1;	
+	padding:5px;
+	vertical-align:middle;*/
+}
+
+@media (max-width:800px){
+.mcs_enfold_grid .quick-view{
+	width:100%;
+	border-right:none;
+	padding:10px 0px;
+	min-height:2.5em;
+}
+
+.mcs_enfold_grid .add_cart_button{
+	width:100%;
+	border-top:1px solid #e1e1e1;
+	padding-top:10px;
+	min-height:2.5em;
+}	
 }

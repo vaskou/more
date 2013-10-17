@@ -126,14 +126,28 @@
 }
 /*************************** buttons **********************************/
 
+.mcs_enfold_grid .button a:before,
+.mcs_enfold_grid .button-action a:before{
+	content:"\e2dc";
+	font-family: 'icomoon';
+	speak: none;
+	font-size:1.5em;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	padding:5px;
+	vertical-align:sub;
+}
 .mcs_enfold_grid .button a{
 	padding:10px 0px;
 	font-size:11px;
 	text-align:center;
 	color:#666;
 	width:100%;
-	border-right:1px solid;
-	border-right-color:#e1e1e1;
+	line-height:3em;
 }
 .mcs_enfold_grid .button-action a{
 	padding:10px 0px;
@@ -141,13 +155,19 @@
 	text-align:center;
 	color:#666 !important;
 	width:100%;
+	border-left:1px solid;
+	border-left-color:#e1e1e1;
+	line-height:3em;
 }
 .mcs_enfold_grid .button-submit-action input{
 	padding:10px 0px;
 	font-size:11px;
 	text-align:center;
 	color:#666 !important;
-	width:100%;
+	width:80%;
+	border-left:1px solid;
+	border-left-color:#e1e1e1;
+	white-space:normal;
 }
 .mcs_enfold_grid .buttons-list-wrapper{
 	height:auto;
