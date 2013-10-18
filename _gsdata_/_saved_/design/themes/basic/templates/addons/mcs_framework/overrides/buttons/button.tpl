@@ -27,10 +27,6 @@
     </span>
 
 {elseif $but_role == "text" || $but_role == "act" || $but_role == "edit"} {* TEXT STYLE *}
-	<span class="icon_wrap 
-        {if $but_text==__("add_to_compare_list")}icon-im-transmission{/if}
-        {if $but_text==__("add_to_wishlist")}icon-im-heart-4{/if}
-    "></span>
     <a {$but_extra} class="{if $but_meta}{$but_meta} {/if}{if $but_name}cm-submit {/if}text-button{$suffix}"{if $but_id} id="{$but_id}"{/if}{if $but_name} data-ca-dispatch="{$but_name}"{/if}{if $but_href} href="{$but_href|fn_url}"{/if}{if $but_onclick} onclick="{$but_onclick} return false;"{/if}{if $but_target} target="{$but_target}"{/if}{if $but_rel} rel="{$but_rel}"{/if}{if $but_external_click_id} data-ca-external-click-id="{$but_external_click_id}"{/if}{if $but_target_form} data-ca-target-form="{$but_target_form}"{/if}{if $but_target_id} data-ca-target-id="{$but_target_id}"{/if}>{$but_text}</a>
 
 {elseif $but_role == "delete"}
@@ -54,5 +50,4 @@
 
 {*********************************************MCS changes************************************************}
 {*Line     22: added span with class=icon_wrap															*}
-{*Line     30: added span with class=icon_wrap															*}
-{*Line     46: added span with class=icon_wrap															*}
+{*Line     41: added span with class=icon_wrap															*}

@@ -42,8 +42,14 @@
 .mcs_enfold_grid ul.products li.product .product_info{
 	min-height:4em;	
 }
-.mcs_enfold_grid ul.products li.product .product_info h3{
-	max-height:2.5em;
+.mcs_enfold_grid ul.products li.product .product_info .product-title{
+	display:block;
+	min-height:2.5em;
+}
+.mcs_enfold_grid ul.products li.product .product_info .price-wrapper .list-price,
+.mcs_enfold_grid ul.products li.product .product_info .price-wrapper .price-num{
+	font-size:15px !important;
+	min-height:1.5em;
 }
 .mcs_enfold_grid ul.products li.product .features{
 	min-height:4em;
@@ -78,7 +84,7 @@
 /************************* reset buttons ******************************/
 .mcs_enfold_grid .button{
 	width:100%;
-	height:100%;	
+//	height:100%;	
 }
 .mcs_enfold_grid .button.button-wrap-left,
 .mcs_enfold_grid .button-action.button-wrap-left,
@@ -124,91 +130,105 @@
 	text-transform:none;
 	text-shadow:none !important;
 }
+.mcs_enfold_grid .add-to-wish{
+	display:block;
+	margin:0;
+}
+.mcs_enfold_grid .add-to-compare{
+	margin:0 !important;
+}
 /*************************** buttons **********************************/
 
-.mcs_enfold_grid .button a,
-.mcs_enfold_grid .button-action a,
-.mcs_enfold_grid .button-submit-action input{
-	font-size:11px;
-	color:#666 !important;
-	width:80%;
-	white-space:normal;
-	padding:0;
-	padding-left:20%;
+.mcs_enfold_grid .product:hover .buttons-list-wrapper{
+	opacity:1;	
 }
-.mcs_enfold_grid .button-submit-action input{
-	width:100%;
-}
-.mcs_enfold_grid .button-action a{
-	margin-top:2px;
-}
-.mcs_enfold_grid .button-action:hover a{
-	margin-top:2px;	
-}
-
 .mcs_enfold_grid .buttons-list-wrapper{
-	height:auto;
+	height:5em;
 	opacity:0.2;
 	border-top:1px solid;
 	border-top-color:#e1e1e1;	
 }
-.mcs_enfold_grid .product:hover .buttons-list-wrapper{
-	opacity:1;	
+.mcs_enfold_grid .add-buttons-wrap{
+	height:2.5em;
+	border-bottom:1px solid;
+	border-bottom-color:#e1e1e1;
+	padding-bottom:2px !important;
 }
-.mcs_enfold_grid .quick-view{
-	visibility:visible;
-	display:inline-block;
+.mcs_enfold_grid .add-to-wish,
+.mcs_enfold_grid .add-to-compare{
+	position:relative;
 	width:48%;
-	height:100%;
+	margin-top:10px !important;
+}
+.mcs_enfold_grid .add-to-wish{
+	float:left;
 	border-right:1px solid;
 	border-right-color:#e1e1e1;
 }
-
-.mcs_enfold_grid .add_cart_button{
-	display:inline-block;
+.mcs_enfold_grid .add-to-compare{
+	float:right;
+}
+.mcs_enfold_grid .add-buttons-wrap .text-button{
+	display:block;
+	color:#666;
+	width:80%;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:0;
+	padding-left:20%;
+	text-align:left;
+	font-size:11px !important;
+	font-weight:bold !important;
+}
+.mcs_enfold_grid .quick-view{
+	visibility:visible;
+	float:left;
 	width:48%;
-	height:100%;	
+/*	border-right:1px solid;
+	border-right-color:#e1e1e1;*/
+}
+.mcs_enfold_grid .quick-view a{
+	border-right:1px solid;
+	border-right-color:#e1e1e1;
+}
+.mcs_enfold_grid .add_cart_button{
+	float:right;
+	width:48%;
 }
 
 .mcs_enfold_grid .add_cart_button span{
 	width:100%;	
 }
-/*********************************************/
-.mcs_enfold_grid .button-wrap-right{
-	/*width:80% !important;
-	vertical-align:middle;
-	padding-left:20%;*/
-	position:relative;
-}
-
-.mcs_enfold_grid .icon_wrap:before{
-	content:"\e2dc";
-	font-family: 'icomoon';
-	speak: none;
-	font-size:1.2em;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
+.mcs_enfold_grid .icon_wrap{
 	position:absolute;
-	/*line-height: 1;	
-	padding:5px;
-	vertical-align:middle;*/
+	margin-top:2px;
+	width:20% !important;
+}
+.mcs_enfold_grid .button-wrap-right{
+	position:relative;
+	margin-top:10px;
 }
 
-@media (max-width:800px){
-.mcs_enfold_grid .quick-view{
+.mcs_enfold_grid .button a,
+.mcs_enfold_grid .button-action a,
+.mcs_enfold_grid .button-submit-action input{
+	color:#666 !important;
+	width:80%;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:0;
+	padding-left:20%;
+	text-align:left;
+	margin-top:2px;
+}
+.mcs_enfold_grid .button-submit-action input{
 	width:100%;
-	border-right:none;
-	padding:10px 0px;
-	min-height:2.5em;
 }
 
-.mcs_enfold_grid .add_cart_button{
-	width:100%;
-	border-top:1px solid #e1e1e1;
-	padding-top:10px;
-	min-height:2.5em;
-}	
+.mcs_enfold_grid .button-wrap-right:hover a{
+	margin-top:2px;	
 }
+
+
