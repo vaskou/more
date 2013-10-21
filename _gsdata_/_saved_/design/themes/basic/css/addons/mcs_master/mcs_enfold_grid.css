@@ -130,25 +130,74 @@
 	text-transform:none;
 	text-shadow:none !important;
 }
+.mcs_enfold_grid .add-to-wish{
+	display:block;
+	margin:0;
+}
+.mcs_enfold_grid .add-to-compare{
+	margin:0 !important;
+}
 /*************************** buttons **********************************/
 
 .mcs_enfold_grid .product:hover .buttons-list-wrapper{
 	opacity:1;	
 }
 .mcs_enfold_grid .buttons-list-wrapper{
+	height:5em;
+//	opacity:0.2;	
+}
+.mcs_enfold_grid .add-buttons-wrap{
 	height:2.5em;
-	opacity:0.2;
 	border-top:1px solid;
-	border-top-color:#e1e1e1;	
+	border-top-color:#e1e1e1;
+	padding-bottom:2px !important;
+}
+.mcs_enfold_grid .add-buttons-wrap a:hover{
+	text-decoration:none;
+}
+.mcs_enfold_grid .add-to-wish,
+.mcs_enfold_grid .add-to-compare{
+	position:relative;
+	width:48%;
+	margin-top:10px !important;
+}
+.mcs_enfold_grid .add-to-wish{
+	float:left;
+	border-right:1px solid;
+	border-right-color:#e1e1e1;
+}
+.mcs_enfold_grid .add-to-compare{
+	float:right;
+}
+.mcs_enfold_grid .add-buttons-wrap .text-button{
+	display:block;
+	color:#666;
+	width:80%;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:0;
+	padding-left:20%;
+	text-align:left;
+	font-size:11px !important;
+	font-weight:bold !important;
+}
+
+.mcs_enfold_grid .bottom_buttons{
+	border-top:1px solid;
+	border-top-color:#e1e1e1;
 }
 .mcs_enfold_grid .quick-view{
 	visibility:visible;
 	float:left;
 	width:48%;
+/*	border-right:1px solid;
+	border-right-color:#e1e1e1;*/
+}
+.mcs_enfold_grid .quick-view a{
 	border-right:1px solid;
 	border-right-color:#e1e1e1;
 }
-
 .mcs_enfold_grid .add_cart_button{
 	float:right;
 	width:48%;
@@ -188,4 +237,23 @@
 	margin-top:2px;	
 }
 
+
+
+.mcs_enfold_grid .buttons-list-wrapper .full_width{
+	width:100%;
+	border:none;	
+}
+.mcs_enfold_grid .buttons-list-wrapper .full_width .icon_wrap{
+	text-align:center;
+}
+.mcs_enfold_grid .buttons-list-wrapper .full_width .text-button,
+.mcs_enfold_grid .buttons-list-wrapper .full_width .button-action a,
+.mcs_enfold_grid .buttons-list-wrapper .full_width .button-submit-action input{
+	text-align:center;
+	padding:0;
+	width:100%;
+}
+.mcs_enfold_grid .buttons-list-wrapper .no_top_buttons{
+	border:none;	
+}
 

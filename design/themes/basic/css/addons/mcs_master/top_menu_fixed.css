@@ -5,12 +5,12 @@
 }
 
 .menu-fixed.scrolled-up .top-menu{
-	line-height:46px;
+	line-height:46px !important;
 }
 
 .menu-fixed.scrolled-up ul.dropdown-multicolumns li a.drop,
 .menu-fixed.scrolled-up ul.dropdown-multicolumns li.nodrop a{
-	line-height:44px;
+	line-height:44px !important;
 }
 
 .menu-fixed.scrolled-up .dropdown-1column, 

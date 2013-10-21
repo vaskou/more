@@ -102,6 +102,18 @@
                     {$smarty.capture.$list_discount nofilter}
                     
                 </span>
+                <!--{if $product.points_info.price}
+                    <div class="control-group{if !$capture_options_vs_qty} product-list-field{/if}">
+                        <label>{__("price_in_points")}:</label>
+                        <span id="price_in_points_{$obj_prefix}{$obj_id}">{$product.points_info.price}&nbsp;{__("points_lower")}</span>
+                    </div>
+                {/if}
+                <div class="control-group product-list-field{if !$product.points_info.reward.amount} hidden{/if}">
+                    <label>{__("reward_points")}:</label>
+                    <span id="reward_points_{$obj_prefix}{$obj_id}" >{$product.points_info.reward.amount}&nbsp;{__("points_lower")}</span>
+                </div>-->
+                
+                
             </div>
             
             <div class="product-meta">
@@ -109,22 +121,36 @@
                     <div class="features">{assign var="product_features" value="product_features_`$obj_id`"}{$smarty.capture.$product_features nofilter}</div>
                     <div class="classic-rating"></div>
                     
-                    <div class="buttons-list-wrapper"> 
-                        {if $settings.Appearance.enable_quick_view == 'Y'}
-                            {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
-                        {/if}
-                        <div class="add_cart_button">
-                        {if $show_add_to_cart}
-                            {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
-                            {$smarty.capture.$add_to_cart nofilter}
-                        {/if}
+                    <div class="buttons-list-wrapper">
+                    {$top_buttons='false'}
+                    {if $addons.wishlist.status=='A' || $product.feature_comparison == "Y"}
+                        {$top_buttons='true'}
+                    {/if}
+                    	<div class="add-buttons-wrap {if $cart_button_exists || (($product.out_of_stock_actions == "S") && ($product.tracking != "O"))} no-margin{/if} {if $top_buttons=='false'} no_top_buttons{/if}">
+                            <div class="add-buttons-inner-wrap">
+                            	{if $addons.wishlist.status=="A"}
+                                	<div id="cart_buttons_block_{$obj_prefix}{$obj_id}" class="add-buttons add-to-wish {if $product.feature_comparison == 'N'}full_width{/if}">
+                                        {hook name="products:buy_now"}
+                                        {/hook}
+                                	</div>
+                                {/if}
+                                {if $product.feature_comparison == "Y"}
+                            		<div class="add-to-compare {if $addons.wishlist.status=='D'}full_width{/if}">
+                            			{include file="buttons/add_to_compare_list.tpl" product_id=$product.product_id}
+                                    </div>
+                        		{/if}
+                        	</div>
                         </div>
-                        <div class="product-actions buttons_2 group">
-                            <div class="action first wishlist">
-                                
-                            </div>
-                            <div class="action compare">
-                                
+                        
+                        <div class="bottom_buttons">
+                            {if $settings.Appearance.enable_quick_view == 'Y'}
+                                {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
+                            {/if}
+                            <div class="add_cart_button {if $settings.Appearance.enable_quick_view == 'N'}full_width{/if}">
+                            {if $show_add_to_cart}
+                                {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
+                                {$smarty.capture.$add_to_cart nofilter}
+                            {/if}
                             </div>
                         </div>
                     </div>

@@ -36,7 +36,7 @@
 		}
 		{/literal}
     </style>
-{/if}
+{/if} 
 
 {if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
 	{style src="addons/mcs_framework/mcs_hover_hide.css"}
