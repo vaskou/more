@@ -102,6 +102,9 @@
             </section>
         </sections>
     </settings>
+	<language_variables>
+        <item lang="en" id="mcs_framework">More CS-Cart Framework</item>
+	</language_variables>
 </addon>
 
 <!-- Element type: 

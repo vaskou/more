@@ -34,6 +34,31 @@
                     </item>
 				</items>
             </section>
+			<section id="mcs_button_icons">
+                <name>Button Icons</name>
+                <items>
+                    <item id="mcs_button_icons_add_to_cart">
+                        <type>input</type>
+                        <name>"Add To Cart" button icon</name>
+						<default_value>icon-im-cart</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_compare_list">
+                        <type>input</type>
+                        <name>"Add To Compare List" button icon</name>
+						<default_value>icon-im-transmission</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_wishlist">
+                        <type>input</type>
+                        <name>"Add To Wishlist" button icon</name>
+						<default_value>icon-im-heart-4</default_value>
+                    </item>
+					<item id="mcs_button_icons_select_options">
+                        <type>input</type>
+                        <name>"Select Options" button icon</name>
+						<default_value>icon-im-cart</default_value>
+                    </item>
+				</items>
+            </section>
 			<section id="mcs_product_tabs">
                 <name>Tabs</name>       
                 <items>
