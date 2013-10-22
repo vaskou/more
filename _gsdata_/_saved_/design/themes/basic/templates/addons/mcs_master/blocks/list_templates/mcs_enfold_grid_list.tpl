@@ -102,23 +102,38 @@
                     {$smarty.capture.$list_discount nofilter}
                     
                 </span>
-                <!--{if $product.points_info.price}
-                    <div class="control-group{if !$capture_options_vs_qty} product-list-field{/if}">
-                        <label>{__("price_in_points")}:</label>
-                        <span id="price_in_points_{$obj_prefix}{$obj_id}">{$product.points_info.price}&nbsp;{__("points_lower")}</span>
+                
+            </div>
+            <div class="product_extra_info">
+            	{if $addons.mcs_master.mcs_features=='Y'}
+	            	<div class="features">{assign var="product_features" value="product_features_`$obj_id`"}{$smarty.capture.$product_features nofilter}</div>
+                {/if}
+                {if $addons.mcs_master.mcs_rating=='Y'}
+                    <div class="mcs_rating">
+                        {assign var="rating" value="rating_$obj_id"}
+                        {$smarty.capture.$rating nofilter}
                     </div>
                 {/if}
-                <div class="control-group product-list-field{if !$product.points_info.reward.amount} hidden{/if}">
-                    <label>{__("reward_points")}:</label>
-                    <span id="reward_points_{$obj_prefix}{$obj_id}" >{$product.points_info.reward.amount}&nbsp;{__("points_lower")}</span>
-                </div>-->
-                
+                {if $addons.mcs_master.mcs_points=='Y'}
+                    <div class="mcs_points">
+                        {if $product.points_info.price}
+                            <div class="control-group{if !$capture_options_vs_qty} product-list-field{/if}">
+                                <label>{__("price_in_points")}:</label>
+                                <span id="price_in_points_{$obj_prefix}{$obj_id}">{$product.points_info.price}&nbsp;{__("points_lower")}</span>
+                            </div>
+                        {/if}
+                        <div class="control-group product-list-field{if !$product.points_info.reward.amount} hidden{/if}">
+                            <label>{__("reward_points")}:</label>
+                            <span id="reward_points_{$obj_prefix}{$obj_id}" >{$product.points_info.reward.amount}&nbsp;{__("points_lower")}</span>
+                        </div>
+                    </div>
+                {/if}
                 
             </div>
             
             <div class="product-meta">
                 <div class="product-meta-wrapper">
-                    <div class="features">{assign var="product_features" value="product_features_`$obj_id`"}{$smarty.capture.$product_features nofilter}</div>
+                    
                     <div class="classic-rating"></div>
                     
                     <div class="buttons-list-wrapper">

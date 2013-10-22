@@ -28,7 +28,7 @@
 	box-sizing: border-box;
 }
 .mcs_enfold_grid ul.products li.product .product-wrapper{
-	padding: 10px;
+//	padding: 10px;
 	margin: 0px 0px -6px;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -39,21 +39,61 @@
 	-moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.33);
 	box-shadow: 1px 1px 6px rgba(0,0,0,0.33);
 }
+
+.mcs_enfold_grid ul.products li.product .prod_img{
+	border-bottom:1px solid #e1e1e1;
+}
+.mcs_enfold_grid ul.products li.product .prod_img img{ 
+	max-width:100%;
+	height:auto;
+}
 .mcs_enfold_grid ul.products li.product .product_info{
-	min-height:4em;	
+	min-height:4em;
+	padding:5px 10px 0 10px;
 }
 .mcs_enfold_grid ul.products li.product .product_info .product-title{
 	display:block;
 	min-height:2.5em;
+	padding-top:5px;
+}
+.mcs_enfold_grid ul.products li.product .product_info .price-wrapper{
+	padding-top:5px;
+	display:block;
 }
 .mcs_enfold_grid ul.products li.product .product_info .price-wrapper .list-price,
 .mcs_enfold_grid ul.products li.product .product_info .price-wrapper .price-num,
 .mcs_enfold_grid ul.products li.product .product_info .price-wrapper .no-price{
 	font-size:15px !important;
-	min-height:1.5em;
+}
+.mcs_enfold_grid ul.products li.product .product_extra_info{
+	padding:0 10px 10px 10px;
 }
 .mcs_enfold_grid ul.products li.product .features{
-	min-height:4em;
+	min-height:2.5em;
+	max-height:2.5em;
+	overflow:hidden;
+	padding-top:5px;
+}
+.mcs_enfold_grid ul.products li.product .mcs_rating{
+	min-height:2em;
+	padding-top:5px;
+}
+.mcs_enfold_grid ul.products li.product .stars{
+	text-align:center;
+}
+.mcs_enfold_grid ul.products li.product .mcs_points{
+	min-height:3.5em;
+	padding-top:5px;
+}
+.mcs_enfold_grid ul.products li.product .product-list-field{
+	padding-top:5px;
+}
+.mcs_enfold_grid ul.products li.product .product-list-field *{
+	padding:0;
+}
+
+.mcs_enfold_grid ul.products li.product .product-meta{
+	padding:0 0 10px 0;	
 }
 
 .mcs_enfold_grid ul.products li.product .product-wrapper .thumb-discount-label{
@@ -152,6 +192,8 @@
 	border-top:1px solid;
 	border-top-color:#e1e1e1;
 	padding-bottom:2px !important;
+	padding-left:10px;
+	padding-right:10px;
 }
 .mcs_enfold_grid .add-buttons-wrap a:hover{
 	text-decoration:none;
@@ -187,6 +229,8 @@
 .mcs_enfold_grid .bottom_buttons{
 	border-top:1px solid;
 	border-top-color:#e1e1e1;
+	padding-left:10px;
+	padding-right:10px;
 }
 .mcs_enfold_grid .quick-view{
 	visibility:visible;
