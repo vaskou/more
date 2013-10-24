@@ -10,3 +10,6 @@
 {if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
 	{script src="js/addons/mcs_framework/jquery.hover_hide.js"}
 {/if}
+
+{script src="js/addons/mcs_framework/mcs_tab_block/jquery-ui-1.10.3.custom.min.js"}
+{script src="js/addons/mcs_framework/mcs_tab_block/mcs_tab_block.js"}

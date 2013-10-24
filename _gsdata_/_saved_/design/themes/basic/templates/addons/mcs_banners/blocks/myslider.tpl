@@ -75,7 +75,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	var slider=$('#bxslider_{$block.snapping_id}').bxSlider({
+	$('#bxslider_{$block.snapping_id}').bxSlider({
 		mode:'{$block.properties.mcs_mode}',
 		speed:{$block.properties.mcs_speed},
 		slideMargin:{$block.properties.mcs_slideMargin},
@@ -125,10 +125,6 @@ $(document).ready(function(){
 		moveSlides:{$block.properties.mcs_moveSlides},
 		slideWidth:{$block.properties.mcs_slideWidth},		
   });
-  
-  $(".mcs-tab-block ul li a#mcs-tab-link-{$block.snapping_id}").click(function(){
-		slider.reloadSlider();
-	});
 });
 </script>
 
