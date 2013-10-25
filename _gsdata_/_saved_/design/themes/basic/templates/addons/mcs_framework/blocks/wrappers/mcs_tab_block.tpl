@@ -6,8 +6,7 @@
 	                {else}
     	                <span>{$title nofilter}</span>
         	        {/if}
-                {/if}" data-snapping-id={$block.snapping_id} 
-                data-hover={$addons.mcs_framework.mcs_tab_block_hover}>
+                {/if}" data-snapping-id={$block.snapping_id}>
        
         {$content nofilter}
     </div>

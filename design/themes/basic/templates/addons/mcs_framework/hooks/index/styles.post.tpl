@@ -42,4 +42,4 @@
 	{style src="addons/mcs_framework/mcs_hover_hide.css"}
 {/if}
 
-{style src="addons/mcs_framework/mcs_tab_block/jquery-ui-1.10.3.custom.css"}
+{style src="addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.css"}

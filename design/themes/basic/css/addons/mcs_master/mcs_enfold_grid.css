@@ -42,6 +42,7 @@
 
 .mcs_enfold_grid ul.products li.product .prod_img{
 	border-bottom:1px solid #e1e1e1;
+	padding:10px 0;
 }
 .mcs_enfold_grid ul.products li.product .prod_img img{ 
 	max-width:100%;

@@ -51,6 +51,13 @@
 	min-height:4em;
 	padding:5px 10px 0 10px;
 }
+.mcs_enfold_grid ul.products li.product .product_info h3 a{
+	color:#444;
+	font-weight:bold;	
+}
+.mcs_enfold_grid ul.products li.product .product_info h3 a:hover{
+//	text-decoration:none;
+}
 .mcs_enfold_grid ul.products li.product .product_info .product-title{
 	display:block;
 	min-height:2.5em;
@@ -74,6 +81,9 @@
 	overflow:hidden;
 	padding-top:5px;
 }
+.mcs_enfold_grid ul.products li.product .features div{
+	color:#666;
+}
 .mcs_enfold_grid ul.products li.product .mcs_rating{
 	min-height:2em;
 	padding-top:5px;
@@ -90,6 +100,7 @@
 }
 .mcs_enfold_grid ul.products li.product .product-list-field *{
 	padding:0;
+	color:#666;
 }
 
 .mcs_enfold_grid ul.products li.product .product-meta{

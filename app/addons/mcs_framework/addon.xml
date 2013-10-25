@@ -75,6 +75,21 @@
                     </item>
 				</items>
 			</section>
+			<section id="mcs_tab_block">
+                <name>Tab Block</name>       
+                <items>
+                    <item id="mcs_tab_block_enable">
+                        <type>checkbox</type>
+                        <name>Enable Tab Block</name>
+                        <default_value>Y</default_value>
+                    </item>
+					<item id="mcs_tab_block_hover">
+                        <type>checkbox</type>
+                        <name>Change tab on mouse hover</name>
+						<default_value>N</default_value>
+                    </item>
+				</items>
+			</section>
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
