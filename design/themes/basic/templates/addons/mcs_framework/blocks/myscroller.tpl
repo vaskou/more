@@ -127,24 +127,7 @@ $(document).ready(function(){
 				slider.reloadSlider();	
 			}
 	});
-	/*$(".mcs-tab-block").tabs({
-		activate:function(){
-			var active = $(this).tabs("option", "active");
-			console.log($(".mcs-tab-block ul>li a").eq(active).attr('href'));
-		}
-	});*/
-	
-	/*$(".mcs-tab-block").tabs({
-		activate:function(){
-			var active = $(this).tabs("option", "active");
-			var id=$(this).children(".mcs-tab-content").eq(active).attr('id');
-			console.log(id);
-			if(id=="mcs-tab-content-{$block.snapping_id}"){
-				slider.reloadSlider();	
-			}
-		}
-	});*/
-	
+		
 	$("#mcs-accordion-content-{$block.snapping_id}").parent(".mcs-accordion-block").on("accordionactivate",function(event,ui){
 		slider.reloadSlider();
 	});

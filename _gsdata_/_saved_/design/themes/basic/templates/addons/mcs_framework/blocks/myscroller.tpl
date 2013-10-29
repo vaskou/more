@@ -1,71 +1,64 @@
-{** block-description:myslider **}
+{** block-description:myscroller **}
+
 {*style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'*}
 
-{if $items}
-	<ul class="bxslider" id="bxslider_{$block.snapping_id}">
-        {foreach from=$items item="banner" key="key"}
+<ul id="bxslider_{$block.snapping_id}">
+	{foreach from=$items item="product" name="for_products"}
             <li>
-            	<div class="bximg">
-		            {if $banner.type == "G" && $banner.main_pair.image_id}
-        		        {if $banner.url != ""}<a href="{$banner.url|fn_url}" {if $banner.target == "B"}target="_blank"{/if}>{/if}
-                		{include file="common/image.tpl" images=$banner.main_pair}
-		                {if $banner.url != ""}</a>{/if}
-        		    {else}
-                		<div class="wysiwyg-content">
-		                    {$banner.description nofilter}
-        		        </div>
-		            {/if}
-      			</div>
+            {assign var="obj_id" value="scr_`$block.block_id`000`$product.product_id`"}
+            {if $block.properties.mcs_slideWidth>'0'}
+            	{include file="common/image.tpl" assign="object_img" image_width=$block.properties.mcs_slideWidth image_height=$block.properties.mcs_slideWidth images=$product.main_pair no_ids=true}
+            {else}
+            	{include file="common/image.tpl" assign="object_img" images=$product.main_pair no_ids=true}
+            {/if}
+            <div class="slide">
+                <div class="bximg">
+                    <a href="{"products.view?product_id=`$product.product_id`"|fn_url}">{$object_img nofilter}</a>
+                    {if $block.properties.enable_quick_view == "Y"}
+                        {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
+                    {/if}
+                </div>
+                 <div class="center compact">
+                    {if $block.properties.hide_add_to_cart_button == "Y"}
+                        {assign var="_show_add_to_cart" value=false}
+                    {else}
+                        {assign var="_show_add_to_cart" value=true}
+                    {/if}
+                    {if $block.properties.show_price == "Y"}
+                        {assign var="_hide_price" value=false}
+                    {else}
+                        {assign var="_hide_price" value=true}
+                    {/if}
+                    {strip}
+                    {include file="blocks/list_templates/simple_list.tpl" product=$product show_trunc_name=true show_price=true show_add_to_cart=$_show_add_to_cart but_role="action" hide_price=$_hide_price hide_qty=true}
+                    {/strip}
+                </div>
+            </div>
             </li>
         {/foreach}
-	</ul>
-    
-    {if $block.properties.mcs_customAutoControls=='true'}
-    	<div id="autoCtrl"></div>
-        {assign var="mcs_autoControlsSelector" value="#autoCtrl"}
-    {/if}
-    
-    {if $block.properties.mcs_customControls=='true'}
-    	<div>
-        	<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
-        </div>
-        {assign var="mcs_nextSelector" value="#slider-next"}
-        {assign var="mcs_prevSelector" value="#slider-prev"}
-    {/if}
-    
-    {if $block.properties.mcs_pagerThumbs=='true'}
-    	<div id="bx-pager_{$block.snapping_id}">
-        	{foreach from=$items item="banner" key="key" name="foo"}
-            	{if $banner.type == "G" && $banner.main_pair.image_id}
-                	<a data-slide-index="{$smarty.foreach.foo.index}" href="">
-                    	<div>
-                        	{include file="common/image.tpl" images=$banner.main_pair}
-                        </div>
-                    </a>
-                {else}
-                	<a data-slide-index="{$smarty.foreach.foo.index}" href="">
-                    	<div class="wysiwyg-content">
-                        	{$banner.description nofilter}
-                    	</div>
-                    </a>
-                {/if}
-        	{/foreach}
-		</div>
-        {capture name="mcs_pagerCustom"}#bx-pager_{$block.snapping_id}{/capture}
-        {assign var="mcs_pagerCustom" value=$smarty.capture.mcs_pagerCustom}
-    {/if}
-    
-    {assign var="mcs_easings" value=['linear','ease','ease-in','ease-out','ease-in-out']}
-    {$mcs_useCSS='false'}
-    {foreach from=$mcs_easings item=easing}
-    	{if $easing==$block.properties.mcs_easing}
-        	{$mcs_useCSS='true'}
-        {/if}
-    {/foreach}
-    
+</ul>
+
+{if $block.properties.mcs_customAutoControls=='true'}
+    <div id="autoCtrl"></div>
+    {assign var="mcs_autoControlsSelector" value="#autoCtrl"}
 {/if}
 
-{*$block.properties.mcs_useCSS*}
+{if $block.properties.mcs_customControls=='true'}
+    <div>
+        <p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+    </div>
+    {assign var="mcs_nextSelector" value="#slider-next"}
+    {assign var="mcs_prevSelector" value="#slider-prev"}
+{/if}
+
+{assign var="mcs_easings" value=['linear','ease','ease-in','ease-out','ease-in-out']}
+{$mcs_useCSS='false'}
+{foreach from=$mcs_easings item=easing}
+    {if $easing==$block.properties.mcs_easing}
+        {$mcs_useCSS='true'}
+    {/if}
+{/foreach}
+
 {if $mcs_useCSS=="false"}
 	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/plugins/jquery.easing.1.3.js"}
 {/if}
@@ -126,27 +119,17 @@ $(document).ready(function(){
 		slideWidth:{$block.properties.mcs_slideWidth},		
 	});
   
-	/*$("#mcs-tab-content-{$block.snapping_id}").parent(".mcs-tab-block").on("tabsactivate",function(event,ui){
+	$("#mcs-tab-content-{$block.snapping_id}").parent(".mcs-tab-block").on("tabsactivate",function(event,ui){
 		var active = $(this).tabs("option", "active");
-		console.log($(this).children(".mcs-tab-content").eq(active).attr('id'));
-		slider.reloadSlider();
-	});*/
-
-	$(".mcs-tab-block").tabs({
-		activate:function(){
-			var active = $(this).tabs("option", "active");
 			var id=$(this).children(".mcs-tab-content").eq(active).attr('id');
 			console.log(id);
 			if(id=="mcs-tab-content-{$block.snapping_id}"){
 				slider.reloadSlider();	
 			}
-		}
 	});
-	
+		
 	$("#mcs-accordion-content-{$block.snapping_id}").parent(".mcs-accordion-block").on("accordionactivate",function(event,ui){
 		slider.reloadSlider();
 	});
-	
 });
 </script>
-
