@@ -410,98 +410,9 @@ $settings=array(
 	),
 );
 
-$schema['mcs_banners'] = array (
-    'content' => array (
-        'items' => array (
-            'remove_indent' => true,
-            'hide_label' => true,
-            'type' => 'enum',
-            'object' => 'banners',
-            'items_function' => 'fn_get_banners',
-            'fillings' => array (
-                'manually' => array (
-                    'picker' => 'addons/banners/pickers/banners/picker.tpl',
-                    'picker_params' => array (
-                        'type' => 'links',
-                    ),
-                    'params' => array (
-                        'sort_by' => 'position',
-                        'sort_order' => 'asc'
-                    )
-                ),
-                'newest' => array (
-                    'params' => array (
-                        'sort_by' => 'timestamp',
-                        'sort_order' => 'desc',
-                        'request' => array (
-                            'cid' => '%CATEGORY_ID%'
-                        )
-                    )
-                ),
-            ),
-        ),
-    ),
-    'templates' => array (
-		'addons/mcs_framework/blocks/sliders/myslider.tpl' => array(
-			'settings'=>$settings
-		)
-	),
-    'wrappers' => 'blocks/wrappers',
-);
 
-
-$schema['mcs_banners_products'] = array (
-	'content' => array (
-		'items' => array (
-			'type' => 'enum',
-			'object' => 'products',
-			'items_function' => 'fn_get_products',
-			'remove_indent' => true,
-			'hide_label' => true,
-			'fillings' => array (
-				'manually' => array (
-					'picker' => 'pickers/products/picker.tpl',
-					'picker_params' => array (
-						'type' => 'links',
-					),
-				),
-				'newest' => array (
-					'params' => array (
-						'sort_by' => 'timestamp',
-						'sort_order' => 'desc',
-						'request' => array (
-							'cid' => '%CATEGORY_ID%'
-						)
-					)
-				),
-				'recent_products' => array (
-					'params' => array (
-						'apply_limit' => true,
-						'session' => array (
-							'pid' => '%RECENTLY_VIEWED_PRODUCTS%'
-						),
-						'request' => array (
-							'exclude_pid' => '%PRODUCT_ID%'
-						),
-						'force_get_by_ids' => true,
-					),
-					'disable_cache' => true,
-				),
-				'most_popular' => array (
-					'params' => array (
-						'popularity_from' => 1,
-						'sort_by' => 'popularity',
-						'sort_order' => 'desc',
-						'request' => array (
-							'cid' => '%CATEGORY_ID'
-						)
-					),
-				),
-			),
-		),
-	),
-	'templates'=>array(
-		'addons/mcs_framework/blocks/sliders/myscroller.tpl' => array (
+$schema['mcs_banners_products']['templates']=array_merge($schema['mcs_banners_products']['templates'], array (
+		'addons/mcs_master/blocks/mcs_enfold_scroller.tpl' => array (
 			'settings'=>$settings,
 			'bulk_modifier' => array (
 				'fn_gather_additional_products_data' => array (
@@ -514,38 +425,7 @@ $schema['mcs_banners_products'] = array (
 				),
 			),
 		),
-	),
-	'templates'=>array(
-		'addons/mcs_framework/blocks/sliders/enfold_scroller.tpl' => array (
-			'settings'=>$settings,
-			'bulk_modifier' => array (
-				'fn_gather_additional_products_data' => array (
-					'products' => '#this',
-					'params' => array (
-						'get_icon' => true,
-						'get_detailed' => true,
-						'get_options' => true,
-					),
-				),
-			),
-		),
-	),
-	'settings' => array(
-		'hide_add_to_cart_button' => array (
-			'type' => 'checkbox',
-			'default_value' => 'Y'
-		),
-		'show_price' => array (
-			'type' => 'checkbox',
-			'default_value' => 'Y'
-		),
-		'enable_quick_view' => array (
-			'type' => 'checkbox',
-			'default_value' => 'N'
-		),
-	),
-	'wrappers' => 'blocks/wrappers',
 
-);
+));
 
 return $schema;

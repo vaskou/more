@@ -47,6 +47,7 @@
 .mcs_enfold_grid ul.products li.product .prod_img img{ 
 	max-width:100%;
 	height:auto;
+	display:initial;
 }
 .mcs_enfold_grid ul.products li.product .product_info{
 	min-height:4em;
