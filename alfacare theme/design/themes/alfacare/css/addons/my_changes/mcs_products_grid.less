@@ -1,0 +1,41 @@
+.mcs_alpha_grid ul.products li.product .product_info h3{
+	.gradient (@menu, darken(@menu, 5%)); /**/	
+}
+
+.mcs_alpha_grid .button-submit-action.button-wrap-left,
+.mcs_alpha_grid .button-submit.button-wrap-left,
+.mcs_alpha_grid .button-action.button-wrap-left,
+.mcs_alpha_grid .button.button-wrap-left, 
+.mcs_alpha_grid .button-submit-big.button-wrap-left,
+.mcs_alpha_grid .button-big.button-wrap-left {
+	.border-radius (0px);
+}
+
+.mcs_alpha_grid  .button.button-wrap-left{
+	.gradient (@secondary_button, @secondary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+
+.mcs_alpha_grid .button.button-wrap-left:hover{
+	.gradient (@secondary_button, @secondary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+.mcs_alpha_grid .button.button-wrap-left:hover:active{
+	.gradient (@secondary_button, @secondary_button);
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+}
+.mcs_alpha_grid .button-action.button-wrap-left, 
+.mcs_alpha_grid .button-submit-action.button-wrap-left {
+	.gradient (@primary_button, @primary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+.mcs_alpha_grid .button-action.button-wrap-left:hover, 
+.mcs_alpha_grid .button-submit-action.button-wrap-left:hover{
+	.gradient (@menu, @menu);
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+.mcs_alpha_grid .button-action.button-wrap-left:hover:active, 
+.mcs_alpha_grid .button-submit-action.button-wrap-left:hover:active{
+	.gradient (darken(@menu,5%), darken(@menu,5%));
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+}

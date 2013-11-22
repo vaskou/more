@@ -5,6 +5,12 @@
 }
 .mcs_enfold_grid ul.products li {
 	list-style: none outside;
+	padding:0;
+	height:auto;
+	display:block;
+	background-origin:border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .mcs_enfold_grid ul.products li.first {
@@ -303,11 +309,13 @@
 	text-align:center;
 }
 .mcs_enfold_grid .buttons-list-wrapper .full_width .text-button,
+.mcs_enfold_grid .buttons-list-wrapper .full_width .button a,
 .mcs_enfold_grid .buttons-list-wrapper .full_width .button-action a,
 .mcs_enfold_grid .buttons-list-wrapper .full_width .button-submit-action input{
 	text-align:center;
 	padding:0;
 	width:100%;
+	border:none;
 }
 .mcs_enfold_grid .buttons-list-wrapper .no_top_buttons{
 	border:none;	

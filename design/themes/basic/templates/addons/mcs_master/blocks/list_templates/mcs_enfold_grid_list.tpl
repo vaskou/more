@@ -12,7 +12,7 @@
 
 {if !$show_empty}
     {if $products|sizeof < $columns}
-        {assign var="columns" value=$products|@sizeof}
+        {*assign var="columns" value=$products|@sizeof*}
     {/if}
 {/if}
 

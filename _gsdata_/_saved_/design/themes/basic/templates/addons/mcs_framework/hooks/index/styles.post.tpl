@@ -13,6 +13,10 @@
     {style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'}
 {/if}
 
+{if $addons.mcs_framework.mcs_fixed_menu=='Y'}
+	{style src="addons/mcs_framework/mcs_menu_fixed.css"}
+{/if}
+
 {if $addons.mcs_framework.mcs_product_tabs_vertical=='Y'}
 	{style src="addons/mcs_framework/tabs_vertical.less"}
     

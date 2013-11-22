@@ -1,4 +1,4 @@
-<div class="quick-view">
+<div class="quick-view {$_class}">
     <span class="button button-wrap-left">
         {$current_url = $config.current_url|urlencode}
         {$quick_view_url = "products.quick_view?product_id=`$product.product_id`&prev_url=`$current_url`"}
@@ -17,4 +17,5 @@
 </div>
 
 {*********************************************MCS changes************************************************}
+{*Line      1: added {$_class}																			*}
 {*Line     13: added span with class=icon_wrap															*}
