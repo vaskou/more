@@ -96,12 +96,11 @@
 	float:none;
 }
 .mcs_alpha_grid .add-buttons-wrap .text-button{
-	display:inline;
-	width:auto;
+	display:inline-block;
+	width:80%;
 	padding-left:0;
 	text-align:left;
 }
-
 .mcs_alpha_grid .bottom_buttons{
 	padding:0px;	
 	border:none;

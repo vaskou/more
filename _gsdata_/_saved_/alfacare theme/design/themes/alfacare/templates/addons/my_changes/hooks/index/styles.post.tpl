@@ -5,5 +5,3 @@
 {style src="addons/my_changes/mcs_slider.less"}
 {style src="addons/my_changes/mcs_products_grid.css"}
 {style src="addons/my_changes/mcs_products_grid.less"}
-{style src="addons/my_changes/mcs_product.css"}
-{style src="addons/my_changes/mcs_product.less"}
