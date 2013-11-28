@@ -1,0 +1,39 @@
+.tab_text_color (@b) when (lightness(@b) >= 30%) {
+	i, a {
+		color: darken(@b, 45%);
+	}
+}
+.tab_text_color (@b) when (lightness(@b) < 70%) {
+	i, a {
+		color: lighten(@b, 70%);
+	}
+}
+
+.tabs, 
+.tabs ul li, 
+.tabs ul li.active,
+.tabs ul.dropdown-menu li,
+.tabs ul.dropdown-menu li.active {
+	border-color: lighten(@base,30%);
+}
+.tabs ul li,
+.tabs ul.dropdown-menu li {
+	.gradient (lighten(@base,45%), lighten(@base,45%));
+	.tab_text_color (lighten(@base,45%));
+}
+.tabs ul li:hover,
+.tabs ul.dropdown-menu li:hover {
+	.gradient (lighten(@base, 41%), lighten(@base, 41%));
+	.tab_text_color (lighten(@base,41%));
+} 
+.tabs ul li.active,
+.tabs ul.dropdown-menu li.active {
+	.gradient (darken(@menu, 5%), darken(@menu, 5%));
+	.tab_text_color (darken(@menu, 5%));
+	border-bottom-color: darken(@menu, 5%);
+} 
+
+.tabs ul li.active:hover,
+.tabs ul.dropdown-menu li.active:hover{
+	.tab_text_color (darken(@menu,5%));
+}

@@ -1,0 +1,18 @@
+.product-container.list span.csp_span_img {
+	position:relative;
+}
+
+.product-container.list span.csp_span_img .thumb-discount-label{
+	right:5px;
+}
+
+.product-info .add-product {
+	padding-left:0px;	
+}
+
+@media(min-width:768px){
+	.product-info .add-product{
+		
+		text-align:right;
+	}
+}

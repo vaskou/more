@@ -1,0 +1,10 @@
+.mcs-main-page{
+	max-width:100% !important;
+	padding:0;
+}
+
+.mcs-expanded{
+	float:none !important;
+	max-width:1200px !important;
+	margin:auto !important;
+}

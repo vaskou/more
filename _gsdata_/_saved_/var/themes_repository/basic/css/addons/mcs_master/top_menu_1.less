@@ -1,0 +1,182 @@
+/******************************* base.css ************************************/
+
+
+/****************************** styles.css ***********************************/
+
+
+/***************************** dropdown.css **********************************/
+/* Multicolumns dropdown */
+
+ul.dropdown-multicolumns li {
+    border: none;
+}
+ul.dropdown-multicolumns > li.cm-active {
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+ul.dropdown-multicolumns > li:hover {
+    border-bottom: none;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    -khtml-border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+    background: #fff;
+}
+ul.dropdown-multicolumns > li.nodrop:hover {
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fff;
+}
+ul.dropdown-multicolumns li a {
+    color:@menu_links;															/*color: #fff;*/
+    text-decoration: none;
+    text-shadow: none;															/*text-shadow: 0 1px 0 #000;*/
+}
+ul.dropdown-multicolumns li a.drop, ul.dropdown-multicolumns li.nodrop a {
+    text-transform: uppercase;
+    font-size: 90%;
+    line-height: 14px;
+    font-weight: bold;
+}
+ul.dropdown-multicolumns li:hover a {
+    border-bottom: 1px solid #fff;
+    text-shadow: none;
+}
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth {
+    border: 1px solid #444444;
+    -webkit-border-radius: 0px 3px 3px 3px;
+    -khtml-border-radius: 0px 3px 3px 3px;
+    -moz-border-radius: 0px 3px 3px 3px;
+    border-radius: 0px 5px 5px 5px;
+    background: #fff;
+    -webkit-box-shadow: none;													/*-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2);*/
+    -moz-box-shadow: none;														/*-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.2);*/
+    box-shadow: none;															/*box-shadow: 0 2px 2px rgba(0,0,0,0.2);*/
+}
+/* Drop downs sizes */
+.dropdown-fullwidth {
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.dropdown-multicolumns li .first-fullwidth {
+    -webkit-border-radius: 0px 3px 3px 3px;
+    -moz-border-radius: 0px 3px 3px 3px;
+    border-radius: 0px 3px 3px 3px;
+}
+/* /Drop downs sizes */
+/* Drop to left */
+.dropdown-multicolumns li .drop-left {
+    -webkit-border-radius: 3px 0px 3px 3px;
+    -moz-border-radius: 3px 0px 3px 3px;
+    border-radius: 3px 0px 3px 3px;
+}
+/* /Drop to left */
+
+/* Content styles */
+ul.dropdown-multicolumns h3 {
+    border-bottom: 1px solid #e5e5e5;
+    color: #4d4d4d;
+    font-weight: 600;
+    font-size: 100%;
+}
+ul.dropdown-multicolumns li h3 a {
+    font-weight: bold;
+}
+ul.dropdown-multicolumns li:hover div a {
+    border: none;
+    text-decoration: none;
+    text-shadow: none;
+}
+ul.dropdown-multicolumns li ul li {
+    text-shadow: none;															/*text-shadow: 1px 1px 1px #ffffff;*/
+    font-size: 90%;
+    line-height: 125%;
+}
+.dropdown-bottom {
+    border-top: 1px solid #e6e6e6;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    background-color: #f1f1f1;
+}
+.dropdown-bottom a {
+    text-transform: uppercase;
+    font-size: 85%;
+}
+ul.dropdown-multicolumns {
+    border: 1px solid #444;
+    border-bottom: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+ul.dropdown-multicolumns li:hover div a {
+    color: darken(@menu, 30%);													/*color: #444;*/
+}
+ul.dropdown-multicolumns li:hover div a:hover {
+    text-decoration: underline;
+}
+ul.dropdown-multicolumns li ul li a:hover {
+    text-decoration: underline;
+}
+ul.dropdown-multicolumns li .drop i {
+    text-shadow: none;
+}
+/* /Content styles */
+/* /Multicolumns dropdown */
+
+/****************************** scheme.less **********************************/
+
+ul.dropdown-multicolumns li:hover div .alt-link a, 
+ul.dropdown-multicolumns li:hover div .dropdown-bottom a, 
+ul.dropdown-multicolumns li:hover div a:hover, 
+ul.dropdown-multicolumns li li.cm-active a, 
+ul.dropdown-multicolumns li h3.cm-active a, 
+ul.dropdown-multicolumns li ul li a:hover{
+	color: @links;
+}
+
+
+.dropdown-multicolumns{
+	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
+}
+
+ul.dropdown-multicolumns > li.cm-active {
+	background-color: lighten(@menu, 4%);
+}
+
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth,
+ul.dropdown-multicolumns {
+	border-color: darken(@menu, 0%);											/*border-color: darken(@menu, 10%);*/
+}
+ul.dropdown-multicolumns {
+	border-top-color: @menu;
+}
+ul.dropdown-multicolumns > li:hover {
+	background-color: #fff;
+}
+ul.dropdown-multicolumns li a {
+	text-shadow:none;															/*text-shadow: 0 1px 0 darken(@menu, 30%);*/
+}
+ul.dropdown-multicolumns li:hover a {
+	color: darken(@menu, 30%);													/*color: darken(@menu, 30%);*/
+}
+
+
+/****************************** MY CUSTOMS ***********************************/

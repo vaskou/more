@@ -1,0 +1,1 @@
+<div class="{$_REQUEST.dispatch|replace:'.':'_'}">

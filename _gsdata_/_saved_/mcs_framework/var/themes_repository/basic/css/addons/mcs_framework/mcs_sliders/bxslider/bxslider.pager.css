@@ -1,0 +1,39 @@
+[id^="bx-pager_"]
+{
+	text-align:center;
+}
+
+[id^="bx-pager_"] a
+{
+	margin:0 3px;
+}
+
+[id^="bx-pager_"] a > div
+{
+	padding:3px;
+	border:solid #ccc 1px;
+	width:80px;
+	height:80px;
+	overflow:hidden;
+	display:inline-block;
+}
+
+[id^="bx-pager_"] a.active > div
+{
+	border:solid #5280DD 1px;
+}
+
+[id^="bx-pager_"] a > div img
+{
+	width:auto;
+	height:100%;
+}
+
+.bximg img 
+{
+	height:auto;
+}
+
+.bx-wrapper .bx-controls-direction a{
+	z-index:400;
+}

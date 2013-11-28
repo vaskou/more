@@ -1,0 +1,75 @@
+/******************************* base.css ************************************/
+
+
+
+/****************************** styles.css ***********************************/
+
+.table th, .table th a, .table th a:visited, .table th a:hover, .table th a:active {
+    color: #404040;
+    text-shadow: none;															/*text-shadow: 0px 1px 0px white;*/
+    font-weight: bold;
+}
+
+.table .table-footer td, .table.qty-discounts td {
+    border-right: 1px solid #e3e3e3;
+}
+
+.table.products tr.last td{
+    border-bottom: none;
+}
+
+
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+.table th, .orders-summary-wrap {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 49%), lighten(@base, 43%));*/
+	/*.inner-shadow (0, 1px, 0, 0, 0.5);*/
+}
+
+.step-title-active {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 47%), lighten(@base, 43%));*/
+	/*.inner-shadow (0, 1px, 0, 0, 0.7);*/
+}
+.checkout-summary table tbody.total th, .order-products .edit-products {
+	.gradient (lighten(@base, 100%), lighten(@base, 100%));						/*.gradient (lighten(@base, 43%), lighten(@base, 47%));*/
+	border-top: 1px solid lighten(@base, 37%);
+}
+.checkout-separator {
+	.gradient (lighten(@base, 46%), lighten(@base, 100%));
+}
+
+.table, table.qty-discounts, .table-filters .delim td, hr, .mainbox-cart-body .table, .compare-table td, {
+	border-color: lighten(@base, 42%);
+}
+
+.table th, .table td, .table .table td, .table, .table .table-footer td {
+	border-color: lighten(@base, 39%);
+}
+
+.orders-summary-wrap, .orders-summary-wrap table tbody tr {
+	border-color: lighten(@base, 33%);
+}
+
+.checkout-summary table td {
+	color: darken(@font, 100%);													/*color: darken(@font, 10%);*/
+}
+
+.compare-table tr:nth-child(odd) {
+    background-color: lighten(@base, 47%);
+}
+
+.checkout-summary table tbody.total th div {
+    color: @base;																/*color: darken(@base, 30%);*/
+}
+
+.table tr:nth-child(2n), .table .table-footer td {
+	background-color: lighten(@base, 48%);
+}
+
+.mainbox-cart-body .table tr {
+    background-color: #fff;
+}
+/****************************** MY CUSTOMS ***********************************/

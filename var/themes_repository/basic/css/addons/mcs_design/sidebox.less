@@ -1,0 +1,142 @@
+/******************************* base.css ************************************/
+
+/* Common sidebox style */
+.sidebox-wrapper {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+.sidebox-title {
+    padding: 11px 12px 9px;
+}
+.sidebox-title span, .sidebox-title a:link, 
+.sidebox-title a:visited, .sidebox-title a:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 90%;
+}
+.sidebox-wrapper .sidebox-body {
+    padding: 12px;
+    border: 1px solid #b8b8b8;
+}
+/* /Common sidebox style */
+
+/* Important sidebox style */
+.sidebox-important-wrapper {
+    margin-bottom: 15px;
+}
+/* /Important sidebox style */
+
+
+/****************************** styles.css ***********************************/
+
+/* Common sidebox style */
+.sidebox-title {
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.sidebox-wrapper .sidebox-body {
+    border-top: none;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.sidebox-body .dropdown-multicolumns a:link,  
+.sidebox-body .dropdown-multicolumns a:visited,
+.sidebox-body .dropdown-multicolumns a:active {
+    color: #fff;
+}
+.sidebox-body .dropdown-multicolumns a:hover,
+.sidebox-body .dropdown-multicolumns li:hover > a {
+    color: #161616;
+}
+/* /Common sidebox style */
+
+/* Important sidebox style */
+.sidebox-important-wrapper .sidebox-title {
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.sidebox-important-wrapper .sidebox-title span {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: none;																/*text-shadow: 0px 1px 0px #222;*/
+    font-weight: bold;
+    font-size: 90%;
+}
+.sidebox-important-wrapper .product-item-image.compact {
+    padding: 15px 0 10px;
+}
+.sidebox-important-wrapper .sidebox-body {
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.sidebox-important-wrapper .sidebox-body ul a, 
+.sidebox-important-wrapper .sidebox-body ul a:hover {
+    font-size: 100%;
+}
+.sidebox-important-wrapper .sidebox-body ul .button-action a, 
+.sidebox-important-wrapper .sidebox-body ul .button-action a:hover {
+    font-size: 85%;
+}
+.sidebox-important-wrapper .text-links {
+    padding: 10px;
+}
+/* /Important sidebox style */
+
+/***************************** dropdown.css **********************************/
+
+
+/****************************** scheme.less **********************************/
+
+.sidebox-body a:hover, 
+.sidebox-important-wrapper .text-links a:hover, 
+.sidebox-body .checkout-summary a:link, 
+.sidebox-body .checkout-summary a:visited, 
+.sidebox-wrapper.order-products .sidebox-body a, 
+.sidebox-wrapper .sidebox-body ul li.cm-active > a {
+	color: @links;
+}
+
+.sidebox-important-wrapper .sidebox-title{
+	.gradient (@menu, darken(@menu, 0%));										/*.gradient (@menu, darken(@menu, 16%));*/
+}
+
+.sidebox-title {
+	.gradient (lighten(@sidebar, 0%), @sidebar);								/*.gradient (lighten(@sidebar, 11%), @sidebar);*/
+}
+.sidebox_header (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, a:link, a:visited, a:hover,i {
+	color: darken(@menu, 100%);													/*color: darken(@menu, 10%);*/
+	text-shadow: none;															/*text-shadow: 0px 1px 0px lighten(@menu, 50%);*/
+	}
+}
+.sidebox_header (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, a:link, a:visited, a:hover,i {
+	color: lighten(@menu, 100%);												/*color: lighten(@menu, 70%);*/
+	text-shadow:none;															/*text-shadow: 0px 1px 0px darken(@menu, 15%);*/
+	}
+}
+.sidebox-title { .sidebox_header(@sidebar) }
+
+.sidebox-wrapper .sidebox-body {
+	border-color: @sidebar;
+	box-shadow:none;															/*box-shadow: inset 0 30px 25px -20px #e5e5e5;*/
+}
+.sidebox-important-wrapper .sidebox-body {
+	background-color: lighten(@sidebar, 25%);
+	box-shadow: none;															/*box-shadow: inset 0 30px 25px -20px #e5e5e5;*/
+}
+
+.sidebox-body a:link, 
+.sidebox-body a:visited, 
+.sidebox-body a:active, 
+.sidebox-important-wrapper .text-links a:link, 
+.sidebox-important-wrapper a:visited, 
+.sidebox-body ul a.extra-link {
+	color: darken(@font, 10%);
+}
+/****************************** MY CUSTOMS ***********************************/

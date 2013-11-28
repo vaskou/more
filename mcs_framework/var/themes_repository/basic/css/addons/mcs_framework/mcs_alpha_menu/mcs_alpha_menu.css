@@ -1,0 +1,13 @@
+.category-img{
+	width:145px;	
+}
+
+.category-img img{
+	width:100%;
+	height:auto;
+}
+
+ul.dropdown-multicolumns li .drop i{
+	right:5px;
+	top:10px;	
+}

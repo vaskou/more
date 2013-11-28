@@ -1,0 +1,13 @@
+.tabs ul li,
+.tabs ul li.active{
+	padding:11px 21px 11px 18px;	
+}
+.tabs ul li i{
+	display:inline-block;
+}
+
+.tabs ul li a{
+	display:inline-block;
+	padding:0;
+	height:auto;
+}
