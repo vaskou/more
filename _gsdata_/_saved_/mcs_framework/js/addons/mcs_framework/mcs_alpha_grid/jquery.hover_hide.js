@@ -7,12 +7,12 @@
 			container: ""            
         }, options );
 
-		$(".product-meta-wrapper").hide();
+		$(".product-meta").hide();
 		this.addClass('hover_hide');
 		return this.hover(
 			function(){
 				/*if(toggle_flag){*/
-					$(this).find('.product-meta-wrapper').slideDown(200);
+					$(this).find('.product-meta').slideDown(200);
 				/*}*/
 				$('.product').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
 				var to;
@@ -20,7 +20,7 @@
 			},
 			function(){
 				/*if(toggle_flag){*/
-					$(this).find('.product-meta-wrapper').slideUp(10);
+					$(this).find('.product-meta').slideUp(10);
 				/*}*/
 				$('.product').delay(10).animate({opacity:1}, 100);
 				var to;

@@ -9,6 +9,8 @@
 
 		$(".product-meta").hide();
 		this.addClass('hover_hide');
+		var h=$(".product-wrapper").height();
+		$(".hover_hide").css({"height":h});
 		return this.hover(
 			function(){
 				/*if(toggle_flag){*/
