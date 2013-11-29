@@ -566,5 +566,4 @@ $schema['mcs_banners_products'] = array (
 
 );
 
-
 return $schema;

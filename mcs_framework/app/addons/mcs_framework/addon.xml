@@ -219,7 +219,7 @@
 		<item lang="en" id="ease-in">Ease-In</item>
 		<item lang="en" id="ease-out">Ease-Out</item>
 		<item lang="en" id="ease-in-out">Ease-In-Out</item>
-		<item lang="en" id="swing">Swing</item>
+		<item lang="en" id="swing">JS Swing</item>
 		<item lang="en" id="easeInQuad">JS Ease-In Quad</item>
 		<item lang="en" id="easeOutQuad">JS Ease-Out Quad</item>
 		<item lang="en" id="easeInOutQuad">JS Ease-In-Out Quad</item>

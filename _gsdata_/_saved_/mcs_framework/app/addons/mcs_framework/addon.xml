@@ -68,7 +68,7 @@
 					<item id="mcs_button_icons_add_to_compare_list">
                         <type>input</type>
                         <name>"Add To Compare List" button icon</name>
-						<default_value>icon-im-transmission</default_value>
+						<default_value>icon-im-bars-3</default_value>
                     </item>
 					<item id="mcs_button_icons_add_to_wishlist">
                         <type>input</type>
@@ -161,6 +161,9 @@
         <item lang="en" id="block_mcs_banners_products_description">Custom Visual and text banners</item>
 		<item lang="en" id="myslider">MySlider</item>
 		<item lang="en" id="myscroller">MyScroller</item>
+		<item lang="en" id="mcs_alpha_scroller">More CS-Cart Alpha Scroller</item>
+		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
+		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
 
 		<item lang="en" id="mcs_mode">Mode</item>
 		<item lang="en" id="mcs_speed">Speed</item>
@@ -211,6 +214,49 @@
 		<item lang="en" id="mcs_controlsSeparator">CONTROLS</item>
 		<item lang="en" id="mcs_autoSeparator">AUTO</item>
 		<item lang="en" id="mcs_carouselSeparator">CAROUSEL</item>
+		<item lang="en" id="fade">Fade</item>
+		<item lang="en" id="ease">Ease</item>
+		<item lang="en" id="ease-in">Ease-In</item>
+		<item lang="en" id="ease-out">Ease-Out</item>
+		<item lang="en" id="ease-in-out">Ease-In-Out</item>
+		<item lang="en" id="swing">Swing</item>
+		<item lang="en" id="easeInQuad">JS Ease-In Quad</item>
+		<item lang="en" id="easeOutQuad">JS Ease-Out Quad</item>
+		<item lang="en" id="easeInOutQuad">JS Ease-In-Out Quad</item>
+		<item lang="en" id="easeInCubic">JS Ease-In Cubic</item>
+		<item lang="en" id="easeOutCubic">JS Ease-Out Cubic</item>
+		<item lang="en" id="easeInOutCubic">JS Ease-In-Out Cubic</item>
+		<item lang="en" id="easeInQuart">JS Ease-In Quart</item>
+		<item lang="en" id="easeOutQuart">JS Ease-Out Quart</item>
+		<item lang="en" id="easeInOutQuart">JS Ease-In-Out Quart</item>
+		<item lang="en" id="easeInQuint">JS Ease-In Quint</item>
+		<item lang="en" id="easeOutQuint">JS Ease-Out Quint</item>
+		<item lang="en" id="easeInOutQuint">JS Ease-In-Out Quint</item>
+		<item lang="en" id="easeInSine">JS Ease-In Sine</item>
+		<item lang="en" id="easeOutSine">JS Ease-Out Sine</item>
+		<item lang="en" id="easeInOutSine">JS Ease-In-Out Sine</item>
+		<item lang="en" id="easeInExpo">JS Ease-In Expo</item>
+		<item lang="en" id="easeOutExpo">JS Ease-Out Expo</item>
+		<item lang="en" id="easeInOutExpo">JS Ease-In-Out Expo</item>
+		<item lang="en" id="easeInCirc">JS Ease-In Circ</item>
+		<item lang="en" id="easeOutCirc">JS Ease-Out Circ</item>
+		<item lang="en" id="easeInOutCirc">JS Ease-In-Out Circ</item>
+		<item lang="en" id="easeInElastic">JS Ease-In Elastic</item>
+		<item lang="en" id="easeOutElastic">JS Ease-Out Elastic</item>
+		<item lang="en" id="easeInOutElastic">JS Ease-In-Out Elastic</item>
+		<item lang="en" id="easeInBack">JS Ease-In Back</item>
+		<item lang="en" id="easeOutBack">JS Ease-Out Back</item>
+		<item lang="en" id="easeInOutBack">JS Ease-In-Out Back</item>
+		<item lang="en" id="easeInBounce">JS Ease-In Bounce</item>
+		<item lang="en" id="easeOutBounce">JS Ease-Out Bounce</item>
+		<item lang="en" id="easeInOutBounce">JS Ease-In-Out Bounce</item>
+		<item lang="en" id="visible">Visible</item>
+		<item lang="en" id="short">Short</item>
+		<item lang="en" id="hide_features">Hide Features</item>
+		<item lang="en" id="hide_rating">Hide Rating</item>
+		<item lang="en" id="hide_points">Hide Points</item>
+		<item lang="en" id="hide_add_to_wish">Hide add to wishlist button</item>
+		<item lang="en" id="hide_add_to_compare">Hide add to compare button</item>
 	</language_variables>
 </addon>
 
