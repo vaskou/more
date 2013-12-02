@@ -6,5 +6,9 @@
 {style src="addons/my_changes/homepage/mcs_alpha_scroller.css"}
 {style src="addons/my_changes/categories/mcs_products_grid.css"}
 {style src="addons/my_changes/categories/mcs_products_grid.less"}
+{style src="addons/my_changes/categories/mcs_side_menu.css"}
+{style src="addons/my_changes/categories/mcs_side_menu.less"}
+{style src="addons/my_changes/categories/mcs_sidebox.css"}
+{style src="addons/my_changes/categories/mcs_sidebox.less"}
 {style src="addons/my_changes/products/mcs_product.css"}
 {style src="addons/my_changes/products/mcs_product.less"}

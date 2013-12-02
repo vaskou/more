@@ -1,0 +1,35 @@
+.mcs-side-menu{
+	margin-bottom:15px;
+}
+.mcs-side-menu ul.text-links{
+	padding:10px;
+}
+.mcs-side-menu li.level-1{
+	margin:10px 0;
+	color:#fff;
+}
+.mcs-side-menu li.level-1.active{
+	color:#404040;
+}
+.mcs-side-menu li.level-1:before{
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	content:"\e3cb";
+	margin-right:5px;
+	vertical-align:middle;
+	font-size:120%;
+}
+.mcs-side-menu li:first-child{
+	margin-top:0px;
+}
+.mcs-side-menu li a{
+	color:#fff;
+	line-height:16px;
+	vertical-align:middle;
+}

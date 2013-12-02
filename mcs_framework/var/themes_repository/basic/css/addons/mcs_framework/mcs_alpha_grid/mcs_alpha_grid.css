@@ -283,7 +283,6 @@
 .mcs_alpha_grid .button a,
 .mcs_alpha_grid .button-action a,
 .mcs_alpha_grid .button-submit-action input{
-	color:#666 !important;
 	width:80%;
 	white-space:nowrap;
 	overflow:hidden;

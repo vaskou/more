@@ -1,0 +1,27 @@
+.sidebox-title {
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	padding:10px 10px 5px;
+}
+
+.sidebox-wrapper .sidebox-title{
+	border:1px solid;
+	border-bottom:none;
+}
+.sidebox-wrapper .sidebox-body{
+	padding:5px 15px 10px;
+	border-radius:0;
+}
+.filter-title{
+	border:none;
+	font-size:135%;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 15px;
+	height: 15px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}

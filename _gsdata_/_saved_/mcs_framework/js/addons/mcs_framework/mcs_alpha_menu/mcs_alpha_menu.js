@@ -8,7 +8,7 @@ $(function(){
 	},
 	function(){
 		col=$(this);
-		col.children("ul").stop().slideUp(1000);
+		col.children("ul").stop().delay(1000).slideUp(500);
 	});
 	
 	

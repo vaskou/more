@@ -3,6 +3,7 @@
 }
 .mcs_alpha_grid ul.products li.product {
 	margin-bottom: 20px;
+	padding-bottom:6px;/**/
 }
 .mcs_alpha_grid ul.products li.product .product-wrapper {
 	border: 1px solid #ccc;
@@ -60,9 +61,9 @@
 }
 /*************************** hover hide **********************************/
 
-.hover_hide{
+/*.hover_hide{
 	min-height:300px !important;
-}
+}*/
 .mcs_alpha_grid ul.products li.product.hover_hide .price-wrapper{
 	padding-bottom:10px;
 }
@@ -81,6 +82,7 @@
 	min-height:3em;
 	border:none;
 	padding:0px !important;
+	text-align:center;
 }
 .mcs_alpha_grid .add-to-wish,
 .mcs_alpha_grid .add-to-compare{
@@ -97,9 +99,9 @@
 }
 .mcs_alpha_grid .add-buttons-wrap .text-button{
 	display:inline-block;
-	width:80%;
+	width:auto; 			/*Make it 80% when text is too long*/
 	padding-left:0;
-	text-align:left;
+	text-align:center;
 }
 .mcs_alpha_grid .bottom_buttons{
 	padding:0px;	
@@ -156,5 +158,5 @@
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button-action a,
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input{
 	padding-left:0;
-	width:auto;
+	width:auto;			/*Make it 80% when text is too long*/
 }

@@ -50,6 +50,7 @@
 
 {style src="addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.css"}
+{style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.less"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.less"}
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.css"}
