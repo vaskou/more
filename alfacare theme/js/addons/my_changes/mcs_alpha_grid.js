@@ -11,7 +11,6 @@ $(function(){
 		flag=true;
     });
 	
-	
 	function initBindings(){
 		$(".mcs_alpha_grid .product").hover(
 		function(){
