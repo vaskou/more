@@ -1,0 +1,24 @@
+.mcs-brand-scroller .brand-box{
+	padding:0;
+	border:1px solid;
+	text-align:center;
+}
+
+.mcs-brand-scroller .brand-image{
+	height:100px;
+	text-align:center;
+	border-bottom:1px solid;
+	line-height:100px;
+}
+.mcs-brand-scroller .brand-image img{
+	max-width:95%;
+	max-height:95%;
+	width:auto;
+	height:auto;
+	margin:auto;
+	display:inline-block;
+}
+
+.mcs-brand-scroller .brand-name{
+	
+}

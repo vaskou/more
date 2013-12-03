@@ -55,3 +55,4 @@
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.less"}
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.css"}
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.less"}
+{style src="addons/mcs_framework/mcs_brand_scroller.css"}
