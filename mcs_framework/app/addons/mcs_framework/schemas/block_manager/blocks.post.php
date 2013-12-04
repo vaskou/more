@@ -410,8 +410,8 @@ $settings=array(
 	),
 );
 
-$schema['mcs_banners'] = array (
-    'content' => array (
+$schema['mcs_brand_scroller'] = array (
+    /*'content' => array (
         'items' => array (
             'remove_indent' => true,
             'hide_label' => true,
@@ -440,13 +440,228 @@ $schema['mcs_banners'] = array (
                 ),
             ),
         ),
-    ),
+    ),*/
     'templates' => array (
-		'addons/mcs_framework/blocks/myslider.tpl' => array(
-			'settings'=>$settings
+		'addons/mcs_framework/blocks/mcs_brand_scroller.tpl' => array(
+			'settings'=>array(
+				'mcs_mode' => array (
+					'type' => 'selectbox',
+					'values' => array (
+						'horizontal' => 'Horizontal',
+						'vertical' => 'Vertical',
+						'fade' => 'Fade',
+					),
+					'default_value' => 'horizontal',
+					'tooltip'=>'Type of transition between slides'
+				),
+				'mcs_speed' => array (
+					'type' => 'input',
+					'default_value' => 500,
+					'tooltip'=>'Slide transition duration (in ms)'
+				),
+				'mcs_slideMargin'=>array(
+					'type'=>'input',
+					'default_value'=>0,
+					'tooltip'=>'Margin between each slide'
+				),
+				'mcs_infiniteLoop'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'true',
+					'tooltip'=>'Clicking "Next" while on the last slide will transition to the first slide and vice-versa'
+				),
+				'mcs_hideControlOnEnd'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'"Next" control will be hidden on last slide and vice-versa'
+				),
+				'mcs_easing'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'linear'=>'Linear',
+						'ease'=>'Ease',
+						'ease-in'=>'Ease-In',
+						'ease-out'=>'Ease-Out',
+						'ease-in-out'=>'Ease-In-Out',
+						
+						'swing'=>'swing',
+						'easeInQuad'=>'easeInQuad',
+						'easeOutQuad'=>'easeOutQuad',
+						'easeInOutQuad'=>'easeInOutQuad',
+						'easeInCubic'=>'easeInCubic',
+						'easeOutCubic'=>'easeOutCubic',
+						'easeInOutCubic'=>'easeInOutCubic',
+						'easeInQuart'=>'easeInQuart',
+						'easeOutQuart'=>'easeOutQuart',
+						'easeInOutQuart'=>'easeInOutQuart',
+						'easeInQuint'=>'easeInQuint',
+						'easeOutQuint'=>'easeOutQuint',
+						'easeInOutQuint'=>'easeInOutQuint',
+						'easeInSine'=>'easeInSine',
+						'easeOutSine'=>'easeOutSine',
+						'easeInOutSine'=>'easeInOutSine',
+						'easeInExpo'=>'easeInExpo',
+						'easeOutExpo'=>'easeOutExpo',
+						'easeInOutExpo'=>'easeInOutExpo',
+						'easeInCirc'=>'easeInCirc',
+						'easeOutCirc'=>'easeOutCirc',
+						'easeInOutCirc'=>'easeInOutCirc',
+						'easeInElastic'=>'easeInElastic',
+						'easeOutElastic'=>'easeOutElastic',
+						'easeInOutElastic'=>'easeInOutElastic',
+						'easeInBack'=>'easeInBack',
+						'easeOutBack'=>'easeOutBack',
+						'easeInOutBack'=>'easeInOutBack',
+						'easeInBounce'=>'easeInBounce',
+						'easeOutBounce'=>'easeOutBounce',
+						'easeInOutBounce'=>'easeInOutBounce'						
+					),
+					'default_value'=>'linear',
+					'tooltip'=>'Select easing'	
+				),
+				'mcs_ticker'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'Use slider in ticker mode'
+				),
+				'mcs_tickerHover'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'Ticker will pause when mouse hovers over slider'
+				),
+				'mcs_responsive'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'true',
+					'tooltip'=>'Enable or disable auto resize of the slider'
+				),				
+				'mcs_pager'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'true',
+					'tooltip'=>'A pager will be added'
+				),				
+				'mcs_controls'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'true',
+					'tooltip'=>'"Next" / "Prev" controls will be added'
+				),
+				'mcs_customControls'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'Enable to show custom controls'
+				),
+				'mcs_nextText'=>array(
+					'type'=>'input',
+					'default_value'=>'Next',
+					'tooltip'=>'Next control text'
+				),
+				'mcs_prevText'=>array(
+					'type'=>'input',
+					'default_value'=>'Previous',
+					'tooltip'=>'Previous control text'
+				),
+				'mcs_auto'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'Slides will automatically transition'
+				),
+				'mcs_pause'=>array(
+					'type'=>'input',
+					'default_value'=>4000,
+					'tooltip'=>'The amount of time (in ms) between each auto transition'
+				),
+				'mcs_autoStart'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'true',
+					'tooltip'=>'Auto show starts playing on load. If disabled, slideshow will start when the "Start" control is clicked'
+				),
+				'mcs_autoDirection'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'next'=>'Next',
+						'prev'=>'Previous'
+					),
+					'default_value'=>'next',
+					'tooltip'=>'The direction of auto show slide transitions'
+				),
+				'mcs_autoHover'=>array(
+					'type'=>'selectbox',
+					'values'=>array(
+						'true'=>'Enabled',
+						'false'=>'Disabled'
+					),
+					'default_value'=>'false',
+					'tooltip'=>'Auto show will pause when mouse hovers over slider'
+				),
+				'mcs_autoDelay'=>array(
+					'type'=>'input',
+					'default_value'=>0,
+					'tooltip'=>'Time (in ms) auto show should wait before starting'
+				),
+				'mcs_minSlides'=>array(
+					'type'=>'input',
+					'default_value'=>1,
+					'tooltip'=>'The minimum number of slides to be shown. Slides will be sized down if carousel becomes smaller than the original size'
+				),
+				'mcs_maxSlides'=>array(
+					'type'=>'input',
+					'default_value'=>1,
+					'tooltip'=>'The maximum number of slides to be shown. Slides will be sized up if carousel becomes larger than the original size'
+				),
+				'mcs_moveSlides'=>array(
+					'type'=>'input',
+					'default_value'=>0,
+					'tooltip'=>'The number of slides to move on transition. This value must be greater than minSlides, and less maxSlides. If zero (default), the number of fully-visible slides will be used'
+				),
+				'mcs_slideWidth'=>array(
+					'type'=>'input',
+					'default_value'=>0,
+					'tooltip'=>'The width of each slide. This setting is required for all horizontal carousels'
+				),
+			)
 		)
 	),
     'wrappers' => 'blocks/wrappers',
 );
+
+$schema['banners']['templates']['addons/mcs_framework/blocks/mcs_bxslider.tpl'] = array('settings'=>$settings);
 
 return $schema;

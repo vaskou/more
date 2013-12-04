@@ -4,7 +4,8 @@
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
-	padding:10px 10px;	
+	padding:10px 10px;
+	left:-10px;
 }
 .mcs_alpha_scroller .bx-viewport .bxslider.products{
 	margin:0;

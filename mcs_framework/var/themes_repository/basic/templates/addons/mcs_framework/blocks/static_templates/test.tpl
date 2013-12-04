@@ -1,7 +1,7 @@
 {** block-description:mytest **}
 {assign var=params value=['filter_id' => "10",'variant_id' => '0','view_all' => "Y",'get_custom' => "Y"]}
 {assign var=view_all_filter value=$params|fn_get_filters_products_count}
-{*$view_all_filter|@print_r*}
+{$view_all_filter|@print_r}
 
 {if $view_all_filter}
 {assign var="filter_qstring" value=$smarty.request.q|fn_url}

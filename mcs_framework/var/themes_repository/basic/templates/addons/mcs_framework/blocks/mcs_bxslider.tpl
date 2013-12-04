@@ -1,8 +1,8 @@
-{** block-description:myslider **}
+{** block-description:mcs_bxslider **}
 {*style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'*}
 
 {if $items}
-<div class="mcs_slider">
+<div class="mcs_slider_{$block.snapping_id}">
 	<ul class="bxslider" id="bxslider_{$block.snapping_id}">
         {foreach from=$items item="banner" key="key"}
             <li>
@@ -28,10 +28,10 @@
     
     {if $block.properties.mcs_customControls=='true'}
     	<div id="c_controls">
-        	<span id="slider-prev"></span><span id="slider-next"></span>
+        	<span id="slider-prev-{$block.snapping_id}"></span><span id="slider-next-{$block.snapping_id}"></span>
         </div>
-        {assign var="mcs_nextSelector" value="#slider-next"}
-        {assign var="mcs_prevSelector" value="#slider-prev"}
+        {assign var="mcs_nextSelector" value="#slider-next-{$block.snapping_id}"}
+        {assign var="mcs_prevSelector" value="#slider-prev-{$block.snapping_id}"}
     {/if}
     
     {if $block.properties.mcs_pagerThumbs=='true'}
@@ -63,8 +63,7 @@
         	{$mcs_useCSS='true'}
         {/if}
     {/foreach}
-</div>   
-{/if}
+
 
 {*$block.properties.mcs_useCSS*}
 {if $mcs_useCSS=="false"}
@@ -144,3 +143,5 @@ $(document).ready(function(){
 });
 </script>
 
+</div>   
+{/if}

@@ -4,7 +4,7 @@
     <version>1.0</version>
     <name>More CS-Cart Framework</name>
     <description>More CS-Cart Framework</description>
-    <priority>100</priority>
+    <priority>100000</priority>
     <status>active</status>
 	<queries>
 		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
@@ -157,7 +157,7 @@
         <item lang="en" id="mcs_framework">More CS-Cart Framework</item>
 		<item lang="en" id="block_mcs_banners">More CS-Cart Banners</item>
         <item lang="en" id="block_mcs_banners_description">Custom Visual and text banners</item>
-		<item lang="en" id="myslider">MySlider</item>
+		<item lang="en" id="mcs_bxslider">More CS-Cart bxSlider</item>
 		<item lang="en" id="mcs_alpha_scroller">More CS-Cart Alpha Scroller</item>
 		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
 		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>

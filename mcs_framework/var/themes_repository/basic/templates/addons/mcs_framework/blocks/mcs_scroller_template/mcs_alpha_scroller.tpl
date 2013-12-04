@@ -10,7 +10,7 @@
 {if $settings.Appearance.enable_quick_view == 'Y'}
 {$quick_nav_ids = $products|fn_fields_from_multi_level:"product_id":"product_id"}
 {/if}
-<div class="mcs_alpha_grid mcs_alpha_scroller">
+
 	<ul class="bxslider products" id="bxslider_{$block.snapping_id}">
         {foreach from=$products item="product" name="sproducts"}
             <li class="product">
@@ -166,4 +166,3 @@
             </li>
         {/foreach}
 	</ul>
-</div>

@@ -42,7 +42,7 @@
     {else}
         {assign var="show_add_to_cart" value=true}
     {/if}
-
+<div class="mcs_alpha_grid mcs_alpha_scroller">
     {include file="addons/mcs_framework/blocks/mcs_scroller_template/mcs_alpha_scroller.tpl" 
     products=$items 
     show_trunc_name=true 
@@ -105,7 +105,7 @@
         {/if}
     {/foreach}
     
-{/if}
+
 
 {*$block.properties.mcs_useCSS*}
 {if $mcs_useCSS=="false"}
@@ -185,3 +185,5 @@ $(document).ready(function(){
 });
 </script>
 
+</div>
+{/if}

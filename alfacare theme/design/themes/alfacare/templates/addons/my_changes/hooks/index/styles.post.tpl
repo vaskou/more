@@ -2,8 +2,11 @@
 {style src="addons/my_changes/header/mcs_top_menu.less"}
 {style src="addons/my_changes/header/mcs_search_box.css"}
 {style src="addons/my_changes/homepage/mcs_main_content.css"}
+{style src="addons/my_changes/homepage/mcs_slider.css"}
 {style src="addons/my_changes/homepage/mcs_slider.less"}
 {style src="addons/my_changes/homepage/mcs_alpha_scroller.css"}
+{style src="addons/my_changes/homepage/mcs_brand_scroller.css"}
+{style src="addons/my_changes/homepage/mcs_brand_scroller.less"}
 {style src="addons/my_changes/categories/mcs_products_grid.css"}
 {style src="addons/my_changes/categories/mcs_products_grid.less"}
 {style src="addons/my_changes/categories/mcs_side_menu.css"}
