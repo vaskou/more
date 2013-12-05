@@ -36,10 +36,7 @@
                         {if $range.feature_type == "E"}
                         <div class="brand-url">
                             {if $variant_data.url}
-                            <a rel="nofollow" target="_blank" title='{__("website")} {$range.range_name|fn_text_placeholders}' href="{if '~^(?:f|ht)tps?://~i'|preg_match:$variant_data.url===0}http://{/if}{$variant_data.url}">
-                            	{__("website")}
-                                <i class="icon-im-new-tab"></i>
-                            </a>
+                            <a href="{$variant_data.url}">{__("website")}</a>
                             {/if}
                         </div>
                         {/if}
@@ -55,8 +52,8 @@
         <script>
             $(function(){
                 $(".mcs-list-filter ul li a").click(function(){
-                    id=$(this).parent("li").attr('id');
-                    $(".mcs-brands-row").show();
+                    id=$(this).attr('id');
+                    $(".mcs-brands-row").fadeIn(1000);
                     if(id!="li-ALL"){
                         $(".mcs-brands-row").not("."+id).hide();
                     }

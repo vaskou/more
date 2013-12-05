@@ -19,6 +19,11 @@
 	display:inline-block;
 }
 
+[class^="mcs-brand-scroller-"] .brand-image .no-image{
+	border:none;
+	height:100%;
+}
+
 [class^="mcs-brand-scroller-"] .brand-name{
 	
 }

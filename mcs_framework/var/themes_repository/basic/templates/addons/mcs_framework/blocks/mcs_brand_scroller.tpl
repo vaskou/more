@@ -17,9 +17,7 @@
                             <a href="{if $range.feature_type == "E"}{"product_features.view?variant_id=`$range.range_id``$cur_features_hash`"|fn_url}{else}{"`$filter_qstring`&features_hash=`$_features_hash`"|fn_url}{/if}">
                                 {assign var=variant_data value=$range.range_id|fn_get_product_feature_variant}
                                 <div class="brand-image">
-                                	{if $variant_data.image_pair}
                                     	{include file="common/image.tpl" images=$variant_data.image_pair}
-                                	{/if}
                                 </div>
                                 
                                 <span class="brand-name">

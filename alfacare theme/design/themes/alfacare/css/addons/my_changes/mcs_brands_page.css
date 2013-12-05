@@ -1,0 +1,27 @@
+.mcs-brands-page .mcs-list-filter ul li{
+}
+.mcs-brands-page .mcs-brands-row > .subheader{	
+}
+.mcs-brands-page .brand-box{
+}
+.mcs-brands-page .brand-box > a:hover{
+	text-decoration:none;
+}
+
+.mcs-brands-page .brand-image,
+.mcs-brands-page .brand-image .no-image{
+	background-color:#fff;
+}
+.mcs-brands-page .brand-image img{
+}
+
+.mcs-brands-page .brand-name{
+	display:block;
+	padding:10px 10px 0;
+}
+.mcs-brands-page .brand-name:hover{
+	text-decoration:underline;
+}
+.mcs-brands-page .brand-url{
+	padding-bottom:8px;
+}

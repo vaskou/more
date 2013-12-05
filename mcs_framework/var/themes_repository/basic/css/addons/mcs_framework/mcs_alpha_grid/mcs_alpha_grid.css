@@ -55,6 +55,12 @@
 	display:initial;
 	margin:auto;
 }
+.mcs_alpha_grid ul.products li.product .prod_img .no-image{
+	width:100% !important;
+	height:100% !important;
+	margin:auto;
+	border:none;
+}
 .mcs_alpha_grid ul.products li.product .product_info{
 	min-height:4em;
 	padding:5px 10px 0 10px;

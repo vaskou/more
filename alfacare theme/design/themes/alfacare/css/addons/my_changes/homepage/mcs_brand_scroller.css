@@ -13,6 +13,9 @@
 [class^="mcs-brand-scroller-"] .brand-image{
 	background-color:#fff;
 }
+[class^="mcs-brand-scroller-"] .brand-image .no-image{
+	background-color:#fff;
+}
 [class^="mcs-brand-scroller-"] .brand-name{
 	display:block;
 	padding:10px;

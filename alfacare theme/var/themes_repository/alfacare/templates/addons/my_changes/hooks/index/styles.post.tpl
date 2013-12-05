@@ -1,3 +1,5 @@
+{style src="addons/my_changes/mcs_brands_page.css"}
+{style src="addons/my_changes/mcs_brands_page.less"}
 {style src="addons/my_changes/header/mcs_header.less"}
 {style src="addons/my_changes/header/mcs_top_menu.less"}
 {style src="addons/my_changes/header/mcs_search_box.css"}

@@ -1,13 +1,23 @@
 .mcs-brands-page .mcs-list-filter ul li{
 	float:left;
-	padding:0 5px;
+	padding:2px 6px;
 	border:1px solid;
+	border-left:none;
+}
+.mcs-brands-page .mcs-list-filter ul li#li-ALL{
+	border-left:1px solid;
+}
+.mcs-brands-page .mcs-brands-row > .subheader{
+	border-bottom:1px solid;
+	margin-bottom:10px;	
 }
 .mcs-brands-page .brand-box{
 	padding:0;
-	border:1px solid;
 	text-align:center;
 	margin-bottom:20px;
+}
+.mcs-brands-page .brand-box.with-image{
+	border:1px solid;
 }
 .mcs-brands-page .brand-box.first{
 	margin-left:0;
@@ -15,8 +25,12 @@
 .mcs-brands-page .brand-image{
 	height:100px;
 	text-align:center;
-	border-bottom:1px solid;
 	line-height:100px;
+	border-bottom:1px solid;
+}
+.mcs-brands-page .brand-image .no-image{
+	border:none;
+	height:100%;
 }
 .mcs-brands-page .brand-image img{
 	max-width:95%;
@@ -26,7 +40,8 @@
 	margin:auto;
 	display:inline-block;
 }
-
 .mcs-brands-page .brand-name{
-	
+}
+.mcs-brands-page .brand-url{
+	min-height:1.5em;	
 }
