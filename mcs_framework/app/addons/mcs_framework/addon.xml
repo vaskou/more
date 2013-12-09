@@ -162,6 +162,11 @@
 		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
 		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
 		<item lang="en" id="mcs_alpha_menu">More CS-Cart Alpha Menu</item>
+		<item lang="en" id="mcs_brand_scroller">More CS-Cart Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller_description">Scroller with selected brands</item>
+		<item lang="en" id="add_brands">Add Brands</item>
+		<item lang="en" id="add_brands_and_close">Add Brands and close</item>
 
 		<item lang="en" id="mcs_mode">Mode</item>
 		<item lang="en" id="mcs_speed">Speed</item>
