@@ -57,31 +57,6 @@
                     </item>
 				</items>
             </section>
-			<section id="mcs_button_icons">
-                <name>Button Icons</name>
-                <items>
-                    <item id="mcs_button_icons_add_to_cart">
-                        <type>input</type>
-                        <name>"Add To Cart" button icon</name>
-						<default_value>icon-im-cart</default_value>
-                    </item>
-					<item id="mcs_button_icons_add_to_compare_list">
-                        <type>input</type>
-                        <name>"Add To Compare List" button icon</name>
-						<default_value>icon-im-bars-3</default_value>
-                    </item>
-					<item id="mcs_button_icons_add_to_wishlist">
-                        <type>input</type>
-                        <name>"Add To Wishlist" button icon</name>
-						<default_value>icon-im-heart-4</default_value>
-                    </item>
-					<item id="mcs_button_icons_select_options">
-                        <type>input</type>
-                        <name>"Select Options" button icon</name>
-						<default_value>icon-im-cart</default_value>
-                    </item>
-				</items>
-            </section>
 			<section id="mcs_product_tabs">
                 <name>Tabs</name>       
                 <items>
@@ -115,6 +90,7 @@
                         <name>Change tab on mouse hover</name>
 						<default_value>N</default_value>
                     </item>
+					
 					<item id="mcs_accordion_block_header">
 						<type>header</type>
 						<name>Block grouping with accordion</name>
@@ -129,6 +105,10 @@
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
+					<item id="mcs_font_icons_header">
+						<type>header</type>
+						<name>Font Icons Libraries</name>
+					</item>
                     <item id="mcs_fontawesome">
                         <type>checkbox</type>
                         <name>Font-Awesome</name>
@@ -138,6 +118,46 @@
                         <type>checkbox</type>
                         <name>Icomoon</name>
 						<default_value>Y</default_value>
+                    </item>
+					
+					<item id="mcs_button_icons_header">
+						<type>header</type>
+						<name>Button Icons</name>
+					</item>
+					<item id="mcs_button_icons_add_to_cart">
+                        <type>input</type>
+                        <name>"Add To Cart" button icon</name>
+						<default_value>icon-im-cart</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_compare_list">
+                        <type>input</type>
+                        <name>"Add To Compare List" button icon</name>
+						<default_value>icon-im-bars-3</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_wishlist">
+                        <type>input</type>
+                        <name>"Add To Wishlist" button icon</name>
+						<default_value>icon-im-heart-4</default_value>
+                    </item>
+					<item id="mcs_button_icons_select_options">
+                        <type>input</type>
+                        <name>"Select Options" button icon</name>
+						<default_value>icon-im-cart</default_value>
+                    </item>
+					
+					<item id="mcs_block_icons_header">
+						<type>header</type>
+						<name>Button Icons</name>
+					</item>
+					<item id="mcs_block_icons_cart_block">
+                        <type>input</type>
+                        <name>Cart block icon</name>
+						<default_value>icon-im-cart</default_value>
+                    </item>
+					<item id="mcs_block_icons_my_account_block">
+                        <type>input</type>
+                        <name>My Account block icon</name>
+						<default_value>icon-im-user</default_value>
                     </item>
 				</items>
             </section>
@@ -162,6 +182,7 @@
 		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
 		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
 		<item lang="en" id="mcs_alpha_menu">More CS-Cart Alpha Menu</item>
+		<item lang="en" id="mcs_alpha_grid">More CS-Cart Alpha Grid</item>
 		<item lang="en" id="mcs_brand_scroller">More CS-Cart Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller_description">Scroller with selected brands</item>

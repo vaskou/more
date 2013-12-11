@@ -18,7 +18,10 @@ if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 if ($mode == 'picker') {
 	
-	list($brands, ) = fn_get_brands();
+	$params['feature_id']=18;
+	$params['feature_type']="E";
+    $params['get_images'] = true;
+	list($brands, ) = fn_get_brands($params);
 
     Registry::get('view')->assign('brands',$brands);
     Registry::get('view')->display('addons/mcs_framework/pickers/brands/picker_contents.tpl');

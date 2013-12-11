@@ -1,9 +1,12 @@
+{style src="addons/my_changes/mcs_general_styles.css"}
 {style src="addons/my_changes/mcs_brands_page.css"}
 {style src="addons/my_changes/mcs_brands_page.less"}
+{style src="addons/my_changes/header/mcs_top_panel.css"}
 {style src="addons/my_changes/header/mcs_header.less"}
 {style src="addons/my_changes/header/mcs_top_menu.less"}
 {style src="addons/my_changes/header/mcs_search_box.css"}
 {style src="addons/my_changes/homepage/mcs_main_content.css"}
+{style src="addons/my_changes/homepage/mcs_main_content.less"}
 {style src="addons/my_changes/homepage/mcs_slider.css"}
 {style src="addons/my_changes/homepage/mcs_slider.less"}
 {style src="addons/my_changes/homepage/mcs_alpha_scroller.css"}

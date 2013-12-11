@@ -1,4 +1,5 @@
 {** block-description:mcs_brand_scroller **}
+
 {if $items}
 <div class="mcs-brand-scroller-{$block.snapping_id}">
     <ul id="brands_{$block.snapping_id}">

@@ -1,0 +1,8 @@
+.minicart-title{
+	padding-left:0;
+}
+
+.popup-title.unlogged a, 
+.popup-title.logged a{
+	padding-left:7px;
+}

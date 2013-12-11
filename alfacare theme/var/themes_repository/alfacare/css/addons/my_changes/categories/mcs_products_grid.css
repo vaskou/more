@@ -121,7 +121,7 @@
 	float:none;
 	width:auto;
 	text-align:center;
-	margin-top:10px;
+	padding-top:10px;
 }
 .mcs_alpha_grid .add_cart_button span{
 	width:auto;	
@@ -130,7 +130,8 @@
 	position:relative;
 	margin-top:0;
 }
-.mcs_alpha_grid .button-wrap-right{
+.mcs_alpha_grid .button-wrap-right,
+.mcs_alpha_grid .mcs-wishlist > div > span{
 	margin:0;
 	padding:10px;
 	color:#fff;
@@ -138,7 +139,8 @@
 
 .mcs_alpha_grid .button a,
 .mcs_alpha_grid .button-action a,
-.mcs_alpha_grid .button-submit-action input{
+.mcs_alpha_grid .button-submit-action input,
+.mcs_alpha_grid .mcs-wishlist > div span a{
 	color:#fff;
 	width:auto;
 	padding-left:0;
@@ -156,7 +158,8 @@
 .mcs_alpha_grid .buttons-list-wrapper .full_width .text-button,
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button a,
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button-action a,
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input{
+.mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input,
+.mcs_alpha_grid .buttons-list-wrapper .full_width.mcs-wishlist > div span a{
 	padding-left:0;
 	width:auto;			/*Make it 80% when text is too long*/
 }

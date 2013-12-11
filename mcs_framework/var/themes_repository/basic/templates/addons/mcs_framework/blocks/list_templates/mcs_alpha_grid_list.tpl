@@ -159,7 +159,7 @@
                             {if $settings.Appearance.enable_quick_view == 'Y'}
                                 {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
                             {/if}
-                            <div class="add_cart_button {if $settings.Appearance.enable_quick_view == 'N'}full_width{/if}">
+                            <div class="add_cart_button {if $settings.Appearance.enable_quick_view == 'N'}full_width{/if} {if $is_wishlist}mcs-wishlist{/if}">
                             {if $show_add_to_cart}
                                 {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
                                 {$smarty.capture.$add_to_cart nofilter}

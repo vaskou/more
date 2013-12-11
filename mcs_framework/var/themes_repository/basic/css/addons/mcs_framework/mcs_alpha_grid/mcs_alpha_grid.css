@@ -181,17 +181,10 @@
 .mcs_alpha_grid .button-wrap-right:hover a{
 	margin:0;
 }
-.mcs_alpha_grid .button a{
-	margin:0;
-	text-transform:none;
-	text-shadow:none !important;
-}
-.mcs_alpha_grid .button-action a{
-	margin:0;
-	text-transform:none;
-	text-shadow:none !important;
-}
-.mcs_alpha_grid .button-submit-action input{
+.mcs_alpha_grid .button a,
+.mcs_alpha_grid .button-action a,
+.mcs_alpha_grid .button-submit-action input,
+.mcs_alpha_grid .mcs-wishlist > div span a{
 	margin:0;
 	text-transform:none;
 	text-shadow:none !important;
@@ -218,7 +211,8 @@
 	border-top-color:#e1e1e1;
 	padding-bottom:2px !important;
 }
-.mcs_alpha_grid .add-buttons-wrap a:hover{
+.mcs_alpha_grid .add-buttons-wrap a:hover,
+.mcs_alpha_grid .bottom_buttons a:hover{
 	text-decoration:none;
 }
 .mcs_alpha_grid .add-to-wish,
@@ -280,7 +274,9 @@
 	margin-right:2px;
 	display:inline-block;
 }
-.mcs_alpha_grid .button-wrap-right{
+.mcs_alpha_grid .button-wrap-right,
+.mcs_alpha_grid .mcs-wishlist > div > span{
+	display:inline-block;
 	position:relative;
 	margin-top:10px;
 	white-space:nowrap;
@@ -288,7 +284,8 @@
 
 .mcs_alpha_grid .button a,
 .mcs_alpha_grid .button-action a,
-.mcs_alpha_grid .button-submit-action input{
+.mcs_alpha_grid .button-submit-action input,
+.mcs_alpha_grid .mcs-wishlist > div span a{
 	width:80%;
 	white-space:nowrap;
 	overflow:hidden;
@@ -304,7 +301,8 @@
 /*	width:100%;*/
 }
 
-.mcs_alpha_grid .button-wrap-right:hover a{
+.mcs_alpha_grid .button-wrap-right:hover a,
+.mcs_alpha_grid .mcs-wishlist > div span:hover a{
 	margin-top:2px;	
 }
 
@@ -314,7 +312,8 @@
 	width:100%;
 	border:none;	
 }
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button-wrap-right{
+.mcs_alpha_grid .buttons-list-wrapper .full_width .button-wrap-right,
+.mcs_alpha_grid .buttons-list-wrapper .full_width.mcs-wishlist > div > span{
 	text-align:center;
 }
 .mcs_alpha_grid .buttons-list-wrapper .full_width .icon_wrap{
@@ -323,7 +322,8 @@
 .mcs_alpha_grid .buttons-list-wrapper .full_width .text-button,
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button a,
 .mcs_alpha_grid .buttons-list-wrapper .full_width .button-action a,
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input{
+.mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input,
+.mcs_alpha_grid .buttons-list-wrapper .full_width.mcs-wishlist > div span a{
 	text-align:center;
 /*	padding-left:10%;*/
 	width:auto;
@@ -331,4 +331,9 @@
 }
 .mcs_alpha_grid .buttons-list-wrapper .no_top_buttons{
 	border:none;	
+}
+
+/********************Wishlist remove button**************************/
+.mcs_alpha_grid ul.products li.product:hover .remove{
+	visibility:visible;
 }
