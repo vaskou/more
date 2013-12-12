@@ -1,0 +1,27 @@
+.mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
+	i {
+		color: darken(@b, 45%);
+	}
+	color: darken(@b, 45%);
+	background-color:@b;
+}
+.mcs_button_text_color (@b) when (lightness(@b) < 70%) {
+	i {
+		color: lighten(@b, 70%);
+	}
+	color: lighten(@b, 70%);
+	background-color:@b;
+}
+
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
+	padding:10px;
+	.mcs_button_text_color(@menu);
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover{
+	text-decoration:none;
+	.mcs_button_text_color(lighten(@menu, 5%));
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover:active{
+	text-decoration:none;
+	.mcs_button_text_color(darken(@menu, 5%));
+}

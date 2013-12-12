@@ -428,6 +428,16 @@ $schema['mcs_brand_scroller'] = array (
 			),
 		),
 	),
+	'settings'=>array(
+		'mcs_brand_scroller_button'=>array(
+			'type'=>'checkbox',
+			'default_value'=>'Y'
+		),
+		'mcs_brand_scroller_button_icon'=>array(
+			'type'=>'input',
+			'default_value'=>'icon-im-arrow-right-6'
+		)
+	),
     'templates' => array (
 		'addons/mcs_framework/blocks/mcs_brand_scroller.tpl' => array(
 			'settings'=>array(

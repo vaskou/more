@@ -11,3 +11,11 @@ ul.dropdown-multicolumns li .drop i{
 	right:5px;
 	top:10px;	
 }
+
+.dropdown-multicolumns li:hover .dropdown-1column, 
+.dropdown-multicolumns li:hover .dropdown-2columns, 
+.dropdown-multicolumns li:hover .dropdown-3columns, 
+.dropdown-multicolumns li:hover .dropdown-4columns, 
+.dropdown-multicolumns li:hover .dropdown-5columns {
+	left: 0px;
+}

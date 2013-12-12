@@ -27,3 +27,17 @@
 [class^="mcs-brand-scroller-"] .brand-name{
 	
 }
+
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button{
+	text-align:center;
+	margin:10px;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
+	padding:10px;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover{
+	text-decoration:none;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button i{
+	padding-right:5px;
+}

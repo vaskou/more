@@ -14,6 +14,17 @@
 }
 }
 
+.border-image-wrap {
+	border: 1px solid;
+}
+.product-main-info .image-border {
+	border: 1px solid;
+	padding:5px;
+}
+.product-thumbnails{
+	text-align:center;
+}
+
 .value-changer .increase, 
 .value-changer .decrease{
 	line-height:10px;

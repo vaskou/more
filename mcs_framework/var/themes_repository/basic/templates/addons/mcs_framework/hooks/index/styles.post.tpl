@@ -58,4 +58,5 @@
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.css"}
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.less"}
 {style src="addons/mcs_framework/mcs_brand_scroller.css"}
+{style src="addons/mcs_framework/mcs_brand_scroller.less"}
 {style src="addons/mcs_framework/mcs_brands_page.css"}

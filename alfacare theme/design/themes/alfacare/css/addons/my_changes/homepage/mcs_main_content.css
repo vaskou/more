@@ -2,10 +2,22 @@
 	max-width:100% !important;
 	padding:0;
 }
+.mcs-main-page .mainbox-container{
+	margin-bottom:20px;
+}
+.mcs-main-page .mainbox-title{
+	text-align:center;
+}
+.mcs-main-page .mainbox-title span{
+	font-size:26px !important;
+	font-weight:bold !important;
+	color:#444;
+}
+
 .mcs-homepage-cta-grid{
 	margin-top:-150px !important;
-	z-index:2999;
 	position:relative;
+	margin-bottom:20px !important;
 }
 .mcs-homepage-cta{
 	margin: 10px;

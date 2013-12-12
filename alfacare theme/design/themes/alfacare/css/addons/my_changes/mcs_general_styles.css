@@ -13,3 +13,30 @@
 	max-width:1200px !important;
 	margin:auto !important;
 }
+
+.breadcrumbs span{
+	color:#444 !important;
+	vertical-align:middle;
+}
+.breadcrumbs .breadcrumbs-icon{
+	font-size:25px;
+	display:inline-block;
+	color:#444;
+}
+.breadcrumbs i{
+	display:none;
+}
+.breadcrumbs a{
+	vertical-align:middle;	
+}
+.breadcrumbs a:after{
+	content:"/";
+	margin-left:5px;
+	font-size:15px;
+	display:inline-block;
+}
+
+.mainbox-title span{
+	font-size:300% !important;
+	font-weight:normal !important;
+}

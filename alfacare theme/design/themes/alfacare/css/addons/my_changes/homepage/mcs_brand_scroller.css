@@ -23,3 +23,7 @@
 [class^="mcs-brand-scroller-"] .brand-name:hover{
 	text-decoration:underline;
 }
+
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
+	font-size:18px;
+}

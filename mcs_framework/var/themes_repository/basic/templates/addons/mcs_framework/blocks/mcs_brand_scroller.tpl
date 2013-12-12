@@ -27,6 +27,12 @@
         {assign var="mcs_prevSelector" value="#slider-prev-{$block.snapping_id}"}
     {/if}
     
+    {if $block.properties.mcs_brand_scroller_button=='Y'}
+    	<div class="mcs-brand-scroller-button">
+    		<a href="index.php?dispatch=product_features.view_all&filter_id=10"><i class="{$block.properties.mcs_brand_scroller_button_icon}"></i>{__("all_brands")}</a>
+	    </div>
+    {/if}
+    
     {assign var="mcs_easings" value=['linear','ease','ease-in','ease-out','ease-in-out']}
     {$mcs_useCSS='false'}
     {foreach from=$mcs_easings item=easing}
