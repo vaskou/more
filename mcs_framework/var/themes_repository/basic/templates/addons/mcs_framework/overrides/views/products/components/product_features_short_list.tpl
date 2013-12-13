@@ -1,7 +1,15 @@
 {function name="feature_value"}
 {strip}
 {if $feature.features_hash && $feature.feature_type == "E"}
-    <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
+    <span class="brand-image">
+        <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
+            {assign var=variant_data value=$feature.variant_id|fn_get_product_feature_variant}
+            {include file="common/image.tpl" images=$variant_data.image_pair}
+        </a>
+    </span>
+    <span class="brand-name">
+        {$feature.description}:
+        <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
 {/if}
 {if $feature.prefix}{$feature.prefix}{/if}
 {if $feature.feature_type == "D"}
@@ -21,7 +29,8 @@
 {/if}
 {if $feature.suffix}{$feature.suffix}{/if}
 {if $feature.feature_type == "E" && $feature.features_hash}
-    </a>
+    	</a>
+    </span>
 {/if}
 {/strip}
 {/function}
@@ -32,7 +41,7 @@
         {if $feature.feature_type == "D" || $feature.feature_type == "O" || $feature.feature_type == "N"}
             {$feature.description nofilter}: 
         {/if}
-        {feature_value feature=$feature}{if !$smarty.foreach.features_list.last}, {/if}
+        {feature_value feature=$feature}{if !$smarty.foreach.features_list.last}{if $feature.feature_type != "E"}, {/if}{/if}
     {/foreach}
 {if !$no_container}</p>{/if}
 {/strip}

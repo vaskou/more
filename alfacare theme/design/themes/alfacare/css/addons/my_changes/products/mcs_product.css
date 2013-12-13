@@ -25,6 +25,11 @@
 	text-align:center;
 }
 
+.product-info .brand-image,
+.product-info .brand-name{
+	display:block;
+}
+
 .value-changer .increase, 
 .value-changer .decrease{
 	line-height:10px;

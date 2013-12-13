@@ -1,3 +1,4 @@
+{style src="addons/mcs_framework/resets/button_reset.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 
 {if $addons.mcs_framework.mcs_fontawesome=='Y'}
@@ -50,7 +51,6 @@
 
 {style src="addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.css"}
-{style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.less"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.less"}
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.css"}
@@ -60,3 +60,4 @@
 {style src="addons/mcs_framework/mcs_brand_scroller.css"}
 {style src="addons/mcs_framework/mcs_brand_scroller.less"}
 {style src="addons/mcs_framework/mcs_brands_page.css"}
+{style src="addons/mcs_framework/greek_fonts.less"}

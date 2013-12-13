@@ -80,55 +80,35 @@
 .mcs_alpha_grid .add-buttons-wrap{
 	height:auto;
 	min-height:3em;
-	border:none;
-	padding:0px !important;
 	text-align:center;
 }
 .mcs_alpha_grid .add-to-wish,
 .mcs_alpha_grid .add-to-compare{
-	width:auto;
-	margin:0px !important;
 	text-align:center;
-}
-.mcs_alpha_grid .add-to-wish{
-	float:none;
-	border:none;
-}
-.mcs_alpha_grid .add-to-compare{
-	float:none;
+	white-space:nowrap;
 }
 .mcs_alpha_grid .add-buttons-wrap .text-button{
 	display:inline-block;
-	width:auto; 			/*Make it 80% when text is too long*/
-	padding-left:0;
+	width:auto; 			/*Make it 80% when text is too long else auto*/
+	padding:0;
 	text-align:center;
-}
-.mcs_alpha_grid .bottom_buttons{
-	padding:0px;	
-	border:none;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	vertical-align:middle;
+	font-size:90% !important;
 }
 .mcs_alpha_grid .quick-view{
-	float:none;
-	width:auto;
 	height:auto;
 	text-align:center;
-	margin-top:10px;
-}
-.mcs_alpha_grid .quick-view a{
-	border:none;
 }
 .mcs_alpha_grid .add_cart_button{
-	float:none;
-	width:auto;
 	text-align:center;
 	padding-top:10px;
 }
-.mcs_alpha_grid .add_cart_button span{
-	width:auto;	
-}
+
 .mcs_alpha_grid .icon_wrap{
-	position:relative;
-	margin-top:0;
+	vertical-align:middle;
 }
 .mcs_alpha_grid .button-wrap-right,
 .mcs_alpha_grid .mcs-wishlist > div > span{
@@ -143,23 +123,18 @@
 .mcs_alpha_grid .mcs-wishlist > div span a{
 	color:#fff;
 	width:auto;
-	padding-left:0;
+	margin-left:1px;
 	text-align:left;
-	margin-top:0;
 	display:inline !important;
 	font-size:13px;
 	font-weight:bold;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:0;
+	vertical-align:middle;
 }
 
-.mcs_alpha_grid .button-wrap-right:hover a{
-	margin-top:2px;	
-}
-
-.mcs_alpha_grid .buttons-list-wrapper .full_width .text-button,
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button a,
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button-action a,
-.mcs_alpha_grid .buttons-list-wrapper .full_width .button-submit-action input,
-.mcs_alpha_grid .buttons-list-wrapper .full_width.mcs-wishlist > div span a{
-	padding-left:0;
-	width:auto;			/*Make it 80% when text is too long*/
+.mcs_alpha_grid .button:hover a{
+	margin-left:1px;
 }

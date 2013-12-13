@@ -19,19 +19,19 @@
 {if $but_name && $but_role != "text" && $but_role != "act" && $but_role != "delete"} {* SUBMIT BUTTON *}
     <span {$but_extra} {if $but_id}id="wrap_{$but_id}"{/if} {if $but_css}style="{$but_css}"{/if} class="button-submit{$suffix} button-wrap-left">
     	<span {if $but_css}style="{$but_css}"{/if} class="button-submit{$suffix} button-wrap-right">
-        	<span class="icon_wrap 
+        	<i class="icon_wrap 
             	{if $but_text==__('add_to_cart')}{$addons.mcs_framework.mcs_button_icons_add_to_cart}{/if}
-            "></span>
+            "></i>
             <input {if $but_id}id="{$but_id}"{/if} {if $but_meta}class="{$but_meta}"{/if} type="submit" name="{$but_name}" {if $but_onclick}onclick="{$but_onclick}"{/if} value="{$but_text}"/>
         </span>
     </span>
 
 {elseif $but_role == "text" || $but_role == "act" || $but_role == "edit"} {* TEXT STYLE *}
-	<span class="icon_wrap 
+	<i class="icon_wrap 
         {if $but_text==__("add_to_compare_list")}{$addons.mcs_framework.mcs_button_icons_add_to_compare_list}{/if}
         {if $but_text==__("add_to_wishlist")}{$addons.mcs_framework.mcs_button_icons_add_to_wishlist}{/if}
         {if $but_text==__('add_to_cart')}{$addons.mcs_framework.mcs_button_icons_add_to_cart}{/if}
-    "></span>
+    "></i>
     <a {$but_extra} class="{if $but_meta}{$but_meta} {/if}{if $but_name}cm-submit {/if}text-button{$suffix}"{if $but_id} id="{$but_id}"{/if}{if $but_name} data-ca-dispatch="{$but_name}"{/if}{if $but_href} href="{$but_href|fn_url}"{/if}{if $but_onclick} onclick="{$but_onclick} return false;"{/if}{if $but_target} target="{$but_target}"{/if}{if $but_rel} rel="{$but_rel}"{/if}{if $but_external_click_id} data-ca-external-click-id="{$but_external_click_id}"{/if}{if $but_target_form} data-ca-target-form="{$but_target_form}"{/if}{if $but_target_id} data-ca-target-id="{$but_target_id}"{/if}>{$but_text}</a>
 
 {elseif $but_role == "delete"}
@@ -45,15 +45,15 @@
 
     <span {$but_extra} class="button{$suffix} button-wrap-left" {if $but_id}id="{$but_id}"{/if}>
     	<span class="button{$suffix} button-wrap-right">
-        	<span class="icon_wrap 
+        	<i class="icon_wrap 
             	{if $but_text==__('select_options')}{$addons.mcs_framework.mcs_button_icons_select_options}{/if}
-            "></span>
+            "></i>
             <a {if $but_href}href="{$but_href|fn_url}"{/if}{if $but_onclick} onclick="{$but_onclick} return false;"{/if} {if $but_target}target="{$but_target}"{/if} class="{if $but_meta}{$but_meta} {/if}" {if $but_rel} rel="{$but_rel}"{/if}{if $but_external_click_id} data-ca-external-click-id="{$but_external_click_id}"{/if}{if $but_target_form} data-ca-target-form="{$but_target_form}"{/if}{if $but_target_id} data-ca-target-id="{$but_target_id}"{/if}>{$but_text}</a>
         </span>
     </span>
 {/if}
 
 {*********************************************MCS changes************************************************}
-{*Line     22: added span with class=icon_wrap															*}
-{*Line     30: added span with class=icon_wrap															*}
-{*Line     46: added span with class=icon_wrap															*}
+{*Line     22: added i with class=icon_wrap															*}
+{*Line     30: added i with class=icon_wrap															*}
+{*Line     48: added i with class=icon_wrap															*}

@@ -9,13 +9,17 @@
 	border:1px solid;
 	border-bottom:none;
 }
+.sidebox-wrapper .sidebox-title span{
+	font-weight:normal;
+	font-size:115%;
+}
 .sidebox-wrapper .sidebox-body{
 	padding:5px 15px 10px;
 	border-radius:0;
 }
 .filter-title{
 	border:none;
-	font-size:135%;
+	font-size:125%;
 }
 
 .ui-slider .ui-slider-handle {
