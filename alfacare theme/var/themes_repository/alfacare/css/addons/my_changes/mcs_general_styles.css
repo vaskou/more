@@ -23,13 +23,13 @@
 	display:inline-block;
 	color:#444;
 }
-.breadcrumbs i{
+.breadcrumbs > i{
 	display:none;
 }
 .breadcrumbs a{
 	vertical-align:middle;	
 }
-.breadcrumbs a:after{
+.breadcrumbs > a:after{
 	content:"/";
 	margin-left:5px;
 	font-size:15px;

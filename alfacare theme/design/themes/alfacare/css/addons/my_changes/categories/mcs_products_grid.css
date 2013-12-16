@@ -82,6 +82,9 @@
 	min-height:3em;
 	text-align:center;
 }
+.mcs_alpha_grid .add-to-compare{
+	margin:0 !important;
+}
 .mcs_alpha_grid .add-to-wish,
 .mcs_alpha_grid .add-to-compare{
 	text-align:center;
@@ -97,6 +100,9 @@
 	text-overflow:ellipsis;
 	vertical-align:middle;
 	font-size:90% !important;
+}
+.mcs_alpha_grid .bottom_buttons{
+	padding-top:5px;
 }
 .mcs_alpha_grid .quick-view{
 	height:auto;
@@ -125,7 +131,7 @@
 	width:auto;
 	margin-left:1px;
 	text-align:left;
-	display:inline !important;
+	display:inline-block !important;
 	font-size:13px;
 	font-weight:bold;
 	white-space:nowrap;

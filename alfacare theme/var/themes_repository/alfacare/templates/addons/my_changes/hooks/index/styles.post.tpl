@@ -19,5 +19,6 @@
 {style src="addons/my_changes/categories/mcs_side_menu.less"}
 {style src="addons/my_changes/categories/mcs_sidebox.css"}
 {style src="addons/my_changes/categories/mcs_sidebox.less"}
+{style src="addons/my_changes/categories/mcs_sorting.less"}
 {style src="addons/my_changes/products/mcs_product.css"}
 {style src="addons/my_changes/products/mcs_product.less"}

@@ -20,8 +20,8 @@
     {assign var="cur_number" value=1}
 {/if}
 
-{math equation="16 / x" x=$columns|default:"2" format="%.0f" assign="span_no"}
-{math equation="16 % x" x=$columns|default:"2" format="%.0f" assign="modulus"}
+{math equation="width / x" x=$columns|default:"2" width=$layout_data.width format="%.0f" assign="span_no"}
+{math equation="width % x" x=$columns|default:"2" width=$layout_data.width format="%.0f" assign="modulus"}
 {$i=$columns}
 {script src="js/tygh/product_image_gallery.js"}
 

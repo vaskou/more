@@ -1,11 +1,13 @@
 {function name="feature_value"}
 {strip}
 {if $feature.features_hash && $feature.feature_type == "E"}
+	{assign var=variant_data value=$feature.variant_id|fn_get_product_feature_variant}
     <span class="brand-image">
+    	{if $variant_data.image_pair}
         <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
-            {assign var=variant_data value=$feature.variant_id|fn_get_product_feature_variant}
             {include file="common/image.tpl" images=$variant_data.image_pair}
         </a>
+        {/if}
     </span>
     <span class="brand-name">
         {$feature.description}:

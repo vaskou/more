@@ -20,14 +20,32 @@
 .product-main-info .image-border {
 	border: 1px solid;
 	padding:5px;
+	margin-right:10px;
 }
 .product-thumbnails{
 	text-align:center;
 }
-
+.product-info{
+	padding-left:10px;
+}
 .product-info .brand-image,
 .product-info .brand-name{
 	display:block;
+	margin-bottom:5px;
+}
+.product-info .brand-image{
+	height:50px;
+}
+.product-info .brand-image img{
+	padding:5px;
+	background-color:#fff;
+	border:1px solid;
+	max-height:35px;
+	width:auto;	
+}
+
+.product-info .brand-name a{
+	margin-left:5px;
 }
 
 .value-changer .increase, 
@@ -102,4 +120,10 @@
 }
 .tabs-content .control-group:last-child{
 	border:none;
+}
+
+@media (max-width:767px){
+	.image-wrap{
+		float:none;
+	}
 }

@@ -1,32 +1,26 @@
-.button_icon (@b) when (lightness(@b) >= 30%) {
-	.icon_wrap {
-		color: darken(@b, 45%);
-	}
-}
-.button_icon (@b) when (lightness(@b) < 70%) {
-	.icon_wrap {
-		color: lighten(@b, 70%);
-	}
-}
 
 .product-main-info h1.mainbox-title{
 	color: darken(@menu, 5%);
 }
 
-.border-image-wrap {
-	border-color: lighten(@base,25%);
-}
 .product-main-info .image-border {
 	border-color: lighten(@base,25%);
 }
-.product-main-info .button-submit-big.button-wrap-left{
-	.border-radius (0px);
-	border:none;
+.product-main-info .image-border:hover {
+	.drop-shadow(0, 0, 30px, 0, 0.3);
 }
-.product-main-info .button-submit-big.button-wrap-left {
-	.gradient (@primary_button, @primary_button);
-	.inner-shadow (0, 0, 0, 0, 0);
+.border-image-wrap {
+	border-color: lighten(@base,25%);
 }
+
+.product-info .brand-image img{
+	border-color: lighten(@base,25%);
+}
+
+.product-info .brand-image img:hover{
+	.drop-shadow(0, 0, 15px, 0, 0.3);
+}
+
 .product-main-info .button-submit-big.button-wrap-left:hover{
 	.gradient (@menu, @menu);
 	.inner-shadow (0, 0, 0, 0, 0);
@@ -35,9 +29,7 @@
 	.gradient (darken(@menu,5%), darken(@menu,5%));
 	.inner-shadow-dark (0, 0, 0, 0, 0);
 }
-.product-main-info .button-submit-big.button-wrap-right{
-	.button_icon (@primary_button);
-}
+
 .product-main-info .add-to-wish,
 .product-main-info .add-to-compare{
 	color:@links;
