@@ -27,3 +27,4 @@
 
 {script src="js/addons/mcs_framework/mcs_alpha_grid/jquery.slides.js"}
 {script src="js/addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.js"}
+{script src="js/addons/mcs_framework/mcs_submenu_visible.js"}

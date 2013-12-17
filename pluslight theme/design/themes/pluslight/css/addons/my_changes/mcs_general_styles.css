@@ -1,0 +1,37 @@
+*{
+	text-transform:none !important;
+}
+
+.mcs-centered{
+	float:none !important;
+	max-width:960px !important;
+	margin:auto !important;
+}
+
+.mcs-expanded{
+	float:none !important;
+	max-width:1200px !important;
+	margin:auto !important;
+}
+.tygh-top-panel > [class*="container"]{
+	padding:0;
+}
+.tygh-header > [class*="container"],
+.tygh-content > [class*="container"],
+.tygh-footer > [class*="container"]{
+	border:1px solid;
+	padding:0;
+}
+.tygh-header > [class*="container"],
+.tygh-content > [class*="container"]{
+	border-bottom:none;
+}
+
+.button-submit-action.button-wrap-left, 
+.button-submit.button-wrap-left, 
+.button-action.button-wrap-left, 
+.button.button-wrap-left, 
+.button-submit-big.button-wrap-left, 
+.button-big.button-wrap-left {
+	border: none;
+}

@@ -63,3 +63,4 @@
 {style src="addons/mcs_framework/mcs_brand_scroller.less"}
 {style src="addons/mcs_framework/mcs_brands_page.css"}
 {style src="addons/mcs_framework/greek_fonts.less"}
+{style src="addons/mcs_framework/mcs_submenu_visible.css"}

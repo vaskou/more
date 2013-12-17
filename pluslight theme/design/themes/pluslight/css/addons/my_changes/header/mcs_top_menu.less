@@ -1,0 +1,62 @@
+ul.dropdown-multicolumns{
+	background:none;
+	background-color:@menu;
+	border-color:lighten(@base, 33%);
+}
+
+ul.dropdown-multicolumns:hover{
+	background-color:lighten(@base, 45%);
+	transition:background 1s;
+	-o-transition:background 1s;
+	-moz-transition:background 1s;
+	-webkit-transition:background 1s;
+}
+
+ul.dropdown-multicolumns > li.active {
+	background-color: transparent;
+	.border-radius(0px);
+}
+
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth,
+ul.dropdown-multicolumns {
+	.border-radius(0px);
+	border-color:lighten(@base, 33%);
+}
+
+.dropdown-1column, 
+.dropdown-2columns, 
+.dropdown-3columns, 
+.dropdown-4columns,
+.dropdown-5columns,
+.dropdown-fullwidth{
+	.drop-shadow (0, 2px, 2px, 0, 0.3);
+}
+
+.dropdown-multicolumns > li > div{
+	background-color:lighten(@base, 45%);
+}
+
+.dropdown-multicolumns li .drop-left{
+	.border-radius(0px);
+}
+ul.dropdown-multicolumns > li:hover {
+	.border-radius(0px);
+	background-color:transparent;
+}
+
+ul.dropdown-multicolumns li a {
+	color: @menu_links;
+}
+ul.dropdown-multicolumns li.active a,
+ul.dropdown-multicolumns li:hover a {
+	color: @decorative;
+}
+
+ul.dropdown-multicolumns h3 {
+	color: @menu_links;
+}
