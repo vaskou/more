@@ -1,0 +1,119 @@
+[id^="mcs_social_links_"]{
+	width:100%;
+	display:block;
+}
+[id^="mcs_social_links_"].center{
+	text-align:center;
+}
+[id^="mcs_social_links_"].left{
+	text-align:left;
+}
+[id^="mcs_social_links_"].right{
+	text-align:right;
+}
+[id^="mcs_social_links_"].vertical{
+	text-align:center;
+}
+[id^="mcs_social_links_"].vertical a{
+	display:block;
+	margin:12px 0px;
+}
+[id^="mcs_social_links_"].vertical i{
+	display:inline-block;
+}
+
+[id^="mcs_social_links_"] a{
+	display:inline-block;
+	padding:1.25em 0px;
+	text-align:center;
+}
+[id^="mcs_social_links_"].icon-4x a{
+	padding:1.5em 0px;
+}
+
+[id^="mcs_social_links_"] a i{
+	text-decoration:none;
+}
+
+[id^="mcs_social_links_"] .icon-fa-facebook.icon-border.icon-default,
+[id^="mcs_social_links_"] .icon-fa-facebook.icon-border.icon-large,
+[id^="mcs_social_links_"] .icon-fa-facebook.icon-border.icon-2x,
+[id^="mcs_social_links_"] .icon-fa-facebook.icon-border.icon-3x,
+[id^="mcs_social_links_"] .icon-fa-facebook.icon-border.icon-4x
+{
+	padding: .2em .45em .15em!important;
+}
+
+[id^="mcs_social_links_"] .icon-fa-tumblr.icon-border.icon-default,
+[id^="mcs_social_links_"] .icon-fa-tumblr.icon-border.icon-large,
+[id^="mcs_social_links_"] .icon-fa-tumblr.icon-border.icon-2x,
+[id^="mcs_social_links_"] .icon-fa-tumblr.icon-border.icon-3x,
+[id^="mcs_social_links_"] .icon-fa-tumblr.icon-border.icon-4x
+{
+	padding: .2em .40em .15em!important;
+}
+
+[id^="mcs_social_links_"] .icon-fa-envelope.icon-border.icon-default,
+[id^="mcs_social_links_"] .icon-fa-envelope.icon-border.icon-large,
+[id^="mcs_social_links_"] .icon-fa-envelope.icon-border.icon-2x,
+[id^="mcs_social_links_"] .icon-fa-envelope.icon-border.icon-3x,
+[id^="mcs_social_links_"] .icon-fa-envelope.icon-border.icon-4x
+{
+	padding: .2em 0.17em .15em!important;
+}
+
+[id^="mcs_social_links_"] a i{
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+[id^="mcs_social_links_"].shadow a i{
+	
+	-moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+	-ms-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+}
+
+[id^="mcs_social_links_"].circle a i{
+	
+	-moz-border-radius: 50% !important;
+	-webkit-border-radius: 50% !important;
+	-o-border-radius: 50% !important;
+	-ms-border-radius: 50% !important;
+	border-radius: 50% !important;
+}
+
+[id^="mcs_social_links_"].white i{color: #fff}
+
+[id^="mcs_social_links_"] i{color: #444}
+[id^="mcs_social_links_"] i:hover{color: #fff}
+
+[id^="mcs_social_links_"].color i.icon-fa-rss{color: #fe9900}
+[id^="mcs_social_links_"] i.icon-fa-rss:hover{background-color: #fe9900}
+[id^="mcs_social_links_"].color i.icon-fa-twitter{color: #48c4d2}
+[id^="mcs_social_links_"] i.icon-fa-twitter:hover{background-color: #48c4d2}
+[id^="mcs_social_links_"].color i.icon-fa-facebook{color: #3b5998}
+[id^="mcs_social_links_"] i.icon-fa-facebook:hover{background-color: #3b5998}
+[id^="mcs_social_links_"].color i.icon-fa-google-plus{color: #d94a39}
+[id^="mcs_social_links_"] i.icon-fa-google-plus:hover{background-color: #d94a39}
+[id^="mcs_social_links_"].color i.icon-fa-linkedin{color: #71b2d0}
+[id^="mcs_social_links_"] i.icon-fa-linkedin:hover{background-color: #71b2d0}
+[id^="mcs_social_links_"].color i.icon-fa-dribbble{color: #ef5b92}
+[id^="mcs_social_links_"] i.icon-fa-dribbble:hover{background-color: #ef5b92}
+[id^="mcs_social_links_"].color i.icon-fa-tumblr{color: #3a5976}
+[id^="mcs_social_links_"] i.icon-fa-tumblr:hover{background-color: #3a5976}
+[id^="mcs_social_links_"].color i.icon-fa-instagram{color: #5d3d35}
+[id^="mcs_social_links_"] i.icon-fa-instagram:hover{background-color: #5d3d35}
+[id^="mcs_social_links_"].color i.icon-fa-youtube{color: #f45750}
+[id^="mcs_social_links_"] i.icon-fa-youtube:hover{background-color: #f45750}
+[id^="mcs_social_links_"].color i.icon-fa-pinterest{color: #c9232f}
+[id^="mcs_social_links_"] i.icon-fa-pinterest:hover{background-color: #c9232f}
+[id^="mcs_social_links_"].color i.icon-fa-envelope{color: #1f6f8a}
+[id^="mcs_social_links_"] i.icon-fa-envelope:hover{background-color: #1f6f8a}
+
+[id^="mcs_social_links_"].color i:hover{color: #fff;}

@@ -35,10 +35,21 @@
 			<section id="mcs_product_categories">
                 <name>Product Categories</name>
                 <items>
-                    <item id="mcs_product_categories_hidden_info">
-                        <type>checkbox</type>
-                        <name>Check to hide info and show on hover</name>
-						<default_value>N</default_value>
+                	<item id="mcs_product_categories_hidden_info">
+                        <type>selectbox</type>
+                        <name>Select how to show hidden info on hover</name>
+						<variants>
+							<item id="mcs_none">
+                                <name>None</name>
+                            </item>
+							<item id="mcs_show">
+                                <name>Show</name>
+                            </item>
+                            <item id="mcs_slide">
+                                <name>Slide</name>
+                            </item>
+						</variants>
+						<default_value>mcs_none</default_value>
                     </item>
 					<item id="mcs_product_categories_features">
                         <type>checkbox</type>
@@ -171,6 +182,121 @@
                     </item>
 				</items>
             </section>
+			 <section id="mcs_social_links">
+                <name>Social links</name>
+                <items>
+                    <item id="mcs_rss">
+                        <type>input</type>
+                        <name>RSS Feed</name>
+                        <default_value>http://news.google.com/?output=rss</default_value>
+                        <tooltip>Enter your rss feed url here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">RSS Feed</item>
+                            <item lang="EN" for="tooltip">Enter your rss feed url here.</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_twitter">
+                        <type>input</type>
+                        <name>Twitter URL</name>
+                        <default_value>http://www.twitter.com</default_value>
+                        <tooltip>Enter your Twitter URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Twitter URL</item>
+                            <item lang="EN" for="tooltip">Enter your Twitter URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_facebook">
+                        <type>input</type>
+                        <name>Facebook Profile</name>
+                        <default_value>http://www.facebook.com</default_value>
+                        <tooltip>Enter your Facebook Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Facebook Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Facebook Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_googleplus">
+                        <type>input</type>
+                        <name>Google + Profile</name>
+                        <default_value>https://plus.google.com</default_value>
+                        <tooltip>Enter your Google + Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Google + Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Google + Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_linkedin">
+                        <type>input</type>
+                        <name>LinkedIn Profile</name>
+                        <default_value>http://www.linkedin.com/</default_value>
+                        <tooltip>Enter your LinkedIn Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">LinkedIn Profile</item>
+                            <item lang="EN" for="tooltip">Enter your LinkedIn Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_dribbble">
+                        <type>input</type>
+                        <name>Dribbble Profile URL</name>
+                        <default_value>http://dribbble.com/</default_value>
+                        <tooltip>Enter your Dribbble Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Dribbble Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Dribbble Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_tumblr">
+                        <type>input</type>
+                        <name>Tumblr Profile URL</name>
+                        <default_value>https://www.tumblr.com/</default_value>
+                        <tooltip>Enter your Tumblr Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Tumblr Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Tumblr Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_instagram">
+                        <type>input</type>
+                        <name>Instagram Profile URL</name>
+                        <default_value>http://instagram.com/</default_value>
+                        <tooltip>Enter your Instagram Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Instagram Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Instagram Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_youtube">
+                        <type>input</type>
+                        <name>YouTube Profile URL</name>
+                        <default_value>http://www.youtube.com/</default_value>
+                        <tooltip>Enter your YouTube Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">YouTube Profile</item>
+                            <item lang="EN" for="tooltip">Enter your YouTube Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_pinterest">
+                        <type>input</type>
+                        <name>Pinterest Profile URL</name>
+                        <default_value>https://pinterest.com/</default_value>
+                        <tooltip>Enter your Pinterest Profile URL here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Pinterest Profile</item>
+                            <item lang="EN" for="tooltip">Enter your Pinterest Profile URL here</item>
+                        </translations>
+                    </item>
+                    <item id="mcs_email">
+                        <type>input</type>
+                        <name>Email</name>
+                        <default_value>info@example.com</default_value>
+                        <tooltip>Enter your email address here. Leave blank to disable.</tooltip>
+                        <translations>
+                            <item lang="EN" for="name">Email Address</item>
+                            <item lang="EN" for="tooltip">Enter your email address here</item>
+                        </translations>
+                    </item>
+                </items>
+            </section>
         </sections>
     </settings>
 	<language_variables>
@@ -279,11 +405,29 @@
 		<item lang="en" id="easeInOutBounce">JS Ease-In-Out Bounce</item>
 		<item lang="en" id="visible">Visible</item>
 		<item lang="en" id="short">Short</item>
+
 		<item lang="en" id="hide_features">Hide Features</item>
 		<item lang="en" id="hide_rating">Hide Rating</item>
 		<item lang="en" id="hide_points">Hide Points</item>
 		<item lang="en" id="hide_add_to_wish">Hide add to wishlist button</item>
 		<item lang="en" id="hide_add_to_compare">Hide add to compare button</item>
+		
+		<item lang="en" id="block_mcs_social">More CS-Cart Social</item>
+		<item lang="en" id="block_mcs_social_description">More CS-Cart Social description</item>
+		<item lang="en" id="mcs_social_links">Social links</item>
+        <item lang="en" id="mcs_social_icons_alignment">Social Icons Alignment</item>
+		<item lang="en" id="mcs_social_icons_size">Social Icons Size</item>
+		<item lang="en" id="mcs_social_icons_border">Enable border</item>
+		<item lang="en" id="mcs_social_icons_shadow">Enable shadow</item>
+		<item lang="en" id="mcs_social_icons_circle">Enable circle</item>
+		<item lang="en" id="mcs_social_icons_color">Enable color</item>
+		<item lang="en" id="mcs_social_icons_white">Enable white</item>
+		<item lang="en" id="center">Center</item>
+		<item lang="en" id="Default size">Default size</item>
+		<item lang="en" id="Large size">Large size</item>
+		<item lang="en" id="2x size">2x size</item>
+		<item lang="en" id="3x size">3x size</item>
+		<item lang="en" id="4x size">4x size</item>
 	</language_variables>
 </addon>
 

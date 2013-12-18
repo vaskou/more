@@ -8,7 +8,7 @@
 }
 
 .hover_hide:hover {
-	z-index: 250;
+/*	z-index: 250;*/
 }
 .hover_hide .product-wrapper {
 	background: #fff;

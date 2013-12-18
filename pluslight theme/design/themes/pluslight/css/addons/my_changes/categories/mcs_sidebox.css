@@ -1,0 +1,35 @@
+.sidebox-wrapper{
+	margin:0;
+}
+.sidebox-title {
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	padding:10px 10px 5px;
+}
+
+.sidebox-wrapper .sidebox-title{
+	border-right:1px solid;
+	padding:5px;
+}
+.sidebox-wrapper .sidebox-title span,
+.sidebox-wrapper .sidebox-title a{
+	font-weight:normal;
+	font-size:115%;
+}
+.sidebox-wrapper .sidebox-body{
+	padding:5px;
+	border-radius:0;
+	border-left:none;
+}
+.filter-title{
+	border:none;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 15px;
+	height: 15px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}

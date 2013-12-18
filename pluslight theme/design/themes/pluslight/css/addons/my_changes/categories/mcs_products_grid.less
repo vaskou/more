@@ -1,0 +1,45 @@
+.mcs_alpha_grid ul.products li.product .product_info h3 a {
+	color:@decorative;
+}
+.mcs_alpha_grid ul.products li.product .product-list-field label,
+.mcs_alpha_grid ul.products li.product .product-list-field span{
+	color:lighten(@font,27%);
+}
+.mcs_alpha_grid .add-buttons,
+.mcs_alpha_grid .add-buttons .text-button{
+	color:lighten(@font,27%);
+}
+.mcs_alpha_grid .add-buttons:hover,
+.mcs_alpha_grid .add-buttons:hover .text-button{
+	color:@decorative;	
+}
+
+.mcs_alpha_grid .button-action i,
+.mcs_alpha_grid .button-action a{
+	color:@decorative;
+}
+.mcs_alpha_grid .button-action.button-wrap-left:hover i,
+.mcs_alpha_grid .button-action.button-wrap-left:hover:active i,
+.mcs_alpha_grid .button-action.button-wrap-left:hover a,
+.mcs_alpha_grid .button-action.button-wrap-left:hover:active a{
+	color:#fff;
+}
+.mcs_alpha_grid .mcs-wishlist > div > span {
+	.gradient (@primary_button, @primary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+
+.mcs_alpha_grid .button-action.button-wrap-left{
+	background:transparent;
+}
+
+.mcs_alpha_grid .button-action.button-wrap-left:hover, 
+.mcs_alpha_grid .button-submit-action.button-wrap-left:hover,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover{
+	.gradient (@decorative, @decorative);
+}
+.mcs_alpha_grid .button-action.button-wrap-left:hover:active, 
+.mcs_alpha_grid .button-submit-action.button-wrap-left:hover:active,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover:active{
+	.gradient (darken(@decorative,5%), darken(@decorative,5%));
+}

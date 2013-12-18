@@ -1,0 +1,117 @@
+.categories_view .mainbox-container{
+	padding:15px 15px 0 0;
+}
+.categories_view .mcs_alpha_grid{
+	margin-top:20px;
+}
+.mcs_alpha_grid ul.products li.product .product-wrapper{
+	border:none;
+	padding:5px;
+}
+
+.mcs_alpha_grid ul.products li.product .product-wrapper > form{
+	text-align:center;
+}
+.mcs_alpha_grid ul.products li.product .prod_img {
+	border:none;
+}
+.mcs_alpha_grid ul.products li.product .product_info{
+	padding:5px 0 0 0;
+}
+.mcs_alpha_grid ul.products li.product .product_info h3 a {
+	font-weight: normal;
+}
+.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price,
+.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .no-price{
+	font-size:140% !important;
+}
+.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price-num{
+	font-size:170% !important;
+}
+.mcs_alpha_grid ul.products li.product .product_extra_info{
+	padding:0 0 10px 0;
+}
+.mcs_alpha_grid ul.products li.product .product-meta{
+	padding:0 0 10px 0;	
+}
+
+.mcs_alpha_grid .quick-view {
+	text-align:center;
+}
+
+/*************************** buttons **********************************/
+
+.mcs_alpha_grid .button{
+	width:auto;
+}
+.mcs_alpha_grid .buttons-list-wrapper{
+	height:auto;
+	opacity:1;	
+}
+.mcs_alpha_grid .add-buttons-wrap{
+	height:auto;
+	min-height:3em;
+	text-align:center;
+}
+.mcs_alpha_grid .add-to-compare{
+	margin:0 !important;
+}
+.mcs_alpha_grid .add-to-wish,
+.mcs_alpha_grid .add-to-compare{
+	text-align:center;
+	white-space:nowrap;
+}
+.mcs_alpha_grid .add-buttons-wrap .text-button{
+	display:inline-block;
+	width:auto; 			/*Make it 80% when text is too long else auto*/
+	padding:0;
+	text-align:center;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	vertical-align:middle;
+	font-size:90% !important;
+}
+.mcs_alpha_grid .bottom_buttons{
+	padding-top:5px;
+}
+.mcs_alpha_grid .quick-view{
+	height:auto;
+	text-align:center;
+}
+.mcs_alpha_grid .add_cart_button{
+	text-align:center;
+	padding-top:10px;
+}
+
+.mcs_alpha_grid .icon_wrap{
+	vertical-align:middle;
+}
+.mcs_alpha_grid .button-wrap-right,
+.mcs_alpha_grid .mcs-wishlist > div > span{
+	margin:0;
+	padding:10px;
+	color:#fff;
+}
+
+.mcs_alpha_grid .button a,
+.mcs_alpha_grid .button-action a,
+.mcs_alpha_grid .button-submit-action input,
+.mcs_alpha_grid .mcs-wishlist > div span a{
+	color:#fff;
+	width:auto;
+	margin-left:1px;
+	text-align:left;
+	display:inline-block !important;
+	font-size:13px;
+	font-weight:bold;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:0;
+	vertical-align:middle;
+}
+
+.mcs_alpha_grid .button:hover a{
+	margin-left:1px;
+}

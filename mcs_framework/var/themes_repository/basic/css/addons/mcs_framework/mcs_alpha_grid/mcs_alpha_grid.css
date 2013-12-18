@@ -110,11 +110,15 @@
 	padding-top:5px;
 }
 .mcs_alpha_grid ul.products li.product .product-list-field{
+	padding:0;
 	padding-top:5px;
 }
-.mcs_alpha_grid ul.products li.product .product-list-field *{
+.mcs_alpha_grid ul.products li.product .product-list-field label{
+	margin:0 5px 0 0;
 	padding:0;
-	color:#666;
+}
+.mcs_alpha_grid ul.products li.product .product-list-field span{
+	padding:0;
 }
 
 .mcs_alpha_grid ul.products li.product .product-meta{

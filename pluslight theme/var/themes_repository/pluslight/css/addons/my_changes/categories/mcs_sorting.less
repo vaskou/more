@@ -1,0 +1,37 @@
+.sort-dropdown {
+	.gradient (#fff,#fff);
+}
+.sort-dropdown.open, .sort-dropdown:hover {
+	border-color:lighten(@base,20%);
+	background:none;
+}
+.dropdown-content{
+	.border-radius(0px);
+}
+.views-icons a{
+	border:1px solid;
+	border-color: lighten(@base, 33%);
+}
+.views-icons a:hover{
+	background:none;
+	border-color: lighten(@decorative, 10%);
+}
+.views-icons a:hover i{
+	color: lighten(@decorative, 10%);
+}
+.views-icons .active, 
+.views-icons .active:hover {
+	.gradient (#fff, #fff);
+	border:1px solid;
+	border-color:@decorative;
+}
+.views-icons .active i{
+	color:@decorative;
+}
+
+.popup-content ul.account-info li a:hover, 
+ul.select-list li:hover, 
+.dropdown-content li:hover, 
+.tabs .dropdown-menu li.active {
+	.gradient (lighten(@base,30%), lighten(@base,30%));
+}

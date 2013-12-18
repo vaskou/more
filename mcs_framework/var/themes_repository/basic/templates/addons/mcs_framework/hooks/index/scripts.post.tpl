@@ -7,7 +7,7 @@
 	{script src="js/addons/mcs_framework/mcs_fixed_menu.js"}
 {/if}
 
-{if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
+{if $addons.mcs_framework.mcs_product_categories_hidden_info!='mcs_none'}
 	{script src="js/addons/mcs_framework/mcs_alpha_grid/jquery.hover_hide.js"}
 {/if}
 

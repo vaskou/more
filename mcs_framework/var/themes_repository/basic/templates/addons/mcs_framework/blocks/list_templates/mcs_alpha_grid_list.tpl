@@ -180,7 +180,7 @@
 {/foreach}
 </ul>
 
-{if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
+{if $addons.mcs_framework.mcs_product_categories_hidden_info!='mcs_none'}
 {literal}
 <script>
 $(function(){
@@ -193,7 +193,7 @@ $(function(){
 	});
 	
 	function initBindings(){
-		$('.mcs_alpha_grid .product').hover_hide();
+		$('.mcs_alpha_grid .product').hover_hide({transition:"{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info}{literal}",duration:1200});
 	};	
 });
 </script>

@@ -45,7 +45,7 @@
     </style>
 {/if} 
 
-{if $addons.mcs_framework.mcs_product_categories_hidden_info=='Y'}
+{if $addons.mcs_framework.mcs_product_categories_hidden_info!='mcs_none'}
 	{style src="addons/mcs_framework/mcs_alpha_grid/mcs_hover_hide.css"}
 {/if}
 
@@ -64,3 +64,4 @@
 {style src="addons/mcs_framework/mcs_brands_page.css"}
 {style src="addons/mcs_framework/greek_fonts.less"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
+{style src="addons/mcs_framework/mcs_social_icons.css"}

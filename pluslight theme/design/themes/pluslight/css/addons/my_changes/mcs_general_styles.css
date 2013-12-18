@@ -35,3 +35,12 @@
 .button-big.button-wrap-left {
 	border: none;
 }
+
+.breadcrumbs{
+	margin-bottom:0;
+}
+
+.breadcrumbs .breadcrumbs-icon{
+	font-size:125%;
+	vertical-align:baseline;
+}
