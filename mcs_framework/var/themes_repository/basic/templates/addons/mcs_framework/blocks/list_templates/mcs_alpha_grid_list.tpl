@@ -141,7 +141,7 @@
                     {/if}
                     	<div class="add-buttons-wrap {if $cart_button_exists || (($product.out_of_stock_actions == "S") && ($product.tracking != "O"))} no-margin{/if} {if $top_buttons=='false'} no_top_buttons{/if}">
                             <div class="add-buttons-inner-wrap">
-                            	{if $addons.wishlist.status=="A"}
+                            	{if $addons.wishlist.status=="A" && !$is_wishlist}
                                 	<div id="cart_buttons_block_{$obj_prefix}{$obj_id}" class="add-buttons add-to-wish {if $product.feature_comparison == 'N'}full_width{/if}">
                                         {hook name="products:buy_now"}
                                         {/hook}
@@ -193,7 +193,7 @@ $(function(){
 	});
 	
 	function initBindings(){
-		$('.mcs_alpha_grid .product').hover_hide({transition:"{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info}{literal}",duration:1200});
+		$('.mcs_alpha_grid .product').hover_hide({transition:"{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info}{literal}",duration:{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info_duration}{literal}});
 	};	
 });
 </script>

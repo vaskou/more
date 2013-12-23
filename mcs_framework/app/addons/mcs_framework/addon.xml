@@ -18,7 +18,7 @@
                     <item id="mcs_fixed_menu">
                         <type>checkbox</type>
                         <name>Enable fixed menu</name>
-						<default_value>Y</default_value>
+						<default_value>N</default_value>
                     </item>
 					<item id="mcs_top_menu_show_images">
                         <type>checkbox</type>
@@ -35,12 +35,19 @@
 			<section id="mcs_product_categories">
                 <name>Product Categories</name>
                 <items>
+					<item id="mcs_product_categories_alpha_grid">
+						<type>header</type>
+						<name>More CS-Cart Alpha Grid</name>
+					</item>
                 	<item id="mcs_product_categories_hidden_info">
                         <type>selectbox</type>
                         <name>Select how to show hidden info on hover</name>
 						<variants>
 							<item id="mcs_none">
                                 <name>None</name>
+                            </item>
+							<item id="mcs_fade">
+                                <name>Fade</name>
                             </item>
 							<item id="mcs_show">
                                 <name>Show</name>
@@ -50,6 +57,11 @@
                             </item>
 						</variants>
 						<default_value>mcs_none</default_value>
+                    </item>
+					<item id="mcs_product_categories_hidden_info_duration">
+                        <type>input</type>
+                        <name>Set the duration of the animation</name>
+						<default_value>0</default_value>
                     </item>
 					<item id="mcs_product_categories_features">
                         <type>checkbox</type>

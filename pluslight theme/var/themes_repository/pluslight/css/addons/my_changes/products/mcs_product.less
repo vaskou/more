@@ -1,0 +1,73 @@
+.product-main-info > div:first-child{
+	background-color:lighten(@base,49%);
+}
+.product-main-info h1.mainbox-title{
+	color: @decorative;
+}
+
+.product-main-info .image-wrap {
+	border-color: lighten(@base,33%);
+	background-color:#fff;
+}
+
+.product-main-info .button-submit-big.button-wrap-left:hover{
+	.gradient (@decorative,@decorative);
+}
+.product-main-info .button-submit-big.button-wrap-left:hover:active{
+	.gradient (darken(@decorative,5%), darken(@decorative,5%));
+}
+
+.product-main-info .add-to-wish,
+.product-main-info .add-to-compare{
+	color:@links;
+}
+
+.tabs{
+	border-top-color:lighten(@base,14%);
+	border-bottom-color:lighten(@base,33%);
+}
+
+.tabs ul>li, 
+.tabs ul>li.active{
+	.border-radius(0px);
+}
+
+.tabs ul li,
+.tabs ul.dropdown-menu li {
+	background:transparent;
+}
+.tabs ul li a,
+.tabs ul.dropdown-menu li a,
+.tabs ul li i,
+.tabs ul.dropdown-menu li i{
+	color:#777;
+}
+.tabs ul li:hover,
+.tabs ul.dropdown-menu li:hover {
+	background:transparent;
+}
+.tabs ul li:hover a,
+.tabs ul.dropdown-menu li:hover a,
+.tabs ul li:hover i,
+.tabs ul.dropdown-menu li:hover i{
+	color:#333;
+} 
+.tabs ul li.active,
+.tabs ul.dropdown-menu li.active {
+	background: lighten(@base,14%);
+	.tab_text_color (lighten(@base,14%));
+} 
+
+.tabs ul li.active:hover,
+.tabs ul.dropdown-menu li.active:hover{
+	background:lighten(@base,20%);
+	.tab_text_color (lighten(@base,20%));
+}
+
+.tabs-content{
+	border-color: lighten(@base,30%);
+}
+
+.tabs-content .control-group{
+	border-color: lighten(@base,30%);
+}

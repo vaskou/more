@@ -1,0 +1,137 @@
+@media (min-width:960px){
+.product-fields-wrapper{
+	width:49%;
+	display:inline-block;
+	vertical-align:top;
+	margin-top:0;	
+}
+
+.product-main-info .product-info form > .buttons-container{
+	width:50%;
+	display:inline-block;
+	text-align:right;
+	margin-top:25px;
+}
+}
+
+.product-main-info{
+	margin:0;
+}
+
+.image-wrap{
+	border-right:1px solid;
+}
+.product-main-info .image-border{
+	padding:0;
+	margin:0;
+}
+.border-image-wrap {
+	border:none;
+}
+.product-thumbnails{
+	text-align:center;
+}
+.product-info{
+	padding:15px;
+}
+.product-info .brand-image,
+.product-info .brand-name{
+	display:block;
+	margin-bottom:5px;
+}
+.product-info .brand-image{
+	height:50px;
+}
+.product-info .brand-image img{
+	padding:5px;
+	background-color:transparent;
+	max-height:35px;
+	width:auto;	
+}
+
+.product-info .brand-name a{
+	margin-left:5px;
+}
+
+.value-changer .increase, 
+.value-changer .decrease{
+	line-height:10px;
+	background-color:#fff;	
+}
+
+.product-main-info .buttons-container .buttons-container{
+	margin:0;
+}
+.product-main-info .button-submit-big.button-wrap-right{
+	padding:10px 30px;
+	margin:0;	
+}
+.product-main-info .button-submit-big.button-wrap-right input{
+	padding:0px;
+	font-size:125%;
+	margin-left:0;
+	vertical-align:middle;
+}
+.product-main-info .buttons-container .buttons-container .icon_wrap{
+	font-size:125%;
+	vertical-align:middle;
+}
+.product-main-info .add-buttons-wrap {
+	width: auto;
+	vertical-align: middle;
+	display:block;
+}
+.product-main-info .add-buttons-inner-wrap {
+	margin-top: 5px;
+}
+.product-main-info .add-to-wish,
+.product-main-info .add-to-compare{
+	width:100%;
+	margin:0px !important;
+	white-space:nowrap;
+}
+
+.product-main-info .add-buttons-wrap .text-button{
+	display:inline-block;
+	width:auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding:0;
+	margin:0;
+	vertical-align:middle;
+}
+.product-main-info .add-buttons-wrap .icon_wrap{
+	vertical-align:middle;	
+}
+
+
+.tabs{
+	border-bottom:1px solid;
+	border-top:3px solid;
+	margin-top:0 !important;
+}
+
+.tabs ul>li,
+.tabs ul>li.active{
+	margin:0;
+	border:none;
+}
+
+.tabs-content{
+	padding:15px;
+	background-color:#fff;
+}
+
+.tabs-content .control-group{
+	border-bottom:1px solid;
+}
+.tabs-content .control-group:last-child{
+	border:none;
+}
+
+@media (max-width:767px){
+	.image-wrap{
+		float:none;
+	}
+}

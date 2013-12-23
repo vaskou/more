@@ -7,7 +7,7 @@
 
 .mcs-brands-page .brand-image,
 .mcs-brands-page .brand-image .no-image{
-	background-color:#fff;
+	background-color:transparent;
 }
 .mcs-brands-page .brand-name{
 	display:block;

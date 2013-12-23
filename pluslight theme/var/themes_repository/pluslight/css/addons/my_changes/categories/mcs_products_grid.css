@@ -23,7 +23,7 @@
 }
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price,
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper .no-price{
-	font-size:140% !important;
+	font-size:115% !important;
 }
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price-num{
 	font-size:170% !important;
@@ -91,14 +91,17 @@
 .mcs_alpha_grid .mcs-wishlist > div > span{
 	margin:0;
 	padding:10px;
-	color:#fff;
+//	color:#fff;
+	display:inline-block;
 }
-
+.mcs_alpha_grid .mcs-wishlist > div > span span{
+	padding:0;
+}
 .mcs_alpha_grid .button a,
 .mcs_alpha_grid .button-action a,
 .mcs_alpha_grid .button-submit-action input,
 .mcs_alpha_grid .mcs-wishlist > div span a{
-	color:#fff;
+//	color:#fff;
 	width:auto;
 	margin-left:1px;
 	text-align:left;
@@ -112,6 +115,9 @@
 	vertical-align:middle;
 }
 
+.mcs_alpha_grid .mcs-wishlist div > span:hover a{
+	text-decoration:none;
+}
 .mcs_alpha_grid .button:hover a{
 	margin-left:1px;
 }

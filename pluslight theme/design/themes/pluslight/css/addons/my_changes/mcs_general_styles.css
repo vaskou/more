@@ -13,6 +13,7 @@
 	max-width:1200px !important;
 	margin:auto !important;
 }
+/*********************** homepage *******************************/
 .tygh-top-panel > [class*="container"]{
 	padding:0;
 }
@@ -35,12 +36,44 @@
 .button-big.button-wrap-left {
 	border: none;
 }
-
+/**************************************************************/
 .breadcrumbs{
 	margin-bottom:0;
+	padding-right:111px;
 }
 
 .breadcrumbs .breadcrumbs-icon{
 	font-size:125%;
 	vertical-align:baseline;
+}
+.breadcrumbs .product-switcher{
+	right:6px;
+}
+
+/*********************** mainbox2 *******************************/
+.mainbox2-container{
+	margin:1px 0 0 0;
+	border-bottom:3px solid;
+}
+
+.mainbox2-title{
+	padding:0;
+	border:none;
+}
+
+.mainbox2-title span{
+	display:inline-block;
+	padding:10px;
+	font-size:100%;
+}
+
+.mainbox2-body{
+	padding:20px 0;
+	margin-top:1px;
+}
+/***************************************************************/
+
+/*********************** wishlist ******************************/
+.wishlist_view .main-content-grid{
+	padding:15px;
 }

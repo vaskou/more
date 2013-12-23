@@ -2,6 +2,10 @@ ul.dropdown-multicolumns{
 	background:none;
 	background-color:@menu;
 	border-color:lighten(@base, 33%);
+	transition:background 1s;
+	-o-transition:background 1s;
+	-moz-transition:background 1s;
+	-webkit-transition:background 1s;
 }
 
 ul.dropdown-multicolumns:hover{
@@ -48,7 +52,9 @@ ul.dropdown-multicolumns > li:hover {
 	.border-radius(0px);
 	background-color:transparent;
 }
-
+ul.dropdown-multicolumns >li:before{
+	color:lighten(@base,33%);
+}
 ul.dropdown-multicolumns li a {
 	color: @menu_links;
 }
