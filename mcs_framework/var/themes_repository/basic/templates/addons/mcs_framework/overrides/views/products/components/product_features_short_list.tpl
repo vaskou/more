@@ -48,3 +48,7 @@
 {if !$no_container}</p>{/if}
 {/strip}
 {/if}
+
+{*********************************************MCS changes************************************************}
+{*Line   4-14: added lines 4 to 14																		*}
+{*Line     46: added {if $feature.feature_type != "E"}													*}

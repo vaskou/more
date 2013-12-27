@@ -7,6 +7,10 @@
 	height:auto;
 }
 
+ul.dropdown-multicolumns li {
+	cursor: pointer;
+}
+
 ul.dropdown-multicolumns li .drop i{
 	right:5px;
 	top:10px;	
@@ -18,4 +22,8 @@ ul.dropdown-multicolumns li .drop i{
 .dropdown-multicolumns li:hover .dropdown-4columns, 
 .dropdown-multicolumns li:hover .dropdown-5columns {
 	left: 0px;
+}
+
+ul.dropdown-multicolumns li .dropdown-fullwidth ul{
+	margin:0;
 }

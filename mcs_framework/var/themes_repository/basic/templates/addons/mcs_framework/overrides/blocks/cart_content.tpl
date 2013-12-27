@@ -62,3 +62,7 @@
     </div>
 <!--cart_status_{$dropdown_id}--></div>
 {/hook}
+
+{*********************************************MCS changes************************************************}
+{*Line      8: changed i class																			*}
+{*Line     11: added i class																			*}

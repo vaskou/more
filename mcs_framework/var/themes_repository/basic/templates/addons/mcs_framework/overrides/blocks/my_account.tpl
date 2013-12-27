@@ -59,9 +59,9 @@
 
     <div class="buttons-container">
         {if $auth.user_id}
-            <a href="{"auth.logout?redirect_url=`$return_current_url`"|fn_url}" rel="nofollow" class="account">{__("sign_out")}</a>
+            <a href="{"auth.logout?redirect_url=`$return_current_url`"|fn_url}" rel="nofollow" class="account"><i class="{$addons.mcs_framework.mcs_block_icons_sign_out}"></i>{__("sign_out")}</a>
         {else}
-            <a href="{if $runtime.controller == "auth" && $runtime.mode == "login_form"}{$config.current_url|fn_url}{else}{"auth.login_form?return_url=`$return_current_url`"|fn_url}{/if}" {if $settings.General.secure_auth != "Y"} data-ca-target-id="login_block{$block.snapping_id}" class="cm-dialog-opener cm-dialog-auto-size account"{else}rel="nofollow" class="account"{/if}>{__("sign_in")}</a> | <a href="{"profiles.add"|fn_url}" rel="nofollow" class="account">{__("register")}</a>
+            <a href="{if $runtime.controller == "auth" && $runtime.mode == "login_form"}{$config.current_url|fn_url}{else}{"auth.login_form?return_url=`$return_current_url`"|fn_url}{/if}" {if $settings.General.secure_auth != "Y"} data-ca-target-id="login_block{$block.snapping_id}" class="cm-dialog-opener cm-dialog-auto-size account"{else}rel="nofollow" class="account"{/if}><i class="{$addons.mcs_framework.mcs_block_icons_sign_in}"></i>{__("sign_in")}</a> | <a href="{"profiles.add"|fn_url}" rel="nofollow" class="account"><i class="{$addons.mcs_framework.mcs_block_icons_register}"></i>{__("register")}</a>
             {if $settings.General.secure_auth != "Y"}
                 <div  id="login_block{$block.snapping_id}" class="hidden" title="{__("sign_in")}">
                     <div class="login-popup">
@@ -72,3 +72,8 @@
         {/if}
     </div>
 <!--account_info_{$block.snapping_id}--></div>
+
+{*********************************************MCS changes************************************************}
+{*Line      4: changed i class																			*}
+{*Line     62: added i 																					*}
+{*Line     64: added i 																					*}	

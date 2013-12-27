@@ -57,3 +57,7 @@
 {/if}
 
 {capture name="mainbox_title"}{__("wishlist_content")}{/capture}
+
+{*********************************************MCS changes************************************************}
+{*Line  10: changed include file																		*}
+{*Line  20: changed value to true																		*}

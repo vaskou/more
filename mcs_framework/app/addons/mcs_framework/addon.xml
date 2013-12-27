@@ -170,7 +170,7 @@
 					
 					<item id="mcs_block_icons_header">
 						<type>header</type>
-						<name>Button Icons</name>
+						<name>Block Icons</name>
 					</item>
 					<item id="mcs_block_icons_cart_block">
                         <type>input</type>
@@ -181,6 +181,21 @@
                         <type>input</type>
                         <name>My Account block icon</name>
 						<default_value>icon-im-user</default_value>
+                    </item>
+					<item id="mcs_block_icons_sign_in">
+                        <type>input</type>
+                        <name>Sign In icon</name>
+						<default_value>icon-im-enter</default_value>
+                    </item>
+					<item id="mcs_block_icons_sign_out">
+                        <type>input</type>
+                        <name>Sign Out icon</name>
+						<default_value>icon-im-exit</default_value>
+                    </item>
+					<item id="mcs_block_icons_register">
+                        <type>input</type>
+                        <name>Register icon</name>
+						<default_value>icon-im-pencil-3</default_value>
                     </item>
 				</items>
             </section>

@@ -55,7 +55,7 @@ ul.dropdown-multicolumns li:hover .drop {
 }
 ul.dropdown-multicolumns li a.drop, 
 ul.dropdown-multicolumns li.nodrop a {
-	font-size:100%;
+	font-size:110%;
 	font-weight:normal;
 }
 .dropdown-multicolumns > li > div{

@@ -54,6 +54,6 @@
 {/if}
 
 {*********************************************MCS changes************************************************}
-{*Line     22: added i with class=icon_wrap															*}
-{*Line     30: added i with class=icon_wrap															*}
-{*Line     48: added i with class=icon_wrap															*}
+{*Line     22: added i with class=icon_wrap																*}
+{*Line     30: added i with class=icon_wrap																*}
+{*Line     48: added i with class=icon_wrap																*}	
