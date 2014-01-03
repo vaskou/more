@@ -10,7 +10,6 @@
 {style src="addons/my_changes/homepage/mcs_main_content.less"}
 {style src="addons/my_changes/homepage/mcs_slider.css"}
 {style src="addons/my_changes/homepage/mcs_slider.less"}
-{style src="addons/my_changes/homepage/mcs_alpha_scroller.css"}
 {style src="addons/my_changes/homepage/mcs_brand_scroller.css"}
 {style src="addons/my_changes/homepage/mcs_brand_scroller.less"}
 {style src="addons/my_changes/categories/mcs_products_grid.css"}

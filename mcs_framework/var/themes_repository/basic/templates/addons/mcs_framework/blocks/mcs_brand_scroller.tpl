@@ -42,7 +42,7 @@
     {/foreach}
     
     {if $mcs_useCSS=="false"}
-		{script src="js/addons/mcs_framework/mcs_sliders/bxslider/plugins/jquery.easing.1.3.js"}
+		{script src="js/addons/mcs_framework/libs/jquery.easing.1.3.js"}
 	{/if}
 
 <script type="text/javascript">

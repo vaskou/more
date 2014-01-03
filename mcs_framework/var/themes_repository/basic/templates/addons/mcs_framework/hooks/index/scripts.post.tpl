@@ -1,5 +1,5 @@
 {if $addons.mcs_framework.mcs_bxslider=='Y'}
-	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/plugins/html5shiv.js"}
+	{script src="js/addons/mcs_framework/libs/html5shiv.js"}
 	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.min.js"}
 {/if}
 
@@ -28,3 +28,8 @@
 {script src="js/addons/mcs_framework/mcs_alpha_grid/jquery.slides.js"}
 {script src="js/addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.js"}
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
+
+{if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
+	{script src="js/addons/mcs_framework/libs/jquery.easing.1.3.js"}
+	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}
+{/if}

@@ -23,6 +23,9 @@
 	border:1px solid;
 	padding:0;
 }
+.tygh-footer > [class*="container"]{
+	padding:0 15px;
+}
 .tygh-header > [class*="container"],
 .tygh-content > [class*="container"]{
 	border-bottom:none;
@@ -77,3 +80,4 @@
 .wishlist_view .main-content-grid{
 	padding:15px;
 }
+/***************************************************************/

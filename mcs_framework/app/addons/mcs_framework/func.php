@@ -13,6 +13,7 @@
 ****************************************************************************/
 
 use Tygh\Registry;
+use Tygh\BlockManager;
 use Tygh\BlockManager\Block;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
@@ -48,4 +49,68 @@ function fn_get_selected_brands($params)
 	}
 	
 	return array($sel_brands);
+}
+
+
+
+function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
+{
+	if(AREA=='C'){
+		
+		$tpl_vars=Registry::get('view')->{'tpl_vars'};
+		$deviceType=$tpl_vars['mobiledetect']->{'value'}['deviceType'];
+		$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
+		
+		if($mcs_framework['mcs_mobile_devices']['mcs_mobile_devices_block_detection']=='Y'){
+			if(is_array($block['properties'])){
+				if(array_key_exists('devices',$block['properties'])){
+					
+					if($deviceType=='computer' && !array_key_exists('computer',$block['properties']['devices'])){
+						$block['status']='D';
+					}
+					if($deviceType=='tablet' && !array_key_exists('tablet',$block['properties']['devices'])){
+						$block['status']='D';
+					}
+					if($deviceType=='phone' && !array_key_exists('phone',$block['properties']['devices'])){
+						$block['status']='D';
+					}
+				}
+			}
+		}
+		//print_r($deviceType);
+		//print_r($block);
+		
+	}
+}
+
+function fn_mcs_framework_get_grids_post($grids)
+{
+	if(AREA=='C'){
+		
+		$tpl_vars=Registry::get('view')->{'tpl_vars'};
+		$deviceType=$tpl_vars['mobiledetect']->{'value'}['deviceType'];
+		$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
+		
+		if($mcs_framework['mcs_mobile_devices']['mcs_mobile_devices_grid_detection']=='Y'){
+		
+			foreach ($grids as &$value) {
+				foreach ($value as &$v) {
+					if($deviceType=='computer' && $v['computer']=='N'){
+						$v['status']='D';
+					}
+					if($deviceType=='tablet' && $v['tablet']=='N'){
+						$v['status']='D';
+					}
+					if($deviceType=='phone' && $v['phone']=='N'){
+						$v['status']='D';
+					}
+					
+					 /*print '<pre>';
+					 print_r ($v);
+					 print '</pre>';*/
+				}		
+				
+			}
+		}
+	}
 }

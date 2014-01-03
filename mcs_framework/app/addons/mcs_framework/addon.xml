@@ -8,7 +8,9 @@
     <status>active</status>
 	<queries>
 		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
-		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD computer VARCHAR( 128 );</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD tablet VARCHAR( 128 );</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD phone VARCHAR( 128 );</item>
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
@@ -32,6 +34,7 @@
                     </item>
 				</items>
             </section>
+			
 			<section id="mcs_product_categories">
                 <name>Product Categories</name>
                 <items>
@@ -80,6 +83,7 @@
                     </item>
 				</items>
             </section>
+			
 			<section id="mcs_product_tabs">
                 <name>Tabs</name>       
                 <items>
@@ -96,6 +100,7 @@
                     </item>
 				</items>
 			</section>
+			
 			<section id="mcs_block_grouping">
                 <name>Block Grouping</name>       
                 <items>
@@ -125,6 +130,7 @@
                     </item>
 				</items>
 			</section>
+			
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
@@ -199,6 +205,7 @@
                     </item>
 				</items>
             </section>
+			
 			<section id="mcs_sliders">
                 <name>bxSlider</name>
                 <items>
@@ -209,6 +216,7 @@
                     </item>
 				</items>
             </section>
+			
 			 <section id="mcs_social_links">
                 <name>Social links</name>
                 <items>
@@ -324,6 +332,176 @@
                     </item>
                 </items>
             </section>
+			
+			<section id="mcs_mobile_devices">
+                <name>Mobile Devices</name>       
+                <items>
+					<item id="mcs_mobile_devices_grid_detection">
+                        <type>checkbox</type>
+                        <name>Enable Device detection for grids</name> 
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="mcs_mobile_devices_block_detection">
+                        <type>checkbox</type>
+                        <name>Enable Device detection for blocks</name> 
+                        <default_value>Y</default_value>
+                    </item>
+				</items>
+			</section>
+			
+			<section id="mcs_scroll_to_top">
+                <name>Scroll to top options</name>       
+                <items>
+                    <item id="mcs_scroll_to_top_enable">
+                        <type>checkbox</type>
+                        <name>Enable Scroll to top</name> 
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="mcs_scroll_to_top_distance">
+                        <type>input</type>
+                        <name>Scroll distance</name> 
+                        <default_value>300</default_value>
+                    </item>
+                    <item id="mcs_scroll_to_top_from">
+                        <type>selectbox</type>
+                        <name>Scroll distance from</name> 
+                        <default_value>top</default_value>
+						<variants>
+                            <item id="top">
+                                <name>Top</name>
+                            </item>
+                            <item id="bottom">
+                                <name>Bottom</name>                        
+                            </item>
+                        </variants>
+                    </item>
+                    <item id="mcs_scroll_to_top_speed">
+                        <type>input</type>
+                        <name>Scroll speed</name> 
+                        <default_value>300</default_value>
+                    </item>		
+					<item id="mcs_scroll_to_top_animation">
+                        <type>selectbox</type>
+                        <name>Scroll to top animation</name> 
+                        <default_value>fade</default_value>
+						<variants>
+                            <item id="fade">
+                                <name>Fade</name>
+                            </item>
+                            <item id="slide">
+                                <name>Slide</name>
+                            </item>
+                            <item id="none">
+                                <name>None</name>
+                            </item>
+                        </variants>
+					</item>
+					
+					<item id="mcs_scroll_to_top_easing">
+                        <type>selectbox</type>
+                        <name>Scroll easing type</name> 
+                        <default_value>linear</default_value>
+						<variants>
+                            <item id="linear">
+                                <name>Linear</name>
+                            </item>
+                            <item id="swing">
+                                <name>Swing</name>                        
+                            </item>
+                            <item id="easeInQuad">
+                                <name>EaseInQuad</name>                        
+                            </item>
+                            <item id="easeOutQuad">
+                                <name>EaseOutQuad</name>                        
+                            </item>
+                            <item id="easeInOutQuad">
+                                <name>EaseInOutQuad</name>                        
+                            </item>
+                            <item id="easeInCubic">
+                                <name>EaseInCubic</name>                        
+                            </item>
+                            <item id="easeOutCubic">
+                                <name>EaseOutCubic</name>                        
+                            </item>							
+                            <item id="easeInOutCubic">
+                                <name>EaseInOutCubic</name>                        
+                            </item>		
+                            <item id="easeInQuart">
+                                <name>EaseInQuart</name>                        
+                            </item>		
+                            <item id="easeOutQuart">
+                                <name>EaseOutQuart</name>                        
+                            </item>	
+                            <item id="easeInOutQuart">
+                                <name>EaseInOutQuart</name>                        
+                            </item>	
+                            <item id="easeInQuint">
+                                <name>EaseInQuint</name>                        
+                            </item>	
+                            <item id="easeOutQuint">
+                                <name>EaseOutQuint</name>                        
+                            </item>								
+                            <item id="easeInOutQuint">
+                                <name>EaseInOutQuint</name>                        
+                            </item>		
+                            <item id="easeInExpo">
+                                <name>EaseInExpo</name>                        
+                            </item>	
+                            <item id="easeOutExpo">
+                                <name>EaseOutExpo</name>                        
+                            </item>	
+                            <item id="easeInOutExpo">
+                                <name>EaseInOutExpo</name>                        
+                            </item>	
+                            <item id="easeInSine">
+                                <name>EaseInSine</name>                        
+                            </item>	
+                            <item id="easeOutSine">
+                                <name>EaseOutSine</name>                        
+                            </item>	
+                            <item id="easeInOutSine">
+                                <name>EaseInOutSine</name>                        
+                            </item>	
+                            <item id="easeInCirc">
+                                <name>EaseInCirc</name>                        
+                            </item>	
+                            <item id="easeOutCirc">
+                                <name>EaseOutCirc</name>                        
+                            </item>	
+                            <item id="easeInOutCirc">
+                                <name>EaseInOutCirc</name>                        
+                            </item>	
+                            <item id="easeInElastic">
+                                <name>EaseInElastic</name>                        
+                            </item>	
+                            <item id="easeOutElastic">
+                                <name>EaseOutElastic</name>                        
+                            </item>	
+	                        <item id="easeInOutElastic">
+                                <name>EaseInOutElastic</name>                        
+                            </item>	
+	                        <item id="easeInBack">
+                                <name>EaseInBack</name>                        
+                            </item>	
+	                        <item id="easeOutBack">
+                                <name>EaseOutBack</name>                        
+                            </item>
+	                        <item id="easeInOutBack">
+                                <name>EaseInOutBack</name>                        
+                            </item>
+	                        <item id="easeInBounce">
+                                <name>EaseInBounce</name>                        
+                            </item>
+	                        <item id="easeOutBounce">
+                                <name>EaseOutBounce</name>                        
+                            </item>
+	                        <item id="easeInOutBounce">
+                                <name>EaseInOutBounce</name>                        
+                            </item>
+						</variants>
+                    </item>
+				</items>
+			</section>
         </sections>
     </settings>
 	<language_variables>
@@ -455,6 +633,10 @@
 		<item lang="en" id="2x size">2x size</item>
 		<item lang="en" id="3x size">3x size</item>
 		<item lang="en" id="4x size">4x size</item>
+		
+		<item lang="en" id="devices">Show on devices</item>
+		
+		<item lang="en" id="mcs_scroll_to_top_label">Scroll to top</item>
 	</language_variables>
 </addon>
 
