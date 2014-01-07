@@ -3,5 +3,67 @@
 }
 
 .mainbox-title span{
-	color:darken(@menu,5);
+	color:darken(@decorative,5);
+}
+
+.quick-view-wrap .left-side{
+	margin-right:10px;
+}
+.quick-view-wrap .product-info{
+	padding-left:10px;
+}
+/************************ buttons ********************************/
+.mcs_alpha_grid .mcs-wishlist .button-action.button-wrap-left{
+	background:transparent;
+	.inner-shadow (0, 0, 0, 0, 0);
+}
+
+.mcs_alpha_grid .mcs-wishlist i,
+.mcs_alpha_grid .mcs-wishlist a,
+.mcs_alpha_grid .mcs-wishlist .button-action.button-wrap-left i,
+.mcs_alpha_grid .mcs-wishlist .button-action.button-wrap-left a{
+	color:@decorative;
+}
+
+.button-action.button-wrap-left:hover, 
+.button-submit-action.button-wrap-left:hover,
+.button-submit-big.button-wrap-left:hover,
+.button-big.button-wrap-left:hover,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover {
+	.gradient (@decorative, @decorative);
+	border-color:darken(@decorative, 16%);
+}
+.button-action.button-wrap-left:hover:active, 
+.button-submit-action.button-wrap-left:hover:active,
+.button-submit-big.button-wrap-left:hover:active,
+.button-big.button-wrap-left:hover:active,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover:active {
+	.gradient (darken(@decorative,5%),darken(@decorative,5%));
+	border-color: darken(@decorative, 16%);
+}
+
+.button-submit-action.button-wrap-left:hover,
+.button-action.button-wrap-left:hover,
+.qv-buttons-container .button-action.button-wrap-left:hover,
+.buttons-container .button-action.button-wrap-left:hover,
+.buttons-container-item .button-action.button-wrap-left:hover,
+.button-submit-big.button-wrap-right:hover,
+.sidebox-body .button-action.button-wrap-left:hover,
+.button-big.button-wrap-left:hover,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover,
+.button-submit-action.button-wrap-left:hover:active,
+.button-action.button-wrap-left:hover:active,
+.qv-buttons-container .button-action.button-wrap-left:hover:active,
+.buttons-container .button-action.button-wrap-left:hover:active,
+.buttons-container-item .button-action.button-wrap-left:hover:active,
+.button-submit-big.button-wrap-right:hover:active,
+.sidebox-body .button-action.button-wrap-left:hover:active,
+.button-big.button-wrap-left:hover:active,
+.mcs_alpha_grid .mcs-wishlist > div > span:hover:active {
+	.button_text (@decorative);
+	.mcs_no_text_shadow;
+}
+
+.mcs_alpha_grid .mcs-wishlist a:hover{
+	text-decoration:none;
 }

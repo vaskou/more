@@ -30,6 +30,5 @@
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
 
 {if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
-	{script src="js/addons/mcs_framework/libs/jquery.easing.1.3.js"}
 	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}
 {/if}

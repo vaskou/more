@@ -160,6 +160,9 @@
 .mcs_alpha_grid .quick-view{
 	visibility:visible;
 }
+.mcs_alpha_grid .mcs-wishlist > div > span span{
+	padding:0;
+}
 
 
 /********************Wishlist remove button**************************/

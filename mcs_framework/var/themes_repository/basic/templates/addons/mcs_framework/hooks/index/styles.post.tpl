@@ -1,6 +1,7 @@
 {style src="addons/mcs_framework/resets/button_reset.less"}
 {style src="addons/mcs_framework/resets/popup_dropbox_reset.less"}
 {style src="addons/mcs_framework/resets/sorting_reset.less"}
+{style src="addons/mcs_framework/resets/general_reset.less"}
 {style src="addons/mcs_framework/resets/product_filter_icons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 

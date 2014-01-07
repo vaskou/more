@@ -184,7 +184,8 @@
 {literal}
 <script>
 $(function(){
-	
+	var trans={/literal}"{$addons.mcs_framework.mcs_product_categories_hidden_info}"{literal};
+	var dur={/literal}{if $addons.mcs_framework.mcs_product_categories_hidden_info_duration==''}0{else}{$addons.mcs_framework.mcs_product_categories_hidden_info_duration}{/if}{literal};
 	initBindings();
 	
 	$( document ).ajaxStop(function() 
@@ -193,7 +194,7 @@ $(function(){
 	});
 	
 	function initBindings(){
-		$('.mcs_alpha_grid .product').hover_hide({transition:"{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info}{literal}",duration:{/literal}{$addons.mcs_framework.mcs_product_categories_hidden_info_duration}{literal}});
+		$('.mcs_alpha_grid .product').hover_hide({transition:trans,duration:dur});
 	};	
 });
 </script>
