@@ -1,3 +1,4 @@
+{style src="addons/mcs_framework/bootstrap-responsive/bootstrap.min.less"}
 {style src="addons/mcs_framework/resets/button_reset.less"}
 {style src="addons/mcs_framework/resets/popup_dropbox_reset.less"}
 {style src="addons/mcs_framework/resets/sorting_reset.less"}

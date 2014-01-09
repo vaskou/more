@@ -29,3 +29,15 @@
 </script>
 
 {/if}
+
+{if $addons.mcs_framework.mcs_popup_enable=='Y'}
+	{if $addons.mcs_framework.mcs_popup_content_pages=='home'}
+		{if $_REQUEST.dispatch=='index.index'}
+	
+			{include file="addons/mcs_framework/common/mcs_popup.tpl"}
+	
+		{/if}
+	{else}
+			{include file="addons/mcs_framework/common/mcs_popup.tpl"}
+	{/if}
+{/if}

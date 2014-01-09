@@ -114,3 +114,114 @@ function fn_mcs_framework_get_grids_post($grids)
 		}
 	}
 }
+
+function fn_mcs_popup_get_pages()
+{
+    $pages = array(
+        'home' => __('home'),
+        'all' => __('all')
+		
+    );
+
+    return $pages;
+}
+
+function fn_mcs_popup_get_types()
+{
+    $types = array(
+        'banner' => __('banner'),
+        'category' => __('category'),
+        'promotion' => __('promotion'),
+        'newsletter' => __('newsletter')
+		
+    );
+
+    return $types;
+}
+
+function fn_mcs_variants_get_easings()
+{
+    $easings = array(
+        
+		'linear' => __('linear'),
+        'swing' => __('swing'),
+        'easeInQuad' => __('easeInQuad'),
+        'easeOutQuad' => __('easeOutQuad'),
+        'easeInOutQuad' => __('easeInOutQuad'),
+        'easeInCubic' => __('easeInCubic'),
+        'easeOutCubic' => __('easeOutCubic'),
+        'easeInOutCubic' => __('easeInOutCubic'),
+        'easeInQuart' => __('easeInQuart'),
+        'easeOutQuart' => __('easeOutQuart'),
+        'easeInOutQuart' => __('easeInOutQuart'),
+        'easeInQuint' => __('easeInQuint'),
+        'easeOutQuint' => __('easeOutQuint'),
+        'easeInOutQuint' => __('easeInOutQuint'),
+        'easeInExpo' => __('easeInExpo'),
+        'easeOutExpo' => __('easeOutExpo'),
+        'easeInOutExpo' => __('easeInOutExpo'),
+        'easeInSine' => __('easeInSine'),
+        'easeOutSine' => __('easeOutSine'),
+        'easeInOutSine' => __('easeInOutSine'),
+        'easeInCirc' => __('easeInCirc'),
+        'easeOutCirc' => __('easeOutCirc'),
+        'easeInOutCirc' => __('easeInOutCirc'),
+        'easeInElastic' => __('easeInElastic'),
+        'easeOutElastic' => __('easeOutElastic'),
+        'easeInOutElastic' => __('easeInOutElastic'),
+        'easeInBack' => __('easeInBack'),
+        'easeOutBack' => __('easeOutBack'),
+        'easeInOutBack' => __('easeInOutBack'),
+        'easeInBounce' => __('easeInBounce'),
+        'easeOutBounce' => __('easeOutBounce'),
+        'easeInOutBounce' => __('easeInOutBounce')
+		
+    );
+	
+    return $easings;
+}
+
+
+function fn_mcs_variants_get_effects()
+{
+    $effects = array(
+
+
+        'fadeIn' => __('fadeIn'),
+        'fadeOut' => __('fadeOut'),
+        'slideDown' => __('slideDown'),
+        'slideUp' => __('slideUp'),
+	    'blind' => __('blind'),
+        'bounce' => __('bounce'),
+        'clip' => __('clip'),
+        'drop' => __('drop'),
+        'explode' => __('explode'),
+        'fade' => __('fade'),
+        'fold' => __('fold'),
+        'highlight' => __('highlight'),
+        'puff' => __('puff'),
+        'pulsate' => __('pulsate'),
+        'scale' => __('scale'),
+        'shake' => __('shake'),
+        'slide' => __('slide'),
+        'size' => __('size'),
+        'transfer' => __('transfer'),
+	);
+ return $effects;
+}	
+	
+
+function fn_mcs_popup_get_banners()
+{
+   	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.position", array('banner_id', 'banner'));
+}
+
+function fn_mcs_popup_get_categories()
+{
+   	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.id_path,a.position", array('category_id', 'category'));
+}
+
+function fn_mcs_popup_get_promotions()
+{
+   	return db_get_hash_single_array("SELECT a.promotion_id, b.name FROM ?:promotions as a LEFT JOIN ?:promotion_descriptions as b ON a.promotion_id=b.promotion_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.priority", array('promotion_id', 'name'));
+}
