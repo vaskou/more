@@ -2,6 +2,7 @@
 {strip}
 {if $feature.features_hash && $feature.feature_type == "E"}
 	{assign var=variant_data value=$feature.variant_id|fn_get_product_feature_variant}
+    {if $addons.mcs_framework.mcs_product_brand_show=='Y'}
     <span class="brand-image">
     	{if $variant_data.image_pair}
         <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
@@ -11,6 +12,7 @@
     </span>
     <span class="brand-name">
         {$feature.description}:
+    {/if}
         <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
 {/if}
 {if $feature.prefix}{$feature.prefix}{/if}
@@ -32,7 +34,9 @@
 {if $feature.suffix}{$feature.suffix}{/if}
 {if $feature.feature_type == "E" && $feature.features_hash}
     	</a>
+    {if $addons.mcs_framework.mcs_product_brand_show=='Y'}
     </span>
+    {/if}
 {/if}
 {/strip}
 {/function}
@@ -43,7 +47,7 @@
         {if $feature.feature_type == "D" || $feature.feature_type == "O" || $feature.feature_type == "N"}
             {$feature.description nofilter}: 
         {/if}
-        {feature_value feature=$feature}{if !$smarty.foreach.features_list.last}{if $feature.feature_type != "E"}, {/if}{/if}
+        {feature_value feature=$feature}{if !$smarty.foreach.features_list.last}{if $feature.feature_type != "E" || $addons.mcs_framework.mcs_product_brand_show!='Y'}, {/if}{/if}
     {/foreach}
 {if !$no_container}</p>{/if}
 {/strip}

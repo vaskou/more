@@ -76,8 +76,11 @@
 }
 .mcs_alpha_grid ul.products li.product .product_info .product-title{
 	display:block;
-	min-height:3em;
+	min-height:3.5em;
+	max-height:3.5em;
 	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
 }
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper{
 	padding-top:5px;

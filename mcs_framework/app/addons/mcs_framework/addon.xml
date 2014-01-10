@@ -84,9 +84,29 @@
 				</items>
             </section>
 			
-			<section id="mcs_product_tabs">
-                <name>Tabs</name>       
+			<section id="mcs_product">
+                <name>Product view</name>       
                 <items>
+					<item id="mcs_product_brand_header">
+						<type>header</type>
+						<name>Brand image</name>
+					</item>
+                    <item id="mcs_product_brand_show">
+                        <type>checkbox</type>
+                        <name>Show brand image</name>
+                        <tooltip>Check to show brand image</tooltip>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_brand_feature">
+                        <type>selectbox</type>
+                        <name>Brand feature</name>
+                        <tooltip>Select the brand feature</tooltip>
+						<variants/>
+                    </item>
+					<item id="mcs_product_tabs_header">
+						<type>header</type>
+						<name>Tabs orientation</name>
+					</item>
                     <item id="mcs_product_tabs_vertical">
                         <type>checkbox</type>
                         <name>Vertical Tabs</name>
