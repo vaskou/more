@@ -52,7 +52,9 @@ function fn_settings_variants_addons_mcs_framework_mcs_popup_content_promotions(
 	return fn_mcs_popup_get_promotions();
 }
 
-
-
+function fn_settings_variants_addons_mcs_framework_mcs_product_brand_feature()
+{
+	return fn_mcs_product_get_features();
+}
 
 ?>

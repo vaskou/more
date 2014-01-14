@@ -27,9 +27,12 @@
         {assign var="mcs_prevSelector" value="#slider-prev-{$block.snapping_id}"}
     {/if}
     
+    {assign var="filter_data" value=$addons.mcs_framework.mcs_product_brand_feature|fn_mcs_product_get_feature_filter}
+    {assign var="filter_id" value=$filter_data|key}
+    {assign var="filter_name" value=$filter_data[$filter_id]}
     {if $block.properties.mcs_brand_scroller_button=='Y'}
     	<div class="mcs-brand-scroller-button">
-    		<a href="index.php?dispatch=product_features.view_all&filter_id=10"><i class="{$block.properties.mcs_brand_scroller_button_icon}"></i>{__("all_brands")}</a>
+    		<a href="index.php?dispatch=product_features.view_all&filter_id={$filter_id}"><i class="{$block.properties.mcs_brand_scroller_button_icon}"></i>{$filter_name}</a>
 	    </div>
     {/if}
     

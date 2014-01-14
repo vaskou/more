@@ -18,7 +18,7 @@
                 {math assign="cols" equation="ceil(x / y)" x=$subitems_count y=$divider}
             {/if}
             {*assign var="cols" value=4*}
-            <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}">
+            <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}" id="mcs-categ-{$item1.category_id}">
                 <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-im-arrow-down-15"></i>{/if}</a>
 
             {if $item1.$childs}
@@ -70,7 +70,15 @@
                                     	{$item2.$name} {if $item2.$childs && ($addons.mcs_framework.mcs_top_menu_hide_3rd_level=='Y')}<i class="icon-im-arrow-down-15"></i>{/if}
                                     </a>
                                 </h3>
-								                                                                
+								 
+                                {assign var="img_path" value=$item2.category_id|fn_get_image_pairs:"category":"M"}
+                                {if $img_path && ($addons.mcs_framework.mcs_top_menu_show_images=='Y')}
+                                    <div class="category-img">
+                                    	<a{if $item2_url} href="{$item2_url}"{/if}>
+                                        <img src="{$img_path.detailed.image_path}" />
+                                        </a>
+                                    </div>
+                                {/if}                                                                
                                 {if $item2.$childs}
                                 <ul>
                                 {hook name="blocks:mcs_alpha_menu_dropdown_3levels_col_elements"}
@@ -84,12 +92,7 @@
                                 {/hook}
                                 </ul> 
                                 {/if}
-                                {assign var="img_path" value=$item2.category_id|fn_get_image_pairs:"category":"M"}
-                                {if $img_path && ($addons.mcs_framework.mcs_top_menu_show_images=='Y')}
-                                    <div class="category-img">
-                                        <img src="{$img_path.detailed.image_path}" />
-                                    </div>
-                                {/if} 
+                                
                             </div>
 
                         {/foreach}

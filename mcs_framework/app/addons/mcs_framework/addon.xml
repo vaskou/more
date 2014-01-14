@@ -101,6 +101,7 @@
                         <type>selectbox</type>
                         <name>Brand feature</name>
                         <tooltip>Select the brand feature</tooltip>
+						<default_value>18</default_value>
 						<variants/>
                     </item>
 					<item id="mcs_product_tabs_header">

@@ -436,7 +436,7 @@ $schema['mcs_brand_scroller'] = array (
 		'mcs_brand_scroller_button_icon'=>array(
 			'type'=>'input',
 			'default_value'=>'icon-im-arrow-right-6'
-		)
+		)		
 	),
     'templates' => array (
 		'addons/mcs_framework/blocks/mcs_brand_scroller.tpl' => array(

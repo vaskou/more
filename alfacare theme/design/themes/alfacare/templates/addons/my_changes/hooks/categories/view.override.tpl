@@ -1,5 +1,5 @@
-<div id="category_products_{$block.block_id}">
-	<div class="mcs_alpha_category_view">
+<div id="category_products_{$block.block_id}" class="mcs_alpha_category_view">
+	
 		
 		{assign var="subcategories_no" value=$subcategories|@count}
 
@@ -47,7 +47,7 @@
                         {$i=1}
                     {/if}
 					{if $category}
-						<li class="span{$span_no} {if $i==1}{$offset}{/if}">
+						<li class="span{$span_no} {if $i==1}{$offset}{/if} {if $category.main_pair}with-image{/if}">
                         	<div class="cat-img">
                                 <a href="{"categories.view?category_id=`$category.category_id`"|fn_url}">
                                 {*if $category.main_pair*}
@@ -99,7 +99,7 @@
 		{/if}
 		<!--category_products_{$block.block_id}-->
 
-	</div>
+	
 </div>
 
 {capture name="mainbox_title"}{$category_data.category}{/capture}

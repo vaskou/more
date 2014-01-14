@@ -18,9 +18,10 @@ use Tygh\BlockManager\Block;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
-function fn_get_brands($params, $lang_code = CART_LANGUAGE)
+function fn_get_brands($feature_id, $lang_code = CART_LANGUAGE)
 {
-    $params['feature_id']=18;
+	//var_dump($feature_id);
+    $params['feature_id']=$feature_id;
 	$params['feature_type']="E";
     $params['get_images'] = true;
 	
@@ -29,9 +30,9 @@ function fn_get_brands($params, $lang_code = CART_LANGUAGE)
     return array($brands, $params);
 }
 
-function fn_get_brand_name($brand_id)
+function fn_get_brand_name($brand_id,$feature_id)
 {
-	list($brands, )=fn_get_brands();
+	list($brands, )=fn_get_brands($feature_id);
 	$brand_name=$brands[$brand_id]['variant'];
 	
 	return $brand_name;
@@ -39,9 +40,13 @@ function fn_get_brand_name($brand_id)
 
 function fn_get_selected_brands($params)
 {
-	$sel_brands=array();
-	list($brands, )=fn_get_brands();
+	$tpl_vars=Registry::get('view')->{'tpl_vars'};
+	$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
+	$feature_id=$mcs_framework['mcs_product']['mcs_product_brand_feature'];
 	
+	$sel_brands=array();
+	list($brands, )=fn_get_brands($feature_id);
+
 	$ids=explode(",",$params['item_ids']);
 	
 	foreach($ids as $id){
@@ -50,7 +55,6 @@ function fn_get_selected_brands($params)
 	
 	return array($sel_brands);
 }
-
 
 
 function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
@@ -213,15 +217,27 @@ function fn_mcs_variants_get_effects()
 
 function fn_mcs_popup_get_banners()
 {
-   	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.position", array('banner_id', 'banner'));
+	$company_id=Registry::get('runtime.company_id');
+   	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.position", array('banner_id', 'banner'));
 }
 
 function fn_mcs_popup_get_categories()
 {
-   	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.id_path,a.position", array('category_id', 'category'));
+	$company_id=Registry::get('runtime.company_id');
+   	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.id_path,a.position", array('category_id', 'category'));
 }
 
 function fn_mcs_popup_get_promotions()
 {
    	return db_get_hash_single_array("SELECT a.promotion_id, b.name FROM ?:promotions as a LEFT JOIN ?:promotion_descriptions as b ON a.promotion_id=b.promotion_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.priority", array('promotion_id', 'name'));
+}
+
+function fn_mcs_product_get_features()
+{
+   	return db_get_hash_single_array("SELECT a.feature_id, b.description FROM ?:product_features as a LEFT JOIN ?:product_features_descriptions as b ON a.feature_id=b.feature_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_type='E' ORDER BY b.description", array('feature_id', 'description'));
+}
+
+function fn_mcs_product_get_feature_filter($feature_id)
+{
+   	return db_get_hash_single_array("SELECT a.filter_id, b.filter FROM ?:product_filters as a LEFT JOIN ?:product_filter_descriptions as b ON a.filter_id=b.filter_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_id='$feature_id' ORDER BY b.filter", array('filter_id', 'filter'));
 }

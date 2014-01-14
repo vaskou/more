@@ -1,7 +1,8 @@
 {if $brand_id == "0"}
     {assign var="brand" value=$default_name}
 {else}
-    {assign var="brand" value=$brand_id|fn_get_brand_name|default:"`$ldelim`brand`$rdelim`"}
+
+    {assign var="brand" value=$brand_id|fn_get_brand_name:$addons.mcs_framework.mcs_product_brand_feature|default:"`$ldelim`brand`$rdelim`"}
 {/if}
 
 <tr {if !$clone}id="{$holder}_{$brand_id}" {/if}class="cm-js-item{if $clone} cm-clone hidden{/if}">
