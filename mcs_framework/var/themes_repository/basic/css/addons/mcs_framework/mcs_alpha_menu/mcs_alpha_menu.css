@@ -27,3 +27,37 @@ ul.dropdown-multicolumns li .drop i{
 ul.dropdown-multicolumns li .dropdown-fullwidth ul{
 	margin:0;
 }
+
+
+ul.dropdown-multicolumns > li > ul{
+	margin:4px auto;
+	padding-top:20px;
+}
+
+ul.dropdown-multicolumns > li > ul > li{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+ul.dropdown-multicolumns > li > ul > li:hover{
+	margin:0px 10px 0px 0px;
+	padding-bottom:10px;
+}
+ul.dropdown-multicolumns > li > ul > li.firstcolumn:hover{
+	margin-left:9px;	
+}
+ul.dropdown-multicolumns > li > ul > li.lastcolumn:hover{
+	margin-right:9px;	
+}
+ul.dropdown-multicolumns > li:hover > ul > li a{
+	padding:0;
+}
+
+.mean-nav img{
+	width:100%;
+	height:auto;
+}
+@media (max-width:767px){
+	.top-menu-grid{
+		display:none !important;
+	}
+}

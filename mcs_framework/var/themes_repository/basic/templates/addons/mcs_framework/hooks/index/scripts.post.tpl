@@ -32,3 +32,5 @@
 {if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}
 {/if}
+
+{script src="js/addons/mcs_framework/jquery.meanmenu.js"}

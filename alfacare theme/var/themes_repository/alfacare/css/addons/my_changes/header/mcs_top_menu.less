@@ -73,7 +73,7 @@ ul.dropdown-multicolumns >li:first-child:hover >a{
 	border:none;
 }
 
-.dropdown-multicolumns .col-1{
+ul.dropdown-multicolumns > li > ul > li.col-1{
 	padding:10px 0;
 }
 
@@ -84,8 +84,16 @@ ul.dropdown-multicolumns h3 {
 	min-height:1em;
 	border:none;
 }
-
-ul.dropdown-multicolumns li ul{
+ul.dropdown-multicolumns > li > ul{
+	margin:0;
+	padding-top:0px;
+}
+ul.dropdown-multicolumns > li > ul > li ul{
 	padding-left:5px;
+}
+
+ul.dropdown-multicolumns li:hover .alt-link a, 
+ul.dropdown-multicolumns li:hover .dropdown-bottom a{
+	color:@links;
 }
 

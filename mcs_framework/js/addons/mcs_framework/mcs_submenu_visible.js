@@ -1,7 +1,7 @@
 $(function(){	
 	$(".dropdown-multicolumns > li").hover(
 	function(){
-		var main=$(this).children("div");
+		var main=$(this).children("ul");
 		main.removeClass('drop-left');
 		if ( ! isEntirelyVisible(main) ) {
 			$(this).addClass('static');
@@ -10,17 +10,17 @@ $(function(){
 	},
 	function(){
 		$(this).removeClass('static');
-		$(this).children("div").removeClass('drop-left');
+		$(this).children("ul").removeClass('drop-left');
 	});	
 	
 	function isEntirelyVisible(main)
 	{
 		var l=main.offset().left;
 		var w=main.width();
-		//console.log(l1+" "+w);
-        var mnuW = main.closest("ul").width();
-        var mnuL = main.closest("ul").offset().left;
-		//console.log((l1+ w) +"<="+ (mnuW+mnuL ));
+		console.log(l+" "+w);
+        var mnuW = main.closest(".dropdown-multicolumns").width();
+        var mnuL = main.closest(".dropdown-multicolumns").offset().left;
+		console.log((l+ w) +"<="+ (mnuW+mnuL ));
 		if ( (l+ w) <= mnuW+mnuL ) {
             return true;
         }else{

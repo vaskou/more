@@ -1,7 +1,7 @@
 {hook name="blocks:mcs_alpha_menu_dropdown"}
 
 {if $items}
-    <div class="wrap-dropdown-multicolumns">
+    <div class="wrap-dropdown-multicolumns resp-menu">
         <ul class="dropdown-multicolumns clearfix">
         
         {hook name="blocks:mcs_alpha_menu_dropdown_top_menu"}
@@ -26,9 +26,9 @@
                 {if !$item1.$childs|fn_check_second_level_child_array:$childs && ($addons.mcs_framework.mcs_top_menu_show_images=='N')}
                 {* Only two levels. Vertical output *}
 
-                <div class="dropdown-1column">
+                <ul class="dropdown-1column">
 
-                        <div class="col-1 firstcolumn lastcolumn">
+                        <li class="col-1 firstcolumn lastcolumn">
                             <ul>
                             
                             {hook name="blocks:mcs_alpha_menu_dropdown_2levels_elements"}
@@ -45,9 +45,9 @@
                             
                             </ul> 
 
-                        </div>
+                        </li>
                            
-                    </div>
+                    </ul>
                     
                 {else}
                 {* Three levels. Full output *}
@@ -59,11 +59,11 @@
                         {assign var="dropdown_class" value="dropdown-`$cols`columns"}
                     {/if}
 
-                    <div class="{$dropdown_class}{if $smarty.foreach.item1.index > 4 && $smarty.foreach.item1.last} drop-left{/if} ddown" id="{$unique_elm_id}">
+                    <ul class="{$dropdown_class}{if $smarty.foreach.item1.index > 4 && $smarty.foreach.item1.last} drop-left{/if} ddown" id="{$unique_elm_id}">
                         {hook name="blocks:mcs_alpha_menu_dropdown_3levels_cols"}
                         
                         {foreach from=$item1.$childs item="item2" name="item2"}
-                            <div class="col-1{if $smarty.foreach.item2.index % $cols == 0 || $smarty.foreach.item2.first} firstcolumn{elseif $smarty.foreach.item2.index % $cols == ($cols - 1) || $smarty.foreach.item2.last} lastcolumn{/if}">
+                            <li class="col-1{if $smarty.foreach.item2.index % $cols == 0 || $smarty.foreach.item2.first} firstcolumn{elseif $smarty.foreach.item2.index % $cols == ($cols - 1) || $smarty.foreach.item2.last} lastcolumn{/if}">
                                 {assign var="item2_url" value=$item2|fn_form_dropdown_object_link:$block.type}
                                 <h3{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} class="active"{/if}>
                                 	<a{if $item2_url} href="{$item2_url}"{/if}>
@@ -93,7 +93,7 @@
                                 </ul> 
                                 {/if}
                                 
-                            </div>
+                            </li>
 
                         {/foreach}
 
@@ -105,7 +105,7 @@
                         
                         {/hook}
 
-                    </div>
+                    </ul>
 
                 {/if}
 
@@ -150,5 +150,11 @@
 
 }(Tygh, Tygh.$));
 //]]>
+jQuery(document).ready(function () {
+    jQuery('.resp-menu').meanmenu({
+		meanScreenWidth: "768",
+		meanRemoveAttrs: true
+	});
+});
 </script>
 {/literal}

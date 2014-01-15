@@ -73,3 +73,5 @@
 {style src="addons/mcs_framework/greek_fonts.less"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
 {style src="addons/mcs_framework/mcs_social_icons.css"}
+
+{style src="addons/mcs_framework/meanmenu.css"}
