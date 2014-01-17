@@ -84,9 +84,30 @@
 				</items>
             </section>
 			
-			<section id="mcs_product_tabs">
-                <name>Tabs</name>       
+			<section id="mcs_product">
+                <name>Product view</name>       
                 <items>
+					<item id="mcs_product_brand_header">
+						<type>header</type>
+						<name>Brand image</name>
+					</item>
+                    <item id="mcs_product_brand_show">
+                        <type>checkbox</type>
+                        <name>Show brand image</name>
+                        <tooltip>Check to show brand image</tooltip>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_brand_feature">
+                        <type>selectbox</type>
+                        <name>Brand feature</name>
+                        <tooltip>Select the brand feature</tooltip>
+						<default_value>18</default_value>
+						<variants/>
+                    </item>
+					<item id="mcs_product_tabs_header">
+						<type>header</type>
+						<name>Tabs orientation</name>
+					</item>
                     <item id="mcs_product_tabs_vertical">
                         <type>checkbox</type>
                         <name>Vertical Tabs</name>
@@ -350,7 +371,7 @@
 			</section>
 			
 			<section id="mcs_scroll_to_top">
-                <name>Scroll to top options</name>       
+                <name>Scroll to top</name>       
                 <items>
                     <item id="mcs_scroll_to_top_enable">
                         <type>checkbox</type>
@@ -401,105 +422,162 @@
                         <type>selectbox</type>
                         <name>Scroll easing type</name> 
                         <default_value>linear</default_value>
-						<variants>
-                            <item id="linear">
-                                <name>Linear</name>
-                            </item>
-                            <item id="swing">
-                                <name>Swing</name>                        
-                            </item>
-                            <item id="easeInQuad">
-                                <name>EaseInQuad</name>                        
-                            </item>
-                            <item id="easeOutQuad">
-                                <name>EaseOutQuad</name>                        
-                            </item>
-                            <item id="easeInOutQuad">
-                                <name>EaseInOutQuad</name>                        
-                            </item>
-                            <item id="easeInCubic">
-                                <name>EaseInCubic</name>                        
-                            </item>
-                            <item id="easeOutCubic">
-                                <name>EaseOutCubic</name>                        
-                            </item>							
-                            <item id="easeInOutCubic">
-                                <name>EaseInOutCubic</name>                        
-                            </item>		
-                            <item id="easeInQuart">
-                                <name>EaseInQuart</name>                        
-                            </item>		
-                            <item id="easeOutQuart">
-                                <name>EaseOutQuart</name>                        
-                            </item>	
-                            <item id="easeInOutQuart">
-                                <name>EaseInOutQuart</name>                        
-                            </item>	
-                            <item id="easeInQuint">
-                                <name>EaseInQuint</name>                        
-                            </item>	
-                            <item id="easeOutQuint">
-                                <name>EaseOutQuint</name>                        
-                            </item>								
-                            <item id="easeInOutQuint">
-                                <name>EaseInOutQuint</name>                        
-                            </item>		
-                            <item id="easeInExpo">
-                                <name>EaseInExpo</name>                        
-                            </item>	
-                            <item id="easeOutExpo">
-                                <name>EaseOutExpo</name>                        
-                            </item>	
-                            <item id="easeInOutExpo">
-                                <name>EaseInOutExpo</name>                        
-                            </item>	
-                            <item id="easeInSine">
-                                <name>EaseInSine</name>                        
-                            </item>	
-                            <item id="easeOutSine">
-                                <name>EaseOutSine</name>                        
-                            </item>	
-                            <item id="easeInOutSine">
-                                <name>EaseInOutSine</name>                        
-                            </item>	
-                            <item id="easeInCirc">
-                                <name>EaseInCirc</name>                        
-                            </item>	
-                            <item id="easeOutCirc">
-                                <name>EaseOutCirc</name>                        
-                            </item>	
-                            <item id="easeInOutCirc">
-                                <name>EaseInOutCirc</name>                        
-                            </item>	
-                            <item id="easeInElastic">
-                                <name>EaseInElastic</name>                        
-                            </item>	
-                            <item id="easeOutElastic">
-                                <name>EaseOutElastic</name>                        
-                            </item>	
-	                        <item id="easeInOutElastic">
-                                <name>EaseInOutElastic</name>                        
-                            </item>	
-	                        <item id="easeInBack">
-                                <name>EaseInBack</name>                        
-                            </item>	
-	                        <item id="easeOutBack">
-                                <name>EaseOutBack</name>                        
-                            </item>
-	                        <item id="easeInOutBack">
-                                <name>EaseInOutBack</name>                        
-                            </item>
-	                        <item id="easeInBounce">
-                                <name>EaseInBounce</name>                        
-                            </item>
-	                        <item id="easeOutBounce">
-                                <name>EaseOutBounce</name>                        
-                            </item>
-	                        <item id="easeInOutBounce">
-                                <name>EaseInOutBounce</name>                        
-                            </item>
-						</variants>
+						<variants/>
                     </item>
+				</items>
+			</section>
+			<section id="mcs_popup">
+				<name>Popup</name>
+				<items>
+					<item id="mcs_popup_enable">
+						<name>Enable popup</name>
+						<tooltip>Check to enable the popup window.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+					<item id="mcs_popup_content_header">
+                        <name>Where and what?</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_content_pages">
+						<name>Pages</name>
+						<tooltip>Enable the popup either for the homepage only or for all pages.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>	
+
+					<item id="mcs_popup_content_types">
+						<name>Content type</name>
+						<tooltip>Select the type of the popup content.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>	
+					
+					<item id="mcs_popup_content_banners">
+						<name>Banner</name>
+						<tooltip>If the popup contains a Banner, select which banner to display. Both Graphics and text banners are supported.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_content_categories">
+						<name>Category</name>
+						<tooltip>If the popup contains a Category, select which category to display. The popup will display the category image and description.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_content_promotions">
+						<name>Promotion</name>
+						<tooltip>If the popup contains a Promotion, select which promotion to display. The popup will display the promotion detailed description.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_cookie_header">
+                        <name>Popup cookie management</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_popup_cookie_enable">
+						<name>Enable cookie expiration</name>
+						<tooltip>If checked, the popup will contain a button to disable the popup for a certain number of days, based on a browser cookie.</tooltip>
+						<type>checkbox</type>
+						<default_value>Y</default_value>
+					</item>	
+					
+					<item id="mcs_popup_cookie_days">
+						<name>Cookie expiration (days)</name>
+						<tooltip>The number of days until the popup cookie will expire. After this period the cookie will appear again to the visitor.</tooltip>
+						<type>input</type>
+						<default_value>30</default_value>
+					</item>	
+                    
+					<item id="mcs_popup_styling_header">
+                        <name>Popup styling</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_styling_overlay_color">
+						<name>Overlay color code</name>
+						<tooltip>The color of the popup overlay.</tooltip>
+						<type>input</type>
+						<default_value>#000000</default_value>
+					</item>
+
+					<item id="mcs_popup_styling_overlay_opacity">
+						<name>Overlay opacity</name>
+						<tooltip>The opacity of the popup overlay.</tooltip>
+						<type>input</type>
+						<default_value>0.6</default_value>
+					</item>
+					
+					<item id="mcs_popup_styling_show_title">
+						<name>Show popup title</name>
+						<tooltip>Check to enable the popup window title bar.</tooltip>
+						<type>checkbox</type>
+						<default_value>Y</default_value>
+					</item>
+					
+					<item id="mcs_popup_styling_max_width">
+						<name>Window max width</name>
+						<tooltip>The maximum percentage width of the popup window. In order to set the width in pixels, just add the number of pixels without px (i.e. 400). </tooltip>
+						<type>input</type>
+						<default_value>90%</default_value>
+					</item>	
+
+					
+					<item id="mcs_popup_effects_header">
+                        <name>Popup effects</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_effects_show">
+						<name>Show effect</name>
+						<tooltip>Select the effect that will apply when the popup is shown.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+					
+					<item id="mcs_popup_effects_show_easing">
+						<name>Show easing</name>
+						<tooltip>Select the easing that will apply when the popup is shown.</tooltip>
+						<type>selectbox</type>
+						<default_value>linear</default_value>
+						<variants/>
+					</item>
+					
+					<item id="mcs_popup_effects_show_duration">
+						<name>Pop show effect duration</name>
+						<tooltip>Select the effect duration that will apply when the popup is shown.</tooltip>
+						<type>input</type>
+						<default_value>1000</default_value>
+					</item>	
+
+					<item id="mcs_popup_effects_hide_effect">
+						<name>Hide effect</name>
+						<tooltip>Select the effect that will apply when the popup is hidden.</tooltip>
+						<type>selectbox</type>
+						<default_value>fadeOut</default_value>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_effects_hide_easing">
+						<name>Hide easing</name>
+						<tooltip>Select the easing that will apply when the popup is hidden.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_effects_hide_duration">
+						<name>Pop hide effect duration</name>
+						<tooltip>Select the effect duration that will apply when the popup is hidden.</tooltip>
+						<type>input</type>
+						<default_value>500</default_value>
+					</item>
+
 				</items>
 			</section>
         </sections>
@@ -637,6 +715,8 @@
 		<item lang="en" id="devices">Show on devices</item>
 		
 		<item lang="en" id="mcs_scroll_to_top_label">Scroll to top</item>
+		
+		<item lang="en" id="mcs_popup_do_not_show_again">Do not show again</item>
 	</language_variables>
 </addon>
 

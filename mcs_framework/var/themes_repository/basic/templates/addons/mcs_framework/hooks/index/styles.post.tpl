@@ -59,6 +59,8 @@
 {style src="addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.css"}
 
 {style src="addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.css"}
+{style src="addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.less"}
+{style src="addons/mcs_framework/mcs_alpha_menu/meanmenu.min.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.css"}
 {style src="addons/mcs_framework/mcs_alpha_grid/mcs_slides.less"}
@@ -73,5 +75,3 @@
 {style src="addons/mcs_framework/greek_fonts.less"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
 {style src="addons/mcs_framework/mcs_social_icons.css"}
-
-{style src="addons/mcs_framework/meanmenu.css"}

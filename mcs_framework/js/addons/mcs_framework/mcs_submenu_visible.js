@@ -1,5 +1,5 @@
 $(function(){	
-	$(".dropdown-multicolumns > li").hover(
+	$(".mcs-alpha-menu .dropdown-multicolumns > li").hover(
 	function(){
 		var main=$(this).children("ul");
 		main.removeClass('drop-left');
@@ -17,10 +17,10 @@ $(function(){
 	{
 		var l=main.offset().left;
 		var w=main.width();
-		console.log(l+" "+w);
+		//console.log(l+" "+w);
         var mnuW = main.closest(".dropdown-multicolumns").width();
         var mnuL = main.closest(".dropdown-multicolumns").offset().left;
-		console.log((l+ w) +"<="+ (mnuW+mnuL ));
+		//console.log((l+ w) +"<="+ (mnuW+mnuL ));
 		if ( (l+ w) <= mnuW+mnuL ) {
             return true;
         }else{

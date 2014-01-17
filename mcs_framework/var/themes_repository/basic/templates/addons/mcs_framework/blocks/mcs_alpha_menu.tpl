@@ -1,7 +1,7 @@
 {hook name="blocks:mcs_alpha_menu_dropdown"}
 
 {if $items}
-    <div class="wrap-dropdown-multicolumns resp-menu">
+    <div class="wrap-dropdown-multicolumns mcs-alpha-menu {if $block.properties.mcs_top_menu_responsive=='Y'}mcs-resp-menu{/if}">
         <ul class="dropdown-multicolumns clearfix">
         
         {hook name="blocks:mcs_alpha_menu_dropdown_top_menu"}
@@ -23,7 +23,7 @@
 
             {if $item1.$childs}
 
-                {if !$item1.$childs|fn_check_second_level_child_array:$childs && ($addons.mcs_framework.mcs_top_menu_show_images=='N')}
+                {if !$item1.$childs|fn_check_second_level_child_array:$childs}
                 {* Only two levels. Vertical output *}
 
                 <ul class="dropdown-1column">
@@ -67,12 +67,12 @@
                                 {assign var="item2_url" value=$item2|fn_form_dropdown_object_link:$block.type}
                                 <h3{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} class="active"{/if}>
                                 	<a{if $item2_url} href="{$item2_url}"{/if}>
-                                    	{$item2.$name} {if $item2.$childs && ($addons.mcs_framework.mcs_top_menu_hide_3rd_level=='Y')}<i class="icon-im-arrow-down-15"></i>{/if}
+                                    	{$item2.$name} {if $item2.$childs && ($block.properties.mcs_top_menu_hide_third_level=='Y')}<i class="icon-im-arrow-down-15"></i>{/if}
                                     </a>
                                 </h3>
 								 
                                 {assign var="img_path" value=$item2.category_id|fn_get_image_pairs:"category":"M"}
-                                {if $img_path && ($addons.mcs_framework.mcs_top_menu_show_images=='Y')}
+                                {if $img_path && ($block.properties.mcs_top_menu_show_images=='Y')}
                                     <div class="category-img">
                                     	<a{if $item2_url} href="{$item2_url}"{/if}>
                                         <img src="{$img_path.detailed.image_path}" />
@@ -150,11 +150,34 @@
 
 }(Tygh, Tygh.$));
 //]]>
-jQuery(document).ready(function () {
-    jQuery('.resp-menu').meanmenu({
-		meanScreenWidth: "768",
-		meanRemoveAttrs: true
-	});
-});
 </script>
 {/literal}
+
+{if $block.properties.mcs_top_menu_responsive=='Y'}
+    {script src="js/addons/mcs_framework/jquery.meanmenu.min.js"}
+    {literal}
+    <script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.mcs-resp-menu').meanmenu({
+            meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
+            meanRemoveAttrs: true,
+			meanMenuContainer:".top-menu"
+        });
+    });
+    </script>
+    <style>
+		@media (max-width:{/literal}{$layout_data.max_width-40}{literal}px){
+			.top-menu-grid{
+				min-height:40px !important;
+			}
+			.mcs-resp-menu{
+				display:none;
+			}
+		}
+	</style>
+	{/literal}
+{/if}
+
+{if $block.properties.mcs_top_menu_hide_third_level=='Y'}
+	{script src="js/addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.js"}
+{/if}

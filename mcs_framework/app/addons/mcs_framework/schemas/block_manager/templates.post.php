@@ -11,6 +11,18 @@ $schema['addons/mcs_framework/blocks/categories/mcs_alpha_menu.tpl'] = array (
 			'type' => 'input',
 			'default_value' => '6'
 		),
+		'mcs_top_menu_hide_third_level'=> array(
+			'type'=>'checkbox',
+			'default_value'=>'N'
+		),
+		'mcs_top_menu_show_images'=> array(
+			'type'=>'checkbox',
+			'default_value'=>'N'
+		),
+		'mcs_top_menu_responsive'=> array(
+			'type'=>'checkbox',
+			'default_value'=>'N'
+		),
 	),
 	'fillings' => array('full_tree_cat', 'dynamic_tree_cat'),
 	'params' => array (

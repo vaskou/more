@@ -1,3 +1,22 @@
+@centered:@fluidContainerMaxWidth - 40;
+@expanded:@fluidContainerMaxWidth + 200;
+
+.mcs-centered{
+	float:none !important;
+	max-width:@centered !important;
+	margin:auto !important;
+}
+
+.mcs-expanded{
+	float:none !important;
+	max-width:@expanded !important;
+	margin:auto !important;
+}
+.mcs-full{
+	max-width:100%;
+	padding:0 !important;
+}
+
 .homepage-vendors {
     box-shadow: none;
 }
@@ -48,4 +67,11 @@
 .ui-dialog .ui-dialog-buttonpane, n
 .search-result:hover {
     background-color: lighten(@base, 47%);
+}
+
+
+@media (max-width:767px){
+	.tygh-top-panel > div{
+		height:auto;
+	}
 }

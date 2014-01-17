@@ -2,18 +2,6 @@
 	text-transform:none !important;
 }
 
-.mcs-centered{
-	float:none !important;
-	max-width:960px !important;
-	margin:auto !important;
-}
-
-.mcs-expanded{
-	float:none !important;
-	max-width:1200px !important;
-	margin:auto !important;
-}
-
 .breadcrumbs span{
 	color:#444 !important;
 	vertical-align:middle;

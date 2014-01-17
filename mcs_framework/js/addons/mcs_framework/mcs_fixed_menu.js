@@ -1,5 +1,23 @@
 $(function(){
+	/*if(winWidth()>=768){
+		console.log(winWidth());
+		initFunction();
+	}else{
+		$(".tygh-header").removeClass("menu-fixed");
+		$(".tygh-content").css({"margin-top":"0"});	
+	}
 	
+	$(window).resize(function(){
+		if(winWidth()>=768){
+			console.log(winWidth());
+			initFunction();
+		}else{
+			$(".tygh-header").removeClass("menu-fixed");
+			$(".tygh-content").css({"margin-top":"0"});
+		}
+	});*/
+	
+	/*function initFunction(){*/
 	var top_panel_height=$(".tygh-top-panel").height();
 	var header_height=$(".tygh-header").height();
 	
@@ -17,4 +35,6 @@ $(function(){
 			$(".menu-fixed").removeClass("scrolled-up");
 		}
 	});
+	
+	/*};*/
 });
