@@ -30,6 +30,7 @@ ul.dropdown-multicolumns > li:hover,
 ul.dropdown-multicolumns > li.nodrop:hover {
 	background-color: #fff;
 	.border-radius(0px);
+	padding:0;
 }
 
 ul.dropdown-multicolumns li a {
@@ -46,7 +47,8 @@ ul.dropdown-multicolumns > li > a > i{
 }
 
 ul.dropdown-multicolumns li a,
-ul.dropdown-multicolumns li:hover a{
+ul.dropdown-multicolumns li:hover a,
+ul.dropdown-multicolumns li.nodrop:hover a{
 	padding:8px;
 	border:none;
 }
@@ -74,6 +76,7 @@ ul.dropdown-multicolumns >li:first-child:hover >a{
 	border:none;
 }
 
+ul.dropdown-multicolumns > li > div > div.col-1,
 ul.dropdown-multicolumns > li > ul > li.col-1{
 	padding:10px 0;
 }

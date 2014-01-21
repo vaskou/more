@@ -26,9 +26,9 @@
                 {if !$item1.$childs|fn_check_second_level_child_array:$childs}
                 {* Only two levels. Vertical output *}
 
-                <ul class="dropdown-1column">
+                <div class="dropdown-1column">
 
-                        <li class="col-1 firstcolumn lastcolumn">
+                        <div class="col-1 firstcolumn lastcolumn">
                             <ul>
                             
                             {hook name="blocks:mcs_alpha_menu_dropdown_2levels_elements"}
@@ -45,9 +45,9 @@
                             
                             </ul> 
 
-                        </li>
+                        </div>
                            
-                    </ul>
+                    </div>
                     
                 {else}
                 {* Three levels. Full output *}
@@ -158,11 +158,13 @@
     {literal}
     <script type="text/javascript">
     jQuery(document).ready(function () {
+		
         jQuery('.mcs-resp-menu').meanmenu({
             meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
             meanRemoveAttrs: true,
 			meanMenuContainer:".top-menu"
         });
+		
     });
     </script>
     <style>

@@ -1,12 +1,9 @@
 {literal}
-/*<script>
+<script>
 
-function winWidth(){
-	currentWidth = window.innerWidth || document.documentElement.clientWidth;
-	return currentWidth;	
-}
-</script>*/
+</script>
 {/literal}
+{script src="js/addons/mcs_framework/jquery.widthCheck.js"}
 
 {if $addons.mcs_framework.mcs_bxslider=='Y'}
 	{script src="js/addons/mcs_framework/libs/html5shiv.js"}

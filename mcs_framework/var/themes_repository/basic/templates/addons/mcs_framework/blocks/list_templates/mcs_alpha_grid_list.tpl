@@ -194,7 +194,16 @@ $(function(){
 	});
 	
 	function initBindings(){
-		$('.mcs_alpha_grid .product').hover_hide({transition:trans,duration:dur});
+		$('body').widthCheck({
+		doOverLimit:function(){
+			$('.mcs_alpha_grid .product').hover_hide({transition:trans,duration:dur});
+		},
+		doUnderLimit:function(){
+			hh=$('.mcs_alpha_grid .product').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
+			hh.disable();
+		},
+		widthLimit:767});
+		/*$('.mcs_alpha_grid .product').hover_hide({transition:trans,duration:dur});*/
 	};	
 });
 </script>

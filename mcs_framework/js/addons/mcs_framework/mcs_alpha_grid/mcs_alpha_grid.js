@@ -15,6 +15,6 @@ $(function(){
 		$('.mcs_alpha_grid .product').slides({
 			slide_element:'a',
 			slides_container:'.multi_img'
-		});
+		});		
 	};	
 });

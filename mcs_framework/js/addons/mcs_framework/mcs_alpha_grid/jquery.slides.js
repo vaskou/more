@@ -1,10 +1,10 @@
 (function ($) {
- 
+ 	
     $.fn.slides = function( options ) {
  
         var settings = $.extend({
             slide_element: ".slide",
-			slides_container: ""            
+			slides_container: ""
         }, options );
  
         var interv;
@@ -47,5 +47,6 @@
 		});
  
     };
- 
+	
+	 
 }( jQuery ));

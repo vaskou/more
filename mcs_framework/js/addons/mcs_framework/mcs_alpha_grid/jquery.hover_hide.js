@@ -4,10 +4,21 @@
  
         var settings = $.extend({
             transition: "mcs_show",
-			duration: 0            
+			duration: 0,
+			hidden_elm:'.product-meta',
+			fade_other_elms:true
         }, options );
 
-		$(".product-meta").hide();
+		this.disable=function(){
+			$('.hidden_elm').show();
+			$(settings.hidden_elm).removeClass('hidden_elm');
+			$(".hover_hide").css({"height":'auto'});
+			this.removeClass('hover_hide');
+			return false;
+		}
+		
+		$(settings.hidden_elm).addClass('hidden_elm');
+		$('.hidden_elm').hide();
 		this.addClass('hover_hide');
 		var h=$(".product-wrapper").height();
 		$(".hover_hide").css({"height":h});
@@ -17,17 +28,19 @@
 				switch(settings.transition)
 				{
 				case "mcs_slide":
-					$(this).find('.product-meta').slideDown(settings.duration);
+					$(this).find('.hidden_elm').slideDown(settings.duration);
 					break;
 				case "mcs_show":
-					$(this).find('.product-meta').show(settings.duration);
+					$(this).find('.hidden_elm').show(settings.duration);
 					break;
 				case "mcs_fade":
-					$(this).find('.product-meta').fadeIn(settings.duration);
+					$(this).find('.hidden_elm').fadeIn(settings.duration);
 					break;
 				}
 				$(this).css({"z-index":"250"});
-				$('.product').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
+				if(settings.fade_other_elms==true){
+					$('.product').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
+				}
 				var to;
 				clearTimeout(to);
 			},
@@ -36,26 +49,36 @@
 				switch(settings.transition)
 				{
 				case "mcs_slide":
-					$(this).find('.product-meta').stop().slideUp(settings.duration,function(){
+					$(this).find('.hidden_elm').stop().slideUp(settings.duration,function(){
 						that.css({"z-index":"1"})
 					});
 					break;
 				case "mcs_show":
-					$(this).find('.product-meta').stop().hide(settings.duration,function(){
+					$(this).find('.hidden_elm').stop().hide(settings.duration,function(){
 						that.css({"z-index":"1"})
 					});
 					break;
 				case "mcs_fade":
-					$(this).find('.product-meta').stop().fadeOut(settings.duration,function(){
+					$(this).find('.hidden_elm').stop().fadeOut(settings.duration,function(){
 						that.css({"z-index":"1"})
 					});
 					break;
 				}
-				$('.product').delay(10).animate({opacity:1}, 100);
+				if(settings.fade_other_elms==true){
+					$('.product').delay(10).animate({opacity:1}, 100);
+				}
 				var to;
 				to = setTimeout(function(){ },700);
 		});
+		
  
     };
+	
+	/*$.fn.hover_hide.disable=function(elm){
+		console.log(elm)
+		$(".product-meta").show();
+		elm.removeClass('hover_hide');
+		
+	};*/
 	
 }(jQuery));

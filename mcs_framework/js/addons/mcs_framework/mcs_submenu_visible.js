@@ -2,6 +2,12 @@ $(function(){
 	$(".mcs-alpha-menu .dropdown-multicolumns > li").hover(
 	function(){
 		var main=$(this).children("ul");
+		if(main.length<=0){
+			main=$(this).children("div");
+		}
+		if(main.length<=0){
+			return false;
+		}
 		main.removeClass('drop-left');
 		if ( ! isEntirelyVisible(main) ) {
 			$(this).addClass('static');
