@@ -35,15 +35,15 @@
 }
 
 .mcs_alpha_category_view .subcategories li .cat-title:hover{
-	background:transparent;
+	background:#fff;
 }
 
 .mcs_alpha_category_view .subcategories li .cat-title a{
 	padding:0;
 	display:block;
 	font-size:125%;
-	min-height:3.5em;
-	max-height:3.5em;
+	min-height:2.3em;
+	max-height:2.3em;
 	overflow:hidden;
 }
 

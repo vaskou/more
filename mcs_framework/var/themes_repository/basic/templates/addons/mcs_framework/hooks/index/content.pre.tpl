@@ -1,1 +1,1 @@
-<div class="{$_REQUEST.dispatch|replace:'.':'_'}">
+<div id="mcs_helper" class="{$_REQUEST.dispatch|replace:'.':'_'} mcs_{$mobiledetect.deviceType}">

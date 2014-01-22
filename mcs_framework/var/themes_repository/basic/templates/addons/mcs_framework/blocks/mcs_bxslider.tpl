@@ -75,6 +75,11 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	var isMobile='{$mobiledetect.isMobile}';
+	var pagerValue={$block.properties.mcs_pager};
+	if(isMobile){
+		pagerValue=false;
+	}
 	var slider=$('#bxslider_{$block.snapping_id}').bxSlider({
 		mode:'{$block.properties.mcs_mode}',
 		speed:{$block.properties.mcs_speed},
@@ -98,7 +103,7 @@ $(document).ready(function(){
 		oneToOneTouch:{$block.properties.mcs_oneToOneTouch},
 		preventDefaultSwipeX:{$block.properties.mcs_preventDefaultSwipeX},
 		preventDefaultSwipeY:{$block.properties.mcs_preventDefaultSwipeY},
-		pager:{$block.properties.mcs_pager},
+		pager:pagerValue,
 		pagerType:'{$block.properties.mcs_pagerType}',
 		pagerShortSeparator:'{$block.properties.mcs_pagerShortSeparator}',
 		pagerCustom:'{$mcs_pagerCustom}',

@@ -161,8 +161,7 @@
 		
         jQuery('.mcs-resp-menu').meanmenu({
             meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
-            meanRemoveAttrs: true,
-			meanMenuContainer:".top-menu"
+            meanRemoveAttrs: true
         });
 		
     });
@@ -170,7 +169,7 @@
     <style>
 		@media (max-width:{/literal}{$layout_data.max_width-40}{literal}px){
 			.top-menu-grid{
-				min-height:40px !important;
+				display:none !important;
 			}
 			.mcs-resp-menu{
 				display:none;

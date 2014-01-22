@@ -50,7 +50,15 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	
+	var isMobile='{$mobiledetect.isMobile}';
+	var pagerValue={$block.properties.mcs_pager};
+	var maxSlidesValue={$block.properties.mcs_maxSlides};
+	var slideWidthValue={$block.properties.mcs_slideWidth};
+	if(isMobile){
+		pagerValue=false;
+		maxSlidesValue=1;
+		slideWidthValue=500;
+	}
 	var slider=$('#brands_{$block.snapping_id}').bxSlider({
 		mode:'{$block.properties.mcs_mode}',
 		speed:{$block.properties.mcs_speed},
@@ -74,7 +82,7 @@ $(document).ready(function(){
 		oneToOneTouch:{$block.properties.mcs_oneToOneTouch},
 		preventDefaultSwipeX:{$block.properties.mcs_preventDefaultSwipeX},
 		preventDefaultSwipeY:{$block.properties.mcs_preventDefaultSwipeY},*/
-		pager:{$block.properties.mcs_pager},
+		pager:pagerValue,
 		/*pagerType:'{$block.properties.mcs_pagerType}',
 		pagerShortSeparator:'{$block.properties.mcs_pagerShortSeparator}',
 		pagerCustom:'{$mcs_pagerCustom}',*/
@@ -97,9 +105,9 @@ $(document).ready(function(){
 		autoHover:{$block.properties.mcs_autoHover},
 		autoDelay:{$block.properties.mcs_autoDelay},
 		minSlides:{$block.properties.mcs_minSlides},
-		maxSlides:{$block.properties.mcs_maxSlides},
+		maxSlides:maxSlidesValue,
 		moveSlides:{$block.properties.mcs_moveSlides},
-		slideWidth:{$block.properties.mcs_slideWidth},		
+		slideWidth:slideWidthValue,		
 	});
   
 

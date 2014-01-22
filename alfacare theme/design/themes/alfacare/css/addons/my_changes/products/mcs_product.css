@@ -126,4 +126,9 @@
 	.image-wrap{
 		float:none;
 	}
+	.product-main-info .product-thumbnails,
+	.border-image-wrap img{
+		max-width:100% !important;
+		height:auto !important;
+	}
 }

@@ -46,3 +46,9 @@
 	border:none;
 	padding:12px 0 0 0;
 }
+
+.buttons-container, 
+.buttons-container-item, 
+.buttons-container.wrap{
+	padding:15px;
+}
