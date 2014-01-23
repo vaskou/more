@@ -1,14 +1,10 @@
-@media (min-width:768px){
-.mcs_alpha_category_view .subcategories li.first_offset{
-	margin-left:3%;
-}
-}
-
 .mcs_alpha_category_view .subcategories li.first{
 	clear: both;
 	margin-left:0;
 }
-
+.mcs_alpha_category_view .subcategories li.first_offset{
+	margin-left:3%;
+}
 .mcs_alpha_category_view .subcategories li .cat-img{
 	padding:5px;
 	border:1px solid;	

@@ -14,10 +14,24 @@
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
-			<section id="mcs_top_menu">
-                <name>Top Menu</name>
+			<section id="mcs_general">
+                <name>General</name>
                 <items>
-                    <item id="mcs_fixed_menu">
+					<item id="mcs_general_responsive">
+						<type>header</type>
+						<name>Responsive Layout</name>
+					</item>
+					<item id="mcs_general_responsive_enable">
+                        <type>checkbox</type>
+                        <name>Enable responsive layout</name>
+						<default_value>N</default_value>
+                    </item>
+					
+					<item id="mcs_general_fixed_menu">
+						<type>header</type>
+						<name>Fixed Menu</name>
+					</item>
+                    <item id="mcs_general_fixed_menu_enable">
                         <type>checkbox</type>
                         <name>Enable fixed menu</name>
 						<default_value>N</default_value>

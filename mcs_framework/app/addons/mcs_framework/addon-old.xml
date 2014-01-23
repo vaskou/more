@@ -22,16 +22,6 @@
                         <name>Enable fixed menu</name>
 						<default_value>N</default_value>
                     </item>
-					<item id="mcs_top_menu_show_images">
-                        <type>checkbox</type>
-                        <name>Show images in menu</name>
-						<default_value>N</default_value>
-                    </item>
-					<item id="mcs_top_menu_hide_3rd_level">
-                        <type>checkbox</type>
-                        <name>Hide 3rd level menu</name>
-						<default_value>N</default_value>
-                    </item>
 				</items>
             </section>
 			
@@ -600,6 +590,10 @@
 		<item lang="en" id="all_brands">All Brands</item>
 		<item lang="en" id="mcs_brand_scroller_button">Show "All Brands" button</item>
 		<item lang="en" id="mcs_brand_scroller_button_icon">"Add Brands" button icon</item>
+		
+		<item lang="en" id="mcs_top_menu_show_images">Show images in menu</item>
+		<item lang="en" id="mcs_top_menu_hide_third_level">Hide third level elements</item>
+		<item lang="en" id="mcs_top_menu_responsive">Enable responsive menu</item>
 
 		<item lang="en" id="mcs_mode">Mode</item>
 		<item lang="en" id="mcs_speed">Speed</item>

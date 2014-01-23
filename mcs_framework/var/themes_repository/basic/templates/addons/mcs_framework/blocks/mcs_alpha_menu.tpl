@@ -1,5 +1,18 @@
 {hook name="blocks:mcs_alpha_menu_dropdown"}
-
+{if $block.properties.mcs_top_menu_responsive=='Y'}
+    {literal}
+    <style>
+		@media (max-width:{/literal}{$layout_data.max_width-40}{literal}px){
+			.top-menu-grid{
+				display:none !important;
+			}
+			.mcs-resp-menu{
+				display:none;
+			}
+		}
+	</style>
+	{/literal}
+{/if}
 {if $items}
     <div class="wrap-dropdown-multicolumns mcs-alpha-menu {if $block.properties.mcs_top_menu_responsive=='Y'}mcs-resp-menu{/if}">
         <ul class="dropdown-multicolumns clearfix">
@@ -157,25 +170,15 @@
     {script src="js/addons/mcs_framework/jquery.meanmenu.min.js"}
     {literal}
     <script type="text/javascript">
-    jQuery(document).ready(function () {
+    /*jQuery(document).ready(function () {*/
 		
         jQuery('.mcs-resp-menu').meanmenu({
             meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
             meanRemoveAttrs: true
         });
 		
-    });
+    /*});*/
     </script>
-    <style>
-		@media (max-width:{/literal}{$layout_data.max_width-40}{literal}px){
-			.top-menu-grid{
-				display:none !important;
-			}
-			.mcs-resp-menu{
-				display:none;
-			}
-		}
-	</style>
 	{/literal}
 {/if}
 

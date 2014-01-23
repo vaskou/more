@@ -1,0 +1,36 @@
+@media (max-width:767px){
+
+.top-links-grid .top-languages{
+	margin:0;
+}
+.top-links-grid .top-languages .select-wrap,
+.top-links-grid .top-currencies .select-wrap{
+	padding:12px 0;
+	margin:0;
+	background:none;
+}
+.top-links-grid .top-languages .select-wrap .flag{
+	padding:0;
+}
+.top-links-grid .top-languages .select-link span{
+	display:none;
+}
+.top-links-grid .top-my-account .popup-title{
+	padding:11px 20px 11px 12px;
+}
+.top-links-grid .top-my-account .popup-title a{
+	display:none;
+}
+.top-links-grid .top-cart-content .dropdown-box > a{
+	padding:11px 20px 11px 12px;
+}
+.top-links-grid .top-cart-content .mcs-phone-hide{
+	display:none;
+}
+.top-links-grid .dropdown-box .icon-down-micro{
+	top:11px;
+}
+.top-links-grid .dropdown-box .minicart-table tr .icon-cancel-circle{
+	visibility:visible;
+}
+}

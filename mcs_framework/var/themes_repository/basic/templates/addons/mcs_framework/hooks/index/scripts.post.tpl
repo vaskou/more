@@ -3,8 +3,12 @@
 $(function(){
 
 });
-function isMobile(){
-	if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
+function isPhone(){
+	/*if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {*/
+	
+	var isP={/literal}{$mobiledetect.deviceType|var_export}{literal};
+	
+	if(isP=='phone'){
 		return true;
 	}else{
 		return false;
@@ -19,7 +23,7 @@ function isMobile(){
 	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.min.js"}
 {/if}
 
-{if $addons.mcs_framework.mcs_fixed_menu=='Y'}
+{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_fixed_menu.js"}
 {/if}
 

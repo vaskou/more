@@ -23,3 +23,12 @@
 {style src="addons/my_changes/categories/mcs_sorting.less"}
 {style src="addons/my_changes/products/mcs_product.css"}
 {style src="addons/my_changes/products/mcs_product.less"}
+
+{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+	{style src="addons/my_changes/header/mcs_top_panel.resp.css"}
+	{style src="addons/my_changes/homepage/mcs_main_content.resp.css"}
+	{style src="addons/my_changes/homepage/mcs_slider.resp.css"}
+	{style src="addons/my_changes/homepage/mcs_slider.resp.less"}
+	{style src="addons/my_changes/categories/mcs_alpha_category_view.resp.css"}
+    {style src="addons/my_changes/products/mcs_product.resp.css"}
+{/if}

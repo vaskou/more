@@ -17,10 +17,8 @@
 	clear: both;
 	margin-left:0;
 }
-@media (min-width:768px){
 .mcs_alpha_grid ul.products li.first_offset {
 	margin-left:3%;
-}	
 }
 .mcs_alpha_grid ul.products li.last {
 	margin-right: 0;

@@ -75,9 +75,9 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	var isMobile='{$mobiledetect.isMobile}';
+	var isPhone='{$mobiledetect.deviceType}';
 	var pagerValue={$block.properties.mcs_pager};
-	if(isMobile){
+	if(isPhone=='phone'){
 		pagerValue=false;
 	}
 	var slider=$('#bxslider_{$block.snapping_id}').bxSlider({

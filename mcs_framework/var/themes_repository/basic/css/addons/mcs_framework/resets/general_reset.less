@@ -1,13 +1,13 @@
 @centered:@fluidContainerMaxWidth - 40;
 @expanded:@fluidContainerMaxWidth + 200;
 
-.mcs-centered{
+.container-fluid .mcs-centered{
 	float:none !important;
 	max-width:@centered !important;
 	margin:auto !important;
 }
 
-.mcs-expanded{
+.container-fluid .mcs-expanded{
 	float:none !important;
 	max-width:@expanded !important;
 	margin:auto !important;
@@ -15,6 +15,13 @@
 .mcs-full{
 	max-width:100%;
 	padding:0 !important;
+}
+@media (max-width:767px){
+.mcs-half{
+	max-width:50%;
+	margin:0;
+	float:left !important;
+}
 }
 
 .homepage-vendors {
@@ -70,8 +77,6 @@
 }
 
 
-@media (max-width:767px){
-	.tygh-top-panel > div{
-		height:auto;
-	}
+.tygh-top-panel > div{
+	height:auto;
 }
