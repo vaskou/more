@@ -1,0 +1,32 @@
+.logo-container{
+	min-height:20px;
+	margin:10px 0;
+}
+
+.logo-container .logo{
+	margin:0;
+}
+
+.motto{
+//	margin-left: -40px;
+	margin-left: 5px;
+	margin-top: 33px;
+}
+.motto p {
+	padding:0;
+	font-weight: bold;
+	color: #ccc;
+	font-size: 24px;
+	letter-spacing: -1px;
+}
+
+.motto .accent {
+	font-weight: bold;
+	font-size: 24px;
+	letter-spacing: -1px;
+}
+
+.tygh-header ul.dropdown-multicolumns{
+	border-left:none;
+	border-right:none;
+}

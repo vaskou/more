@@ -49,3 +49,5 @@ function isPhone(){
 	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}
 {/if}
 
+
+{script src="js/addons/mcs_framework/mcs_alpha_menu/mcs_click_on_tablets.js"}

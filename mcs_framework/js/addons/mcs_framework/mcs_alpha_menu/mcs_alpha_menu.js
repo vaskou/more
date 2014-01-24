@@ -9,6 +9,7 @@ $(function(){
 	function(){
 		col=$(this);
 		col.children("ul").stop().slideUp(1000);
-	});
+	});	
+	
 	
 });
