@@ -22,4 +22,11 @@
 	width:99%;
 }
 
+.search-block-grid .search-block .search-magnifier{
+	top:2px;	
+	right:9px;
+	width:28px;
+	height:28px;
+}
+
 }

@@ -23,9 +23,9 @@
 	border:1px solid;
 	padding:0;
 }
-.tygh-footer > [class*="container"]{
+/*.tygh-footer > [class*="container"]{
 	padding:0 15px;
-}
+}*/
 .tygh-header > [class*="container"],
 .tygh-content > [class*="container"]{
 	border-bottom:none;

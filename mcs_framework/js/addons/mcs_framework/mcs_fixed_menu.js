@@ -13,6 +13,7 @@ $(function(){
 			
 			$(window).scroll(function(){
 				var header_height=$(".tygh-header").height();
+				console.log("TEST");
 				var top_distance=$(window).scrollTop();
 				if(top_distance>top_panel_height){
 					$(".menu-fixed").css({"top":0});
@@ -25,6 +26,7 @@ $(function(){
 			});
 		},
 		doUnderLimit:function(){
+			$(window).unbind("scroll");
 			$(".tygh-header").removeClass("menu-fixed");
 			$(".tygh-content").css({"margin-top":"0px"});
 		},

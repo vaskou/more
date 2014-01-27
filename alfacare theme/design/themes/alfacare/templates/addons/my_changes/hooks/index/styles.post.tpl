@@ -29,6 +29,7 @@
 	{style src="addons/my_changes/header/mcs_top_panel.resp.css"}
     {style src="addons/my_changes/header/mcs_header.resp.css"}
 	{style src="addons/my_changes/header/mcs_header.resp.less"}
+    {style src="addons/my_changes/header/mcs_top_menu.resp.less"}
     {style src="addons/my_changes/header/mcs_search_box.resp.css"}
 	{style src="addons/my_changes/homepage/mcs_main_content.resp.css"}
 	{style src="addons/my_changes/homepage/mcs_slider.resp.css"}

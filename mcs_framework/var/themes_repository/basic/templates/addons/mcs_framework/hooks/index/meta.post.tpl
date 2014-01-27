@@ -1,3 +1,5 @@
+{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {literal}
 <script>
@@ -12,3 +14,5 @@
 })();
 </script>
 {/literal}
+
+{/if}

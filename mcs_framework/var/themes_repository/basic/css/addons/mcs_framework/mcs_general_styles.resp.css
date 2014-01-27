@@ -1,0 +1,46 @@
+@media only screen and (max-width: 767px) {
+
+/*Reset password page*/ 
+.login .body-bc{
+	width:auto;
+	margin:22px 0 0;
+	padding-left:0;	
+}
+.login-info {
+	margin:0 0 50px 0;
+}
+
+/*Register page*/
+.account{
+	margin:0;
+}
+.account .buttons-container{
+	width:auto;
+	margin:30px 0 0;
+	padding-left:0;
+}
+.account-benefits {
+	margin:0 0 50px 0;
+}
+
+/*Notifications*/
+.cm-notification-container {
+	width:90%!important;
+	margin:0px!important;
+	left:5%!important;
+}
+
+/*Add to cart popup*/
+.notification-content-extended {
+	width:90%!important;
+	margin:0px!important;
+	left:5%!important;
+}
+
+.product-notification-total-info>div{
+	width:100%;
+	float:left;
+	margin:5px 0px;
+
+}
+} 

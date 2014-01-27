@@ -44,7 +44,8 @@ ul.dropdown-multicolumns > li > a > i{
 }
 
 ul.dropdown-multicolumns li a,
-ul.dropdown-multicolumns li:hover a{
+ul.dropdown-multicolumns li:hover a,
+ul.dropdown-multicolumns li.nodrop:hover a{
 	padding:8px;
 	border:none;
 }
@@ -63,9 +64,10 @@ ul.dropdown-multicolumns li.nodrop a {
 }
 .dropdown-multicolumns > li > .dropdown-fullwidth,
 .static .drop-left{
-	top:41px !important;
+	top:37px !important;
 }
-.dropdown-multicolumns .col-1{
+ul.dropdown-multicolumns > li > div > div.col-1,
+ul.dropdown-multicolumns > li > ul > li.col-1{
 	padding:10px 0;
 }
 
@@ -76,6 +78,11 @@ ul.dropdown-multicolumns h3 {
 	border:none;
 }
 
-ul.dropdown-multicolumns li ul{
+ul.dropdown-multicolumns > li > ul{
+	margin:0;
+	padding-top:0px;
+}
+
+ul.dropdown-multicolumns > li > ul > li ul{
 	padding-left:5px;
 }

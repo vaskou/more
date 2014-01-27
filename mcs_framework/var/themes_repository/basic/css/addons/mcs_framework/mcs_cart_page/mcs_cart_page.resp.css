@@ -1,0 +1,109 @@
+
+@media only screen and (max-width: 767px) {
+
+.buttons-container.cart-top-buttons{
+	padding-left:0px;
+	padding-right:0px;
+	padding-bottom:0px;	
+}
+
+.cart-top-buttons .cart-left-buttons,
+.cart-top-buttons .cart-right-buttons{
+	width:50%;
+}
+
+.cart-top-buttons .cart-left-buttons .text-button{
+	float:left;
+	width:100%;
+	margin-top:18px;
+	margin-left:15px;
+}
+
+.cart-top-buttons .cart-right-buttons > div{
+	width:100%;
+	margin-bottom:10px;
+	margin-left:0;	
+}
+
+/* General styles for responsive tables */
+.mainbox-cart-body table,
+.mainbox-cart-body thead,
+.mainbox-cart-body tbody,
+.mainbox-cart-body th,
+.mainbox-cart-body td,
+.mainbox-cart-body tr {
+	display: block!important;
+}
+
+.mainbox-cart-body table,
+.mainbox-cart-body thead,
+.mainbox-cart-body tbody,
+.mainbox-cart-body th,
+.mainbox-cart-body td,
+.mainbox-cart-body tr {
+	border: none!important;
+}
+
+.mainbox-cart-body table tbody{
+	border: 1px solid #ccc!important;
+}
+
+.mainbox-cart-body table td{
+	border-bottom: 1px solid #ccc!important;
+}
+
+.mainbox-cart-body #cart_items table th{
+	display:none!important;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.mainbox-cart-body thead tr {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+/*Cart page Cart body*/
+/*Ftiaxnw ligo ta paddings na min pianei poly xworo*/
+.mainbox-cart-body td{padding:10px!important;}
+.mainbox-cart-body td.product-image-cell>div{float:none;}
+.mainbox-cart-body td.product-description{width:auto!important;}
+.mainbox-cart-body td.price-cell{text-align:left;}
+.mainbox-cart-body td.quantity-cell{height:30px;}
+
+/*Cart Page bottom buttons*/
+.buttons-container.cart-bottom-buttons{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.cart-bottom-buttons .cart-right-buttons > div{
+	width:100%;
+	margin-bottom:10px;
+	margin-left:0;	
+}
+}
+
+@media only screen and (max-width: 479px) {
+
+/*Cart page top button*/
+.cart-top-buttons .float-right,
+.cart-top-buttons .float-left,
+.cart-top-buttons .float-left .text-button{
+	float:left;
+	width:100%;
+	text-align:left;
+}
+
+.cart-top-buttons .float-left .text-button{margin-top:18px;margin-bottom:8px;}
+.cart-right-buttons .float-right {margin-left: 0px;margin-top:10px;margin-bottom:0 !important;}
+
+/*Cart page Statistics*/
+ul.statistic-list {float:left;padding-top:0px;}
+ul.statistic-list li span.checkout-item-title {text-align:left;width:auto;}
+ul.statistic-list li.total {text-align: left;    }
+ul.statistic-list li span.checkout-item-value {width:auto}
+
+/*Cart Page bottom buttons*/
+.cart-bottom-buttons .float-right,.cart-bottom-buttons .float-left{float:left;width:100%;text-align:left;}
+}

@@ -1,6 +1,5 @@
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/mcs_framework/bootstrap-responsive/bootstrap.min.less"}
-    {style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.resp.css"}
 {/if}
 
 {style src="addons/mcs_framework/resets/button_reset.less"}
@@ -78,3 +77,11 @@
 {style src="addons/mcs_framework/mcs_brands_page.css"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
 {style src="addons/mcs_framework/mcs_social_icons.css"}
+
+{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+	{style src="addons/mcs_framework/mcs_general_styles.resp.css"}
+    {style src="addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.resp.css"}
+    {style src="addons/mcs_framework/mcs_cart_page/mcs_cart_page.resp.css"}
+    {style src="addons/mcs_framework/mcs_checkout_page/mcs_checkout_page.resp.css"}
+    {style src="addons/mcs_framework/mcs_quick_view/mcs_quick_view.resp.css"}
+{/if}
