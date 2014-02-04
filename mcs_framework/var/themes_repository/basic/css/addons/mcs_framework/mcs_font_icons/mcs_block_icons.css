@@ -1,8 +1,13 @@
 .minicart-title{
 	padding-left:0;
 }
-
 .popup-title.unlogged a, 
 .popup-title.logged a{
 	padding-left:7px;
+}
+.popup-title.logged .icon-user,
+.popup-title.unlogged .icon-user{
+	position:relative;
+	padding:0;
+	top:0;	
 }

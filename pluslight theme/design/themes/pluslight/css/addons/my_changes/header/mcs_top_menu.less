@@ -41,6 +41,7 @@ ul.dropdown-multicolumns {
 	.drop-shadow (0, 2px, 2px, 0, 0.3);
 }
 
+.dropdown-multicolumns > li > ul,
 .dropdown-multicolumns > li > div{
 	background-color:lighten(@base, 45%);
 }
@@ -55,14 +56,18 @@ ul.dropdown-multicolumns > li:hover {
 ul.dropdown-multicolumns >li:before{
 	color:lighten(@base,33%);
 }
-ul.dropdown-multicolumns li a {
+ul.dropdown-multicolumns li a,
+ul.dropdown-multicolumns li:hover ul li a{
 	color: @menu_links;
 }
-ul.dropdown-multicolumns li.active a,
-ul.dropdown-multicolumns li:hover a {
+ul.dropdown-multicolumns li.active > a,
+ul.dropdown-multicolumns li:hover > a,
+ul.dropdown-multicolumns li ul li.active > a,
+ul.dropdown-multicolumns li ul li a:hover,
+ul.dropdown-multicolumns li:hover ul li.alt-link a{
 	color: @decorative;
 }
 
-ul.dropdown-multicolumns h3 {
+ul.dropdown-multicolumns h3{
 	color: @menu_links;
 }

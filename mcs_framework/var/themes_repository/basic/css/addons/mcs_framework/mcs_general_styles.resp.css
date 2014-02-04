@@ -43,4 +43,26 @@
 	margin:5px 0px;
 
 }
+
+/*Sidebox*/
+.mcs-sidebox-hide .sidebox-title span:before,
+.mcs-sidebox-hide .sidebox-title a:before{
+	font-family:'icomoon';
+	content:'\e3b5';
+	display:inline-block;
+}
+.mcs-sidebox-hide .sidebox-title.unhid span:before,
+.mcs-sidebox-hide .sidebox-title.unhid a:before{
+	font-family:'icomoon';
+	content:'\e3b6';
+	display:inline-block;
+}
+.mcs-sidebox-hide .sidebox-title{
+	cursor:pointer;
+}
+
+.mcs-sidebox-hide .sidebox-body{
+	display:none;
+}
+
 } 

@@ -9,12 +9,9 @@
 {style src="addons/mcs_framework/resets/product_filter_icons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 
-{if $addons.mcs_framework.mcs_fontawesome=='Y'}
-	{style src="addons/mcs_framework/mcs_font_icons/fontawesome/style.css"}
-{/if}
-
 {if $addons.mcs_framework.mcs_icomoon=='Y'}
 	{style src="addons/mcs_framework/mcs_font_icons/icomoon/style.css"}
+    {style src="addons/mcs_framework/mcs_font_icons/overrides.css"}
 {/if}
 
 {if $addons.mcs_framework.mcs_bxslider=='Y'}
@@ -77,6 +74,7 @@
 {style src="addons/mcs_framework/mcs_brands_page.css"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
 {style src="addons/mcs_framework/mcs_social_icons.css"}
+{style src="addons/mcs_framework/mcs_labels/mcs_labels.css"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_general_styles.resp.css"}
@@ -84,4 +82,6 @@
     {style src="addons/mcs_framework/mcs_cart_page/mcs_cart_page.resp.css"}
     {style src="addons/mcs_framework/mcs_checkout_page/mcs_checkout_page.resp.css"}
     {style src="addons/mcs_framework/mcs_quick_view/mcs_quick_view.resp.css"}
+    {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.css"}
+    {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.less"}
 {/if}

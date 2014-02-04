@@ -9,4 +9,5 @@ show_list_discount=true
 show_add_to_cart=$show_add_to_cart|default:true 
 but_role="action" 
 show_features=true
-show_rating=true}
+show_rating=true 
+show_discount_label=true}

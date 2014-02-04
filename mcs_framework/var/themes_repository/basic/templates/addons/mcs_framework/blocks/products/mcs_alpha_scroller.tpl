@@ -60,7 +60,8 @@
     hide_add_to_wish=$hide_add_to_wish 
     hide_add_to_compare=$hide_add_to_compare 
     hide_price=$hide_price 
-    enable_quick_view=$enable_quick_view}
+    enable_quick_view=$enable_quick_view 
+    show_discount_label=true}
     
     {if $block.properties.mcs_customAutoControls=='true'}
     	<div id="autoCtrl"></div>

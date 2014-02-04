@@ -3,14 +3,14 @@
 }
 .mcs-side-menu ul.text-links{
 	padding:10px;
+/*	color:#fff;*/
 }
 .mcs-side-menu li.level-1{
 	margin:10px 0;
-	color:#fff;
 }
-.mcs-side-menu li.level-1.active{
+/*.mcs-side-menu li.level-1.active{
 	color:#404040;
-}
+}*/
 .mcs-side-menu li.level-1:before{
 	font-family: 'icomoon';
 	speak: none;
@@ -27,9 +27,14 @@
 }
 .mcs-side-menu li:first-child{
 	margin-top:0px;
+	padding-top:0px;
+}
+.mcs-side-menu li:last-child{
+	margin-bottom:0px;
+	padding-bottom:0px;
 }
 .mcs-side-menu li a{
-	color:#fff;
 	line-height:16px;
 	vertical-align:middle;
+/*	color:#fff;*/
 }

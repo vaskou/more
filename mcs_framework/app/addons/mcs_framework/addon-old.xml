@@ -14,17 +14,32 @@
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
-			<section id="mcs_top_menu">
-                <name>Top Menu</name>
+		<!--GENERAL-->
+			<section id="mcs_general">
+                <name>General</name>
                 <items>
-                    <item id="mcs_fixed_menu">
+					<item id="mcs_general_responsive">
+						<type>header</type>
+						<name>Responsive Layout</name>
+					</item>
+					<item id="mcs_general_responsive_enable">
+                        <type>checkbox</type>
+                        <name>Enable responsive layout</name>
+						<default_value>N</default_value>
+                    </item>
+					
+					<item id="mcs_general_fixed_menu">
+						<type>header</type>
+						<name>Fixed Menu</name>
+					</item>
+                    <item id="mcs_general_fixed_menu_enable">
                         <type>checkbox</type>
                         <name>Enable fixed menu</name>
 						<default_value>N</default_value>
                     </item>
 				</items>
             </section>
-			
+		<!--PRODUCT CATEGORIES-->
 			<section id="mcs_product_categories">
                 <name>Product Categories</name>
                 <items>
@@ -73,7 +88,7 @@
                     </item>
 				</items>
             </section>
-			
+		<!--PRODUCT VIEW-->
 			<section id="mcs_product">
                 <name>Product view</name>       
                 <items>
@@ -111,7 +126,7 @@
                     </item>
 				</items>
 			</section>
-			
+		<!--BLOCK GROUPING-->
 			<section id="mcs_block_grouping">
                 <name>Block Grouping</name>       
                 <items>
@@ -141,7 +156,7 @@
                     </item>
 				</items>
 			</section>
-			
+		<!--FONT ICONS-->
             <section id="mcs_font_icons">
                 <name>Font Icons</name>
                 <items>
@@ -149,11 +164,6 @@
 						<type>header</type>
 						<name>Font Icons Libraries</name>
 					</item>
-                    <item id="mcs_fontawesome">
-                        <type>checkbox</type>
-                        <name>Font-Awesome</name>
-						<default_value>Y</default_value>
-                    </item>
 					<item id="mcs_icomoon">
                         <type>checkbox</type>
                         <name>Icomoon</name>
@@ -167,22 +177,22 @@
 					<item id="mcs_button_icons_add_to_cart">
                         <type>input</type>
                         <name>"Add To Cart" button icon</name>
-						<default_value>icon-im-cart</default_value>
+						<default_value>icon-cart</default_value>
                     </item>
 					<item id="mcs_button_icons_add_to_compare_list">
                         <type>input</type>
                         <name>"Add To Compare List" button icon</name>
-						<default_value>icon-im-bars-3</default_value>
+						<default_value>icon-bars3</default_value>
                     </item>
 					<item id="mcs_button_icons_add_to_wishlist">
                         <type>input</type>
                         <name>"Add To Wishlist" button icon</name>
-						<default_value>icon-im-heart-4</default_value>
+						<default_value>icon-heart4</default_value>
                     </item>
 					<item id="mcs_button_icons_select_options">
                         <type>input</type>
                         <name>"Select Options" button icon</name>
-						<default_value>icon-im-cart</default_value>
+						<default_value>icon-cart</default_value>
                     </item>
 					
 					<item id="mcs_block_icons_header">
@@ -192,31 +202,31 @@
 					<item id="mcs_block_icons_cart_block">
                         <type>input</type>
                         <name>Cart block icon</name>
-						<default_value>icon-im-cart</default_value>
+						<default_value>icon-cart</default_value>
                     </item>
 					<item id="mcs_block_icons_my_account_block">
                         <type>input</type>
                         <name>My Account block icon</name>
-						<default_value>icon-im-user</default_value>
+						<default_value>icon-user</default_value>
                     </item>
 					<item id="mcs_block_icons_sign_in">
                         <type>input</type>
                         <name>Sign In icon</name>
-						<default_value>icon-im-enter</default_value>
+						<default_value>icon-enter</default_value>
                     </item>
 					<item id="mcs_block_icons_sign_out">
                         <type>input</type>
                         <name>Sign Out icon</name>
-						<default_value>icon-im-exit</default_value>
+						<default_value>icon-exit</default_value>
                     </item>
 					<item id="mcs_block_icons_register">
                         <type>input</type>
                         <name>Register icon</name>
-						<default_value>icon-im-pencil-3</default_value>
+						<default_value>icon-pencil3</default_value>
                     </item>
 				</items>
             </section>
-			
+		<!--SLIDERS-->
 			<section id="mcs_sliders">
                 <name>bxSlider</name>
                 <items>
@@ -227,123 +237,7 @@
                     </item>
 				</items>
             </section>
-			
-			 <section id="mcs_social_links">
-                <name>Social links</name>
-                <items>
-                    <item id="mcs_rss">
-                        <type>input</type>
-                        <name>RSS Feed</name>
-                        <default_value>http://news.google.com/?output=rss</default_value>
-                        <tooltip>Enter your rss feed url here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">RSS Feed</item>
-                            <item lang="EN" for="tooltip">Enter your rss feed url here.</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_twitter">
-                        <type>input</type>
-                        <name>Twitter URL</name>
-                        <default_value>http://www.twitter.com</default_value>
-                        <tooltip>Enter your Twitter URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Twitter URL</item>
-                            <item lang="EN" for="tooltip">Enter your Twitter URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_facebook">
-                        <type>input</type>
-                        <name>Facebook Profile</name>
-                        <default_value>http://www.facebook.com</default_value>
-                        <tooltip>Enter your Facebook Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Facebook Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Facebook Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_googleplus">
-                        <type>input</type>
-                        <name>Google + Profile</name>
-                        <default_value>https://plus.google.com</default_value>
-                        <tooltip>Enter your Google + Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Google + Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Google + Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_linkedin">
-                        <type>input</type>
-                        <name>LinkedIn Profile</name>
-                        <default_value>http://www.linkedin.com/</default_value>
-                        <tooltip>Enter your LinkedIn Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">LinkedIn Profile</item>
-                            <item lang="EN" for="tooltip">Enter your LinkedIn Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_dribbble">
-                        <type>input</type>
-                        <name>Dribbble Profile URL</name>
-                        <default_value>http://dribbble.com/</default_value>
-                        <tooltip>Enter your Dribbble Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Dribbble Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Dribbble Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_tumblr">
-                        <type>input</type>
-                        <name>Tumblr Profile URL</name>
-                        <default_value>https://www.tumblr.com/</default_value>
-                        <tooltip>Enter your Tumblr Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Tumblr Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Tumblr Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_instagram">
-                        <type>input</type>
-                        <name>Instagram Profile URL</name>
-                        <default_value>http://instagram.com/</default_value>
-                        <tooltip>Enter your Instagram Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Instagram Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Instagram Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_youtube">
-                        <type>input</type>
-                        <name>YouTube Profile URL</name>
-                        <default_value>http://www.youtube.com/</default_value>
-                        <tooltip>Enter your YouTube Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">YouTube Profile</item>
-                            <item lang="EN" for="tooltip">Enter your YouTube Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_pinterest">
-                        <type>input</type>
-                        <name>Pinterest Profile URL</name>
-                        <default_value>https://pinterest.com/</default_value>
-                        <tooltip>Enter your Pinterest Profile URL here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Pinterest Profile</item>
-                            <item lang="EN" for="tooltip">Enter your Pinterest Profile URL here</item>
-                        </translations>
-                    </item>
-                    <item id="mcs_email">
-                        <type>input</type>
-                        <name>Email</name>
-                        <default_value>info@example.com</default_value>
-                        <tooltip>Enter your email address here. Leave blank to disable.</tooltip>
-                        <translations>
-                            <item lang="EN" for="name">Email Address</item>
-                            <item lang="EN" for="tooltip">Enter your email address here</item>
-                        </translations>
-                    </item>
-                </items>
-            </section>
-			
+		<!--MOBILE DEVICES-->
 			<section id="mcs_mobile_devices">
                 <name>Mobile Devices</name>       
                 <items>
@@ -359,7 +253,7 @@
                     </item>
 				</items>
 			</section>
-			
+		<!--SCROLL TO TOP-->
 			<section id="mcs_scroll_to_top">
                 <name>Scroll to top</name>       
                 <items>
@@ -416,6 +310,7 @@
                     </item>
 				</items>
 			</section>
+		<!--POPUP-->
 			<section id="mcs_popup">
 				<name>Popup</name>
 				<items>
@@ -570,6 +465,131 @@
 
 				</items>
 			</section>
+		<!--LABELS-->
+			<section id="mcs_labels">
+				<name>Product labels</name>
+				<items>
+					
+					<item id="mcs_labels_styling">
+                        <name>Styling</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_labels_display">
+						<name>Label blocks display</name>
+						<tooltip>Select the display mode of the labels. Block: One label on top of the other, Inline: One label besides the other</tooltip>
+						<type>selectbox</type>
+						<default_value>mcs_labels_block</default_value>
+                        <variants>
+                            <item id="mcs_labels_block">
+                                <name>Block</name>
+                            </item>
+                            <item id="mcs_labels_inline">
+                                <name>Inline</name>                        
+                            </item>
+                        </variants>
+					</item>	
+					
+					<item id="mcs_labels_alignment">
+						<name>Label blocks alignment</name>
+						<tooltip>Select the alignment mode of the labels.</tooltip>
+						<type>selectbox</type>
+						<default_value>mcs_labels_left</default_value>
+                        <variants>
+                            <item id="mcs_labels_left">
+                                <name>Left</name>
+                            </item>
+                            <item id="mcs_labels_center">
+                                <name>Center</name>                        
+                            </item>
+                            <item id="mcs_labels_right">
+                                <name>Right</name>                        
+                            </item>
+						</variants>
+					</item>	
+
+					
+					<item id="mcs_labels_new">
+                        <name>'New product' label</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_labels_new_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'New product' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_new_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'New product' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_new_days">
+						<name>New product duration (days)</name>
+						<tooltip>Enter the number of days that a product should be considered as new.</tooltip>
+						<type>input</type>
+						<default_value>30</default_value>
+						<variants/>
+					</item>
+					
+					<item id="mcs_labels_free_shipping">
+                        <name>'Free shipping' label</name>
+                        <type>header</type>
+                    </item>
+					<item id="mcs_labels_free_shipping_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'New product' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_free_shipping_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'New product' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+					<item id="mcs_labels_out_of_stock">
+                        <name>'Out of stock' label</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_labels_out_of_stock_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'Out of stock' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_out_of_stock_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'Out of stock' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+
+					<item id="mcs_labels_downloadable">
+                        <name>'Out of stock' label</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_labels_downloadable_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'Downloadable' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_downloadable_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'Downloadable' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+					
+				</items>
+			</section>
         </sections>
     </settings>
 	<language_variables>
@@ -692,6 +712,17 @@
 		<item lang="en" id="block_mcs_social">More CS-Cart Social</item>
 		<item lang="en" id="block_mcs_social_description">More CS-Cart Social description</item>
 		<item lang="en" id="mcs_social_links">Social links</item>
+		<item lang="en" id="mcs_rss">RSS Feed</item>
+		<item lang="en" id="mcs_twitter">Twitter URL</item>
+		<item lang="en" id="mcs_facebook">Facebook Profile</item>
+		<item lang="en" id="mcs_googleplus">Google+ Profile</item>
+		<item lang="en" id="mcs_linkedin">LinkedIn Profile</item>
+		<item lang="en" id="mcs_dribbble">Dribbble Profile URL</item>
+		<item lang="en" id="mcs_tumblr">Tumblr Profile URL</item>
+		<item lang="en" id="mcs_instagram">Instagram Profile URL</item>
+		<item lang="en" id="mcs_youtube">YouTube Profile URL</item>
+		<item lang="en" id="mcs_pinterest">Pinterest Profile URL</item>
+		<item lang="en" id="mcs_email">Email</item>
         <item lang="en" id="mcs_social_icons_alignment">Social Icons Alignment</item>
 		<item lang="en" id="mcs_social_icons_size">Social Icons Size</item>
 		<item lang="en" id="mcs_social_icons_border">Enable border</item>

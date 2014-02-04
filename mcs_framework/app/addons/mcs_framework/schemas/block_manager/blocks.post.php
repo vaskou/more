@@ -435,7 +435,7 @@ $schema['mcs_brand_scroller'] = array (
 		),
 		'mcs_brand_scroller_button_icon'=>array(
 			'type'=>'input',
-			'default_value'=>'icon-im-arrow-right-6'
+			'default_value'=>'icon-arrow-right6'
 		)		
 	),
     'templates' => array (
@@ -663,6 +663,63 @@ $schema['banners']['templates']['addons/mcs_framework/blocks/mcs_bxslider.tpl'] 
 
 
 $schema['mcs_social'] = array (
+	'content'=>array(
+		'mcs_rss'=>array(
+			'type'=>'input',
+			'default_value'=>'http://news.google.com/?output=rss',
+			'tooltip'=>'Enter your rss feed url here. Leave blank to disable.'
+		),
+		'mcs_twitter'=>array(
+			'type'=>'input',
+			'default_value'=>'http://www.twitter.com',
+			'tooltip'=>'Enter your Twitter URL here. Leave blank to disable.'
+		),
+		'mcs_facebook'=>array(
+			'type'=>'input',
+			'default_value'=>'http://www.facebook.com',
+			'tooltip'=>'Enter your Facebook Profile URL here. Leave blank to disable.'
+		),
+		'mcs_googleplus'=>array(
+			'type'=>'input',
+			'default_value'=>'https://plus.google.com',
+			'tooltip'=>'Enter your Google+ Profile URL here. Leave blank to disable.'
+		),
+		'mcs_linkedin'=>array(
+			'type'=>'input',
+			'default_value'=>'http://www.linkedin.com/',
+			'tooltip'=>'Enter your LinkedIn Profile URL here. Leave blank to disable.'
+		),
+		'mcs_dribbble'=>array(
+			'type'=>'input',
+			'default_value'=>'http://dribbble.com/',
+			'tooltip'=>'Enter your Dribbble Profile URL here. Leave blank to disable.'
+		),
+		'mcs_tumblr'=>array(
+			'type'=>'input',
+			'default_value'=>'https://www.tumblr.com/',
+			'tooltip'=>'Enter your Tumblr Profile URL here. Leave blank to disable.'
+		),
+		'mcs_instagram'=>array(
+			'type'=>'input',
+			'default_value'=>'http://instagram.com/',
+			'tooltip'=>'Enter your Instagram Profile URL here. Leave blank to disable.'
+		),
+		'mcs_youtube'=>array(
+			'type'=>'input',
+			'default_value'=>'http://www.youtube.com/',
+			'tooltip'=>'Enter your YouTube Profile URL here. Leave blank to disable.'
+		),
+		'mcs_pinterest'=>array(
+			'type'=>'input',
+			'default_value'=>'https://pinterest.com/',
+			'tooltip'=>'Enter your Pinterest Profile URL here. Leave blank to disable.'
+		),
+		'mcs_email'=>array(
+			'type'=>'input',
+			'default_value'=>'info@example.com',
+			'tooltip'=>'Enter your email address here. Leave blank to disable.'
+		),
+	),
     'templates' => array (
 		'addons/mcs_framework/blocks/mcs_social_links.tpl' => array(
         	'settings' => array (

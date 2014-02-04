@@ -20,7 +20,7 @@
                                     {assign var="href" value=$reset_lnk|fn_url}
                                 {/if}
                                 {assign var="use_ajax" value=$href|fn_compare_dispatch:$config.current_url}
-                                <a href="{$href}" class="filter-item checked{if $allow_ajax && $use_ajax} cm-ajax cm-ajax-full-render cm-history"{/if} data-ca-scroll=".cm-pagination-container" data-ca-target-id="{$ajax_div_ids}" rel="nofollow"><span class="filter-icon"><i class="mcs-base-icon icon-im-radio-unchecked"></i><i class="mcs-ok-icon icon-im-radio-checked"></i><i class="mcs-cancel-icon icon-im-cancel-circle"></i></span>{$filter.prefix}{$selected_range.range_name|fn_text_placeholders}{$filter.suffix}</a>
+                                <a href="{$href}" class="filter-item checked{if $allow_ajax && $use_ajax} cm-ajax cm-ajax-full-render cm-history"{/if} data-ca-scroll=".cm-pagination-container" data-ca-target-id="{$ajax_div_ids}" rel="nofollow"><span class="filter-icon"><i class="mcs-base-icon icon-radio-unchecked"></i><i class="mcs-ok-icon icon-radio-checked"></i><i class="mcs-cancel-icon icon-cancel-circle"></i></span>{$filter.prefix}{$selected_range.range_name|fn_text_placeholders}{$filter.suffix}</a>
                             {/strip}
                         </li>
                     {/foreach}
@@ -77,21 +77,26 @@
                     {literal}
                     <script>
 					$(function(){
-							
-						initBindings();
-	
-						$(document).ajaxStop(function() {
+						
+						$("body").widthCheck({
+						doOverLimit:function(){	
 							initBindings();
-						});
-	
-						function initBindings(){
-							$(".product-filters").hover(
-							function(){
-								$(this).children("ul").slideDown(500);
-							},
-							function(){
+							$(document).ajaxStop(function() {
+								initBindings();
 							});
-						};
+		
+							function initBindings(){
+								$(".product-filters").hover(
+								function(){
+									$(this).children("ul").slideDown(500);
+								},
+								function(){
+								});
+							};
+						},
+						doUnderLimit:function(){
+							$(".product-filters").children("ul").slideDown(500);
+						}});
 					});
 					</script>
                     {/literal}

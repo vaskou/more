@@ -38,7 +38,7 @@
                             {if $variant_data.url}
                             <a rel="nofollow" target="_blank" title='{__("website")} {$range.range_name|fn_text_placeholders}' href="{if '~^(?:f|ht)tps?://~i'|preg_match:$variant_data.url===0}http://{/if}{$variant_data.url}">
                             	{__("website")}
-                                <i class="icon-im-new-tab"></i>
+                                <i class="icon-new-tab"></i>
                             </a>
                             {/if}
                         </div>

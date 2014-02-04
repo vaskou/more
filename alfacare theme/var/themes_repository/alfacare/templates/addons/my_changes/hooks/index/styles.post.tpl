@@ -24,6 +24,9 @@
 {style src="addons/my_changes/categories/mcs_sorting.less"}
 {style src="addons/my_changes/products/mcs_product.css"}
 {style src="addons/my_changes/products/mcs_product.less"}
+{style src="addons/my_changes/pages/mcs_pages_side_menu.css"}
+{style src="addons/my_changes/pages/mcs_pages_side_menu.less"}
+{style src="addons/my_changes/mcs_labels/mcs_labels.css"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/my_changes/header/mcs_top_panel.resp.css"}
@@ -35,6 +38,7 @@
 	{style src="addons/my_changes/homepage/mcs_slider.resp.css"}
 	{style src="addons/my_changes/homepage/mcs_slider.resp.less"}
 	{style src="addons/my_changes/categories/mcs_alpha_category_view.resp.css"}
+    {style src="addons/my_changes/categories/mcs_sidebox.resp.css"}
     {style src="addons/my_changes/products/mcs_product.resp.css"}
 {/if}
 

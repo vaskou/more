@@ -130,12 +130,20 @@
 
 .mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label{
 	position:absolute;
-	padding:7px 14px;
+	padding:5px;
 	z-index:1;
 	right:0px;
 	top:2px;
+	border-bottom:none;
 }
-
+.mcs_alpha_grid .thumb-discount-label i{
+	margin:0px 5px;
+	font-size:1.5em;
+}
+.mcs_alpha_grid .thumb-discount-label i,
+.mcs_alpha_grid .thumb-discount-label .label{
+	vertical-align:middle;
+}
 .mcs_alpha_grid .prod_img {
 	position: relative;
 	//height: 160px;

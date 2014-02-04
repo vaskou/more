@@ -1,0 +1,39 @@
+.mcs_label{
+	display:block;
+	margin:5px 0px;
+	background:#000000;
+	color:#ffffff;
+	padding:5px 5px;
+}
+.details_page .mcs_label{
+	display:inline-block;
+	margin:0 0px 5px 0;
+}
+
+.mcs_label i{
+	margin:0px 5px;
+	font-size:1.5em;
+	color:#ffffff;
+}
+
+.mcs_label i,.mcs_label .label
+{
+	vertical-align:middle;
+	margin-right:5px;
+}
+.details_page .mcs_label i{
+	font-size:1em;
+}
+
+
+.mcs_labels_wrapper.mcs_labels_right{
+	text-align:right;
+}
+.mcs_labels_wrapper.mcs_labels_center{
+	text-align:center;
+}
+
+.mcs_label.new{background-color:#009ed6;}
+.mcs_label.free_shipping{background-color:#8CD15E;}
+.mcs_label.out_of_stock{background-color:#a80006;}
+.mcs_label.downloadable{background-color:#fe9900;}

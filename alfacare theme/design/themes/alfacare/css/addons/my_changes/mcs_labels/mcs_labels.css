@@ -1,0 +1,15 @@
+.mcs_alpha_grid .mcs_labels_wrapper{
+	position:absolute;
+	top:36px;
+	left:6px;
+}
+.mcs_alpha_grid .mcs_label{
+	display:block;
+	margin:0;
+	padding:5px 5px;
+}
+
+.mcs_alpha_grid .thumb-discount-label .label,
+.mcs_alpha_grid .mcs_label .label{
+	display:none;
+}

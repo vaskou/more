@@ -7,4 +7,7 @@
 		max-width:100% !important;
 		height:auto !important;
 	}
+	.product-main-info .product-thumbnails{
+		margin:10px auto;
+	}
 }

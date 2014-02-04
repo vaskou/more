@@ -51,3 +51,7 @@ function isPhone(){
 
 
 {script src="js/addons/mcs_framework/mcs_alpha_menu/mcs_click_on_tablets.js"}
+
+{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+	{script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}
+{/if}

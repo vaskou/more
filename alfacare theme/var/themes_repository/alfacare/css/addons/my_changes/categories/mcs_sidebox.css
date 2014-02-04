@@ -1,3 +1,6 @@
+.sidebox-wrapper{
+	border:1px solid;
+}
 .sidebox-title {
 	-webkit-border-radius:0;
 	-moz-border-radius:0;
@@ -6,16 +9,22 @@
 }
 
 .sidebox-wrapper .sidebox-title{
-	border:1px solid;
+	border:none;
 	border-bottom:none;
 }
-.sidebox-wrapper .sidebox-title span{
+.sidebox-wrapper .sidebox-title span,
+.sidebox-wrapper .sidebox-title a{
 	font-weight:normal;
 	font-size:115%;
 }
 .sidebox-wrapper .sidebox-body{
 	padding:5px 15px 10px;
 	border-radius:0;
+	border:none;
+}
+.filter-wrap .icon-right-dir, 
+.filter-wrap .icon-down-dir{
+	margin:0;
 }
 .filter-title{
 	border:none;

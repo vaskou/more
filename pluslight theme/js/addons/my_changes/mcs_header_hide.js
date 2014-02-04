@@ -13,8 +13,12 @@ $(function(){
 					$(header_hidden).css({"min-height":"0px"});
 					$(header_hidden).slideUp(500);
 				}else{
-					$(header_hidden).slideDown(100);
+					$(header_hidden).slideDown(100,function(){
+						var header_height=$(".tygh-header").height();
+						$(".tygh-content").css({"margin-top":header_height+"px"});
+					});
 				}
+				
 			});
 		},
 		doUnderLimit:function(){

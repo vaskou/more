@@ -57,7 +57,22 @@
 }
 
 .mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label{
-	top:0px;
+	top:6px;
+	left:6px;
+	right:auto;
+	width:30px;
+	line-height:30px
+	text-align:center;
+}
+.mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label i{
+	display:none;
+}
+.mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label .discount_percent{
+	vertical-align:middle;
+	font-size:1.2em;
+	cursor:default;
+	display:block;
+	text-align:center;	
 }
 /*************************** hover hide **********************************/
 

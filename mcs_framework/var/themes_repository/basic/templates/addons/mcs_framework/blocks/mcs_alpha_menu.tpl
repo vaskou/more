@@ -32,7 +32,7 @@
             {/if}
             {*assign var="cols" value=4*}
             <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}" id="mcs-categ-{$item1.category_id}">
-                <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-im-arrow-down-15"></i>{/if}</a>
+                <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-arrow-down15"></i>{/if}</a>
 
             {if $item1.$childs}
 
@@ -80,10 +80,10 @@
                                 {assign var="item2_url" value=$item2|fn_form_dropdown_object_link:$block.type}
                                 <h3{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} class="active"{/if}>
                                 	<a{if $item2_url} href="{$item2_url}"{/if}>
-                                    	{$item2.$name} {if $item2.$childs && ($block.properties.mcs_top_menu_hide_third_level=='Y')}<i class="icon-im-arrow-down-15"></i>{/if}
+                                    	{$item2.$name} {if $item2.$childs && ($block.properties.mcs_top_menu_hide_third_level=='Y')}<i class="icon-arrow-down15"></i>{/if}
                                     </a>
                                 </h3>
-								 
+								
                                 {assign var="img_path" value=$item2.category_id|fn_get_image_pairs:"category":"M"}
                                 {if $img_path && ($block.properties.mcs_top_menu_show_images=='Y')}
                                     <div class="category-img">
@@ -176,6 +176,10 @@
             meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
             meanRemoveAttrs: true
         });
+		
+		$(".mean-nav").find("img").each(function(){
+			$(this).parent().hide();
+		});
 		
     /*});*/
     </script>

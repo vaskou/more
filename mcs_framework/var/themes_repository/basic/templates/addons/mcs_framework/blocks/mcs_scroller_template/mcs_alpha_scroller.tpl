@@ -23,19 +23,21 @@
                 
                         {assign var="form_open" value="form_open_`$obj_id`"}
                         {$smarty.capture.$form_open nofilter}
-                        {hook name="products:product_multicolumns_list"}
+                        {hook name="products:mcs_alpha_product_multicolumns_list"}
                         {capture name="main_icon"}
                             <a href="{"products.view?product_id=`$product.product_id`"|fn_url}" class="thumb">
                                 {include file="common/image.tpl" obj_id=$obj_id_prefix images=$product.main_pair image_width=$settings.Thumbnails.product_lists_thumbnail_width image_height=$settings.Thumbnails.product_lists_thumbnail_height }
                             </a>
                         {/capture}
                         
-                        {if $product.list_discount_prc}
-                        <span class="thumb-discount-label">
-                            {strip}    
-                                {__("save_discount")} {$product.list_discount_prc}%
-                            {/strip}
-                        </span>
+                        {if $show_discount_label && ($product.discount_prc || $product.list_discount_prc)}
+                            <span class="thumb-discount-label">
+                                <i class="icon-coins cm-tooltip" title="{__("save_discount")} {if $product.discount}{$product.discount_prc}{else}{$product.list_discount_prc}{/if}%"></i>
+                                {strip}    
+                                    <span class="label">{__("save_discount")}</span>
+                                    <span class="discount_percent cm-tooltip" title="{__("save_discount")} {if $product.discount}{$product.discount_prc}{else}{$product.list_discount_prc}{/if}%">{if $product.discount}{$product.discount_prc}{else}{$product.list_discount_prc}{/if}%</span>
+                                {/strip}
+                            </span>
                         {/if}
                         
                         {if $product.image_pairs}

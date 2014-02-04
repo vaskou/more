@@ -2,6 +2,7 @@
 {style src="addons/my_changes/mcs_general_styles.less"}
 {style src="addons/my_changes/mcs_brands_page.css"}
 {style src="addons/my_changes/mcs_brands_page.less"}
+{style src="addons/my_changes/header/mcs_top_panel.css"}
 {style src="addons/my_changes/header/mcs_header.css"}
 {style src="addons/my_changes/header/mcs_search_box.css"}
 {style src="addons/my_changes/header/mcs_top_menu.css"}

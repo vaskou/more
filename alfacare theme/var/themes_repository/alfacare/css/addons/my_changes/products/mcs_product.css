@@ -2,6 +2,7 @@
 .product-fields-wrapper{
 	width:49%;
 	display:inline-block;
+	float:left;
 	vertical-align:top;
 	margin-top:0;	
 }
@@ -9,11 +10,17 @@
 .product-main-info .product-info form > .buttons-container{
 	width:50%;
 	display:inline-block;
+	float:right;
 	text-align:right;
 	margin-top:25px;
 }
 }
 
+.product-main-info .image-border .discount-label{
+	top:6px;
+	right:6px;
+	border-bottom:none;
+}
 .border-image-wrap {
 	border: 1px solid;
 }
