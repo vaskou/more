@@ -65,4 +65,11 @@
 	display:none;
 }
 
+/*Product page*/
+.product-main-info .no-image{
+	max-width:99%;
+	height:240px !important;
+	margin:auto;
 } 
+
+}

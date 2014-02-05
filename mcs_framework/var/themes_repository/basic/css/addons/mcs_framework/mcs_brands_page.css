@@ -1,11 +1,14 @@
 .mcs-brands-page .mcs-list-filter ul li{
 	float:left;
-	padding:2px 6px;
+	padding:0px;
 	border:1px solid;
-	border-left:none;
+	margin:2px;
 }
-.mcs-brands-page .mcs-list-filter ul li#li-ALL{
-	border-left:1px solid;
+.mcs-brands-page .mcs-list-filter ul li a{
+	display:block;
+	width:30px;
+	line-height:30px;
+	text-align:center;
 }
 .mcs-brands-page .mcs-brands-row > .subheader{
 	border-bottom:1px solid;

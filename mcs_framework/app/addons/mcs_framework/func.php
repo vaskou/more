@@ -18,6 +18,8 @@ use Tygh\BlockManager\Block;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
+/********************* Brands and Brands Scroller ************************/
+
 function fn_get_brands($feature_id, $lang_code = CART_LANGUAGE)
 {
 	//var_dump($feature_id);
@@ -56,7 +58,18 @@ function fn_get_selected_brands($params)
 	return array($sel_brands);
 }
 
+function fn_mcs_product_get_features()
+{
+   	return db_get_hash_single_array("SELECT a.feature_id, b.description FROM ?:product_features as a LEFT JOIN ?:product_features_descriptions as b ON a.feature_id=b.feature_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_type='E' ORDER BY b.description", array('feature_id', 'description'));
+}
 
+function fn_mcs_product_get_feature_filter($feature_id)
+{
+   	return db_get_hash_single_array("SELECT a.filter_id, b.filter FROM ?:product_filters as a LEFT JOIN ?:product_filter_descriptions as b ON a.filter_id=b.filter_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_id='$feature_id' ORDER BY b.filter", array('filter_id', 'filter'));
+}
+/****************************************************************************************/
+
+/**************************** Blocks nad Grids on mobiles ******************************/
 function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
 {
 	if(AREA=='C'){
@@ -118,7 +131,9 @@ function fn_mcs_framework_get_grids_post($grids)
 		}
 	}
 }
+/****************************************************************************************************/
 
+/*********************************** Popup notifications ********************************************/
 function fn_mcs_popup_get_pages()
 {
     $pages = array(
@@ -142,6 +157,112 @@ function fn_mcs_popup_get_types()
 
     return $types;
 }
+
+function fn_mcs_popup_get_banners()
+{
+	$company_id=Registry::get('runtime.company_id');
+   	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.position", array('banner_id', 'banner'));
+}
+
+function fn_mcs_popup_get_categories()
+{
+	$company_id=Registry::get('runtime.company_id');
+   	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.id_path,a.position", array('category_id', 'category'));
+}
+
+function fn_mcs_popup_get_promotions()
+{
+   	return db_get_hash_single_array("SELECT a.promotion_id, b.name FROM ?:promotions as a LEFT JOIN ?:promotion_descriptions as b ON a.promotion_id=b.promotion_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.priority", array('promotion_id', 'name'));
+}
+/*************************************************************************************************************/
+
+/**************************************** Shortcodes *********************************************************/
+function fn_mcs_shortcodes(){
+
+	$mcs_shortcodes_settings = Registry::get('addons.mcs_framework');
+	$mcs_shortcodes = $mcs_shortcodes_settings['mcs_shortcodes_enable'];
+	
+	if($mcs_shortcodes=='Y')
+		return true;
+	else
+		return false;
+}
+
+function fn_mcs_shortcodes_render_blocks($grid, $block, $this, $content)
+{
+	if(AREA=='C'){
+	
+		if($block['type']=='html_block'){
+			
+			$parser = new JBBCode\Parser();
+		
+			$parser->addCodeDefinition(new YouTubeSC());
+			$parser->addCodeDefinition(new GoogleMapSC());
+			$parser->addCodeDefinition(new ButtonSC());
+			$parser->addCodeDefinition(new LinkSC());
+			$parser->addCodeDefinition(new IconCallToActionSC());
+			$parser->addCodeDefinition(new ImageCallToActionSC());
+			$parser->addCodeDefinition(new ContactFormSC());
+	
+	
+			$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
+
+			$parser->parse($block['content']['content']);
+			
+			$block['content']['content']=$parser->getAsHtml();
+		
+		}
+
+	}
+}
+
+function fn_mcs_add_controller_parser(){
+
+	print '<pre>';
+	//print_r(Registry::get('view')->{'tpl_vars'}['product']->{'value'});
+	//print_r(Registry::get('view')->{'tpl_vars'}['location_data']->{'value'}['dispatch']);
+	print '</pre>';
+	
+	$tpl_vars=Registry::get('view')->{'tpl_vars'};
+	$dispatch=Registry::get('view')->{'tpl_vars'}['location_data']->{'value'}['dispatch'];
+	
+	$parser = new JBBCode\Parser();
+	$parser->addCodeDefinition(new YouTubeSC());
+	$parser->addCodeDefinition(new GoogleMapSC());
+	$parser->addCodeDefinition(new ButtonSC());
+	$parser->addCodeDefinition(new LinkSC());
+	$parser->addCodeDefinition(new IconCallToActionSC());
+	$parser->addCodeDefinition(new ImageCallToActionSC());
+	$parser->addCodeDefinition(new ContactFormSC());
+
+	
+	
+	$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
+	
+	if($dispatch=='categories.view'){
+		
+		$parser->parse($tpl_vars['category_data']->{'value'}['description']);
+		$tpl_vars['category_data']->{'value'}['description']=$parser->getAsHtml();
+	}
+	
+	if($dispatch=='pages.view'){
+			
+		$parser->parse($tpl_vars['page']->{'value'}['description']);
+		$tpl_vars['page']->{'value'}['description']=$parser->getAsHtml();
+	}
+	
+	if($dispatch=='products.view'){
+			
+		$parser->parse($tpl_vars['product']->{'value'}['full_description']);
+		$tpl_vars['product']->{'value'}['full_description']=$parser->getAsHtml();
+		
+		$parser->parse($tpl_vars['product']->{'value'}['promo_text']);
+		$tpl_vars['product']->{'value'}['promo_text']=$parser->getAsHtml();	
+		
+	}
+}
+
+/*************************************************************************************************************/
 
 function fn_mcs_variants_get_easings()
 {
@@ -214,30 +335,3 @@ function fn_mcs_variants_get_effects()
  return $effects;
 }	
 	
-
-function fn_mcs_popup_get_banners()
-{
-	$company_id=Registry::get('runtime.company_id');
-   	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.position", array('banner_id', 'banner'));
-}
-
-function fn_mcs_popup_get_categories()
-{
-	$company_id=Registry::get('runtime.company_id');
-   	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.id_path,a.position", array('category_id', 'category'));
-}
-
-function fn_mcs_popup_get_promotions()
-{
-   	return db_get_hash_single_array("SELECT a.promotion_id, b.name FROM ?:promotions as a LEFT JOIN ?:promotion_descriptions as b ON a.promotion_id=b.promotion_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' ORDER BY a.priority", array('promotion_id', 'name'));
-}
-
-function fn_mcs_product_get_features()
-{
-   	return db_get_hash_single_array("SELECT a.feature_id, b.description FROM ?:product_features as a LEFT JOIN ?:product_features_descriptions as b ON a.feature_id=b.feature_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_type='E' ORDER BY b.description", array('feature_id', 'description'));
-}
-
-function fn_mcs_product_get_feature_filter($feature_id)
-{
-   	return db_get_hash_single_array("SELECT a.filter_id, b.filter FROM ?:product_filters as a LEFT JOIN ?:product_filter_descriptions as b ON a.filter_id=b.filter_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.feature_id='$feature_id' ORDER BY b.filter", array('filter_id', 'filter'));
-}

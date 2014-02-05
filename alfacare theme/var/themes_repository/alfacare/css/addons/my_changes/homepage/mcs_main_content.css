@@ -54,9 +54,3 @@
 	color: #fff;
 	text-align: center;
 }
-
-@media (max-width:959px){
-.container-fluid .mcs-homepage-cta-grid{
-	margin-top:0 !important;
-}
-}

@@ -469,46 +469,6 @@
 			<section id="mcs_labels">
 				<name>Product labels</name>
 				<items>
-					
-					<item id="mcs_labels_styling">
-                        <name>Styling</name>
-                        <type>header</type>
-                    </item>
-					
-					<item id="mcs_labels_display">
-						<name>Label blocks display</name>
-						<tooltip>Select the display mode of the labels. Block: One label on top of the other, Inline: One label besides the other</tooltip>
-						<type>selectbox</type>
-						<default_value>mcs_labels_block</default_value>
-                        <variants>
-                            <item id="mcs_labels_block">
-                                <name>Block</name>
-                            </item>
-                            <item id="mcs_labels_inline">
-                                <name>Inline</name>                        
-                            </item>
-                        </variants>
-					</item>	
-					
-					<item id="mcs_labels_alignment">
-						<name>Label blocks alignment</name>
-						<tooltip>Select the alignment mode of the labels.</tooltip>
-						<type>selectbox</type>
-						<default_value>mcs_labels_left</default_value>
-                        <variants>
-                            <item id="mcs_labels_left">
-                                <name>Left</name>
-                            </item>
-                            <item id="mcs_labels_center">
-                                <name>Center</name>                        
-                            </item>
-                            <item id="mcs_labels_right">
-                                <name>Right</name>                        
-                            </item>
-						</variants>
-					</item>	
-
-					
 					<item id="mcs_labels_new">
                         <name>'New product' label</name>
                         <type>header</type>

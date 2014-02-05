@@ -56,6 +56,11 @@
 	{style src="addons/mcs_framework/mcs_scroll_to_top/mcs_scroll_to_top.css"}
 {/if}
 
+{if $addons.mcs_framework.mcs_shortcodes_enable=='Y'}
+	{style src="addons/mcs_framework/mcs_shortcodes/mcs_shortcodes.css"}
+	{style src="addons/mcs_framework/mcs_shortcodes/mcs_shortcodes.less"}
+{/if}
+
 {style src="addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.css"}
 
 {style src="addons/mcs_framework/mcs_alpha_menu/mcs_alpha_menu.css"}

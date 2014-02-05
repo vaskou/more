@@ -4,17 +4,19 @@
 {if $feature.features_hash && $feature.feature_type == "E"}
 	{assign var=variant_data value=$feature.variant_id|fn_get_product_feature_variant}
     {if $brand_feature}
+    {if $variant_data.image_pair}
     <span class="brand-image">
-    	{if $variant_data.image_pair}
         <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
             {include file="common/image.tpl" images=$variant_data.image_pair}
         </a>
-        {/if}
     </span>
+    {/if}
     <span class="brand-name">
         {$feature.description}:
     {/if}
+    	
         <a href="{"categories.view?category_id=`$product.main_category`&features_hash=`$feature.features_hash`"|fn_url}">
+        	{if $addons.mcs_framework.mcs_grs_product_brand=="Y" && $addons.mcs_framework.mcs_product_brand_feature==$feature.feature_id}<span itemprop="brand">{/if}
 {/if}
 {if $feature.prefix}{$feature.prefix}{/if}
 {if $feature.feature_type == "D"}
@@ -34,6 +36,7 @@
 {/if}
 {if $feature.suffix}{$feature.suffix}{/if}
 {if $feature.feature_type == "E" && $feature.features_hash}
+			{if $addons.mcs_framework.mcs_grs_product_brand=="Y" && $addons.mcs_framework.mcs_product_brand_feature==$feature.feature_id}</span>{/if}
     	</a>
     {if $brand_feature}
     </span>
@@ -60,5 +63,6 @@
 {/if}
 
 {*********************************************MCS changes************************************************}
-{*Line   4-14: added lines 4 to 14																		*}
-{*Line     46: added {if $feature.feature_type != "E"}													*}
+{*Line   4-19: added lines 4 to 19																		*}
+{*Line  38-40: added lines 38 to 44																		*}
+{*Line  54-59: added lines 54 to 59																		*}

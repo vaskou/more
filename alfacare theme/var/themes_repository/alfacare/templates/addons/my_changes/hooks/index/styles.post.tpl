@@ -29,6 +29,7 @@
 {style src="addons/my_changes/mcs_labels/mcs_labels.css"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+	{style src="addons/my_changes/mcs_general_styles.resp.css"}
 	{style src="addons/my_changes/header/mcs_top_panel.resp.css"}
     {style src="addons/my_changes/header/mcs_header.resp.css"}
 	{style src="addons/my_changes/header/mcs_header.resp.less"}

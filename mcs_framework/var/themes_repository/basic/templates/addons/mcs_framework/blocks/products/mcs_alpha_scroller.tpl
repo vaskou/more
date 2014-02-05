@@ -121,7 +121,7 @@ $(document).ready(function(){
 	var pagerValue={$block.properties.mcs_pager};
 	var maxSlidesValue={$block.properties.mcs_maxSlides};
 	var slideWidthValue={$block.properties.mcs_slideWidth};
-	if(isPhone()){
+	if(deviceType()=='phone'){
 		pagerValue=false;
 		maxSlidesValue=1;
 		slideWidthValue=500;

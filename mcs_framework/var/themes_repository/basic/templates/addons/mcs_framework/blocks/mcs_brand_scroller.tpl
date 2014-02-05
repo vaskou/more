@@ -50,11 +50,11 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	var isPhone='{$mobiledetect.deviceType}';
+	var deviceType='{$mobiledetect.deviceType}';
 	var pagerValue={$block.properties.mcs_pager};
 	var maxSlidesValue={$block.properties.mcs_maxSlides};
 	var slideWidthValue={$block.properties.mcs_slideWidth};
-	if(isPhone=='phone'){
+	if(deviceType=='phone'){
 		pagerValue=false;
 		maxSlidesValue=1;
 		slideWidthValue=500;

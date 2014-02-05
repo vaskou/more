@@ -3,17 +3,17 @@
 {assign var="filter_qstring" value=$filter_qstring|fn_query_remove:"result_ids":"filter_id":"features_hash"}
 {split data=$view_all_filter size="1" assign="splitted_filter" preverse_keys=true}
     <div class="mcs-brands-page">
-        <div class="mcs-list-filter">
+        <div id="div-ALL" class="mcs-list-filter">
             <ul>
-                <li id="li-ALL"><a href="#">ALL</a></li>
+                <li id="li-ALL"><a href="#{if $mobiledetect.isMobile}div-ALL{/if}">ALL</a></li>
             {foreach from=$view_all_filter item="ranges" key="index"}
-                <li id="li-{$index}"><a href="#">{$index}</a></li>
+                <li id="li-{$index}"><a href="#{if $mobiledetect.isMobile}div-ALL{/if}">{$index}</a></li>
             {/foreach}
             <div class="clearfix"></div>
             </ul>
         </div>
         {foreach from=$view_all_filter item="ranges" key="index"}
-        <div class="mcs-brands-row row-fluid li-{$index}">
+        <div id="div-{$index}" class="mcs-brands-row row-fluid li-{$index}">
             {if $ranges}
                 <h2 class="subheader">{$index}</h2>
                 <ul class="brand-list">

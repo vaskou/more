@@ -3,16 +3,13 @@
 $(function(){
 
 });
-function isPhone(){
+function deviceType(){
 	/*if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {*/
 	
-	var isP={/literal}{$mobiledetect.deviceType|var_export}{literal};
+	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};
 	
-	if(isP=='phone'){
-		return true;
-	}else{
-		return false;
-	}
+	return dt;
+	
 }
 </script>
 {/literal}
