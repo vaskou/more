@@ -18,7 +18,7 @@
 					{if $bc_enabled=="Y"}</span>{/if}
 				{else}
 					{if $bc_enabled=="Y"}<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">{/if}
-						{if $bc_enabled=="Y"}<span itemprop="title">{/if}{$bc.title|strip_tags|escape:"html" nofilter}{if $bc_enabled=="Y"}</span>{/if}
+						<span {if $bc_enabled=="Y"}itemprop="title"{/if}>{$bc.title|strip_tags|escape:"html" nofilter}</span>
 					{if $bc_enabled=="Y"}</span>{/if}
                 {/if}
             {/foreach}

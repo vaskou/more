@@ -22,9 +22,9 @@
 
 [class^="mcs_slider_"] #c_controls .bx-prev {
 	left: 10px;
-//	background: url(../css/addons/mcs_framework/mcs_sliders/bxslider/images/controls.png) no-repeat 0 -32px;
+/*	background: url(../css/addons/mcs_framework/mcs_sliders/bxslider/images/controls.png) no-repeat 0 -32px;*/
 	opacity:0.4;
-	transition:opacity .5s ease-in;
+	transition:opacity .5s linear;
 }
 [class^="mcs_slider_"] #c_controls .bx-prev:before {
 	font-family:'icomoon';
@@ -32,9 +32,9 @@
 }
 [class^="mcs_slider_"] #c_controls .bx-next {
 	right: 10px;
-//	background: url(../css/addons/mcs_framework/mcs_sliders/bxslider/images/controls.png) no-repeat -43px -32px;
+/*	background: url(../css/addons/mcs_framework/mcs_sliders/bxslider/images/controls.png) no-repeat -43px -32px;*/
 	opacity:0.4;
-	transition:opacity .5s ease-in;
+	transition:opacity .5s linear;
 }
 [class^="mcs_slider_"] #c_controls .bx-next:before {
 	font-family:'icomoon';

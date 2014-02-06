@@ -1,0 +1,73 @@
+#mcs_social_icons{
+	font-size:0;
+	letter-spacing:-1px;
+}
+
+#mcs_social_icons a {
+	margin:5px;
+	display:inline-block;
+}
+#mcs_social_icons i {
+	border-style:solid;
+}
+#mcs_social_icons.rounded i {
+	display:inline-block;
+}
+
+/*CSS3 transitions*/
+#mcs_social_icons i ,
+#mcs_social_icons a  
+{
+    -webkit-transition: all 0.5s ease;                  
+    -moz-transition: all 0.5s ease;                 
+    -o-transition: all 0.5s ease;   
+    -ms-transition: all 0.5s ease;          
+    transition: all 0.5s ease;
+}
+
+#mcs_social_icons.rotate  a:hover {
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+/*Rounded shape*/
+#mcs_social_icons.rounded a i{
+	-moz-border-radius: 50% ;
+	-webkit-border-radius: 50% ;
+	-o-border-radius: 50% ;
+	-ms-border-radius: 50% ;
+	border-radius: 50% ;
+}
+
+/*Icon color*/
+.icon_white i{color: #ffffff;}
+.icon_black i{color: #000000;}
+
+.iconhover_white i:hover{color: #ffffff;}
+.iconhover_black i:hover{color: #000000;}
+
+
+.hover_white i:hover{color: #ffffff!important;}
+.hover_black i:hover{color: #000000!important;}
+/*Background color*/
+
+.bg_white i{background-color: #ffffff;}
+.bg_black i{background-color: #000000;}
+
+.bghover_transparent i:hover{background-color: transparent!important;}
+.bghover_black i:hover{background-color: #000000!important;}
+.bghover_white i:hover{background-color: #ffffff!important;}
+
+/*Icon fonts overrides*/
+#mcs_social_icons i.icon-rss:before {
+	content: "\e4a0";
+}
+#mcs_social_icons i.icon-googleplus:before {
+	content: "\e493";
+}
+#mcs_social_icons i.icon-email:before  {
+	content: "\e0eb";
+}

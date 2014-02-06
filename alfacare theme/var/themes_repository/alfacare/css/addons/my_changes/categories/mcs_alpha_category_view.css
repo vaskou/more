@@ -12,16 +12,17 @@
 .mcs_alpha_category_view .subcategories li .cat-img a{
 	border:1px solid;
 	padding:0;
+	display:block;
 }
 .mcs_alpha_category_view .subcategories li .cat-img .no-image{
-	width:100% !important;
-	height:100% !important;
+	max-width:100% !important;
 	margin:auto;
 	border:none;
 }
 .mcs_alpha_category_view .subcategories li .cat-img img{
-	width:100%;
+	max-width:100%;
 	height:auto;
+	padding-bottom:0;
 }
 
 .mcs_alpha_category_view .subcategories li .cat-title{

@@ -54,7 +54,7 @@
     content: "\e3b7";
 }
 .icon-star-empty:before {
-    content: "\e2ff";
+    content: "\e2fc";
 }
 .icon-th-list:before {
     content: "\e29d";
@@ -236,10 +236,10 @@
 }
 .icon-arrow-right:before {
     content: "\e040";
-}
-.icon-star:before {
-    content: "\e041";
 }*/
+.icon-star:before {
+    content: "\e2fe";
+}
 .icon-star-half:before {
     content: "\e2fd";
 }

@@ -2,7 +2,8 @@
 	text-transform:none !important;
 }
 
-.breadcrumbs span{
+.breadcrumbs > span,
+.breadcrumbs > span > span{
 	color:#444 !important;
 	vertical-align:middle;
 }
@@ -17,7 +18,8 @@
 .breadcrumbs a{
 	vertical-align:middle;	
 }
-.breadcrumbs > a:after{
+.breadcrumbs > a:after,
+.breadcrumbs > span > a:after{
 	content:"/";
 	margin-left:5px;
 	font-size:15px;

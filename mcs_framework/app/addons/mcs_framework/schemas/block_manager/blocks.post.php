@@ -410,6 +410,7 @@ $settings=array(
 	),
 );
 
+/******************************** Brand Scroller ***************************************/
 $schema['mcs_brand_scroller'] = array (
 	'content' => array (
 		'items' => array (
@@ -659,122 +660,162 @@ $schema['mcs_brand_scroller'] = array (
     'wrappers' => 'blocks/wrappers',
 );
 
+/******************************** Banners ***************************************/
 $schema['banners']['templates']['addons/mcs_framework/blocks/mcs_bxslider.tpl'] = array('settings'=>$settings);
 
-
+/******************************** Social Icons ***************************************/
 $schema['mcs_social'] = array (
 	'content'=>array(
-		'mcs_rss'=>array(
-			'type'=>'input',
-			'default_value'=>'http://news.google.com/?output=rss',
-			'tooltip'=>'Enter your rss feed url here. Leave blank to disable.'
-		),
-		'mcs_twitter'=>array(
-			'type'=>'input',
-			'default_value'=>'http://www.twitter.com',
-			'tooltip'=>'Enter your Twitter URL here. Leave blank to disable.'
-		),
-		'mcs_facebook'=>array(
-			'type'=>'input',
-			'default_value'=>'http://www.facebook.com',
-			'tooltip'=>'Enter your Facebook Profile URL here. Leave blank to disable.'
-		),
-		'mcs_googleplus'=>array(
-			'type'=>'input',
-			'default_value'=>'https://plus.google.com',
-			'tooltip'=>'Enter your Google+ Profile URL here. Leave blank to disable.'
-		),
-		'mcs_linkedin'=>array(
-			'type'=>'input',
-			'default_value'=>'http://www.linkedin.com/',
-			'tooltip'=>'Enter your LinkedIn Profile URL here. Leave blank to disable.'
-		),
-		'mcs_dribbble'=>array(
-			'type'=>'input',
-			'default_value'=>'http://dribbble.com/',
-			'tooltip'=>'Enter your Dribbble Profile URL here. Leave blank to disable.'
-		),
-		'mcs_tumblr'=>array(
-			'type'=>'input',
-			'default_value'=>'https://www.tumblr.com/',
-			'tooltip'=>'Enter your Tumblr Profile URL here. Leave blank to disable.'
-		),
-		'mcs_instagram'=>array(
-			'type'=>'input',
-			'default_value'=>'http://instagram.com/',
-			'tooltip'=>'Enter your Instagram Profile URL here. Leave blank to disable.'
-		),
-		'mcs_youtube'=>array(
-			'type'=>'input',
-			'default_value'=>'http://www.youtube.com/',
-			'tooltip'=>'Enter your YouTube Profile URL here. Leave blank to disable.'
-		),
-		'mcs_pinterest'=>array(
-			'type'=>'input',
-			'default_value'=>'https://pinterest.com/',
-			'tooltip'=>'Enter your Pinterest Profile URL here. Leave blank to disable.'
-		),
-		'mcs_email'=>array(
-			'type'=>'input',
-			'default_value'=>'info@example.com',
-			'tooltip'=>'Enter your email address here. Leave blank to disable.'
+		'social_icons' => array (
+			'type' => 'simple_text',
+			'tooltip' => 'Enter [icon name,URL,label] separated with comma and 1 per line.'
 		),
 	),
     'templates' => array (
-		'addons/mcs_framework/blocks/mcs_social_links.tpl' => array(
+		'addons/mcs_framework/blocks/mcs_social_icons.tpl' => array(
         	'settings' => array (
-				'mcs_social_icons_alignment' => array (
-					'type' => 'selectbox',
-                    'values' => array (
-                        'center' => 'Center',
-                        'left' => 'Left',
-                        'right' => 'Right',
-						'vertical'=>'Vertical'
-                    ),
-                    'default_value' => 'center',
-					'tooltip'=>'Select the preferred alignment of the icons'
-                ),
-                'mcs_social_icons_size' => array (
+				'text_pre'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML before social icons.'
+				),
+				'text_post'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML after social icons.'
+				),
+				'shape' => array (
                     'type' => 'selectbox',
-					'values'=>array(
-						'icon-default'=>'Default size',
-						'icon-large'=>'Large size',
-						'icon-2x'=>'2x size',
-						'icon-3x'=>'3x size',
-						'icon-4x'=>'4x size'
-					),
-                    'default_value' =>'icon-default',
-					'tooltip'=>'Select the preferred size of the icons'
+                    'values' => array (
+                        'square' => 'square',
+                        'rounded' => 'rounded'
+                    ),
+                    'tooltip' => 'Select square or rounded icons.',
+                    'default_value' => 'square'
                 ),
-				'mcs_social_icons_border'=>array(
-					'type'=>'checkbox',
-					'default_value'=>'N',
-					'tooltip'=>'Check this option to enable a discrete border around the icons'
-				),
-				'mcs_social_icons_shadow'=>array(
-					'type'=>'checkbox',
-					'default_value'=>'N',
-					'tooltip'=>'Check this option to enable a discrete shadow around the icons'
-				),
-				'mcs_social_icons_circle'=>array(
-					'type'=>'checkbox',
-					'default_value'=>'N',
-					'tooltip'=>'Check this option for rounded icons'
-				),
-				'mcs_social_icons_color'=>array(
-					'type'=>'checkbox',
-					'default_value'=>'N',
-					'tooltip'=>'Check this option for colored icons'
-				),
-				'mcs_social_icons_white'=>array(
-					'type'=>'checkbox',
-					'default_value'=>'N',
-					'tooltip'=>'Check this option for dark background. Will be ignored if Enable color has been checked'
-				)
+				'rotate' => array (
+                    'type' => 'checkbox',
+                    'tooltip' => 'If enabled, a rotate effect will be applied on hover.',
+                    'default_value' => 'Y'
+                ),
+				'tooltip' => array (
+                    'type' => 'checkbox',
+                    'tooltip' => 'If enabled, a tooltip with the icon label will be shown.',
+                    'default_value' => 'Y'
+                ),
+				'color' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'color' => 'color',
+                        'white' => 'white',
+                        'black' => 'black'
+                    ),
+                    'default_value' => 'color'
+                ),
+				'colorhover' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'color' => 'color',
+                        'white' => 'white',
+                        'black' => 'black'
+                    ),
+                    'default_value' => 'color'
+                ),
+				'bg' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'color' => 'color',
+                        'white' => 'white',
+                        'black' => 'black',
+                        'transparent' => 'transparent'
+                    ),
+                    'default_value' => 'transparent'
+                ),
+				'bghover' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'color' => 'color',
+                        'white' => 'white',
+                        'black' => 'black',
+                        'transparent' => 'transparent'
+                    ),
+                    'default_value' => 'transparent'
+                ),
+				'size' => array (
+                    'type' => 'input',
+                    'default_value' => '64',
+                    'tooltip' => 'Enter the icon size in pixels.'
+                ),
+				'border' => array (
+                    'type' => 'input',
+                    'default_value' => '2',
+                    'tooltip' => 'Enter border size in pixels.'
+                ),
+				'padding' => array (
+                    'type' => 'input',
+                    'default_value' => '5',
+                    'tooltip' => 'Enter the icon padding in pixels. It should be lower than the icon size.'
+                )
 			),
         ),
 	),
     'wrappers' => 'blocks/wrappers',
 );
+
+/******************************** Payment Icons ***************************************/
+$schema['mcs_payment_icons'] = array (
+	'content'=>array(
+		'payment_icons' => array (
+			'type' => 'simple_text',
+			'default_value' => '',
+			'tooltip' => 'Enter the icons names, one per line (2checkout, amazon, americanexpress, chase, cirrus, delta, diners, directdebit, discover, ebay, etsy, eway, googlewallet, jcb, maestro, mastercard, moneybookers, paypal, sage, shopify, skrill, solo, switch, visa, visaelectron, westernunion, worldpay'
+		),
+	),
+    'templates' => array (
+        'addons/mcs_framework/blocks/mcs_payment_icons.tpl' => array(
+            'settings' => array (
+                'text_pre'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML before payment icons.'
+				),
+				'text_post'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML after payment icons.'
+				),
+				'color' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'color' => 'Colored',
+                        'bw' => 'Black and White'
+                    ),
+                    'default_value' => 'color'
+                ),
+				'hover' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+					    'color' => 'Colored',
+                        'bw' => 'Black and White',
+                        'blur' => 'Blur',
+                        'rotate' => 'Rotate'
+                    ),
+                    'default_value' => 'color'
+                ),
+				'size' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        '32' => '32x20',
+                        '64' => '64x40'
+                    ),
+                    'default_value' => '64',
+                    'tooltip' => 'Select the size in pixels'
+                )
+            ),
+        )
+    ),
+    'wrappers' => 'blocks/wrappers',
+);
+
 
 return $schema;

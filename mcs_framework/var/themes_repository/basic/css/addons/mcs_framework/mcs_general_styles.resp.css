@@ -72,4 +72,16 @@
 	margin:auto;
 } 
 
+/*Breadcrumbs*/
+.breadcrumbs{
+	padding:12px 0px;
+}
+#mcs_helper.products_view .breadcrumbs{
+	padding:12px 0px 35px;
+}
+.breadcrumbs .product-switcher{
+	top:auto;
+	right:auto;
+	bottom:10px;	
+}
 }

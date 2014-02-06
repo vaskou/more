@@ -73,13 +73,16 @@
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.css"}
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.less"}
+{style src="addons/mcs_framework/mcs_general_styles.less"}
 {style src="addons/mcs_framework/mcs_alpha_scroller.css"}
 {style src="addons/mcs_framework/mcs_brand_scroller.css"}
 {style src="addons/mcs_framework/mcs_brand_scroller.less"}
 {style src="addons/mcs_framework/mcs_brands_page.css"}
 {style src="addons/mcs_framework/mcs_submenu_visible.css"}
-{style src="addons/mcs_framework/mcs_social_icons.css"}
+{style src="addons/mcs_framework/mcs_social_icons/mcs_social_icons.css"}
+{style src="addons/mcs_framework/mcs_social_icons/mcs_social_icons.less"}
 {style src="addons/mcs_framework/mcs_labels/mcs_labels.css"}
+{style src="addons/mcs_framework/mcs_payment_icons/mcs_payment_icons.css"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_general_styles.resp.css"}
