@@ -83,6 +83,7 @@
 {style src="addons/mcs_framework/mcs_social_icons/mcs_social_icons.less"}
 {style src="addons/mcs_framework/mcs_labels/mcs_labels.css"}
 {style src="addons/mcs_framework/mcs_payment_icons/mcs_payment_icons.css"}
+{style src="addons/mcs_framework/mcs_contact_block/mcs_contact_block.css"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_general_styles.resp.css"}
@@ -92,4 +93,5 @@
     {style src="addons/mcs_framework/mcs_quick_view/mcs_quick_view.resp.css"}
     {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.css"}
     {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.less"}
+    {style src="addons/mcs_framework/mcs_contact_block/mcs_contact_block.resp.css"}
 {/if}

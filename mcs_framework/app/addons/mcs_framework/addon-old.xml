@@ -547,7 +547,82 @@
 						<default_value>N</default_value>
 					</item>	
 					
-					
+				</items>
+			</section>
+		<!--Google rich snippets-->
+			<section id="mcs_grs">
+                <name>Google rich snippets</name>       
+                <items>
+					<item id="mcs_grs_header">
+                        <type>header</type>
+                        <name>Google Rich Snippets</name> 
+                    </item>
+                    <item id="mcs_grs_breadcrumbs">
+                        <type>checkbox</type>
+                        <name>Breadcrumbs</name> 
+						<tooltip>Check to enable Google Rich Snippets markup on breadcrumbs</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product">
+                        <type>checkbox</type>
+                        <name>Product Name,Price and Currency (*required from Google)</name> 
+						<tooltip>You must set Settings:General:Alternative currency display format->Show prices in selected currency, otherwise will not show.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_category">
+                        <type>checkbox</type>
+                        <name>Product Category</name> 
+						<tooltip>Google recognises only categories listed here  https://support.google.com/merchants/answer/160081</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_brand">
+                        <type>checkbox</type>
+                        <name>Product Brand</name> 
+						<tooltip>Check to show product Brand on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_descr">
+                        <type>checkbox</type>
+                        <name>Product Description</name> 
+						<tooltip>Check to show product description on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_reviews">
+                        <type>checkbox</type>
+                        <name>Product Reviews</name> 
+						<tooltip>Check to show product reviews on Google Rich Snippets. Comments and Reviews Addon must be enabled.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_image">
+                        <type>checkbox</type>
+                        <name>Product Image</name> 
+						<tooltip>Check to show product Image on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>		
+                    <item id="mcs_grs_product_availability">
+                        <type>checkbox</type>
+                        <name>Product Availability</name> 
+						<tooltip>Check to show product Availability on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_sku">
+                        <type>checkbox</type>
+                        <name>Product SKU</name> 
+						<tooltip>Check to show product SKU on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+				</items>
+            </section>
+		<!--Shortcodes-->
+			<section id="mcs_shortcodes">
+				<name>Shortcodes</name>
+				<items>
+					<item id="mcs_shortcodes_enable">
+						<name>Enable shortcodes</name>
+						<tooltip>Check to enable the shortcodes functionality.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
 				</items>
 			</section>
         </sections>
@@ -669,33 +744,34 @@
 		<item lang="en" id="hide_add_to_wish">Hide add to wishlist button</item>
 		<item lang="en" id="hide_add_to_compare">Hide add to compare button</item>
 		
-		<item lang="en" id="block_mcs_social">More CS-Cart Social</item>
-		<item lang="en" id="block_mcs_social_description">More CS-Cart Social description</item>
-		<item lang="en" id="mcs_social_links">Social links</item>
-		<item lang="en" id="mcs_rss">RSS Feed</item>
-		<item lang="en" id="mcs_twitter">Twitter URL</item>
-		<item lang="en" id="mcs_facebook">Facebook Profile</item>
-		<item lang="en" id="mcs_googleplus">Google+ Profile</item>
-		<item lang="en" id="mcs_linkedin">LinkedIn Profile</item>
-		<item lang="en" id="mcs_dribbble">Dribbble Profile URL</item>
-		<item lang="en" id="mcs_tumblr">Tumblr Profile URL</item>
-		<item lang="en" id="mcs_instagram">Instagram Profile URL</item>
-		<item lang="en" id="mcs_youtube">YouTube Profile URL</item>
-		<item lang="en" id="mcs_pinterest">Pinterest Profile URL</item>
-		<item lang="en" id="mcs_email">Email</item>
-        <item lang="en" id="mcs_social_icons_alignment">Social Icons Alignment</item>
-		<item lang="en" id="mcs_social_icons_size">Social Icons Size</item>
-		<item lang="en" id="mcs_social_icons_border">Enable border</item>
-		<item lang="en" id="mcs_social_icons_shadow">Enable shadow</item>
-		<item lang="en" id="mcs_social_icons_circle">Enable circle</item>
-		<item lang="en" id="mcs_social_icons_color">Enable color</item>
-		<item lang="en" id="mcs_social_icons_white">Enable white</item>
-		<item lang="en" id="center">Center</item>
-		<item lang="en" id="Default size">Default size</item>
-		<item lang="en" id="Large size">Large size</item>
-		<item lang="en" id="2x size">2x size</item>
-		<item lang="en" id="3x size">3x size</item>
-		<item lang="en" id="4x size">4x size</item>
+		<item lang="en" id="block_mcs_social">More CS-Cart Social Icons</item>
+		<item lang="en" id="block_mcs_social_description">More CS-Cart Social Icons description</item>
+		<item lang="en" id="mcs_social_icons">More CS-Cart Social Icons</item>
+		<item lang="en" id="text_pre">Text pre</item>
+		<item lang="en" id="text_post">Text post</item>
+		<item lang="en" id="shape">Shape</item>
+		<item lang="en" id="rotate">Rotate</item>
+		<item lang="en" id="colorhover">Hover Color</item>
+		<item lang="en" id="bg">Background Color</item>
+		<item lang="en" id="bghover">Hover Background Color</item>
+		<item lang="en" id="border">Border</item>
+		<item lang="en" id="padding">Padding</item>
+		<item lang="en" id="square">Suare</item>
+		<item lang="en" id="rounded">Rounded</item>
+		<item lang="en" id="black">Black</item>
+		<item lang="en" id="social_icons">Social Icons</item>
+		
+		<item lang="en" id="block_mcs_payment_icons">More CS-Cart Payment Icons</item>
+		<item lang="en" id="block_mcs_payment_icons_description">More CS-Cart Payment Icons description</item>
+		<item lang="en" id="mcs_payment_icons">More CS-Cart Payment Icons</item>
+		<item lang="en" id="Colored">Colored</item>
+		<item lang="en" id="bw">Black and White</item>
+		<item lang="en" id="hover">Hover Effect</item>
+		<item lang="en" id="blur">Blur</item>
+		<item lang="en" id="32x20">32x20</item>
+		<item lang="en" id="64x40">64x40</item>
+		<item lang="en" id="payment_icons">Payment Icons</item>
+
 		
 		<item lang="en" id="devices">Show on devices</item>
 		

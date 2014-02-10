@@ -46,13 +46,13 @@
 
 /*Sidebox*/
 .mcs-sidebox-hide .sidebox-title span:before,
-.mcs-sidebox-hide .sidebox-title a:before{
+.mcs-sidebox-hide .sidebox-title a.titl:before{
 	font-family:'icomoon';
 	content:'\e3b5';
 	display:inline-block;
 }
 .mcs-sidebox-hide .sidebox-title.unhid span:before,
-.mcs-sidebox-hide .sidebox-title.unhid a:before{
+.mcs-sidebox-hide .sidebox-title.unhid a.titl:before{
 	font-family:'icomoon';
 	content:'\e3b6';
 	display:inline-block;

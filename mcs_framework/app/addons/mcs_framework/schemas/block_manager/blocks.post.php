@@ -817,5 +817,171 @@ $schema['mcs_payment_icons'] = array (
     'wrappers' => 'blocks/wrappers',
 );
 
+/******************************** Contact Block ***************************************/
+$schema['mcs_contact_block'] = array (
+    'templates' => array (
+		'addons/mcs_framework/blocks/mcs_contact_block.tpl' => array(
+        	'settings' => array (
+				'mcs_contact_block_text_pre'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML before contact information.'
+				),
+				'mcs_contact_block_text_post'=>array(
+					'type'=>'text',
+					'default_value'=>'',
+					'tooltip'=>'HTML after contact information.'
+				),
+				'mcs_contact_block_alignment' => array (
+					'type' => 'selectbox',
+                    'values' => array (
+                        'horizontal' => __('horizontal'),
+                        'vertical' => __('vertical')
+                    ),
+                    'default_value' => 'horizontal',
+					'tooltip'=>'Select the alignment of block content'
+                ),
+				'mcs_contact_block_text_alignment' => array (
+					'type' => 'selectbox',
+                    'values' => array (
+                        'left' => __('left'),
+                        'center' => 'center',
+                        'right' => __('right')
+                    ),
+                    'default_value' => 'center',
+					'tooltip'=>'Select the text alignment of block'
+                ),
+                'mcs_contact_block_icons_size' => array (
+                    'type' => 'selectbox',
+					'values'=>array(
+						'icon-default'=>'Default size',
+						'icon-large'=>'Large size',
+						'icon-2x'=>'2x size',
+						'icon-3x'=>'3x size',
+						'icon-4x'=>'4x size'
+					),
+                    'default_value' =>'icon-default',
+					'tooltip'=>'Select the preferred size of the icons'
+                ),
+				'mcs_contact_block_text_color'=>array(
+					'type'=>'input',
+					'default_value'=>'#000000',
+					'tooltip'=>'Text color or color code.'
+				),
+				'mcs_contact_block_link_color'=>array(
+					'type'=>'input',
+					'default_value'=>'#000000',
+					'tooltip'=>'Links color or color code.'
+				),
+				'mcs_contact_block_link_hover_color'=>array(
+					'type'=>'input',
+					'default_value'=>'#cccccc',
+					'tooltip'=>'Links hover color or color code.'
+				),
+				'mcs_contact_block_copyright'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show copyright sign'
+				),
+				'mcs_contact_block_start_year'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company start year'
+				),
+				'mcs_contact_block_name'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company name'
+				),
+				'mcs_contact_block_address'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company address'
+				),
+				'mcs_contact_block_address_link'=>array(
+					'type'=>'input',
+					'default_value'=>'',
+					'tooltip'=>'Link to company address map, i.e. a link to a google map'
+				),
+				'mcs_contact_block_zipcode'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company zipcode'
+				),
+				'mcs_contact_block_city'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company city'
+				),
+				'mcs_contact_block_state'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company state'
+				),
+				'mcs_contact_block_country'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company country'
+				),
+				'mcs_contact_block_phone'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company phone'
+				),
+				'mcs_contact_block_phone_2'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company mobile'
+				),
+				'mcs_contact_block_fax'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company fax'
+				),
+				'mcs_contact_block_skype'=>array(
+					'type'=>'input',
+					'default_value'=>'',
+					'tooltip'=>'Skype name'
+				),
+				'mcs_contact_block_website'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company website'
+				),
+				'mcs_contact_block_users_department'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company users department email'
+				),
+				'mcs_contact_block_site_administrator'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company administrator email'
+				),
+				'mcs_contact_block_orders_department'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company orders department email'
+				),
+				'mcs_contact_block_support_department'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company support department email'
+				),
+				'mcs_contact_block_newsletter_email'=>array(
+					'type'=>'checkbox',
+					'default_value'=>'Y',
+					'tooltip'=>'Show company newsletter email'
+				),
+				'mcs_contact_block_form_link'=>array(
+					'type'=>'input',
+					'default_value'=>'',
+					'tooltip'=>'Link to contact form page.'
+				)
+			),
+        ),
+	),
+    'wrappers' => 'blocks/wrappers',
+);
 
 return $schema;

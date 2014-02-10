@@ -17,7 +17,8 @@
         show_list_discount=true
         no_pagination=true
         no_sorting=true
-        show_add_to_cart=true
+        show_add_to_cart=true 
+        show_discount_label=true
         is_wishlist=true}
 {else}
 {math equation="100 / x" x=$columns|default:"2" assign="cell_width"}

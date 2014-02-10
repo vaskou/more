@@ -1,0 +1,14 @@
+@media (max-width: 480px){
+	.mcs_contact_block.horizontal.center{text-align:left;}
+	
+	.mcs_contact_block.horizontal .section	 {margin:10px 0px;}
+
+	.mcs_contact_block.horizontal .name-wrapper,
+	.mcs_contact_block.horizontal .text-pre, 
+	.mcs_contact_block.horizontal .text-post 
+	{padding:0px 10px;}
+
+	.mcs_contact_block.horizontal>a {display:block;}
+	.mcs_contact_block.horizontal .section>a {display:block;margin:0px 5px;}
+	.mcs_contact_block.horizontal span.emails {display:block;width:100%;}
+}

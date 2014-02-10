@@ -1,7 +1,7 @@
 {** block-description:my_account **}
 
 {capture name="title"}
-    <i class="{$addons.mcs_framework.mcs_block_icons_my_account_block}"></i><a href="{"profiles.update"|fn_url}">{$title}</a><i class="icon-down-micro"></i>
+    <a href="{"profiles.update"|fn_url}"><i class="{$addons.mcs_framework.mcs_block_icons_my_account_block}"></i></a><a href="{"profiles.update"|fn_url}" class="titl">{$title}</a><i class="icon-down-micro"></i>
 {/capture}
 
 <div id="account_info_{$block.snapping_id}">

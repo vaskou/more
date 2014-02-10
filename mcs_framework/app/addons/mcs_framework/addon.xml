@@ -771,7 +771,44 @@
 		<item lang="en" id="32x20">32x20</item>
 		<item lang="en" id="64x40">64x40</item>
 		<item lang="en" id="payment_icons">Payment Icons</item>
-
+		
+		<item lang="en" id="block_mcs_contact_block">More CS-Cart Contact Block</item>
+		<item lang="en" id="block_mcs_contact_block_desciption">More CS-Cart Contact Block description</item>
+		<item lang="en" id="mcs_contact_block">More CS-Cart Contact Block</item>
+		<item lang="en" id="mcs_contact_block_text_pre">Text pre</item>
+		<item lang="en" id="mcs_contact_block_text_post">Text post</item>
+		<item lang="en" id="mcs_contact_block_alignment">Contact Block Alignment</item>
+		<item lang="en" id="mcs_contact_block_text_alignment">Contact Block Text Alignment</item>
+		<item lang="en" id="center">Center</item>
+		<item lang="en" id="mcs_contact_block_icons_size">Contact Block Icon Size</item>
+		<item lang="en" id="Default size">Default size</item>
+		<item lang="en" id="Large size">Large size</item>
+		<item lang="en" id="2x Size">2x Size</item>
+		<item lang="en" id="3x Size">3x Size</item>
+		<item lang="en" id="4x Size">4x Size</item>
+		<item lang="en" id="mcs_contact_block_text_color">Contact Block Text Color</item>
+		<item lang="en" id="mcs_contact_block_link_color">Contact Block Link Color</item>
+		<item lang="en" id="mcs_contact_block_link_hover_color">Contact Block Hover Link Color</item>
+		<item lang="en" id="mcs_contact_block_copyright">Copyright</item>
+		<item lang="en" id="mcs_contact_block_start_year">Company Start Year</item>
+		<item lang="en" id="mcs_contact_block_name">Company Name</item>
+		<item lang="en" id="mcs_contact_block_address">Company Address</item>
+		<item lang="en" id="mcs_contact_block_address_link">Company Address Link</item>
+		<item lang="en" id="mcs_contact_block_zipcode">Company Zipcode</item>
+		<item lang="en" id="mcs_contact_block_city">Company City</item>
+		<item lang="en" id="mcs_contact_block_state">Company State</item>
+		<item lang="en" id="mcs_contact_block_country">Company Country</item>
+		<item lang="en" id="mcs_contact_block_phone">Company Phone</item>
+		<item lang="en" id="mcs_contact_block_phone_2">Company Phone 2</item>
+		<item lang="en" id="mcs_contact_block_fax">Company Fax</item>
+		<item lang="en" id="mcs_contact_block_skype">Company Skype</item>
+		<item lang="en" id="mcs_contact_block_website">Company Website</item>
+		<item lang="en" id="mcs_contact_block_users_department">Company Users Department Email</item>
+		<item lang="en" id="mcs_contact_block_site_administrator">Company Administrator Email</item>
+		<item lang="en" id="mcs_contact_block_orders_department">Company Orders Email</item>
+		<item lang="en" id="mcs_contact_block_support_department">Company Support Department Email</item>
+		<item lang="en" id="mcs_contact_block_newsletter_email">Company Newsletter Email</item>
+		<item lang="en" id="mcs_contact_block_form_link">Company Contact Form Link</item>
 		
 		<item lang="en" id="devices">Show on devices</item>
 		
