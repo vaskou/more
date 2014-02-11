@@ -815,6 +815,23 @@
 		<item lang="en" id="mcs_scroll_to_top_label">Scroll to top</item>
 		
 		<item lang="en" id="mcs_popup_do_not_show_again">Do not show again</item>
+		<item lang="en" id="fadeIn">Fade In</item>
+		<item lang="en" id="fadeOut">Fade Out</item>
+		<item lang="en" id="slideDown">Slide Down</item>
+		<item lang="en" id="slideUp">Slide Up</item>
+		<item lang="en" id="blind">Blind</item>
+		<item lang="en" id="bounce">Bounce</item>
+		<item lang="en" id="clip">Clip</item>
+		<item lang="en" id="drop">Drop</item>
+		<item lang="en" id="explode">Explode</item>
+		<item lang="en" id="fold">Fold</item>
+		<item lang="en" id="highlight">Highlight</item>
+		<item lang="en" id="puff">Puff</item>
+		<item lang="en" id="pulsate">Pulsate</item>
+		<item lang="en" id="scale">Scale</item>
+		<item lang="en" id="shake">Shake</item>
+		<item lang="en" id="slide">Slide</item>
+		<item lang="en" id="transfer">Transfer</item>
 	</language_variables>
 </addon>
 
