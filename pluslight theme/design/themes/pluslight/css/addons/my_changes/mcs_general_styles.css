@@ -2,17 +2,6 @@
 	text-transform:none !important;
 }
 
-.mcs-centered{
-	float:none !important;
-	max-width:960px !important;
-	margin:auto !important;
-}
-
-.mcs-expanded{
-	float:none !important;
-	max-width:1200px !important;
-	margin:auto !important;
-}
 /*********************** homepage *******************************/
 .tygh-top-panel > [class*="container"]{
 	padding:0;
@@ -55,7 +44,7 @@
 
 /*********************** mainbox2 *******************************/
 .mainbox2-container{
-	margin:1px 0 0 0;
+	margin:0px 0 0 0;
 	border-bottom:3px solid;
 }
 

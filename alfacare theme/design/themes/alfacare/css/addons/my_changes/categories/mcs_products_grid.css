@@ -38,7 +38,11 @@
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper{
 	text-align:center;
 }
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price,
+.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price{
+	font-size:100% !important;
+}
+
+.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price .list-price,
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price .price-num,
 .mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price .no-price{
 	font-size:130% !important;

@@ -22,7 +22,9 @@ $(function(){
 			});
 		},
 		doUnderLimit:function(){
-			$(window).unbind("scroll");
+			$(window).scroll(function(){
+				$(".tygh-content").css({"margin-top":"0px"});
+			});
 			$(".header-hide").show();
 		},
 		widthLimit:960});

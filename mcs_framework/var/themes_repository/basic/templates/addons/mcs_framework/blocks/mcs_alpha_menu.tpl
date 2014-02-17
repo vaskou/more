@@ -177,9 +177,22 @@
             meanRemoveAttrs: true
         });
 		
-		$(".mean-nav").find("img").each(function(){
-			$(this).parent().hide();
+		image_hide();
+		$(window).resize(function(){
+			image_hide();
 		});
+		
+		function image_hide()
+		{
+			$(".mean-nav").find("img").each(function(){
+				$(this).parent().hide();
+			});
+		}
+		
+		/*$(".mean-nav").prepend("<div class='mean-title'>Alfacare</div>");
+		$(window).resize(function(){
+			$(".mean-nav").prepend("<div class='mean-title'>Alfacare</div>");
+		});*/
 		
     /*});*/
     </script>

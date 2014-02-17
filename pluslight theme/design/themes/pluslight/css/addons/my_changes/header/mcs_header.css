@@ -2,6 +2,28 @@
 	margin:15px;
 }
 
+.motto{
+	
+}
+
+.motto div{
+	display:inline-block;
+	font-weight: bold;
+	color: #93a3b7;
+	font-size: 24px;	
+}
+.motto span {
+	padding:0;
+	font-weight: bold;
+	color: #93a3b7;
+	font-size: 24px;
+	letter-spacing: -1px;
+}
+
+.motto i{
+	font-size:12px;	
+}
+
 .cart-content-grid{
 	margin:0;
 	padding:15px 15px 0 0;

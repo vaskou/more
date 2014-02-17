@@ -756,7 +756,7 @@
 		<item lang="en" id="bghover">Hover Background Color</item>
 		<item lang="en" id="border">Border</item>
 		<item lang="en" id="padding">Padding</item>
-		<item lang="en" id="square">Suare</item>
+		<item lang="en" id="square">Square</item>
 		<item lang="en" id="rounded">Rounded</item>
 		<item lang="en" id="black">Black</item>
 		<item lang="en" id="social_icons">Social Icons</item>
@@ -773,7 +773,7 @@
 		<item lang="en" id="payment_icons">Payment Icons</item>
 		
 		<item lang="en" id="block_mcs_contact_block">More CS-Cart Contact Block</item>
-		<item lang="en" id="block_mcs_contact_block_desciption">More CS-Cart Contact Block description</item>
+		<item lang="en" id="block_mcs_contact_block_description">More CS-Cart Contact Block description</item>
 		<item lang="en" id="mcs_contact_block">More CS-Cart Contact Block</item>
 		<item lang="en" id="mcs_contact_block_text_pre">Text pre</item>
 		<item lang="en" id="mcs_contact_block_text_post">Text post</item>

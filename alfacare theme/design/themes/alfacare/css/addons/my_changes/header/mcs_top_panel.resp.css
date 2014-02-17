@@ -53,6 +53,9 @@
 
 @media (max-width:479px){
 
+.top-links-grid .top-my-account .popup-title a:first-child{
+	padding:0;	
+}
 .top-cart-content .popup-content{
 	right:-70px;
 }

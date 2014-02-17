@@ -145,8 +145,10 @@
 	font-size:1.5em;
 }
 .mcs_alpha_grid .thumb-discount-label i,
-.mcs_alpha_grid .thumb-discount-label .label{
+.mcs_alpha_grid .thumb-discount-label .label,
+.mcs_alpha_grid .thumb-discount-label .discount_percent{
 	vertical-align:middle;
+	margin-right:5px;
 }
 .mcs_alpha_grid .prod_img {
 	position: relative;
