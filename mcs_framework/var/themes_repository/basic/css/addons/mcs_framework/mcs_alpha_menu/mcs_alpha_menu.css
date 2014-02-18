@@ -33,7 +33,9 @@ ul.dropdown-multicolumns > li > ul{
 	margin:4px auto;
 	padding-top:20px;
 }
-
+ul.dropdown-multicolumns li ul li{
+    width:auto;
+}
 ul.dropdown-multicolumns > li > ul > li{
 	margin-top:0px;
 	margin-bottom:0px;

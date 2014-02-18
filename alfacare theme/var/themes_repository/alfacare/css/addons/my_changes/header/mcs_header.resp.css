@@ -25,4 +25,8 @@
 	margin:0;
 	text-align:center;	
 }
+
+.header-grid .mcs-centered{
+	padding:0 !important;
+}
 }

@@ -10,10 +10,10 @@
 @media only screen and (max-width: 767px) {
 
 /*Homepage*/
-.mcs-main-page .mcs-cta-grid,
+/*.mcs-main-page .mcs-cta-grid,
 .mcs-main-page .main-content-grid{
 	padding:0 20px !important;
-}
+}*/
 
 .mcs-homepage-cta{
 	margin:0px;	
