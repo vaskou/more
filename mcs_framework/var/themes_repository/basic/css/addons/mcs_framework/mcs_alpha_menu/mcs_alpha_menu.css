@@ -1,3 +1,9 @@
+.top-menu.mcs-centered{
+    padding:0 !important;
+}
+.top-menu .mcs-alpha-menu{
+    margin:0 20px;
+}
 .category-img{
 	width:100%;	
 }
@@ -34,7 +40,7 @@ ul.dropdown-multicolumns > li > ul{
 	padding-top:20px;
 }
 ul.dropdown-multicolumns li ul li{
-    width:auto;
+    width:100%;
 }
 ul.dropdown-multicolumns > li > ul > li{
 	margin-top:0px;

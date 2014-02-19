@@ -2,7 +2,7 @@
 {if $block.properties.mcs_top_menu_responsive=='Y'}
     {literal}
     <style>
-		@media (max-width:{/literal}{$layout_data.max_width-40}{literal}px){
+		@media (max-width:{/literal}{$layout_data.max_width}{literal}px){
 			.top-menu-grid{
 				display:none !important;
 			}
@@ -173,7 +173,7 @@
     /*jQuery(document).ready(function () {*/
 		
         jQuery('.mcs-resp-menu').meanmenu({
-            meanScreenWidth: "{/literal}{$layout_data.max_width-40}{literal}",
+            meanScreenWidth: "{/literal}{$layout_data.max_width}{literal}",
             meanRemoveAttrs: true
         });
 		
