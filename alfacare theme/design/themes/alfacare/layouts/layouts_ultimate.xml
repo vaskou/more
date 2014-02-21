@@ -4,7 +4,7 @@
         <default_language>en</default_language>
     </settings>
     <layout edition="ULTIMATE">
-        <name>Alfacare Wide</name>
+        <name>Main</name>
         <is_default>1</is_default>
         <width>16</width>
         <layout_width>fixed</layout_width>

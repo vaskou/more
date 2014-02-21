@@ -289,12 +289,12 @@ $settings=array(
 	),
 	'mcs_nextText'=>array(
 		'type'=>'input',
-		'default_value'=>'Next',
+		'default_value'=>'',
 		'tooltip'=>'Next control text'
 	),
 	'mcs_prevText'=>array(
 		'type'=>'input',
-		'default_value'=>'Previous',
+		'default_value'=>'',
 		'tooltip'=>'Previous control text'
 	),
 	'mcs_autoControls'=>array(

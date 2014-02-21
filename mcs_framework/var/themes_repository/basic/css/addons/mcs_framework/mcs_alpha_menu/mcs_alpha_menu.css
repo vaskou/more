@@ -59,7 +59,9 @@ ul.dropdown-multicolumns > li > ul > li.lastcolumn{
 ul.dropdown-multicolumns > li:hover > ul > li a{
 	padding:0;
 }
-
+ul.dropdown-multicolumns > li > ul > li > ul{
+	margin-bottom:0px;
+}
 .mean-nav img{
 	width:100%;
 	height:auto;

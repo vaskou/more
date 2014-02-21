@@ -13,6 +13,6 @@
             {/hook}
         </h1>
         <div class="footer-wrapper-body">{$content nofilter}</div>
-        <div class="footer-wrapper-bottom"><span>&nbsp;</span></div>
+        <div class="footer-wrapper-bottom"><span></span></div>
     </div>
 {/if}

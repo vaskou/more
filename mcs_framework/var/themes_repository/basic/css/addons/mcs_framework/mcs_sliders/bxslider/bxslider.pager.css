@@ -33,7 +33,9 @@
 {
 	height:auto;
 }
-
+.bx-wrapper .bx-loading{
+	z-index:410;
+}
 .bx-wrapper .bx-controls-direction a{
 	z-index:400;
 }

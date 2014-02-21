@@ -1,8 +1,18 @@
 {** block-description:mcs_bxslider **}
-{*style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'*}
+{if $block.properties.mcs_speed==""}{$block.properties.mcs_speed=500}{/if}
+{if $block.properties.mcs_slideMargin==""}{$block.properties.mcs_slideMargin=0}{/if}
+{if $block.properties.mcs_startSlide==""}{$block.properties.mcs_startSlide=0}{/if}
+{if $block.properties.mcs_adaptiveHeightSpeed==""}{$block.properties.mcs_adaptiveHeightSpeed=500}{/if}
+{if $block.properties.mcs_swipeThreshold==""}{$block.properties.mcs_swipeThreshold=50}{/if}
+{if $block.properties.mcs_pause==""}{$block.properties.mcs_pause=4000}{/if}
+{if $block.properties.mcs_autoDelay==""}{$block.properties.mcs_autoDelay=0}{/if}
+{if $block.properties.mcs_minSlides==""}{$block.properties.mcs_minSlides=1}{/if}
+{if $block.properties.mcs_maxSlides==""}{$block.properties.mcs_maxSlides=1}{/if}
+{if $block.properties.mcs_moveSlides==""}{$block.properties.mcs_moveSlides=0}{/if}
+{if $block.properties.mcs_slideWidth==""}{$block.properties.mcs_slideWidth=0}{/if}
 
 {if $items}
-<div class="mcs_slider_{$block.snapping_id}">
+<div class="mcs_slider_{$block.snapping_id}" {if $block.properties.mcs_slideWidth!=0}style="max-width:{$block.properties.mcs_slideWidth}px;margin:auto;"{/if}>
 	<ul class="bxslider" id="bxslider_{$block.snapping_id}">
         {foreach from=$items item="banner" key="key"}
             <li>

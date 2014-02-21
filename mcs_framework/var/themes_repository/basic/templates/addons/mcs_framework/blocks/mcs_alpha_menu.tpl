@@ -32,11 +32,11 @@
             {/if}
             {*assign var="cols" value=4*}
             <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}" id="mcs-categ-{$item1.category_id}">
-                <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-arrow-down15"></i>{/if}</a>
+                <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-arrow-down2"></i>{/if}</a>
 
             {if $item1.$childs}
 
-                {if !$item1.$childs|fn_check_second_level_child_array:$childs}
+                {if !$item1.$childs|fn_check_second_level_child_array:$childs && ($block.properties.mcs_top_menu_show_images!='Y')}
                 {* Only two levels. Vertical output *}
 
                 <div class="dropdown-1column">
@@ -80,7 +80,7 @@
                                 {assign var="item2_url" value=$item2|fn_form_dropdown_object_link:$block.type}
                                 <h3{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} class="active"{/if}>
                                 	<a{if $item2_url} href="{$item2_url}"{/if}>
-                                    	{$item2.$name} {if $item2.$childs && ($block.properties.mcs_top_menu_hide_third_level=='Y')}<i class="icon-arrow-down15"></i>{/if}
+                                    	{if $item2.$childs && ($block.properties.mcs_top_menu_hide_third_level=='Y')}<i class="icon-arrow-down2"></i>{/if} {$item2.$name}
                                     </a>
                                 </h3>
 								
@@ -88,7 +88,8 @@
                                 {if $img_path && ($block.properties.mcs_top_menu_show_images=='Y')}
                                     <div class="category-img">
                                     	<a{if $item2_url} href="{$item2_url}"{/if}>
-                                        <img src="{$img_path.detailed.image_path}" />
+                                        <!--<img src="{$img_path.detailed.image_path}" />-->
+                                        {include file="common/image.tpl" images=$img_path image_height=100 image_width=100}
                                         </a>
                                     </div>
                                 {/if}                                                                
@@ -97,7 +98,7 @@
                                 {hook name="blocks:mcs_alpha_menu_dropdown_3levels_col_elements"}
                                 {foreach from=$item2.$childs item="item3" name="item3"}
                                     {assign var="item3_url" value=$item3|fn_form_dropdown_object_link:$block.type}
-                                    <li{if $item3.active || $item3|fn_check_is_active_menu_item:$block.type} class="active"{/if}><a{if $item3_url} href="{$item3_url}"{/if}>{$item3.$name}</a></li>
+                                    <li{if $item3.active || $item3|fn_check_is_active_menu_item:$block.type} class="active"{/if}><a{if $item3_url} href="{$item3_url}"{/if}><i class="icon-arrow-right3"></i>{$item3.$name}</a></li>
                                 {/foreach}
                                 {if $item2.show_more && $item2_url}
                                     <li class="alt-link"><a href="{$item2_url}">{__("text_topmenu_view_more")}</a></li>

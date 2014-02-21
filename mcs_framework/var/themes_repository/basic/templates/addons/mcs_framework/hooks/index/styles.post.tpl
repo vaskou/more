@@ -82,6 +82,7 @@
 {style src="addons/mcs_framework/mcs_social_icons/mcs_social_icons.css"}
 {style src="addons/mcs_framework/mcs_social_icons/mcs_social_icons.less"}
 {style src="addons/mcs_framework/mcs_labels/mcs_labels.css"}
+{style src="addons/mcs_framework/mcs_labels/mcs_labels.less"}
 {style src="addons/mcs_framework/mcs_payment_icons/mcs_payment_icons.css"}
 {style src="addons/mcs_framework/mcs_contact_block/mcs_contact_block.css"}
 

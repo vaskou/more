@@ -3,8 +3,8 @@
     <settings>
         <default_language>en</default_language>
     </settings>
-    <layout edition="ULTIMATE">
-        <name>Alfacare Wide</name>
+    <layout edition="MULTIVENDOR">
+        <name>Main</name>
         <is_default>1</is_default>
         <width>16</width>
         <layout_width>fixed</layout_width>
@@ -14,7 +14,7 @@
     </layout>
     <location dispatch="default" is_default="1" layout_id="1" object_ids="" position="10" lang_code="en" name="Default" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="65" location_id="17" position="TOP_PANEL" width="16" user_class="top-grid" status="A">
+            <container container_id="1" location_id="1" position="TOP_PANEL" width="16" user_class="top-grid" status="A">
                 <grid width="8" user_class="top-links-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="LEFT" html_element="div" clear="0">
                     <blocks>
                         <block>
@@ -130,7 +130,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="66" location_id="17" position="HEADER" width="16" user_class="header-grid" status="A">
+            <container container_id="2" location_id="1" position="HEADER" width="16" user_class="header-grid" status="A">
                 <grid width="5" user_class="top-logo-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
                     <blocks>
                         <block>
@@ -145,7 +145,7 @@
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[]]></wrapper>
                             <user_class><![CDATA[top-logo]]></user_class>
-                            <order><![CDATA[0]]></order>
+                            <order><![CDATA[2]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
                                 <translation lang_code="ru"><![CDATA[Логотип]]></translation>
@@ -262,7 +262,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="67" location_id="17" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="3" location_id="1" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -310,7 +310,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="68" location_id="17" position="FOOTER" width="16" user_class="footer-grid" status="A">
+            <container container_id="4" location_id="1" position="FOOTER" width="16" user_class="footer-grid" status="A">
                 <grid width="16" user_class="footer-menu" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <grid width="3" user_class="my-account-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="LEFT" html_element="div" clear="0">
                         <blocks>
@@ -648,10 +648,11 @@
     </location>
     <location dispatch="products.view" is_default="0" layout_id="1" object_ids="" position="30" lang_code="en" name="Products" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="72" location_id="18" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="5" location_id="2" position="TOP_PANEL" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
-            <container container_id="71" location_id="18" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="6" location_id="2" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="7" location_id="2" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -699,10 +700,9 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="69" location_id="18" position="TOP_PANEL" width="16" user_class="" status="A">
+            <container container_id="8" location_id="2" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
-            <container container_id="70" location_id="18" position="HEADER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -721,7 +721,11 @@
     </location>
     <location dispatch="categories.view" is_default="0" layout_id="1" object_ids="" position="40" lang_code="en" name="Categories" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="75" location_id="19" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="9" location_id="3" position="TOP_PANEL" width="16" user_class="" status="A">
+                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
+            </container>
+            <container container_id="10" location_id="3" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="11" location_id="3" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -888,11 +892,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="74" location_id="19" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="73" location_id="19" position="TOP_PANEL" width="16" user_class="" status="A">
-                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
-            </container>
-            <container container_id="76" location_id="19" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="12" location_id="3" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
         </containers>
@@ -913,7 +913,11 @@
     </location>
     <location dispatch="pages.view" is_default="0" layout_id="1" object_ids="" position="110" lang_code="en" name="Pages" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="79" location_id="20" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="13" location_id="4" position="TOP_PANEL" width="16" user_class="" status="A">
+                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
+            </container>
+            <container container_id="14" location_id="4" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="15" location_id="4" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1035,11 +1039,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="78" location_id="20" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="77" location_id="20" position="TOP_PANEL" width="16" user_class="" status="A">
-                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
-            </container>
-            <container container_id="80" location_id="20" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="16" location_id="4" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
         </containers>
@@ -1060,7 +1060,11 @@
     </location>
     <location dispatch="checkout.cart" is_default="0" layout_id="1" object_ids="" position="50" lang_code="en" name="Cart" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="83" location_id="21" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="17" location_id="5" position="TOP_PANEL" width="16" user_class="" status="A">
+                <grid width="16" user_class="" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
+            </container>
+            <container container_id="18" location_id="5" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="19" location_id="5" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1108,11 +1112,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="82" location_id="21" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="81" location_id="21" position="TOP_PANEL" width="16" user_class="" status="A">
-                <grid width="16" user_class="" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
-            </container>
-            <container container_id="84" location_id="21" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="20" location_id="5" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
         </containers>
@@ -1133,7 +1133,11 @@
     </location>
     <location dispatch="checkout" is_default="0" layout_id="1" object_ids="" position="60" lang_code="en" name="Checkout" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="87" location_id="22" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="21" location_id="6" position="TOP_PANEL" width="16" user_class="" status="A">
+                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
+            </container>
+            <container container_id="22" location_id="6" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="23" location_id="6" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="11" user_class="main-content-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
                     <blocks>
                         <block>
@@ -1221,11 +1225,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="86" location_id="22" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="85" location_id="22" position="TOP_PANEL" width="16" user_class="" status="A">
-                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
-            </container>
-            <container container_id="88" location_id="22" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="24" location_id="6" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
         </containers>
@@ -1246,7 +1246,11 @@
     </location>
     <location dispatch="checkout.complete" is_default="0" layout_id="1" object_ids="" position="100" lang_code="en" name="Order landing page" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="91" location_id="23" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="25" location_id="7" position="TOP_PANEL" width="16" user_class="" status="A">
+                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
+            </container>
+            <container container_id="26" location_id="7" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="27" location_id="7" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="main-content-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1290,11 +1294,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="90" location_id="23" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="89" location_id="23" position="TOP_PANEL" width="16" user_class="" status="A">
-                <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
-            </container>
-            <container container_id="92" location_id="23" position="FOOTER" width="16" user_class="" status="A">
+            <container container_id="28" location_id="7" position="FOOTER" width="16" user_class="" status="A">
                 <grid width="16" user_class="" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" />
             </container>
         </containers>
@@ -1315,7 +1315,9 @@
     </location>
     <location dispatch="index.index" is_default="0" layout_id="1" object_ids="" position="20" lang_code="en" name="Homepage" title="Shopping Cart Software &amp; Ecommerce Software Solutions by CS-Cart" meta_description="Secure and full-featured Online Shopping Cart Software with the complete set of powerful ecommerce options to create your own online store with minimum efforts involved." meta_keywords="shopping cart, software, ecommerce software, online store">
         <containers>
-            <container container_id="95" location_id="24" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="29" location_id="8" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="30" location_id="8" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="31" location_id="8" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="main-content-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1392,6 +1394,60 @@
                                 </item>
                             </contents>
                         </block>
+                    </blocks>
+                </grid>
+                <grid width="4" user_class="side-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[vendors]]></type>
+                            <properties>
+                                <template><![CDATA[blocks/companies_list.tpl]]></template>
+                                <displayed_vendors><![CDATA[10]]></displayed_vendors>
+                            </properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Vendors]]></name>
+                            <object_type><![CDATA[]]></object_type>
+                            <content>
+                                <items>
+                                    <filling><![CDATA[all]]></filling>
+                                </items>
+                            </content>
+                            <object_ids><![CDATA[]]></object_ids>
+                            <wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
+                            <user_class><![CDATA[homepage-vendors]]></user_class>
+                            <order><![CDATA[2]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations>
+                                <translation lang_code="ru"><![CDATA[Продавцы]]></translation>
+                                <translation lang_code="zh"><![CDATA[Vendors]]></translation>
+                            </translations>
+                            <contents>
+                                <item>
+                                    <object_id><![CDATA[0]]></object_id>
+                                    <object_type><![CDATA[]]></object_type>
+                                    <lang_code><![CDATA[ru]]></lang_code>
+                                    <content>
+                                        <items>
+                                            <filling><![CDATA[all]]></filling>
+                                        </items>
+                                    </content>
+                                </item>
+                                <item>
+                                    <object_id><![CDATA[0]]></object_id>
+                                    <object_type><![CDATA[]]></object_type>
+                                    <lang_code><![CDATA[zh]]></lang_code>
+                                    <content>
+                                        <items>
+                                            <filling><![CDATA[all]]></filling>
+                                        </items>
+                                    </content>
+                                </item>
+                            </contents>
+                        </block>
+                    </blocks>
+                </grid>
+                <grid width="12" user_class="hot-deals-grid" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+                    <blocks>
                         <block>
                             <type><![CDATA[products]]></type>
                             <properties>
@@ -1402,7 +1458,7 @@
                                 <speed><![CDATA[400]]></speed>
                                 <scroll_per_page><![CDATA[Y]]></scroll_per_page>
                                 <pause_delay><![CDATA[3]]></pause_delay>
-                                <item_quantity><![CDATA[4]]></item_quantity>
+                                <item_quantity><![CDATA[3]]></item_quantity>
                                 <thumbnail_width><![CDATA[160]]></thumbnail_width>
                                 <hide_add_to_cart_button><![CDATA[Y]]></hide_add_to_cart_button>
                             </properties>
@@ -1420,7 +1476,7 @@
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
                             <user_class><![CDATA[homepage-hotdeals]]></user_class>
-                            <order><![CDATA[2]]></order>
+                            <order><![CDATA[0]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
                                 <translation lang_code="ru"><![CDATA[Горячие предложения]]></translation>
@@ -1455,6 +1511,10 @@
                                 </item>
                             </contents>
                         </block>
+                    </blocks>
+                </grid>
+                <grid width="16" user_class="" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+                    <blocks>
                         <block>
                             <type><![CDATA[products]]></type>
                             <properties>
@@ -1476,11 +1536,11 @@
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
                             <user_class><![CDATA[homepage-on-sale]]></user_class>
-                            <order><![CDATA[3]]></order>
+                            <order><![CDATA[0]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
                                 <translation lang_code="ru"><![CDATA[Распродажа]]></translation>
-                                <translation lang_code="zh"><![CDATA[On Sale]]></translation>
+                                <translation lang_code="zh"><![CDATA[On Sales]]></translation>
                             </translations>
                             <contents>
                                 <item>
@@ -1527,7 +1587,7 @@
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[]]></wrapper>
                             <user_class><![CDATA[homepage-our-brands]]></user_class>
-                            <order><![CDATA[4]]></order>
+                            <order><![CDATA[1]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
                                 <translation lang_code="ru"><![CDATA[Бренды]]></translation>
@@ -1572,7 +1632,7 @@
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[]]></wrapper>
                             <user_class><![CDATA[homepage-benefits-guarantees]]></user_class>
-                            <order><![CDATA[5]]></order>
+                            <order><![CDATA[2]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
                                 <translation lang_code="ru"><![CDATA[Выгода и Гарантии]]></translation>
@@ -1646,9 +1706,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="94" location_id="24" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="93" location_id="24" position="TOP_PANEL" width="16" user_class="" status="A" />
-            <container container_id="96" location_id="24" position="FOOTER" width="16" user_class="" status="A" />
+            <container container_id="32" location_id="8" position="FOOTER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -1667,7 +1725,9 @@
     </location>
     <location dispatch="profiles" is_default="0" layout_id="1" object_ids="" position="80" lang_code="en" name="Profiles" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="99" location_id="25" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="33" location_id="9" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="34" location_id="9" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="35" location_id="9" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1739,9 +1799,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="98" location_id="25" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="97" location_id="25" position="TOP_PANEL" width="16" user_class="" status="A" />
-            <container container_id="100" location_id="25" position="FOOTER" width="16" user_class="" status="A" />
+            <container container_id="36" location_id="9" position="FOOTER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -1760,7 +1818,9 @@
     </location>
     <location dispatch="auth" is_default="0" layout_id="1" object_ids="" position="70" lang_code="en" name="Auth" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="103" location_id="26" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="37" location_id="10" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="38" location_id="10" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="39" location_id="10" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1832,9 +1892,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="102" location_id="26" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="101" location_id="26" position="TOP_PANEL" width="16" user_class="" status="A" />
-            <container container_id="104" location_id="26" position="FOOTER" width="16" user_class="" status="A" />
+            <container container_id="40" location_id="10" position="FOOTER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -1853,7 +1911,9 @@
     </location>
     <location dispatch="no_page" is_default="0" layout_id="1" object_ids="" position="160" lang_code="en" name="404" title="Page not found" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="107" location_id="27" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="41" location_id="11" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="42" location_id="11" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="43" location_id="11" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="main-content-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1879,9 +1939,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="106" location_id="27" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="105" location_id="27" position="TOP_PANEL" width="16" user_class="" status="A" />
-            <container container_id="108" location_id="27" position="FOOTER" width="16" user_class="" status="A" />
+            <container container_id="44" location_id="11" position="FOOTER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -1900,7 +1958,9 @@
     </location>
     <location dispatch="profiles.success_add" is_default="0" layout_id="1" object_ids="" position="90" lang_code="en" name="Successful registration" title="" meta_description="" meta_keywords="">
         <containers>
-            <container container_id="111" location_id="28" position="CONTENT" width="16" user_class="content-grid" status="A">
+            <container container_id="45" location_id="12" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="46" location_id="12" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="47" location_id="12" position="CONTENT" width="16" user_class="content-grid" status="A">
                 <grid width="16" user_class="main-content-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
                     <blocks>
                         <block>
@@ -1944,9 +2004,7 @@
                     </blocks>
                 </grid>
             </container>
-            <container container_id="110" location_id="28" position="HEADER" width="16" user_class="" status="A" />
-            <container container_id="109" location_id="28" position="TOP_PANEL" width="16" user_class="" status="A" />
-            <container container_id="112" location_id="28" position="FOOTER" width="16" user_class="" status="A" />
+            <container container_id="48" location_id="12" position="FOOTER" width="16" user_class="" status="A" />
         </containers>
         <translations>
             <translation lang_code="ru">
@@ -1960,6 +2018,139 @@
                 <page_title><![CDATA[]]></page_title>
                 <meta_description><![CDATA[]]></meta_description>
                 <name>Successful registration</name>
+            </translation>
+        </translations>
+    </location>
+    <location dispatch="companies.apply_for_vendor" is_default="0" layout_id="1" object_ids="" position="120" lang_code="en" name="Vendor account" title="" meta_description="" meta_keywords="">
+        <containers>
+            <container container_id="49" location_id="13" position="TOP_PANEL" width="16" user_class="" status="A" />
+            <container container_id="50" location_id="13" position="HEADER" width="16" user_class="" status="A" />
+            <container container_id="51" location_id="13" position="CONTENT" width="16" user_class="content-grid" status="A">
+                <grid width="16" user_class="breadcrumbs-grid" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[breadcrumbs]]></type>
+                            <properties>
+                                <template><![CDATA[common/breadcrumbs.tpl]]></template>
+                            </properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Breadcrumbs]]></name>
+                            <object_type><![CDATA[]]></object_type>
+                            <content><![CDATA[]]></content>
+                            <object_ids><![CDATA[]]></object_ids>
+                            <wrapper><![CDATA[]]></wrapper>
+                            <user_class><![CDATA[]]></user_class>
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations>
+                                <translation lang_code="ru"><![CDATA[Строка навигации]]></translation>
+                                <translation lang_code="zh"><![CDATA[面包屑]]></translation>
+                            </translations>
+                            <contents />
+                        </block>
+                    </blocks>
+                </grid>
+                <grid width="8" user_class="main-content-grid" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[main]]></type>
+                            <properties><![CDATA[]]></properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Main Content]]></name>
+                            <object_type><![CDATA[]]></object_type>
+                            <content><![CDATA[]]></content>
+                            <object_ids><![CDATA[]]></object_ids>
+                            <wrapper><![CDATA[]]></wrapper>
+                            <user_class><![CDATA[]]></user_class>
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations>
+                                <translation lang_code="ru"><![CDATA[Главное содержимое]]></translation>
+                                <translation lang_code="zh"><![CDATA[主要内容]]></translation>
+                            </translations>
+                            <contents />
+                        </block>
+                    </blocks>
+                </grid>
+                <grid width="8" user_class="vendor-account-information-grid" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[html_block]]></type>
+                            <properties>
+                                <template><![CDATA[blocks/html_block.tpl]]></template>
+                            </properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Vendor account information]]></name>
+                            <object_type><![CDATA[]]></object_type>
+                            <content>
+                                <content><![CDATA[<div class="company-info">
+<h4>Become a vendor</h4>
+<ul>
+<li>Access your personal administrator area</li>
+<li>Use the common storefront to sell your goods</li>
+<li>Get your profit share</li>
+</ul>
+</div>]]></content>
+                            </content>
+                            <object_ids><![CDATA[]]></object_ids>
+                            <wrapper><![CDATA[]]></wrapper>
+                            <user_class><![CDATA[]]></user_class>
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations>
+                                <translation lang_code="ru"><![CDATA[Vendor account information]]></translation>
+                                <translation lang_code="zh"><![CDATA[Vendor account information]]></translation>
+                            </translations>
+                            <contents>
+                                <item>
+                                    <object_id><![CDATA[0]]></object_id>
+                                    <object_type><![CDATA[]]></object_type>
+                                    <lang_code><![CDATA[ru]]></lang_code>
+                                    <content>
+                                        <content><![CDATA[<div class="company-info">
+<h4>Cтаньте вендором</h4>
+<ul>
+<li>Получите доступ к личной панели администратора</li>
+<li>Используйте общую витрину для продажи своих товаров</li>
+<li>Получайте свою долю прибыли</li>
+</ul>
+</div>]]></content>
+                                    </content>
+                                </item>
+                                <item>
+                                    <object_id><![CDATA[0]]></object_id>
+                                    <object_type><![CDATA[]]></object_type>
+                                    <lang_code><![CDATA[zh]]></lang_code>
+                                    <content>
+                                        <content><![CDATA[<div class="company-info">
+<h4>Become a vendor</h4>
+<ul>
+<li>Access your personal administrator area</li>
+<li>Use the common storefront to sell your goods</li>
+<li>Get your profit share</li>
+</ul>
+</div>]]></content>
+                                    </content>
+                                </item>
+                            </contents>
+                        </block>
+                    </blocks>
+                </grid>
+            </container>
+            <container container_id="52" location_id="13" position="FOOTER" width="16" user_class="" status="A" />
+        </containers>
+        <translations>
+            <translation lang_code="ru">
+                <meta_keywords><![CDATA[]]></meta_keywords>
+                <page_title><![CDATA[]]></page_title>
+                <meta_description><![CDATA[]]></meta_description>
+                <name>Vendor account</name>
+            </translation>
+            <translation lang_code="zh">
+                <meta_keywords><![CDATA[]]></meta_keywords>
+                <page_title><![CDATA[]]></page_title>
+                <meta_description><![CDATA[]]></meta_description>
+                <name>Vendor account</name>
             </translation>
         </translations>
     </location>

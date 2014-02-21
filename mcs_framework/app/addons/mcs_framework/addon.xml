@@ -4,7 +4,7 @@
     <version>1.0</version>
     <name>More CS-Cart Framework</name>
     <description>More CS-Cart Framework</description>
-    <priority>100000</priority>
+    <priority>3000000000</priority>
     <status>active</status>
 	<queries>
 		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
@@ -644,7 +644,7 @@
 		<item lang="en" id="add_brands_and_close">Add Brands and close</item>
 		<item lang="en" id="all_brands">All Brands</item>
 		<item lang="en" id="mcs_brand_scroller_button">Show "All Brands" button</item>
-		<item lang="en" id="mcs_brand_scroller_button_icon">"Add Brands" button icon</item>
+		<item lang="en" id="mcs_brand_scroller_button_icon">"All Brands" button icon</item>
 		
 		<item lang="en" id="mcs_top_menu_show_images">Show images in menu</item>
 		<item lang="en" id="mcs_top_menu_hide_third_level">Hide third level elements</item>
@@ -809,6 +809,8 @@
 		<item lang="en" id="mcs_contact_block_support_department">Company Support Department Email</item>
 		<item lang="en" id="mcs_contact_block_newsletter_email">Company Newsletter Email</item>
 		<item lang="en" id="mcs_contact_block_form_link">Company Contact Form Link</item>
+		<item lang="en" id="mcs_footer_wrapper">More CS-Cart Footer Wrapper</item>
+		
 		
 		<item lang="en" id="devices">Show on devices</item>
 		
