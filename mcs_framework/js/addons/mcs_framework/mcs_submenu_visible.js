@@ -1,5 +1,5 @@
 $(function(){	
-	$(".mcs-alpha-menu .dropdown-multicolumns > li").hover(
+	$(".mcs-i-menu .dropdown-multicolumns > li").hover(
 	function(){
 		var main=$(this).children("ul");
 		if(main.length<=0){

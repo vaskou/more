@@ -1,66 +1,66 @@
-.mcs_alpha_grid ul.products {
+.mcs_i_grid ul.products {
 	margin-top:10px;
 }
-.mcs_alpha_grid ul.products li.product {
+.mcs_i_grid ul.products li.product {
 	margin-bottom: 20px;
 	padding-bottom:6px;/**/
 }
-.mcs_alpha_grid ul.products li.product .product-wrapper {
+.mcs_i_grid ul.products li.product .product-wrapper {
 	border: 1px solid #ccc;
 	background-color:#fff;
 }
-.mcs_alpha_grid ul.products li.product:hover .product-wrapper{
+.mcs_i_grid ul.products li.product:hover .product-wrapper{
 	-webkit-box-shadow: 1px 1px 15px rgba(0,0,0,0.33);
 	-moz-box-shadow: 1px 1px 15px rgba(0,0,0,0.33);
 	box-shadow: 1px 1px 15px rgba(0,0,0,0.33);
 }
-.mcs_alpha_grid ul.products li.product .prod_img{
+.mcs_i_grid ul.products li.product .prod_img{
 	border:1px solid #e4e4e4;
 	padding:0;
 	margin:5px 5px 0;
 }
 
-.mcs_alpha_grid ul.products li.product .product_info{
+.mcs_i_grid ul.products li.product .product_info{
 	padding:0;
 	margin:0 5px;
 }
-.mcs_alpha_grid ul.products li.product .product_info h3{
+.mcs_i_grid ul.products li.product .product_info h3{
 	padding:5px 0;
 }
-.mcs_alpha_grid ul.products li.product .product_info h3 a{
+.mcs_i_grid ul.products li.product .product_info h3 a{
 	color:#fff;
 	text-align:center;
 	margin:0 2px;	
 }
-.mcs_alpha_grid ul.products li.product .product_info h3 a:hover{
+.mcs_i_grid ul.products li.product .product_info h3 a:hover{
 	text-decoration:none;
 }
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper{
+.mcs_i_grid ul.products li.product .product_info .price-wrapper{
 	text-align:center;
 }
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price{
+.mcs_i_grid ul.products li.product .product_info .price-wrapper .list-price{
 	font-size:100% !important;
 }
 
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .list-price .list-price,
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price .price-num,
-.mcs_alpha_grid ul.products li.product .product_info .price-wrapper .price .no-price{
+.mcs_i_grid ul.products li.product .product_info .price-wrapper .list-price .list-price,
+.mcs_i_grid ul.products li.product .product_info .price-wrapper .price .price-num,
+.mcs_i_grid ul.products li.product .product_info .price-wrapper .price .no-price{
 	font-size:130% !important;
 	font-weight:bold;
 }
-.mcs_alpha_grid ul.products li.product .product_extra_info {
+.mcs_i_grid ul.products li.product .product_extra_info {
 	padding:0 0 10px 0;
 	margin:0 5px 0 5px;
 }
-.mcs_alpha_grid ul.products li.product .product-meta{
+.mcs_i_grid ul.products li.product .product-meta{
 	padding:0px 5px 5px 5px;
 }
 
-.mcs_alpha_grid ul.products li.product .product-meta-wrapper{
+.mcs_i_grid ul.products li.product .product-meta-wrapper{
 	padding:0px 0 20px 0;	
 }
 
-.mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label{
+.mcs_i_grid ul.products li.product .product-wrapper .thumb-discount-label{
 	top:6px;
 	left:6px;
 	right:auto;
@@ -68,10 +68,10 @@
 	line-height:30px
 	text-align:center;
 }
-.mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label i{
+.mcs_i_grid ul.products li.product .product-wrapper .thumb-discount-label i{
 	display:none;
 }
-.mcs_alpha_grid ul.products li.product .product-wrapper .thumb-discount-label .discount_percent{
+.mcs_i_grid ul.products li.product .product-wrapper .thumb-discount-label .discount_percent{
 	vertical-align:middle;
 	font-size:1.2em;
 	cursor:default;
@@ -83,13 +83,13 @@
 /*.hover_hide{
 	min-height:300px !important;
 }*/
-.mcs_alpha_grid ul.products li.product.hover_hide .price-wrapper{
+.mcs_i_grid ul.products li.product.hover_hide .price-wrapper{
 	padding-bottom:10px;
 }
 
-.mcs_computer .mcs_alpha_grid .product:hover .price-wrapper,
-.mcs_computer .mcs_alpha_grid .product:hover .product_extra_info,
-.mcs_computer .mcs_alpha_grid .product:hover .product-meta-wrapper{
+.mcs_computer .mcs_i_grid .product:hover .price-wrapper,
+.mcs_computer .mcs_i_grid .product:hover .product_extra_info,
+.mcs_computer .mcs_i_grid .product:hover .product-meta-wrapper{
 	background-color:#e6e6e6;
 	-webkit-transition:background-color 250ms linear;
 	-moz-transition:background-color 250ms linear;
@@ -100,27 +100,27 @@
 
 /*************************** buttons **********************************/
 
-.mcs_alpha_grid .button{
+.mcs_i_grid .button{
 	width:auto;
 }
-.mcs_alpha_grid .buttons-list-wrapper{
+.mcs_i_grid .buttons-list-wrapper{
 	height:auto;
 	opacity:1;	
 }
-.mcs_alpha_grid .add-buttons-wrap{
+.mcs_i_grid .add-buttons-wrap{
 	height:auto;
 	min-height:3em;
 	text-align:center;
 }
-.mcs_alpha_grid .add-to-compare{
+.mcs_i_grid .add-to-compare{
 	margin:0 !important;
 }
-.mcs_alpha_grid .add-to-wish,
-.mcs_alpha_grid .add-to-compare{
+.mcs_i_grid .add-to-wish,
+.mcs_i_grid .add-to-compare{
 	text-align:center;
 	white-space:nowrap;
 }
-.mcs_alpha_grid .add-buttons-wrap .text-button{
+.mcs_i_grid .add-buttons-wrap .text-button{
 	display:inline-block;
 	width:auto; 			/*Make it 80% when text is too long else auto*/
 	padding:0;
@@ -131,33 +131,33 @@
 	vertical-align:middle;
 	font-size:90% !important;
 }
-.mcs_alpha_grid .bottom_buttons{
+.mcs_i_grid .bottom_buttons{
 	padding-top:5px;
 }
-.mcs_alpha_grid .quick-view{
+.mcs_i_grid .quick-view{
 	height:auto;
 	text-align:center;
 }
-.mcs_alpha_grid .add_cart_button{
+.mcs_i_grid .add_cart_button{
 	text-align:center;
 	padding-top:10px;
 }
 
-.mcs_alpha_grid .icon_wrap{
+.mcs_i_grid .icon_wrap{
 	vertical-align:middle;
 }
-.mcs_alpha_grid .button-wrap-right,
-.mcs_alpha_grid .mcs-wishlist > div > span{
+.mcs_i_grid .button-wrap-right,
+.mcs_i_grid .mcs-wishlist > div > span{
 	margin:0;
 	padding:10px;
 //	color:#fff;
 	display:inline-block;
 }
 
-.mcs_alpha_grid .button a,
-.mcs_alpha_grid .button-action a,
-.mcs_alpha_grid .button-submit-action input,
-.mcs_alpha_grid .mcs-wishlist > div span a{
+.mcs_i_grid .button a,
+.mcs_i_grid .button-action a,
+.mcs_i_grid .button-submit-action input,
+.mcs_i_grid .mcs-wishlist > div span a{
 //	color:#fff;
 	width:auto;
 	margin-left:1px;
@@ -172,6 +172,6 @@
 	vertical-align:middle;
 }
 
-.mcs_alpha_grid .button:hover a{
+.mcs_i_grid .button:hover a{
 	margin-left:1px;
 }

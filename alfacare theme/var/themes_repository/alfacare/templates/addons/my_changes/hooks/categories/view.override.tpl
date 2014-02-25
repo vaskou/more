@@ -1,4 +1,4 @@
-<div class="mcs_alpha_category_view" id="category_products_{$block.block_id}">
+<div class="mcs_i_category_view" id="category_products_{$block.block_id}">
 {assign var="subcategories_no" value=$subcategories|@count}
 
 {if $subcategories_no<=3||$subcategories_no==5||$subcategories_no==6}

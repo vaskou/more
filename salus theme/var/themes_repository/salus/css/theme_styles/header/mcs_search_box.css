@@ -1,0 +1,18 @@
+.search-block-grid{
+	margin-top:30px;
+}
+.search-block-grid .search-input{
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	float:right;
+	width:200px;
+}
+
+.search-block-grid .search-input:focus{
+	width:95%;
+	font-size:125%;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}

@@ -1,0 +1,5 @@
+@media (max-width:767px){
+.mcs_i_grid ul.products li.first_offset {
+	margin-left:0 !important;
+}	
+}

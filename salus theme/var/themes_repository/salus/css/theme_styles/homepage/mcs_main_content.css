@@ -1,0 +1,56 @@
+.mcs-main-page .mainbox-container{
+	margin-bottom:20px;
+}
+.mcs-main-page .mainbox-title{
+	text-align:center;
+}
+.mcs-main-page .mainbox-title span{
+	font-size:26px !important;
+	font-weight:bold !important;
+	color:#444;
+}
+
+.homepage-banners{
+	margin-top:0;
+}
+
+.mcs-homepage-cta-grid{
+	margin-top:-120px !important;
+	position:relative;
+	margin-bottom:20px !important;
+}
+.mcs-homepage-cta{
+	margin: 10px;
+	padding: 5px;
+	background: #fff;
+}
+.mcs-homepage-cta img{
+	width:100%;
+	height:auto;
+}
+.mcs-homepage-cta p{
+	padding:0;
+	color:#444;
+}
+
+.mcs-homepage-cta h2{
+	margin:20px 0 10px;
+	font-weight:normal;
+	color:#444;
+}
+
+.mcs-homepage-cta .read-more{
+	margin: 10px 0px 5px 0px;
+	display: block;
+	padding: 3px 5px;
+	color: #fff;
+	text-align: center;
+}
+
+.mcs-homepage-cta .read-more{
+	margin: 10px 0px 5px 0px;
+	display: block;
+	padding: 3px 5px;
+	color: #fff;
+	text-align: center;
+}

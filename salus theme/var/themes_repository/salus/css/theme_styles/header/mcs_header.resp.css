@@ -1,0 +1,32 @@
+@media (max-width:790px){
+
+.motto{
+	margin-top:41px;
+}
+.motto p,
+.motto .accent{
+	font-size:16px;
+}
+
+}
+
+@media (max-width:767px){
+
+.top-logo-grid{
+	border-top:1px solid;
+}
+
+.top-logo-grid .top-logo{
+	float:none;
+	text-align:center;
+}
+.top-logo-grid .motto{
+	float:none;
+	margin:0;
+	text-align:center;	
+}
+
+.header-grid .mcs-centered{
+	padding:0 !important;
+}
+}

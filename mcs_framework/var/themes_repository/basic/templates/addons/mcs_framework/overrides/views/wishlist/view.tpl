@@ -7,7 +7,7 @@
     {assign var="location" value="cart"}
 {/if}
 {if $products}
-    {include file="addons/mcs_framework/blocks/list_templates/mcs_alpha_grid_list.tpl" 
+    {include file="addons/mcs_framework/blocks/list_templates/mcs_i_grid_list.tpl" 
         columns=$columns
         show_empty=true
         show_trunc_name=true 

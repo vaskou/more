@@ -13,8 +13,8 @@
 {style src="addons/my_changes/homepage/mcs_slider.less"}
 {style src="addons/my_changes/homepage/mcs_brand_scroller.css"}
 {style src="addons/my_changes/homepage/mcs_brand_scroller.less"}
-{style src="addons/my_changes/categories/mcs_alpha_category_view.css"}
-{style src="addons/my_changes/categories/mcs_alpha_category_view.less"}
+{style src="addons/my_changes/categories/mcs_i_category_view.css"}
+{style src="addons/my_changes/categories/mcs_i_category_view.less"}
 {style src="addons/my_changes/categories/mcs_products_grid.css"}
 {style src="addons/my_changes/categories/mcs_products_grid.less"}
 {style src="addons/my_changes/categories/mcs_side_menu.css"}
@@ -38,7 +38,7 @@
 	{style src="addons/my_changes/homepage/mcs_main_content.resp.css"}
 	{style src="addons/my_changes/homepage/mcs_slider.resp.css"}
 	{style src="addons/my_changes/homepage/mcs_slider.resp.less"}
-	{style src="addons/my_changes/categories/mcs_alpha_category_view.resp.css"}
+	{style src="addons/my_changes/categories/mcs_i_category_view.resp.css"}
     {style src="addons/my_changes/categories/mcs_sidebox.resp.css"}
     {style src="addons/my_changes/products/mcs_product.resp.css"}
 {/if}

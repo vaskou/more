@@ -1,7 +1,7 @@
 <?php
 
 
-$schema['addons/mcs_framework/blocks/categories/mcs_alpha_menu.tpl'] = array (
+$schema['addons/mcs_framework/blocks/categories/mcs_i_menu.tpl'] = array (
 	'settings' => array (
 		'dropdown_second_level_elements' => array (
 			'type' => 'input',
@@ -459,7 +459,7 @@ $settings=array(
 		'tooltip'=>'The width of each slide. This setting is required for all horizontal carousels'
 	),
 );
-$schema['addons/mcs_framework/blocks/products/mcs_alpha_scroller.tpl'] = array (
+$schema['addons/mcs_framework/blocks/products/mcs_i_scroller.tpl'] = array (
 	'settings'=>$settings,
 	'bulk_modifier' => array (
 		'fn_gather_additional_products_data' => array (

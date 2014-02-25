@@ -1,0 +1,32 @@
+@media (max-width:767px){
+
+.search-block-grid{
+	margin:10px 0px 0px;
+	padding-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
+.search-block-grid .search-block{
+	width:200px;
+	margin:auto;
+}
+.search-block-grid .search-input{
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	float:none;
+	width:99%;
+	margin:auto;
+}
+
+.search-block-grid .search-input:focus{
+	width:99%;
+}
+
+.search-block-grid .search-block .search-magnifier{
+	top:2px;	
+	right:9px;
+	width:28px;
+	height:28px;
+}
+
+}

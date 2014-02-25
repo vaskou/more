@@ -4,7 +4,7 @@
     <version>1.0</version>
     <name>More CS-Cart Framework</name>
     <description>More CS-Cart Framework</description>
-    <priority>3000000000</priority>
+    <priority>100000</priority>
     <status>active</status>
 	<queries>
 		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
@@ -43,9 +43,9 @@
 			<section id="mcs_product_categories">
                 <name>Product Categories</name>
                 <items>
-					<item id="mcs_product_categories_alpha_grid">
+					<item id="mcs_product_categories_i_grid">
 						<type>header</type>
-						<name>More CS-Cart Alpha Grid</name>
+						<name>More CS-Cart Grid I</name>
 					</item>
                 	<item id="mcs_product_categories_hidden_info">
                         <type>selectbox</type>
@@ -632,11 +632,11 @@
 		<item lang="en" id="block_mcs_banners">More CS-Cart Banners</item>
         <item lang="en" id="block_mcs_banners_description">Custom Visual and text banners</item>
 		<item lang="en" id="mcs_bxslider">More CS-Cart bxSlider</item>
-		<item lang="en" id="mcs_alpha_scroller">More CS-Cart Alpha Scroller</item>
+		<item lang="en" id="mcs_i_scroller">More CS-Cart Scroller I</item>
 		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
 		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
-		<item lang="en" id="mcs_alpha_menu">More CS-Cart Alpha Menu</item>
-		<item lang="en" id="mcs_alpha_grid">More CS-Cart Alpha Grid</item>
+		<item lang="en" id="mcs_i_menu">More CS-Cart Menu I</item>
+		<item lang="en" id="mcs_i_grid">More CS-Cart Grid I</item>
 		<item lang="en" id="mcs_brand_scroller">More CS-Cart Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller_description">Scroller with selected brands</item>

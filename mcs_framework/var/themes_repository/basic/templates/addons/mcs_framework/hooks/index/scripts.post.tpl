@@ -25,7 +25,7 @@ function deviceType(){
 {/if}
 
 {if $addons.mcs_framework.mcs_product_categories_hidden_info!='mcs_none'}
-	{script src="js/addons/mcs_framework/mcs_alpha_grid/jquery.hover_hide.js"}
+	{script src="js/addons/mcs_framework/mcs_i_grid/jquery.hover_hide.js"}
 {/if}
 
 {script src="js/addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.min.js"}
@@ -38,8 +38,8 @@ function deviceType(){
 	{script src="js/addons/mcs_framework/mcs_accordion_block/mcs_accordion_block.js"}
 {/if}
 
-{script src="js/addons/mcs_framework/mcs_alpha_grid/jquery.slides.js"}
-{script src="js/addons/mcs_framework/mcs_alpha_grid/mcs_alpha_grid.js"}
+{script src="js/addons/mcs_framework/mcs_i_grid/jquery.slides.js"}
+{script src="js/addons/mcs_framework/mcs_i_grid/mcs_i_grid.js"}
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
 
 {if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
@@ -47,7 +47,7 @@ function deviceType(){
 {/if}
 
 
-{script src="js/addons/mcs_framework/mcs_alpha_menu/mcs_click_on_tablets.js"}
+{script src="js/addons/mcs_framework/mcs_i_menu/mcs_click_on_tablets.js"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}

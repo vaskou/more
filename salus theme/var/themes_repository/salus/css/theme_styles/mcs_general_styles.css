@@ -1,0 +1,56 @@
+*{
+	text-transform:none !important;
+}
+
+.breadcrumbs > span,
+.breadcrumbs > span > span{
+	color:#444 !important;
+	vertical-align:middle;
+}
+.breadcrumbs .breadcrumbs-icon{
+	font-size:25px;
+	display:inline-block;
+	color:#444;
+}
+.breadcrumbs > i{
+	display:none;
+}
+.breadcrumbs a{
+	vertical-align:middle;	
+}
+.breadcrumbs > a:after,
+.breadcrumbs > span > a:after{
+	content:"/";
+	margin-left:5px;
+	font-size:15px;
+	display:inline-block;
+}
+
+.mainbox-title span{
+	font-size:100% !important;
+	font-weight:normal !important;
+}
+.mainbox-title > span{
+	font-size:300% !important;
+}
+
+.button-submit-action.button-wrap-left, 
+.button-submit.button-wrap-left, 
+.button-action.button-wrap-left, 
+.button.button-wrap-left, 
+.button-submit-big.button-wrap-left, 
+.button-big.button-wrap-left {
+	border: none;
+}
+
+.form-wrap{
+	border-radius:0;
+	border:none;
+	padding:12px 0 0 0;
+}
+
+.buttons-container, 
+.buttons-container-item, 
+.buttons-container.wrap{
+	padding:15px;
+}

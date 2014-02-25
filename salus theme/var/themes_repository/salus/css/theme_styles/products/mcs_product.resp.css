@@ -1,0 +1,19 @@
+@media (max-width:767px){
+.image-wrap{
+	float:none;
+}
+.product-main-info .image-border {
+	margin-right:0px;
+}
+.product-main-info .product-thumbnails,
+.border-image-wrap img{
+	max-width:100% !important;
+	height:auto !important;
+}
+.product-main-info .product-thumbnails{
+	margin:10px auto;
+}
+.product-main-info .product-info{
+	margin-top:20px;
+}
+}

@@ -1,0 +1,8 @@
+@media only screen and (max-width: 767px) {
+	
+/*Sidebox*/
+.mcs-sidebox-hide .sidebox-title{
+	padding:10px;
+}
+
+}
