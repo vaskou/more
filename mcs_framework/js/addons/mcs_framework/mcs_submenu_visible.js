@@ -22,9 +22,9 @@ $(function(){
 	function isEntirelyVisible(main)
 	{
 		var l=main.offset().left;
-		var w=main.width();
+		var w=main.outerWidth();
 		//console.log(l+" "+w);
-        var mnuW = main.closest(".dropdown-multicolumns").width();
+        var mnuW = main.closest(".dropdown-multicolumns").outerWidth();
         var mnuL = main.closest(".dropdown-multicolumns").offset().left;
 		//console.log((l+ w) +"<="+ (mnuW+mnuL ));
 		if ( (l+ w) <= mnuW+mnuL ) {

@@ -4,28 +4,28 @@
 	width:@y;
 }
 
-.dropdown-1column {.sub_width(1,0);}
-.dropdown-2columns {.sub_width(2,0);}
-.dropdown-3columns {.sub_width(3,0);}
-.dropdown-4columns {.sub_width(4,0);}
-.dropdown-5columns {.sub_width(5,0);}
-.dropdown-fullwidth{
+.mcs-i-menu .dropdown-1column {.sub_width(1,0);}
+.mcs-i-menu .dropdown-2columns {.sub_width(2,0);}
+.mcs-i-menu .dropdown-3columns {.sub_width(3,0);}
+.mcs-i-menu .dropdown-4columns {.sub_width(4,0);}
+.mcs-i-menu .dropdown-5columns {.sub_width(5,0);}
+.mcs-i-menu .dropdown-fullwidth{
 	width:auto;
 	max-width:@fluidContainerMaxWidth;
 }
 
-.mcs-centered .dropdown-1column {.sub_width(1,40);}
-.mcs-centered .dropdown-2columns {.sub_width(2,40);}
-.mcs-centered .dropdown-3columns {.sub_width(3,40);}
-.mcs-centered .dropdown-4columns {.sub_width(4,40);}
-.mcs-centered .dropdown-5columns {.sub_width(5,40);}
+.mcs-centered .mcs-i-menu .dropdown-1column {.sub_width(1,40);}
+.mcs-centered .mcs-i-menu .dropdown-2columns {.sub_width(2,40);}
+.mcs-centered .mcs-i-menu .dropdown-3columns {.sub_width(3,40);}
+.mcs-centered .mcs-i-menu .dropdown-4columns {.sub_width(4,40);}
+.mcs-centered .mcs-i-menu .dropdown-5columns {.sub_width(5,40);}
 
-.dropdown-multicolumns .col-1{
+.mcs-i-menu .dropdown-multicolumns .col-1{
 	@w:floor((@fluidContainerMaxWidth - 70) / 6);
 	width:@w;
 }
 
-.mcs-centered .dropdown-multicolumns .col-1{
+.mcs-centered .mcs-i-menu .dropdown-multicolumns .col-1{
 	@w:floor((@fluidContainerMaxWidth - 40 - 70) / 6);
 	width:@w;
 }
