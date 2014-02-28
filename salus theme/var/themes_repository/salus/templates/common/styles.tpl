@@ -16,50 +16,51 @@
     {/if}
 
     {style src="scheme.less"}
+
+	{hook name="index:mcs_styles"}
+    {/hook}
+    {style src="theme_styles/mcs_general_styles.css"}
+    {style src="theme_styles/mcs_general_styles.less"}
+    {style src="theme_styles/mcs_brands_page.css"}
+    {style src="theme_styles/mcs_brands_page.less"}
+    {style src="theme_styles/header/mcs_top_panel.css"}
+    {style src="theme_styles/header/mcs_header.css"}
+    {style src="theme_styles/header/mcs_header.less"}
+    {style src="theme_styles/header/mcs_top_menu.less"}
+    {style src="theme_styles/header/mcs_search_box.css"}
+    {style src="theme_styles/homepage/mcs_main_content.css"}
+    {style src="theme_styles/homepage/mcs_main_content.less"}
+    {style src="theme_styles/homepage/mcs_slider.css"}
+    {style src="theme_styles/homepage/mcs_slider.less"}
+    {style src="theme_styles/homepage/mcs_brand_scroller.css"}
+    {style src="theme_styles/homepage/mcs_brand_scroller.less"}
+    {style src="theme_styles/categories/mcs_products_grid.css"}
+    {style src="theme_styles/categories/mcs_products_grid.less"}
+    {style src="theme_styles/categories/mcs_side_menu.css"}
+    {style src="theme_styles/categories/mcs_side_menu.less"}
+    {style src="theme_styles/categories/mcs_sidebox.css"}
+    {style src="theme_styles/categories/mcs_sidebox.less"}
+    {style src="theme_styles/categories/mcs_sorting.less"}
+    {style src="theme_styles/products/mcs_product.css"}
+    {style src="theme_styles/products/mcs_product.less"}
+    {style src="theme_styles/pages/mcs_pages_side_menu.css"}
+    {style src="theme_styles/pages/mcs_pages_side_menu.less"}
+    {style src="theme_styles/mcs_labels/mcs_labels.css"}
+    
+    {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+        {style src="theme_styles/mcs_general_styles.resp.css"}
+        {style src="theme_styles/header/mcs_top_panel.resp.css"}
+        {style src="theme_styles/header/mcs_header.resp.css"}
+        {style src="theme_styles/header/mcs_header.resp.less"}
+        {style src="theme_styles/header/mcs_top_menu.resp.less"}
+        {style src="theme_styles/header/mcs_search_box.resp.css"}
+        {style src="theme_styles/homepage/mcs_main_content.resp.css"}
+        {style src="theme_styles/homepage/mcs_slider.resp.css"}
+        {style src="theme_styles/homepage/mcs_slider.resp.less"}
+        {style src="theme_styles/categories/mcs_i_category_view.resp.css"}
+        {style src="theme_styles/categories/mcs_sidebox.resp.css"}
+        {style src="theme_styles/products/mcs_product.resp.css"}
+    {/if}
+
 {/hook}
-
-{style src="theme_styles/mcs_general_styles.css"}
-{style src="theme_styles/mcs_general_styles.less"}
-{style src="theme_styles/mcs_brands_page.css"}
-{style src="theme_styles/mcs_brands_page.less"}
-{style src="theme_styles/header/mcs_top_panel.css"}
-{style src="theme_styles/header/mcs_header.css"}
-{style src="theme_styles/header/mcs_header.less"}
-{style src="theme_styles/header/mcs_top_menu.less"}
-{style src="theme_styles/header/mcs_search_box.css"}
-{style src="theme_styles/homepage/mcs_main_content.css"}
-{style src="theme_styles/homepage/mcs_main_content.less"}
-{style src="theme_styles/homepage/mcs_slider.css"}
-{style src="theme_styles/homepage/mcs_slider.less"}
-{style src="theme_styles/homepage/mcs_brand_scroller.css"}
-{style src="theme_styles/homepage/mcs_brand_scroller.less"}
-{style src="theme_styles/categories/mcs_products_grid.css"}
-{style src="theme_styles/categories/mcs_products_grid.less"}
-{style src="theme_styles/categories/mcs_side_menu.css"}
-{style src="theme_styles/categories/mcs_side_menu.less"}
-{style src="theme_styles/categories/mcs_sidebox.css"}
-{style src="theme_styles/categories/mcs_sidebox.less"}
-{style src="theme_styles/categories/mcs_sorting.less"}
-{style src="theme_styles/products/mcs_product.css"}
-{style src="theme_styles/products/mcs_product.less"}
-{style src="theme_styles/pages/mcs_pages_side_menu.css"}
-{style src="theme_styles/pages/mcs_pages_side_menu.less"}
-{style src="theme_styles/mcs_labels/mcs_labels.css"}
-
-{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
-	{style src="theme_styles/mcs_general_styles.resp.css"}
-	{style src="theme_styles/header/mcs_top_panel.resp.css"}
-    {style src="theme_styles/header/mcs_header.resp.css"}
-	{style src="theme_styles/header/mcs_header.resp.less"}
-    {style src="theme_styles/header/mcs_top_menu.resp.less"}
-    {style src="theme_styles/header/mcs_search_box.resp.css"}
-	{style src="theme_styles/homepage/mcs_main_content.resp.css"}
-	{style src="theme_styles/homepage/mcs_slider.resp.css"}
-	{style src="theme_styles/homepage/mcs_slider.resp.less"}
-	{style src="theme_styles/categories/mcs_i_category_view.resp.css"}
-    {style src="theme_styles/categories/mcs_sidebox.resp.css"}
-    {style src="theme_styles/products/mcs_product.resp.css"}
-{/if}
-
-
 {/styles}

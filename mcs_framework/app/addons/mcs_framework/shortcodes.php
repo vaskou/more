@@ -2,7 +2,22 @@
 use Tygh\Registry;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
+
+function ShortcodesParser(){
 	
+	$parser = new JBBCode\Parser();
+	$parser->addCodeDefinition(new YouTubeSC());
+	$parser->addCodeDefinition(new GoogleMapSC());
+	$parser->addCodeDefinition(new ButtonSC());
+	$parser->addCodeDefinition(new LinkSC());
+	$parser->addCodeDefinition(new IconCallToActionSC());
+	$parser->addCodeDefinition(new ImageCallToActionSC());
+	$parser->addCodeDefinition(new ContactFormSC());
+	
+	return $parser;
+}
+
+/**************************************** youtube *********************************************************/
 class YouTubeSC extends JBBCode\CodeDefinition {
 
 	public function __construct()

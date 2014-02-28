@@ -426,6 +426,11 @@ $schema['mcs_brand_scroller'] = array (
 						'type' => 'links',
 					),
 				),
+				'random' => array (
+                    'params' => array (
+                        'has_limit' => true,
+                    )
+                ),
 			),
 		),
 	),

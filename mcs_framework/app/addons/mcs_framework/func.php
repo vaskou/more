@@ -45,11 +45,22 @@ function fn_get_selected_brands($params)
 	$tpl_vars=Registry::get('view')->{'tpl_vars'};
 	$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
 	$feature_id=$mcs_framework['mcs_product']['mcs_product_brand_feature'];
-	
+	/*var_dump($params);*/
 	$sel_brands=array();
 	list($brands, )=fn_get_brands($feature_id);
 
-	$ids=explode(",",$params['item_ids']);
+	if($params['has_limit']){
+		$br_count=count($brands);
+		$limit=$params['limit'];
+		if($br_count < $limit)
+		{
+			$ids=array_rand($brands,$br_count);
+		}else{
+			$ids=array_rand($brands,$limit);
+		}
+	}else{
+		$ids=explode(",",$params['item_ids']);
+	}
 	
 	foreach($ids as $id){
 		array_push($sel_brands, $brands[$id]);
@@ -94,8 +105,16 @@ function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
 				}
 			}
 		}
-		//print_r($deviceType);
-		//print_r($block);
+		
+		/*Apply Shortcodes in HTML block content (only if shortcodes are enabled) */
+		if(fn_mcs_shortcodes()&&$block['type']=='html_block'){
+				
+			$parser = ShortcodesParser();;
+			$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
+			$parser->parse($block['content']['content']);
+			$block['content']['content']=$parser->getAsHtml();
+			
+		}
 		
 	}
 }
@@ -121,12 +140,7 @@ function fn_mcs_framework_get_grids_post($grids)
 					if($deviceType=='phone' && $v['phone']=='N'){
 						$v['status']='D';
 					}
-					
-					 /*print '<pre>';
-					 print_r ($v);
-					 print '</pre>';*/
-				}		
-				
+				}
 			}
 		}
 	}
@@ -188,55 +202,12 @@ function fn_mcs_shortcodes(){
 		return false;
 }
 
-function fn_mcs_shortcodes_render_blocks($grid, $block, $this, $content)
-{
-	if(AREA=='C'){
-	
-		if($block['type']=='html_block'){
-			
-			$parser = new JBBCode\Parser();
-		
-			$parser->addCodeDefinition(new YouTubeSC());
-			$parser->addCodeDefinition(new GoogleMapSC());
-			$parser->addCodeDefinition(new ButtonSC());
-			$parser->addCodeDefinition(new LinkSC());
-			$parser->addCodeDefinition(new IconCallToActionSC());
-			$parser->addCodeDefinition(new ImageCallToActionSC());
-			$parser->addCodeDefinition(new ContactFormSC());
-	
-	
-			$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
-
-			$parser->parse($block['content']['content']);
-			
-			$block['content']['content']=$parser->getAsHtml();
-		
-		}
-
-	}
-}
-
 function fn_mcs_add_controller_parser(){
-
-	print '<pre>';
-	//print_r(Registry::get('view')->{'tpl_vars'}['product']->{'value'});
-	//print_r(Registry::get('view')->{'tpl_vars'}['location_data']->{'value'}['dispatch']);
-	print '</pre>';
 	
 	$tpl_vars=Registry::get('view')->{'tpl_vars'};
 	$dispatch=Registry::get('view')->{'tpl_vars'}['location_data']->{'value'}['dispatch'];
 	
-	$parser = new JBBCode\Parser();
-	$parser->addCodeDefinition(new YouTubeSC());
-	$parser->addCodeDefinition(new GoogleMapSC());
-	$parser->addCodeDefinition(new ButtonSC());
-	$parser->addCodeDefinition(new LinkSC());
-	$parser->addCodeDefinition(new IconCallToActionSC());
-	$parser->addCodeDefinition(new ImageCallToActionSC());
-	$parser->addCodeDefinition(new ContactFormSC());
-
-	
-	
+	$parser = ShortcodesParser();
 	$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
 	
 	if($dispatch=='categories.view'){
@@ -332,6 +303,7 @@ function fn_mcs_variants_get_effects()
         'size' => __('size'),
         'transfer' => __('transfer'),
 	);
- return $effects;
+	
+	return $effects;
 }	
 	

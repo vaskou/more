@@ -1,4 +1,5 @@
 {literal}
+
 <script>
 $(function(){
 
@@ -13,7 +14,44 @@ function deviceType(){
 }
 </script>
 {/literal}
+
 {script src="js/addons/mcs_framework/jquery.widthCheck.js"}
+{script src="js/addons/mcs_framework/libs/enquire.min.js"}
+
+{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+    {literal}
+    <script>
+    $(function(){
+        enquire.register("screen and (min-width:1000px)",[
+                fixed_menu_over_handler
+            ]
+        );
+        enquire.register("screen and (max-width:999px)",[
+                fixed_menu_under_handler
+            ]
+        );
+		enquire.register("screen and (min-width:768px)",[
+				sidebox_hide_over_handler
+			]
+		);
+		enquire.register("screen and (max-width:767px)",[
+				sidebox_hide_under_handler
+			]
+		);
+    });
+    </script>
+    {/literal}
+{else}
+    {literal}
+    <script>
+    $(function(){
+        fn_fixed_menu_over();
+		fn_sidebox_hide_over();
+    });
+    </script>
+    {/literal}
+{/if}
+
 
 {if $addons.mcs_framework.mcs_bxslider=='Y'}
 	{script src="js/addons/mcs_framework/libs/html5shiv.js"}

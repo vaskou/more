@@ -39,3 +39,7 @@
 .bx-wrapper .bx-controls-direction a{
 	z-index:400;
 }
+
+#c_controls a.disabled{
+	display:none;
+}

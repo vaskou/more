@@ -1,5 +1,5 @@
 {hook name="blocks:mcs_i_menu_dropdown"}
-{if $block.properties.mcs_top_menu_responsive=='Y'}
+{if $block.properties.mcs_top_menu_responsive=='Y' && $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
     {literal}
     <style>
 		@media (max-width:{/literal}{$layout_data.max_width}{literal}px){
@@ -167,7 +167,7 @@
 </script>
 {/literal}
 
-{if $block.properties.mcs_top_menu_responsive=='Y'}
+{if $block.properties.mcs_top_menu_responsive=='Y' && $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
     {script src="js/addons/mcs_framework/jquery.meanmenu.min.js"}
     {literal}
     <script type="text/javascript">
