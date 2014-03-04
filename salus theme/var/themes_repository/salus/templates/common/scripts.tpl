@@ -106,7 +106,7 @@
             ]
         );
         enquire.register("screen and (max-width:999px)",[
-				header_hide_over_handler
+				header_hide_under_handler
             ]
         );
     });

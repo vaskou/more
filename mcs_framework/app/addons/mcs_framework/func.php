@@ -1,16 +1,4 @@
 <?php
-/***************************************************************************
-*                                                                          *
-*   (c) 2004 Vladimir V. Kalynyak, Alexey V. Vinokurov, Ilya M. Shalnev    *
-*                                                                          *
-* This  is  commercial  software,  only  users  who have purchased a valid *
-* license  and  accept  to the terms of the  License Agreement can install *
-* and use this program.                                                    *
-*                                                                          *
-****************************************************************************
-* PLEASE READ THE FULL TEXT  OF THE SOFTWARE  LICENSE   AGREEMENT  IN  THE *
-* "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
-****************************************************************************/
 
 use Tygh\Registry;
 use Tygh\BlockManager;
@@ -80,7 +68,7 @@ function fn_mcs_product_get_feature_filter($feature_id)
 }
 /****************************************************************************************/
 
-/**************************** Blocks nad Grids on mobiles ******************************/
+/**************************** Blocks and Grids on mobiles ******************************/
 function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
 {
 	if(AREA=='C'){
@@ -174,13 +162,13 @@ function fn_mcs_popup_get_types()
 
 function fn_mcs_popup_get_banners()
 {
-	$company_id=Registry::get('runtime.company_id');
+	$company_id=(Registry::get('runtime.company_id')=="0")?Registry::get('runtime.forced_company_id'):Registry::get('runtime.company_id');
    	return db_get_hash_single_array("SELECT a.banner_id, b.banner FROM ?:banners as a LEFT JOIN ?:banner_descriptions as b ON a.banner_id=b.banner_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.position", array('banner_id', 'banner'));
 }
 
 function fn_mcs_popup_get_categories()
 {
-	$company_id=Registry::get('runtime.company_id');
+	$company_id=(Registry::get('runtime.company_id')=="0")?Registry::get('runtime.forced_company_id'):Registry::get('runtime.company_id');
    	return db_get_hash_single_array("SELECT a.category_id, b.category FROM ?:categories as a LEFT JOIN ?:category_descriptions as b ON a.category_id=b.category_id AND b.lang_code = '" . CART_LANGUAGE . "' WHERE a.status='A' AND a.company_id='$company_id' ORDER BY a.id_path,a.position", array('category_id', 'category'));
 }
 

@@ -22,20 +22,22 @@ function deviceType(){
     {literal}
     <script>
     $(function(){
-        enquire.register("screen and (min-width:1000px)",[
+        enquire.register("screen and (min-width:{/literal}{$layout_data.max_width}{literal}px)",[
                 fixed_menu_over_handler
             ]
         );
-        enquire.register("screen and (max-width:999px)",[
+        enquire.register("screen and (max-width:{/literal}{$layout_data.max_width - 1}{literal}px)",[
                 fixed_menu_under_handler
             ]
         );
 		enquire.register("screen and (min-width:768px)",[
-				sidebox_hide_over_handler
+				sidebox_hide_over_handler,
+				sidebox_filters_show_over_handler
 			]
 		);
 		enquire.register("screen and (max-width:767px)",[
-				sidebox_hide_under_handler
+				sidebox_hide_under_handler,
+				sidebox_filters_show_under_handler
 			]
 		);
     });
@@ -47,6 +49,7 @@ function deviceType(){
     $(function(){
         fn_fixed_menu_over();
 		fn_sidebox_hide_over();
+		fn_sidebox_filters_show_over();
     });
     </script>
     {/literal}
@@ -79,6 +82,8 @@ function deviceType(){
 {script src="js/addons/mcs_framework/mcs_i_grid/jquery.slides.js"}
 {script src="js/addons/mcs_framework/mcs_i_grid/mcs_i_grid.js"}
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
+{script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}
+{script src="js/addons/mcs_framework/mcs_sidebox_filters_show.js"}
 
 {if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}
@@ -88,5 +93,5 @@ function deviceType(){
 {script src="js/addons/mcs_framework/mcs_i_menu/mcs_click_on_tablets.js"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
-	{script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}
+	
 {/if}

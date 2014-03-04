@@ -26,7 +26,6 @@ function fn_fixed_menu_over(){
 			top_panel_height=$(".tygh-top-panel > div").outerHeight();
 			header_height=$(".tygh-header").outerHeight();
 			$(".tygh-content").css({"margin-top":header_height+"px"});
-			$(".menu-fixed").css({"top":top_panel_height});
 		});
 		
 		$(window).scroll(function(){

@@ -195,18 +195,21 @@ $(function(){
 		initBindings();
 	});
 	
-	function initBindings(){
-		$('body').widthCheck({
-		doOverLimit:function(){
-			$('.mcs_i_grid .product').hover_hide({transition:trans,duration:dur});
-		},
-		doUnderLimit:function(){
-			hh=$('.mcs_i_grid .product').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
-			hh.disable();
-		},
-		widthLimit:767});
-		/*$('.mcs_i_grid .product').hover_hide({transition:trans,duration:dur});*/
-	};	
+	function initBindings(){	
+	
+		enquire.register("screen and (min-width:768px)",{
+			match:function(){
+				$('.mcs_i_grid .product').hover_hide({transition:trans,duration:dur});
+			}
+		});
+		enquire.register("screen and (max-width:767px)",{
+			match:function(){
+				hh=$('.mcs_i_grid .product').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
+				hh.disable();
+			}
+		});
+	
+	};
 });
 </script>
 {/literal}

@@ -74,36 +74,10 @@
                         {$smarty.capture.view_all nofilter}
                     {/if}
                     
-                    {literal}
-                    <script>
-					$(function(){
-						
-						$("body").widthCheck({
-						doOverLimit:function(){	
-							initBindings();
-							$(document).ajaxStop(function() {
-								initBindings();
-							});
-		
-							function initBindings(){
-								$(".product-filters").hover(
-								function(){
-									$(this).children("ul").slideDown(500);
-								},
-								function(){
-								});
-							};
-						},
-						doUnderLimit:function(){
-							$(".product-filters").children("ul").slideDown(500);
-						}});
-					});
-					</script>
-                    {/literal}
+                    
                     
                 </ul>
                 
 {*********************************************MCS changes************************************************}
 {*Line     23: added i with classes																		*}
 {*Line  69-72: commented lines 69 to 72																	*}
-{*Line  77-97: added lines 77 to 97																		*}
