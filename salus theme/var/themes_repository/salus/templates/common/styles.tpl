@@ -4,7 +4,9 @@
     {style src="grid.less"}
     {style src="lib/ui/jqueryui.css"}
     {style src="base.css"}
-    {style src="glyphs.css"}
+    {if $addons.mcs_framework.mcs_icomoon!='Y'}
+	    {style src="glyphs.css"}
+    {/if}
     {style src="styles.css"}
     {style src="print.css" media="print"}
 
@@ -16,9 +18,16 @@
     {/if}
 
     {style src="scheme.less"}
+{/hook}
+{/styles}
 
-	{hook name="index:mcs_styles"}
-    {/hook}
+{styles use_scheme=true}
+{hook name="index:mcs_styles"}
+{/hook}
+{/styles}
+
+{styles use_scheme=true}
+	{style src="theme_styles/mcs_general_less_rules.less"}
     {style src="theme_styles/mcs_general_styles.css"}
     {style src="theme_styles/mcs_general_styles.less"}
     {style src="theme_styles/mcs_brands_page.css"}
@@ -61,6 +70,5 @@
         {style src="theme_styles/categories/mcs_sidebox.resp.css"}
         {style src="theme_styles/products/mcs_product.resp.css"}
     {/if}
-
-{/hook}
+    {literal}<style>.zxcasd{display:none;}</style>{/literal}
 {/styles}

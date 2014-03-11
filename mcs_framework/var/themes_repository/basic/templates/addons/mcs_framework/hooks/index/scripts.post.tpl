@@ -1,8 +1,8 @@
+{*script src="js/addons/mcs_framework/countCSSRules.js"*}
 {literal}
-
 <script>
 $(function(){
-
+//countCSSRules();
 });
 function deviceType(){
 	/*if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {*/
@@ -16,6 +16,9 @@ function deviceType(){
 {/literal}
 
 {script src="js/addons/mcs_framework/jquery.widthCheck.js"}
+{if $mobiledetect.versionIE=='8.0'||$mobiledetect.versionIE=='9.0'}
+	{script src="js/addons/mcs_framework/libs/media.match.min.js"}
+{/if}
 {script src="js/addons/mcs_framework/libs/enquire.min.js"}
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
@@ -47,7 +50,9 @@ function deviceType(){
     {literal}
     <script>
     $(function(){
-        fn_fixed_menu_over();
+		{/literal}{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}{literal}
+        	fn_fixed_menu_over();
+		{/literal}{/if}{literal}
 		fn_sidebox_hide_over();
 		fn_sidebox_filters_show_over();
     });

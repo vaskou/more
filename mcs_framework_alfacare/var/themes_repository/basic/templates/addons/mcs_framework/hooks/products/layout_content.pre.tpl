@@ -1,0 +1,1 @@
+{if $addons.mcs_framework.mcs_grs_product=="Y"}<div itemscope itemtype="http://data-vocabulary.org/Product">{/if}

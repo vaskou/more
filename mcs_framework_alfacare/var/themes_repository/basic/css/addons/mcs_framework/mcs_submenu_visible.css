@@ -1,0 +1,9 @@
+.static{
+	position:static !important;
+}
+
+.static .drop-left{
+	top:30px !important;
+	right:0px !important;
+	left:auto !important;
+}

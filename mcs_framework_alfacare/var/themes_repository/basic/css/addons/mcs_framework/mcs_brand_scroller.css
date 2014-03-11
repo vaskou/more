@@ -1,0 +1,43 @@
+[class^="mcs-brand-scroller-"] .brand-box{
+	padding:0;
+	border:1px solid;
+	text-align:center;
+}
+
+[class^="mcs-brand-scroller-"] .brand-image{
+	height:100px;
+	text-align:center;
+	border-bottom:1px solid;
+	line-height:100px;
+}
+[class^="mcs-brand-scroller-"] .brand-image img{
+	max-width:95%;
+	max-height:95%;
+	width:auto;
+	height:auto;
+	margin:auto;
+	display:inline-block;
+}
+
+[class^="mcs-brand-scroller-"] .brand-image .no-image{
+	border:none;
+	height:100%;
+}
+
+[class^="mcs-brand-scroller-"] .brand-name{
+	
+}
+
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button{
+	text-align:center;
+	padding:10px;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
+	padding:10px;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover{
+	text-decoration:none;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button i{
+	padding-right:5px;
+}

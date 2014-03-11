@@ -1,0 +1,59 @@
+.sub_width(@x,@cent){
+	@w:(@fluidContainerMaxWidth - @cent - 70) / 6;
+	@y:(@w * @x) + ((@x + 1) * 10);
+	width:@y;
+}
+
+.dropdown-1column {.sub_width(1,0);}
+.dropdown-2columns {.sub_width(2,0);}
+.dropdown-3columns {.sub_width(3,0);}
+.dropdown-4columns {.sub_width(4,0);}
+.dropdown-5columns {.sub_width(5,0);}
+.dropdown-fullwidth{
+	width:auto;
+	max-width:@fluidContainerMaxWidth;
+}
+
+.mcs-centered .dropdown-1column {.sub_width(1,40);}
+.mcs-centered .dropdown-2columns {.sub_width(2,40);}
+.mcs-centered .dropdown-3columns {.sub_width(3,40);}
+.mcs-centered .dropdown-4columns {.sub_width(4,40);}
+.mcs-centered .dropdown-5columns {.sub_width(5,40);}
+
+.dropdown-multicolumns .col-1{
+	@w:floor((@fluidContainerMaxWidth - 70) / 6);
+	width:@w;
+}
+
+.mcs-centered .dropdown-multicolumns .col-1{
+	@w:floor((@fluidContainerMaxWidth - 40 - 70) / 6);
+	width:@w;
+}
+
+/*.mean-container .mean-title{
+	font-size:30px;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+}*/
+.mean-container .mean-bar {
+	background: @menu;
+}
+
+.mean-container .mean-nav {
+	background: @menu;
+}
+
+.mean-container .mean-nav ul li {
+	padding:0;
+	margin:0;
+}
+.mean-container .mean-nav ul li a.mean-expand {
+	height: auto;
+	padding: 10px !important;
+}
+
+/*.mean-container .mean-nav > ul{
+	position:absolute;
+	background: @menu;
+}*/

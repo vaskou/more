@@ -22,7 +22,7 @@
 	$mobiledetect['isBlackBerryOS']=$detect->isBlackBerryOS();
 	$mobiledetect['isWindowsMobileOS']=$detect->isWindowsMobileOS();
 	$mobiledetect['isWindowsPhoneOS']=$detect->isWindowsPhoneOS();
-
+	$mobiledetect['versionIE']=$detect->version('IE');
 
 	
 	 //print '<pre>'; 

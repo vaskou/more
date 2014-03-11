@@ -1,0 +1,12 @@
+.tygh-content,
+tygh-footer{
+	position:relative;
+	z-index:-1;
+}
+.menu-fixed{
+	z-index:auto !important;
+}
+
+.mean-container .mean-bar{
+	float:none !important;
+}

@@ -16,3 +16,10 @@
 {/literal}
 
 {/if}
+
+<!--[if (lte IE 9)]>
+{styles use_scheme=true}
+	{style src="addons/mcs_framework/mcs_general_styles_ie9.css"}
+    {literal}<style>.qweasd{display:none;}</style>{/literal}
+{/styles}
+<![endif]-->

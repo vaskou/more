@@ -815,6 +815,16 @@ $schema['mcs_payment_icons'] = array (
                     ),
                     'default_value' => '64',
                     'tooltip' => 'Select the size in pixels'
+                ),
+				'alignment' => array (
+                    'type' => 'selectbox',
+                    'values' => array (
+                        'center' => 'center',
+                        'left' => 'left',
+                        'right' => 'right'
+                    ),
+                    'default_value' => 'center',
+                    'tooltip' => 'Select the icons alignment inside the block'
                 )
             ),
         )

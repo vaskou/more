@@ -1,0 +1,96 @@
+.button-submit-action.button-wrap-left,
+.button-submit.button-wrap-left,
+.button-action.button-wrap-left,
+.button.button-wrap-left, 
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+	.border-radius (0px);
+}
+.go-button {
+	.border-radius (0);
+}
+.button-submit.button-wrap-left,
+.button.button-wrap-left,
+.go-button {
+	.gradient (@secondary_button, @secondary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color: darken(@secondary_button, 5%);
+}
+.button-submit.button-wrap-left:hover,
+.button.button-wrap-left:hover,
+.go-button:hover  {
+	.gradient (lighten(@secondary_button, 5%), lighten(@secondary_button, 5%));
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color:  darken(@secondary_button, 8%);
+}
+.button-submit.button-wrap-left:hover:active,
+.button.button-wrap-left:hover:active,
+.go-button:active {
+	.gradient (darken(@secondary_button, 5%), darken(@secondary_button, 5%));
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+	border-color: darken(@secondary_button, 8%);
+}
+.button-action.button-wrap-left, 
+.button-submit-action.button-wrap-left,
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+	.gradient (@primary_button, @primary_button);
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color: darken(@primary_button, 12%);
+}
+.button-action.button-wrap-left:hover, 
+.button-submit-action.button-wrap-left:hover,
+.button-submit-big.button-wrap-left:hover,
+.button-big.button-wrap-left:hover {
+	.gradient (lighten(@primary_button, 5%), lighten(@primary_button,5%));
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color:darken(@primary_button, 16%);
+}
+.button-action.button-wrap-left:hover:active, 
+.button-submit-action.button-wrap-left:hover:active,
+.button-submit-big.button-wrap-left:hover:active,
+.button-big.button-wrap-left:hover:active {
+	.gradient (darken(@primary_button,5%),darken(@primary_button,5%));
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+	border-color: darken(@primary_button, 16%);
+}
+
+.button-submit.button-wrap-left,
+.button.button-wrap-left,
+.go-button {
+	.button_text (@secondary_button);
+	.mcs_no_text_shadow;
+}
+
+.button-submit-action.button-wrap-left,
+.button-action.button-wrap-left,
+.qv-buttons-container .button-action.button-wrap-left,
+.buttons-container .button-action.button-wrap-left,
+.buttons-container-item .button-action.button-wrap-left,
+.button-submit-big.button-wrap-right,
+.sidebox-body .button-action.button-wrap-left,
+.button-big.button-wrap-left {
+	.button_text (@primary_button);
+	.mcs_no_text_shadow;
+}
+
+.go-button i{
+	position:relative;
+	top:0;
+	left:0;
+}
+
+/********************* buttons-container reset ***********************/
+.buttons-container, 
+.buttons-container-item, 
+.checkout-buttons, 
+.ui-dialog .ui-dialog-content, 
+.product-notification-buttons, 
+.box, 
+.buttons-container.wrap, 
+.login .body-bc, 
+.details-block-box, 
+.entry-page-countries li a:hover, 
+.pagination-helper-container {
+	background: transparent;
+}

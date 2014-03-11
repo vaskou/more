@@ -4,7 +4,7 @@
 	
 	{if $block.properties.mcs_contact_block_text_pre!=""}
 		<div class="section text-pre">
-			{$block.properties.mcs_contact_block_text_pre}
+			{$block.properties.mcs_contact_block_text_pre nofilter}
 		</div>
 	{/if}	
 	
@@ -140,7 +140,7 @@
 	
 	{if $block.properties.mcs_contact_block_text_post!=""}
 		<div class="section text-post">
-			{$block.properties.mcs_contact_block_text_post}
+			{$block.properties.mcs_contact_block_text_post nofilter}
 		</div>
 	{/if}	
 </div>

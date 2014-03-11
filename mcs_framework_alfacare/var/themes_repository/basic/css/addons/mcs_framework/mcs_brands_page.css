@@ -1,0 +1,50 @@
+.mcs-brands-page .mcs-list-filter ul li{
+	float:left;
+	padding:0px;
+	border:1px solid;
+	margin:2px;
+}
+.mcs-brands-page .mcs-list-filter ul li a{
+	display:block;
+	width:30px;
+	line-height:30px;
+	text-align:center;
+}
+.mcs-brands-page .mcs-brands-row > .subheader{
+	border-bottom:1px solid;
+	margin-bottom:10px;	
+}
+.mcs-brands-page .brand-box{
+	padding:0;
+	text-align:center;
+	margin-bottom:20px;
+}
+.mcs-brands-page .brand-box.with-image{
+	border:1px solid;
+}
+.mcs-brands-page .brand-box.first{
+	margin-left:0;
+}
+.mcs-brands-page .brand-image{
+	height:100px;
+	text-align:center;
+	line-height:100px;
+	border-bottom:1px solid;
+}
+.mcs-brands-page .brand-image .no-image{
+	border:none;
+	height:100%;
+}
+.mcs-brands-page .brand-image img{
+	max-width:95%;
+	max-height:95%;
+	width:auto;
+	height:auto;
+	margin:auto;
+	display:inline-block;
+}
+.mcs-brands-page .brand-name{
+}
+.mcs-brands-page .brand-url{
+	min-height:1.5em;	
+}

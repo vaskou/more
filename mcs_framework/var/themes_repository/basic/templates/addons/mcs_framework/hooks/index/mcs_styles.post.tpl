@@ -2,6 +2,7 @@
 	{style src="addons/mcs_framework/bootstrap-responsive/bootstrap.min.less"}
 {/if}
 
+{style src="addons/mcs_framework/mcs_general_less_rules.less"}
 {style src="addons/mcs_framework/resets/button_reset.less"}
 {style src="addons/mcs_framework/resets/popup_dropbox_reset.less"}
 {style src="addons/mcs_framework/resets/sorting_reset.less"}
@@ -96,3 +97,5 @@
     {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.less"}
     {style src="addons/mcs_framework/mcs_contact_block/mcs_contact_block.resp.css"}
 {/if}
+
+{literal}<style>.asdzxc{display:none;}</style>{/literal}

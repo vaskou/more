@@ -1,0 +1,22 @@
+@media only screen and (max-width: 767px) {
+
+    .ui-dialog {
+        width:80%!important;
+    }
+
+    .quick-view-wrap,
+    .quick-view-wrap .left-side,
+    .quick-view-wrap .product-info,
+	.quick-view-wrap .product-main-info .product-thumbnails
+    {
+        width: 100% !important;
+    }
+   
+    .quick-view-wrap .quick-view-switcher-icon i{font-size:44px;}
+    .quick-view-switcher-icon.left {
+        left: -10%;
+    }
+    .quick-view-switcher-icon.right {
+        right: -10%;
+    }
+}

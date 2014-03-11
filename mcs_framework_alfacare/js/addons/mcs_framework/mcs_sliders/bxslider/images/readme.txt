@@ -1,0 +1,1 @@
+Put these images in folder design/themes/basic/media/images/

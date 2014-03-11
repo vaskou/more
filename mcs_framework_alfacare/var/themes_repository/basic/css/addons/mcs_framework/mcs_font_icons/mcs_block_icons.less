@@ -1,0 +1,15 @@
+.top-links-grid .dropdown-box .logged [class^="icon-"] {
+	color: @top_panel_text;
+}
+.top-links-grid .dropdown-box [class^="icon-"] {
+	color: lighten(@top_panel_text, 15%);
+}
+.dropdown-box [class^="icon-"]{
+	color: lighten(@base, 20%);
+}
+.dropdown-box [class^="icon-"].empty{
+    color: lighten(@base, 20%);
+}
+.dropdown-box [class^="icon-"].filled{
+    color: darken(@base, 10%);
+}

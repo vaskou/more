@@ -1,0 +1,844 @@
+<?xml version="1.0"?>
+<addon scheme='2.0'>
+    <id>mcs_framework</id>
+    <version>1.0</version>
+    <name>More CS-Cart Framework</name>
+    <description>More CS-Cart Framework</description>
+    <priority>100000</priority>
+    <status>active</status>
+	<queries>
+		<item for="install">ALTER TABLE ?:product_tabs ADD icon VARCHAR(128);</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD computer VARCHAR( 128 );</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD tablet VARCHAR( 128 );</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD phone VARCHAR( 128 );</item>
+	</queries>
+    <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+		<!--GENERAL-->
+			<section id="mcs_general">
+                <name>General</name>
+                <items>
+					<item id="mcs_general_responsive">
+						<type>header</type>
+						<name>Responsive Layout</name>
+					</item>
+					<item id="mcs_general_responsive_enable">
+                        <type>checkbox</type>
+                        <name>Enable responsive layout</name>
+						<default_value>N</default_value>
+                    </item>
+					
+					<item id="mcs_general_fixed_menu">
+						<type>header</type>
+						<name>Fixed Menu</name>
+					</item>
+                    <item id="mcs_general_fixed_menu_enable">
+                        <type>checkbox</type>
+                        <name>Enable fixed menu</name>
+						<default_value>N</default_value>
+                    </item>
+				</items>
+            </section>
+		<!--PRODUCT CATEGORIES-->
+			<section id="mcs_product_categories">
+                <name>Product Categories</name>
+                <items>
+					<item id="mcs_product_categories_i_grid">
+						<type>header</type>
+						<name>More CS-Cart Grid I</name>
+					</item>
+                	<item id="mcs_product_categories_hidden_info">
+                        <type>selectbox</type>
+                        <name>Select how to show hidden info on hover</name>
+						<variants>
+							<item id="mcs_none">
+                                <name>None</name>
+                            </item>
+							<item id="mcs_fade">
+                                <name>Fade</name>
+                            </item>
+							<item id="mcs_show">
+                                <name>Show</name>
+                            </item>
+                            <item id="mcs_slide">
+                                <name>Slide</name>
+                            </item>
+						</variants>
+						<default_value>mcs_none</default_value>
+                    </item>
+					<item id="mcs_product_categories_hidden_info_duration">
+                        <type>input</type>
+                        <name>Set the duration of the animation</name>
+						<default_value>0</default_value>
+                    </item>
+					<item id="mcs_product_categories_features">
+                        <type>checkbox</type>
+                        <name>Show product features</name>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_categories_rating">
+                        <type>checkbox</type>
+                        <name>Show product rating</name>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_categories_points">
+                        <type>checkbox</type>
+                        <name>Show product points</name>
+						<default_value>Y</default_value>
+                    </item>
+				</items>
+            </section>
+		<!--PRODUCT VIEW-->
+			<section id="mcs_product">
+                <name>Product view</name>       
+                <items>
+					<item id="mcs_product_brand_header">
+						<type>header</type>
+						<name>Brand image</name>
+					</item>
+                    <item id="mcs_product_brand_show">
+                        <type>checkbox</type>
+                        <name>Show brand image</name>
+                        <tooltip>Check to show brand image</tooltip>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_brand_feature">
+                        <type>selectbox</type>
+                        <name>Brand feature</name>
+                        <tooltip>Select the brand feature</tooltip>
+						<default_value>18</default_value>
+						<variants/>
+                    </item>
+					<item id="mcs_product_tabs_header">
+						<type>header</type>
+						<name>Tabs orientation</name>
+					</item>
+                    <item id="mcs_product_tabs_vertical">
+                        <type>checkbox</type>
+                        <name>Vertical Tabs</name>
+                        <tooltip>Check to show vertical tabs</tooltip>
+                    </item>
+					<item id="mcs_product_tabs_width">
+                        <type>input</type>
+                        <name>Vertical tabs width(%)</name>
+                        <tooltip>Width of the tabs in %(limits:10-50)</tooltip>
+						<default_value>36</default_value>
+                    </item>
+				</items>
+			</section>
+		<!--BLOCK GROUPING-->
+			<section id="mcs_block_grouping">
+                <name>Block Grouping</name>       
+                <items>
+					<item id="mcs_tab_block_header">
+						<type>header</type>
+						<name>Block grouping with tabs</name>
+					</item>
+                    <item id="mcs_tab_block_enable">
+                        <type>checkbox</type>
+                        <name>Enable Tab Block Grouping</name>
+                        <default_value>Y</default_value>
+                    </item>
+					<item id="mcs_tab_block_hover">
+                        <type>checkbox</type>
+                        <name>Change tab on mouse hover</name>
+						<default_value>N</default_value>
+                    </item>
+					
+					<item id="mcs_accordion_block_header">
+						<type>header</type>
+						<name>Block grouping with accordion</name>
+					</item>
+                    <item id="mcs_accordion_block_enable">
+                        <type>checkbox</type>
+                        <name>Enable Accordion Block Grouping</name>
+                        <default_value>Y</default_value>
+                    </item>
+				</items>
+			</section>
+		<!--FONT ICONS-->
+            <section id="mcs_font_icons">
+                <name>Font Icons</name>
+                <items>
+					<item id="mcs_font_icons_header">
+						<type>header</type>
+						<name>Font Icons Libraries</name>
+					</item>
+					<item id="mcs_icomoon">
+                        <type>checkbox</type>
+                        <name>Icomoon</name>
+						<default_value>Y</default_value>
+                    </item>
+					
+					<item id="mcs_button_icons_header">
+						<type>header</type>
+						<name>Button Icons</name>
+					</item>
+					<item id="mcs_button_icons_add_to_cart">
+                        <type>input</type>
+                        <name>"Add To Cart" button icon</name>
+						<default_value>icon-cart</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_compare_list">
+                        <type>input</type>
+                        <name>"Add To Compare List" button icon</name>
+						<default_value>icon-bars3</default_value>
+                    </item>
+					<item id="mcs_button_icons_add_to_wishlist">
+                        <type>input</type>
+                        <name>"Add To Wishlist" button icon</name>
+						<default_value>icon-heart4</default_value>
+                    </item>
+					<item id="mcs_button_icons_select_options">
+                        <type>input</type>
+                        <name>"Select Options" button icon</name>
+						<default_value>icon-cart</default_value>
+                    </item>
+					
+					<item id="mcs_block_icons_header">
+						<type>header</type>
+						<name>Block Icons</name>
+					</item>
+					<item id="mcs_block_icons_cart_block">
+                        <type>input</type>
+                        <name>Cart block icon</name>
+						<default_value>icon-cart</default_value>
+                    </item>
+					<item id="mcs_block_icons_my_account_block">
+                        <type>input</type>
+                        <name>My Account block icon</name>
+						<default_value>icon-user</default_value>
+                    </item>
+					<item id="mcs_block_icons_sign_in">
+                        <type>input</type>
+                        <name>Sign In icon</name>
+						<default_value>icon-enter</default_value>
+                    </item>
+					<item id="mcs_block_icons_sign_out">
+                        <type>input</type>
+                        <name>Sign Out icon</name>
+						<default_value>icon-exit</default_value>
+                    </item>
+					<item id="mcs_block_icons_register">
+                        <type>input</type>
+                        <name>Register icon</name>
+						<default_value>icon-pencil3</default_value>
+                    </item>
+				</items>
+            </section>
+		<!--SLIDERS-->
+			<section id="mcs_sliders">
+                <name>bxSlider</name>
+                <items>
+                    <item id="mcs_bxslider">
+                        <type>checkbox</type>
+                        <name>Enable bxSlider</name>
+						<default_value>Y</default_value>
+                    </item>
+				</items>
+            </section>
+		<!--MOBILE DEVICES-->
+			<section id="mcs_mobile_devices">
+                <name>Mobile Devices</name>       
+                <items>
+					<item id="mcs_mobile_devices_grid_detection">
+                        <type>checkbox</type>
+                        <name>Enable Device detection for grids</name> 
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="mcs_mobile_devices_block_detection">
+                        <type>checkbox</type>
+                        <name>Enable Device detection for blocks</name> 
+                        <default_value>Y</default_value>
+                    </item>
+				</items>
+			</section>
+		<!--SCROLL TO TOP-->
+			<section id="mcs_scroll_to_top">
+                <name>Scroll to top</name>       
+                <items>
+                    <item id="mcs_scroll_to_top_enable">
+                        <type>checkbox</type>
+                        <name>Enable Scroll to top</name> 
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="mcs_scroll_to_top_distance">
+                        <type>input</type>
+                        <name>Scroll distance</name> 
+                        <default_value>300</default_value>
+                    </item>
+                    <item id="mcs_scroll_to_top_from">
+                        <type>selectbox</type>
+                        <name>Scroll distance from</name> 
+                        <default_value>top</default_value>
+						<variants>
+                            <item id="top">
+                                <name>Top</name>
+                            </item>
+                            <item id="bottom">
+                                <name>Bottom</name>                        
+                            </item>
+                        </variants>
+                    </item>
+                    <item id="mcs_scroll_to_top_speed">
+                        <type>input</type>
+                        <name>Scroll speed</name> 
+                        <default_value>300</default_value>
+                    </item>		
+					<item id="mcs_scroll_to_top_animation">
+                        <type>selectbox</type>
+                        <name>Scroll to top animation</name> 
+                        <default_value>fade</default_value>
+						<variants>
+                            <item id="fade">
+                                <name>Fade</name>
+                            </item>
+                            <item id="slide">
+                                <name>Slide</name>
+                            </item>
+                            <item id="none">
+                                <name>None</name>
+                            </item>
+                        </variants>
+					</item>
+					
+					<item id="mcs_scroll_to_top_easing">
+                        <type>selectbox</type>
+                        <name>Scroll easing type</name> 
+                        <default_value>linear</default_value>
+						<variants/>
+                    </item>
+				</items>
+			</section>
+		<!--POPUP-->
+			<section id="mcs_popup">
+				<name>Popup</name>
+				<items>
+					<item id="mcs_popup_enable">
+						<name>Enable popup</name>
+						<tooltip>Check to enable the popup window.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+					<item id="mcs_popup_content_header">
+                        <name>Where and what?</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_content_pages">
+						<name>Pages</name>
+						<tooltip>Enable the popup either for the homepage only or for all pages.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>	
+
+					<item id="mcs_popup_content_types">
+						<name>Content type</name>
+						<tooltip>Select the type of the popup content.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>	
+					
+					<item id="mcs_popup_content_banners">
+						<name>Banner</name>
+						<tooltip>If the popup contains a Banner, select which banner to display. Both Graphics and text banners are supported.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_content_categories">
+						<name>Category</name>
+						<tooltip>If the popup contains a Category, select which category to display. The popup will display the category image and description.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_content_promotions">
+						<name>Promotion</name>
+						<tooltip>If the popup contains a Promotion, select which promotion to display. The popup will display the promotion detailed description.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_cookie_header">
+                        <name>Popup cookie management</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_popup_cookie_enable">
+						<name>Enable cookie expiration</name>
+						<tooltip>If checked, the popup will contain a button to disable the popup for a certain number of days, based on a browser cookie.</tooltip>
+						<type>checkbox</type>
+						<default_value>Y</default_value>
+					</item>	
+					
+					<item id="mcs_popup_cookie_days">
+						<name>Cookie expiration (days)</name>
+						<tooltip>The number of days until the popup cookie will expire. After this period the cookie will appear again to the visitor.</tooltip>
+						<type>input</type>
+						<default_value>30</default_value>
+					</item>	
+                    
+					<item id="mcs_popup_styling_header">
+                        <name>Popup styling</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_styling_overlay_color">
+						<name>Overlay color code</name>
+						<tooltip>The color of the popup overlay.</tooltip>
+						<type>input</type>
+						<default_value>#000000</default_value>
+					</item>
+
+					<item id="mcs_popup_styling_overlay_opacity">
+						<name>Overlay opacity</name>
+						<tooltip>The opacity of the popup overlay.</tooltip>
+						<type>input</type>
+						<default_value>0.6</default_value>
+					</item>
+					
+					<item id="mcs_popup_styling_show_title">
+						<name>Show popup title</name>
+						<tooltip>Check to enable the popup window title bar.</tooltip>
+						<type>checkbox</type>
+						<default_value>Y</default_value>
+					</item>
+					
+					<item id="mcs_popup_styling_max_width">
+						<name>Window max width</name>
+						<tooltip>The maximum percentage width of the popup window. In order to set the width in pixels, just add the number of pixels without px (i.e. 400). </tooltip>
+						<type>input</type>
+						<default_value>90%</default_value>
+					</item>	
+
+					
+					<item id="mcs_popup_effects_header">
+                        <name>Popup effects</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_popup_effects_show">
+						<name>Show effect</name>
+						<tooltip>Select the effect that will apply when the popup is shown.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+					
+					<item id="mcs_popup_effects_show_easing">
+						<name>Show easing</name>
+						<tooltip>Select the easing that will apply when the popup is shown.</tooltip>
+						<type>selectbox</type>
+						<default_value>linear</default_value>
+						<variants/>
+					</item>
+					
+					<item id="mcs_popup_effects_show_duration">
+						<name>Pop show effect duration</name>
+						<tooltip>Select the effect duration that will apply when the popup is shown.</tooltip>
+						<type>input</type>
+						<default_value>1000</default_value>
+					</item>	
+
+					<item id="mcs_popup_effects_hide_effect">
+						<name>Hide effect</name>
+						<tooltip>Select the effect that will apply when the popup is hidden.</tooltip>
+						<type>selectbox</type>
+						<default_value>fadeOut</default_value>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_effects_hide_easing">
+						<name>Hide easing</name>
+						<tooltip>Select the easing that will apply when the popup is hidden.</tooltip>
+						<type>selectbox</type>
+						<variants/>
+					</item>
+
+					<item id="mcs_popup_effects_hide_duration">
+						<name>Pop hide effect duration</name>
+						<tooltip>Select the effect duration that will apply when the popup is hidden.</tooltip>
+						<type>input</type>
+						<default_value>500</default_value>
+					</item>
+
+				</items>
+			</section>
+		<!--LABELS-->
+			<section id="mcs_labels">
+				<name>Product labels</name>
+				<items>
+					<item id="mcs_labels_new">
+                        <name>'New product' label</name>
+                        <type>header</type>
+                    </item>
+					
+					<item id="mcs_labels_new_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'New product' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_new_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'New product' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_new_days">
+						<name>New product duration (days)</name>
+						<tooltip>Enter the number of days that a product should be considered as new.</tooltip>
+						<type>input</type>
+						<default_value>30</default_value>
+						<variants/>
+					</item>
+					
+					<item id="mcs_labels_free_shipping">
+                        <name>'Free shipping' label</name>
+                        <type>header</type>
+                    </item>
+					<item id="mcs_labels_free_shipping_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'New product' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_free_shipping_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'New product' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+					<item id="mcs_labels_out_of_stock">
+                        <name>'Out of stock' label</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_labels_out_of_stock_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'Out of stock' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_out_of_stock_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'Out of stock' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+
+					<item id="mcs_labels_downloadable">
+                        <name>'Out of stock' label</name>
+                        <type>header</type>
+                    </item>
+
+					<item id="mcs_labels_downloadable_grid">
+						<name>Product list templates</name>
+						<tooltip>Show the 'Downloadable' label on product list templates.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					<item id="mcs_labels_downloadable_details">
+						<name>Product details page</name>
+						<tooltip>Show the 'Downloadable' label on product details page.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
+				</items>
+			</section>
+		<!--Google rich snippets-->
+			<section id="mcs_grs">
+                <name>Google rich snippets</name>       
+                <items>
+					<item id="mcs_grs_header">
+                        <type>header</type>
+                        <name>Google Rich Snippets</name> 
+                    </item>
+                    <item id="mcs_grs_breadcrumbs">
+                        <type>checkbox</type>
+                        <name>Breadcrumbs</name> 
+						<tooltip>Check to enable Google Rich Snippets markup on breadcrumbs</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product">
+                        <type>checkbox</type>
+                        <name>Product Name,Price and Currency (*required from Google)</name> 
+						<tooltip>You must set Settings:General:Alternative currency display format->Show prices in selected currency, otherwise will not show.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_category">
+                        <type>checkbox</type>
+                        <name>Product Category</name> 
+						<tooltip>Google recognises only categories listed here  https://support.google.com/merchants/answer/160081</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_brand">
+                        <type>checkbox</type>
+                        <name>Product Brand</name> 
+						<tooltip>Check to show product Brand on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_descr">
+                        <type>checkbox</type>
+                        <name>Product Description</name> 
+						<tooltip>Check to show product description on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_reviews">
+                        <type>checkbox</type>
+                        <name>Product Reviews</name> 
+						<tooltip>Check to show product reviews on Google Rich Snippets. Comments and Reviews Addon must be enabled.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_image">
+                        <type>checkbox</type>
+                        <name>Product Image</name> 
+						<tooltip>Check to show product Image on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>		
+                    <item id="mcs_grs_product_availability">
+                        <type>checkbox</type>
+                        <name>Product Availability</name> 
+						<tooltip>Check to show product Availability on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_sku">
+                        <type>checkbox</type>
+                        <name>Product SKU</name> 
+						<tooltip>Check to show product SKU on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+				</items>
+            </section>
+		<!--Shortcodes-->
+			<section id="mcs_shortcodes">
+				<name>Shortcodes</name>
+				<items>
+					<item id="mcs_shortcodes_enable">
+						<name>Enable shortcodes</name>
+						<tooltip>Check to enable the shortcodes functionality.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+				</items>
+			</section>
+        </sections>
+    </settings>
+	<language_variables>
+        <item lang="en" id="mcs_framework">More CS-Cart Framework</item>
+		<item lang="en" id="block_mcs_banners">More CS-Cart Banners</item>
+        <item lang="en" id="block_mcs_banners_description">Custom Visual and text banners</item>
+		<item lang="en" id="mcs_bxslider">More CS-Cart bxSlider</item>
+		<item lang="en" id="mcs_i_scroller">More CS-Cart Scroller I</item>
+		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
+		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
+		<item lang="en" id="mcs_i_menu">More CS-Cart Menu I</item>
+		<item lang="en" id="mcs_i_grid">More CS-Cart Grid I</item>
+		<item lang="en" id="mcs_brand_scroller">More CS-Cart Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller_description">Scroller with selected brands</item>
+		<item lang="en" id="add_brands">Add Brands</item>
+		<item lang="en" id="add_brands_and_close">Add Brands and close</item>
+		<item lang="en" id="all_brands">All Brands</item>
+		<item lang="en" id="mcs_brand_scroller_button">Show "All Brands" button</item>
+		<item lang="en" id="mcs_brand_scroller_button_icon">"All Brands" button icon</item>
+		
+		<item lang="en" id="mcs_top_menu_show_images">Show images in menu</item>
+		<item lang="en" id="mcs_top_menu_hide_third_level">Hide third level elements</item>
+		<item lang="en" id="mcs_top_menu_responsive">Enable responsive menu</item>
+
+		<item lang="en" id="mcs_mode">Mode</item>
+		<item lang="en" id="mcs_speed">Speed</item>
+		<item lang="en" id="mcs_slideMargin">Slide Margin</item>
+		<item lang="en" id="mcs_startSlide">Starting Slide</item>
+		<item lang="en" id="mcs_randomStart">Random Starting Slide</item>
+		<item lang="en" id="mcs_infiniteLoop">Infinite Loop</item>
+		<item lang="en" id="mcs_hideControlOnEnd">Hide Control On End</item>
+		<item lang="en" id="mcs_easing">Easing</item>
+		<item lang="en" id="mcs_captions">Captions</item>
+		<item lang="en" id="mcs_ticker">Ticker Mode</item>
+		<item lang="en" id="mcs_tickerHover">Ticker Mode Hover</item>
+		<item lang="en" id="mcs_adaptiveHeight">Adaptive Height</item>
+		<item lang="en" id="mcs_adaptiveHeightSpeed">Adaptive Height Speed</item>
+		<item lang="en" id="mcs_video">Video</item>
+		<item lang="en" id="mcs_responsive">Responsive</item>
+		<item lang="en" id="mcs_preloadImages">Preload Images</item>
+		<item lang="en" id="mcs_touchEnabled">Touch Enabled</item>
+		<item lang="en" id="mcs_swipeThreshold">Swipe Threshold</item>
+		<item lang="en" id="mcs_oneToOneTouch">One To One Touch</item>
+		<item lang="en" id="mcs_preventDefaultSwipeX">Prevent Default Swipe X-Axis</item>
+		<item lang="en" id="mcs_preventDefaultSwipeY">Prevent Default Swipe Y-Axis</item>
+		<item lang="en" id="mcs_pager">Pager</item>
+		<item lang="en" id="mcs_pagerType">Pager Type</item>
+		<item lang="en" id="mcs_pagerShortSeparator">Pager Short Separator</item>
+		<item lang="en" id="mcs_pagerThumbs">Pager Thumbs</item>
+		<item lang="en" id="mcs_controls">Controls</item>
+		<item lang="en" id="mcs_customControls">Custom Controls</item>
+		<item lang="en" id="mcs_nextText">Next Text</item>
+		<item lang="en" id="mcs_prevText">Previous Text</item>
+		<item lang="en" id="mcs_autoControls">Auto Controls</item>
+		<item lang="en" id="mcs_autoControlsCombine">Combine Auto Controls</item>
+		<item lang="en" id="mcs_customAutoControls">Custom Auto Controls</item>
+		<item lang="en" id="mcs_startText">Start Text</item>
+		<item lang="en" id="mcs_stopText">Stop Text</item>
+		<item lang="en" id="mcs_auto">Auto Transition</item>
+		<item lang="en" id="mcs_pause">Pause</item>
+		<item lang="en" id="mcs_autoStart">Auto Start</item>
+		<item lang="en" id="mcs_autoDirection">Auto Direction</item>
+		<item lang="en" id="mcs_autoHover">Auto Hover</item>
+		<item lang="en" id="mcs_autoDelay">Auto Delay</item>
+		<item lang="en" id="mcs_minSlides">Minimum Number Of Slides</item>
+		<item lang="en" id="mcs_maxSlides">Maximum Number Of Slides</item>
+		<item lang="en" id="mcs_moveSlides">Number Of Slides To Move</item>
+		<item lang="en" id="mcs_slideWidth">Slide Width</item>
+		<item lang="en" id="mcs_generalSeparator">GENERAL</item>
+		<item lang="en" id="mcs_pagerSeparator">PAGER</item>
+		<item lang="en" id="mcs_controlsSeparator">CONTROLS</item>
+		<item lang="en" id="mcs_autoSeparator">AUTO</item>
+		<item lang="en" id="mcs_carouselSeparator">CAROUSEL</item>
+		<item lang="en" id="fade">Fade</item>
+		<item lang="en" id="ease">Ease</item>
+		<item lang="en" id="ease-in">Ease-In</item>
+		<item lang="en" id="ease-out">Ease-Out</item>
+		<item lang="en" id="ease-in-out">Ease-In-Out</item>
+		<item lang="en" id="swing">JS Swing</item>
+		<item lang="en" id="easeInQuad">JS Ease-In Quad</item>
+		<item lang="en" id="easeOutQuad">JS Ease-Out Quad</item>
+		<item lang="en" id="easeInOutQuad">JS Ease-In-Out Quad</item>
+		<item lang="en" id="easeInCubic">JS Ease-In Cubic</item>
+		<item lang="en" id="easeOutCubic">JS Ease-Out Cubic</item>
+		<item lang="en" id="easeInOutCubic">JS Ease-In-Out Cubic</item>
+		<item lang="en" id="easeInQuart">JS Ease-In Quart</item>
+		<item lang="en" id="easeOutQuart">JS Ease-Out Quart</item>
+		<item lang="en" id="easeInOutQuart">JS Ease-In-Out Quart</item>
+		<item lang="en" id="easeInQuint">JS Ease-In Quint</item>
+		<item lang="en" id="easeOutQuint">JS Ease-Out Quint</item>
+		<item lang="en" id="easeInOutQuint">JS Ease-In-Out Quint</item>
+		<item lang="en" id="easeInSine">JS Ease-In Sine</item>
+		<item lang="en" id="easeOutSine">JS Ease-Out Sine</item>
+		<item lang="en" id="easeInOutSine">JS Ease-In-Out Sine</item>
+		<item lang="en" id="easeInExpo">JS Ease-In Expo</item>
+		<item lang="en" id="easeOutExpo">JS Ease-Out Expo</item>
+		<item lang="en" id="easeInOutExpo">JS Ease-In-Out Expo</item>
+		<item lang="en" id="easeInCirc">JS Ease-In Circ</item>
+		<item lang="en" id="easeOutCirc">JS Ease-Out Circ</item>
+		<item lang="en" id="easeInOutCirc">JS Ease-In-Out Circ</item>
+		<item lang="en" id="easeInElastic">JS Ease-In Elastic</item>
+		<item lang="en" id="easeOutElastic">JS Ease-Out Elastic</item>
+		<item lang="en" id="easeInOutElastic">JS Ease-In-Out Elastic</item>
+		<item lang="en" id="easeInBack">JS Ease-In Back</item>
+		<item lang="en" id="easeOutBack">JS Ease-Out Back</item>
+		<item lang="en" id="easeInOutBack">JS Ease-In-Out Back</item>
+		<item lang="en" id="easeInBounce">JS Ease-In Bounce</item>
+		<item lang="en" id="easeOutBounce">JS Ease-Out Bounce</item>
+		<item lang="en" id="easeInOutBounce">JS Ease-In-Out Bounce</item>
+		<item lang="en" id="visible">Visible</item>
+		<item lang="en" id="short">Short</item>
+
+		<item lang="en" id="hide_features">Hide Features</item>
+		<item lang="en" id="hide_rating">Hide Rating</item>
+		<item lang="en" id="hide_points">Hide Points</item>
+		<item lang="en" id="hide_add_to_wish">Hide add to wishlist button</item>
+		<item lang="en" id="hide_add_to_compare">Hide add to compare button</item>
+		
+		<item lang="en" id="block_mcs_social">More CS-Cart Social Icons</item>
+		<item lang="en" id="block_mcs_social_description">More CS-Cart Social Icons description</item>
+		<item lang="en" id="mcs_social_icons">More CS-Cart Social Icons</item>
+		<item lang="en" id="text_pre">Text pre</item>
+		<item lang="en" id="text_post">Text post</item>
+		<item lang="en" id="shape">Shape</item>
+		<item lang="en" id="rotate">Rotate</item>
+		<item lang="en" id="colorhover">Hover Color</item>
+		<item lang="en" id="bg">Background Color</item>
+		<item lang="en" id="bghover">Hover Background Color</item>
+		<item lang="en" id="border">Border</item>
+		<item lang="en" id="padding">Padding</item>
+		<item lang="en" id="square">Square</item>
+		<item lang="en" id="rounded">Rounded</item>
+		<item lang="en" id="black">Black</item>
+		<item lang="en" id="social_icons">Social Icons</item>
+		
+		<item lang="en" id="block_mcs_payment_icons">More CS-Cart Payment Icons</item>
+		<item lang="en" id="block_mcs_payment_icons_description">More CS-Cart Payment Icons description</item>
+		<item lang="en" id="mcs_payment_icons">More CS-Cart Payment Icons</item>
+		<item lang="en" id="Colored">Colored</item>
+		<item lang="en" id="bw">Black and White</item>
+		<item lang="en" id="hover">Hover Effect</item>
+		<item lang="en" id="blur">Blur</item>
+		<item lang="en" id="32x20">32x20</item>
+		<item lang="en" id="64x40">64x40</item>
+		<item lang="en" id="payment_icons">Payment Icons</item>
+		
+		<item lang="en" id="block_mcs_contact_block">More CS-Cart Contact Block</item>
+		<item lang="en" id="block_mcs_contact_block_description">More CS-Cart Contact Block description</item>
+		<item lang="en" id="mcs_contact_block">More CS-Cart Contact Block</item>
+		<item lang="en" id="mcs_contact_block_text_pre">Text pre</item>
+		<item lang="en" id="mcs_contact_block_text_post">Text post</item>
+		<item lang="en" id="mcs_contact_block_alignment">Contact Block Alignment</item>
+		<item lang="en" id="mcs_contact_block_text_alignment">Contact Block Text Alignment</item>
+		<item lang="en" id="center">Center</item>
+		<item lang="en" id="mcs_contact_block_icons_size">Contact Block Icon Size</item>
+		<item lang="en" id="Default size">Default size</item>
+		<item lang="en" id="Large size">Large size</item>
+		<item lang="en" id="2x Size">2x Size</item>
+		<item lang="en" id="3x Size">3x Size</item>
+		<item lang="en" id="4x Size">4x Size</item>
+		<item lang="en" id="mcs_contact_block_text_color">Contact Block Text Color</item>
+		<item lang="en" id="mcs_contact_block_link_color">Contact Block Link Color</item>
+		<item lang="en" id="mcs_contact_block_link_hover_color">Contact Block Hover Link Color</item>
+		<item lang="en" id="mcs_contact_block_copyright">Copyright</item>
+		<item lang="en" id="mcs_contact_block_start_year">Company Start Year</item>
+		<item lang="en" id="mcs_contact_block_name">Company Name</item>
+		<item lang="en" id="mcs_contact_block_address">Company Address</item>
+		<item lang="en" id="mcs_contact_block_address_link">Company Address Link</item>
+		<item lang="en" id="mcs_contact_block_zipcode">Company Zipcode</item>
+		<item lang="en" id="mcs_contact_block_city">Company City</item>
+		<item lang="en" id="mcs_contact_block_state">Company State</item>
+		<item lang="en" id="mcs_contact_block_country">Company Country</item>
+		<item lang="en" id="mcs_contact_block_phone">Company Phone</item>
+		<item lang="en" id="mcs_contact_block_phone_2">Company Phone 2</item>
+		<item lang="en" id="mcs_contact_block_fax">Company Fax</item>
+		<item lang="en" id="mcs_contact_block_skype">Company Skype</item>
+		<item lang="en" id="mcs_contact_block_website">Company Website</item>
+		<item lang="en" id="mcs_contact_block_users_department">Company Users Department Email</item>
+		<item lang="en" id="mcs_contact_block_site_administrator">Company Administrator Email</item>
+		<item lang="en" id="mcs_contact_block_orders_department">Company Orders Email</item>
+		<item lang="en" id="mcs_contact_block_support_department">Company Support Department Email</item>
+		<item lang="en" id="mcs_contact_block_newsletter_email">Company Newsletter Email</item>
+		<item lang="en" id="mcs_contact_block_form_link">Company Contact Form Link</item>
+		<item lang="en" id="mcs_footer_wrapper">More CS-Cart Footer Wrapper</item>
+		
+		
+		<item lang="en" id="devices">Show on devices</item>
+		
+		<item lang="en" id="mcs_scroll_to_top_label">Scroll to top</item>
+		
+		<item lang="en" id="mcs_popup_do_not_show_again">Do not show again</item>
+		<item lang="en" id="fadeIn">Fade In</item>
+		<item lang="en" id="fadeOut">Fade Out</item>
+		<item lang="en" id="slideDown">Slide Down</item>
+		<item lang="en" id="slideUp">Slide Up</item>
+		<item lang="en" id="blind">Blind</item>
+		<item lang="en" id="bounce">Bounce</item>
+		<item lang="en" id="clip">Clip</item>
+		<item lang="en" id="drop">Drop</item>
+		<item lang="en" id="explode">Explode</item>
+		<item lang="en" id="fold">Fold</item>
+		<item lang="en" id="highlight">Highlight</item>
+		<item lang="en" id="puff">Puff</item>
+		<item lang="en" id="pulsate">Pulsate</item>
+		<item lang="en" id="scale">Scale</item>
+		<item lang="en" id="shake">Shake</item>
+		<item lang="en" id="slide">Slide</item>
+		<item lang="en" id="transfer">Transfer</item>
+	</language_variables>
+</addon>
+
+<!-- Element type: 
+	input, textarea, password, checkbox, selectbox, multiple select, 
+	multiple checkboxes, countries list, states list, 
+	file, info, header, template
+--> 

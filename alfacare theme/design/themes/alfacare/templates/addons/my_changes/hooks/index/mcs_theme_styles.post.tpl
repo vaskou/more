@@ -1,3 +1,4 @@
+{style src="addons/my_changes/mcs_general_less_rules.less"}
 {style src="addons/my_changes/mcs_general_styles.css"}
 {style src="addons/my_changes/mcs_general_styles.less"}
 {style src="addons/my_changes/mcs_brands_page.css"}
@@ -42,7 +43,4 @@
     {style src="addons/my_changes/categories/mcs_sidebox.resp.css"}
     {style src="addons/my_changes/products/mcs_product.resp.css"}
 {/if}
-
-
-
-
+{literal}<style>.zxcasd{display:none;}</style>{/literal}

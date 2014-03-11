@@ -1,0 +1,42 @@
+.sort-dropdown {
+	.gradient (@secondary_button, @secondary_button);
+	border-color: darken(@secondary_button, 5%);
+	.border-radius(0px);
+}
+.sort-dropdown.open {
+	.gradient (@secondary_button, @secondary_button);
+	border-color: darken(@secondary_button, 8%);
+	box-shadow:none;
+}
+.sort-dropdown.open, .sort-dropdown:hover {
+	border-color: darken(@secondary_button, 8%);
+}
+.views-icons a{
+	.border-radius(0px);
+}
+.views-icons a:hover {
+	.gradient (@secondary_button, @secondary_button);
+	.border-radius(0px);
+	box-shadow:none;
+}
+.views-icons .active, 
+.views-icons .active:hover {
+	.gradient (@secondary_button, @secondary_button);
+	.border-radius(0px);
+	box-shadow:none;
+}
+
+.sort-dropdown, 
+.sort-dropdown a, 
+.views-icons .active, 
+.views-icons > a:hover {
+	.button_text (lighten(@secondary_button, 5%));
+	.mcs_no_text_shadow;
+}
+
+.popup-content ul.account-info li a:hover, 
+ul.select-list li:hover, 
+.dropdown-content li:hover, 
+.tabs .dropdown-menu li.active {
+	.gradient (@base, @base);
+}

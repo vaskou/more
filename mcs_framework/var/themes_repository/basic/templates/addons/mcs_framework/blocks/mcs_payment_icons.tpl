@@ -13,7 +13,7 @@
 <div class="text_pre">{$block.properties.text_pre nofilter}</div>
 {/if}
 
-<div id="mcs_payment_icons" class="{$block.properties.color} {$block.properties.hover}_hover ">
+<div id="mcs_payment_icons" class="{$block.properties.color} {$block.properties.hover}_hover"  style="text-align:{$block.properties.alignment};">
 	{foreach from=$icons item=icon}
 		<img  src="design/themes/{$settings.theme_name}/media/images/addons/mcs_framework/{$icon}.png" width={$width} height={$height} title="{$icon}" alt="{$icon}"  />
 	{/foreach}

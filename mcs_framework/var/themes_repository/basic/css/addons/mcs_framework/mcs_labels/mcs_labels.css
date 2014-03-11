@@ -24,7 +24,12 @@
 .details_page .mcs_label i{
 	font-size:1em;
 }
-
+.details_page .mcs_label .icon-new{
+	display:none;
+}
+.details_page .mcs_label.new .label{
+	margin-left:5px;
+}
 
 .mcs_labels_wrapper.mcs_labels_right{
 	text-align:right;
