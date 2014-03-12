@@ -549,6 +549,70 @@
 					
 				</items>
 			</section>
+		<!--Google rich snippets-->
+			<section id="mcs_grs">
+                <name>Google rich snippets</name>       
+                <items>
+					<item id="mcs_grs_header">
+                        <type>header</type>
+                        <name>Google Rich Snippets</name> 
+                    </item>
+                    <item id="mcs_grs_breadcrumbs">
+                        <type>checkbox</type>
+                        <name>Breadcrumbs</name> 
+						<tooltip>Check to enable Google Rich Snippets markup on breadcrumbs</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product">
+                        <type>checkbox</type>
+                        <name>Product Name,Price and Currency (*required from Google)</name> 
+						<tooltip>You must set Settings:General:Alternative currency display format->Show prices in selected currency, otherwise will not show.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_category">
+                        <type>checkbox</type>
+                        <name>Product Category</name> 
+						<tooltip>Google recognises only categories listed here  https://support.google.com/merchants/answer/160081</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_brand">
+                        <type>checkbox</type>
+                        <name>Product Brand</name> 
+						<tooltip>Check to show product Brand on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_descr">
+                        <type>checkbox</type>
+                        <name>Product Description</name> 
+						<tooltip>Check to show product description on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_reviews">
+                        <type>checkbox</type>
+                        <name>Product Reviews</name> 
+						<tooltip>Check to show product reviews on Google Rich Snippets. Comments and Reviews Addon must be enabled.</tooltip>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="mcs_grs_product_image">
+                        <type>checkbox</type>
+                        <name>Product Image</name> 
+						<tooltip>Check to show product Image on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>		
+                    <item id="mcs_grs_product_availability">
+                        <type>checkbox</type>
+                        <name>Product Availability</name> 
+						<tooltip>Check to show product Availability on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+                    <item id="mcs_grs_product_sku">
+                        <type>checkbox</type>
+                        <name>Product SKU</name> 
+						<tooltip>Check to show product SKU on Google Rich Snippets</tooltip>
+                        <default_value>N</default_value>
+                    </item>	
+				</items>
+            </section>
 		<!--Shortcodes-->
 			<section id="mcs_shortcodes">
 				<name>Shortcodes</name>

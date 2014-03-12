@@ -1,8 +1,5 @@
-.top-menu.mcs-centered{
-    padding:0 !important;
-}
-.top-menu .mcs-i-menu{
-    margin:0 20px;
+.top-menu{
+	box-sizing:border-box;
 }
 .category-img{
 	width:100%;	
