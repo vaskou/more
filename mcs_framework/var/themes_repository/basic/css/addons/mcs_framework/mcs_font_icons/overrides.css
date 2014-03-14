@@ -41,6 +41,12 @@
 }
 
 
+.notification-content-extended h1 span:before {
+    font-family: 'icomoon';
+    content: "\e36b";
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
 .icon-up-dir:before {
     content: "\e3b4";
 }

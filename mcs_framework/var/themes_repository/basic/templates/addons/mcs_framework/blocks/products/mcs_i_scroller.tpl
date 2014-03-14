@@ -121,11 +121,13 @@ $(document).ready(function(){
 	var pagerValue={$block.properties.mcs_pager};
 	var maxSlidesValue={$block.properties.mcs_maxSlides};
 	var slideWidthValue={$block.properties.mcs_slideWidth};
-	if(deviceType()=='phone'){
-		pagerValue=false;
-		maxSlidesValue=1;
-		slideWidthValue=500;
-	}
+	{if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
+		if(deviceType()=='phone'){
+			pagerValue=false;
+			maxSlidesValue=1;
+			slideWidthValue=500;
+		}
+	{/if}
 	var slider=$('#bxslider_{$block.snapping_id}').bxSlider({
 		mode:'{$block.properties.mcs_mode}',
 		speed:{$block.properties.mcs_speed},

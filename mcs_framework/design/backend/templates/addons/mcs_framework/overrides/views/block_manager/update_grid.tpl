@@ -74,7 +74,7 @@
          </div>
     </div>
     {/if}
-
+    
 </div>
 
 <div class="buttons-container">
@@ -82,3 +82,6 @@
 </div>
 </form>
 <!--grid_properties_{$id}--></div>
+
+{*********************************************MCS comments***********************************************}
+{*Lines	64-76: Added lines 64 - 76																		*}

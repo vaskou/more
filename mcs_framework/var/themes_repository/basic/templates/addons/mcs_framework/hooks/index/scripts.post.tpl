@@ -5,19 +5,16 @@ $(function(){
 //countCSSRules();
 });
 function deviceType(){
-	/*if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {*/
-	
 	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};
-	
-	return dt;
-	
+	return dt;	
 }
 </script>
 {/literal}
 
-{script src="js/addons/mcs_framework/jquery.widthCheck.js"}
+{*script src="js/addons/mcs_framework/jquery.widthCheck.js"*}
 {if $mobiledetect.versionIE=='8.0'||$mobiledetect.versionIE=='9.0'}
 	{script src="js/addons/mcs_framework/libs/media.match.min.js"}
+    {script src="js/addons/mcs_framework/libs/html5shiv.js"}
 {/if}
 {script src="js/addons/mcs_framework/libs/enquire.min.js"}
 
@@ -50,9 +47,13 @@ function deviceType(){
     {literal}
     <script>
     $(function(){
-		{/literal}{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}{literal}
-        	fn_fixed_menu_over();
-		{/literal}{/if}{literal}
+		{/literal}
+		{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}
+			{literal}
+        		fn_fixed_menu_over();
+			{/literal}
+		{/if}
+		{literal}
 		fn_sidebox_hide_over();
 		fn_sidebox_filters_show_over();
     });
@@ -62,7 +63,6 @@ function deviceType(){
 
 
 {if $addons.mcs_framework.mcs_bxslider=='Y'}
-	{script src="js/addons/mcs_framework/libs/html5shiv.js"}
 	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.min.js"}
 {/if}
 

@@ -97,15 +97,16 @@
 .product-main-info .add-buttons-wrap {
 	width: auto;
 	vertical-align: middle;
-	display:block;
-	margin-top:5px !important;
+	display:inline-block;
 }
 
 .product-main-info .add-to-wish,
 .product-main-info .add-to-compare{
-	width:100%;
-	margin:0px !important;
+	width:auto;
 	white-space:nowrap;
+	display:inline-block;
+	margin-left:10px;
+	margin-bottom:0px;
 }
 
 .product-main-info .add-buttons-wrap .text-button{
