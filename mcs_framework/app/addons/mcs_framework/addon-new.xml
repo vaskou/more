@@ -74,17 +74,17 @@
 					<item id="mcs_product_categories_features">
                         <type>checkbox</type>
                         <name>Show product features</name>
-						<default_value>N</default_value>
+						<default_value>Y</default_value>
                     </item>
 					<item id="mcs_product_categories_rating">
                         <type>checkbox</type>
                         <name>Show product rating</name>
-						<default_value>N</default_value>
+						<default_value>Y</default_value>
                     </item>
 					<item id="mcs_product_categories_points">
                         <type>checkbox</type>
                         <name>Show product points</name>
-						<default_value>N</default_value>
+						<default_value>Y</default_value>
                     </item>
 				</items>
             </section>

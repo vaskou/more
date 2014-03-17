@@ -2,7 +2,7 @@
 
 {if $breadcrumbs && $breadcrumbs|@sizeof > 1}
     <div class="breadcrumbs clearfix">
-    	<i class="icon-home3 breadcrumbs-icon"></i>
+    	<i class="{$addons.mcs_framework.mcs_block_icons_breadcrumbs} breadcrumbs-icon"></i>
         {strip}
             {foreach from=$breadcrumbs item="bc" name="bcn" key="key"}
                 {if $key != "0"}

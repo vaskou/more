@@ -85,7 +85,6 @@ function deviceType(){
 {/if}
 
 {script src="js/addons/mcs_framework/mcs_i_grid/jquery.slides.js"}
-{script src="js/addons/mcs_framework/mcs_i_grid/mcs_i_grid.js"}
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
 {script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}
 {script src="js/addons/mcs_framework/mcs_sidebox_filters_show.js"}

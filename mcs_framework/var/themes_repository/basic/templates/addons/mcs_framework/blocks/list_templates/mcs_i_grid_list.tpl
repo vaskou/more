@@ -210,11 +210,13 @@ $(function(){
 		});
 	
 	};
+	
+	
 });
 </script>
 {/literal}
 {/if}
-
+{script src="js/addons/mcs_framework/mcs_i_grid/mcs_i_grid.js"}
 </div>
 
 {if !$no_pagination}
