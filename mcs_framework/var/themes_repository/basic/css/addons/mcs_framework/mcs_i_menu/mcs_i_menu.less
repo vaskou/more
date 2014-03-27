@@ -1,34 +1,24 @@
-.sub_width(@x,@cent){
-	@w:(@fluidContainerMaxWidth - @cent - 70) / 6;
+@fluidContainerMaxWidth:945px;
+.sub_width(@x){
+	@w:(@fluidContainerMaxWidth - 20 - 70) / 6;
 	@y:(@w * @x) + ((@x + 1) * 10);
 	width:@y;
 }
 
-.mcs-i-menu .dropdown-1column {.sub_width(1,0);}
-.mcs-i-menu .dropdown-2columns {.sub_width(2,0);}
-.mcs-i-menu .dropdown-3columns {.sub_width(3,0);}
-.mcs-i-menu .dropdown-4columns {.sub_width(4,0);}
-.mcs-i-menu .dropdown-5columns {.sub_width(5,0);}
+.mcs-i-menu .dropdown-1column {.sub_width(1);}
+.mcs-i-menu .dropdown-2columns {.sub_width(2);}
+.mcs-i-menu .dropdown-3columns {.sub_width(3);}
+.mcs-i-menu .dropdown-4columns {.sub_width(4);}
+.mcs-i-menu .dropdown-5columns {.sub_width(5);}
 .mcs-i-menu .dropdown-fullwidth{
 	width:auto;
 	max-width:@fluidContainerMaxWidth;
 }
 
-.mcs-centered .mcs-i-menu .dropdown-1column {.sub_width(1,40);}
-.mcs-centered .mcs-i-menu .dropdown-2columns {.sub_width(2,40);}
-.mcs-centered .mcs-i-menu .dropdown-3columns {.sub_width(3,40);}
-.mcs-centered .mcs-i-menu .dropdown-4columns {.sub_width(4,40);}
-.mcs-centered .mcs-i-menu .dropdown-5columns {.sub_width(5,40);}
-
 .mcs-i-menu .dropdown-multicolumns .col-1{
-	@w:floor((@fluidContainerMaxWidth - 40 - 70) / 6);
+	@w:floor((@fluidContainerMaxWidth - 20 - 70) / 6);
 	width:@w;
 }
-
-/*.mcs-centered .mcs-i-menu .dropdown-multicolumns .col-1{
-	@w:floor((@fluidContainerMaxWidth - 40 - 70) / 6);
-	width:@w;
-}*/
 
 /*.mean-container .mean-title{
 	font-size:30px;

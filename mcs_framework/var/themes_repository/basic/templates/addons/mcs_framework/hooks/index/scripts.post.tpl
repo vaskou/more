@@ -3,6 +3,7 @@
 <script>
 $(function(){
 //countCSSRules();
+	$(".mcs-full-width").parent().css({"max-width":"100%","padding-left":"0","padding-right":"0"});
 });
 function deviceType(){
 	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};
@@ -22,11 +23,11 @@ function deviceType(){
     {literal}
     <script>
     $(function(){
-        enquire.register("screen and (min-width:{/literal}{$layout_data.max_width}{literal}px)",[
+        enquire.register("screen and (min-width:{/literal}{$layout_data.max_width + 1}{literal}px)",[
                 fixed_menu_over_handler
             ]
         );
-        enquire.register("screen and (max-width:{/literal}{$layout_data.max_width - 1}{literal}px)",[
+        enquire.register("screen and (max-width:{/literal}{$layout_data.max_width}{literal}px)",[
                 fixed_menu_under_handler
             ]
         );

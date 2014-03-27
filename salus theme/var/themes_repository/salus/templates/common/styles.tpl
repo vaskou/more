@@ -17,6 +17,11 @@
     {style src="dropdown.css"}
     {/if}
 
+	{* Theme editor mode *}
+    {if $runtime.customization_mode.theme_editor}
+        {style src="theme_editor.css"}
+    {/if}
+    
     {style src="scheme.less"}
 {/hook}
 {/styles}

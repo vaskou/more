@@ -45,10 +45,10 @@
 @top_panel_bg: repeat scroll;
 @top_panel_bg_grad_stop: #ffffff;
 
-@top_panel_bg_full: repeat scroll;
-@top_panel_bg_color_full: #ffffff;
+@top_panel_bg_full: transparent;
+@top_panel_bg_color_full: transparent;
 
-@top_panel_bg_grad_stop_full: #ffffff;
+@top_panel_bg_grad_stop_full: transparent;
 
 @header_bg_color: #ffffff;
 
@@ -66,18 +66,18 @@
 @content_bg: repeat scroll;
 @content_bg_full: transparent;
 
-@content_bg_color_full: #eeeeee;
+@content_bg_color_full: transparent;
 
 @content_bg_grad_stop_full: transparent;
-@footer_bg_color: #434343;
+@footer_bg_color: #009ed6;
 
 @footer_bg: repeat scroll;
-@footer_bg_grad_stop: #434343;
+@footer_bg_grad_stop: #009ed6;
 
-@footer_bg_full: repeat scroll;
-@footer_bg_color_full: #434343;
+@footer_bg_full: transparent;
+@footer_bg_color_full: transparent;
 
-@footer_bg_grad_stop_full: #434343;
+@footer_bg_grad_stop_full: transparent;
 
 @body_font: Comfortaa;
 
@@ -129,4 +129,36 @@
 
 /*CUSTOMCSS*/
 
+.tygh-top-panel > div.container-fluid,
+.tygh-header > div.container-fluid,
+.tygh-content > div.container-fluid,
+.tygh-footer > div.container-fluid{
+	max-width:@fluidContainerMaxWidth;
+}
+
+.container-fluid > .row-fluid{
+	padding:0 10px;
+	box-sizing:border-box;
+}
+.mcs-full-width > .row-fluid{
+	padding:0 10px !important;
+	box-sizing:border-box;
+}
+
+@media only screen and (min-width: 768px) {
+
+.tygh-top-panel > [class*="container"],
+.tygh-header > [class*="container"],
+.tygh-content > [class*="container"],
+.tygh-footer > [class*="container"]{
+	border:1px solid;
+	border-color:lighten(@base,33%);
+}
+.tygh-header > [class*="container"],
+.tygh-content > [class*="container"],
+.tygh-footer > [class*="container"]{
+	border-top:none;
+}
+
+}
 /*/CUSTOMCSS*/

@@ -1,4 +1,4 @@
-@media (max-width:790px){
+@media (max-width:850px){
 
 .motto{
 	margin-top:41px;
@@ -26,7 +26,7 @@
 	text-align:center;	
 }
 
-.header-grid .mcs-centered{
+.header-grid > .row-fluid{
 	padding:0 !important;
 }
 }
