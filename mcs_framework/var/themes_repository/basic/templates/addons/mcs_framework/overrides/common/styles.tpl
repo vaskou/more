@@ -38,6 +38,7 @@
     {style src="theme_styles/mcs_brands_page.css"}
     {style src="theme_styles/mcs_brands_page.less"}
     {style src="theme_styles/header/mcs_top_panel.css"}
+    {style src="theme_styles/header/mcs_top_panel.less"}
     {style src="theme_styles/header/mcs_header.css"}
     {style src="theme_styles/header/mcs_header.less"}
     {style src="theme_styles/header/mcs_top_menu.less"}

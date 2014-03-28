@@ -1,54 +1,11 @@
 .sidebox-wrapper{
 	border-color: lighten(@base,35%);
 }
-.sidebox_header (@sidebar) when (lightness(@sidebar) >= 70%) {
-	span, a:link, a:visited, a:hover {
-	color: darken(@font, 20%);
-	text-shadow: none;
-	}
-}
-.sidebox_header (@sidebar) when (lightness(@sidebar) < 70%) {
-	span, a:link, a:visited, a:hover {
-	color: lighten(@font, 70%);
-	text-shadow: none;
-	}
-}
 
 .sidebox-title{ 
-	.sidebox_header(@sidebar);
+	.mcs_sidebox_header(@sidebar);
 }
 
-.sidebox-wrapper .sidebox-title{
-	.gradient(@sidebar,@sidebar);
-}
-.sidebox-wrapper .sidebox-title,
-.sidebox-wrapper .sidebox-body {
-	border-color: lighten(@base,35%);
-	box-shadow:none;
-	background-color:@sidebar;
-}
-
-.sidebox_text (@sidebar) when (lightness(@sidebar) >= 70%) {
-	span, 
-	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
-	li, p, .product-filters .details, .price-slider,
-	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
-		color: @font;
-		text-shadow: none;
-		border-color: lighten(@font,20%);
-	}
-}
-.sidebox_text (@sidebar) when (lightness(@sidebar) < 70%) {
-	span, 
-	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
-	li, p, .product-filters .details, .price-slider,
-	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
-		color: lighten(@font, 70%);
-		text-shadow: none;
-		border-color:lighten(@font, 70%);
-	}
-}
-
-.sidebox-body{
-	.sidebox_text(@sidebar);
+.sidebox-important-wrapper .sidebox-title{ 
+	.mcs_sidebox_header(@decorative);
 }

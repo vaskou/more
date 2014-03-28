@@ -89,7 +89,7 @@
                                     <div class="category-img">
                                     	<a{if $item2_url} href="{$item2_url}"{/if}>
                                         <!--<img src="{$img_path.detailed.image_path}" />-->
-                                        {include file="common/image.tpl" images=$img_path image_height=100 image_width=100}
+                                        {include file="common/image.tpl" images=$img_path image_height=$block.properties.mcs_top_menu_category_image_height image_width=$block.properties.mcs_top_menu_category_image_width}
                                         </a>
                                     </div>
                                 {/if}                                                                

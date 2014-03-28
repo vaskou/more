@@ -4,3 +4,14 @@
 .top-links-grid .dropdown-box {
 	background: none;
 }
+
+.select-link > span {
+    border-bottom:none;
+    color: #000;
+}
+.tygh-top-panel .top-languages .select-wrap {
+    background:none;
+}
+.select-list a, .select-list a:visited, .select-list a:hover, .select-list a:active {
+    text-shadow: none;
+}

@@ -1,18 +1,3 @@
-.mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
-	i {
-		color: darken(@b, 45%);
-	}
-	color: darken(@b, 45%);
-	background-color:@b;
-}
-.mcs_button_text_color (@b) when (lightness(@b) < 70%) {
-	i {
-		color: lighten(@b, 70%);
-	}
-	color: lighten(@b, 70%);
-	background-color:@b;
-}
-
 .button-submit-action.button-wrap-left,
 .button-submit.button-wrap-left,
 .button-action.button-wrap-left,
@@ -68,12 +53,6 @@
 	.gradient (darken(@primary_button,5%),darken(@primary_button,5%));
 	.inner-shadow-dark (0, 0, 0, 0, 0);
 	border-color: darken(@primary_button, 16%);
-}
-
-.mcs_no_text_shadow{
-	input,a,i{
-		text-shadow:none;
-	}
 }
 
 .button-submit.button-wrap-left,

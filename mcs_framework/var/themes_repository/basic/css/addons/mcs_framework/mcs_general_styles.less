@@ -6,3 +6,35 @@
 div.ui-front{
 	z-index:1500 !important;
 }
+
+/*Sidebox general*/
+
+.sidebox-wrapper .sidebox-title{
+	background:@sidebar;
+}
+.sidebox-wrapper .sidebox-title,
+.sidebox-wrapper .sidebox-body {
+	border:none;
+	box-shadow:none;
+	background-color:@sidebar;
+}
+
+.sidebox-wrapper .sidebox-body{
+	.mcs_sidebox_text(@sidebar);
+}
+
+/*Sidebox important*/
+
+.sidebox-important-wrapper .sidebox-title{
+	background:@decorative;
+}
+.sidebox-important-wrapper .sidebox-title,
+.sidebox-important-wrapper .sidebox-body {
+	border:none;
+	box-shadow:none;
+	background-color:@decorative;
+}
+
+.sidebox-important-wrapper .sidebox-body{
+	.mcs_sidebox_text(@decorative);
+}

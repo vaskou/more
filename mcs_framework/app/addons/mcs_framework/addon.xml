@@ -603,6 +603,8 @@
 		<item lang="en" id="mcs_brand_scroller_button_icon">"All Brands" button icon</item>
 		
 		<item lang="en" id="mcs_top_menu_show_images">Show images in menu</item>
+		<item lang="en" id="mcs_top_menu_category_image_width">Menu image width</item>
+		<item lang="en" id="mcs_top_menu_category_image_height">Menu image height</item>
 		<item lang="en" id="mcs_top_menu_hide_third_level">Hide third level elements</item>
 		<item lang="en" id="mcs_top_menu_responsive">Enable responsive menu</item>
 

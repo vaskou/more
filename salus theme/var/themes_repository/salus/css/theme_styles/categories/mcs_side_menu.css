@@ -1,17 +1,10 @@
-.mcs-side-menu{
-	margin-bottom:15px;
+.sidebox-body ul.text-links{
+	padding:0px;
 }
-.mcs-side-menu ul.text-links{
-	padding:10px;
-/*	color:#fff;*/
-}
-.mcs-side-menu li.level-1{
+.sidebox-body li.level-1{
 	margin:10px 0;
 }
-/*.mcs-side-menu li.level-1.active{
-	color:#404040;
-}*/
-.mcs-side-menu li.level-1:before{
+.sidebox-body li.level-1:before{
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -25,16 +18,15 @@
 	vertical-align:middle;
 	font-size:120%;
 }
-.mcs-side-menu li:first-child{
+.sidebox-body li:first-child{
 	margin-top:0px;
 	padding-top:0px;
 }
-.mcs-side-menu li:last-child{
+.sidebox-body li:last-child{
 	margin-bottom:0px;
 	padding-bottom:0px;
 }
-.mcs-side-menu li a{
+.sidebox-body li a{
 	line-height:16px;
 	vertical-align:middle;
-/*	color:#fff;*/
 }

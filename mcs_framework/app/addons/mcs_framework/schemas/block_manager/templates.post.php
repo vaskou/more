@@ -19,6 +19,14 @@ $schema['addons/mcs_framework/blocks/categories/mcs_i_menu.tpl'] = array (
 			'type'=>'checkbox',
 			'default_value'=>'N'
 		),
+		'mcs_top_menu_category_image_width' => array (
+			'type' => 'input',
+			'default_value' => '120'
+		),
+		'mcs_top_menu_category_image_height' => array (
+			'type' => 'input',
+			'default_value' => '80'
+		),
 		'mcs_top_menu_responsive'=> array(
 			'type'=>'checkbox',
 			'default_value'=>'N'

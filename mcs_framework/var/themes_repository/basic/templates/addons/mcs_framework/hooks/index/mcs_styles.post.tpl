@@ -7,6 +7,7 @@
 {style src="addons/mcs_framework/resets/popup_dropbox_reset.less"}
 {style src="addons/mcs_framework/resets/sorting_reset.less"}
 {style src="addons/mcs_framework/resets/general_reset.less"}
+{style src="addons/mcs_framework/mcs_general_styles.less"}
 {style src="addons/mcs_framework/resets/product_filter_icons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 
@@ -74,7 +75,6 @@
 {style src="addons/mcs_framework/mcs_product_tabs/mcs_tab_buttons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.css"}
 {style src="addons/mcs_framework/mcs_font_icons/mcs_block_icons.less"}
-{style src="addons/mcs_framework/mcs_general_styles.less"}
 {style src="addons/mcs_framework/mcs_i_scroller.css"}
 {style src="addons/mcs_framework/mcs_brand_scroller.css"}
 {style src="addons/mcs_framework/mcs_brand_scroller.less"}
