@@ -1,0 +1,16 @@
+.search-block-grid .search-input{
+	background:lighten(@base,41%);
+	color:@font !important;
+	border-color:lighten(@base,41%) !important;
+}
+
+.search-block-grid .search-input:focus {
+	border-color: @decorative !important;
+}
+.search-block-grid .search-input:focus+button {
+	background: @decorative !important;
+}
+
+.search-block-grid .search-input:focus+.search-magnifier i{
+	.mcs_text_color(@decorative);
+}

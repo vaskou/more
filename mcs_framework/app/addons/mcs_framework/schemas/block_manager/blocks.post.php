@@ -753,12 +753,12 @@ $schema['mcs_social'] = array (
                 ),
 				'border' => array (
                     'type' => 'input',
-                    'default_value' => '2',
+                    'default_value' => '0',
                     'tooltip' => 'Enter border size in pixels.'
                 ),
 				'padding' => array (
                     'type' => 'input',
-                    'default_value' => '5',
+                    'default_value' => '0',
                     'tooltip' => 'Enter the icon padding in pixels. It should be lower than the icon size.'
                 )
 			),

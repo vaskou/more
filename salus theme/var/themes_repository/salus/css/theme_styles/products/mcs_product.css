@@ -16,6 +16,11 @@
 }*/
 }
 
+.product-main-info .product-info h1{
+	padding:10px;
+	margin:10px 0;
+}
+
 .product-main-info .image-border .discount-label{
 	top:6px;
 	right:6px;

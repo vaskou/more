@@ -12,6 +12,9 @@
 .tygh-top-panel .top-languages .select-wrap {
     background:none;
 }
+.top-links-grid .top-languages .select-wrap > .flag{
+	margin-top:2px;
+}
 .select-list a, .select-list a:visited, .select-list a:hover, .select-list a:active {
     text-shadow: none;
 }

@@ -43,6 +43,7 @@
     {style src="theme_styles/header/mcs_header.less"}
     {style src="theme_styles/header/mcs_top_menu.less"}
     {style src="theme_styles/header/mcs_search_box.css"}
+    {style src="theme_styles/header/mcs_search_box.less"}
     {style src="theme_styles/homepage/mcs_main_content.css"}
     {style src="theme_styles/homepage/mcs_main_content.less"}
     {style src="theme_styles/homepage/mcs_slider.css"}

@@ -14,7 +14,7 @@ var fixed_menu_under_handler={
 
 function fn_fixed_menu_over(){
 	if($('#mcs_helper').hasClass('mcs_computer')){
-		var top_panel_height=$(".tygh-top-panel > div").outerHeight();
+		var top_panel_height=$(".tygh-top-panel").outerHeight();
 		var header_height=$(".tygh-header").outerHeight();
 		
 		$(".tygh-header").addClass("menu-fixed");
@@ -23,7 +23,7 @@ function fn_fixed_menu_over(){
 		$(".scrolled-up").css({"top":0});
 		
 		$(window).resize(function(){
-			top_panel_height=$(".tygh-top-panel > div").outerHeight();
+			top_panel_height=$(".tygh-top-panel").outerHeight();
 			header_height=$(".tygh-header").outerHeight();
 			$(".tygh-content").css({"margin-top":header_height+"px"});
 		});
@@ -46,7 +46,7 @@ function fn_fixed_menu_over(){
 function fn_fixed_menu_under(){
 	if($('#mcs_helper').hasClass('mcs_computer')){
 		$(window).scroll(function(){
-			var top_panel_height=$(".tygh-top-panel > div").outerHeight();
+			var top_panel_height=$(".tygh-top-panel").outerHeight();
 			var top_distance=$(window).scrollTop();
 			if(top_distance>top_panel_height){
 				$(".tygh-header").addClass("scrolled-up");

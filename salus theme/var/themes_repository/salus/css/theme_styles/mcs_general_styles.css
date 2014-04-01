@@ -26,14 +26,6 @@
 	display:inline-block;
 }
 
-.mainbox-title span{
-	font-size:100% !important;
-	font-weight:normal !important;
-}
-.mainbox-title > span{
-	font-size:300% !important;
-}
-
 .button-submit-action.button-wrap-left, 
 .button-submit.button-wrap-left, 
 .button-action.button-wrap-left, 
@@ -41,6 +33,12 @@
 .button-submit-big.button-wrap-left, 
 .button-big.button-wrap-left {
 	border: none;
+}
+
+h1.mainbox-title{
+	z-index:10;
+	padding:10px;
+	margin:10px;
 }
 
 .form-wrap{

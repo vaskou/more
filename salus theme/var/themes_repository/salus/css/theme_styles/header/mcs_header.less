@@ -1,9 +1,15 @@
+.logo-container img{
+	background-color:@decorative;
+}
+.logo-container img:hover{
+	background-color:#000;
+}
 .motto .accent {
-	color:darken(@decorative, 5%);
+	color:@decorative;
 }
 
 .tygh-header .top-menu-grid{
-	.gradient (@decorative, darken(@decorative, 5%));
+	background:@menu;
 	.drop-shadow(0,3px,7px,0,0.2);
 }
 
@@ -14,5 +20,5 @@
 }
 
 .tygh-header ul.dropdown-multicolumns{
-	.gradient (@decorative, darken(@decorative, 5%));
+	background:@menu;
 }

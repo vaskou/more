@@ -1,11 +1,15 @@
 .breadcrumbs a:hover:after{
-	color:lighten(@base,10%);	
+	color:@base;	
 }
 .breadcrumbs a:hover >span{
 	color:@links;
 }
+.mainbox-title,
 .mainbox-title span{
-	color:darken(@decorative,5);
+	.mcs_text_color(@decorative);
+}
+h1.mainbox-title{
+	background-color:@decorative;
 }
 
 .quick-view-wrap .left-side{

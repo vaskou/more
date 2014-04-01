@@ -1,3 +1,17 @@
+.mcs-category-image {
+	min-height:76px;
+	max-height:350px;
+	overflow:hidden;
+}
+.mcs-category-image img{
+	width:100%;
+	height:auto;
+	position:relative;
+	z-index:0;
+	
+}
+.categories_view h1.mainbox-title{position:absolute;}
+
 .mcs_i_grid ul.products {
 	margin-top:10px;
 }
