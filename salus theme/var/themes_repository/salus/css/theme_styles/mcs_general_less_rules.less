@@ -88,16 +88,16 @@
 }
 .mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
 	i {
-		color: darken(@b, 45%);
+		color: darken(@b, 100%);
 	}
-	color: darken(@b, 45%);
+	color: darken(@b, 100%);
 	background-color:@b;
 }
 .mcs_button_text_color (@b) when (lightness(@b) < 70%) {
 	i {
-		color: lighten(@b, 70%);
+		color: lighten(@b, 100%);
 	}
-	color: lighten(@b, 70%);
+	color: lighten(@b, 100%);
 	background-color:@b;
 }
 .tab_text_color (@b) when (lightness(@b) >= 30%) {

@@ -25,6 +25,10 @@
 	letter-spacing: -1px;
 }
 
+.tygh-header .top-menu-grid{
+	border-top:1px solid;
+	border-bottom:1px solid;
+}
 .tygh-header ul.dropdown-multicolumns{
 	border-left:none;
 	border-right:none;

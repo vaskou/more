@@ -1,3 +1,37 @@
+/*Headings*/
+
+.wysiwyg-content  h1
+{font-size:@headings_font_size;}
+.wysiwyg-content h1>span,
+.wysiwyg-content h1>span>i,
+.wysiwyg-content h1>a
+{font-size:100% !important;}
+
+.wysiwyg-content  h2
+{font-size:@headings_font_size - 4;}
+.wysiwyg-content h2>span,
+.wysiwyg-content h2>a
+{font-size:100%;}
+
+.wysiwyg-content  h3
+{font-size:@headings_font_size - 6;}
+.wysiwyg-content h3>span,
+.wysiwyg-content h3>a
+{font-size:100%;}
+
+.wysiwyg-content  h4
+{font-size:@headings_font_size - 8;}
+.wysiwyg-content h4>span,
+.wysiwyg-content h4>a
+{font-size:100%;}
+
+.wysiwyg-content  h5
+{font-size:@headings_font_size - 10;}
+.wysiwyg-content h5>span,
+.wysiwyg-content h5>a
+{font-size:100%;}
+
+
 .breadcrumbs a:hover:after{
 	color:@base;	
 }
@@ -81,4 +115,15 @@ h1.mainbox-title{
 
 .mcs_i_grid .mcs-wishlist a:hover{
 	text-decoration:none;
+}
+
+.mcs-button{
+	.mcs_button_text_color(@decorative);
+	display:inline-block;
+	padding:10px;
+}
+
+.mcs-button:hover{
+	text-decoration:none;
+	.mcs_button_text_color(#000);
 }
