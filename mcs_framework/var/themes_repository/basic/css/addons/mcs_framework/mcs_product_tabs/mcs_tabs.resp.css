@@ -1,32 +1,32 @@
 @media (max-width:767px){
-.mcs_phone .tabs{
+.tabs{
 	margin-top: 30px;
 	border:none;
 	width:100%;
 	float:none;
 	margin-bottom:0;
 }
-.mcs_phone .tabs ul li, 
-.mcs_phone .tabs ul li.active {
+.tabs ul li, 
+.tabs ul li.active {
     margin: 0;
     padding:11px 21px 11px 18px;
 	float: none;
     vertical-align: top;
 }
-.mcs_phone .tabs ul li.dropdown{
+.tabs ul li.dropdown{
 	margin:0;
 	padding:0;
 	border:none;
 	display:block;
 	float:none !important;
 }
-.mcs_phone .tabs ul li.dropdown > a{
+.tabs ul li.dropdown > a{
 	display:none;	
 }
-.mcs_phone .tabs .cm-subtab-item{
+.tabs .cm-subtab-item{
 	display:none;
 }
-.mcs_phone .tabs ul li.dropdown ul.dropdown-menu{
+.tabs ul li.dropdown ul.dropdown-menu{
 	padding:0;
 	margin:0;
 	display:block;
@@ -36,11 +36,11 @@
 	-webkit-box-shadow:none;
 }
 
-.mcs_phone .tabs ul li.dropdown ul.dropdown-menu li{
+.tabs ul li.dropdown ul.dropdown-menu li{
 	border:1px solid;
 	margin-bottom: -1px;
 }
-.mcs_phone .cm-tabs-content {
+.cm-tabs-content {
 	margin-top: 0;
 	margin-bottom:15px;
 	float:none;

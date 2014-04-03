@@ -31,19 +31,35 @@
 .wysiwyg-content h5>a
 {font-size:100%;}
 
-
+/*Breadcrumbs*/
 .breadcrumbs a:hover:after{
 	color:@base;	
 }
 .breadcrumbs a:hover >span{
 	color:@links;
 }
+
+/*Mainbox general*/
 .mainbox-title,
 .mainbox-title span{
 	.mcs_text_color(@decorative);
 }
 h1.mainbox-title{
 	background-color:@decorative;
+}
+
+/*Search results page*/
+.section-title {
+	background: lighten(@base,41%);
+	border-color:lighten(@base,41%)
+}
+.section-title span{
+	.mcs_no_text_shadow;
+}
+.section-body, 
+.section-body-details{
+	.mcs_no_shadow;
+	border-color:lighten(@base,41%);
 }
 
 .quick-view-wrap .left-side{

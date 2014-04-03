@@ -50,6 +50,7 @@
     {style src="theme_styles/homepage/mcs_slider.less"}
     {style src="theme_styles/homepage/mcs_brand_scroller.css"}
     {style src="theme_styles/homepage/mcs_brand_scroller.less"}
+    {style src="theme_styles/homepage/mcs_tab_blocks.css"}
     {style src="theme_styles/categories/mcs_products_grid.css"}
     {style src="theme_styles/categories/mcs_products_grid.less"}
     {style src="theme_styles/categories/mcs_side_menu.css"}
@@ -73,8 +74,8 @@
         {style src="theme_styles/homepage/mcs_main_content.resp.css"}
         {style src="theme_styles/homepage/mcs_slider.resp.css"}
         {style src="theme_styles/homepage/mcs_slider.resp.less"}
-        {style src="theme_styles/categories/mcs_i_category_view.resp.css"}
         {style src="theme_styles/categories/mcs_sidebox.resp.css"}
+        {style src="theme_styles/categories/mcs_products_grid.resp.less"}
         {style src="theme_styles/products/mcs_product.resp.css"}
     {/if}
     {literal}<style>.zxcasd{display:none;}</style>{/literal}

@@ -20,8 +20,8 @@
 	padding-bottom:6px;/**/
 }
 .mcs_i_grid ul.products li.product .product-wrapper {
-	border: 1px solid #ccc;
 	background-color:#fff;
+	border-color:#fff;
 }
 .mcs_i_grid ul.products li.product:hover .product-wrapper{
 	-webkit-box-shadow: 1px 1px 15px rgba(0,0,0,0.33);
@@ -29,7 +29,7 @@
 	box-shadow: 1px 1px 15px rgba(0,0,0,0.33);
 }
 .mcs_i_grid ul.products li.product .prod_img{
-	border:1px solid #e4e4e4;
+	border-bottom:1px solid;
 	padding:0;
 	margin:5px 5px 0;
 }
@@ -42,24 +42,20 @@
 	padding:5px 0;
 }
 .mcs_i_grid ul.products li.product .product_info h3 a{
-	color:#fff;
 	text-align:center;
-	margin:0 2px;	
-}
-.mcs_i_grid ul.products li.product .product_info h3 a:hover{
-	text-decoration:none;
+	margin:0 2px;
+	font-weight:normal;
 }
 .mcs_i_grid ul.products li.product .product_info .price-wrapper{
 	text-align:center;
 }
 .mcs_i_grid ul.products li.product .product_info .price-wrapper .list-price{
-	font-size:100% !important;
+	font-size:85% !important;
 }
 
 .mcs_i_grid ul.products li.product .product_info .price-wrapper .list-price .list-price,
 .mcs_i_grid ul.products li.product .product_info .price-wrapper .price .price-num,
 .mcs_i_grid ul.products li.product .product_info .price-wrapper .price .no-price{
-	font-size:130% !important;
 	font-weight:bold;
 }
 .mcs_i_grid ul.products li.product .product_extra_info {

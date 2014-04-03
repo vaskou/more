@@ -550,7 +550,7 @@
 					</item>	
 
 					<item id="mcs_labels_downloadable">
-                        <name>'Out of stock' label</name>
+                        <name>'Downloadable' label</name>
                         <type>header</type>
                     </item>
 

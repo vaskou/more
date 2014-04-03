@@ -31,10 +31,14 @@
 	border: none;
 }
 
+/*Mainbox general*/
+.mainbox-container{
+	background:#fff;
+}
 h1.mainbox-title{
 	z-index:10;
 	padding:10px;
-	margin:10px 0;
+	margin:10px;
 }
 
 .form-wrap{
@@ -49,3 +53,32 @@ h1.mainbox-title{
 	padding:15px;
 }
 
+/*Reviews*/
+.stars .icon-star,
+.stars .icon-star-empty,
+.stars .icon-star-half
+{
+	color: #edc60d;
+}
+
+/*Search results page*/
+.search-form{
+	margin:10px;
+	border-radius:0;
+}
+.section-title {
+	border-radius:0;
+}
+.section-title.open{
+	border-radius:0;
+}
+
+.section-body, 
+.section-body-details {
+	padding: 10px;
+	border-radius:0;
+}
+.mainbox-title span.float-right {
+	padding-top: 0;
+	font-size:100%;
+}
