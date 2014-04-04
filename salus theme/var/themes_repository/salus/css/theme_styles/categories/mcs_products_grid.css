@@ -1,3 +1,6 @@
+.categories_view h1.mainbox-title{
+	position:absolute;
+}
 .mcs-category-image {
 	min-height:76px;
 	max-height:350px;
@@ -10,8 +13,9 @@
 	z-index:0;
 	
 }
-.categories_view h1.mainbox-title{position:absolute;}
-
+.mainbox-body [id^="category_products"]{
+	padding:10px 10px 0;
+}
 .mcs_i_grid ul.products {
 	margin-top:10px;
 }

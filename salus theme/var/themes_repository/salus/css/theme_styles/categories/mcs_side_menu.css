@@ -1,10 +1,10 @@
 .sidebox-body ul.text-links{
 	padding:0px;
 }
-.sidebox-body li.level-1{
+.sidebox-body .text-links li.level-1{
 	margin:10px 0;
 }
-.sidebox-body li.level-1:before{
+.sidebox-body .text-links li.level-1:before{
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -18,15 +18,15 @@
 	vertical-align:middle;
 	font-size:120%;
 }
-.sidebox-body li:first-child{
+.sidebox-body .text-links li:first-child{
 	margin-top:0px;
 	padding-top:0px;
 }
-.sidebox-body li:last-child{
+.sidebox-body .text-links li:last-child{
 	margin-bottom:0px;
 	padding-bottom:0px;
 }
-.sidebox-body li a{
+.sidebox-body .text-links li a{
 	line-height:16px;
 	vertical-align:middle;
 }

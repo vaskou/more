@@ -3,7 +3,7 @@
 <script>
 $(function(){
 //countCSSRules();
-	$(".mcs-full-width").parent().css({"max-width":"100%","padding-left":"0","padding-right":"0"});
+	$(".mcs-full-width").parent().css({"max-width":"100%","padding-left":"0","padding-right":"0"});	
 });
 function deviceType(){
 	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};
@@ -11,6 +11,41 @@ function deviceType(){
 }
 </script>
 {/literal}
+
+{if $addons.mcs_framework.mcs_general_appearance_price=='Y'}
+    {literal}
+    <script>
+    $(function(){
+		
+		initBindings();
+		$(document).ajaxStop(function() {
+			initBindings();
+		});
+		
+		function initBindings(){
+			{/literal}
+			var both_cur=false;
+			{if $settings.General.alternative_currency == "use_selected_and_alternative"}
+				var both_cur=true;
+			{/if}
+			var secondary_cur_delim="{$currencies.$secondary_currency.decimals_separator}";	
+			{literal}
+			
+			if(both_cur==false){
+				$('.price').children('.price-num').each(function(){
+					if($(this).attr('id'))
+					{
+						price=$(this).text().split(secondary_cur_delim);
+						price_str="<span class='decim'>"+secondary_cur_delim+price[1]+"</span>"
+						$(this).text(price[0]).append(price_str);
+					}
+				});
+			}
+		}
+    });
+    </script>
+    {/literal}
+{/if}
 
 {*script src="js/addons/mcs_framework/jquery.widthCheck.js"*}
 {if $mobiledetect.versionIE=='8.0'||$mobiledetect.versionIE=='9.0'}

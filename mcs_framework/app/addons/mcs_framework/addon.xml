@@ -19,6 +19,15 @@
 			<section id="mcs_general">
                 <name>General</name>
                 <items>
+					<item id="mcs_general_appearance">
+						<type>header</type>
+						<name>Appearance</name>
+					</item>
+					<item id="mcs_general_appearance_price">
+                        <type>checkbox</type>
+                        <name>Enable price</name>
+						<default_value>N</default_value>
+                    </item>
 					<item id="mcs_general_responsive">
 						<type>header</type>
 						<name>Responsive Layout</name>

@@ -84,11 +84,6 @@
 	padding-top:5px;
 	display:block;
 }
-.mcs_i_grid ul.products li.product .product_info .price-wrapper .list-price,
-.mcs_i_grid ul.products li.product .product_info .price-wrapper .price-num,
-.mcs_i_grid ul.products li.product .product_info .price-wrapper .no-price{
-	font-size:15px !important;
-}
 .mcs_i_grid ul.products li.product .product_extra_info{
 	padding:0 10px 10px 10px;
 }
