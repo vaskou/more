@@ -1,10 +1,25 @@
 <script>
-
+		
 	$(function(){$ldelim}
 	
 		var mcs_popup_enable_cookie = '{$addons.mcs_framework.mcs_popup_cookie_enable}';
-		var mcs_popup_cookie = $.cookie.get('mcs_popup');
-					
+		
+		var mcs_popup_content_type ='{$addons.mcs_framework.mcs_popup_content_types}';
+		
+		var mcs_popup_content_type_id;
+		
+		if(mcs_popup_content_type=='banner')
+			mcs_popup_content_type_id='{$addons.mcs_framework.mcs_popup_content_banners}';
+		if(mcs_popup_content_type=='promotion')
+			mcs_popup_content_type_id='{$addons.mcs_framework.mcs_popup_content_promotions}';
+		if(mcs_popup_content_type=='category')
+			mcs_popup_content_type_id='{$addons.mcs_framework.mcs_popup_content_categories}';
+		if(mcs_popup_content_type=='newsletter')
+			mcs_popup_content_type_id='0';
+
+		
+		var mcs_popup_cookie = $.cookie.get('mcs_popup_'+mcs_popup_content_type+'_'+mcs_popup_content_type_id);
+
 		if(mcs_popup_enable_cookie=='Y'&&!mcs_popup_cookie||mcs_popup_enable_cookie=='N')
 			{$ldelim}
 				$( "#mcs_popup" ).dialog(
@@ -29,7 +44,7 @@
 									'{__("mcs_popup_do_not_show_again")}': function() 
 										{$ldelim} 
 											$( this ).dialog( "close" ); 
-											createPopupCookie();
+											createPopupCookie(mcs_popup_content_type,mcs_popup_content_type_id);
 										{$rdelim}
 								{$rdelim},
 						close: function( event, ui ) {$ldelim}  {$rdelim}
@@ -42,19 +57,21 @@
 		});		
 		
 		$( ".mcs_popup form" ).submit(function( event ) {
-			createPopupCookie();
+			createPopupCookie(mcs_popup_content_type,mcs_popup_content_type_id);
 		});
 		
-		function createPopupCookie(){
+		function createPopupCookie(type,id){
+
+		
 		
 			var mcs_popup_enable_cookie = '{$addons.mcs_framework.mcs_popup_cookie_enable}';
 			var mcs_popup_cookie_days = {$addons.mcs_framework.mcs_popup_cookie_days};
 			var date = new Date();
 			
 			date.setTime(+ date + (mcs_popup_cookie_days * 86400000)); //24 * 60 * 60 * 1000
+			
 			if(mcs_popup_enable_cookie=='Y')
-				document.cookie = "mcs_popup=1;expires="+date.toGMTString()+";;;";		
-		
+				document.cookie = "mcs_popup_"+type+"_"+id+"=1;expires="+date.toGMTString()+";;;";
 		}
 		
 	{$rdelim});

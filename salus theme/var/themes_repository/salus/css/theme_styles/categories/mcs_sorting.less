@@ -1,28 +1,60 @@
 .sort-dropdown {
-	.gradient (lighten(@secondary_button, 15%),lighten(@secondary_button, 15%));
+	background:lighten(@base,41%);
+	border-color:lighten(@base,41%);
+}
+.sort-dropdown a{
+	.mcs_text_color(lighten(@base,41%));
+}
+.sort-dropdown a i{
+	background:darken(@base, 3.6%);
+	.mcs_text_color(darken(@base, 3.6%));
 }
 .sort-dropdown.open, .sort-dropdown:hover {
-	border-color: darken(@secondary_button, 15%);
+	border-color: @decorative;
+	background:lighten(@base,41%);
+}
+.sort-dropdown.open a i, .sort-dropdown:hover a i{
+	background:@decorative;
+	.mcs_text_color(@decorative);
 }
 .dropdown-content{
 	.border-radius(0px);
+	border-color:lighten(@base,41%);
+	.mcs_no_shadow;
 }
-.views-icons a{
-	border:1px solid;
-	border-color: darken(@secondary_button, 8%);
+.dropdown-content li:hover{
+	background:lighten(@base,41%);
 }
-.views-icons .active, 
-.views-icons .active:hover {
-	.gradient (lighten(@secondary_button, 15%), lighten(@secondary_button, 15%));
-	border:1px solid;
-	border-color: darken(@secondary_button, 8%);
+.views-icons a.active{
+	background:darken(@base, 3.6%);
+	border-color:lighten(@base,27%);
 }
-.views-icons .active:hover {
-	border-color: darken(@secondary_button, 15%);
+.views-icons a.active i{
+	.mcs_text_color(darken(@base, 3.6%));
 }
+.views-icons a:hover,
+.views-icons a.active:hover {
+	border-color:@decorative;
+	background:@decorative;
+}
+.views-icons a:hover i{
+	.mcs_text_color(@decorative);
+}
+
+.pagination a, .pagination a:active, .pagination-selected-page {
+	.border-radius(0px);
+}
+.pagination a:hover{
+	background:darken(@base, 23%);
+	.mcs_text_color(darken(@base, 23%));
+}
+.pagination a.set:hover, .pagination a.prev:hover, .pagination a.next:hover{
+	.mcs_text_color(darken(@base, 23%));
+}
+
 .popup-content ul.account-info li a:hover, 
 ul.select-list li:hover, 
 .dropdown-content li:hover, 
 .tabs .dropdown-menu li.active {
-	.gradient (@secondary_button, @secondary_button);
+	background:lighten(@base,41%);
 }

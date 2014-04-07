@@ -1,6 +1,9 @@
 .categories_view h1.mainbox-title{
 	position:absolute;
 }
+.categories_view .mainbox-body{
+	margin:0px;
+}
 .mcs-category-image {
 	min-height:76px;
 	max-height:350px;
@@ -16,12 +19,27 @@
 .mainbox-body [id^="category_products"]{
 	padding:10px 10px 0;
 }
+
+.subcategories{	
+	margin:0px 0px 10px;
+}
+.subcategories ul li {	
+	margin:5px;
+}
+.subcategories ul li:first-child {	
+	margin-left:0;
+}
+.subcategories li:hover a{
+	text-decoration:none;
+}
+
+
 .mcs_i_grid ul.products {
 	margin-top:10px;
 }
 .mcs_i_grid ul.products li.product {
 	margin-bottom: 20px;
-	padding-bottom:6px;/**/
+	padding-bottom:6px;
 }
 .mcs_i_grid ul.products li.product .product-wrapper {
 	background-color:#fff;
@@ -164,7 +182,6 @@
 .mcs_i_grid .mcs-wishlist > div > span{
 	margin:0;
 	padding:10px;
-//	color:#fff;
 	display:inline-block;
 }
 
@@ -172,7 +189,6 @@
 .mcs_i_grid .button-action a,
 .mcs_i_grid .button-submit-action input,
 .mcs_i_grid .mcs-wishlist > div span a{
-//	color:#fff;
 	width:auto;
 	margin-left:1px;
 	text-align:left;

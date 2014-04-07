@@ -16,7 +16,10 @@
 .product-main-info .product-info{
 	margin-top:20px;
 }
-
+.product-note {
+	float: left;
+	width: 100%;
+}
 .product-main-info .add-buttons-wrap {
 	display:block;
 	margin-top:5px !important;

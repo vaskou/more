@@ -1,3 +1,16 @@
+.subcategories li{
+	background-color:@decorative;
+}
+.subcategories li a{	
+	.mcs_text_color(@decorative);
+}
+.subcategories li:hover{
+	background-color:#000;
+}
+.subcategories li:hover a{
+	.mcs_text_color(#000);
+}
+
 .mcs_i_grid ul.products li.product .prod_img{
 	border-color:lighten(@base,41%);
 }
@@ -18,39 +31,3 @@
 .mcs_i_grid .add-buttons:hover .text-button{
 	color:@decorative;	
 }
-/*
-.mcs_i_grid .button-action.button-wrap-left{
-	background:none;
-	.inner-shadow (0, 0, 0, 0, 0);
-}
-.mcs_i_grid .button-action i,
-.mcs_i_grid .button-action a{
-	color:@decorative;
-}
-.mcs_i_grid .button-action.button-wrap-left:hover i,
-.mcs_i_grid .button-action.button-wrap-left:hover:active i,
-.mcs_i_grid .button-action.button-wrap-left:hover a,
-.mcs_i_grid .button-action.button-wrap-left:hover:active a{
-	color:#fff;
-}
-.mcs_i_grid .mcs-wishlist > div > span {
-	.gradient (@primary_button, @primary_button);
-	.inner-shadow (0, 0, 0, 0, 0);
-}
-.mcs_i_grid .button-action.button-wrap-left:hover, 
-.mcs_i_grid .button-submit-action.button-wrap-left:hover,
-.mcs_i_grid .mcs-wishlist > div > span:hover{
-	.gradient (@decorative, @decorative);
-	.inner-shadow (0, 0, 0, 0, 0);
-}
-.mcs_i_grid .button-action.button-wrap-left:hover:active, 
-.mcs_i_grid .button-submit-action.button-wrap-left:hover:active,
-.mcs_i_grid .mcs-wishlist > div > span:hover:active{
-	.gradient (darken(@decorative,5%), darken(@decorative,5%));
-	.inner-shadow-dark (0, 0, 0, 0, 0);
-}*/
-
-/*.mcs_i_grid .button a,
-.mcs_i_grid .button-submit-action input{
-	color:#fff;
-}*/

@@ -57,6 +57,7 @@
     {style src="theme_styles/categories/mcs_side_menu.less"}
     {style src="theme_styles/categories/mcs_sidebox.css"}
     {style src="theme_styles/categories/mcs_sidebox.less"}
+    {style src="theme_styles/categories/mcs_sorting.css"}
     {style src="theme_styles/categories/mcs_sorting.less"}
     {style src="theme_styles/products/mcs_product.css"}
     {style src="theme_styles/products/mcs_product.less"}
@@ -76,6 +77,7 @@
         {style src="theme_styles/homepage/mcs_slider.resp.less"}
         {style src="theme_styles/categories/mcs_sidebox.resp.css"}
         {style src="theme_styles/categories/mcs_products_grid.resp.less"}
+        {style src="theme_styles/categories/mcs_sorting.resp.css"}
         {style src="theme_styles/products/mcs_product.resp.css"}
     {/if}
     {literal}<style>.zxcasd{display:none;}</style>{/literal}
