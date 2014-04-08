@@ -27,24 +27,14 @@
 
 {if $addons.mcs_framework.mcs_product_tabs_vertical=='Y'}
 	{style src="addons/mcs_framework/mcs_product_tabs/tabs_vertical.less"}
-    
-    {assign var="left_width" value=$addons.mcs_framework.mcs_product_tabs_width}
-    
-    {if $left_width<10 or $left_width>50}
-    	{$left_width=36}
-    {/if}
-    
-	{math equation="94 - x" x=$left_width assign="right_width"}
         
 	<style>
 		{literal}
 		@media (min-width:768px){
 			.tabs{
-				width:{/literal}{$left_width}{literal}%;
+				width:{/literal}{$addons.mcs_framework.mcs_product_tabs_width}{literal}px;
 			}
-			.cm-tabs-content {
-				width:{/literal}{$right_width}{literal}%;
-			}
+			
 		}
 		{/literal}
     </style>
@@ -65,9 +55,9 @@
 
 {style src="addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.css"}
 
+{style src="addons/mcs_framework/mcs_i_menu/meanmenu.min.css"}
 {style src="addons/mcs_framework/mcs_i_menu/mcs_i_menu.css"}
 {style src="addons/mcs_framework/mcs_i_menu/mcs_i_menu.less"}
-{style src="addons/mcs_framework/mcs_i_menu/meanmenu.min.css"}
 {style src="addons/mcs_framework/mcs_i_grid/mcs_i_grid.css"}
 {style src="addons/mcs_framework/mcs_i_grid/mcs_slides.css"}
 {style src="addons/mcs_framework/mcs_i_grid/mcs_slides.less"}

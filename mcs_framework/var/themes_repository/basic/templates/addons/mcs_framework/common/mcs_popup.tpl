@@ -84,7 +84,7 @@
 	{assign var="popup_title" value=$banner.banner}
 	
 	{if $banner.type=='G'}
-		{assign var="popup_content" value="<img style='width:100%;' title='`$banner.banner`' alt='`$banner.main_pair.icon.alt`' src='`$banner.main_pair.icon.image_path`'>"}
+		{assign var="popup_content" value="<img style='width:100%;height:auto;' title='`$banner.banner`' alt='`$banner.main_pair.icon.alt`' src='`$banner.main_pair.icon.image_path`'>"}
 	{/if}
 	
 	{if $banner.type=='T'}
@@ -107,9 +107,9 @@
 	
 	{assign var="category" value=$addons.mcs_framework.mcs_popup_content_categories|fn_get_category_data}
 	{assign var="popup_title" value=$category.category}
-	{assign var="popup_content" value=$category.description}
-	{assign var="popup_content" value="<a href='index.php?dispatch=categories.view&category_id=`$category.category_id`'><img style='width:100%;' title='`$category.category`' alt='`$category.main_pair.detailed.alt`' src='`$category.main_pair.detailed.image_path`'></a>"}
-	
+
+	{assign var="popup_content" value="<a href='index.php?dispatch=categories.view&category_id=`$category.category_id`'><img style='width:100%;height:auto;' title='`$category.category`' alt='`$category.main_pair.detailed.alt`' src='`$category.main_pair.detailed.image_path`'></a><div class='wysiwyg-content'>`$category.description`</div>"}
+
 {/if}
 
 {if $addons.mcs_framework.mcs_popup_content_types=='newsletter'}
@@ -119,12 +119,14 @@
 	
 {/if}
 
-<div id="mcs_popup" class="hidden" title="{$popup_title}">
-	<div>
+<div id="mcs_popup" class="hidden {$addons.mcs_framework.mcs_popup_content_types}" title="{$popup_title}">
+	<div {if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.type=="T"||$addons.mcs_framework.mcs_popup_content_types=='newsletter'||$addons.mcs_framework.mcs_popup_content_types=='promotion'}class="wysiwyg-content"{/if}>
 		{if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.url!=""&&$banner.type=="G"}
 			<a href="{$banner.url}" {if $banner.target=='B'}target="_blank"{/if}>
 		{/if}
-			{$popup_content nofilter}
+		
+		{$popup_content nofilter}
+		
 		{if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.url!=""&&$banner.type=="G"}
 			</a>
 		{/if}
@@ -134,7 +136,7 @@
 <style type="text/css">
 	{literal}
 	.ui-widget-overlay{
-		background:{/literal} {$addons.mcs_framework.mcs_popup_styling_overlay_color}{literal}!important;
+		background:#{/literal}{$addons.mcs_framework.mcs_popup_styling_overlay_color}{literal}!important;
 		opacity:{/literal} {$addons.mcs_framework.mcs_popup_styling_overlay_opacity}{literal}!important;
 		filter:Alpha(Opacity={/literal} {$addons.mcs_framework.mcs_popup_styling_overlay_opacity*100}{literal})!important;
 	}

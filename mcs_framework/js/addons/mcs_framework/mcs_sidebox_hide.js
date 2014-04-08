@@ -19,6 +19,7 @@ function fn_sidebox_hide_over(){
 
 function fn_sidebox_hide_under(){
 	$(".sidebox-wrapper").addClass("mcs-sidebox-hide");
+	$(".sidebox-important-wrapper").addClass("mcs-sidebox-hide");
 	$(".mcs-sidebox-hide .sidebox-title").unbind('click');
 	$('.mcs-sidebox-hide .sidebox-body').hide();
 	$('.mcs-sidebox-hide .sidebox-body.unhid').show();

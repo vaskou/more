@@ -166,7 +166,7 @@ class ButtonSC extends JBBCode\CodeDefinition {
 			$icon='<i class="icon-'.$options['icon'].'"></i>';	
 		
 		$out='';
-		$out.=	'<a href="'.$link.'" class="sc rotate css3-transition-all button '.$display_block.' '.$options['size'].' '.$text_align.'" '.$background_color.'">';		
+		$out.=	'<a href="'.$link.'" class="sc rotate css3-transition-all button '.$display_block.' '.$options['size'].' '.$text_align.'" '.$background_color.'>';		
 		$out.=	'<span>';
 		$out.=	$icon;
 		$out.=	$content;

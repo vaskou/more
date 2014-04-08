@@ -69,4 +69,5 @@
 
 .mean-container .mean-bar{
 	z-index:1000 !important;
+	float:none;
 }

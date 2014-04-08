@@ -1,5 +1,6 @@
 .sort-dropdown {
 	background:lighten(@base,41%);
+	filter:none;
 	border-color:lighten(@base,41%);
 }
 .sort-dropdown a{
@@ -7,11 +8,13 @@
 }
 .sort-dropdown a i{
 	background:darken(@base, 3.6%);
+	filter:none;
 	.mcs_text_color(darken(@base, 3.6%));
 }
 .sort-dropdown.open, .sort-dropdown:hover {
 	border-color: @decorative;
 	background:lighten(@base,41%);
+	filter:none;
 }
 .sort-dropdown.open a i, .sort-dropdown:hover a i{
 	background:@decorative;
@@ -24,9 +27,11 @@
 }
 .dropdown-content li:hover{
 	background:lighten(@base,41%);
+	filter:none;
 }
 .views-icons a.active{
 	background:darken(@base, 3.6%);
+	filter:none;
 	border-color:lighten(@base,27%);
 }
 .views-icons a.active i{
@@ -36,6 +41,7 @@
 .views-icons a.active:hover {
 	border-color:@decorative;
 	background:@decorative;
+	filter:none;
 }
 .views-icons a:hover i{
 	.mcs_text_color(@decorative);
@@ -46,6 +52,7 @@
 }
 .pagination a:hover{
 	background:darken(@base, 23%);
+	filter:none;
 	.mcs_text_color(darken(@base, 23%));
 }
 .pagination a.set:hover, .pagination a.prev:hover, .pagination a.next:hover{
@@ -57,4 +64,5 @@ ul.select-list li:hover,
 .dropdown-content li:hover, 
 .tabs .dropdown-menu li.active {
 	background:lighten(@base,41%);
+	filter:none;
 }
