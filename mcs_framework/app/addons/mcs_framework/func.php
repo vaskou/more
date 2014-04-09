@@ -77,7 +77,7 @@ function fn_mcs_framework_render_blocks($grid, $block, $this, $content)
 		$deviceType=$tpl_vars['mobiledetect']->{'value'}['deviceType'];
 		$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
 		
-		if($mcs_framework['mcs_mobile_devices']['mcs_mobile_devices_block_detection']=='Y'){
+		if($mcs_framework['mcs_general']['mcs_general_mobile_devices_block_detection']=='Y'){
 			if(is_array($block['properties'])){
 				if(array_key_exists('devices',$block['properties'])){
 					
@@ -115,7 +115,7 @@ function fn_mcs_framework_get_grids_post($grids)
 		$deviceType=$tpl_vars['mobiledetect']->{'value'}['deviceType'];
 		$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
 		
-		if($mcs_framework['mcs_mobile_devices']['mcs_mobile_devices_grid_detection']=='Y'){
+		if($mcs_framework['mcs_general']['mcs_general_mobile_devices_grid_detection']=='Y'){
 		
 			foreach ($grids as &$value) {
 				foreach ($value as &$v) {
@@ -182,7 +182,7 @@ function fn_mcs_popup_get_promotions()
 function fn_mcs_shortcodes(){
 
 	$mcs_shortcodes_settings = Registry::get('addons.mcs_framework');
-	$mcs_shortcodes = $mcs_shortcodes_settings['mcs_shortcodes_enable'];
+	$mcs_shortcodes = $mcs_shortcodes_settings['mcs_general_shortcodes_enable'];
 	
 	if($mcs_shortcodes=='Y')
 		return true;

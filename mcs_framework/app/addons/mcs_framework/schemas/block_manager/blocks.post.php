@@ -793,7 +793,7 @@ $schema['mcs_payment_icons'] = array (
                     'type' => 'selectbox',
                     'values' => array (
                         'color' => 'Colored',
-                        'bw' => 'Black and White'
+                        'bw' => 'black_and_white'
                     ),
                     'default_value' => 'color'
                 ),
@@ -801,7 +801,7 @@ $schema['mcs_payment_icons'] = array (
                     'type' => 'selectbox',
                     'values' => array (
 					    'color' => 'Colored',
-                        'bw' => 'Black and White',
+                        'bw' => 'black_and_white',
                         'blur' => 'Blur',
                         'rotate' => 'Rotate'
                     ),

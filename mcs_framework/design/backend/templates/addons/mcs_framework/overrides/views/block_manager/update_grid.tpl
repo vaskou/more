@@ -61,7 +61,7 @@
         </div>
     </div>
     
-    {if $addons.mcs_framework.mcs_mobile_devices_grid_detection=='Y'}
+    {if $addons.mcs_framework.mcs_general_mobile_devices_grid_detection=='Y'}
     <div class="control-group mcs_devices cm-no-hide-input">
         <label class="control-label" for="elm_grid_devices_{$id}">{__("devices")}</label>
         <div class="controls">
@@ -86,6 +86,17 @@
             <input id="elm_grid_full_width_{$id}" name="full_width" value="Y" type="checkbox" {if $grid.full_width=="Y"}checked="checked"{/if} />
          </div>
     </div>
+    
+    <div class="control-group mcs_block_grouping cm-no-hide-input">
+        <label class="control-label" for="elm_grid_block_grouping_{$id}">{__("mcs_block_grouping")}</label>
+        <div class="controls">
+        <select id="elm_grid_block_grouping_{$id}" name="block_grouping">
+        	<option value="none" {if $grid.block_grouping == "none"}selected="selected"{/if}>{__("none")}</option>
+            <option value="accordion" {if $grid.block_grouping == "accordion"}selected="selected"{/if}>Accordion</option>            
+            <option value="tabs" {if $grid.block_grouping == "tabs"}selected="selected"{/if}>Tabs</option>
+        </select>
+        </div>
+    </div>
 </div>
 
 <div class="buttons-container">
@@ -94,6 +105,7 @@
 </form>
 <!--grid_properties_{$id}--></div>
 
-{*********************************************MCS comments***********************************************}
+{*********************************************MCS changes************************************************}
 {*Lines	64-76: Added lines 64 - 76																		*}
-{*Lines	78-89: Added lines 78 - 89																		*}
+{*Lines	78-88: Added lines 78 - 88																		*}
+{*Lines	90-99: Added lines 90 - 99																		*}

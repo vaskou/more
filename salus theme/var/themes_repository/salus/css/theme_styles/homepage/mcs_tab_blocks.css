@@ -1,11 +1,11 @@
-.mcs-tab-block.ui-tabs{
+.mcs-tabs-grid.ui-tabs{
 	border-radius:0px;
 	border:none;
 	background: transparent;
 	padding:0;
 }
 
-.mcs-tab-block .ui-tabs-nav {
+.mcs-tabs-grid .ui-tabs-nav {
 	border-radius:0px;
 	border: 0px;
 	background: transparent;
@@ -13,29 +13,29 @@
 	color: #000000;
 }
 
-.mcs-tab-block .ui-tabs-active{
+.mcs-tabs-grid .ui-tabs-active{
 	background:#fff;
 	border-radius:0px;
 }
 
-.mcs-tab-block .ui-tabs-anchor:hover{
+.mcs-tabs-grid .ui-tabs-anchor:hover{
 	background:#fff;
 }
 
-.mcs-tab-block .ui-tabs-panel{
+.mcs-tabs-grid .ui-tabs-panel{
 	background: #ffffff;
 	border-radius:0px;
 }
 
 @media (max-width:767px){
-.mcs-tab-block .ui-tabs-nav{
+.mcs-tabs-grid .ui-tabs-nav{
 	border:1px solid #fff;
 }
-.mcs-tab-block .ui-tabs-nav > li{
+.mcs-tabs-grid .ui-tabs-nav > li{
 	float:none;
 	margin:0;
 }
-.mcs-tab-block .ui-tabs-anchor{
+.mcs-tabs-grid .ui-tabs-anchor{
 	display:block;
 	float:none !important;	
 }

@@ -1,4 +1,4 @@
-{if $addons.mcs_framework.mcs_mobile_devices_block_detection=='Y'}
+{if $addons.mcs_framework.mcs_general_mobile_devices_block_detection=='Y'}
 <div class="control-group mcs_devices">
     <label class="control-label" for="block_{$html_id}_devices">{__("devices")}</label>
     <div class="controls">

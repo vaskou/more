@@ -98,7 +98,7 @@ function deviceType(){
 {/if}
 
 
-{if $addons.mcs_framework.mcs_bxslider=='Y'}
+{if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.min.js"}
 {/if}
 
@@ -108,16 +108,6 @@ function deviceType(){
 
 {if $addons.mcs_framework.mcs_product_categories_hidden_info!='mcs_none'}
 	{script src="js/addons/mcs_framework/mcs_i_grid/jquery.hover_hide.js"}
-{/if}
-
-{*script src="js/addons/mcs_framework/jquery_ui/jquery-ui-1.10.3.custom.min.js"*}
-
-{if $addons.mcs_framework.mcs_tab_block_enable=='Y'}
-	{script src="js/addons/mcs_framework/mcs_tab_block/mcs_tab_block.js"}
-{/if}
-
-{if $addons.mcs_framework.mcs_accordion_block_enable=='Y'}
-	{script src="js/addons/mcs_framework/mcs_accordion_block/mcs_accordion_block.js"}
 {/if}
 
 {script src="js/addons/mcs_framework/mcs_i_grid/jquery.slides.js"}

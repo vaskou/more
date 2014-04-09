@@ -16,7 +16,7 @@
     {style src="addons/mcs_framework/mcs_font_icons/overrides.css"}
 {/if}
 
-{if $addons.mcs_framework.mcs_bxslider=='Y'}
+{if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.css"}
     {style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'}
 {/if}
@@ -33,6 +33,7 @@
 		@media (min-width:768px){
 			.tabs{
 				width:{/literal}{$addons.mcs_framework.mcs_product_tabs_width}{literal}px;
+				margin-right:{/literal}{$addons.mcs_framework.mcs_product_tabs_margin}{literal}px;
 			}
 			
 		}
@@ -48,7 +49,7 @@
 	{style src="addons/mcs_framework/mcs_scroll_to_top/mcs_scroll_to_top.css"}
 {/if}
 
-{if $addons.mcs_framework.mcs_shortcodes_enable=='Y'}
+{if $addons.mcs_framework.mcs_general_shortcodes_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_shortcodes/mcs_shortcodes.css"}
 	{style src="addons/mcs_framework/mcs_shortcodes/mcs_shortcodes.less"}
 {/if}

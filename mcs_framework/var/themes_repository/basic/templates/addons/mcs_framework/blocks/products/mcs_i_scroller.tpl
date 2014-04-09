@@ -180,16 +180,16 @@ $(document).ready(function(){
 	});
   
 
-	$("#mcs-tab-content-{$block.snapping_id}").parent(".mcs-tab-block").on("tabsactivate",function(event,ui){
+	$("#mcs-block-grouping-content-{$block.snapping_id}").parent(".mcs-tabs-grid").on("tabsactivate",function(event,ui){
 		var active = $(this).tabs("option", "active");
-		var id=$(this).children(".mcs-tab-content").eq(active).attr('id');
+		var id=$(this).children(".mcs-block-grouping-content").eq(active).attr('id');
 		//console.log(id);
-		if(id=="mcs-tab-content-{$block.snapping_id}"){
+		if(id=="mcs-block-grouping-content-{$block.snapping_id}"){
 			slider.reloadSlider();	
 		}
 	});
 
-	$("#mcs-accordion-content-{$block.snapping_id}").parent(".mcs-accordion-block").on("accordionactivate",function(event,ui){
+	$("#mcs-block-grouping-content-{$block.snapping_id}").parent(".mcs-accordion-grid").on("accordionactivate",function(event,ui){
 		slider.reloadSlider();
 	});
 	
