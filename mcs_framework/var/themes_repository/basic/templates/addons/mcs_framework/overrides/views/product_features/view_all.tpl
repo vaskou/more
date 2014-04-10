@@ -54,7 +54,10 @@
     {literal}
         <script>
             $(function(){
+				$(".mcs-list-filter ul li#li-ALL").addClass("active");
                 $(".mcs-list-filter ul li a").click(function(){
+					$(".mcs-list-filter ul li").removeClass("active");
+					$(this).parent("li").addClass("active");
                     id=$(this).parent("li").attr('id');
                     $(".mcs-brands-row").show();
                     if(id!="li-ALL"){

@@ -5,4 +5,17 @@
 	padding:10px;
 }
 
+/*Block grouping*/
+.mcs-tabs-grid .ui-tabs-nav{
+	border:1px solid #fff;
+}
+.mcs-tabs-grid .ui-tabs-nav > li{
+	float:none;
+	margin:0;
+}
+.mcs-tabs-grid .ui-tabs-anchor{
+	display:block;
+	float:none !important;	
+}
+
 }

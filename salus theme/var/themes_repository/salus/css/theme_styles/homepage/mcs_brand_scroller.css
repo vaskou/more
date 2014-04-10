@@ -4,22 +4,26 @@
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
-	padding:10px 0px;
-	left:0px;
+	padding:10px 9px;
+	left:-9px;
 	
+}
+[class^="mcs-brand-scroller-"] .brand-box{
+	border:none;
 }
 [class^="mcs-brand-scroller-"] .brand-box > a:hover{
 	text-decoration:none;
 }
-[class^="mcs-brand-scroller-"] .brand-image{
-	background-color:#fff;
-}
+[class^="mcs-brand-scroller-"] .brand-image,
 [class^="mcs-brand-scroller-"] .brand-image .no-image{
 	background-color:#fff;
+	border:none;
+	margin-bottom:5px;
 }
 [class^="mcs-brand-scroller-"] .brand-name{
 	display:block;
 	padding:10px;
+	border-top:1px solid;
 }
 [class^="mcs-brand-scroller-"] .brand-name:hover{
 	text-decoration:underline;

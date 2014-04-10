@@ -1,21 +1,25 @@
-.mcs-brands-page .mcs-list-filter ul li,
-.mcs-brands-page .mcs-list-filter ul li#li-ALL{
-	border-color: lighten(@base,25%);
+.mcs-brands-page .mcs-list-filter ul li{
+	border-color: lighten(@base,27%);
+	background-color:darken(@base, 3.6%);
 }
-.mcs-brands-page .mcs-brands-row > .subheader{
-	border-color: lighten(@base,25%);
+.mcs-brands-page .mcs-list-filter ul li a{
+	.mcs_text_color(darken(@base, 3.6%));
 }
-.mcs-brands-page .brand-box.with-image{
-	border-color: lighten(@base,25%);
+.mcs-brands-page .mcs-list-filter ul li.active,
+.mcs-brands-page .mcs-list-filter ul li:hover{
+	border-color:@decorative;
+	background-color:@decorative;
+}
+.mcs-brands-page .mcs-list-filter ul li.active a,
+.mcs-brands-page .mcs-list-filter ul li:hover a{
+	.mcs_text_color(@decorative);
 }
 .mcs-brands-page .brand-box.with-image:hover{
-	.drop-shadow(1px, 1px, 15px ,0 ,0.33);
-}
-.mcs-brands-page .brand-image{
-	border-color: lighten(@base,25%);
+	.drop-shadow(0px, 0px, 15px ,0px ,0.20);
 }
 .mcs-brands-page .brand-name{
 	color:@links;
+	border-color: lighten(@base,41%);
 }
 .mcs-brands-page .brand-url a{
 	color:darken(@font,15%);

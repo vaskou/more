@@ -189,13 +189,13 @@
                     </item>
 					<item id="mcs_product_tabs_width">
                         <type>input</type>
-                        <name>Vertical tabs width(px)</name>
+                        <name>Vertical tabs title width(px)</name>
                         <tooltip>Set the width of the tab titles in pixels, without the px.</tooltip>
 						<default_value>400</default_value>
                     </item>
 					<item id="mcs_product_tabs_margin">
                         <type>input</type>
-                        <name>Vertical tabs right margin</name>
+                        <name>Vertical tabs title right margin</name>
                         <tooltip>Set the width of the tab titles right margin in pixels, without the px.</tooltip>
 						<default_value>10</default_value>
                     </item>
@@ -248,7 +248,7 @@
 					<item id="mcs_button_icons_go_button">
                         <type>input</type>
                         <name>"Go" button icon</name>
-						<default_value>icon-arrow-right2</default_value>
+						<default_value>icon-arrow-right3</default_value>
 						<tooltip>Enter an icon name class for the 'Go' button (icon-right, icon-right2, icon-right3, icon-right4, icon-right5, icon-right6, icon-right7, icon-right8, icon-right9, icon-right10, icon-right11, icon-right12, icon-right13, icon-right14, icon-right15, icon-right16, icon-right17, icon-right18 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_sign_in">

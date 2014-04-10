@@ -18,6 +18,7 @@
 	vertical-align:middle;
 	font-size:120%;
 }
+.sidebox-body .text-links li.level-1:hover:before,
 .sidebox-body .text-links li.level-1.active:before{
 	font-family: 'icomoon';
 	speak: none;

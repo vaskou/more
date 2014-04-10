@@ -1,12 +1,10 @@
 .mcs_i_grid ul.products li.product .product-wrapper .thumb-discount-label{
-	top:123px;
-	opacity:1;
+	top:155px;
 }
 .mcs_i_grid .mcs_labels_wrapper{
 	position:absolute;
-	top:123px;
+	top:155px;
 	left:46px;
-	opacity:1;
 }
 .mcs_i_grid .mcs_label{
 	display:block;
@@ -18,13 +16,4 @@
 .mcs_i_grid .thumb-discount-label .label,
 .mcs_i_grid .mcs_label .label{
 	display:none;
-}
-
-.mcs_i_grid ul.products li.product:hover .thumb-discount-label,
-.mcs_i_grid ul.products li.product:hover .mcs_labels_wrapper{
-	opacity:0.4;
-	-webkit-transition:opacity 0.5s linear;
-	-moz-transition:opacity 0.5s linear;
-	-o-transition:opacity 0.5s linear;
-	transition:opacity 0.5s linear;
 }

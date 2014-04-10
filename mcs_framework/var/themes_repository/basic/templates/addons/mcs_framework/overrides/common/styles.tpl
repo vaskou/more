@@ -50,7 +50,6 @@
     {style src="theme_styles/homepage/mcs_slider.less"}
     {style src="theme_styles/homepage/mcs_brand_scroller.css"}
     {style src="theme_styles/homepage/mcs_brand_scroller.less"}
-    {style src="theme_styles/homepage/mcs_tab_blocks.css"}
     {style src="theme_styles/categories/mcs_products_grid.css"}
     {style src="theme_styles/categories/mcs_products_grid.less"}
     {style src="theme_styles/categories/mcs_side_menu.css"}
