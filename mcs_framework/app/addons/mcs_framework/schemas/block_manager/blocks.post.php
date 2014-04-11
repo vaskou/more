@@ -1,16 +1,5 @@
 <?php
-/***************************************************************************
-*                                                                          *
-*   (c) 2004 Vladimir V. Kalynyak, Alexey V. Vinokurov, Ilya M. Shalnev    *
-*                                                                          *
-* This  is  commercial  software,  only  users  who have purchased a valid *
-* license  and  accept  to the terms of the  License Agreement can install *
-* and use this program.                                                    *
-*                                                                          *
-****************************************************************************
-* PLEASE READ THE FULL TEXT  OF THE SOFTWARE  LICENSE   AGREEMENT  IN  THE *
-* "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
-****************************************************************************/
+
 $settings=array(
 /*********************GENERAL*******************************/
 	'mcs_generalSeparator'=>array(
@@ -67,14 +56,6 @@ $settings=array(
 		'default_value'=>'false',
 		'tooltip'=>'"Next" control will be hidden on last slide and vice-versa'
 	),
-	/*'mcs_useCSS'=>array(
-		'type'=>'selectbox',
-		'values'=>array(
-			'true'=>'CSS Transitions',
-			'false'=>'JS Transitions'
-		),
-		'default_value'=>'true'
-	),*/
 	'mcs_easing'=>array(
 		'type'=>'selectbox',
 		'values'=>array(
@@ -83,7 +64,6 @@ $settings=array(
 			'ease-in'=>'Ease-In',
 			'ease-out'=>'Ease-Out',
 			'ease-in-out'=>'Ease-In-Out',
-			
 			'swing'=>'swing',
 			'easeInQuad'=>'easeInQuad',
 			'easeOutQuad'=>'easeOutQuad',
@@ -673,7 +653,7 @@ $schema['mcs_social'] = array (
 	'content'=>array(
 		'social_icons' => array (
 			'type' => 'simple_text',
-			'tooltip' => 'Enter [icon name,URL,label] separated with comma and 1 per line.'
+			'tooltip' => 'For each social icon, enter [icon_name,URL,icon_label], 1 per line. Valid icon names are [mail, mail1, mail2 ,mail3, mail4, googleplus, google-plus, google-plus2, google-plus3, google-plus4, facebook, facebook2, facebook3, instagram, twitter, twitter2, twitter3, feed, feed2, feed3, feed4, youtube, youtube2, vimeo, flickr, flickr2, flickr3, flickr4, picassa, picassa2, dribbble, dribbble2, dribbble3, forsst, forsst2, devianart, devianart2, steam, steam2, github, github2, github3, github4, github5, wordpress, wordpress2, blogger, blogger2, tumblr, tumblr2, yahoo, soundcloud, soundcloud2, skype, reddit, linkedin, lastfm, lastfm2, delicious, stumbleupon, stumbleupon2, stackoverflow, pinterest, pinterest2, xing, xing2, flattr, foursquare, foursquare2, yelp]'
 		),
 	),
     'templates' => array (
@@ -682,12 +662,12 @@ $schema['mcs_social'] = array (
 				'text_pre'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML before social icons.'
+					'tooltip'=>'Type any HTML content that you want to appear before social icons.'
 				),
 				'text_post'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML after social icons.'
+					'tooltip'=>'Type any HTML content that you want to appear after social icons.'
 				),
 				'shape' => array (
                     'type' => 'selectbox',
@@ -695,17 +675,17 @@ $schema['mcs_social'] = array (
                         'square' => 'square',
                         'rounded' => 'rounded'
                     ),
-                    'tooltip' => 'Select square or rounded icons.',
+                    'tooltip' => 'Select square or rounded shape for the icons.',
                     'default_value' => 'square'
                 ),
 				'rotate' => array (
                     'type' => 'checkbox',
-                    'tooltip' => 'If enabled, a rotate effect will be applied on hover.',
+                    'tooltip' => 'If enabled, a rotate effect will be applied when the user hovers on each icon.',
                     'default_value' => 'Y'
                 ),
 				'tooltip' => array (
                     'type' => 'checkbox',
-                    'tooltip' => 'If enabled, a tooltip with the icon label will be shown.',
+                    'tooltip' => 'If enabled, a tooltip with the icon label will be shown when the user hovers on each icon.',
                     'default_value' => 'Y'
                 ),
 				'color' => array (
@@ -715,7 +695,8 @@ $schema['mcs_social'] = array (
                         'white' => 'white',
                         'black' => 'black'
                     ),
-                    'default_value' => 'color'
+                    'default_value' => 'color',
+                    'tooltip' => 'Select the color scheme of the icons. Colored icons have default color for each social networking service.'
                 ),
 				'colorhover' => array (
                     'type' => 'selectbox',
@@ -724,7 +705,8 @@ $schema['mcs_social'] = array (
                         'white' => 'white',
                         'black' => 'black'
                     ),
-                    'default_value' => 'color'
+                    'default_value' => 'color',
+                    'tooltip' => 'Select the color scheme when the user hovers on each icon.'
                 ),
 				'bg' => array (
                     'type' => 'selectbox',
@@ -734,7 +716,8 @@ $schema['mcs_social'] = array (
                         'black' => 'black',
                         'transparent' => 'transparent'
                     ),
-                    'default_value' => 'transparent'
+                    'default_value' => 'transparent',
+                    'tooltip' => 'Select the color scheme of the icons background.'
                 ),
 				'bghover' => array (
                     'type' => 'selectbox',
@@ -744,22 +727,23 @@ $schema['mcs_social'] = array (
                         'black' => 'black',
                         'transparent' => 'transparent'
                     ),
-                    'default_value' => 'transparent'
+                    'default_value' => 'transparent',
+                    'tooltip' => 'Select the color scheme of the icons background when the user hovers on each icon.'
                 ),
 				'size' => array (
                     'type' => 'input',
                     'default_value' => '64',
-                    'tooltip' => 'Enter the icon size in pixels.'
+                    'tooltip' => 'Enter the icon size in pixels (without px).'
                 ),
 				'border' => array (
                     'type' => 'input',
                     'default_value' => '0',
-                    'tooltip' => 'Enter border size in pixels.'
+                    'tooltip' => 'Enter border size in pixels (without px).'
                 ),
 				'padding' => array (
                     'type' => 'input',
                     'default_value' => '0',
-                    'tooltip' => 'Enter the icon padding in pixels. It should be lower than the icon size.'
+                    'tooltip' => 'Enter the icon padding in pixels (without px). It should be lower than the icon size.'
                 )
 			),
         ),
@@ -773,7 +757,7 @@ $schema['mcs_payment_icons'] = array (
 		'payment_icons' => array (
 			'type' => 'simple_text',
 			'default_value' => '',
-			'tooltip' => 'Enter the icons names, one per line (2checkout, amazon, americanexpress, chase, cirrus, delta, diners, directdebit, discover, ebay, etsy, eway, googlewallet, jcb, maestro, mastercard, moneybookers, paypal, sage, shopify, skrill, solo, switch, visa, visaelectron, westernunion, worldpay'
+			'tooltip' => 'Enter the icons names, one per line (2checkout, amazon, americanexpress, chase, cirrus, delta, diners, directdebit, discover, ebay, etsy, eway, googlewallet, jcb, maestro, mastercard, moneybookers, paypal, sage, shopify, skrill, solo, switch, visa, visaelectron, westernunion, worldpay)'
 		),
 	),
     'templates' => array (
@@ -782,12 +766,12 @@ $schema['mcs_payment_icons'] = array (
                 'text_pre'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML before payment icons.'
+					'tooltip'=>'Type any HTML content that you want to appear before the payment icons.'
 				),
 				'text_post'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML after payment icons.'
+					'tooltip'=>'Type any HTML content that you want to appear after the payment icons.'
 				),
 				'color' => array (
                     'type' => 'selectbox',
@@ -795,7 +779,8 @@ $schema['mcs_payment_icons'] = array (
                         'color' => 'Colored',
                         'bw' => 'black_and_white'
                     ),
-                    'default_value' => 'color'
+                    'default_value' => 'color',
+					'tooltip'=>'If Black and White, a greyscale filter will be applied to payment icons (Compatible only with modern browsers).'
                 ),
 				'hover' => array (
                     'type' => 'selectbox',
@@ -805,7 +790,8 @@ $schema['mcs_payment_icons'] = array (
                         'blur' => 'Blur',
                         'rotate' => 'Rotate'
                     ),
-                    'default_value' => 'color'
+                    'default_value' => 'color',
+					'tooltip'=>'Select an effect to apply when payment icons are hovered.'
                 ),
 				'size' => array (
                     'type' => 'selectbox',
@@ -814,7 +800,7 @@ $schema['mcs_payment_icons'] = array (
                         '64' => '64x40'
                     ),
                     'default_value' => '64',
-                    'tooltip' => 'Select the size in pixels'
+                    'tooltip' => 'Select one of the predefined sizes in pixels.'
                 ),
 				'alignment' => array (
                     'type' => 'selectbox',
@@ -824,7 +810,7 @@ $schema['mcs_payment_icons'] = array (
                         'right' => 'right'
                     ),
                     'default_value' => 'center',
-                    'tooltip' => 'Select the icons alignment inside the block'
+                    'tooltip' => 'Select the icons alignment inside the block.'
                 )
             ),
         )
@@ -840,12 +826,12 @@ $schema['mcs_contact_block'] = array (
 				'mcs_contact_block_text_pre'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML before contact information.'
+					'tooltip'=>'Type any HTML content that you want to appear before contact information.'
 				),
 				'mcs_contact_block_text_post'=>array(
 					'type'=>'text',
 					'default_value'=>'',
-					'tooltip'=>'HTML after contact information.'
+					'tooltip'=>'Type any HTML content that you want to appear after contact information.'
 				),
 				'mcs_contact_block_alignment' => array (
 					'type' => 'selectbox',
@@ -854,7 +840,7 @@ $schema['mcs_contact_block'] = array (
                         'vertical' => __('vertical')
                     ),
                     'default_value' => 'horizontal',
-					'tooltip'=>'Select the alignment of block content'
+					'tooltip'=>'Select the alignment of block content. If Vertical, the contact elements will be displayed one belowe the other. This setting is recommended for sidebox blocks.'
                 ),
 				'mcs_contact_block_text_alignment' => array (
 					'type' => 'selectbox',
@@ -864,7 +850,7 @@ $schema['mcs_contact_block'] = array (
                         'right' => __('right')
                     ),
                     'default_value' => 'center',
-					'tooltip'=>'Select the text alignment of block'
+					'tooltip'=>'Select the alignment of the text that is inside each contact element.'
                 ),
                 'mcs_contact_block_icons_size' => array (
                     'type' => 'selectbox',
@@ -876,122 +862,122 @@ $schema['mcs_contact_block'] = array (
 						'icon-4x'=>'4x size'
 					),
                     'default_value' =>'icon-default',
-					'tooltip'=>'Select the preferred size of the icons'
+					'tooltip'=>'Select the size of the contact elements icons.'
                 ),
 				'mcs_contact_block_text_color'=>array(
 					'type'=>'input',
 					'default_value'=>'#000000',
-					'tooltip'=>'Text color or color code.'
+					'tooltip'=>'Text color (i.e. white, red, green etc) or color code (i.e. #000000, #ffffff).'
 				),
 				'mcs_contact_block_link_color'=>array(
 					'type'=>'input',
 					'default_value'=>'#000000',
-					'tooltip'=>'Links color or color code.'
+					'tooltip'=>'Links (i.e. white, red, green etc) or color code (i.e. #000000, #ffffff).'
 				),
 				'mcs_contact_block_link_hover_color'=>array(
 					'type'=>'input',
 					'default_value'=>'#cccccc',
-					'tooltip'=>'Links hover color or color code.'
+					'tooltip'=>'Links hover (i.e. white, red, green etc) or color code (i.e. #000000, #ffffff).'
 				),
 				'mcs_contact_block_copyright'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show copyright sign'
+					'tooltip'=>'Show copyright © character.'
 				),
 				'mcs_contact_block_start_year'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company start year'
+					'tooltip'=>'Show company start year.'
 				),
 				'mcs_contact_block_name'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company name'
+					'tooltip'=>'Show company name.'
 				),
 				'mcs_contact_block_address'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company address'
+					'tooltip'=>'Show company address.'
 				),
 				'mcs_contact_block_address_link'=>array(
 					'type'=>'input',
 					'default_value'=>'',
-					'tooltip'=>'Link to company address map, i.e. a link to a google map'
+					'tooltip'=>'Link to a map, i.e. a link to a Google Map'
 				),
 				'mcs_contact_block_zipcode'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company zipcode'
+					'tooltip'=>'Show company zipcode.'
 				),
 				'mcs_contact_block_city'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company city'
+					'tooltip'=>'Show company city.'
 				),
 				'mcs_contact_block_state'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company state'
+					'tooltip'=>'Show company state.'
 				),
 				'mcs_contact_block_country'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company country'
+					'tooltip'=>'Show company country.'
 				),
 				'mcs_contact_block_phone'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company phone'
+					'tooltip'=>'Show company phone.'
 				),
 				'mcs_contact_block_phone_2'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company mobile'
+					'tooltip'=>'Show company mobile.'
 				),
 				'mcs_contact_block_fax'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company fax'
+					'tooltip'=>'Show company fax.'
 				),
 				'mcs_contact_block_skype'=>array(
 					'type'=>'input',
 					'default_value'=>'',
-					'tooltip'=>'Skype name'
+					'tooltip'=>'Skype name.'
 				),
 				'mcs_contact_block_website'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company website'
+					'tooltip'=>'Show company website.'
 				),
 				'mcs_contact_block_users_department'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company users department email'
+					'tooltip'=>'Show company users department email.'
 				),
 				'mcs_contact_block_site_administrator'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company administrator email'
+					'tooltip'=>'Show company administrator email.'
 				),
 				'mcs_contact_block_orders_department'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company orders department email'
+					'tooltip'=>'Show company orders department email.'
 				),
 				'mcs_contact_block_support_department'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company support department email'
+					'tooltip'=>'Show company support department email.'
 				),
 				'mcs_contact_block_newsletter_email'=>array(
 					'type'=>'checkbox',
 					'default_value'=>'Y',
-					'tooltip'=>'Show company newsletter email'
+					'tooltip'=>'Show company newsletter email.'
 				),
 				'mcs_contact_block_form_link'=>array(
 					'type'=>'input',
 					'default_value'=>'',
-					'tooltip'=>'Link to contact form page.'
+					'tooltip'=>'A link to your contact form page.'
 				)
 			),
         ),

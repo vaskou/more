@@ -11,6 +11,7 @@
 {if $block.properties.mcs_moveSlides==""}{$block.properties.mcs_moveSlides=0}{/if}
 {if $block.properties.mcs_slideWidth==""}{$block.properties.mcs_slideWidth=0}{/if}
 
+{if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 {if $items}
 <div class="mcs_slider_{$block.snapping_id}" {if $block.properties.mcs_slideWidth!=0}style="max-width:{$block.properties.mcs_slideWidth}px;margin:auto;"{/if}>
 	<ul class="bxslider" id="bxslider_{$block.snapping_id}">
@@ -159,4 +160,10 @@ $(document).ready(function(){
 </script>
 
 </div>   
+{/if}
+
+{else}
+	<div class="mcs-warning">
+    	<h1 class="error-text"><i class="icon-warning"></i> You must enable the bxSlider from More CS-Cart Framework.</h1>
+    </div>
 {/if}

@@ -8,8 +8,8 @@
 
 
 
-{if $grid.alpha}<div class="{if $layout_data.layout_width != "fixed"}row-fluid {else}row{/if}">{/if}
-    <div class="span{$fluid_width|default:$grid.width}{if $grid.offset} offset{$grid.offset}{/if} {$grid.user_class} {if $grid.full_width==Y}mcs-full-width{/if} {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}" {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}>
+{if $grid.alpha}<div class="{if $layout_data.layout_width != "fixed"}row-fluid {else}row{/if} {if $grid.full_width==Y}mcs-full-width{/if}">{/if}
+    <div class="span{$fluid_width|default:$grid.width}{if $grid.offset} offset{$grid.offset}{/if} {$grid.user_class}  {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}" {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}>
         {if $grid.status == "A" && $content}
             {$content nofilter}
         {/if}
@@ -68,7 +68,7 @@
 {if $grid.omega}</div>{/if}
 
 {*********************************************MCS changes****************************************************}
-{*Line		12: Added {if $grid.full_width==Y}mcs-full-width{/if}											*}
+{*Line		11: Added {if $grid.full_width==Y}mcs-full-width{/if}											*}
 {*Line		12: Added {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}	*}
 {*Line		12: Added {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}					*}
 {*Lines	 16-31: Added lines 16-31																			*}

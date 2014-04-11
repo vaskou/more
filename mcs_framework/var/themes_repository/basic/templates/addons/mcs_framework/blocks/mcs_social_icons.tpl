@@ -1,3 +1,5 @@
+{if $addons.mcs_framework.mcs_icomoon=='Y'}
+
 {assign var=icons value="\n"|explode:$block.content.social_icons}
 {assign var=border value=$block.properties.border}
 
@@ -30,4 +32,10 @@
 
 {if $block.properties.text_post!=""}
 <div class="text_post">{$block.properties.text_post nofilter}</div>
+{/if}
+
+{else}
+	<div class="mcs-warning">
+    	<h1 class="error-text"><i class="icon-warning"></i> You must enable IcoMoon libraries from More CS-Cart Framework,  in order the "More CS-Cart Social Icons" block to work.</h1>
+    </div>
 {/if}

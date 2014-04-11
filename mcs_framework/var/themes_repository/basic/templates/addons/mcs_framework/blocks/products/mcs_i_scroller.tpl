@@ -1,6 +1,7 @@
 {** block-description:mcs_i_scroller **}
 {*style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'*}
 
+{if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 {if $items}
 	{if $block.properties.show_price == "Y"}
         {assign var="hide_price" value=false}
@@ -197,4 +198,10 @@ $(document).ready(function(){
 </script>
 
 </div>
+{/if}
+
+{else}
+	<div class="mcs-warning">
+    	<h1 class="error-text"><i class="icon-warning"></i> You must enable the bxSlider from More CS-Cart Framework, in order the "More CS-Cart Scroller I" block to work..</h1>
+    </div>
 {/if}

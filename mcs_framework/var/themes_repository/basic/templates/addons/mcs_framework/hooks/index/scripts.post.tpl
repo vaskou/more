@@ -3,7 +3,6 @@
 <script>
 $(function(){
 //countCSSRules();
-	$(".mcs-full-width").parent().css({"max-width":"100%","padding-left":"0","padding-right":"0"});	
 });
 function deviceType(){
 	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};

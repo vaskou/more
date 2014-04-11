@@ -1,5 +1,6 @@
 {** block-description:mcs_brand_scroller **}
 
+{if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 {if $items}
 <div class="mcs-brand-scroller-{$block.snapping_id}">
     <ul id="brands_{$block.snapping_id}">
@@ -129,4 +130,10 @@ $(document).ready(function(){
 });
 </script>
 </div>
+{/if}
+
+{else}
+	<div class="mcs-warning">
+    	<h1 class="error-text"><i class="icon-warning"></i> You must enable the bxSlider from More CS-Cart Framework, in order the "More CS-Cart Brand Scroller" block to work.</h1>
+    </div>
 {/if}
