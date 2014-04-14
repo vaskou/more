@@ -1,0 +1,58 @@
+.tygh-footer .cta-grid,
+.tygh-footer .social-grid,
+.tygh-footer .company-grid{
+	padding-top:40px;
+	padding-bottom:40px;
+	border-bottom:1px dashed;
+}
+.tygh-footer #mcs_payment_icons{padding:10px 0px;}
+.tygh-footer .mcs_contact_block{padding:10px 0px;}
+
+/*My account block*/
+.footer-wrapper-title a i{
+	margin-right:10px;	
+}
+.footer-wrapper-title > i{
+	display:none;
+}
+.footer-wrapper-body .updates-wrapper.track-orders
+{
+	border:0;
+	margin:0;
+	padding:0;
+
+}
+.footer-wrapper-body .buttons-container{
+	border:0;
+	padding:15px 0;
+}
+.footer-wrapper-body p.text-track {
+	font-weight: normal;
+}
+
+/*Subscribe block*/
+.footer-wrapper-body .subscribe-block p{
+	display:none;
+}
+.footer-wrapper-body p.subscribe-notice{
+	display:block;
+	font-size:100%;
+	margin:0;
+}
+
+/*Contact Block*/
+.mcs_contact_block a.link.phone {
+	background: #8CD15E;
+}
+.mcs_contact_block a.link.fax {
+	background: #1f6f8a;
+}
+.mcs_contact_block a.link.map {
+	background: #777777;
+}
+.mcs_contact_block a.link.form {
+	background: #fe9900;
+}
+.mcs_contact_block .emails-wrapper a.link {
+	background: #009ed6;
+}

@@ -63,6 +63,8 @@
     {style src="theme_styles/pages/mcs_pages_side_menu.css"}
     {style src="theme_styles/pages/mcs_pages_side_menu.less"}
     {style src="theme_styles/mcs_labels/mcs_labels.css"}
+    {style src="theme_styles/footer/mcs_footer.css"}
+    {style src="theme_styles/footer/mcs_footer.less"}
     
     {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
         {style src="theme_styles/mcs_general_styles.resp.css"}

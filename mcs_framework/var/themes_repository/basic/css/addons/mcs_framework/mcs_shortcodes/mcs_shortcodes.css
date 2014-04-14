@@ -1,3 +1,120 @@
+/**************************************** youtube,vimeo *********************************************************/
+.sc.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+.sc.video-container iframe,
+.sc.video-container object,
+.sc.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/**************************************** Button *********************************************************/
+.sc.button{
+	margin:5px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	color:#fff;
+	border:1px solid transparent;
+}
+
+.sc.button span i{
+	color:#fff;
+}
+
+.sc.button span i{
+	color:#fff;
+}
+a.sc.button:hover{
+	text-decoration:none!important;
+}
+.sc.button:hover{
+	background-color:#fff!important;
+}
+
+.sc.button.display-block{
+	display:block!important;
+}
+
+.sc.button.large span {
+	padding: 0 18px;
+	line-height: 2.7em;
+	font-size:18px;
+}
+
+.sc.button.large span i {
+	margin-right:18px;
+}
+
+.sc.button.medium span {
+	padding: 0 16px;
+	line-height: 2.5em;
+	font-size:16px;
+} 
+.sc.button.medium span i {
+	margin-right:16px;
+}
+
+.sc.button.small span {
+	padding: 0 14px;
+	line-height: 2.3em;
+}
+.sc.button.small span i {
+	margin-right:14px;
+}
+
+/**************************************** calltoaction *********************************************************/
+.sc.cta.box{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}
+.sc.cta.box .inner a.button span{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
+
+.sc.cta.box span{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.sc.cta.box.dark span{background-color:#ffffff;}
+.sc.cta.box.dark span{color:#000000;}
+
+.sc.cta.box.dark .text h2{color:#ffffff;}
+.sc.cta.box.dark .text p{color:#eeeeee;}
+
+.sc.cta.box.light{background-color:#ffffff;}
+.sc.cta.box.light span{color:#ffffff;}
+.sc.cta.box.light span:hover{color:#000000;}
+
+.sc.cta.box.transparent span{color:#ffffff;}
+.sc.cta.box.transparent span:hover{color:#000000;}
+
+
+.sc.cta.box .inner a i {margin-right:10px;}
+
+.sc.cta.box .inner a.button {
+	display: inline-block;
+	position:relative;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.sc.cta.box .inner a.button:hover{
+	text-decoration:none;
+}
+.sc.cta.box span {
+	padding: 5px 15px;
+}
+.sc.cta.box .inner .text {
+	display: inline;
+}
+.sc.cta.box .inner .text h2,.sc.cta.box .inner .text p {
+	text-align:right;
+}
+
 .iconcta.sc i{display:block;}
 
 .iconcta.sc i{
@@ -135,3 +252,44 @@
 .imagecta.brighten img:hover {
   -webkit-filter: brightness(100%);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*General classes*/
+.css3-transition-all,
+.css3-transition-all i{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+
+
+
+
+
