@@ -74,11 +74,5 @@
  
     };
 	
-	/*$.fn.hover_hide.disable=function(elm){
-		console.log(elm)
-		$(".product-meta").show();
-		elm.removeClass('hover_hide');
-		
-	};*/
 	
 }(jQuery));

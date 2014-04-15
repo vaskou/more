@@ -1,13 +1,10 @@
-.mcs-main-page .mainbox-container{
-	margin-bottom:20px;
-}
-
 .homepage-banners{
 	margin-top:0;
 }
 
 .mcs-homepage-cta-grid{
-	margin-bottom:20px !important;
+	margin-top:20px;
+	margin-bottom:20px;
 }
 
 /*Welcome message*/

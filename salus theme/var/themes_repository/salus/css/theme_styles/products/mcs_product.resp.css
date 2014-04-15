@@ -31,4 +31,19 @@
 	display:block;
 	margin:0px !important;
 }
+
+/* Addon Buy together*/
+.chain-product,
+.chain-plus{
+	display:block;
+	width:100%;
+}
+.chain-plus{
+	margin:0;
+	text-align:center;
+}
+.chain-price{
+	display:block;
+}
+
 }

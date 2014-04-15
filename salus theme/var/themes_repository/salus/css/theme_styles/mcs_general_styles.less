@@ -70,15 +70,33 @@ h1.mainbox-title{
 	padding-left:10px;
 }
 
+/*Pop up dialog */
 .ui-dialog .ui-dialog-titlebar, 
 .step-title-active span.float-left, 
 .notification-content-extended h1, 
 .cm-paging-dots a.active i, 
 .cm-paging-dots a.active:hover i {
-	background:@decorative;
+	background:#fff;
 	filter:none;
 }
 
+div.ui-dialog .ui-dialog-title,
+.ui-widget-header .ui-icon-closethick,
+.notification-content-extended h1,
+.notification-content-extended h1 span{
+	.mcs_text_color(#fff);
+}
+.ui-widget-header .ui-dialog-titlebar-close.ui-state-hover span:before,
+.notification-content-extended h1 span:hover {
+	color:lighten(#000, 50%);
+}
+.product-notification-body,
+.product-notification-buttons,
+.object-container{
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+}
 /************************ buttons ********************************/
 .mcs_i_grid .mcs-wishlist .button-action.button-wrap-left{
 	background:transparent;
@@ -162,4 +180,16 @@ h1.mainbox-title{
 
 .input-append .input-text{
 	.border-radius(0);
+}
+
+/*Default carousel*/
+.owl-theme .owl-controls .owl-page span.owl-numbers,
+.owl-theme .owl-controls .owl-buttons div{
+	.border-radius(0);
+}
+
+/*no-items*/
+.no-items{
+	.mcs_no_shadow;
+	.mcs_no_text_shadow;
 }

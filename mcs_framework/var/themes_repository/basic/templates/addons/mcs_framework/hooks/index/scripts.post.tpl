@@ -58,11 +58,15 @@ function deviceType(){
     <script>
     $(function(){
         enquire.register("screen and (min-width:{/literal}{$layout_data.max_width + 1}{literal}px)",[
-                fixed_menu_over_handler
+				{/literal}{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}{literal}
+                	fixed_menu_over_handler
+				{/literal}{/if}{literal}
             ]
         );
         enquire.register("screen and (max-width:{/literal}{$layout_data.max_width}{literal}px)",[
-                fixed_menu_under_handler
+                {/literal}{if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}{literal}
+					fixed_menu_under_handler
+				{/literal}{/if}{literal}
             ]
         );
 		enquire.register("screen and (min-width:768px)",[
