@@ -8,10 +8,10 @@
 {style src="addons/mcs_framework/resets/sorting_reset.less"}
 {style src="addons/mcs_framework/resets/general_reset.less"}
 {style src="addons/mcs_framework/mcs_general_styles.less"}
-{style src="addons/mcs_framework/resets/product_filter_icons.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 
 {if $addons.mcs_framework.mcs_icomoon=='Y'}
+	{style src="addons/mcs_framework/resets/product_filter_icons.less"}
 	{style src="addons/mcs_framework/mcs_font_icons/icomoon/style.css"}
     {style src="addons/mcs_framework/mcs_font_icons/overrides.css"}
 {/if}
@@ -31,7 +31,7 @@
 	<style>
 		{literal}
 		@media (min-width:768px){
-			.tabs{
+			.products_view .tabs{
 				width:{/literal}{$addons.mcs_framework.mcs_product_tabs_width}{literal}px;
 				margin-right:{/literal}{$addons.mcs_framework.mcs_product_tabs_margin}{literal}px;
 			}

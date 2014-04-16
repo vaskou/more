@@ -48,6 +48,40 @@ h1.mainbox-title{
 	background-color:@decorative;
 }
 
+/*Sidebox general*/
+
+.sidebox-wrapper .sidebox-title{
+	background:@sidebar;
+	filter:none;
+}
+.sidebox-wrapper .sidebox-title,
+.sidebox-wrapper .sidebox-body {
+	border:none;
+	box-shadow:none;
+	background-color:@sidebar;
+}
+
+.sidebox-wrapper .sidebox-body{
+	.mcs_sidebox_text(@sidebar);
+}
+
+/*Sidebox important*/
+
+.sidebox-important-wrapper .sidebox-title{
+	background:@decorative;
+	filter:none;
+}
+.sidebox-important-wrapper .sidebox-title,
+.sidebox-important-wrapper .sidebox-body {
+	border:none;
+	box-shadow:none;
+	background-color:@decorative;
+}
+
+.sidebox-important-wrapper .sidebox-body{
+	.mcs_sidebox_text(@decorative);
+}
+
 /*Search results page*/
 .section-title {
 	background: lighten(@base,41%);
@@ -71,8 +105,7 @@ h1.mainbox-title{
 }
 
 /*Pop up dialog */
-.ui-dialog .ui-dialog-titlebar, 
-.step-title-active span.float-left, 
+.ui-dialog .ui-dialog-titlebar,
 .notification-content-extended h1, 
 .cm-paging-dots a.active i, 
 .cm-paging-dots a.active:hover i {
@@ -192,4 +225,54 @@ div.ui-dialog .ui-dialog-title,
 .no-items{
 	.mcs_no_shadow;
 	.mcs_no_text_shadow;
+}
+
+/*Checkout*/
+.step-title-active{
+	background:@decorative;
+	filter:none;
+	border-color:@decorative;
+	.drop-shadow(0,0,0,0,0);
+}
+.step-title-active span.float-left{
+	.mcs_neg_background_color(@decorative);
+	color:@decorative;
+}
+.step-title-active .title{
+	.mcs_text_color(@decorative);
+}
+
+.step-title-complete{
+	.mcs_neg_background_color(@decorative);
+}
+.step-title-complete span.float-left{
+	.mcs_neg_background_color(@decorative);
+	color:@decorative;
+}
+h2.step-title-complete a.title,
+h2.step-title-complete a.title:hover{
+	.mcs_neg_text_color(@decorative);
+}
+.step-title-complete .button-tool a, 
+.step-title-complete .button-tool a:visited{
+	color:@decorative;
+}
+
+.step-title{
+	.mcs_neg_background_color(@decorative);
+}
+.step-title span.float-left{
+	background:@decorative;
+	.mcs_text_color(@decorative);
+}
+.step-title span.title,
+.step-title a.title{
+	.mcs_neg_text_color(@decorative);
+}
+
+.step-title,
+.step-title-active,
+.step-title-complete{
+	.border-radius(0);
+	border-color:lighten(@base,41%);
 }

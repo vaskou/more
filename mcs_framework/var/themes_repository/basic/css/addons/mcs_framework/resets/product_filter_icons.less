@@ -34,21 +34,20 @@
     display: none;
 }
 
-.no-touch .product-filters li a.filter-item.checked:hover,
-.no-touch .product-filters li a.filter-item.checked.disabled:hover,
-.no-touch .product-filters li a.filter-item.checked:hover .mcs-cancel-icon,
-.no-touch .product-filters li a.filter-item.checked.disabled:hover .mcs-cancel-icon{
-	color:red;
-}
 .product-filters li a.filter-item.checked,
 .sidebox-body .product-filters li a.filter-item.checked,
 .no-touch .product-filters li a.filter-item:hover,
 .product-filters li a.filter-item.checked .mcs-ok-icon,
 .no-touch .product-filters li a.filter-item:hover .mcs-ok-icon,
 .no-touch .product-filters li a.filter-item:hover .details{
-	color:@decorative;
+	color:@decorative !important;
 }
-
+.no-touch .product-filters li a.filter-item.checked:hover,
+.no-touch .product-filters li a.filter-item.checked.disabled:hover,
+.no-touch .product-filters li a.filter-item.checked:hover .mcs-cancel-icon,
+.no-touch .product-filters li a.filter-item.checked.disabled:hover .mcs-cancel-icon{
+	color:red !important;
+}
 
 .product-filters li{
 	padding:2px 0 8px;

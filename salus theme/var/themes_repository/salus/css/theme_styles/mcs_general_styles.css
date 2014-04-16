@@ -157,3 +157,21 @@ h1.mainbox-title{
 .owl-theme .owl-controls {
 	margin: 5px 0;
 }
+
+/*Store locator (Addon)*/
+.store-location-wrapper{
+	margin-bottom:20px;
+}
+
+/*Checkout*/
+.checkout_checkout .mainbox-container,
+.sidebox-wrapper.order-summary{
+	margin-top:15px;
+}
+.mainbox-title .secure-page-title{
+	margin:0;
+}
+.mainbox-title .secure-page-title .icon-lock{
+	margin-left:10px;
+	font-size:70%;
+}

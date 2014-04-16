@@ -179,9 +179,24 @@
 .mcs_text_color (@b) when (lightness(@b) < 70%) {
 	color: lighten(@b, 100%);
 }
+.mcs_neg_text_color (@b) when (lightness(@b) >= 30%) {
+	.mcs_text_color(darken(@b, 100%));
+}
+.mcs_neg_text_color (@b) when (lightness(@b) < 70%) {
+	.mcs_text_color(lighten(@b, 100%));
+}
 .mcs_no_shadow{
 	-webkit-box-shadow:none;
 	-moz-box-shadow:none;
 	box-shadow:none;
+}
+
+.mcs_neg_background_color (@b) when (lightness(@b) >= 30%) {
+	background: darken(@b, 100%);
+	filter:none;
+}
+.mcs_neg_background_color (@b) when (lightness(@b) < 70%) {
+	background: lighten(@b, 100%);
+	filter:none;
 }
 /***************************************************************************************/

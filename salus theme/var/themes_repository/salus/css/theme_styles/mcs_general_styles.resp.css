@@ -18,4 +18,15 @@
 	float:none !important;	
 }
 
+/*Store locator (Addon)*/
+.store-location-wrapper{
+	margin:0;
+	float:none;
+	width:100%;
+	box-sizing:border-box;
+}
+.store-location{
+	padding-left:0;
+}
+
 }
