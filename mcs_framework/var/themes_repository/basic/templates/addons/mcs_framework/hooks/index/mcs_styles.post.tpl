@@ -3,10 +3,11 @@
 {/if}
 
 {style src="addons/mcs_framework/mcs_general_less_rules.less"}
-{style src="addons/mcs_framework/resets/button_reset.less"}
-{style src="addons/mcs_framework/resets/popup_dropbox_reset.less"}
-{style src="addons/mcs_framework/resets/sorting_reset.less"}
-{style src="addons/mcs_framework/resets/general_reset.less"}
+{**style src="addons/mcs_framework/resets/button_reset.less"**}
+{**style src="addons/mcs_framework/resets/popup_dropbox_reset.less"**}
+{**style src="addons/mcs_framework/resets/sorting_reset.less"**}
+{**style src="addons/mcs_framework/resets/general_reset.less"**}
+{style src="addons/mcs_framework/mcs_general_styles.css"}
 {style src="addons/mcs_framework/mcs_general_styles.less"}
 {style src="addons/mcs_framework/mcs_font_icons/core.css"}
 
@@ -80,9 +81,12 @@
 
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_general_styles.resp.css"}
+    {style src="addons/mcs_framework/mcs_general_styles.resp.less"}
     {style src="addons/mcs_framework/mcs_i_grid/mcs_i_grid.resp.css"}
-    {style src="addons/mcs_framework/mcs_cart_page/mcs_cart_page.resp.css"}
-    {style src="addons/mcs_framework/mcs_checkout_page/mcs_checkout_page.resp.css"}
+    {style src="addons/mcs_framework/cart_page/cart_page.resp.css"}
+    {**style src="addons/mcs_framework/mcs_cart_page/mcs_cart_page.resp.css"**}
+    {style src="addons/mcs_framework/checkout_page/checkout_page.resp.css"}
+    {**style src="addons/mcs_framework/mcs_checkout_page/mcs_checkout_page.resp.css"**}
     {style src="addons/mcs_framework/mcs_quick_view/mcs_quick_view.resp.css"}
     {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.css"}
     {style src="addons/mcs_framework/mcs_product_tabs/mcs_tabs.resp.less"}

@@ -1,0 +1,45 @@
+/*General*/
+.valign{
+	vertical-align:middle !important;
+}
+.tygh-top-panel > div{
+	height:auto;
+}
+/*Default banner block*/
+.ad-container>img{width:100%;height:auto;}
+
+/*Product page*/
+.product-details:after{
+	display:table;
+	content:"";
+	line-height:0;
+	clear:both;
+}
+
+/*Popup*/
+div.ui-front{
+	z-index:1500 !important;
+}
+
+/*mcs Warning*/
+.mcs-warning{
+	margin:auto;
+	background-color:#fff;
+	padding:20px;
+	box-sizing:border-box;
+}
+
+/*mcs_footer_wrapper*/
+.footer-wrapper-title{
+	margin:10px 0;
+	font-size:150%;
+}
+
+/*Onclick-dropdown wrapper*/
+.dropdown-box .icon-down-micro{
+	position:relative;
+	top:0;
+	right:0;
+	vertical-align:middle;
+}
+

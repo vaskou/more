@@ -31,7 +31,7 @@
 {/hook}
 {/styles}
 
-{styles use_scheme=true}
+{*styles use_scheme=true}
 	{style src="theme_styles/mcs_general_less_rules.less"}
     {style src="theme_styles/mcs_general_styles.css"}
     {style src="theme_styles/mcs_general_styles.less"}
@@ -82,4 +82,4 @@
         {style src="theme_styles/products/mcs_product.resp.css"}
     {/if}
     {literal}<style>.zxcasd{display:none;}</style>{/literal}
-{/styles}
+{/styles*}
