@@ -22,15 +22,6 @@
 	display:inline-block;
 }
 
-.button-submit-action.button-wrap-left, 
-.button-submit.button-wrap-left, 
-.button-action.button-wrap-left, 
-.button.button-wrap-left, 
-.button-submit-big.button-wrap-left, 
-.button-big.button-wrap-left {
-	border: none;
-}
-
 /*Mainbox general*/
 .mainbox-container{
 	background:#fff;

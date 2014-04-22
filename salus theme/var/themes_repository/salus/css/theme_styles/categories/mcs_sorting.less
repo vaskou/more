@@ -2,6 +2,7 @@
 	background:lighten(@base,41%);
 	filter:none;
 	border-color:lighten(@base,41%);
+	.border-radius(0px);
 }
 .sort-dropdown a{
 	.mcs_text_color(lighten(@base,41%));
@@ -15,6 +16,7 @@
 	border-color: @decorative;
 	background:lighten(@base,41%);
 	filter:none;
+	.drop-shadow(0,0,0,0,0);
 }
 .sort-dropdown.open a i, .sort-dropdown:hover a i{
 	background:@decorative;
@@ -29,10 +31,14 @@
 	background:lighten(@base,41%);
 	filter:none;
 }
+.views-icons a{
+	.border-radius(0px);
+}
 .views-icons a.active{
 	background:darken(@base, 3.6%);
 	filter:none;
 	border-color:lighten(@base,27%);
+	.drop-shadow(0,0,0,0,0);
 }
 .views-icons a.active i{
 	.mcs_text_color(darken(@base, 3.6%));
@@ -42,11 +48,17 @@
 	border-color:@decorative;
 	background:@decorative;
 	filter:none;
+	.drop-shadow(0,0,0,0,0);
 }
 .views-icons a:hover i{
 	.mcs_text_color(@decorative);
 }
-
+.sort-dropdown, 
+.sort-dropdown a, 
+.views-icons .active, 
+.views-icons > a:hover {
+	.mcs_no_text_shadow;
+}
 .pagination a, .pagination a:active, .pagination-selected-page {
 	.border-radius(0px);
 }

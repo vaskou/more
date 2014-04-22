@@ -1,4 +1,4 @@
-.product-main-info .product-info h1{
+.product-main-info .product-info h1.mainbox-title{
 	padding:10px;
 	margin:10px 0;
 }
@@ -86,8 +86,6 @@
 }
 .product-main-info .add-buttons-wrap {
 	width: auto;
-	vertical-align: middle;
-	display:inline-block;
 }
 
 .product-main-info .add-to-wish,

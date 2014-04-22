@@ -172,10 +172,6 @@
 .mcs_i_grid .quick-view{
 	visibility:visible;
 }
-.mcs_i_grid .mcs-wishlist > div > span span{
-	padding:0;
-}
-
 
 /********************Wishlist remove button**************************/
 .mcs_i_grid ul.products li.product:hover .remove{

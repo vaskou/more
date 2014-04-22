@@ -130,59 +130,95 @@ div.ui-dialog .ui-dialog-title,
 	border-right:none;
 	border-bottom:none;
 }
+
 /************************ buttons ********************************/
-.mcs_i_grid .mcs-wishlist .button-action.button-wrap-left{
-	background:transparent;
+
+.button-submit-action.button-wrap-left,
+.button-submit.button-wrap-left,
+.button-action.button-wrap-left,
+.button.button-wrap-left, 
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left {
+	.border-radius (0px);
+}
+.go-button {
+	.border-radius (0);
+}
+.button-submit.button-wrap-left,
+.button.button-wrap-left,
+.go-button {
+	background:@secondary_button;
 	filter:none;
 	.inner-shadow (0, 0, 0, 0, 0);
+	border-color:@secondary_button;
+	.button_text (@secondary_button);
+	.mcs_no_text_shadow;
 }
-
-.mcs_i_grid .mcs-wishlist i,
-.mcs_i_grid .mcs-wishlist a,
-.mcs_i_grid .mcs-wishlist .button-action.button-wrap-left i,
-.mcs_i_grid .mcs-wishlist .button-action.button-wrap-left a{
-	color:@decorative;
+.button-submit.button-wrap-left:hover,
+.button.button-wrap-left:hover,
+.go-button:hover  {
+	background:@secondary_button;
+	filter:none;
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color: @secondary_button;
 }
-
+.button-submit.button-wrap-left:hover:active,
+.button.button-wrap-left:hover:active,
+.go-button:active {
+	background:darken(@secondary_button, 5%);
+	filter:none;
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+	border-color: darken(@secondary_button, 5%);
+}
+.button-action.button-wrap-left, 
+.button-submit-action.button-wrap-left,
+.button-submit-big.button-wrap-left,
+.button-big.button-wrap-left,
+.mcs_i_grid .mcs-wishlist span {
+	background:@primary_button;
+	filter:none;
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color: @primary_button;
+}
 .button-action.button-wrap-left:hover, 
 .button-submit-action.button-wrap-left:hover,
 .button-submit-big.button-wrap-left:hover,
 .button-big.button-wrap-left:hover,
-.mcs_i_grid .mcs-wishlist > div > span:hover {
-	.gradient (@decorative, @decorative);
-	border-color:darken(@decorative, 16%);
+.mcs_i_grid .mcs-wishlist span:hover {
+	background:@primary_button;
+	filter:none;
+	.inner-shadow (0, 0, 0, 0, 0);
+	border-color: @primary_button;
 }
 .button-action.button-wrap-left:hover:active, 
 .button-submit-action.button-wrap-left:hover:active,
 .button-submit-big.button-wrap-left:hover:active,
 .button-big.button-wrap-left:hover:active,
-.mcs_i_grid .mcs-wishlist > div > span:hover:active {
-	.gradient (@decorative, @decorative);
-	border-color: darken(@decorative, 16%);
+.mcs_i_grid .mcs-wishlist span:hover:active {
+	background:darken(@primary_button,5%);
+	filter:none;
+	.inner-shadow-dark (0, 0, 0, 0, 0);
+	border-color: darken(@primary_button, 5%);
 }
 
-.button-submit-action.button-wrap-left:hover,
-.button-action.button-wrap-left:hover,
-.qv-buttons-container .button-action.button-wrap-left:hover,
-.buttons-container .button-action.button-wrap-left:hover,
-.buttons-container-item .button-action.button-wrap-left:hover,
-.button-submit-big.button-wrap-right:hover,
-.sidebox-body .button-action.button-wrap-left:hover,
-.button-big.button-wrap-left:hover,
-.mcs_i_grid .mcs-wishlist > div > span:hover,
-.button-submit-action.button-wrap-left:hover:active,
-.button-action.button-wrap-left:hover:active,
-.qv-buttons-container .button-action.button-wrap-left:hover:active,
-.buttons-container .button-action.button-wrap-left:hover:active,
-.buttons-container-item .button-action.button-wrap-left:hover:active,
-.button-submit-big.button-wrap-right:hover:active,
-.sidebox-body .button-action.button-wrap-left:hover:active,
-.button-big.button-wrap-left:hover:active,
-.mcs_i_grid .mcs-wishlist > div > span:hover:active {
-	.button_text (@decorative);
+.button-submit-action.button-wrap-left,
+.button-action.button-wrap-left,
+.qv-buttons-container .button-action.button-wrap-left,
+.buttons-container .button-action.button-wrap-left,
+.buttons-container-item .button-action.button-wrap-left,
+.button-submit-big.button-wrap-right,
+.sidebox-body .button-action.button-wrap-left,
+.button-big.button-wrap-left,
+.mcs_i_grid .mcs-wishlist span {
+	.button_text (@primary_button);
 	.mcs_no_text_shadow;
 }
 
+.go-button i{
+	position:relative;
+	top:0;
+	left:0;
+}
 .mcs_i_grid .mcs-wishlist a:hover{
 	text-decoration:none;
 }
@@ -196,6 +232,23 @@ div.ui-dialog .ui-dialog-title,
 .mcs-button:hover{
 	text-decoration:none;
 	.mcs_button_text_color(#000);
+}
+
+/********************* buttons-container reset ***********************/
+.buttons-container, 
+.buttons-container-item, 
+.checkout-buttons, 
+.ui-dialog .ui-dialog-content, 
+.product-notification-buttons, 
+.box, 
+.buttons-container.wrap, 
+.login .body-bc, 
+.details-block-box, 
+.entry-page-countries li a:hover, 
+.pagination-helper-container {
+	background: transparent;
+	padding-left:0;
+	padding-right:0;
 }
 
 /*Block grouping*/
@@ -299,4 +352,31 @@ h2.step-title-complete a.title:hover{
 .table th a:active{
 	text-shadow:none;
 	.mcs_text_color(lighten(@base,41%));
+}
+
+/*Onclick-dropdown*/
+.popup-title{
+	padding:6px 12px;
+}
+.popup-title:hover {
+    .border-radius(0px);
+}
+.popup-title.open {
+    .border-radius(0px);
+}
+.popup-content {
+    .border-radius(0px);
+}
+.popup-content ul.account-info li a, 
+.popup-content ul.account-info li span{
+	.mcs_no_text_shadow;
+}
+.dropdown-box .buttons-container {
+    .border-radius(0px);
+}
+a.account i{
+	padding-right:5px;
+}
+a.account:hover i{
+	color:@links;
 }
