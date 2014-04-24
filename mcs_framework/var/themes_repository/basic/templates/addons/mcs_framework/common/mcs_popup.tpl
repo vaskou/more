@@ -30,14 +30,46 @@
 						draggable: true,
 						resizable: false,
 						show: {
+							{if $addons.mcs_framework.mcs_popup_effects_show=='slideDown' || $addons.mcs_framework.mcs_popup_effects_show=='slideUp'}
+							effect: 'slide',
+							{else}
 							effect: '{$addons.mcs_framework.mcs_popup_effects_show}',
+							{/if}
 							easing: '{$addons.mcs_framework.mcs_popup_effects_show_easing}',
-							duration: {$addons.mcs_framework.mcs_popup_effects_show_duration}
+							duration: {$addons.mcs_framework.mcs_popup_effects_show_duration},
+							{if $addons.mcs_framework.mcs_popup_effects_show=='bounce'}
+							times: 2,
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_show=='drop'}
+							direction:'up',
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_show=='slideUp'}
+							direction:'down',
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_show=='slideDown'}
+							direction:'up',
+							{/if}
 						},
 						hide: {
+							{if $addons.mcs_framework.mcs_popup_effects_hide_effect=='slideDown' || $addons.mcs_framework.mcs_popup_effects_hide_effect=='slideUp'}
+							effect: 'slide',
+							{else}
 							effect: '{$addons.mcs_framework.mcs_popup_effects_hide_effect}',
+							{/if}
 							easing: '{$addons.mcs_framework.mcs_popup_effects_hide_easing}',
-							duration: {$addons.mcs_framework.mcs_popup_effects_hide_duration}
+							duration: {$addons.mcs_framework.mcs_popup_effects_hide_duration},
+							{if $addons.mcs_framework.mcs_popup_effects_hide_effect=='bounce'}
+							times: 2,
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_hide_effect=='drop'}
+							direction:'up',
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_hide_effect=='slideUp'}
+							direction:'up',
+							{/if}
+							{if $addons.mcs_framework.mcs_popup_effects_hide_effect=='slideDown'}
+							direction:'down',
+							{/if}
 						},
 						modal: true, 
 						buttons:{$ldelim} 
@@ -119,7 +151,7 @@
 	
 {/if}
 
-<div id="mcs_popup" class="hidden {$addons.mcs_framework.mcs_popup_content_types}" title="{$popup_title}">
+<div id="mcs_popup" class="{$addons.mcs_framework.mcs_popup_content_types}" title="{$popup_title}">
 	<div {if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.type=="T"||$addons.mcs_framework.mcs_popup_content_types=='newsletter'||$addons.mcs_framework.mcs_popup_content_types=='promotion'}class="wysiwyg-content"{/if}>
 		{if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.url!=""&&$banner.type=="G"}
 			<a href="{$banner.url}" {if $banner.target=='B'}target="_blank"{/if}>

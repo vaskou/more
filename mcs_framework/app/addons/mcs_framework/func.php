@@ -269,27 +269,18 @@ function fn_mcs_variants_get_easings()
 function fn_mcs_variants_get_effects()
 {
     $effects = array(
-
-
-        'fadeIn' => __('fadeIn'),
-        'fadeOut' => __('fadeOut'),
-        'slideDown' => __('slideDown'),
-        'slideUp' => __('slideUp'),
 	    'blind' => __('blind'),
         'bounce' => __('bounce'),
         'clip' => __('clip'),
         'drop' => __('drop'),
-        'explode' => __('explode'),
         'fade' => __('fade'),
         'fold' => __('fold'),
-        'highlight' => __('highlight'),
         'puff' => __('puff'),
         'pulsate' => __('pulsate'),
         'scale' => __('scale'),
         'shake' => __('shake'),
-        'slide' => __('slide'),
-        'size' => __('size'),
-        'transfer' => __('transfer'),
+		'slideDown' => __('slideDown'),
+        'slideUp' => __('slideUp'),
 	);
 	
 	return $effects;

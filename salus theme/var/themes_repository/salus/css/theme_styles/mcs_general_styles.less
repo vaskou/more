@@ -130,7 +130,6 @@ div.ui-dialog .ui-dialog-title,
 	border-right:none;
 	border-bottom:none;
 }
-
 /************************ buttons ********************************/
 
 .button-submit-action.button-wrap-left,
@@ -237,9 +236,7 @@ div.ui-dialog .ui-dialog-title,
 /********************* buttons-container reset ***********************/
 .buttons-container, 
 .buttons-container-item, 
-.checkout-buttons, 
-.ui-dialog .ui-dialog-content, 
-.product-notification-buttons, 
+.checkout-buttons,  
 .box, 
 .buttons-container.wrap, 
 .login .body-bc, 
@@ -379,4 +376,20 @@ a.account i{
 }
 a.account:hover i{
 	color:@links;
+}
+
+/*Cart*/
+.statistic-list-wrap{
+	.drop-shadow(0,0,0,0,0);
+}
+
+/*Compare list*/
+.compare-menu ul li span{
+	.border-radius(0);
+	.drop-shadow(0,0,0,0,0);
+	background:lighten(@base,41%);
+	filter:none;
+}
+.compare-menu ul li a:hover{
+	.border-radius(0);
 }

@@ -166,3 +166,26 @@ h1.mainbox-title{
 	margin-left:10px;
 	font-size:70%;
 }
+.step-four .tabs-content{
+	padding-left:0;
+	padding-right:0;
+}
+
+/*Cart*/
+.checkout_cart h1.mainbox-title{
+	margin-left:0;
+	margin-right:0;
+}
+.buttons-container.cart-top-buttons,
+.buttons-container.cart-bottom-buttons{
+	padding-left:0;
+	padding-right:0;
+	margin-top:0;
+	border:none;
+}
+
+/*Compare list*/
+.compare-buttons .buttons-container{
+	padding-left:0;
+	padding-right:0;
+}
