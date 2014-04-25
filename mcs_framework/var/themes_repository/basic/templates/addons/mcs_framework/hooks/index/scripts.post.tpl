@@ -3,6 +3,7 @@
 <script>
 $(function(){
 //countCSSRules();
+	
 });
 function deviceType(){
 	var dt={/literal}{$mobiledetect.deviceType|var_export}{literal};
@@ -71,12 +72,14 @@ function deviceType(){
         );
 		enquire.register("screen and (min-width:768px)",[
 				sidebox_hide_over_handler,
-				sidebox_filters_show_over_handler
+				sidebox_filters_show_over_handler,
+				tables_responsive_over_handler
 			]
 		);
 		enquire.register("screen and (max-width:767px)",[
 				sidebox_hide_under_handler,
-				sidebox_filters_show_under_handler
+				sidebox_filters_show_under_handler,
+				tables_responsive_under_handler
 			]
 		);
     });
@@ -117,6 +120,7 @@ function deviceType(){
 {script src="js/addons/mcs_framework/mcs_submenu_visible.js"}
 {script src="js/addons/mcs_framework/mcs_sidebox_hide.js"}
 {script src="js/addons/mcs_framework/mcs_sidebox_filters_show.js"}
+{script src="js/addons/mcs_framework/mcs_tables_responsive.js"}
 
 {if $addons.mcs_framework.mcs_scroll_to_top_enable=='Y'}
 	{script src="js/addons/mcs_framework/mcs_scroll_to_top/jquery.scrollUp.min.js"}

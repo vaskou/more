@@ -10,5 +10,4 @@
 <meta name="keywords" content="{$meta_keywords|default:$location_data.meta_keywords}" />
 <meta name="mode" content="{$store_trigger}" />
 
-<link href="http://fonts.googleapis.com/css?family=Comfortaa:400,700&amp;subset=latin,greek" rel="stylesheet" type="text/css">
 {/hook}

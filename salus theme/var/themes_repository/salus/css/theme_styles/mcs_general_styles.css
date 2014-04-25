@@ -189,3 +189,43 @@ h1.mainbox-title{
 	padding-left:0;
 	padding-right:0;
 }
+
+/* Profile update page */
+.account{
+	margin-bottom:0;
+}
+.account .address-switch{
+	margin-left:0;
+	box-sizing:border-box;
+}
+.account .buttons-container{
+	margin-left:0;
+	margin-bottom:0;
+	box-sizing:border-box;
+	padding-left:0;
+	padding-right:0;
+}
+
+.account-detail{
+	margin-top:10px;
+}
+
+/*Gift certificates page*/
+.gift-send{
+	margin-left:0;
+	box-sizing:border-box;
+	height:auto;
+}
+.gift .buttons-container{
+	margin-left:0;
+	margin-bottom:0;
+	box-sizing:border-box;
+	padding-left:0;
+	padding-right:0;
+}
+
+/*Gift certificates verification page*/
+.gift-verify .tabs-content{
+	padding-left:0;
+	padding-right:0;
+}

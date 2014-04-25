@@ -221,7 +221,11 @@ div.ui-dialog .ui-dialog-title,
 .mcs_i_grid .mcs-wishlist a:hover{
 	text-decoration:none;
 }
-
+.mcs_i_grid .mcs-wishlist span.qty-out-of-stock,
+.mcs_i_grid .mcs-wishlist span.qty-out-of-stock:hover,
+.mcs_i_grid .mcs-wishlist span.qty-out-of-stock:hover:active{
+	background:transparent;
+}
 .mcs-button{
 	.mcs_button_text_color(@decorative);
 	display:inline-block;
@@ -391,5 +395,21 @@ a.account:hover i{
 	filter:none;
 }
 .compare-menu ul li a:hover{
+	.border-radius(0);
+}
+
+/* Default List with options Responsive */
+.pagination-container .list .product-item-image img{border-color:lighten(@base,30%);}
+.pagination-container .list + hr {border-color:lighten(@base,30%);}
+
+/* Default Compact List Responsive */
+.pagination-container table.table.products tr{background-color:transparent;}
+.pagination-container table.table.products td.product-image img{border:1px solid lighten(@base,30%);}
+
+/* Profile update page */
+.form-wrap{
+	.inner-shadow(0,0,0,0,0);
+}
+.address-switch{
 	.border-radius(0);
 }

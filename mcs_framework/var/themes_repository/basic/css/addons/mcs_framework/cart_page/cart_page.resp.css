@@ -45,7 +45,15 @@
 .mainbox-cart-body td.product-image-cell>div{float:none;}
 .mainbox-cart-body td.product-description{width:auto!important;}
 .mainbox-cart-body td.price-cell{text-align:left;}
-.mainbox-cart-body td.quantity-cell{height:50px;}
+.mainbox-cart-body td.quantity-cell{height:70px;}
+
+.checkout-totals{
+	padding:10px;
+}
+.coupons-container{
+	width:100%;
+	padding:0;
+}
 
 /*Cart Page bottom buttons*/
 .buttons-container.cart-bottom-buttons{
