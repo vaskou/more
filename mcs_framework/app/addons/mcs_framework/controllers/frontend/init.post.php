@@ -23,13 +23,6 @@
 	$mobiledetect['isWindowsMobileOS']=$detect->isWindowsMobileOS();
 	$mobiledetect['isWindowsPhoneOS']=$detect->isWindowsPhoneOS();
 	$mobiledetect['versionIE']=$detect->version('IE');
-
-	
-	 //print '<pre>'; 
-	 //print_r($detect);
-	// echo $detect->isMobile();
-	// echo $detect->isTablet();
-	 //print '</pre>';
 	
 	Registry::get('view')->assign('mobiledetect', $mobiledetect);
 	

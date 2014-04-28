@@ -30,25 +30,28 @@ function fn_tables_responsive_under(){
 		i=0;
 		
 		$(this).children("thead").hide();
-		$(this).find("th").each(function(){
-			colspan=$(this).attr('colspan');
-			title=$(this).text();
-			arr[i++]=title;
-			if(colspan>=2){
-				k=0;
-				while(k < (colspan-1)){
-					arr[i++]=title;
-					k++;
+
+		if($(this).find('th').length > 0){
+			$(this).find("th").each(function(){
+				colspan=$(this).attr('colspan');
+				title=$(this).text();
+				arr[i++]=title;
+				if(colspan>=2){
+					k=0;
+					while(k < (colspan-1)){
+						arr[i++]=title;
+						k++;
+					}
 				}
-			}
-		});
-		
-		$(this).find("tr").each(function(){
-			j=0;
-			$(this).addClass('table-border');
-			$(this).children('td').each(function(){
-				$(this).prepend('<h1 class="left">'+arr[j++]+'</h1>');
 			});
-		});
+		
+			$(this).find("tr").each(function(){
+				j=0;
+				$(this).addClass('table-border');
+				$(this).children('td').each(function(){
+					$(this).prepend('<h1 class="left">'+arr[j++]+'</h1>');
+				});
+			});
+		}
 	});
 }

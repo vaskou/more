@@ -1,6 +1,43 @@
+/*Currencies*/
 .select-wrap.languages a.active-element, 
 .select-wrap.currencies a.active-element,
 .select-popup {
     .border-radius(0);  
     .mcs_no_shadow;
+}
+
+.select-wrap.currencies a:hover{
+	background:@decorative;
+	.mcs_text_color(@decorative);
+}
+.select-wrap.languages a.active-element,
+.select-wrap.languages a.active-element:hover, 
+.select-wrap.currencies a.active-element,
+.select-wrap.currencies a.active-element:hover{
+	background:#fff;
+	color:#000;
+}
+
+/*top-my-account*/
+.tygh-top-panel .top-links-grid .dropdown-box.top-my-account .popup-title{
+	border-left-color:@top_panel_bg_color;
+}
+.tygh-top-panel .top-links-grid .dropdown-box.top-my-account .popup-title:hover{
+	border-left-color:#fff;
+}
+.tygh-top-panel .top-links-grid .dropdown-box.top-my-account .popup-title.open{
+	border-color:lighten(@base,20%);
+}
+
+/*top-cart-content*/
+.tygh-top-panel .top-links-grid .top-cart-content .dropdown-box .popup-title.open{
+	border-color:lighten(@base,20%);
+}
+.dropdown-box .empty {
+	color:@top_panel_text !important;
+}
+
+/*mcs-toolbar-menu*/
+.tygh-top-panel .top-links-grid .mcs-toolbar-menu > ul > li ul{
+	.border-radius(0);
 }
