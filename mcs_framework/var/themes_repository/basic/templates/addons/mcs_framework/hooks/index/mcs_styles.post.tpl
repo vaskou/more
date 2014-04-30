@@ -16,6 +16,7 @@
 {if $addons.mcs_framework.mcs_general_bxslider_enable=='Y'}
 	{style src="addons/mcs_framework/mcs_sliders/bxslider/jquery.bxslider.css"}
     {style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.pager.css'}
+    {style src='addons/mcs_framework/mcs_sliders/bxslider/bxslider.text.less'}
 {/if}
 
 {if $addons.mcs_framework.mcs_general_fixed_menu_enable=='Y'}

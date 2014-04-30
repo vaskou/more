@@ -22,6 +22,11 @@
         		        {if $banner.url != ""}<a href="{$banner.url|fn_url}" {if $banner.target == "B"}target="_blank"{/if}>{/if}
                 		{include file="common/image.tpl" images=$banner.main_pair}
 		                {if $banner.url != ""}</a>{/if}
+                        {if $banner.description!=""}
+                            <div class="wysiwyg-content mcs-slider-text">
+                                {$banner.description nofilter}
+                            </div>
+                        {/if}
         		    {else}
                 		<div class="wysiwyg-content">
 		                    {$banner.description nofilter}
