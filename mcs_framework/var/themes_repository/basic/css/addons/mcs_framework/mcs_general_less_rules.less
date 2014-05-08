@@ -173,16 +173,16 @@
 		border-color:lighten(@b, 100%)!important;
 	}
 }
-.mcs_text_color (@b) when (lightness(@b) >= 30%) {
+.mcs_text_color (@b) when (lightness(@b) >= 50%) {
 	color: darken(@b, 100%);
 }
-.mcs_text_color (@b) when (lightness(@b) < 70%) {
+.mcs_text_color (@b) when (lightness(@b) < 50%) {
 	color: lighten(@b, 100%);
 }
-.mcs_neg_text_color (@b) when (lightness(@b) >= 30%) {
+.mcs_neg_text_color (@b) when (lightness(@b) >= 50%) {
 	.mcs_text_color(darken(@b, 100%));
 }
-.mcs_neg_text_color (@b) when (lightness(@b) < 70%) {
+.mcs_neg_text_color (@b) when (lightness(@b) < 50%) {
 	.mcs_text_color(lighten(@b, 100%));
 }
 .mcs_no_shadow{
@@ -198,5 +198,32 @@
 .mcs_neg_background_color (@b) when (lightness(@b) < 70%) {
 	background: lighten(@b, 100%);
 	filter:none;
+}
+
+.mcs_cta_box_dark_color (@b) when (lightness(@b) >= 50%) {
+	background-color:@b;
+	.text{color: black;}
+	.text p{color: lighten(black, 20%);}
+	.button, .button i{
+		background-color:black;
+		color:white;
+	}
+	.button:hover, .button:hover i{
+		background-color:black;
+		color:@b;
+	}
+}
+.mcs_cta_box_dark_color (@b) when (lightness(@b) < 50%) {
+	background-color:@b;
+	.text{color: white;}
+	.text p{color: darken(white,  5%);}
+	.button, .button i{
+		background-color:white;
+		color:@b;
+	}
+	.button:hover, .button:hover i{
+		background-color:black;
+		color:white;
+	}
 }
 /***************************************************************************************/

@@ -288,7 +288,11 @@ class CallToActionSC extends JBBCode\CodeDefinition {
 	
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
-		$theme=$options['theme'];
+		if($options['theme']==''){
+			$theme='light';
+		}else{
+			$theme=$options['theme'];
+		}
 		$link=$options['link'];
 		$title=$options['title'];
 		$text=$options['text'];
@@ -298,30 +302,29 @@ class CallToActionSC extends JBBCode\CodeDefinition {
 		
 		$button_float=$options['float'];
 		$text_align=($options['float']=='left')?'right':'left';
-		if($options['float']=='center')
+		if($options['float']=='center'){
 			$text_align='center';
+		}
 		
 		$out ='';
 		$out .=	'<div class="sc cta box '.$theme.'">';
 		$out .=	'	<div class="inner" style="text-align:'.$text_align.'">';
 			if($options['float']!='center'){
 				$out .=	'		<a class="button" href="'.$link.'" style="float:'.$button_float.'">';
-				$out .=	'			<span>';
 				if($icon!='')
 					$out .=	'			<i class="icon-'.$icon.'" '.$iconsize.'></i>';
-					$out .=				$buttontitle.'</span>';
+					$out .=				$buttontitle;
 					$out .=	'		</a>';
 			}
 		$out .=	'		<div class="text">';
-		$out .=	'			<h3 style="text-align:'.$text_align.'"><span>'.$title.'</span></h3>';
+		$out .=	'			<h3 style="text-align:'.$text_align.'">'.$title.'</h3>';
 		$out .=	'			<p style="text-align:'.$text_align.'">'.$text.'</p>';
 		$out .=	'		</div>';
 			if($options['float']=='center'){
 				$out .=	'		<a class="button" href="'.$link.'" style="float:'.$button_float.'">';
-				$out .=	'			<span>';
 				if($icon!='')
 					$out .=	'			<i class="icon-'.$icon.'" '.$iconsize.'></i>';
-					$out .=				$options['buttontitle'].'</span>';
+					$out .=				$buttontitle;
 					$out .=	'		</a>';	
 			}
 		$out .=	'	</div>';

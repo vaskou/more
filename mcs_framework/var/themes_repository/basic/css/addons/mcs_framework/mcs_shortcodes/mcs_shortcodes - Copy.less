@@ -12,25 +12,16 @@
 	color:@decorative;
 }
 
-/**************************************** calltoaction *********************************************************/
-.sc.cta.box.dark{
-	.mcs_cta_box_dark_color(@decorative);
-}
 
-.sc.cta.box.light{
-	border:1px solid @decorative;
-	background-color:lighten(@base, 45%);
-	.text{color: black;}
-	.text p{color: lighten(black, 20%);}
-	.button, .button i{
-		background-color:@decorative;
-		.mcs_text_color(@decorative);
-	}
-	.button:hover, .button:hover i{
-		background-color:black;
-		color:white;
-	}
-}
+/**************************************** calltoaction *********************************************************/
+.sc.cta.box.dark{background-color:@decorative;}
+.sc.cta.box.dark span:hover{color:@decorative;}
+
+.sc.cta.box.transparent{border:1px solid @decorative;}
+.sc.cta.box.transparent span{background-color:@decorative;}
+
+.sc.cta.box.light{border:1px solid @decorative;}
+.sc.cta.box.light span{background-color:@decorative;}
 
  
 

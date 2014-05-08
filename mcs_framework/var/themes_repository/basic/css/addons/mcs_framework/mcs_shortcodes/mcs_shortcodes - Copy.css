@@ -70,8 +70,8 @@ a.sc.button:hover{
 }
 
 /**************************************** calltoaction *********************************************************/
-/*.sc.cta.box{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}*/
-/*.sc.cta.box .inner a.button span{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}*/
+.sc.cta.box{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}
+.sc.cta.box .inner a.button span{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
 
 .sc.cta.box span{
 	-webkit-transition: all 0.5s ease-in-out;
@@ -80,15 +80,7 @@ a.sc.button:hover{
 	transition: all 0.5s ease-in-out;
 }
 
-.sc.cta.box .button{
-	display:inline-block;
-	margin:5px;
-	padding:5px 10px;
-}
-.sc.cta.box a.button:hover{
-	text-decoration:none;	
-}
-/*.sc.cta.box.dark span{background-color:#ffffff;}
+.sc.cta.box.dark span{background-color:#ffffff;}
 .sc.cta.box.dark span{color:#000000;}
 
 .sc.cta.box.dark .text h2{color:#ffffff;}
@@ -121,9 +113,9 @@ a.sc.button:hover{
 }
 .sc.cta.box .inner .text h2,.sc.cta.box .inner .text p {
 	text-align:right;
-}*/
+}
 
-/*.iconcta.sc i{display:block;}
+.iconcta.sc i{display:block;}
 
 .iconcta.sc i{
     
@@ -145,7 +137,7 @@ a.sc.button:hover{
     -webkit-transform:rotate(360deg);
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
-} */
+} 
 
 /*imagecta*/
 .imagecta {
