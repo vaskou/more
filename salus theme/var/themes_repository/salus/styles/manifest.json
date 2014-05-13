@@ -1,0 +1,27 @@
+{
+	"default_style": "satori",
+	"names": {
+		"reddish": "Reddish",
+		"satori": "Satori",
+		"dark_blue": "Dark Blue",
+		"greeny": "Greeny",
+		"yellow": "Yellow",
+		"facebook": "Facebook",
+		"ocean": "Ocean",
+		"woody": "Woody",
+		"salus_wide":"Salus Wide",
+		"salus_box":"Salus Box"
+	},
+	"default": {
+		"reddish": true,
+		"satori": true,
+		"dark_blue": true,
+		"greeny": true,
+		"yellow": true,
+		"facebook": true,
+		"ocean": true,
+		"woody": true,
+		"salus_wide": false,
+		"salus_box": false
+	}
+}

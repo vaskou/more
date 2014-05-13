@@ -9,7 +9,9 @@
 .logo-container .logo{
 	margin:0;
 }
-
+.logo-container >a{
+	line-height:96px;
+}
 .motto{
 	margin-left: 5px;
 	margin-top: 40px;

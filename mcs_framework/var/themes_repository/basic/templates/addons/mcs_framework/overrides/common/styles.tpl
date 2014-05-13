@@ -41,6 +41,7 @@
     {style src="theme_styles/header/mcs_top_panel.less"}
     {style src="theme_styles/header/mcs_header.css"}
     {style src="theme_styles/header/mcs_header.less"}
+    {style src="theme_styles/header/mcs_top_menu.css"}
     {style src="theme_styles/header/mcs_top_menu.less"}
     {style src="theme_styles/header/mcs_search_box.css"}
     {style src="theme_styles/header/mcs_search_box.less"}

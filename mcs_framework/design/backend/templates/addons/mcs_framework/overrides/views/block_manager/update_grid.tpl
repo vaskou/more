@@ -103,9 +103,26 @@
     {include file="buttons/save_cancel.tpl" but_name="dispatch[block_manager.update_location]" cancel_action="close" but_meta="cm-dialog-closer" save=$id}
 </div>
 </form>
+<script>
+$(function(){
+	if($('#elm_grid_width_{$id} option:selected').text()!='16'){
+		$('.mcs_full_width').hide();
+		$('#elm_grid_full_width_{$id}').removeAttr('checked');
+	}
+	$('#elm_grid_width_{$id}').change(function(){
+		if($('#elm_grid_width_{$id} option:selected').text()!='16'){
+			$('.mcs_full_width').hide();
+			$('#elm_grid_full_width_{$id}').removeAttr('checked');
+		}else{
+			$('.mcs_full_width').show();
+		}
+	});
+});
+</script>
 <!--grid_properties_{$id}--></div>
 
 {*********************************************MCS changes************************************************}
 {*Lines	64-76: Added lines 64 - 76																		*}
 {*Lines	78-88: Added lines 78 - 88																		*}
 {*Lines	90-99: Added lines 90 - 99																		*}
+{*lines 106-120: Added lines 106 - 120																	*}
