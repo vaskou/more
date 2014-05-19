@@ -1,0 +1,57 @@
+[class^="mcs_slider_"]{
+	position:relative;	
+}
+[class^="mcs_slider_"] .bx-viewport{
+	border:none;
+	left:0;
+}
+
+[class^="mcs_slider_"] li{
+	padding:0;	
+}
+
+/*bxSlider custom control icons*/
+[class^="mcs_slider_"] #c_controls{
+	position:absolute;
+	bottom:50%;
+	width:100%;
+}
+
+[class^="mcs_slider_"] #c_controls .bx-prev {
+	left: 10px;
+	opacity:0.4;
+	transition:opacity .5s linear;
+}
+[class^="mcs_slider_"] #c_controls .bx-prev:before {
+	font-family:'icomoon';
+	content:'\e3b3';	
+}
+[class^="mcs_slider_"] #c_controls .bx-next {
+	right: 10px;
+	opacity:0.4;
+	transition:opacity .5s linear;
+}
+[class^="mcs_slider_"] #c_controls .bx-next:before {
+	font-family:'icomoon';
+	content:'\e3b1';	
+}
+[class^="mcs_slider_"] #c_controls .bx-prev:hover {
+	background-position: 0 0;
+	opacity:1;
+}
+
+[class^="mcs_slider_"] #c_controls .bx-next:hover {
+	background-position: -43px 0;
+	opacity:1;
+}
+
+[class^="mcs_slider_"] #c_controls a{
+	position: absolute;
+	top: -30px;
+	font-size:60px;
+	z-index: 250;
+	color:#fff;
+}
+[class^="mcs_slider_"] #c_controls a:hover{
+	text-decoration:none;
+}

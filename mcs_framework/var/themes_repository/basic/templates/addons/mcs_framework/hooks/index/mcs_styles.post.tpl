@@ -23,6 +23,17 @@
 	{style src="addons/mcs_framework/mcs_menu_fixed.css"}
 {/if}
 
+{if $addons.mcs_framework.mcs_product_categories_general_category_image=='Y'}
+	<style>
+		{literal}
+		.categories_view h1.mainbox-title{
+			position:absolute;
+			display:inline-block;
+		}
+		{/literal}
+	</style>
+{/if}
+
 {if $addons.mcs_framework.mcs_product_tabs_vertical=='Y'}
 	{style src="addons/mcs_framework/mcs_vertical_product_tabs/tabs_vertical.less"}
         

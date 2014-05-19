@@ -3,7 +3,7 @@
     <id>mcs_framework</id>
     <version>1.0</version>
     <name>More CS-Cart Framework</name>
-    <description>More CS-Cart Framework</description>
+    <description>Adds settings and options to More CS-Cart themes.</description>
     <priority>100000</priority>
     <status>active</status>
 	<queries>
@@ -12,6 +12,7 @@
 		<item for="install">ALTER TABLE ?:bm_grids ADD tablet VARCHAR( 128 );</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD phone VARCHAR( 128 );</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD full_width VARCHAR( 128 );</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD block_grouping ENUM(  'none',  'accordion',  'tabs' ) NOT NULL DEFAULT  'none';</item>
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
@@ -25,8 +26,9 @@
 					</item>
 					<item id="mcs_general_appearance_price">
                         <type>checkbox</type>
-                        <name>Enable price</name>
-						<default_value>N</default_value>
+                        <name>Product price decimals formatting</name>
+						<default_value>Y</default_value>
+						<tooltip>If checked, special formatting on product price decimals will be applied. The formatting applies on prices displayed on products listing and product detailes price.</tooltip>
                     </item>
 					<item id="mcs_general_responsive">
 						<type>header</type>
@@ -35,7 +37,8 @@
 					<item id="mcs_general_responsive_enable">
                         <type>checkbox</type>
                         <name>Enable responsive layout</name>
-						<default_value>N</default_value>
+						<default_value>Y</default_value>
+						<tooltip>If checked, the responsive layout features of the theme will be enabled, by loading the corresponding Bootstrap components.</tooltip>
                     </item>
 					
 					<item id="mcs_general_fixed_menu">
@@ -46,12 +49,55 @@
                         <type>checkbox</type>
                         <name>Enable fixed menu</name>
 						<default_value>N</default_value>
+						<tooltip>If checked, the main menu will remain fixed on top of the page, when the user scrolls down.</tooltip>
                     </item>
+					
+					<item id="mcs_general_bxslider">
+						<type>header</type>
+						<name>bxSlider</name>
+					</item>
+					<item id="mcs_general_bxslider_enable">
+						<type>checkbox</type>
+						<name>Enable bxSlider</name>
+						<default_value>Y</default_value>
+						<tooltip>If checked, bxSlider CSS and Javascript libraries will be loaded. This setting is required for blocks that use bxslider templates.</tooltip>
+					</item>				
+				
+					<item id="mcs_general_mobile_detect">
+						<type>header</type>
+						<name>Mobile Detect</name>
+					</item>
+					
+					<item id="mcs_general_mobile_devices_grid_detection">
+                        <type>checkbox</type>
+                        <name>Enable Mobile Detect for grids</name> 
+                        <default_value>Y</default_value>
+						<tooltip>If checked, the Mobile Detect features will be enabled for grids. Then, go to grid options and select on which device types to show each grid.</tooltip>
+                    </item>
+                    <item id="mcs_general_mobile_devices_block_detection">
+                        <type>checkbox</type>
+                        <name>Enable Mobile Detect for blocks</name> 
+                        <default_value>Y</default_value>
+						<tooltip>If checked, the Mobile Detect features will be enabled for blocks. Then, go to grid options and select on which device types to show each block.</tooltip>
+                    </item>
+
+					<item id="mcs_general_shortcodes">
+						<type>header</type>
+						<name>Shortcodes</name>
+					</item>
+					
+					<item id="mcs_general_shortcodes_enable">
+						<name>Enable shortcodes</name>
+						<tooltip>If checked, shortcodes functionality will be enabled on products description, products promo text, categories description, pages description and HTML blocks.</tooltip>
+						<type>checkbox</type>
+						<default_value>N</default_value>
+					</item>	
+					
 				</items>
             </section>
-		<!--PRODUCT CATEGORIES-->
+		<!--PRODUCTS LIST LAYOUTS-->
 			<section id="mcs_product_categories">
-                <name>Product Categories</name>
+                <name>Products list layouts</name>
                 <items>
 					<item id="mcs_product_categories_general">
 						<type>header</type>
@@ -84,94 +130,75 @@
                             </item>
 						</variants>
 						<default_value>mcs_none</default_value>
+						<tooltip>Select the effect that will be applied when the user hovers on product grid.</tooltip>
                     </item>
 					<item id="mcs_product_categories_hidden_info_duration">
                         <type>input</type>
                         <name>Set the duration of the animation</name>
 						<default_value>0</default_value>
+						<tooltip>Select the duration (milliseconds) of the effect when the user hovers on product grid.</tooltip>
                     </item>
 					<item id="mcs_product_categories_features">
                         <type>checkbox</type>
                         <name>Show product features</name>
 						<default_value>N</default_value>
+						<tooltip>If checked, product features will be shown on product grid.</tooltip>
                     </item>
 					<item id="mcs_product_categories_rating">
                         <type>checkbox</type>
                         <name>Show product rating</name>
 						<default_value>N</default_value>
+						<tooltip>If checked, product rating (stars) will be shown on product grid.</tooltip>
                     </item>
 					<item id="mcs_product_categories_points">
                         <type>checkbox</type>
                         <name>Show product points</name>
 						<default_value>N</default_value>
+						<tooltip>If checked, product reward points information will be shown on product grid.</tooltip>
                     </item>
 				</items>
             </section>
 		<!--PRODUCT VIEW-->
 			<section id="mcs_product">
-                <name>Product view</name>       
+                <name>Product details page</name>       
                 <items>
 					<item id="mcs_product_brand_header">
 						<type>header</type>
-						<name>Brand image</name>
+						<name>Brand/Manufacturer image</name>
 					</item>
                     <item id="mcs_product_brand_show">
                         <type>checkbox</type>
-                        <name>Show brand image</name>
-                        <tooltip>Check to show brand image</tooltip>
+                        <name>Show Brand/Manufacturer image</name>
+                        <tooltip>If checked, the Brand/Manufacturer image will be shown on product details page, below the product title.</tooltip>
 						<default_value>Y</default_value>
                     </item>
 					<item id="mcs_product_brand_feature">
                         <type>selectbox</type>
-                        <name>Brand feature</name>
-                        <tooltip>Select the brand feature</tooltip>
+                        <name>Brand/Manufacturer feature</name>
+                        <tooltip>Select the Brand/Manufacturer feature from the list.</tooltip>
 						<default_value>18</default_value>
 						<variants/>
                     </item>
 					<item id="mcs_product_tabs_header">
 						<type>header</type>
-						<name>Tabs orientation</name>
+						<name>Product Tabs</name>
 					</item>
                     <item id="mcs_product_tabs_vertical">
                         <type>checkbox</type>
-                        <name>Vertical Tabs</name>
-                        <tooltip>Check to show vertical tabs</tooltip>
+                        <name>Enable vertical tabs layout</name>
+                        <tooltip>If checked, product tabs will be displayed in a vertical layout.</tooltip>
                     </item>
 					<item id="mcs_product_tabs_width">
                         <type>input</type>
-                        <name>Vertical tabs width(%)</name>
-                        <tooltip>Width of the tabs in %(limits:10-50)</tooltip>
-						<default_value>36</default_value>
+                        <name>Vertical tabs title width(px)</name>
+                        <tooltip>Set the width of the tab titles in pixels, without the px.</tooltip>
+						<default_value>400</default_value>
                     </item>
-				</items>
-			</section>
-		<!--BLOCK GROUPING-->
-			<section id="mcs_block_grouping">
-                <name>Block Grouping</name>       
-                <items>
-					<item id="mcs_tab_block_header">
-						<type>header</type>
-						<name>Block grouping with tabs</name>
-					</item>
-                    <item id="mcs_tab_block_enable">
-                        <type>checkbox</type>
-                        <name>Enable Tab Block Grouping</name>
-                        <default_value>Y</default_value>
-                    </item>
-					<item id="mcs_tab_block_hover">
-                        <type>checkbox</type>
-                        <name>Change tab on mouse hover</name>
-						<default_value>N</default_value>
-                    </item>
-					
-					<item id="mcs_accordion_block_header">
-						<type>header</type>
-						<name>Block grouping with accordion</name>
-					</item>
-                    <item id="mcs_accordion_block_enable">
-                        <type>checkbox</type>
-                        <name>Enable Accordion Block Grouping</name>
-                        <default_value>Y</default_value>
+					<item id="mcs_product_tabs_margin">
+                        <type>input</type>
+                        <name>Vertical tabs title right margin</name>
+                        <tooltip>Set the width of the tab titles right margin in pixels, without the px.</tooltip>
+						<default_value>10</default_value>
                     </item>
 				</items>
 			</section>
@@ -187,6 +214,7 @@
                         <type>checkbox</type>
                         <name>Icomoon</name>
 						<default_value>Y</default_value>
+						<tooltip>If checked, IcoMoon font icons library (including 1200+ icons) will be loaded and default CS-Cart Glyphs will be disabled.</tooltip>
                     </item>
 					
 					<item id="mcs_button_icons_header">
@@ -196,92 +224,78 @@
 					<item id="mcs_button_icons_add_to_cart">
                         <type>input</type>
                         <name>"Add To Cart" button icon</name>
-						<default_value>icon-cart</default_value>
+						<default_value>icon-bag3</default_value>
+						<tooltip>Enter an icon name class for the 'Add to Cart' button (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						
                     </item>
 					<item id="mcs_button_icons_add_to_compare_list">
                         <type>input</type>
                         <name>"Add To Compare List" button icon</name>
 						<default_value>icon-bars3</default_value>
+						<tooltip>Enter an icon name class for the 'Add To Compare' button (icon-bars, icon-bars2, icon-bars3, icon-bars4, icon-bars5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_add_to_wishlist">
                         <type>input</type>
                         <name>"Add To Wishlist" button icon</name>
 						<default_value>icon-heart4</default_value>
+						<tooltip>Enter an icon name class for the 'Add To Wishlist' button (icon-bookmarks, icon-heart, icon-heart2, icon-heart3, icon-heart4, icon-heart5, icon-heart6, icon-heart7, icon-heart8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_select_options">
                         <type>input</type>
                         <name>"Select Options" button icon</name>
-						<default_value>icon-cart</default_value>
+						<default_value>icon-checkbox</default_value>
+						<tooltip>Enter an icon name class for the 'Select Options' button (icon-checkbox, icon-checkbox2, icon-checkbox-checked, icon-checkbox-checked2, icon-checkmark, icon-checkmark2, icon-checkmark3, icon-checkmark4, icon-checkmark-circle, icon-checkmark-circle2, icon-cog, icon-cog2, icon-cog3, icon-cog4, icon-cog5, icon-cog6, icon-cog7, icon-manu10 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_go_button">
                         <type>input</type>
                         <name>"Go" button icon</name>
 						<default_value>icon-arrow-right3</default_value>
-                    </item>
-					
-					<item id="mcs_block_icons_header">
-						<type>header</type>
-						<name>Block Icons</name>
-					</item>
-					<item id="mcs_block_icons_cart_block">
-                        <type>input</type>
-                        <name>Cart block icon</name>
-						<default_value>icon-cart</default_value>
-                    </item>
-					<item id="mcs_block_icons_my_account_block">
-                        <type>input</type>
-                        <name>My Account block icon</name>
-						<default_value>icon-user</default_value>
+						<tooltip>Enter an icon name class for the 'Go' button (icon-right, icon-right2, icon-right3, icon-right4, icon-right5, icon-right6, icon-right7, icon-right8, icon-right9, icon-right10, icon-right11, icon-right12, icon-right13, icon-right14, icon-right15, icon-right16, icon-right17, icon-right18 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_sign_in">
                         <type>input</type>
-                        <name>Sign In icon</name>
+                        <name>"Sign In" button icon</name>
 						<default_value>icon-enter</default_value>
+						<tooltip>Enter an icon name class for the 'Sign In' button (icon-enter, icon-enter2, icon-enter3, icon-key, icon-key2, icon-key3, icon-key4, icon-key5 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_sign_out">
                         <type>input</type>
-                        <name>Sign Out icon</name>
+                        <name>"Sign Out" button icon</name>
 						<default_value>icon-exit</default_value>
+						<tooltip>Enter an icon name class for the 'Sign Out' button (icon-exit, icon-exit2, icon-exit3, icon-exit4, icon-switch). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_register">
                         <type>input</type>
-                        <name>Register icon</name>
+                        <name>"Register" button icon</name>
 						<default_value>icon-pencil3</default_value>
+						<tooltip>Enter an icon name class for the 'Register' button (icon-signup, icon-pencil, icon-pencil2, icon-pencil3, icon-pencil4, icon-pencil5, icon-pencil6, icon-pen, icon-pen2, icon-pen3, icon-pen4, icon-pen5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+                    </item>					
+					<item id="mcs_block_icons_header">
+						<type>header</type>
+						<name>Blocks Icons</name>
+					</item>
+					<item id="mcs_block_icons_cart_block">
+                        <type>input</type>
+                        <name>Cart content icon</name>
+						<default_value>icon-bag3</default_value>
+						<tooltip>Enter an icon name class for the 'Cart content' block (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
+					<item id="mcs_block_icons_my_account_block">
+                        <type>input</type>
+                        <name>My Account icon</name>
+						<default_value>icon-user</default_value>
+						<tooltip>Enter an icon name class for the 'My Account' block (icon-profile, icon-user , icon-user2, icon-user3, icon-user4, icon-user5, icon-user6, icon-user7, icon-user8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+                    </item>
+
 					<item id="mcs_block_icons_breadcrumbs">
                         <type>input</type>
                         <name>Breadcrumbs icon</name>
 						<default_value>icon-home3</default_value>
+						<tooltip>Enter an icon name class for the 'My Account' block (icon-home, icon-home2, icon-home3, icon-home4, icon-home5, icon-home6, icon-home7, icon-home8, icon-home9, icon-home10, icon-home11, icon-home12 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 				</items>
             </section>
-		<!--SLIDERS-->
-			<section id="mcs_sliders">
-                <name>bxSlider</name>
-                <items>
-                    <item id="mcs_bxslider">
-                        <type>checkbox</type>
-                        <name>Enable bxSlider</name>
-						<default_value>Y</default_value>
-                    </item>
-				</items>
-            </section>
-		<!--MOBILE DEVICES-->
-			<section id="mcs_mobile_devices">
-                <name>Mobile Devices</name>       
-                <items>
-					<item id="mcs_mobile_devices_grid_detection">
-                        <type>checkbox</type>
-                        <name>Enable Device detection for grids</name> 
-                        <default_value>Y</default_value>
-                    </item>
-                    <item id="mcs_mobile_devices_block_detection">
-                        <type>checkbox</type>
-                        <name>Enable Device detection for blocks</name> 
-                        <default_value>Y</default_value>
-                    </item>
-				</items>
-			</section>
+
 		<!--SCROLL TO TOP-->
 			<section id="mcs_scroll_to_top">
                 <name>Scroll to top</name>       
@@ -290,11 +304,13 @@
                         <type>checkbox</type>
                         <name>Enable Scroll to top</name> 
                         <default_value>Y</default_value>
+						<tooltip>Enable or disable the Scroll to Top button.</tooltip>
                     </item>
                     <item id="mcs_scroll_to_top_distance">
                         <type>input</type>
                         <name>Scroll distance</name> 
                         <default_value>300</default_value>
+						<tooltip>The distance in pixels between the button and the top or bottom of the page.</tooltip>
                     </item>
                     <item id="mcs_scroll_to_top_from">
                         <type>selectbox</type>
@@ -308,11 +324,13 @@
                                 <name>Bottom</name>                        
                             </item>
                         </variants>
+						<tooltip>Select from where the distance will be calculated.</tooltip>
                     </item>
                     <item id="mcs_scroll_to_top_speed">
                         <type>input</type>
                         <name>Scroll speed</name> 
                         <default_value>300</default_value>
+						<tooltip>Enter the page scrolling speed in ms.</tooltip>
                     </item>		
 					<item id="mcs_scroll_to_top_animation">
                         <type>selectbox</type>
@@ -329,6 +347,7 @@
                                 <name>None</name>
                             </item>
                         </variants>
+						<tooltip>Select the scrolling animation.</tooltip>
 					</item>
 					
 					<item id="mcs_scroll_to_top_easing">
@@ -336,6 +355,7 @@
                         <name>Scroll easing type</name> 
                         <default_value>linear</default_value>
 						<variants/>
+						<tooltip>Select the scrolling animation easing type.</tooltip>
                     </item>
 				</items>
 			</section>
@@ -371,14 +391,14 @@
 					
 					<item id="mcs_popup_content_banners">
 						<name>Banner</name>
-						<tooltip>If the popup contains a Banner, select which banner to display. Both Graphics and text banners are supported.</tooltip>
+						<tooltip>If the popup contains a Banner, select which banner to display. Both Graphics and Text banners are supported.</tooltip>
 						<type>selectbox</type>
 						<variants/>
 					</item>
 
 					<item id="mcs_popup_content_categories">
 						<name>Category</name>
-						<tooltip>If the popup contains a Category, select which category to display. The popup will display the category image and description.</tooltip>
+						<tooltip>If the popup contains a Category, select which category to display. The popup will display the category image and category description.</tooltip>
 						<type>selectbox</type>
 						<variants/>
 					</item>
@@ -397,14 +417,14 @@
 
 					<item id="mcs_popup_cookie_enable">
 						<name>Enable cookie expiration</name>
-						<tooltip>If checked, the popup will contain a button to disable the popup for a certain number of days, based on a browser cookie.</tooltip>
+						<tooltip>If checked, a 'Do not show me again' button will be displayed. If the visitor presses this button, the popup will not be displayed to them for a set number of days, based on a browser cookie.</tooltip>
 						<type>checkbox</type>
 						<default_value>Y</default_value>
 					</item>	
 					
 					<item id="mcs_popup_cookie_days">
 						<name>Cookie expiration (days)</name>
-						<tooltip>The number of days until the popup cookie will expire. After this period the cookie will appear again to the visitor.</tooltip>
+						<tooltip>Set the number of days after the cookie will expire.</tooltip>
 						<type>input</type>
 						<default_value>30</default_value>
 					</item>	
@@ -416,28 +436,28 @@
 					
 					<item id="mcs_popup_styling_overlay_color">
 						<name>Overlay color code</name>
-						<tooltip>The color of the popup overlay.</tooltip>
+						<tooltip>The HTML color code of the popup overlay, without the #.</tooltip>
 						<type>input</type>
-						<default_value>#000000</default_value>
+						<default_value>000000</default_value>
 					</item>
 
 					<item id="mcs_popup_styling_overlay_opacity">
 						<name>Overlay opacity</name>
-						<tooltip>The opacity of the popup overlay.</tooltip>
+						<tooltip>The opacity (0 - 1) of the popup overlay.</tooltip>
 						<type>input</type>
 						<default_value>0.6</default_value>
 					</item>
 					
 					<item id="mcs_popup_styling_show_title">
 						<name>Show popup title</name>
-						<tooltip>Check to enable the popup window title bar.</tooltip>
+						<tooltip>Enable/disable the popup title.</tooltip>
 						<type>checkbox</type>
 						<default_value>Y</default_value>
 					</item>
 					
 					<item id="mcs_popup_styling_max_width">
 						<name>Window max width</name>
-						<tooltip>The maximum percentage width of the popup window. In order to set the width in pixels, just add the number of pixels without px (i.e. 400). </tooltip>
+						<tooltip>The maximum percentage width of the popup (i.e. 90%). If you wish to add a fixed width in pixels, please add the number of pixels followed by px (i.e. 400px). Percentage width is recommended for responsive layout. </tooltip>
 						<type>input</type>
 						<default_value>90%</default_value>
 					</item>	
@@ -450,14 +470,14 @@
 					
 					<item id="mcs_popup_effects_show">
 						<name>Show effect</name>
-						<tooltip>Select the effect that will apply when the popup is shown.</tooltip>
+						<tooltip>Select the effect that will be applied when the popup is shown.</tooltip>
 						<type>selectbox</type>
 						<variants/>
 					</item>
 					
 					<item id="mcs_popup_effects_show_easing">
 						<name>Show easing</name>
-						<tooltip>Select the easing that will apply when the popup is shown.</tooltip>
+						<tooltip>Select the easing that will be applied when the popup is shown.</tooltip>
 						<type>selectbox</type>
 						<default_value>linear</default_value>
 						<variants/>
@@ -465,14 +485,14 @@
 					
 					<item id="mcs_popup_effects_show_duration">
 						<name>Pop show effect duration</name>
-						<tooltip>Select the effect duration that will apply when the popup is shown.</tooltip>
+						<tooltip>Select the effect duration that will be applied when the popup is shown.</tooltip>
 						<type>input</type>
 						<default_value>1000</default_value>
 					</item>	
 
 					<item id="mcs_popup_effects_hide_effect">
 						<name>Hide effect</name>
-						<tooltip>Select the effect that will apply when the popup is hidden.</tooltip>
+						<tooltip>Select the effect that will be applied when the popup is hidden.</tooltip>
 						<type>selectbox</type>
 						<default_value>fadeOut</default_value>
 						<variants/>
@@ -480,14 +500,14 @@
 
 					<item id="mcs_popup_effects_hide_easing">
 						<name>Hide easing</name>
-						<tooltip>Select the easing that will apply when the popup is hidden.</tooltip>
+						<tooltip>Select the easing that will be applied when the popup is hidden.</tooltip>
 						<type>selectbox</type>
 						<variants/>
 					</item>
 
 					<item id="mcs_popup_effects_hide_duration">
 						<name>Pop hide effect duration</name>
-						<tooltip>Select the effect duration that will apply when the popup is hidden.</tooltip>
+						<tooltip>Select the effect duration that will be applied when the popup is hidden.</tooltip>
 						<type>input</type>
 						<default_value>500</default_value>
 					</item>
@@ -578,18 +598,7 @@
 					
 				</items>
 			</section>
-		<!--Shortcodes-->
-			<section id="mcs_shortcodes">
-				<name>Shortcodes</name>
-				<items>
-					<item id="mcs_shortcodes_enable">
-						<name>Enable shortcodes</name>
-						<tooltip>Check to enable the shortcodes functionality.</tooltip>
-						<type>checkbox</type>
-						<default_value>N</default_value>
-					</item>	
-				</items>
-			</section>
+
         </sections>
     </settings>
 	<language_variables>
@@ -598,7 +607,7 @@
         <item lang="en" id="block_mcs_banners_description">Custom Visual and text banners</item>
 		<item lang="en" id="mcs_bxslider">More CS-Cart bxSlider</item>
 		<item lang="en" id="mcs_i_scroller">More CS-Cart Scroller I</item>
-		<item lang="en" id="mcs_accordion_block">More CS-Cart Accordion Block</item>
+		<item lang="en" id="mcs_block_grouping_wrapper">More CS-Cart Block Grouping Wrapper</item>
 		<item lang="en" id="mcs_tab_block">More CS-Cart Tab Block</item>
 		<item lang="en" id="mcs_i_menu">More CS-Cart Menu I</item>
 		<item lang="en" id="mcs_i_grid">More CS-Cart Grid I</item>
@@ -732,11 +741,12 @@
 		<item lang="en" id="block_mcs_payment_icons_description">More CS-Cart Payment Icons description</item>
 		<item lang="en" id="mcs_payment_icons">More CS-Cart Payment Icons</item>
 		<item lang="en" id="Colored">Colored</item>
-		<item lang="en" id="bw">Black and White</item>
+		<item lang="en" id="black_and_white">Black and White</item>
 		<item lang="en" id="hover">Hover Effect</item>
 		<item lang="en" id="blur">Blur</item>
 		<item lang="en" id="32x20">32x20</item>
 		<item lang="en" id="64x40">64x40</item>
+		<item lang="en" id="alignment">Alignment</item>
 		<item lang="en" id="payment_icons">Payment Icons</item>
 		
 		<item lang="en" id="block_mcs_contact_block">More CS-Cart Contact Block</item>
@@ -777,7 +787,7 @@
 		<item lang="en" id="mcs_contact_block_newsletter_email">Company Newsletter Email</item>
 		<item lang="en" id="mcs_contact_block_form_link">Company Contact Form Link</item>
 		<item lang="en" id="mcs_footer_wrapper">More CS-Cart Footer Wrapper</item>
-		
+		<item lang="en" id="contact_us">Contact us</item>
 		<item lang="en" id="transparent">Transparent</item>
 		<item lang="en" id="white">White</item>
 		<item lang="en" id="devices">Show on devices</item>
@@ -804,6 +814,7 @@
 		<item lang="en" id="transfer">Transfer</item>
 		
 		<item lang="en" id="mcs_full_width">Full Width</item>
+		<item lang="en" id="mcs_block_grouping">Block Grouping</item>
 	</language_variables>
 </addon>
 

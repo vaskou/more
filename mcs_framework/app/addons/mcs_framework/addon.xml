@@ -225,50 +225,50 @@
                         <type>input</type>
                         <name>"Add To Cart" button icon</name>
 						<default_value>icon-bag3</default_value>
-						<tooltip>Enter an icon name class for the 'Add to Cart' button (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Add to Cart' button (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
 						
                     </item>
 					<item id="mcs_button_icons_add_to_compare_list">
                         <type>input</type>
                         <name>"Add To Compare List" button icon</name>
 						<default_value>icon-bars3</default_value>
-						<tooltip>Enter an icon name class for the 'Add To Compare' button (icon-bars, icon-bars2, icon-bars3, icon-bars4, icon-bars5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Add To Compare' button (icon-bars, icon-bars2, icon-bars3, icon-bars4, icon-bars5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_add_to_wishlist">
                         <type>input</type>
                         <name>"Add To Wishlist" button icon</name>
 						<default_value>icon-heart4</default_value>
-						<tooltip>Enter an icon name class for the 'Add To Wishlist' button (icon-bookmarks, icon-heart, icon-heart2, icon-heart3, icon-heart4, icon-heart5, icon-heart6, icon-heart7, icon-heart8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Add To Wishlist' button (icon-bookmarks, icon-heart, icon-heart2, icon-heart3, icon-heart4, icon-heart5, icon-heart6, icon-heart7, icon-heart8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_select_options">
                         <type>input</type>
                         <name>"Select Options" button icon</name>
 						<default_value>icon-checkbox</default_value>
-						<tooltip>Enter an icon name class for the 'Select Options' button (icon-checkbox, icon-checkbox2, icon-checkbox-checked, icon-checkbox-checked2, icon-checkmark, icon-checkmark2, icon-checkmark3, icon-checkmark4, icon-checkmark-circle, icon-checkmark-circle2, icon-cog, icon-cog2, icon-cog3, icon-cog4, icon-cog5, icon-cog6, icon-cog7, icon-manu10 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Select Options' button (icon-checkbox, icon-checkbox2, icon-checkbox-checked, icon-checkbox-checked2, icon-checkmark, icon-checkmark2, icon-checkmark3, icon-checkmark4, icon-checkmark-circle, icon-checkmark-circle2, icon-cog, icon-cog2, icon-cog3, icon-cog4, icon-cog5, icon-cog6, icon-cog7, icon-manu10 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_button_icons_go_button">
                         <type>input</type>
                         <name>"Go" button icon</name>
 						<default_value>icon-arrow-right3</default_value>
-						<tooltip>Enter an icon name class for the 'Go' button (icon-right, icon-right2, icon-right3, icon-right4, icon-right5, icon-right6, icon-right7, icon-right8, icon-right9, icon-right10, icon-right11, icon-right12, icon-right13, icon-right14, icon-right15, icon-right16, icon-right17, icon-right18 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Go' button (icon-right, icon-right2, icon-right3, icon-right4, icon-right5, icon-right6, icon-right7, icon-right8, icon-right9, icon-right10, icon-right11, icon-right12, icon-right13, icon-right14, icon-right15, icon-right16, icon-right17, icon-right18 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_sign_in">
                         <type>input</type>
                         <name>"Sign In" button icon</name>
 						<default_value>icon-enter</default_value>
-						<tooltip>Enter an icon name class for the 'Sign In' button (icon-enter, icon-enter2, icon-enter3, icon-key, icon-key2, icon-key3, icon-key4, icon-key5 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Sign In' button (icon-enter, icon-enter2, icon-enter3, icon-key, icon-key2, icon-key3, icon-key4, icon-key5 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_sign_out">
                         <type>input</type>
                         <name>"Sign Out" button icon</name>
 						<default_value>icon-exit</default_value>
-						<tooltip>Enter an icon name class for the 'Sign Out' button (icon-exit, icon-exit2, icon-exit3, icon-exit4, icon-switch). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Sign Out' button (icon-exit, icon-exit2, icon-exit3, icon-exit4, icon-switch). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_register">
                         <type>input</type>
                         <name>"Register" button icon</name>
 						<default_value>icon-pencil3</default_value>
-						<tooltip>Enter an icon name class for the 'Register' button (icon-signup, icon-pencil, icon-pencil2, icon-pencil3, icon-pencil4, icon-pencil5, icon-pencil6, icon-pen, icon-pen2, icon-pen3, icon-pen4, icon-pen5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Register' button (icon-signup, icon-pencil, icon-pencil2, icon-pencil3, icon-pencil4, icon-pencil5, icon-pencil6, icon-pen, icon-pen2, icon-pen3, icon-pen4, icon-pen5). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>					
 					<item id="mcs_block_icons_header">
 						<type>header</type>
@@ -278,20 +278,42 @@
                         <type>input</type>
                         <name>Cart content icon</name>
 						<default_value>icon-bag3</default_value>
-						<tooltip>Enter an icon name class for the 'Cart content' block (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'Cart content' block (icon-cart, icon-cart2, icon-cart3, icon-cart4, icon-cart5, icon-cart6, icon-cart7, icon-cart-plus, icon-cart-add, icon-cart-checkout, icon-basket, icon-basket2, icon-bag, icon-bag2, icon-bag3). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 					<item id="mcs_block_icons_my_account_block">
                         <type>input</type>
                         <name>My Account icon</name>
 						<default_value>icon-user</default_value>
-						<tooltip>Enter an icon name class for the 'My Account' block (icon-profile, icon-user , icon-user2, icon-user3, icon-user4, icon-user5, icon-user6, icon-user7, icon-user8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'My Account' block (icon-profile, icon-user , icon-user2, icon-user3, icon-user4, icon-user5, icon-user6, icon-user7, icon-user8). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
                     </item>
 
 					<item id="mcs_block_icons_breadcrumbs">
                         <type>input</type>
                         <name>Breadcrumbs icon</name>
 						<default_value>icon-home3</default_value>
-						<tooltip>Enter an icon name class for the 'My Account' block (icon-home, icon-home2, icon-home3, icon-home4, icon-home5, icon-home6, icon-home7, icon-home8, icon-home9, icon-home10, icon-home11, icon-home12 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an ocon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+						<tooltip>Enter an icon name class for the 'My Account' block (icon-home, icon-home2, icon-home3, icon-home4, icon-home5, icon-home6, icon-home7, icon-home8, icon-home9, icon-home10, icon-home11, icon-home12 ). You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270) .</tooltip>
+                    </item>
+					<item id="mcs_filter_icons_header">
+						<type>header</type>
+						<name>Filter Icons</name>
+					</item>
+					<item id="mcs_filter_icons_unchecked">
+                        <type>input</type>
+                        <name>Unchecked filter icon</name>
+						<default_value>icon-radio-unchecked</default_value>
+						<tooltip>Enter an icon name class for the unchecked filter icon. You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270).</tooltip>
+                    </item>
+					<item id="mcs_filter_icons_checked">
+                        <type>input</type>
+                        <name>Checked filter icon</name>
+						<default_value>icon-radio-checked</default_value>
+						<tooltip>Enter an icon name class for the unchecked filter icon. You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270).</tooltip>
+                    </item>
+					<item id="mcs_filter_icons_cancel">
+                        <type>input</type>
+                        <name>Cancel filter icon</name>
+						<default_value>icon-cancel-circle</default_value>
+						<tooltip>Enter an icon name class for the unchecked filter icon. You can also enter an icon size class (icon-large, icon-2x, icon-3x, icon-4x, icon-5x), an icon border class (icon-border), an icon alignment class (pull-left, pull-right), an icon spin class (icon-spin), an icon flip class (icon-flip-horizontal, icon-flip-vertical) or an icon rotate class (icon-rotate-90, icon-rotate-180, icon-rotate-270).</tooltip>
                     </item>
 				</items>
             </section>

@@ -1,1 +1,1 @@
-<div id="mcs_helper" class="{$_REQUEST.dispatch|replace:'.':'_'} mcs_{$mobiledetect.deviceType} mcs_usergroup_{$auth.usergroup_ids[2]}">
+<div id="mcs_helper" class="{$_REQUEST.dispatch|replace:'.':'_'} mcs_{$mobiledetect.deviceType} mcs_usergroup_{$auth.usergroup_ids[2]} {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}mcs_responsive{/if}">

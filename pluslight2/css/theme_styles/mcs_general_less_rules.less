@@ -1,0 +1,202 @@
+/*General less rules*/
+.gradient (@startColor, @endColor) {
+	background-color: @endColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor)));
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 0, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+	-moz-box-shadow: inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+	box-shadow: inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+}
+.inner-shadow-dark (@x: 0, @y: 1px, @blur: 0, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.drop-shadow-light (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: @x @y @blur @spread rgba(255, 255, 255, @alpha);
+	-moz-box-shadow: @x @y @blur @spread rgba(255, 255, 255, @alpha);
+	box-shadow: @x @y @blur @spread rgba(255, 255, 255, @alpha);
+}
+.border-radius (@radius: 3px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+.sidebox_header (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, a:link, a:visited, a:hover {
+	color: darken(@menu, 10%);
+	text-shadow: 0px 1px 0px lighten(@menu, 50%);
+	}
+}
+.sidebox_header (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, a:link, a:visited, a:hover {
+	color: lighten(@menu, 70%);
+	text-shadow: 0px 1px 0px darken(@menu, 15%);
+	}
+}
+.button_text (@b) when (lightness(@b) >= 30%) {
+	input, a {
+	color: darken(@b, 45%);
+	text-shadow: 0px 1px 0px lighten(@b, 50%);
+	}
+	i {
+	color: darken(@b, 40%);
+	text-shadow: 0px 1px 0px lighten(@b, 50%);
+	}
+}
+.button_text (@b) when (lightness(@b) < 70%) {
+	input, a {
+	color: lighten(@b, 70%);
+	text-shadow: 0px 1px 0px darken(@b, 15%);
+	}
+	i {
+	color: lighten(@b, 80%);
+	text-shadow: 0px 1px 0px darken(@b, 15%);
+	}
+}
+.top_panel_links (@top_panel_bg_color_links) when (lightness(@top_panel_bg_color_links) < 73%) {
+	color: #fff;
+}
+.top_panel_dropdown (@top_panel_bg_color_dropdown) when (lightness(@top_panel_bg_color_dropdown) < 73%) {
+	color: lighten(@top_panel_bg_color, 60%);
+}
+.top_panel_dropdown_border (@top_panel_bg_color_dropdown_border) when (lightness(@top_panel_bg_color_dropdown_border) < 90%) {
+	border-color: darken(@top_panel_bg_color, 7%);
+}
+.top_panel_dropdown_hover (@top_panel_bg_color_dropdown_hover) when (lightness(@top_panel_bg_color_dropdown_hover) < 70%) {
+	color: darken(@top_panel_bg_color, 10%);
+}
+/**************************************************************************************/
+
+/*Custom less rules*/
+
+.mcs_no_text_shadow{
+	input,a,i{
+		text-shadow:none;
+	}
+	text-shadow:none;
+}
+.mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
+	i {
+		color: darken(@b, 100%);
+	}
+	color: darken(@b, 100%);
+	background-color:@b;
+}
+.mcs_button_text_color (@b) when (lightness(@b) < 70%) {
+	i {
+		color: lighten(@b, 100%);
+	}
+	color: lighten(@b, 100%);
+	background-color:@b;
+}
+.tab_text_color (@b) when (lightness(@b) >= 30%) {
+	i, a {
+		color: darken(@b, 100%);
+		vertical-align:middle;
+	}
+}
+.tab_text_color (@b) when (lightness(@b) < 70%) {
+	i, a {
+		color: lighten(@b, 100%);
+		vertical-align:middle;
+	}
+}
+.mcs_sidebox_header (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, a:link, a:visited, a:hover {
+	color: darken(@font, 20%);
+	text-shadow: none;
+	}
+}
+.mcs_sidebox_header (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, a:link, a:visited, a:hover {
+	color: lighten(@font, 100%);
+	text-shadow: none;
+	}
+}
+.mcs_sidebox_text (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, 
+	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
+	li, p, .product-filters .details, .price-slider,
+	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
+		color: @font;
+		text-shadow: none;
+		border-color: lighten(@font,20%);
+	}
+}
+.mcs_sidebox_text (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, 
+	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
+	li, p, .product-filters .details, .price-slider,
+	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
+		color: lighten(@font, 100%);
+		text-shadow: none;
+		border-color:lighten(@font, 70%);
+	}
+}
+.mcs_mmenu_text_color (@b) when (lightness(@b) >= 30%) {
+	color: darken(@b, 100%);
+	border-color:darken(@b, 100%)!important;
+	span{
+		background-color:darken(@b, 100%);
+	}
+	&.mean-expand:hover{
+		background:darken(@b, 100%);
+		color: lighten(@b, 100%);
+	}
+	&.mean-expand{
+		border-color:darken(@b, 100%)!important;
+	}
+}
+.mcs_mmenu_text_color (@b) when (lightness(@b) < 70%) {
+	color: lighten(@b, 100%);
+	border-color:lighten(@b, 100%)!important;
+	span{
+		background-color: lighten(@b, 100%);
+	}
+	&.mean-expand:hover{
+		background:lighten(@b, 100%);
+		color: darken(@b, 100%);
+	}
+	&.mean-expand{
+		border-color:lighten(@b, 100%)!important;
+	}
+}
+.mcs_text_color (@b) when (lightness(@b) >= 30%) {
+	color: darken(@b, 100%);
+}
+.mcs_text_color (@b) when (lightness(@b) < 70%) {
+	color: lighten(@b, 100%);
+}
+.mcs_neg_text_color (@b) when (lightness(@b) >= 30%) {
+	.mcs_text_color(darken(@b, 100%));
+}
+.mcs_neg_text_color (@b) when (lightness(@b) < 70%) {
+	.mcs_text_color(lighten(@b, 100%));
+}
+.mcs_no_shadow{
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+.mcs_neg_background_color (@b) when (lightness(@b) >= 30%) {
+	background: darken(@b, 100%);
+	filter:none;
+}
+.mcs_neg_background_color (@b) when (lightness(@b) < 70%) {
+	background: lighten(@b, 100%);
+	filter:none;
+}
+/***************************************************************************************/

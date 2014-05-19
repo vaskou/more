@@ -1,0 +1,50 @@
+.sidebox-wrapper{
+	border:1px solid;
+	border-top:none;		/*pluslight mod*/
+	margin-bottom:0;		/*pluslight mod*/
+}
+.categories_view .sidebox-wrapper{
+	border-left:none;		/*pluslight mod*/
+}
+.checkout_checkout .sidebox-wrapper{
+	border-right:none;		/*pluslight mod*/
+}
+.sidebox-title,
+.sidebox-important-wrapper .sidebox-title{
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	padding:10px 10px 5px;
+}
+
+.sidebox-wrapper .sidebox-title.
+.sidebox-important-wrapper .sidebox-title{
+	border:none;
+	border-bottom:none;
+}
+.sidebox-wrapper .sidebox-title span,
+.sidebox-wrapper .sidebox-title a,
+.sidebox-important-wrapper .sidebox-title span,
+.sidebox-important-wrapper .sidebox-title span{
+	font-weight:normal;
+	font-size:115%;
+}
+.sidebox-wrapper .sidebox-body,
+.sidebox-important-wrapper .sidebox-body{
+	padding:5px 10px 10px;
+	border-radius:0;
+	border:none;
+}
+.filter-wrap .icon-right-dir, 
+.filter-wrap .icon-down-dir{
+	margin:0;
+}
+.filter-title{
+	border:none;
+	font-size:125%;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 15px;
+	height: 15px;
+}

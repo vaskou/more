@@ -123,8 +123,6 @@
 	display:block;
 	position:relative;
 	border:none;
-	box-shadow:none;
-	-webkit-box-shadow:none;
 }
 
 .tabs ul li.dropdown ul.dropdown-menu li{

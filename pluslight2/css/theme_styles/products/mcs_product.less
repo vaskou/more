@@ -1,0 +1,78 @@
+.product-main-info .image-border:hover {
+	.drop-shadow(0px, 0px, 15px ,0px ,0.20);
+}
+
+.product-info .brand-image img:hover{
+	.drop-shadow(0px, 0px, 15px ,0px ,0.20);
+}
+
+.product-main-info .add-to-wish,
+.product-main-info .add-to-compare{
+	color:@links;
+}
+.popup-tabs{
+	background:lighten(@base,41%);
+	filter:none;
+}
+
+/* Product options */
+.cm-picker-product-options{
+	background:lighten(@base,41%);
+	filter:none;
+}
+.options-wrapper .product-list-field {
+	border-color:lighten(@base,30%);
+}
+
+/* Products Tabs */
+.tabs,  
+.tabs ul li.active,
+.tabs ul.dropdown-menu li.active {
+	border-color:darken(@decorative,5%);
+}
+.tabs ul li,
+.tabs ul.dropdown-menu li {
+	background:lighten(@base,41%);
+	filter:none;
+	.tab_text_color (lighten(@base,41%));
+	border-color:lighten(@base,30%);
+}
+.tabs ul>li, 
+.tabs ul>li.active{
+	.border-radius(0px);
+}
+.tabs ul li:hover,
+.tabs ul.dropdown-menu li:hover {
+	background:lighten(@base,35%);
+	filter:none;
+	.tab_text_color (lighten(@base,35%));
+} 
+.tabs ul li.active,
+.tabs ul.dropdown-menu li.active {
+	.gradient (darken(@decorative, 5%), darken(@decorative, 5%));
+	.tab_text_color (darken(@decorative, 5%));
+	border-bottom-color: darken(@decorative, 5%);
+} 
+
+.tabs ul li.active:hover,
+.tabs ul.dropdown-menu li.active:hover{
+	.tab_text_color (darken(@decorative,5%));
+}
+
+.tabs-content .control-group{
+	border-color: lighten(@base,30%);
+}
+.tabs ul li.dropdown ul.dropdown-menu li{
+	border-color:lighten(@base, 30%);
+}
+
+/* Addon Buy together*/
+.chain-price{
+	background:lighten(@base,41%);
+	.border-radius(0);
+	border:none;
+}
+.chain-content .buttons-container{
+	padding-left:0;
+	padding-right:0;
+}

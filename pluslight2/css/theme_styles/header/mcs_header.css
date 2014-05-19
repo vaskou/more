@@ -1,0 +1,50 @@
+.tygh-header > div{
+	padding-top:0;
+}
+.logo-container{
+	min-height:20px;
+	margin:10px 0;
+}
+.logo-container >a{
+	line-height:96px;
+}
+.logo-container .logo{
+	margin:0px;
+}
+.motto{
+	margin-left: 10px;
+	margin-top: 40px;
+}
+.motto p {
+	padding:0;
+	font-weight: bold;
+	color: #ccc;
+	font-size: 24px;
+}
+
+.motto .accent {
+	font-weight: bold;
+	font-size: 24px;
+}
+.cart-content-grid{
+	margin-top:15px;
+//	padding:15px 15px 0 0;
+}
+.container .cart-content-grid{
+//	margin:15px 0 0 !important;
+}
+
+/*top-my-account*/
+.header-grid .dropdown-box.top-my-account{
+	margin-right:10px;
+}
+.header-grid .dropdown-box.top-my-account .popup-title{
+	padding:0 10px;
+	line-height:34px;
+}
+
+/*top-cart-content*/
+.header-grid .top-cart-content .dropdown-box .popup-title{
+	padding:0 10px;
+	line-height:34px;
+}
