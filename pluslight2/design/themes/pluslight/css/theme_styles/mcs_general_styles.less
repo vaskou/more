@@ -223,7 +223,7 @@ div.ui-dialog .ui-dialog-title,
 .sidebox-body .button-action.button-wrap-left,
 .button-big.button-wrap-left,
 .mcs_i_grid .mcs-wishlist span {
-	.button_text (@primary_button);
+	.mcs_button_text_color (@primary_button);
 	.mcs_no_text_shadow;
 }
 
@@ -342,6 +342,15 @@ h2.step-title-complete a.title:hover{
 .step-title-complete{
 	.border-radius(0);
 	border-color:lighten(@base,41%);
+}
+.checkout-summary table tbody.total th, 
+.order-products .edit-products{
+	.border-radius(0);
+	background:lighten(@base,45%);
+	filter:none;
+}
+.checkout-summary table tbody.total th div{
+	.mcs_text_color(lighten(@base,45%));
 }
 
 /*Orders*/

@@ -286,3 +286,47 @@ function fn_mcs_variants_get_effects()
 	return $effects;
 }	
 	
+
+function fn_mcs_framework_styles_block_files($styles)
+{
+	$tpl_vars=Registry::get('view')->{'tpl_vars'};
+	$mcs_framework=$tpl_vars['settings']->{'value'}['mcs_framework'];
+	$icomoon_enabled=$mcs_framework['mcs_font_icons']['mcs_icomoon'];
+	
+	$base_styles=array();
+	$framework_styles=array();
+	$theme_styles=array();
+	
+	foreach($styles as $k=>$v){
+		$path=explode("/",$v['relative']);
+		if(in_array('mcs_framework',$path)){
+			array_push($framework_styles,$v);
+		}elseif(in_array('theme_styles',$path)){
+			array_push($theme_styles,$v);
+		}else{
+			if($icomoon_enabled=='Y'){
+				if(!in_array('glyphs.css',$path)){
+					array_push($base_styles,$v);
+				}
+			}else{
+					array_push($base_styles,$v);
+			}
+			
+		}		
+	}
+	
+//	$params['use_scheme']=true;
+	
+	list($_area) = Registry::get('view')->getArea();
+    $filename = fn_merge_styles($base_styles, $internal_styles, $prepend_prefix, $params, $_area);
+	$content='<link type="text/css" rel="stylesheet" href="' . $filename . '" />';
+	$filename = fn_merge_styles($framework_styles, $internal_styles, $prepend_prefix, $params, $_area);
+	$content.='<link type="text/css" rel="stylesheet" href="' . $filename . '" />';
+	$filename = fn_merge_styles($theme_styles, $internal_styles, $prepend_prefix, $params, $_area);
+	$content.='<link type="text/css" rel="stylesheet" href="' . $filename . '" />';
+	
+	
+	$styles=array();
+	print_r($content);
+	return $styles;
+}

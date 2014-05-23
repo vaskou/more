@@ -14,3 +14,20 @@
 .sidebox-wrapper .sidebox-body ul.text-links li.active a{
 	.mcs_text_color(@sidebar);
 }
+
+.range-slider.ui-slider .ui-slider-handle {
+	.border-radius(10px);
+}
+
+.range-slider.ui-slider.ui-slider-horizontal,
+.range-slider.ui-slider .ui-slider-handle{
+	background:lighten(@base,41%);
+	filter:none;
+	.mcs_no_shadow;
+}
+
+.range-slider.ui-slider .ui-slider-range.ui-widget-header{
+	background:@decorative;
+	filter:none;
+	.mcs_no_shadow;
+}

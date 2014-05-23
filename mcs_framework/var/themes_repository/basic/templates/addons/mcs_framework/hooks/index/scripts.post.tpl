@@ -132,3 +132,9 @@ function deviceType(){
 {if $addons.mcs_framework.mcs_general_responsive_enable=='Y'}
 	
 {/if}
+
+{******************* THEME SCRIPTS FILE ***********************}
+
+{if file_exists("js/theme_scripts/theme_scripts.tpl")}
+	{include file="js/theme_scripts/theme_scripts.tpl"}
+{/if}

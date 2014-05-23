@@ -1,5 +1,12 @@
+.product-main-info > div.clearfix{
+	border-color:lighten(@base,15%);
+}
 .product-main-info .image-border:hover {
 	.drop-shadow(0px, 0px, 15px ,0px ,0.20);
+}
+
+.product-info{
+	border-color:lighten(@base,15%);
 }
 
 .product-info .brand-image img:hover{
@@ -28,7 +35,7 @@
 .tabs,  
 .tabs ul li.active,
 .tabs ul.dropdown-menu li.active {
-	border-color:darken(@decorative,5%);
+	border-color:lighten(@base,15%);
 }
 .tabs ul li,
 .tabs ul.dropdown-menu li {
@@ -49,14 +56,14 @@
 } 
 .tabs ul li.active,
 .tabs ul.dropdown-menu li.active {
-	.gradient (darken(@decorative, 5%), darken(@decorative, 5%));
-	.tab_text_color (darken(@decorative, 5%));
-	border-bottom-color: darken(@decorative, 5%);
+	background:lighten(@base,15%);
+	.tab_text_color (lighten(@base,15%));
+	border-bottom-color: lighten(@base,15%);
 } 
 
 .tabs ul li.active:hover,
 .tabs ul.dropdown-menu li.active:hover{
-	.tab_text_color (darken(@decorative,5%));
+	.tab_text_color (lighten(@base,15%));
 }
 
 .tabs-content .control-group{

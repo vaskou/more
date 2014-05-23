@@ -53,12 +53,6 @@
 }
 /***************************************************************/
 
-/*********************** wishlist ******************************/
-.wishlist_view .main-content-grid{
-	padding:15px;
-}
-
-
 /*Mainbox general*/
 .mainbox-container{
 	background:#fff;
@@ -265,4 +259,10 @@ h1.mainbox-title{
 .gift-verify .tabs-content{
 	padding-left:0;
 	padding-right:0;
+}
+
+/*Login popup*/
+.login-popup .buttons-container{
+	padding-left:15px;
+	padding-right:15px;
 }

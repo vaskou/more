@@ -1,4 +1,7 @@
-.product-main-info > div:first-child{
+.product-main-info{
+	margin-top:0;
+}
+.product-main-info > div.clearfix{
 	border-bottom:3px solid;
 }
 .product-main-info .product-info h1.mainbox-title{
@@ -25,7 +28,6 @@
 	padding:0 10px 10px;
 	background-color:#fff;
 	border-left:1px solid;
-	min-height:700px;
 }
 .product-info .rating-wrapper,
 .product-info .mcs_labels_wrapper{

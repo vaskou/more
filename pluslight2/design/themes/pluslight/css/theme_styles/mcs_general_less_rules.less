@@ -88,14 +88,14 @@
 	text-shadow:none;
 }
 .mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
-	i {
+	a,i {
 		color: darken(@b, 100%);
 	}
 	color: darken(@b, 100%);
 	background-color:@b;
 }
 .mcs_button_text_color (@b) when (lightness(@b) < 70%) {
-	i {
+	a,i {
 		color: lighten(@b, 100%);
 	}
 	color: lighten(@b, 100%);

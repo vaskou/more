@@ -10,6 +10,7 @@
 	padding:0;	
 }
 
+/*bxSlider custom control icons*/
 [class^="mcs_slider_"] #c_controls{
 	position:absolute;
 	bottom:50%;

@@ -39,7 +39,4 @@
 .ui-slider .ui-slider-handle {
 	width: 15px;
 	height: 15px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
