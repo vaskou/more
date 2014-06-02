@@ -141,12 +141,11 @@
 	box-sizing:border-box;
 }
 
-@media only screen and (max-width: @fluidContainerMaxWidth) {
+@media only screen and (max-width: @fluidContainerMaxWidth) and (min-width: 768px) {
 
-.mcs_responsive .container-fluid > .row-fluid{
-	padding-left:20px;
-	padding-right:20px;
-	box-sizing:border-box;
+.mcs_responsive .mcs-full-width > div > .row-fluid{
+	padding-left:0px !important;
+	padding-right:0px !important;
 }
 
 }
@@ -170,7 +169,8 @@
 .mcs_responsive .tygh-header > [class*="container"],
 .mcs_responsive .tygh-content > [class*="container"],
 .mcs_responsive .tygh-footer > [class*="container"]{
-	border:none;
+	border-left:none;
+	border-right:none;
 }
 
 }

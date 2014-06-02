@@ -79,8 +79,8 @@
 	padding:12px 0px 35px;
 }
 .breadcrumbs .product-switcher{
-	top:auto;
-	right:auto;
+	top:auto !important;
+	right:auto !important;
 	bottom:10px;	
 }
 

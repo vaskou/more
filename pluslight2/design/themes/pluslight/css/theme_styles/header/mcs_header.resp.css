@@ -1,0 +1,51 @@
+@media (max-width:850px){
+
+.motto{
+	margin-top:41px;
+}
+.motto p,
+.motto .accent{
+	font-size:16px;
+}
+
+}
+
+@media (max-width:767px){
+
+/*.top-logo-grid{
+	border-top:1px solid;		//pluslight mod
+}*/
+
+.top-logo-grid .top-logo{
+	float:none;
+	text-align:center;
+}
+.top-logo-grid .motto{
+	float:none;
+	margin:0;
+	text-align:center;	
+}
+
+.header-grid > .row,
+.header-grid > .row-fluid{
+	padding:0 !important;
+}
+
+.header-grid .cart-content-grid{
+	text-align:center;
+	margin-top:0;
+	margin-bottom:10px;
+}
+
+.header-grid .top-cart-content,
+.header-grid .top-my-account{
+	float:none;
+	display:inline-block;
+}
+
+.mcs_tablet .cart-content-grid,
+.mcs_phone .cart-content-grid{
+	display:none !important;
+}
+
+}

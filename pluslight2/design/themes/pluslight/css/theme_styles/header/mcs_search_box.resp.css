@@ -1,0 +1,30 @@
+@media (min-width:768px){
+
+.mcs_tablet .search-block-grid{
+	margin-top:25px;
+}
+
+}
+
+@media (max-width:767px){
+
+.search-block-grid{
+/*	margin:10px 0px 0px;*/
+	padding-bottom:10px;
+/*	border-bottom:1px solid #ccc;*/
+}
+.search-block-grid .search-block{
+	width:200px;
+	margin:auto;
+}
+.search-block-grid .search-input{
+	float:none;
+	width:99%;
+	margin:auto;
+}
+
+.search-block-grid .search-input:focus{
+	width:99%;
+}
+
+}

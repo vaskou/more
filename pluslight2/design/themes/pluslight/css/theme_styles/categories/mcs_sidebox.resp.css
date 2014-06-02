@@ -1,0 +1,13 @@
+@media only screen and (max-width: 767px) {
+	
+/*Sidebox*/
+.mcs-sidebox-hide .sidebox-title{
+	padding:10px;
+}
+
+.sidebox-wrapper{
+	border:1px solid !important;	/*pluslight mod*/
+	margin-bottom:15px;			/*pluslight mod*/
+}
+
+}

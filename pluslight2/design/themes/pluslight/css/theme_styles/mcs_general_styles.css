@@ -1,7 +1,6 @@
 /******************** breadcrumbs **********************************/
 .breadcrumbs{
 	margin-bottom:0;
-	padding-right:111px;
 }
 .breadcrumbs > span,
 .breadcrumbs > span > span{
@@ -172,7 +171,6 @@ h1.mainbox-title{
 	padding:10px 9px;
 	left:-9px;
 }
-
 
 /*Default carousel*/
 .owl-theme{margin:0;}

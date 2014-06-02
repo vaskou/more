@@ -1,7 +1,7 @@
 .product-main-info{
 	margin-top:0;
 }
-.product-main-info > div.clearfix{
+.product-main-info > div.clearfix:first-child{
 	border-bottom:3px solid;
 }
 .product-main-info .product-info h1.mainbox-title{
@@ -18,7 +18,7 @@
 .product-main-info .image-border {
 	border: none;
 	padding:0px;
-	margin-right:10px;
+	margin-right:0px;		/*pluslight mod*/
 	background-color:#fff;
 }
 .product-thumbnails{

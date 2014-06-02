@@ -1,6 +1,9 @@
 .categories_view h1.mainbox-title{
 	display:inline-block;
 }
+.categories_view .mainbox-container{
+	margin-right:2%;
+}
 .categories_view .mainbox-body{
 	margin:0px;
 }

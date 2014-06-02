@@ -1,0 +1,48 @@
+@media (max-width:767px){
+
+/*Languages*/
+.top-links-grid .top-languages .select-wrap > .flag{
+	padding:0;
+	position:absolute;
+}
+.top-links-grid .top-languages .select-link span{
+	display:none;
+}
+.top-links-grid .top-languages .select-link i{
+	display:none;
+}
+.tygh-top-panel .top-languages .select-popup{
+    right:-65px; 
+}
+
+/*top-my-account*/
+.tygh-top-panel .top-links-grid .dropdown-box.top-my-account .popup-title{
+	max-height:34px;
+}
+.top-links-grid .top-my-account .popup-title a.titl{
+	font-size:0px;
+}
+
+/*top-cart-content*/
+.top-links-grid .top-cart-content .mcs-phone-hide{
+	display:none;
+}
+.top-links-grid .dropdown-box .minicart-table tr .icon-cancel-circle{
+	visibility:visible;
+}
+
+}
+
+@media (max-width:479px){
+
+/*top-cart-content*/
+.top-cart-content .popup-content{
+	right:-70px;
+}
+
+.top-cart-content .popup-content .cart-items{
+	padding:10px 10px;
+	width:280px;
+}
+
+}

@@ -1,0 +1,51 @@
+@media (max-width:767px){
+.image-wrap{
+	float:none;
+}
+.product-main-info .image-border {
+	margin-right:0px;
+}
+.product-main-info .product-thumbnails,
+.border-image-wrap img{
+	max-width:100% !important;
+	height:auto !important;
+}
+.product-main-info .product-thumbnails{
+	margin:10px auto;
+}
+.product-main-info .product-info{
+	margin-top:20px;
+	min-height:100px !important;	/*pluslight mod*/
+	border-left:none;				/*pluslight mod*/
+}
+.product-note {
+	float: left;
+	width: 100%;
+}
+.product-main-info .add-buttons-wrap {
+	display:block;
+	margin-top:5px !important;
+}
+
+.product-main-info .add-to-wish,
+.product-main-info .add-to-compare{
+	width:auto;
+	display:block;
+	margin:0px !important;
+}
+
+/* Addon Buy together*/
+.chain-product,
+.chain-plus{
+	display:block;
+	width:100%;
+}
+.chain-plus{
+	margin:0;
+	text-align:center;
+}
+.chain-price{
+	display:block;
+}
+
+}
