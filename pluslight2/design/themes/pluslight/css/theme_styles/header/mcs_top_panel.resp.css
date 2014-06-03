@@ -12,7 +12,7 @@
 	display:none;
 }
 .tygh-top-panel .top-languages .select-popup{
-    right:-65px; 
+    right:-75px; 
 }
 
 /*top-my-account*/
@@ -36,11 +36,11 @@
 @media (max-width:479px){
 
 /*top-cart-content*/
-.top-cart-content .popup-content{
+.top-links-grid .top-cart-content .popup-content{
 	right:-70px;
 }
 
-.top-cart-content .popup-content .cart-items{
+.top-links-grid .top-cart-content .popup-content .cart-items{
 	padding:10px 10px;
 	width:280px;
 }

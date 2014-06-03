@@ -151,7 +151,7 @@
 	
 {/if}
 
-<div id="mcs_popup" class="{$addons.mcs_framework.mcs_popup_content_types}" title="{$popup_title}">
+<div id="mcs_popup" class="{$addons.mcs_framework.mcs_popup_content_types}" title="{$popup_title}" style="display:none">
 	<div {if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.type=="T"||$addons.mcs_framework.mcs_popup_content_types=='newsletter'||$addons.mcs_framework.mcs_popup_content_types=='promotion'}class="wysiwyg-content"{/if}>
 		{if $addons.mcs_framework.mcs_popup_content_types=='banner'&&$banner.url!=""&&$banner.type=="G"}
 			<a href="{$banner.url}" {if $banner.target=='B'}target="_blank"{/if}>

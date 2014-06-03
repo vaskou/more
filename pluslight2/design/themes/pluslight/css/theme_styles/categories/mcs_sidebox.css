@@ -3,7 +3,8 @@
 	border-top:none;		/*pluslight mod*/
 	margin-bottom:0;		/*pluslight mod*/
 }
-.categories_view .sidebox-wrapper{
+.categories_view .sidebox-wrapper,
+.pages_view .sidebox-wrapper{
 	border-left:none;		/*pluslight mod*/
 }
 .checkout_checkout .sidebox-wrapper{

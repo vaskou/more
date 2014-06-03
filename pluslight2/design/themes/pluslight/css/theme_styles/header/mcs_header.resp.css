@@ -43,6 +43,14 @@
 	display:inline-block;
 }
 
+.header-grid .top-cart-content .popup-content{
+	right:auto;
+}
+.header-grid .top-cart-content .popup-content .cart-items{
+	padding:10px 10px;
+	width:280px;
+}
+
 .mcs_tablet .cart-content-grid,
 .mcs_phone .cart-content-grid{
 	display:none !important;

@@ -173,6 +173,12 @@
 	display:inline-block;
 }
 
+.mcs_i_grid .mcs-wishlist .button-wrap-right,
+.mcs_i_grid .mcs-wishlist .button-wrap-left{
+	padding:0;
+	border:none;
+}
+
 .mcs_i_grid .button a,
 .mcs_i_grid .button-action a,
 .mcs_i_grid .button-submit-action input,
