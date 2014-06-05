@@ -59,7 +59,7 @@
 h1.mainbox-title{
 	z-index:10;
 	padding:10px;
-	margin:10px;
+/*	margin:10px;*/		/*pluslight mod*/
 }
 .mainbox-body{
 	margin:10px;
@@ -263,4 +263,9 @@ h1.mainbox-title{
 .login-popup .buttons-container{
 	padding-left:15px;
 	padding-right:15px;
+}
+
+/*Authentication Login Form*/
+.login .body-bc{
+	margin-left:0;
 }

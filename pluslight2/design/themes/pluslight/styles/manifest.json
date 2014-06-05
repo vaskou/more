@@ -1,0 +1,9 @@
+{
+	"default_style": "pluslight_box",
+	"names": {
+		"pluslight_box":"PlusLight Box"
+	},
+	"default": {
+		"pluslight_box": false
+	}
+}

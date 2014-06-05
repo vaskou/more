@@ -56,14 +56,20 @@
             $(function(){
 				$(".mcs-list-filter ul li#li-ALL").addClass("active");
                 $(".mcs-list-filter ul li a").click(function(){
+					aid=$(".mcs-list-filter ul li.active").attr('id');
 					$(".mcs-list-filter ul li").removeClass("active");
+					cid=$(this).parent("li").attr('id');
 					$(this).parent("li").addClass("active");
-                    id=$(this).parent("li").attr('id');
-                    $(".mcs-brands-row").show();
-                    if(id!="li-ALL"){
-                        $(".mcs-brands-row").not("."+id).hide();
-                    }
-                });
+					
+					if(aid=="li-ALL"){
+						$(".mcs-brands-row").not("."+cid).hide();
+					}else if(cid=="li-ALL"){
+						$(".mcs-brands-row").show();
+					}else{
+						$(".mcs-brands-row."+aid).hide();
+						$(".mcs-brands-row."+cid).show();
+					}
+				});
             });
         </script>
     {/literal}

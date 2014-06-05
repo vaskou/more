@@ -49,9 +49,12 @@ ul.dropdown-multicolumns {
 .dropdown-multicolumns li .drop-left{
 	.border-radius(0px);
 }
-ul.dropdown-multicolumns > li:hover {
+ul.dropdown-multicolumns > li:hover,
+ul.dropdown-multicolumns > li.nodrop:hover {
 	.border-radius(0px);
 	background-color:transparent;
+	padding:0 0 5px 0;
+	margin-bottom:0;
 }
 ul.dropdown-multicolumns >li:before{
 	color:lighten(@base,33%);
