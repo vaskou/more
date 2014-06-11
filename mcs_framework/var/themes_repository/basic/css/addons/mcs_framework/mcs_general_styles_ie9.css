@@ -1,3 +1,6 @@
+.helper-container{
+	z-index:-1;
+}
 .tygh-content,
 .tygh-footer{
 	position:relative;

@@ -838,6 +838,16 @@
 		<item lang="en" id="mcs_full_width">Full Width</item>
 		<item lang="en" id="mcs_block_grouping">Block Grouping</item>
 	</language_variables>
+	
+	<functions>
+		<item for="install">fn_map_settings</item>
+		<item for="uninstall">fn_save_general_settings</item>
+		<item for="uninstall">fn_save_vendor_settings</item>
+<!--        <item for="install">fn_google_export_add_features</item>
+        <item for="install">fn_google_export_add_feed</item>
+        <item for="uninstall">fn_google_export_remove_features</item>
+        <item for="uninstall">fn_google_export_remove_feed</item>-->
+    </functions>
 </addon>
 
 <!-- Element type: 

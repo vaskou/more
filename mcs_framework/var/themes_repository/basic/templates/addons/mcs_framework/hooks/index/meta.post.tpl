@@ -22,3 +22,7 @@
 	{style src="addons/mcs_framework/mcs_general_styles_ie9.css"}
 {/styles}
 <![endif]-->
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek);
+</style>

@@ -335,3 +335,82 @@ function fn_mcs_framework_styles_block_files($styles)
 	
 	return $styles;
 }
+
+
+function fn_map_settings()
+{
+	$i==0;
+	$temp=db_get_array("SELECT `object_id`,`name` FROM ?:settings_objects WHERE `name` LIKE 'mcs_%' AND type !='H'");
+	foreach($temp as $k=>$v){
+		$i++;
+		$r=array(
+			'sid'=>$i,
+			'setting_id'=>$v['object_id'],
+			'setting_name'=>$v['name']
+		);
+		db_replace_into("mcs_map_settings", $r);
+	}
+	return $temp;
+}
+
+function fn_save_general_settings()
+{
+	$i==0;
+	$temp=db_get_array("SELECT `object_id`,`name`,`value` FROM ?:settings_objects WHERE `name` LIKE 'mcs_%' AND type !='H'");
+	foreach($temp as $k=>$v){
+		$i++;
+		$r=array(
+			'sid'=>$i,
+			'setting_id'=>$v['object_id'],
+			'setting_name'=>$v['name'],
+			'setting_value'=>$v['value']
+		);
+		db_replace_into("mcs_general_settings", $r);
+	}
+	return $temp;
+}
+
+function fn_save_vendor_settings()
+{
+	$i==0;
+	$temp=db_get_array("SELECT a.object_id,a.name,b.value,b.company_id FROM ?:settings_objects as a INNER JOIN cscart_settings_vendor_values as b ON a.object_id=b.object_id WHERE a.name LIKE 'mcs_%' AND type !='H'");
+	foreach($temp as $k=>$v){
+		$i++;
+		$r=array(
+			'sid'=>$i,
+			'setting_id'=>$v['object_id'],
+			'setting_name'=>$v['name'],
+			'setting_value'=>$v['value'],
+			'setting_comp_id'=>$v['company_id']
+		);
+		db_replace_into("mcs_vendor_settings", $r);
+	}
+	return $temp;
+}
+
+function fn_restore_settings()
+{
+	$map_settings=db_get_array("SELECT * FROM ?:mcs_map_settings");
+	$general_settings=db_get_array("SELECT * FROM ?:mcs_general_settings");
+	$vendor_settings=db_get_array("SELECT * FROM ?:mcs_vendor_settings");
+	
+	foreach($general_settings as $k=>$v){
+		db_query("UPDATE ?:settings_objects SET value=?s WHERE name=?s",$v['setting_value'],$v['setting_name']);
+	}
+	
+	foreach($map_settings as $k=>$v){
+		
+		foreach($vendor_settings as $k1=>$v1){
+			if($v['setting_name']==$v1['setting_name']){
+				//db_query("UPDATE ?:settings_vendor_values SET value=?s WHERE object_id=?i AND company_id=?i",$v1['setting_value'],$v['setting_id'],$v1['setting_comp_id']);
+				$temp=array(
+					'object_id'=>$v['setting_id'],
+					'company_id'=>$v1['setting_comp_id'],
+					'value'=>$v1['setting_value']
+				);
+				db_replace_into("settings_vendor_values", $temp);
+			}
+		}
+		
+	}
+}
