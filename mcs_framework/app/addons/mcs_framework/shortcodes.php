@@ -1,4 +1,5 @@
 <?php
+
 use Tygh\Registry;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
@@ -9,23 +10,20 @@ function ShortcodesParser(){
 	$parser->addCodeDefinition(new YouTubeSC());
 	$parser->addCodeDefinition(new VimeoSC());
 	$parser->addCodeDefinition(new GoogleMapSC());
-	$parser->addCodeDefinition(new CallToActionSC());
 	$parser->addCodeDefinition(new ButtonSC());
 	$parser->addCodeDefinition(new LightboxSC());
-	$parser->addCodeDefinition(new LinkSC());
 	$parser->addCodeDefinition(new IconCallToActionSC());
 	$parser->addCodeDefinition(new ImageCallToActionSC());
-	$parser->addCodeDefinition(new ContactFormSC());
+	//$parser->addCodeDefinition(new ContactFormSC());
+	//$parser->addCodeDefinition(new LinkSC());
 	
 	return $parser;
 }
 
 /**************************************** YouTube *********************************************************/
-
 class YouTubeSC extends JBBCode\CodeDefinition {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->setTagName("youtube");
 		$this->setUseOption(true);
@@ -35,11 +33,22 @@ class YouTubeSC extends JBBCode\CodeDefinition {
 	{	
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
-		$out='';
-		$out.='<div class="sc video-container youtube">';
-		$out.='<iframe src="//www.youtube.com/embed/'.$options['id'].'?autoplay='.$options['autoplay'].'&controls='.$options['controls'].'&rel='.$options['rel'].'&showinfo='.$options['showinfo'].'" frameborder="0" allowfullscreen></iframe>';
-		$out.='</div>';
+		if(!$options['id'])
+			return;
 		
+		if($options['demo']=='true')
+			return $out='[youtube=id=ugVAcQm1BY4&autoplay=0&controls=2&rel=0&showinfo=0][/youtube]';		
+		
+		$autoplay = ($options['autoplay'] ? $options['autoplay'] : '0');
+		$controls = ($options['controls'] ? $options['controls'] : '0');
+		$rel = ($options['rel'] ? $options['rel'] : '0');
+		$showinfo = ($options['showinfo'] ? $options['showinfo'] : '0');
+		
+		$out='';
+		$out.='<div class="sc video-container youtube '.$options['class'].'">';
+		$out.='<iframe src="//www.youtube.com/embed/'.$options['id'].'?autoplay='.$autoplay.'&controls='.$controls.'&rel='.$rel.'&showinfo='.$showinfo.'" frameborder="0" allowfullscreen></iframe>';
+		$out.='</div>';
+
 		return $out;
 	}
  
@@ -48,22 +57,35 @@ class YouTubeSC extends JBBCode\CodeDefinition {
 /**************************************** Vimeo *********************************************************/
 class VimeoSC extends JBBCode\CodeDefinition {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->setTagName("vimeo");
 		$this->setUseOption(true);
 	}
  
-	public function asHtml(JBBCode\ElementNode $el)
-	{	
+	public function asHtml(JBBCode\ElementNode $el){	
+		
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
-		$out='';
-		$out.='<div class="sc video-container vimeo">';
-		$out.='<iframe src="//player.vimeo.com/video/'.$options['id'].'?portrait='.$options['portrait'].'&byline='.$options['title'].'&title='.$options['title'].'&autoplay='.$options['autoplay'].'&loop='.$options['loop'].'&color='.$options['color'].'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-		$out.='</div>';
+		if(!$options['id'])
+			return;
 		
+		if($options['demo']=='true')
+			return $out='[vimeo=id=20563051&autoplay=0&title=0&byline=0&portrait=0&loop=1&color=ffffff][/vimeo]';
+			
+		$portrait = ($options['portrait'] ? $options['portrait'] : '0');
+		$byline = ($options['byline'] ? $options['byline'] : '0');
+		$title = ($options['title'] ? $options['title'] : '0');
+		$autoplay = ($options['autoplay'] ? $options['autoplay'] : '0');
+		$loop = ($options['loop'] ? $options['loop'] : '0');
+		$color = ($options['color'] ? $options['color'] : '00adef');
+
+		
+		$out='';
+		$out.='<div class="sc video-container vimeo '.$options['class'].'">';
+		$out.='<iframe src="//player.vimeo.com/video/'.$options['id'].'?portrait='.$portrait.'&byline='.$byline.'&title='.$title.'&autoplay='.$autoplay.'&loop='.$loop.'&color='.$color.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+		$out.='</div>';
+	
 		return $out;
 	}
  
@@ -72,59 +94,71 @@ class VimeoSC extends JBBCode\CodeDefinition {
 /**************************************** GoogleMaps *********************************************************/
 class GoogleMapSC extends JBBCode\CodeDefinition {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->setTagName("googlemap");
 		$this->setUseOption(true);
-	
 	}
-
-	public function asHtml(JBBCode\ElementNode $el)
-	{	
 	
+	public function asHtml(JBBCode\ElementNode $el){	
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
-			$unique = uniqid();
-			$out  = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>';
-			$out .=	'<script>';
-			$out .=	'	var latlng=new google.maps.LatLng('.$options['lat'].','.$options['lng'].');';
-			$out .=	'	function initialize(){';
-			$out .=	'		var mapProp = {';
-			$out .=	'			center:latlng,';
-			$out .=	'			zoom:'.$options['zoom'].',';
-			$out .=	'			zoomControl:true,';
-			$out .=	'			mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},';
-			$out .=	'			navigationControl: true,';
-			$out .=	'			navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},';
-			$out .=	'			panControl:true,';
-			$out .=	'			mapTypeId:google.maps.MapTypeId.'.$options['type'];
-			$out .=	'	};';
-			$out .=	'	var map=new google.maps.Map(document.getElementById("google_map_sc_'.$unique.'"),mapProp);';
-			$out .=	'	var marker=new google.maps.Marker({';
-			$out .=	'		position:latlng,';
-			$out .=	'		map: map,';
-			$out .=	'		title: "'.$options['title'].'"';
-			$out .=	'	});';
-			$out .=	'	marker.setMap(map);';
-			$out .=	'	var infowindow = new google.maps.InfoWindow({';
-			$out .=	'		content:"'.$options['infowindow'].'"';
-			$out .=	'	});';
-			$out .=	'	google.maps.event.addListener(marker, "click", function() {';
-			$out .=	'		infowindow.open(map,marker);';
-			$out .=	'	});';
-			$out .=	'	}';
-			$out .=	'	google.maps.event.addDomListener(window, "load", initialize);';
-			$out .=	'</script>';
-			$out .=	'<div id="google_map_sc_'.$unique.'" class="google-map" style="width:100%;height:'.$options['height'].'px;"></div>';
-			
-			return $out;
+		if(!$options['lat']||!$options['lng'])
+			return;
+		
+		if($options['demo']=='true')
+			return $out='[googlemap=lat=40.7124618&lng=-74.0081018&zoom=15&type=TERRAIN&height=400&title=Google Map Shortcode&infowindow=Google Map shortcode by More CS-Cart Themes][/googlemap]';
 
-			}
- 
+		$zoom='15';
+		if($options['zoom'])
+			$zoom=$options['zoom'];
+		
+		$type='ROADMAP';
+		if($options['type'])
+			$type=$options['type'];
+
+		$height='300';
+		if($options['height'])
+			$height=$options['height'];
+			
+		$unique = uniqid();
+		$out  = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>';
+		$out .=	'<script>';
+		$out .=	'	var latlng=new google.maps.LatLng('.$options['lat'].','.$options['lng'].');';
+		$out .=	'	function initialize(){';
+		$out .=	'		var mapProp = {';
+		$out .=	'			center:latlng,';
+		$out .=	'			zoom:'.$zoom.',';
+		$out .=	'			zoomControl:true,';
+		$out .=	'			mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},';
+		$out .=	'			navigationControl: true,';
+		$out .=	'			navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},';
+		$out .=	'			panControl:true,';
+		$out .=	'			mapTypeId:google.maps.MapTypeId.'.$type;
+		$out .=	'	};';
+		$out .=	'	var map=new google.maps.Map(document.getElementById("google_map_sc_'.$unique.'"),mapProp);';
+		$out .=	'	var marker=new google.maps.Marker({';
+		$out .=	'		position:latlng,';
+		$out .=	'		map: map,';
+		$out .=	'		title: "'.$options['title'].'"';
+		$out .=	'	});';
+		$out .=	'	marker.setMap(map);';
+		$out .=	'	var infowindow = new google.maps.InfoWindow({';
+		$out .=	'		content:"'.$options['infowindow'].'"';
+		$out .=	'	});';
+		$out .=	'	google.maps.event.addListener(marker, "click", function() {';
+		$out .=	'		infowindow.open(map,marker);';
+		$out .=	'	});';
+		$out .=	'	}';
+		$out .=	'	google.maps.event.addDomListener(window, "load", initialize);';
+		$out .=	'</script>';
+		$out .=	'<div id="google_map_sc_'.$unique.'" class="google-map '.$options['class'].'" style="width:100%;height:'.$height.'px;"></div>';
+
+		return $out;
+	}
 }
 
-/**************************************** Buttons *********************************************************/
+/**************************************** Button *********************************************************/
 
 class ButtonSC extends JBBCode\CodeDefinition {
 
@@ -133,23 +167,25 @@ class ButtonSC extends JBBCode\CodeDefinition {
 		parent::__construct();
 		$this->setTagName("button");
 		$this->setUseOption(true);
-		}
+	}
  
 	public function asHtml(JBBCode\ElementNode $el)
 	{	
-	
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
 		foreach($el->getChildren() as $child)
             $content .= $child->getAsBBCode();
 		
+		if($options['demo']=='true')
+			return $out='[button=link='.$options['link'].'&amp;icon='.$options['icon'].'&amp;color='.$options['color'].'&amp;size='.$options['size'].']'.$content.'[/button]';
+
 		$link=$options['link'];
-		if(!$link||!$content)
+		if(!$link)
 			return;
 		
 		$background_color='';
 		if($options['color']!='')
-			$background_color='style="background-color:'.$options['color'].'"';			
+			$background_color='style="background-color:#'.$options['color'].'"';			
 		
 		$display_block='';
 		if($options['display']=='block')
@@ -164,9 +200,11 @@ class ButtonSC extends JBBCode\CodeDefinition {
 		$icon='';
 		if($options['icon']!='')
 			$icon='<i class="icon-'.$options['icon'].'"></i>';	
+		if(!$content)
+			$icon='<i class="icon-'.$options['icon'].'" style="margin-right: 0;"></i>';	
 		
 		$out='';
-		$out.=	'<a href="'.$link.'" class="sc rotate css3-transition-all button '.$display_block.' '.$options['size'].' '.$text_align.'" '.$background_color.'>';		
+		$out.=	'<a href="'.$link.'" class="sc rotate css3-transition-all button '.$options['class'].' '.$display_block.' '.$options['size'].' '.$text_align.'" '.$background_color.'>';		
 		$out.=	'<span>';
 		$out.=	$icon;
 		$out.=	$content;
@@ -178,167 +216,129 @@ class ButtonSC extends JBBCode\CodeDefinition {
  
 }
 
-/**************************************** Icon Call To Action *********************************************************/
-
+/**************************************** Icon Call To Action (iconcta) *********************************************************/
 class IconCallToActionSC extends JBBCode\CodeDefinition {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->setTagName("iconcta");
 		$this->setUseOption(true);
-		}
- 
-	public function asHtml(JBBCode\ElementNode $el)
-	{	
-	
-		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
-		
-		$alignment='center';
-		if($options['alignment']=='left')
-			$alignment='left';
-		if($options['alignment']=='right')
-			$alignment='right';
-		
-		$icon_size='5';
-		if($options['icon_size']!='')
-			$icon_size=$options['icon_size'];
-			
-			
-		$icon='';
-		if($options['icon']!='')
-			$icon='<i class="icon-'.$options['icon'].' rotate" style="font-size:'.$icon_size.'em;"></i>';
-
-		$title='';
-		if($options['title']!='')
-			$title='<h3><span>'.$options['title'].'</span></h3>';
-		
-		$text='';
-		if($options['text']!='')
-			$text='<p>'.$options['text'].'</p>';
-
-		$link_type='href';
-		if($options['link_type']=='mailto')
-			$link_type='mailto';
-		if($options['link_type']=='tel')
-			$link_type='tel';			
-		if($options['link_type']=='map')
-			$link_type='map';	
-
-			
-		$out ='';
-		$out .=	'<div class="sc iconcta '.$alignment.' ">';
-		
-		if($options['link']!=''&&$options['button']=='')
-			$out .=	'<a '.$link_type.'="'.$options['link'].'">';
-			
-			$out .=	$icon;
-			$out .=	$title;
-			$out .=	$text;
-		
-		if($options['link']!=''&&$options['button']!='')
-			$out .=	'<a '.$link_type.'="'.$options['link'].'">';
-			$out .=	$options['button'];
-			$out .=	'</a>';
-
-			
-		if($options['link']!=''&&$options['button']=='')
-			$out .=	'</a>';
-			
-		$out .=	'</div>';
-		
-		return $out;
 	}
  
+	public function asHtml(JBBCode\ElementNode $el){	
+
+		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
+		
+		foreach($el->getChildren() as $child)
+            $content .= $child->getAsBBCode();
+			
+		if($options['demo']=='true')
+			return $out='[iconcta=icon=popout&float=center&link=http://morecscart.com/&title=Title&iconsize=5&theme=dark]Call To Action Text[/iconcta]';
+		
+		$theme='light';
+		if($options['theme']=='dark')
+			$theme='dark';
+
+		$link=$options['link'];
+		$title=$options['title'];
+		$text=$options['text'];
+		$icon=$options['icon'];
+		$iconsize=($options['iconsize'])?$options['iconsize']:'5';
+		$border=($options['border'])?'border':'';
+		
+		$button_float=$options['float'];
+		
+		$text_align=($options['float']=='left')?'right':'left';
+		if($options['float']=='center'||!$options['float'])
+			$text_align='center';
+
+		$out ='';
+		$out .=	'<div class="sc cta icon rotate css3-transition-all '.$options['class'].' '.$theme.' '.$border.'">';
+		$out .=	'<div class="inner" style="text-align:'.$text_align.'">';
+
+		if($link!='') $out .=	'<a class="button" href="'.$link.'" style="float:'.$button_float.'">';
+		if($icon!='') $out .=	'<i class="icon-'.$icon.'" style="font-size:'.$iconsize.'em"></i>';
+		if($link!='') $out .=	'</a>';
+		
+		$out .=	'<div class="text">';
+		
+		if($link!='') $out .='<a href="'.$link.'">';
+		
+		$out .=	'<h3 style="text-align:'.$text_align.'">'.$title.'</h3>';
+		
+		if($link!='') $out .='</a>';
+			
+		$out .=	'<p style="text-align:'.$text_align.'">'.$content.'</p>';
+		$out .=	'</div>';
+
+		$out .=	'</div>';
+		$out .=	'</div>';
+
+		return $out;
+	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**************************************** cta *********************************************************/
-class CallToActionSC extends JBBCode\CodeDefinition {
+/**************************************** Image Call To Action (imagecta) ************************************/
+class ImageCallToActionSC extends JBBCode\CodeDefinition {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->setTagName("cta");
+		$this->setTagName("imagecta");
 		$this->setUseOption(true);
 		}
  
 	public function asHtml(JBBCode\ElementNode $el)
 	{	
-	
+		//http://designshack.net/articles/css/joshuajohnson-2/
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
+		foreach($el->getChildren() as $child)
+            $content .= $child->getAsBBCode();
+
+		if($options['demo']=='true')
+			return $out='[imagecta=src=http://morecscart.com/images/companies/1/imagecta.jpg&link=http://morecscart.com]My Text goes here[/imagecta]';
+
+		if(!$options['src']||$options['src']=='')
+			return;
+
+			$effect='scale';
+		if($options['effect']!='')
+			$effect=$options['effect'];		
 		
-		if($options['theme']==''){
-			$theme='light';
-		}else{
-			$theme=$options['theme'];
+
+		if($options['opacity']&&$options['opacity']!='')
+			$opacity='style="opacity:'.$options['opacity'].';filter:alpha(opacity='.(intval($options['opacity'])*100).');"';
+			
+		if($options['maxwidth'])
+			$maxwidth='style="max-width:'.$options['maxwidth'].'px"';
+
+		$out='';
+		
+		$out .=	'<div class="sc cta image '.$options['class'].' '.$effect.'" '.$maxwidth.'>';
+			
+		if($options['link']!='')
+			$out .=	'<a href="'.$options['link'].'">';
+			
+			$out .=	'<img src="'.$options['src'].'" alt="'.$content.'" title="'.$content.'">';
+			
+		if($content!=''){
+			$out .=	'<div class="description" '.$opacity.'>';
+			$out .=	'<p class="description_content">'.$content.'</p>';
+			$out .=	'</div>';
 		}
-		$link=$options['link'];
-		$title=$options['title'];
-		$text=$options['text'];
-		$buttontitle=$options['buttontitle'];
-		$icon=$options['icon'];
-		$iconsize=($options['iconsize']!='')?'style="font-size:'.$options['iconsize'].'em"':'';
-		
-		$button_float=$options['float'];
-		$text_align=($options['float']=='left')?'right':'left';
-		if($options['float']=='center'){
-			$text_align='center';
-		}
-		
-		$out ='';
-		$out .=	'<div class="sc cta box '.$theme.'">';
-		$out .=	'	<div class="inner" style="text-align:'.$text_align.'">';
-			if($options['float']!='center'){
-				$out .=	'		<a class="button" href="'.$link.'" style="float:'.$button_float.'">';
-				if($icon!='')
-					$out .=	'			<i class="icon-'.$icon.'" '.$iconsize.'></i>';
-					$out .=				$buttontitle;
-					$out .=	'		</a>';
-			}
-		$out .=	'		<div class="text">';
-		$out .=	'			<h3 style="text-align:'.$text_align.'">'.$title.'</h3>';
-		$out .=	'			<p style="text-align:'.$text_align.'">'.$text.'</p>';
-		$out .=	'		</div>';
-			if($options['float']=='center'){
-				$out .=	'		<a class="button" href="'.$link.'" style="float:'.$button_float.'">';
-				if($icon!='')
-					$out .=	'			<i class="icon-'.$icon.'" '.$iconsize.'></i>';
-					$out .=				$buttontitle;
-					$out .=	'		</a>';	
-			}
-		$out .=	'	</div>';
+			
+		if($options['link']!='')
+			$out .=	'</a>';			
+				
 		$out .=	'</div>';
 		
+		$out .=	'<div style="clear:both"></div>';
 		return $out;
 	}
  
 }
 
-
-	
-
-
+/**************************************** Lightbox Call To Action (lightbox) ************************************/
 class LightboxSC extends JBBCode\CodeDefinition {
 
 	public function __construct()
@@ -350,28 +350,77 @@ class LightboxSC extends JBBCode\CodeDefinition {
  
 	public function asHtml(JBBCode\ElementNode $el)
 	{	
-	
+		//http://designshack.net/articles/css/joshuajohnson-2/
 		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
 		
 		foreach($el->getChildren() as $child)
             $content .= $child->getAsBBCode();
-		
-		$group='';
-		if($options['group']!='')
-			$group='['.$options['group'].']';
+
+		if($options['demo']=='true')
+			return $out='[lightbox=src=http://morecscart.com/images/companies/1/imagecta.jpg&link=http://morecscart.com/?iframe=true&title=My lightbox title]My Text goes here[/lightbox]';
+
+		if(!$options['src']||$options['src']==''||!$options['link']||$options['link']=='')
+			return;
 
 			
+		$effect='scale';
+		if($options['effect']!='')
+			$effect=$options['effect'];		
+	
+		if($options['opacity']&&$options['opacity']!='')
+			$opacity='style="opacity:'.$options['opacity'].';filter:alpha(opacity='.(intval($options['opacity'])*100).');"';
+			
+		if($options['maxwidth'])
+			$maxwidth='style="max-width:'.$options['maxwidth'].'px"';
 
-		$unique = uniqid();	
+		
+		$unique = uniqid();
+		
 		$out='';
+		
+		$out .=	'<div class="sc cta image '.$options['class'].' '.$effect.'" '.$maxwidth.'>';
+		
 		$out.='<script type="text/javascript" src="js/tygh/previewers/prettyphoto.previewer.js"></script>';
-		$out.='<a id="'.$unique.'" data-ca-image-id="'.$unique.'" rel="prettyPhoto[sdfsdfsdf]'.$group.'" href="'.$options['link'].'" class="cm-image-previewer cm-previewer previewer">';
-		$out.='<img src="'.$options['thumb'].'" width='.$options['width'].' height='.$options['height'].'>';		
-		$out.='</a>';
+
+		$out .=	'<a id="'.$unique.'" data-ca-image-id="'.$unique.'" href="'.$options['link'].'" class="cm-image-previewer cm-previewer previewer">';
+			
+			$out .=	'<img src="'.$options['src'].'" alt="'.$options['title'].'" title="'.$options['title'].'">';
+			
+		if($content!=''){
+			$out .=	'<div class="description" '.$opacity.'>';
+			$out .=	'<p class="description_content">'.$content.'</p>';
+			$out .=	'</div>';
+		}
+			
+		$out .=	'</a>';			
+				
+		$out .=	'</div>';
+		
+		$out .=	'<div style="clear:both"></div>';
 		return $out;
 	}
  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class LinkSC extends JBBCode\CodeDefinition {
@@ -471,57 +520,6 @@ class ContactFormSC extends JBBCode\CodeDefinition {
 		$out.=	'</div>';
 		
 		return $out;
-	}
- 
-}
-
-
-
-	
-
-class ImageCallToActionSC extends JBBCode\CodeDefinition {
-
-	public function __construct()
-	{
-		parent::__construct();
-		$this->setTagName("imagecta");
-		$this->setUseOption(true);
-		}
- 
-	public function asHtml(JBBCode\ElementNode $el)
-	{	
-		//http://designshack.net/articles/css/joshuajohnson-2/
-		parse_str(str_replace('amp;','&',$el->getAttribute()), $options);
-		
-		$effect='grow';
-		if($options['effect']!='')
-			$effect=$options['effect'];		
-			
-		$link_type='href';
-		if($options['link_type']=='mailto')
-			$link_type='mailto';
-		if($options['link_type']=='tel')
-			$link_type='tel';			
-		if($options['link_type']=='map')
-			$link_type='map';	
-			
-		$out='';
-		$out .=	'<div class="sc imagecta '.$effect.'">';
-		
-		if($options['link']!='')
-			$out .=	'<a '.$link_type.'="'.$options['link'].'">';
-			
-			$out .=	'<img src="'.$options['src'].'" alt="">';
-		
-		if($options['link']!='')
-			$out .=	'</a>';		
-			
-		$out .=	'</div>';
-		
-		if($options['src']!='')
-			return $out;
-		else
-			return '';
 	}
  
 }

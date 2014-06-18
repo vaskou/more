@@ -1,8 +1,26 @@
+/*General shortcodes styles*/
+.sc.display-block{display:block!important;}
+.sc{border:1px solid transparent;}
+.css3-transition-all,
+.css3-transition-all a,
+.css3-transition-all i{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.rotate:hover i {
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
 /**************************************** youtube,vimeo *********************************************************/
 .sc.video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    padding-top: 30px; 
+	height: 0; 
+	overflow: hidden;
 }
 .sc.video-container iframe,
 .sc.video-container object,
@@ -17,41 +35,24 @@
 /**************************************** Button *********************************************************/
 .sc.button{
 	margin:5px;
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
 	color:#fff;
 	border:1px solid transparent;
 }
-
 .sc.button span i{
 	color:#fff;
-}
-
-.sc.button span i{
-	color:#fff;
-}
-a.sc.button:hover{
-	text-decoration:none!important;
 }
 .sc.button:hover{
+	text-decoration:none!important;
 	background-color:#fff!important;
 }
-
-.sc.button.display-block{
-	display:block!important;
-}
-
 .sc.button.large span {
 	padding: 0 18px;
 	line-height: 2.7em;
 	font-size:18px;
 }
-
 .sc.button.large span i {
 	margin-right:18px;
 }
-
 .sc.button.medium span {
 	padding: 0 16px;
 	line-height: 2.5em;
@@ -60,7 +61,6 @@ a.sc.button:hover{
 .sc.button.medium span i {
 	margin-right:16px;
 }
-
 .sc.button.small span {
 	padding: 0 14px;
 	line-height: 2.3em;
@@ -69,96 +69,44 @@ a.sc.button:hover{
 	margin-right:14px;
 }
 
-/**************************************** calltoaction *********************************************************/
-/*.sc.cta.box{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}*/
-/*.sc.cta.box .inner a.button span{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}*/
-
-.sc.cta.box span{
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-
-.sc.cta.box .button{
-	display:inline-block;
-	margin:5px;
-	padding:5px 10px;
-}
-.sc.cta.box a.button:hover{
-	text-decoration:none;	
-}
-/*.sc.cta.box.dark span{background-color:#ffffff;}
-.sc.cta.box.dark span{color:#000000;}
-
-.sc.cta.box.dark .text h2{color:#ffffff;}
-.sc.cta.box.dark .text p{color:#eeeeee;}
-
-.sc.cta.box.light{background-color:#ffffff;}
-.sc.cta.box.light span{color:#ffffff;}
-.sc.cta.box.light span:hover{color:#000000;}
-
-.sc.cta.box.transparent span{color:#ffffff;}
-.sc.cta.box.transparent span:hover{color:#000000;}
+/***************************** Icon Call-To-Action ***************************************************************/
+.sc.cta.icon h3{font-size:18px;}
+.sc.cta.icon{padding:10px;}
 
 
-.sc.cta.box .inner a i {margin-right:10px;}
 
-.sc.cta.box .inner a.button {
-	display: inline-block;
+/**imagecta*/
+.cta.image {
 	position:relative;
-	margin-top:5px;
-	margin-bottom:5px;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.sc.cta.box .inner a.button:hover{
-	text-decoration:none;
-}
-.sc.cta.box span {
-	padding: 5px 15px;
-}
-.sc.cta.box .inner .text {
-	display: inline;
-}
-.sc.cta.box .inner .text h2,.sc.cta.box .inner .text p {
-	text-align:right;
-}*/
+.cta.image .caption {margin:0 auto;}
 
-/*.iconcta.sc i{display:block;}
+.cta.image img {
+	width:100%;
+	height:auto;
 
-.iconcta.sc i{
-    
-	-webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-     
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-     
-    overflow:hidden;
- 
-}  
- 
-.iconcta.sc:hover i {
-    -webkit-transform:rotate(360deg);
-    -moz-transform:rotate(360deg);
-    -o-transform:rotate(360deg);
-} */
-
-/*imagecta*/
-.imagecta {
-  border: 2px solid #efefef;  
-  float: left;
-  margin: 20px;
-  overflow: hidden;
-   display:block;
-  -webkit-box-shadow: 0px 0px 5px #444;
-          box-shadow: 0px 0px 5px #444;  
 }
 
-.imagecta.grow img {
+.cta.image .description{
+	position:absolute; 
+	bottom:0; 
+	left:0;
+	width:100%;
+	margin:0;
+	color:#fff;
+	opacity:0.6; 
+	filter:alpha(opacity=60);
+}
+.cta.image p.description_content{
+	padding:10px;
+	margin:0px;
+}
+
+.scale {
  
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
@@ -167,13 +115,16 @@ a.sc.button:hover{
           transition: all 1s ease;
 }
  
-.imagecta.grow img:hover {
-  width: 150%;
-  height: auto;
+.scale:hover {
+   -webkit-transform: scale(1.1);
+     -moz-transform: rotate(1.1);
+       -o-transform: rotate(1.1);
+      -ms-transform: rotate(1.1);
+          transform: rotate(1.1);
 }
 
 /*TILT*/
-.imagecta.tilt {
+.tilt {
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
@@ -181,7 +132,7 @@ a.sc.button:hover{
           transition: all 0.5s ease;
 }
  
-.imagecta.tilt:hover {
+.tilt:hover {
   -webkit-transform: rotate(-10deg);
      -moz-transform: rotate(-10deg);
        -o-transform: rotate(-10deg);
@@ -189,8 +140,8 @@ a.sc.button:hover{
           transform: rotate(-10deg);
 }
 
-/*MORPH*/
-.imagecta.morph {
+/*rotate*/
+.cta.image.rotate {
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
@@ -198,8 +149,7 @@ a.sc.button:hover{
           transition: all 0.5s ease;
 }
  
-.imagecta.morph:hover {
-  border-radius: 50%;
+.cta.image.rotate:hover {
   -webkit-transform: rotate(360deg);
      -moz-transform: rotate(360deg);
        -o-transform: rotate(360deg);
@@ -207,8 +157,7 @@ a.sc.button:hover{
           transform: rotate(360deg);
 }
 
-/*FOCUS*/
-.imagecta.focus {
+.shrink {
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
        -o-transition: all 1s ease;
@@ -216,13 +165,16 @@ a.sc.button:hover{
           transition: all 1s ease;
 }
  
-.imagecta.focus:hover {
-  border: 70px solid #000;
-  border-radius: 50%;
+.shrink:hover {
+     -webkit-transform: scale(0.9);
+     -moz-transform: rotate(0.9);
+       -o-transform: rotate(0.9);
+      -ms-transform: rotate(0.9);
+          transform: rotate(0.9);
 }
 
 /*BLUR*/
-.imagecta.blur img {
+.blur img  {
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
        -o-transition: all 1s ease;
@@ -230,12 +182,12 @@ a.sc.button:hover{
           transition: all 1s ease;
 }
  
-.imagecta.blur img:hover {
+.blur:hover img {
   -webkit-filter: blur(5px);
 }
 
 /*B&W*/
-.imagecta.bw {
+.bw img{
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
        -o-transition: all 1s ease;
@@ -243,61 +195,11 @@ a.sc.button:hover{
           transition: all 1s ease;
 }
  
-.imagecta.bw:hover {
+.bw:hover img{
   -webkit-filter: grayscale(100%);
 }
 
-/*DARKEN*/
-.imagecta.brighten img {
-  -webkit-filter: brightness(85%);
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
- 
-.imagecta.brighten img:hover {
-  -webkit-filter: brightness(100%);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*General classes*/
-.css3-transition-all,
-.css3-transition-all i{
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
-
-
-
+/*lightbox*/
+.sc .previewer {position:static;}
 
 

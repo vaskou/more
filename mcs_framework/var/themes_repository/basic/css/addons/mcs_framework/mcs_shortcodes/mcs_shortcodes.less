@@ -1,36 +1,85 @@
-.sc i {color:@decorative;}
-
+/*General shortcodes styles*/
+.sc.dark i {
+	.mcs_text_color(@decorative);
+}
+/*.sc:hover i {
+	color:#fff;
+}*/
 /**************************************** button *********************************************************/
 .sc.button{
 	background-color:@decorative;
 }
-
 .sc.button:hover{
 	border:1px solid @decorative;
-}
-.sc.button:hover,.sc.button:hover span i{
 	color:@decorative;
 }
-
-/**************************************** calltoaction *********************************************************/
-.sc.cta.box.dark{
-	.mcs_cta_box_dark_color(@decorative);
+.sc.button:hover span i{
+	color:@decorative;
+}
+/**************************************** Icon Call-To-Action**************************************************/
+@decorativ:#ddd;
+.mcs_sc_icon (@b) when (lightness(@b) >= 87%) {
+	color: #000;
+}
+.sc.cta.icon {
+	background-color: #fff;
+	overflow:hidden;
+}
+.sc.cta.icon.border{
+	border-color:@decorative;
+}
+.sc.cta.icon a{
+	color:@links;
+	.mcs_sc_icon(@links);
+}
+.sc.cta.icon i,
+.sc.cta.icon .button, 
+.sc.cta.icon .button i {
+	background-color: transparent;
+	color:@decorative;
+	.mcs_sc_icon(@decorative);
+}
+.sc.cta.icon:hover {
+	background-color: @decorative;
+}
+.sc.cta.icon:hover p,
+.sc.cta.icon:hover a,
+.sc.cta.icon:hover .button,
+.sc.cta.icon:hover .button i{
+	.mcs_text_color(@decorative);
 }
 
-.sc.cta.box.light{
-	border:1px solid @decorative;
-	background-color:lighten(@base, 45%);
-	.text{color: black;}
-	.text p{color: lighten(black, 20%);}
-	.button, .button i{
-		background-color:@decorative;
-		.mcs_text_color(@decorative);
-	}
-	.button:hover, .button:hover i{
-		background-color:black;
-		color:white;
-	}
+.sc.cta.icon.dark{
+	background-color: @decorative;
+}
+.sc.cta.dark.icon p,
+.sc.cta.dark.icon a,
+.sc.cta.dark.icon .button,
+.sc.cta.dark.icon .button i{
+	.mcs_text_color(@decorative);
 }
 
- 
+.sc.cta.dark.icon:hover {
+	background-color: #fff;
+}
+.sc.cta.icon.dark.border:hover{
+	border-color:@decorative;
+}
+.sc.cta.icon.dark:hover i,
+.sc.cta.icon.dark:hover a,
+.sc.cta.icon.dark:hover .button, 
+.sc.cta.icon.dark:hover .button i {
+	background-color: transparent;
+	color:@decorative;
+	.mcs_sc_icon(@decorative);
+}
 
+.sc.cta.dark.icon:hover p{color:#000000;}
+/***********************************************imagecta*****************************************************/
+.cta.image div.description{
+	background-color: @decorative;
+}
+
+.cta.image p.description_content{
+	.mcs_text_color(@decorative);
+}

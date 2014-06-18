@@ -13,6 +13,9 @@
 		<item for="install">ALTER TABLE ?:bm_grids ADD phone VARCHAR( 128 );</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD full_width VARCHAR( 128 );</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD block_grouping ENUM(  'none',  'accordion',  'tabs' ) NOT NULL DEFAULT  'none';</item>
+		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_map_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>
+		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_general_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, setting_value text NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>
+		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_vendor_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, setting_value text NOT NULL, setting_comp_id int(11) NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>		
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
@@ -620,6 +623,15 @@
 					
 				</items>
 			</section>
+			<section id="mcs_backup_settings">
+				<name>Backup Settings</name>
+				<items>
+					<item id="mcs_backup_button">
+						<type>template</type>
+						<default_value>backup_button.tpl</default_value>
+					</item>
+				</items>
+			</section>
 
         </sections>
     </settings>
@@ -843,10 +855,6 @@
 		<item for="install">fn_map_settings</item>
 		<item for="uninstall">fn_save_general_settings</item>
 		<item for="uninstall">fn_save_vendor_settings</item>
-<!--        <item for="install">fn_google_export_add_features</item>
-        <item for="install">fn_google_export_add_feed</item>
-        <item for="uninstall">fn_google_export_remove_features</item>
-        <item for="uninstall">fn_google_export_remove_feed</item>-->
     </functions>
 </addon>
 
