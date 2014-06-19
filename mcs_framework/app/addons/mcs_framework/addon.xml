@@ -15,7 +15,7 @@
 		<item for="install">ALTER TABLE ?:bm_grids ADD block_grouping ENUM(  'none',  'accordion',  'tabs' ) NOT NULL DEFAULT  'none';</item>
 		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_map_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>
 		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_general_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, setting_value text NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>
-		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_vendor_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, setting_value text NOT NULL, setting_comp_id int(11) NOT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>		
+		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_vendor_settings (sid smallint(6) NOT NULL, setting_id mediumint(8) NOT NULL, setting_name varchar(128) NOT NULL, setting_value text, setting_comp_id int(11) DEFAULT NULL, PRIMARY KEY (sid)) ENGINE=MyISAM DEFAULT CHARSET=utf8;</item>		
 	</queries>
     <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
@@ -94,8 +94,16 @@
 						<tooltip>If checked, shortcodes functionality will be enabled on products description, products promo text, categories description, pages description and HTML blocks.</tooltip>
 						<type>checkbox</type>
 						<default_value>N</default_value>
-					</item>	
+					</item>
 					
+					<item id="mcs_general_backup_settings">
+						<type>header</type>
+						<name>Backup Settings</name>
+					</item>	
+					<item id="mcs_general_backup_button">
+						<type>template</type>
+						<default_value>backup_button.tpl</default_value>
+					</item>
 				</items>
             </section>
 		<!--PRODUCTS LIST LAYOUTS-->
@@ -623,16 +631,6 @@
 					
 				</items>
 			</section>
-			<section id="mcs_backup_settings">
-				<name>Backup Settings</name>
-				<items>
-					<item id="mcs_backup_button">
-						<type>template</type>
-						<default_value>backup_button.tpl</default_value>
-					</item>
-				</items>
-			</section>
-
         </sections>
     </settings>
 	<language_variables>
