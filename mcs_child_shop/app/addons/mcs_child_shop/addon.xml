@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+    <id>mcs_child_shop</id>
+    <name>More CS-Cart Child Shop</name>
+    <description>More CS-Cart Child Shop</description>
+    <version>1.0</version>
+    <priority>200000</priority>
+    <position>0</position>
+    <default_language>en</default_language>
+    <translations>
+    </translations>
+	<settings layout="separate">
+        <sections>
+            <section id="section1">
+                <name>Generic settings</name>        
+                <items>
+                    <item id="sync_product">
+						<type>template</type>
+						<default_value>sync_product.tpl</default_value>
+					</item>
+				</items>
+			</section>
+		</sections>
+	</settings>
+</addon>
