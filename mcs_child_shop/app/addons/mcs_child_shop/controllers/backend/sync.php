@@ -20,7 +20,7 @@ if ($mode == 'product') {
 
 	if (!empty($_REQUEST['product_id'])) {
         $pid = $_REQUEST['product_id'];
-        $pdata = fn_sync_product($pid);
+        $pdata = fn_mcs_sync_product($pid);
         if (!empty($pdata['product_id'])) {
             $pid = $pdata['product_id'];
             fn_set_notification('N', __('notice'), __('text_product_cloned'));
@@ -29,4 +29,24 @@ if ($mode == 'product') {
         //return array(CONTROLLER_STATUS_REDIRECT, "products.update?product_id=$pid");
 		//print_r($pdata);
     }
+}
+
+if ($mode == 'options'){
+
+	fn_mcs_db_connect_parent();
+	$data=fn_mcs_get_all_product_options();
+	fn_mcs_db_connect_child();
+	$result=fn_mcs_put_all_product_options($data);
+	
+	fn_set_notification('N', __('notice'), $result,'S');
+	
+}
+
+if ($mode == 'features'){
+	fn_mcs_db_connect_parent();
+	$data=fn_mcs_get_all_product_features();
+	fn_mcs_db_connect_child();
+	$result=fn_mcs_put_all_product_features($data);
+	
+	fn_set_notification('N', __('notice'), $result,'S');
 }
