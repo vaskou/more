@@ -31,7 +31,8 @@
                 {math assign="cols" equation="ceil(x / y)" x=$subitems_count y=$divider}
             {/if}
             {*assign var="cols" value=4*}
-            <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}" id="mcs-categ-{$item1.category_id}">
+            
+            <li class="{if !$item1.$childs}nodrop{elseif $item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6}fullwidth{elseif !$item1.$childs|fn_check_second_level_child_array:$childs && $cols == 6 && $block.properties.mcs_top_menu_show_images=='Y'}fullwidth{/if}{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}" id="mcs-categ-{$item1.category_id}">
                 <a{if $item1_url} href="{$item1_url}"{/if}{if $item1.$childs} class="drop"{/if}>{$item1.$name}{if $item1.$childs}<i class="icon-arrow-down2"></i>{/if}</a>
 
             {if $item1.$childs}

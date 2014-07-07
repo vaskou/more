@@ -50,3 +50,9 @@ if ($mode == 'features'){
 	
 	fn_set_notification('N', __('notice'), $result,'S');
 }
+
+if($mode=='images'){
+	if (!empty($_REQUEST['product_id'])) {
+		$pid = $_REQUEST['product_id'];	
+	}
+}

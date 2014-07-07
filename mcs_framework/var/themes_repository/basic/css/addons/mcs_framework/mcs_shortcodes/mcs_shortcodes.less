@@ -22,7 +22,7 @@
 	color: #000;
 }
 .sc.cta.icon {
-	background-color: #fff;
+	background-color: transparent;
 	overflow:hidden;
 }
 .sc.cta.icon.border{
@@ -32,6 +32,7 @@
 	color:@links;
 	.mcs_sc_icon(@links);
 }
+.sc.cta.icon h3,
 .sc.cta.icon i,
 .sc.cta.icon .button, 
 .sc.cta.icon .button i {
@@ -42,6 +43,8 @@
 .sc.cta.icon:hover {
 	background-color: @decorative;
 }
+.sc.cta.icon:hover i,
+.sc.cta.icon:hover h3,
 .sc.cta.icon:hover p,
 .sc.cta.icon:hover a,
 .sc.cta.icon:hover .button,
@@ -52,6 +55,8 @@
 .sc.cta.icon.dark{
 	background-color: @decorative;
 }
+.sc.cta.dark.icon i,
+.sc.cta.dark.icon h3,
 .sc.cta.dark.icon p,
 .sc.cta.dark.icon a,
 .sc.cta.dark.icon .button,
@@ -65,6 +70,7 @@
 .sc.cta.icon.dark.border:hover{
 	border-color:@decorative;
 }
+.sc.cta.icon.dark:hover h3,
 .sc.cta.icon.dark:hover i,
 .sc.cta.icon.dark:hover a,
 .sc.cta.icon.dark:hover .button, 

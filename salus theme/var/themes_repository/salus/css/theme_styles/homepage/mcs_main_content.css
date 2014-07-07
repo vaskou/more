@@ -20,9 +20,7 @@
 	text-transform:uppercase;
 }
 
-.welcome-msg h1,
-.welcome-msg h2,
-.welcome-msg h3
+.welcome-msg
 {
 	text-align:center;
 }
