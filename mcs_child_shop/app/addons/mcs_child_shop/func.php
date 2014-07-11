@@ -190,6 +190,9 @@ function fn_mcs_get_product_options($product_id)
 	$product_options_exceptions=db_get_array("SELECT * FROM ?:product_options_exceptions WHERE product_id=$product_id");
 	$product_options_inventory=db_get_array("SELECT * FROM ?:product_options_inventory WHERE product_id=$product_id");
 	
+	$product_options_inventory_images=fn_mcs_get_product_options_inventory_images($product_options_inventory);
+	$product_option_variants_images=fn_mcs_get_product_option_variants_images($product_option_variants);
+	
 	$data=array(
 		'product_global_option_links'=>$product_global_option_links,
 		'product_options'=>$product_options,
@@ -197,7 +200,9 @@ function fn_mcs_get_product_options($product_id)
 		'product_options_exceptions'=>$product_options_exceptions,
 		'product_options_inventory'=>$product_options_inventory,
 		'product_option_variants'=>$product_option_variants,
-		'product_option_variants_descriptions'=>$product_option_variants_descriptions
+		'product_option_variants_descriptions'=>$product_option_variants_descriptions,
+		'product_options_inventory_images'=>$product_options_inventory_images,
+		'product_option_variants_images'=>$product_option_variants_images
 	);
 	
 	return $data;
@@ -230,6 +235,30 @@ function fn_mcs_get_product_option_variants_and_descriptions($option_id,&$produc
 	}
 }
 
+function fn_mcs_get_product_options_inventory_images($data)
+{
+	$product_options_inventory_images=array();
+	foreach($data as $k=>$v){
+		$object_id=$v['combination_hash'];
+		$temp_product_options_inventory_images=fn_mcs_get_image_pairs($object_id, 'product_option');
+		array_push($product_options_inventory_images,$temp_product_options_inventory_images[0]);
+	}
+	
+	return $product_options_inventory_images;
+}
+
+function fn_mcs_get_product_option_variants_images($data)
+{
+	$product_option_variants_images=array();
+	foreach($data as $k=>$v){
+		$object_id=$v['variant_id'];
+		$temp_product_option_variants_images=fn_mcs_get_image_pairs($object_id, 'variant_image');
+		array_push($product_option_variants_images,$temp_product_option_variants_images[0]);
+	}
+	
+	return $product_option_variants_images;
+}
+
 function fn_mcs_put_all_product_options($data)
 {
 	try{
@@ -248,7 +277,11 @@ function fn_mcs_put_all_product_options($data)
 function fn_mcs_put_product_options($data,$product_id)
 {
 	foreach($data as $k=>$v){
-		fn_mcs_multi_db_replace_into($k,$v);
+		if($k!='product_options_inventory_images' && $k!='product_option_variants_images'){
+			fn_mcs_multi_db_replace_into($k,$v);
+		}else{
+			fn_mcs_put_image_pairs($v);
+		}
 	}
 }
 
@@ -283,6 +316,8 @@ function fn_mcs_get_product_features($product_id)
 	$ult_objects_sharing=array();
 	$feature_parents=array();
 	
+	$feature_variant_images=array();
+	
 	foreach($product_features_values as $k=>$v){
 		$feature_id=$v['feature_id'];
 		
@@ -307,7 +342,10 @@ function fn_mcs_get_product_features($product_id)
 			if(!in_array($temp_product_features[0]['parent_id'],$feature_parents)){
 				array_push($feature_parents,$temp_product_features[0]['parent_id']);
 			}
-		}	
+		}
+		
+		$temp_feature_variant_images=fn_mcs_get_image_pairs($variant_id, 'feature_variant');
+		array_push($feature_variant_images,$temp_feature_variant_images[0]);	
 	}
 	
 	foreach($feature_parents as $k=>$v){
@@ -327,10 +365,11 @@ function fn_mcs_get_product_features($product_id)
 		'product_features_values'=>$product_features_values,
 		'product_feature_variants'=>$product_feature_variants,
 		'product_feature_variant_descriptions'=>$product_feature_variant_descriptions,
-		'ult_objects_sharing'=>$ult_objects_sharing
+		'ult_objects_sharing'=>$ult_objects_sharing,
+		'feature_variant_images'=>$feature_variant_images
 	);
 	
-	return $data;;
+	return $data;
 }
 
 function fn_mcs_put_all_product_features($data)
@@ -351,7 +390,11 @@ function fn_mcs_put_all_product_features($data)
 function fn_mcs_put_product_features($data,$product_id)
 {
 	foreach($data as $k=>$v){
-		fn_mcs_multi_db_replace_into($k,$v);
+		if($k!='feature_variant_images'){
+			fn_mcs_multi_db_replace_into($k,$v);
+		}else{
+			fn_mcs_put_image_pairs($v);
+		}
 	}
 }
 
@@ -374,8 +417,11 @@ function fn_mcs_get_image_pairs($object_id, $object_type, $lang_code = CART_LANG
             if (!empty($icons[$pair_id])) {
                 $p_data['image_alt'] = empty($icons[$pair_id]['alt']) ? '' : $icons[$pair_id]['alt'];
 
-                $tmp_name = fn_create_temp_file();
-                Storage::instance('images')->export($icons[$pair_id]['relative_path'], $tmp_name);
+                /*$tmp_name = fn_create_temp_file();
+                Storage::instance('images')->export($icons[$pair_id]['relative_path'], $tmp_name);*/
+/*TODO:get url from addon setting*/
+				$tmp_name=fn_get_url_data("http://localhost/vasilis/cscart_parent/images/".$icons[$pair_id]['relative_path']);
+				$tmp_name=$tmp_name['path'];
                 $name = fn_basename($icons[$pair_id]['image_path']);
 
                 $icons[$pair_id] = array(
@@ -473,7 +519,9 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
                 if (fn_get_image_size($detailed[$k]['path'])) {
                     $data['detailed_id'] = fn_update_image($detailed[$k], !empty($pair_data['detailed_id']) ? $pair_data['detailed_id'] : 0, 'detailed');
                 }
-            }
+            }else{
+				$data['detailed_id']=0;	/*custom*/
+			}
 
             // Update icon
             if (!empty($icons[$k]) && !empty($icons[$k]['size'])) {
@@ -481,7 +529,7 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
                     $data['image_id'] = fn_update_image($icons[$k], !empty($pair_data['image_id']) ? $pair_data['image_id'] : 0, $object_type);
                 }
             }else{
-				$data['image_id']=0;
+				$data['image_id']=0;	/*custom*/
 			}
 
             // Update alt descriptions
@@ -542,7 +590,7 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
 					'type'=>$p_data['type']					
 				);
 				try{
-				db_replace_into('images_links',$d);
+					db_replace_into('images_links',$d);
 				}
 				catch(Exception $e){
 					 echo 'Caught exception: ',  $e->getMessage(), "\n";
