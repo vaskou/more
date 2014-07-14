@@ -25,6 +25,9 @@ if ($mode == 'product') {
             $pid = $pdata['product_id'];
             fn_set_notification('N', __('notice'), __('text_product_cloned'));
         }
+		if(!empty($pdata['return_msg'])){
+			fn_set_notification('N', __('notice'), $pdata['return_msg']);
+		}
 
         //return array(CONTROLLER_STATUS_REDIRECT, "products.update?product_id=$pid");
 		//print_r($pdata);

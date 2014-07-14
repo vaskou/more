@@ -18,7 +18,12 @@ function fn_mcs_sync_product($product_id)
 
 	fn_mcs_db_connect_parent();
 	// Sync main data
-    $main_data=fn_mcs_get_parent_main_data($product_id);
+	$data=fn_mcs_get_parent_main_data($product_id);
+    $main_data=$data['product_data'];
+	$sync_data=$data['sync_data'];
+	if($sync_data['mcs_child_sync_product']=='N'){
+		return array('return_msg'=>'Product not synced');	
+	}
 	// Sync descriptions
 	$descriptions=fn_mcs_get_descriptions($product_id);
 	// Sync prices
@@ -28,27 +33,35 @@ function fn_mcs_sync_product($product_id)
 	// Sync features
 	$features=fn_mcs_get_product_features($product_id);
 	// Sync images
-	$images=fn_mcs_get_image_pairs($product_id,'product');
+	if($sync_data['mcs_child_sync_images']=='Y'){
+		$images=fn_mcs_get_image_pairs($product_id,'product');
+	}
 	// Sync files
-	$files=fn_mcs_get_product_files($product_id);
+	if($sync_data['mcs_child_sync_files']=='Y'){
+		$files=fn_mcs_get_product_files($product_id);
+	}
 	
 	fn_mcs_db_connect_child();
 	// Sync main data
     $pid=fn_mcs_put_parent_main_data($main_data);
 	// Sync descriptions
-	fn_mcs_put_descriptions($descriptions, $pid);
+	fn_mcs_put_descriptions($descriptions, $product_id);
 	// Sync prices
-	fn_mcs_put_prices($prices, $pid);
+	fn_mcs_put_prices($prices, $product_id);
 	// Put product on main category
-	fn_mcs_put_product_categories($main_data,$pid);
+	fn_mcs_put_product_categories($main_data,$product_id);
 	// Sync options
 	fn_mcs_put_product_options($options,$product_id);
 	// Sync features
 	fn_mcs_put_product_features($features,$product_id);
 	// Sync images
-	fn_mcs_put_image_pairs($images);
+	if($sync_data['mcs_child_sync_images']=='Y'){
+		fn_mcs_put_image_pairs($images);
+	}
 	// Sync files
-	fn_mcs_put_product_files($files,$product_id);
+	if($sync_data['mcs_child_sync_files']=='Y'){
+		fn_mcs_put_product_files($files,$product_id);
+	}
 	
 /*    // Clone product features
     $data = db_get_array("SELECT * FROM ?:product_features_values WHERE product_id = ?i", $product_id);
@@ -77,13 +90,21 @@ function fn_mcs_sync_product($product_id)
 
 function fn_mcs_get_parent_main_data($product_id)
 {
+	$sync_data=array();
 	$data = db_get_row("SELECT * FROM ?:products WHERE product_id = ?i", $product_id);
 /*	$data['product_cid']=$data['product_id'];
     unset($data['product_id']);*/
+	$sync_data['mcs_child_sync_product']=$data['mcs_child_sync_product'];
+	$sync_data['mcs_child_sync_images']=$data['mcs_child_sync_images'];
+	$sync_data['mcs_child_sync_files']=$data['mcs_child_sync_files'];
+	unset($data['mcs_child_sync_product']);
+	unset($data['mcs_child_sync_images']);
+	unset($data['mcs_child_sync_files']);
     $data['status'] = 'D';
     $data['timestamp'] = $data['updated_timestamp'] = time();
 	
-	return $data;
+	$result=array('product_data'=>$data,'sync_data'=>$sync_data);
+	return $result;
 }
 
 function fn_mcs_put_parent_main_data($data)
@@ -96,6 +117,14 @@ function fn_mcs_put_parent_main_data($data)
 function fn_mcs_get_descriptions($product_id)
 {
 	$data = db_get_array("SELECT * FROM ?:product_descriptions WHERE product_id = ?i", $product_id);
+	if(!empty($data[0]['mcs_child_product'])){
+		$data[0]['product']=$data[0]['mcs_child_product'];
+		unset($data[0]['mcs_child_product']);
+	}
+	if(!empty($data[0]['mcs_child_full_description'])){
+		$data[0]['full_description']=$data[0]['mcs_child_full_description'];
+		unset($data[0]['mcs_child_full_description']);
+	}
 	return $data;
 }
 
