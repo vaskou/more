@@ -11,10 +11,62 @@
     </translations>
 	<settings layout="separate">
         <sections>
-            <section id="section1">
+            <section id="mcs_general">
                 <name>Generic settings</name>        
                 <items>
-                    <item id="sync_product">
+					<item id="mcs_general_parent_header">
+						<type>header</type>
+						<name>Parent Settings</name>
+					</item>
+					<item id="mcs_general_parent_server">
+						<type>input</type>
+						<name>Parent server</name>
+					</item>
+					<item id="mcs_general_parent_username">
+						<type>input</type>
+						<name>Parent username</name>
+					</item>
+					<item id="mcs_general_parent_password">
+						<type>password</type>
+						<name>Parent password</name>
+					</item>
+					<item id="mcs_general_parent_table_prefix">
+						<type>input</type>
+						<name>Parent table prefix</name>
+					</item>
+					<item id="mcs_general_parent_db_name">
+						<type>input</type>
+						<name>Parent database name</name>
+					</item>
+					<item id="mcs_general_child_header">
+						<type>header</type>
+						<name>Child Settings</name>
+					</item>
+					<item id="mcs_general_child_server">
+						<type>input</type>
+						<name>Child server</name>
+					</item>
+					<item id="mcs_general_child_username">
+						<type>input</type>
+						<name>Child username</name>
+					</item>
+					<item id="mcs_general_child_password">
+						<type>password</type>
+						<name>Child password</name>
+					</item>
+					<item id="mcs_general_child_table_prefix">
+						<type>input</type>
+						<name>Child table prefix</name>
+					</item>
+					<item id="mcs_general_child_db_name">
+						<type>input</type>
+						<name>Child database name</name>
+					</item>
+					<item id="mcs_general_other_header">
+						<type>header</type>
+						<name>Other Settings</name>
+					</item>
+                    <item id="mcs_general_sync_product">
 						<type>template</type>
 						<default_value>sync_product.tpl</default_value>
 					</item>

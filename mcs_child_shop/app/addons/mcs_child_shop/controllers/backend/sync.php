@@ -20,13 +20,18 @@ if ($mode == 'product') {
 
 	if (!empty($_REQUEST['product_id'])) {
         $pid = $_REQUEST['product_id'];
-        $pdata = fn_mcs_sync_product($pid);
-        if (!empty($pdata['product_id'])) {
-            $pid = $pdata['product_id'];
-            fn_set_notification('N', __('notice'), __('text_product_cloned'));
-        }
-		if(!empty($pdata['return_msg'])){
-			fn_set_notification('N', __('notice'), $pdata['return_msg']);
+		if($pid=='all'){
+			fn_mcs_sync_all_products();
+			//fn_mcs_sync_product($pid);
+		}else{
+			$pdata = fn_mcs_sync_product($pid);
+			if (!empty($pdata['product_id'])) {
+				$pid = $pdata['product_id'];
+				fn_set_notification('N', __('notice'), __('text_product_cloned'));
+			}
+			if(!empty($pdata['return_msg'])){
+				fn_set_notification('N', __('notice'), $pdata['return_msg']);
+			}
 		}
 
         //return array(CONTROLLER_STATUS_REDIRECT, "products.update?product_id=$pid");
