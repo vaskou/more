@@ -74,4 +74,7 @@
 			</section>
 		</sections>
 	</settings>
+	<queries>
+		<item for="install">CREATE TABLE IF NOT EXISTS ?:mcs_timestamp_of_sync (id mediumint(8) NOT NULL, timestamp int(11) NOT NULL, UNIQUE KEY id (id));</item>
+	</queries>
 </addon>

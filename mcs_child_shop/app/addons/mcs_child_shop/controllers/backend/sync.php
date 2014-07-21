@@ -21,16 +21,14 @@ if ($mode == 'product') {
 	if (!empty($_REQUEST['product_id'])) {
         $pid = $_REQUEST['product_id'];
 		if($pid=='all'){
-			fn_mcs_sync_all_products();
-			//fn_mcs_sync_product($pid);
+			$pdata=fn_mcs_sync_all_products();
+			/*if(!empty($pdata['return_msg'])){
+				fn_set_notification($pdata['msg_type'], __('notice'), $pdata['return_msg']);
+			}*/
 		}else{
 			$pdata = fn_mcs_sync_product($pid);
-			if (!empty($pdata['product_id'])) {
-				$pid = $pdata['product_id'];
-				fn_set_notification('N', __('notice'), __('text_product_cloned'));
-			}
 			if(!empty($pdata['return_msg'])){
-				fn_set_notification('N', __('notice'), $pdata['return_msg']);
+				fn_set_notification($pdata['msg_type'], __('notice'), $pdata['return_msg']);
 			}
 		}
 
