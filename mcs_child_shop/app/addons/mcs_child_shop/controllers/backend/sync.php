@@ -21,7 +21,7 @@ if ($mode == 'product') {
 	if (!empty($_REQUEST['product_id'])) {
         $pid = $_REQUEST['product_id'];
 		if($pid=='all'){
-			$pdata=fn_mcs_sync_all_products();
+			$pdata=fn_mcs_sync_all_products(true);
 			/*if(!empty($pdata['return_msg'])){
 				fn_set_notification($pdata['msg_type'], __('notice'), $pdata['return_msg']);
 			}*/

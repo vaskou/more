@@ -12,8 +12,8 @@
 * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
 ****************************************************************************/
 
-/*if (!defined('BOOTSTRAP')) { die('Access denied'); }
+if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 fn_register_hooks(
-    'attach_absolute_image_paths'
-);*/
+    'update_product_post'
+);

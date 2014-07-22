@@ -29,6 +29,9 @@ $GLOBALS['db_child_params']=array(
 	'dbc_name'=>'child'
 );
 
+$GLOBALS['feature_ids']=array();
+$GLOBALS['variant_ids']=array();
+
 function fn_mcs_error_logging($data,$msg)
 {
 	if(empty($data) || !$data){
@@ -36,8 +39,51 @@ function fn_mcs_error_logging($data,$msg)
 	}
 }
 
+function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
+{
+	if(!$create){
+		
+		$image_result=db_get_array("SELECT * FROM ?:images_links WHERE object_id = ?i AND object_type = 'product'", $product_id);
+		if(!empty($image_result)){
+			return true;	
+		}
+		
+		// Connect to parent db
+		$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
+		// Check connection
+		if(!$db_result['db_init'] || !$db_result['db_con']){
+			write_log('Parent database connection problem');
+			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+		}
+		
+		$data = db_get_row("SELECT mcs_child_sync_product, mcs_child_sync_images FROM ?:products WHERE product_id = ?i", $product_id);
+		if(!empty($data)){
+			if($data['mcs_child_sync_product']=='Y' && $data['mcs_child_sync_images']=='Y'){
+				$images=fn_mcs_get_image_pairs($product_id,'product');
+			}
+		}
+		
+		if(!empty($images)){
+			// Connect to child db
+			$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+			
+			// Check connection
+			if(!$db_result['db_init'] || !$db_result['db_con']){
+				write_log('Child database connection problem');
+				return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+			}
+			
+			fn_mcs_put_image_pairs($images);
+		}
+	}
+}
+
+
 function fn_mcs_sync_product($product_id)
-{	
+{
+	$product_data=array();
+	
+	// Connect to parent db
 	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
 	
 	// Check connection
@@ -46,7 +92,120 @@ function fn_mcs_sync_product($product_id)
 		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 	}
 	
-	// Sync main data
+	// Get all product data from parent
+	$product_data=fn_mcs_get_all_product_data($product_id);
+
+/*	// Sync files
+	if($sync_data['mcs_child_sync_files']=='Y'){
+		$files=fn_mcs_get_product_files($product_id);
+	}*/
+	
+	// Check if there were errors
+	if(!empty($product_data['msg_type'])){
+		return $product_data;
+	}
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Put all product data to child
+	$put_result=fn_mcs_put_all_product_data($product_data);
+
+/*	// Sync files
+	if($sync_data['mcs_child_sync_files']=='Y'){
+		fn_mcs_put_product_files($files,$product_id);
+	}*/
+	
+	// Return result message
+	return $put_result;
+}
+
+function fn_mcs_sync_all_products($sync_taxes=false)
+{
+	$sync_result=array();
+	$product_data=array();
+	$last_sync_timestamp=0;
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Get last sync timestamp
+	$timestamp_result=db_get_row("SELECT timestamp FROM ?:mcs_timestamp_of_sync");
+	if(!empty($timestamp_result)){
+		$last_sync_timestamp=$timestamp_result['timestamp'];
+	}
+	
+	// Connect to parent db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Parent database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Get product ids of products to be synced
+	$pids = db_get_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp);
+	foreach($pids as $k=>$v){
+		//$sync_result[]=fn_mcs_sync_product($v['product_id']);
+		$product_data[$v['product_id']]=fn_mcs_get_all_product_data($v['product_id']);
+	}
+
+	if($sync_taxes){
+		$taxes=fn_mcs_get_all_taxes();
+		$destinations=fn_mcs_get_all_destinations();
+		$states=fn_mcs_get_all_states();
+	}
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Put products to be synced
+	foreach($product_data as $k=>$v){
+		if(empty($v['msg_type'])){
+			fn_mcs_put_all_product_data($v);
+		}
+	}
+	
+	if($sync_taxes){
+		if(empty($taxes['msg_type'])){
+			$taxes_result=fn_mcs_put_all_taxes($taxes);
+			fn_mcs_error_logging($taxes_result,'Error putting data with fn_mcs_put_all_taxes');
+		}
+		if(empty($destinations['msg_type'])){
+			$destinations_result=fn_mcs_put_all_destinations($destinations);
+			fn_mcs_error_logging($destinations_result,'Error putting data with fn_mcs_put_all_destinations');
+		}
+		if(empty($states['msg_type'])){
+			$states_result=fn_mcs_put_all_states($states);
+			fn_mcs_error_logging($states_result,'Error putting data with fn_mcs_put_all_states');
+		}
+	}
+	
+	// Update timestamp of sync
+	$today=fn_parse_date(date('m/d/Y'));
+	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
+	
+	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N');;
+}
+
+function fn_mcs_get_all_product_data($product_id)
+{
 	$data=fn_mcs_get_parent_main_data($product_id);
 	if(empty($data)){
 		$msg='There is no product with this id';
@@ -71,90 +230,48 @@ function fn_mcs_sync_product($product_id)
 	$options=fn_mcs_get_product_options($product_id);
 	// Sync features
 	$features=fn_mcs_get_product_features($product_id);
-	// Sync images
-/*	if($sync_data['mcs_child_sync_images']=='Y'){
-		$images=fn_mcs_get_image_pairs($product_id,'product');
-	}
-	// Sync files
-	if($sync_data['mcs_child_sync_files']=='Y'){
-		$files=fn_mcs_get_product_files($product_id);
-	}*/
+
+	$result=array(
+		'product_id'=>$product_id,
+		'main_data'=>$main_data,
+		'sync_data'=>$sync_data,
+		'descriptions'=>$descriptions,
+		'prices'=>$prices,
+		'options'=>$options,
+		'features'=>$features
+	);
 	
-	
-	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
-	
-	// Check connection
-	if(!$db_result['db_init'] || !$db_result['db_con']){
-		write_log('Child database connection problem');
-		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-	}
-	
-	// Sync main data
-    $m_data_result=fn_mcs_put_parent_main_data($main_data);
+	return $result;
+}
+
+function fn_mcs_put_all_product_data($data)
+{
+	$m_data_result=fn_mcs_put_parent_main_data($data['main_data']);
 	if(!$m_data_result){
 		$msg='Error putting product data in database';
-		write_log('Error putting data with fn_mcs_put_parent_main_data with product_id = '.$product_id);
+		write_log('Error putting data with fn_mcs_put_parent_main_data with product_id = '.$data['product_id']);
 		return array('return_msg'=>$msg, 'msg_type'=>'E');
 	}
 	
 	// Sync descriptions
-	$descr_result=fn_mcs_put_descriptions($descriptions);
-	fn_mcs_error_logging($descr_result,'Error putting data with fn_mcs_put_descriptions with product_id = '.$product_id);
+	$descr_result=fn_mcs_put_descriptions($data['descriptions']);
+	fn_mcs_error_logging($descr_result,'Error putting data with fn_mcs_put_descriptions with product_id = '.$data['product_id']);
 	
 	// Sync prices
-	$prices_result=fn_mcs_put_prices($prices);
-	fn_mcs_error_logging($prices_result,'Error putting data with fn_mcs_put_prices with product_id = '.$product_id);
+	$prices_result=fn_mcs_put_prices($data['prices']);
+	fn_mcs_error_logging($prices_result,'Error putting data with fn_mcs_put_prices with product_id = '.$data['product_id']);
 	
 	// Put product on main category
-	fn_mcs_put_product_categories($main_data,$product_id);
+	fn_mcs_put_product_categories($data['main_data'],$data['product_id']);
 	
 	// Sync options
-	$opt_result=fn_mcs_put_product_options($options);
-	fn_mcs_error_logging($opt_result,'Error putting data with fn_mcs_put_product_options with product_id = '.$product_id);
+	$opt_result=fn_mcs_put_product_options($data['options']);
+	fn_mcs_error_logging($opt_result,'Error putting data with fn_mcs_put_product_options with product_id = '.$data['product_id']);
 	// Sync features
-	$feat_result=fn_mcs_put_product_features($features);
-	fn_mcs_error_logging($feat_result,'Error putting data with fn_mcs_put_product_features with product_id = '.$product_id);
-	// Sync images
-/*	if($sync_data['mcs_child_sync_images']=='Y'){
-		fn_mcs_put_image_pairs($images);
-	}
-	// Sync files
-	if($sync_data['mcs_child_sync_files']=='Y'){
-		fn_mcs_put_product_files($files,$product_id);
-	}*/
+	$feat_result=fn_mcs_put_product_features($data['features']);
+	fn_mcs_error_logging($feat_result,'Error putting data with fn_mcs_put_product_features with product_id = '.$data['product_id']);
 	
-    return array('return_msg' => 'The product was copied', 'msg_type'=>'N');
-}
-
-function fn_mcs_sync_all_products()
-{
-	$sync_result=array();
-	$last_sync_timestamp=0;
-	
-	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
-	if(!$db_result['db_init'] || !$db_result['db_con']){
-		write_log('Child database connection problem');
-		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-	}
-	$timest_result=db_get_row("SELECT timestamp FROM ?:mcs_timestamp_of_sync");
-	if(!empty($timest_result)){
-		$last_sync_timestamp=$timest_result['timestamp'];
-	}
-	
-	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
-	if(!$db_result['db_init'] || !$db_result['db_con']){
-		write_log('Parent database connection problem');
-		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-	}
-	
-	$pids = db_get_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp);
-	foreach($pids as $k=>$v){
-		$sync_result[]=fn_mcs_sync_product($v['product_id']);
-	}
-	
-	$today=fn_parse_date(date('m/d/Y'));
-	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
-	return $sync_result;
+	return array('return_msg' => 'The product was copied', 'msg_type'=>'N');
 }
 
 function fn_mcs_get_parent_main_data($product_id)
@@ -207,13 +324,17 @@ function fn_mcs_put_descriptions($data)
 
 function fn_mcs_get_prices($product_id)
 {
-	$data = db_get_row("SELECT * FROM ?:product_prices WHERE product_id = ?i", $product_id);
+	$data = db_get_array("SELECT * FROM ?:product_prices WHERE product_id = ?i", $product_id);
 	return $data;
 }
 
 function fn_mcs_put_prices($data)
 {
-	$result=db_replace_into("product_prices", $data);
+	$result=fn_mcs_multi_db_replace_into("product_prices", $data);
+//	$result=db_replace_into("product_prices", $data);
+	if(in_array(false, $result)){
+		return false;
+	}
 	return $result;
 }
 
@@ -369,30 +490,39 @@ function fn_mcs_get_product_features($product_id)
 	
 	if(!empty($product_features_values)){
 		foreach($product_features_values as $k=>$v){
+			
 			$feature_id=$v['feature_id'];
 			
-			$temp_product_features=db_get_row("SELECT feature_id, feature_code, company_id, feature_type, parent_id, display_on_product, display_on_catalog, display_on_header, status, position, comparison FROM ?:product_features WHERE feature_id=$feature_id");
-			array_push($product_features,$temp_product_features);
+			if(!in_array($feature_id,$GLOBALS['feature_ids'])){
+				$GLOBALS['feature_ids'][]=$feature_id;
 			
-			$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$feature_id");
-			array_push($product_features_descriptions,$temp_product_features_descriptions);
+				$temp_product_features=db_get_row("SELECT feature_id, feature_code, company_id, feature_type, parent_id, display_on_product, display_on_catalog, display_on_header, status, position, comparison FROM ?:product_features WHERE feature_id=$feature_id");
+				array_push($product_features,$temp_product_features);
+				
+				$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$feature_id");
+				array_push($product_features_descriptions,$temp_product_features_descriptions);
+				
+				if($temp_product_features['parent_id']!=0){
+					if(!in_array($temp_product_features['parent_id'],$feature_parents)){
+						array_push($feature_parents,$temp_product_features['parent_id']);
+					}
+				}
+				
+				$temp_ult_objects_sharing=db_get_row("SELECT * FROM ?:ult_objects_sharing WHERE share_object_type='product_features' AND share_object_id=$feature_id");
+				array_push($ult_objects_sharing,$temp_ult_objects_sharing);
+			}
 			
 			$variant_id=$v['variant_id'];
 			
-			if($variant_id!=0){
-				$temp_product_feature_variants=db_get_row("SELECT * FROM ?:product_feature_variants WHERE variant_id=$variant_id");
-				array_push($product_feature_variants,$temp_product_feature_variants);
-			
-				$temp_product_feature_variant_descriptions=db_get_row("SELECT * FROM ?:product_feature_variant_descriptions WHERE variant_id=$variant_id");
-				array_push($product_feature_variant_descriptions,$temp_product_feature_variant_descriptions);
-			}
-			
-			$temp_ult_objects_sharing=db_get_row("SELECT * FROM ?:ult_objects_sharing WHERE share_object_type='product_features' AND share_object_id=$feature_id");
-			array_push($ult_objects_sharing,$temp_ult_objects_sharing);
-			
-			if($temp_product_features['parent_id']!=0){
-				if(!in_array($temp_product_features['parent_id'],$feature_parents)){
-					array_push($feature_parents,$temp_product_features['parent_id']);
+			if(!in_array($variant_id,$GLOBALS['variant_ids'])){
+				$GLOBALS['variant_ids'][]=$variant_id;
+				
+				if($variant_id!=0){
+					$temp_product_feature_variants=db_get_row("SELECT * FROM ?:product_feature_variants WHERE variant_id=$variant_id");
+					array_push($product_feature_variants,$temp_product_feature_variants);
+				
+					$temp_product_feature_variant_descriptions=db_get_row("SELECT * FROM ?:product_feature_variant_descriptions WHERE variant_id=$variant_id");
+					array_push($product_feature_variant_descriptions,$temp_product_feature_variant_descriptions);
 				}
 			}
 			
@@ -730,6 +860,126 @@ function fn_mcs_put_product_files($data,$product_id)
 	foreach($data as $k=>$v){
 		fn_mcs_multi_db_replace_into($k,$v);
 	}
+}
+
+function fn_mcs_get_all_taxes()
+{
+	$taxes=db_get_array("SELECT * FROM ?:taxes");
+	if(empty($taxes)){
+		$msg='Error getting taxes with fn_mcs_get_all_taxes';
+		write_log($msg);
+		return array('return_msg'=>$msg, 'msg_type'=>'E');
+	}
+	$tax_descriptions=db_get_array("SELECT * FROM ?:tax_descriptions");
+	fn_mcs_error_logging($tax_descriptions,'Error getting tax_descriptions with fn_mcs_get_all_taxes');
+	$tax_rates=db_get_array("SELECT * FROM ?:tax_rates");
+	fn_mcs_error_logging($tax_rates,'Error getting tax_rates with fn_mcs_get_all_taxes');
+	
+	$result=array(
+		'taxes'=>$taxes,
+		'tax_descriptions'=>$tax_descriptions,
+		'tax_rates'=>$tax_rates
+	);
+	
+	return $result;
+}
+
+function fn_mcs_put_all_taxes($data)
+{
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
+			if(in_array(false,$temp_result)){
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
+}
+
+function fn_mcs_get_all_destinations()
+{
+	$destinations=db_get_array("SELECT * FROM ?:destinations");
+	if(empty($destinations)){
+		$msg='Error getting destinations with fn_mcs_get_all_destinations';
+		write_log($msg);
+		return array('return_msg'=>$msg, 'msg_type'=>'E');
+	}
+	$destination_descriptions=db_get_array("SELECT * FROM ?:destination_descriptions");
+	fn_mcs_error_logging($destination_descriptions,'Error getting destination_descriptions with fn_mcs_get_all_destinations');
+	$destination_elements=db_get_array("SELECT * FROM ?:destination_elements");
+	fn_mcs_error_logging($destination_elements,'Error getting tax_rates with fn_mcs_get_all_destinations');
+	
+	$result=array(
+		'destinations'=>$destinations,
+		'destination_descriptions'=>$destination_descriptions,
+		'destination_elements'=>$destination_elements
+	);
+	
+	return $result;
+}
+
+function fn_mcs_put_all_destinations($data)
+{
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
+			if(in_array(false,$temp_result)){
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
+}
+
+function fn_mcs_get_all_states()
+{
+	$states=db_get_array("SELECT * FROM ?:states");
+	if(empty($states)){
+		$msg='Error getting states with fn_mcs_get_all_states';
+		write_log($msg);
+		return array('return_msg'=>$msg, 'msg_type'=>'E');
+	}
+	$state_descriptions=db_get_array("SELECT * FROM ?:state_descriptions");
+	fn_mcs_error_logging($state_descriptions,'Error getting state_descriptions with fn_mcs_get_all_states');
+	
+	$result=array(
+		'states'=>$states,
+		'state_descriptions'=>$state_descriptions
+	);
+	
+	return $result;
+}
+
+function fn_mcs_put_all_states($data)
+{
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
+			if(in_array(false,$temp_result)){
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
 }
 
 function fn_mcs_db_connect($parameters)
