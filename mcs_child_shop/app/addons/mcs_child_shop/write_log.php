@@ -1,5 +1,7 @@
 <?php
-define("DEFAULT_LOG","app/addons/mcs_child_shop/error_log.log");
+if (defined("DEFAULT_LOG") == FALSE) {
+	define("DEFAULT_LOG","app/addons/mcs_child_shop/error_log.log");
+}
 
 function write_log($message, $logfile='') {
   // Determine log file

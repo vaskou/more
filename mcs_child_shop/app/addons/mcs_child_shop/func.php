@@ -8,6 +8,7 @@ use Tygh\Navigation\LastView;
 use Tygh\Languages\Languages;
 
 include("write_log.php");
+include("read_log.php");
 
 $addons=Registry::get('addons');
 $mcs_child_shop=$addons['mcs_child_shop'];
@@ -29,55 +30,11 @@ $GLOBALS['db_child_params']=array(
 	'dbc_name'=>'child'
 );
 
+$GLOBALS['mcs_parent_url']=fn_mcs_check_url($mcs_child_shop['mcs_general_parent_url']);
+
 $GLOBALS['feature_ids']=array();
 $GLOBALS['variant_ids']=array();
-
-function fn_mcs_error_logging($data,$msg)
-{
-	if(empty($data) || !$data){
-		write_log($msg);
-	}
-}
-
-function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
-{
-	if(!$create){
-		
-		$image_result=db_get_array("SELECT * FROM ?:images_links WHERE object_id = ?i AND object_type = 'product'", $product_id);
-		if(!empty($image_result)){
-			return true;	
-		}
-		
-		// Connect to parent db
-		$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
-		// Check connection
-		if(!$db_result['db_init'] || !$db_result['db_con']){
-			write_log('Parent database connection problem');
-			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-		}
-		
-		$data = db_get_row("SELECT mcs_child_sync_product, mcs_child_sync_images FROM ?:products WHERE product_id = ?i", $product_id);
-		if(!empty($data)){
-			if($data['mcs_child_sync_product']=='Y' && $data['mcs_child_sync_images']=='Y'){
-				$images=fn_mcs_get_image_pairs($product_id,'product');
-			}
-		}
-		
-		if(!empty($images)){
-			// Connect to child db
-			$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
-			
-			// Check connection
-			if(!$db_result['db_init'] || !$db_result['db_con']){
-				write_log('Child database connection problem');
-				return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-			}
-			
-			fn_mcs_put_image_pairs($images);
-		}
-	}
-}
-
+$GLOBALS['option_ids']=array();
 
 function fn_mcs_sync_product($product_id)
 {
@@ -126,25 +83,12 @@ function fn_mcs_sync_product($product_id)
 	return $put_result;
 }
 
-function fn_mcs_sync_all_products($sync_taxes=false)
+function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false)
 {
 	$sync_result=array();
 	$product_data=array();
-	$last_sync_timestamp=0;
-	
-	// Connect to child db
-	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
-	// Check connection
-	if(!$db_result['db_init'] || !$db_result['db_con']){
-		write_log('Child database connection problem');
-		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-	}
-	
-	// Get last sync timestamp
-	$timestamp_result=db_get_row("SELECT timestamp FROM ?:mcs_timestamp_of_sync");
-	if(!empty($timestamp_result)){
-		$last_sync_timestamp=$timestamp_result['timestamp'];
-	}
+
+	$last_sync_timestamp=fn_mcs_get_timestamp_of_sync();
 	
 	// Connect to parent db
 	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
@@ -154,13 +98,19 @@ function fn_mcs_sync_all_products($sync_taxes=false)
 		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 	}
 	
+	// Get all categories from parent
+	if($sync_categories){
+		$categories=fn_mcs_get_all_categories();
+	}
+	
 	// Get product ids of products to be synced
 	$pids = db_get_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp);
 	foreach($pids as $k=>$v){
 		//$sync_result[]=fn_mcs_sync_product($v['product_id']);
 		$product_data[$v['product_id']]=fn_mcs_get_all_product_data($v['product_id']);
 	}
-
+	
+	// Get taxes, destinations and states tables from parent
 	if($sync_taxes){
 		$taxes=fn_mcs_get_all_taxes();
 		$destinations=fn_mcs_get_all_destinations();
@@ -175,25 +125,46 @@ function fn_mcs_sync_all_products($sync_taxes=false)
 		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 	}
 	
-	// Put products to be synced
-	foreach($product_data as $k=>$v){
-		if(empty($v['msg_type'])){
-			fn_mcs_put_all_product_data($v);
+	// Put all categories to child
+	if($sync_categories){
+		if(empty($categories['msg_type'])){
+			$categories_result=fn_mcs_put_all_categories($categories);
+			fn_mcs_error_logging($categories_result,'Error putting data with fn_mcs_put_all_categories');
+		}else{
+			fn_set_notification($categories['msg_type'], __('notice'), $categories['return_msg']);
 		}
 	}
 	
+	// Put products to be synced
+	foreach($product_data as $k=>$v){
+		if(empty($v['msg_type'])){
+			$product_result=fn_mcs_put_all_product_data($v);
+			$sync_result[]=array(
+				'name'=>$v['descriptions']['product'],
+				'product_id'=>$v['descriptions']['product_id']
+			);
+		}
+	}
+	
+	// Put taxes, destinations and states tables to child
 	if($sync_taxes){
 		if(empty($taxes['msg_type'])){
 			$taxes_result=fn_mcs_put_all_taxes($taxes);
 			fn_mcs_error_logging($taxes_result,'Error putting data with fn_mcs_put_all_taxes');
+		}else{
+			fn_set_notification($taxes['msg_type'], __('notice'), $taxes['return_msg']);
 		}
 		if(empty($destinations['msg_type'])){
 			$destinations_result=fn_mcs_put_all_destinations($destinations);
 			fn_mcs_error_logging($destinations_result,'Error putting data with fn_mcs_put_all_destinations');
+		}else{
+			fn_set_notification($destinations['msg_type'], __('notice'), $destinations['return_msg']);
 		}
 		if(empty($states['msg_type'])){
 			$states_result=fn_mcs_put_all_states($states);
 			fn_mcs_error_logging($states_result,'Error putting data with fn_mcs_put_all_states');
+		}else{
+			fn_set_notification($states['msg_type'], __('notice'), $states['return_msg']);
 		}
 	}
 	
@@ -201,7 +172,7 @@ function fn_mcs_sync_all_products($sync_taxes=false)
 	$today=fn_parse_date(date('m/d/Y'));
 	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
 	
-	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N');;
+	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N', 'sync_result'=>$sync_result);
 }
 
 function fn_mcs_get_all_product_data($product_id)
@@ -262,7 +233,7 @@ function fn_mcs_put_all_product_data($data)
 	fn_mcs_error_logging($prices_result,'Error putting data with fn_mcs_put_prices with product_id = '.$data['product_id']);
 	
 	// Put product on main category
-	fn_mcs_put_product_categories($data['main_data'],$data['product_id']);
+	fn_mcs_put_product_to_demo_category($data['product_id']);
 	
 	// Sync options
 	$opt_result=fn_mcs_put_product_options($data['options']);
@@ -272,6 +243,47 @@ function fn_mcs_put_all_product_data($data)
 	fn_mcs_error_logging($feat_result,'Error putting data with fn_mcs_put_product_features with product_id = '.$data['product_id']);
 	
 	return array('return_msg' => 'The product was copied', 'msg_type'=>'N');
+}
+
+function fn_mcs_get_all_categories()
+{
+	$categories=db_get_array("SELECT * FROM ?:categories");
+	if(empty($categories)){
+		$msg='Error getting categories with fn_mcs_get_all_categories';
+		write_log($msg);
+		return array('return_msg'=>$msg, 'msg_type'=>'E');
+	}
+	$category_descriptions=db_get_array("SELECT * FROM ?:category_descriptions");
+	fn_mcs_error_logging($category_descriptions,'Error getting data from category_descriptions table');
+	$products_categories=db_get_array("SELECT * FROM ?:products_categories");
+	fn_mcs_error_logging($products_categories,'Error getting data from products_categories table');
+	
+	$result=array(
+		'categories'=>$categories,
+		'category_descriptions'=>$category_descriptions,
+		'products_categories'=>$products_categories
+	);
+	
+	return $result;
+}
+
+function fn_mcs_put_all_categories($data)
+{
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
+			if(in_array(false,$temp_result)){
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
 }
 
 function fn_mcs_get_parent_main_data($product_id)
@@ -338,7 +350,7 @@ function fn_mcs_put_prices($data)
 	return $result;
 }
 
-function fn_mcs_put_product_categories($data,$pid)
+function fn_mcs_put_product_to_demo_category($pid)
 {
     $data = db_get_array("SELECT * FROM ?:products_categories WHERE product_id = ?i", $pid);
 	if(empty($data)){
@@ -369,8 +381,11 @@ function fn_mcs_get_product_options($product_id)
 	if(!empty($product_global_option_links)){
 		foreach($product_global_option_links as $k=>$v){
 			$option_id=$v['option_id'];
-			fn_mcs_get_product_options_and_descriptions($option_id,$product_options,$product_options_descriptions);
-			fn_mcs_get_product_option_variants_and_descriptions($option_id,$product_option_variants,$product_option_variants_descriptions);
+			if(!in_array($option_id,$GLOBALS['option_ids'])){
+				$GLOBALS['option_ids'][]=$option_id;
+				fn_mcs_get_product_options_and_descriptions($option_id,$product_options,$product_options_descriptions);
+				fn_mcs_get_product_option_variants_and_descriptions($option_id,$product_option_variants,$product_option_variants_descriptions);
+			}
 		}
 	}
 	$option_ids=db_get_array("SELECT option_id FROM ?:product_options WHERE product_id=$product_id");
@@ -523,6 +538,11 @@ function fn_mcs_get_product_features($product_id)
 				
 					$temp_product_feature_variant_descriptions=db_get_row("SELECT * FROM ?:product_feature_variant_descriptions WHERE variant_id=$variant_id");
 					array_push($product_feature_variant_descriptions,$temp_product_feature_variant_descriptions);
+					
+					$temp_feature_variant_images=fn_mcs_get_image_pairs($variant_id, 'feature_variant');
+					if(!empty($temp_feature_variant_images)){
+						array_push($feature_variant_images,$temp_feature_variant_images[0]);
+					}
 				}
 			}
 			
@@ -551,7 +571,7 @@ function fn_mcs_get_product_features($product_id)
 		'product_feature_variants'=>$product_feature_variants,
 		'product_feature_variant_descriptions'=>$product_feature_variant_descriptions,
 		'ult_objects_sharing'=>$ult_objects_sharing,
-		/*'feature_variant_images'=>$feature_variant_images*/
+		'feature_variant_images'=>$feature_variant_images
 	);
 	
 	return $data;
@@ -602,7 +622,11 @@ function fn_mcs_get_image_pairs($object_id, $object_type, $lang_code = CART_LANG
                 /*$tmp_name = fn_create_temp_file();
                 Storage::instance('images')->export($icons[$pair_id]['relative_path'], $tmp_name);*/
 /*TODO:get url from addon setting*/
-				$tmp_name=fn_get_url_data("http://localhost/vasilis/cscart_parent/images/".$icons[$pair_id]['relative_path']);
+				$tmp_name=fn_get_url_data($GLOBALS['mcs_parent_url']."/images/".$icons[$pair_id]['relative_path']);
+				if(empty($tmp_name)){
+					write_log('Error getting image '.$icons[$pair_id]['relative_path'].' from parent');
+					continue;
+				}
 				$tmp_name=$tmp_name['path'];
                 $name = fn_basename($icons[$pair_id]['image_path']);
 
@@ -620,7 +644,11 @@ function fn_mcs_get_image_pairs($object_id, $object_type, $lang_code = CART_LANG
                 $p_data['detailed_alt'] = empty($detailed[$pair_id]['alt']) ? '' : $detailed[$pair_id]['alt'];
 
 /*TODO:get url from addon setting*/								
-				$tmp_name=fn_get_url_data("http://localhost/vasilis/cscart_parent/images/".$detailed[$pair_id]['relative_path']);
+				$tmp_name=fn_get_url_data($GLOBALS['mcs_parent_url']."/images/".$detailed[$pair_id]['relative_path']);
+				if(empty($tmp_name)){
+					write_log('Error getting image '.$detailed[$pair_id]['relative_path'].' from parent');
+					continue;
+				}
 				$tmp_name=$tmp_name['path'];
 				$img_id=$detailed[$pair_id]['image_id'];				
 
@@ -634,7 +662,7 @@ function fn_mcs_get_image_pairs($object_id, $object_type, $lang_code = CART_LANG
                 );
             }
         }
-
+		
         $pairs_data = array(
             $pair_id => array(
                 'type' => $p_data['type'],
@@ -651,13 +679,13 @@ function fn_mcs_get_image_pairs($object_id, $object_type, $lang_code = CART_LANG
 			'object_id'=>$object_id,
 			'object_type'=>$object_type,
 			'lang_code'=>$lang_code,
-			'img_data'=>$detailed[$pair_id],
-			'img_id'=>$img_id
+			/*'img_data'=>$detailed[$pair_id],
+			'img_id'=>$img_id*/
 		);
 		
 		array_push($image_data,$temp_image_data);
     }
-	
+
 	return $image_data;
 }
 
@@ -771,12 +799,12 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
 					'detailed_id'=>$data['detailed_id'],
 					'type'=>$p_data['type']					
 				);
-				try{
-					db_replace_into('images_links',$d);
+				$d_result=db_replace_into('images_links',$d);
+				if(!$d_result){
+					write_log('Error putting data of image '.$detailed[$k]['name'].' in table image_links');
 				}
-				catch(Exception $e){
-					 echo 'Caught exception: ',  $e->getMessage(), "\n";
-				}
+				
+
             } else {
                 $data['type'] = $p_data['type']; // set link type
                 $data['object_id'] = $o_id; // assign pair to object
@@ -804,13 +832,13 @@ function fn_mcs_get_product_files($product_id)
 	$product_file_folders = db_get_array("SELECT * FROM ?:product_file_folders WHERE product_id = ?i", $product_id);
 	
 	foreach($product_files as $k=>$v){
-		$temp = db_get_array("SELECT * FROM ?:product_file_descriptions WHERE file_id = ?i", $v['file_id']);
-		array_push($product_file_descriptions,$temp[0]);
+		$temp = db_get_row("SELECT * FROM ?:product_file_descriptions WHERE file_id = ?i", $v['file_id']);
+		array_push($product_file_descriptions,$temp);
 	}
 	
 	foreach($product_file_folders as $k=>$v){
-		$temp = db_get_array("SELECT * FROM ?:product_file_folder_descriptions WHERE folder_id = ?i", $v['folder_id']);
-		array_push($product_file_folder_descriptions,$temp[0]);
+		$temp = db_get_row("SELECT * FROM ?:product_file_folder_descriptions WHERE folder_id = ?i", $v['folder_id']);
+		array_push($product_file_folder_descriptions,$temp);
 	}
 	
 	$data=array(
@@ -982,6 +1010,53 @@ function fn_mcs_put_all_states($data)
 	return true;
 }
 
+function fn_mcs_get_timestamp_of_sync()
+{
+	$last_sync_timestamp=0;
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Get last sync timestamp
+	$timestamp_result=db_get_row("SELECT timestamp FROM ?:mcs_timestamp_of_sync");
+	if(!empty($timestamp_result)){
+		$last_sync_timestamp=$timestamp_result['timestamp'];
+	}
+	
+	return $last_sync_timestamp;
+}
+
+function fn_mcs_error_logging($data,$msg)
+{
+	if(empty($data) || !$data){
+		write_log($msg);
+	}
+}
+
+function fn_mcs_read_log($filename='')
+{
+	$result=read_log($filename);
+	if($result['status']==false){
+		return array('return_msg'=>$result['message'], 'msg_type'=>'N');
+	}
+	$result=explode("\n",$result);
+	return $result;
+}
+
+function fn_mcs_check_url($url)
+{
+	if(preg_match("@^http://@i",$url)){
+		$url = preg_replace("@(http://)+@i",'http://',$url);
+	}else{
+		$url = 'http://'.$url;
+	}
+	return $url;
+}
+
 function fn_mcs_db_connect($parameters)
 {
 	$params = array(
@@ -1006,4 +1081,44 @@ function fn_mcs_multi_db_replace_into($table,$data)
 	}
 
 	return $result;
+}
+
+// HOOK
+function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
+{
+	if(!$create){
+		
+		$image_result=db_get_array("SELECT * FROM ?:images_links WHERE object_id = ?i AND object_type = 'product'", $product_id);
+		if(!empty($image_result)){
+			return true;	
+		}
+		
+		// Connect to parent db
+		$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
+		// Check connection
+		if(!$db_result['db_init'] || !$db_result['db_con']){
+			write_log('Parent database connection problem');
+			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+		}
+		
+		$data = db_get_row("SELECT mcs_child_sync_product, mcs_child_sync_images FROM ?:products WHERE product_id = ?i", $product_id);
+		if(!empty($data)){
+			if($data['mcs_child_sync_product']=='Y' && $data['mcs_child_sync_images']=='Y'){
+				$images=fn_mcs_get_image_pairs($product_id,'product');
+			}
+		}
+		
+		if(!empty($images)){
+			// Connect to child db
+			$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+			
+			// Check connection
+			if(!$db_result['db_init'] || !$db_result['db_con']){
+				write_log('Child database connection problem');
+				return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+			}
+			
+			fn_mcs_put_image_pairs($images);
+		}
+	}
 }

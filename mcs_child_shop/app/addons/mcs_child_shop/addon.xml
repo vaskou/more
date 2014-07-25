@@ -7,6 +7,7 @@
     <priority>200000</priority>
     <position>0</position>
     <default_language>en</default_language>
+	<status>active</status>
     <translations>
     </translations>
 	<settings layout="separate">
@@ -38,6 +39,11 @@
 						<type>input</type>
 						<name>Parent database name</name>
 					</item>
+					<item id="mcs_general_parent_url">
+						<type>input</type>
+						<name>Parent shop URL</name>
+					</item>
+					
 					<item id="mcs_general_child_header">
 						<type>header</type>
 						<name>Child Settings</name>
