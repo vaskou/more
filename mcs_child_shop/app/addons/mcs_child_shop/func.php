@@ -540,6 +540,7 @@ function fn_mcs_get_product_features($product_id)
 					array_push($product_feature_variant_descriptions,$temp_product_feature_variant_descriptions);
 					
 					$temp_feature_variant_images=fn_mcs_get_image_pairs($variant_id, 'feature_variant');
+					
 					if(!empty($temp_feature_variant_images)){
 						array_push($feature_variant_images,$temp_feature_variant_images[0]);
 					}

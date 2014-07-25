@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+	<id>mcs_parent_shop</id>
+	<version>1.0</version>
+	<name>More CS Cart: Parent shop</name>
+	<description>Connect the shop with More CS-Cart child shops</description>
+	<priority>4000000000</priority>
+	<status>active</status>
+	<authors>
+        <author>
+            <name>More CS Cart</name>
+            <email>info@morecscart.com</email>
+            <url>http://www.morecscart.com</url>
+        </author>
+    </authors>
+	<position>0</position>
+    
+	<language_variables>
+        <item lang="en" id="mcs_sync">Sync to child</item>
+        <item lang="en" id="mcs_child_sync">Synchronize to child shops</item>
+        <item lang="en" id="mcs_child_sync_product_force">Re-synchronize product</item>
+		<item lang="en" id="mcs_child_sync_product">Synchronize product to child shops</item>
+        <item lang="en" id="mcs_child_sync_images">Synchronize images to child shops</item>
+        <item lang="en" id="mcs_child_sync_files">Synchronize files to child shops</item>
+        <item lang="en" id="mcs_child_product_name">Child shop product name</item>
+        <item lang="en" id="mcs_child_full_description">Child shop product description</item>
+    </language_variables>
+	
+	<queries>
+
+		<item for="install">ALTER TABLE ?:products ADD `mcs_child_sync_product` char(1) NOT NULL default 'Y'</item>
+		
+		<item for="install">ALTER TABLE ?:products ADD `mcs_child_sync_images` char(1) NOT NULL default 'Y'</item>
+		
+		<item for="install">ALTER TABLE ?:products ADD `mcs_child_sync_files` char(1) NOT NULL default 'Y'</item>
+
+		<item for="install">ALTER TABLE ?:product_descriptions ADD `mcs_child_product` varchar(255) NOT NULL default ''</item>
+		
+		<item for="install">ALTER TABLE ?:product_descriptions ADD `mcs_child_full_description` mediumtext NOT NULL</item>	
+		
+	</queries>
+	
+</addon>
