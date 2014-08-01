@@ -83,7 +83,7 @@ function fn_mcs_sync_product($product_id)
 	return $put_result;
 }
 
-function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false)
+function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync_enabled=false)
 {
 	$sync_result=array();
 	$product_data=array();
@@ -102,7 +102,7 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false)
 	if($sync_categories){
 		$categories=fn_mcs_get_all_categories();
 	}
-	
+
 	// Get product ids of products to be synced
 	$pids = db_get_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp);
 	foreach($pids as $k=>$v){
@@ -140,8 +140,8 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false)
 		if(empty($v['msg_type'])){
 			$product_result=fn_mcs_put_all_product_data($v);
 			$sync_result[]=array(
-				'name'=>$v['descriptions']['product'],
-				'product_id'=>$v['descriptions']['product_id']
+				'name'=>$v['descriptions'][CART_LANGUAGE]['product'],
+				'product_id'=>$v['descriptions'][CART_LANGUAGE]['product_id']
 			);
 		}
 	}
@@ -315,23 +315,43 @@ function fn_mcs_put_parent_main_data($data)
 
 function fn_mcs_get_descriptions($product_id)
 {
-	$data = db_get_row("SELECT * FROM ?:product_descriptions WHERE product_id = ?i", $product_id);
-	if(!empty($data['mcs_child_product'])){
-		$data['product']=$data['mcs_child_product'];
-	}
-	if(!empty($data['mcs_child_full_description'])){
-		$data['full_description']=$data['mcs_child_full_description'];
-	}
-	unset($data['mcs_child_product']);
-	unset($data['mcs_child_full_description']);
+	$result=array();
+	$data = db_get_array("SELECT * FROM ?:product_descriptions WHERE product_id = ?i AND lang_code = ?s", $product_id,CART_LANGUAGE);
 
-	return $data;
+	foreach($data as $k=>$v){
+		if(!empty($v['mcs_child_product'])){
+			$v['product']=$v['mcs_child_product'];
+		}
+		if(!empty($v['mcs_child_full_description'])){
+			$v['full_description']=$v['mcs_child_full_description'];
+		}
+		unset($v['mcs_child_product']);
+		unset($v['mcs_child_full_description']);
+		$result[$v['lang_code']]=$v;
+	}
+
+	return $result;
 }
 
 function fn_mcs_put_descriptions($data)
 {
-	$result=db_replace_into("product_descriptions", $data);
-	return $result;
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			$temp_result=db_replace_into("product_descriptions",$v);
+			if(!$temp_result){
+				write_log("Error putting product description with product id=".$v['product_id']." and lang_code=".$v['lang_code']);
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
+
 }
 
 function fn_mcs_get_prices($product_id)
@@ -420,10 +440,12 @@ function fn_mcs_get_product_options($product_id)
 function fn_mcs_get_product_options_and_descriptions($option_id,&$product_options,&$product_options_descriptions)
 {
 	$temp_options=db_get_row("SELECT * FROM ?:product_options WHERE option_id=$option_id");
-	$temp_options_descriptions=db_get_row("SELECT * FROM ?:product_options_descriptions WHERE option_id=$option_id");
+	$temp_options_descriptions=db_get_array("SELECT * FROM ?:product_options_descriptions WHERE option_id=$option_id AND lang_code=?s",CART_LANGUAGE);
 	
 	array_push($product_options,$temp_options);
-	array_push($product_options_descriptions,$temp_options_descriptions);
+	foreach($temp_options_descriptions as $k=>$v){
+		array_push($product_options_descriptions,$v);
+	}
 }
 
 function fn_mcs_get_product_option_variants_and_descriptions($option_id,&$product_option_variants,&$product_option_variants_descriptions)
@@ -432,8 +454,10 @@ function fn_mcs_get_product_option_variants_and_descriptions($option_id,&$produc
 	$temp_option_variants_descriptions=array();
 	foreach($temp_option_variants as $k1=>$v1){
 		$variant_id=$v1['variant_id'];
-		$data=db_get_row("SELECT * FROM ?:product_option_variants_descriptions WHERE variant_id=$variant_id");
-		array_push($temp_option_variants_descriptions,$data);
+		$data=db_get_array("SELECT * FROM ?:product_option_variants_descriptions WHERE variant_id=$variant_id AND lang_code=?s",CART_LANGUAGE);
+		foreach($data as $k2=>$v2){
+			array_push($temp_option_variants_descriptions,$v2);
+		}
 	}
 	
 	foreach($temp_option_variants as $k2=>$v2){
@@ -514,7 +538,7 @@ function fn_mcs_get_product_features($product_id)
 				$temp_product_features=db_get_row("SELECT feature_id, feature_code, company_id, feature_type, parent_id, display_on_product, display_on_catalog, display_on_header, status, position, comparison FROM ?:product_features WHERE feature_id=$feature_id");
 				array_push($product_features,$temp_product_features);
 				
-				$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$feature_id");
+				$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$feature_id AND lang_code=?s",CART_LANGUAGE);
 				array_push($product_features_descriptions,$temp_product_features_descriptions);
 				
 				if($temp_product_features['parent_id']!=0){
@@ -536,11 +560,10 @@ function fn_mcs_get_product_features($product_id)
 					$temp_product_feature_variants=db_get_row("SELECT * FROM ?:product_feature_variants WHERE variant_id=$variant_id");
 					array_push($product_feature_variants,$temp_product_feature_variants);
 				
-					$temp_product_feature_variant_descriptions=db_get_row("SELECT * FROM ?:product_feature_variant_descriptions WHERE variant_id=$variant_id");
+					$temp_product_feature_variant_descriptions=db_get_row("SELECT * FROM ?:product_feature_variant_descriptions WHERE variant_id=$variant_id AND lang_code=?s",CART_LANGUAGE);
 					array_push($product_feature_variant_descriptions,$temp_product_feature_variant_descriptions);
 					
 					$temp_feature_variant_images=fn_mcs_get_image_pairs($variant_id, 'feature_variant');
-					
 					if(!empty($temp_feature_variant_images)){
 						array_push($feature_variant_images,$temp_feature_variant_images[0]);
 					}
@@ -555,7 +578,7 @@ function fn_mcs_get_product_features($product_id)
 				$temp_product_features=db_get_row("SELECT feature_id, feature_code, company_id, feature_type, parent_id, display_on_product, display_on_catalog, display_on_header, status, position, comparison FROM ?:product_features WHERE feature_id=$v");
 				array_push($product_features,$temp_product_features);
 				
-				$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$v");
+				$temp_product_features_descriptions=db_get_row("SELECT * FROM ?:product_features_descriptions WHERE feature_id=$v AND lang_code=?s",CART_LANGUAGE);
 				array_push($product_features_descriptions,$temp_product_features_descriptions);
 				
 				$temp_ult_objects_sharing=db_get_row("SELECT * FROM ?:ult_objects_sharing WHERE share_object_type='product_features' AND share_object_id=$v");
@@ -802,7 +825,11 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
 				);
 				$d_result=db_replace_into('images_links',$d);
 				if(!$d_result){
-					write_log('Error putting data of image '.$detailed[$k]['name'].' in table image_links');
+					if(array_key_exists($k,$detailed)){
+						write_log('Error putting data of image '.$detailed[$k]['name'].' in table image_links');
+					}else{
+						write_log('Error putting data of image '.$icons[$k]['name'].' in table image_links');
+					}
 				}
 				
 

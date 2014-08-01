@@ -1,16 +1,4 @@
 <?php
-/***************************************************************************
-*                                                                          *
-*   (c) 2004 Vladimir V. Kalynyak, Alexey V. Vinokurov, Ilya M. Shalnev    *
-*                                                                          *
-* This  is  commercial  software,  only  users  who have purchased a valid *
-* license  and  accept  to the terms of the  License Agreement can install *
-* and use this program.                                                    *
-*                                                                          *
-****************************************************************************
-* PLEASE READ THE FULL TEXT  OF THE SOFTWARE  LICENSE   AGREEMENT  IN  THE *
-* "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
-****************************************************************************/
 
 use Tygh\Registry;
 
@@ -30,7 +18,9 @@ if($mode=='manage'){
 			}
 		}
 		if($pid=='all'){
-			$sync_result=fn_mcs_sync_all_products(true,true);
+			$sync_categ = $_REQUEST['mcs_sync_categ'];
+			$sync_enabled = $_REQUEST['mcs_sync_enabled'];
+			$sync_result=fn_mcs_sync_all_products(true,$sync_categ,$sync_enabled);
 			if(!empty($sync_result['return_msg'])){
 				fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
 			}

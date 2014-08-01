@@ -1,11 +1,11 @@
 <?php
-$schema['central']['synchronize'] = array(
+$schema['central']['mcs_synchronization'] = array(
 	'items'=>array(
-		'sync' => array(
+		'mcs_synchronize' => array(
     		'href' => 'sync.manage',
 	    	'position' => 100
 		),
-		'error_log'=> array(
+		'mcs_error_log'=> array(
 			'href'=>'sync.error_log',
 			'position'=>200
 		)
