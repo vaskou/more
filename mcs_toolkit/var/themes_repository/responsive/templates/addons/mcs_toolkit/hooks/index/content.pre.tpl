@@ -1,1 +1,0 @@
-<div id="mcs_helper" class="{$_REQUEST.dispatch|replace:'.':'_'}">
