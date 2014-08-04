@@ -1,0 +1,92 @@
+/*MCS-FULL-WIDTH*/
+.mcs-full-width{
+	max-width: 100% !important; 
+	padding-left: 0px !important; 
+	padding-right: 0px !important;
+}
+
+.container-fluid{
+	max-width:100%;
+//	padding-left:0;// !important;
+//	padding-right:0;// !important;
+	padding:0 !important;
+}
+
+.row-fluid{
+	max-width:@fluidContainerMaxWidth;
+	margin:auto;
+}
+
+.container-fluid > .row-fluid{
+	padding-left:20px;
+	padding-right:20px;
+	box-sizing:border-box;
+}
+.mcs-full-width > .span16{
+	max-width:100% !important;
+}
+.mcs-full-width > .span16 > .row-fluid{
+	max-width:100%;
+}
+.mcs-full-width > .span16 > .row-fluid > .span16{
+	max-width:@fluidContainerMaxWidth;
+	margin:auto !important;
+	float:none !important;
+}
+
+/*Full width fix*/
+
+.tygh-top-panel-bg() when(@top_panel_bg_full = false) {
+    .tygh-top-panel > div:not(.container){
+		background-color: transparent;
+	    background-image: none;
+	}
+	.tygh-top-panel > div:not(.container) > div {
+        #gradient .vertical(@top_panel_bg, @top_panel_bg_grad_stop);
+        .tygh-top-panel-bg-is-transparent();
+    }
+}
+
+.tygh-header-bg() when(@header_bg_full = false) {
+    .tygh-header > div:not(.container){
+		background-color: transparent;
+	    background-image: none;
+	}
+	.tygh-header > div:not(.container) > div {
+        #gradient .vertical(@header_bg, @header_bg_grad_stop);
+        .tygh-header-bg-is-transparent();
+    }
+}
+
+.tygh-content-bg() when(@content_bg_full = false) {
+	.tygh-content > div:not(.container){
+		background-color: transparent;
+	    background-image: none;
+	}
+    .tygh-content > div:not(.container) > div {
+        background-color: @content_bg;
+        .tygh-content-bg-is-transparent();
+    }
+}
+
+.tygh-footer-bg-is-transparent() when(@footer_bg_transparent = true) {
+    background-color: transparent;
+    background-image: none;
+}
+.tygh-footer-bg() when(@footer_bg_full = true) {
+    .tygh-footer {
+        background-color: @footer_bg;
+        .tygh-footer-bg-is-transparent();
+    }
+}
+.tygh-footer-bg() when(@footer_bg_full = false) {
+	.tygh-footer > div:not(.container){
+		background-color: transparent;
+	    background-image: none;
+	}
+    .tygh-footer > div:not(.container) > div {
+        background-color: @footer_bg;
+        .tygh-footer-bg-is-transparent();
+    }
+}
+.tygh-footer-bg();
