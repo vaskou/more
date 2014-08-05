@@ -100,6 +100,46 @@
                                             </div>
                                         </li>
                                     {/foreach}
+                                    <li class="ty-top-mine__submenu-col">
+                                    	{assign var=params value=['view_all'=>'Y','get_custom'=>'Y','filter_id'=>10,'category_id'=>$item1.category_id]}
+                                    	{assign var="view_all_filter" value=$params|fn_get_filters_products_count}
+                                        {assign var="counter" value=0}
+                                        {foreach from=$view_all_filter item="itm"}
+                                        	{if $itm|count > 0}
+                                                <div class="ty-menu__submenu-item-header">
+                                                    <a href="{"product_features.view_all&filter_id=10&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">Brands</a>
+                                                </div>
+                                                <div class="ty-menu__submenu">
+                                                    <ul class="ty-menu__submenu-list cm-responsive-menu-submenu">
+                                                        {foreach from=$itm item="ranges" key="index"}
+                                                        {strip}
+                                                            {if $ranges}                                                            
+                                                                {foreach from=$ranges item="range"}
+                                                                	{$counter = $counter + 1}
+                                                                	{if $block.properties.dropdown_third_level_elements >= $counter}
+                                                                        <li class="ty-menu__submenu-item">
+                                                                            <a href="{"categories.view?category_id=`$params.category_id`&features_hash=V`$range.range_id`"|fn_url}" class="">
+                                                                                {$range.range_name|fn_text_placeholders}
+                                                                            </a>
+                                                                   		</li>
+                                                                    {elseif $block.properties.dropdown_third_level_elements + 1 == $counter}
+                                                                        <li class="ty-menu__submenu-item ty-menu__submenu-alt-link">
+                                                                            <a href="{"product_features.view_all&filter_id=10&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{__("text_topmenu_view_more")}</a>
+                                                                        </li>
+                                                                    {else}
+                                                                        {break}
+                                                                    {/if}
+                                                                {/foreach}
+                                                            
+                                                            {else}&nbsp;{/if}
+                                                        {strip}
+                                                        {/foreach}
+                                                    </ul>
+                                                </div>
+                                            {/if}
+                                            
+                                        {/foreach}
+                                    </li>
                                     {if $item1.show_more && $item1_url}
                                         <li class="ty-menu__submenu-dropdown-bottom">
                                             <a href="{$item1_url}">{__("text_topmenu_more", ["[item]" => $item1.$name])}</a>
