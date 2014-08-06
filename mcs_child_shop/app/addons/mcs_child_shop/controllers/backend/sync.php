@@ -5,7 +5,7 @@ use Tygh\Registry;
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 if($mode=='manage'){
-	
+		
 	if (!empty($_REQUEST['product_id'])){
 		$pid = $_REQUEST['product_id'];
 		if($pid=='new'){
@@ -18,9 +18,9 @@ if($mode=='manage'){
 			}
 		}
 		if($pid=='all'){
-			$sync_categ = $_REQUEST['mcs_sync_categ'];
-			$sync_enabled = $_REQUEST['mcs_sync_enabled'];
-			$sync_result=fn_mcs_sync_all_products(true,$sync_categ,$sync_enabled);
+			$sync_categ = (!empty($_REQUEST['mcs_sync_categ']) ? $_REQUEST['mcs_sync_categ'] : false);
+			$sync_products_enabled = (!empty($_REQUEST['mcs_sync_products_enabled']) ? $_REQUEST['mcs_sync_products_enabled'] : false);
+			$sync_result=fn_mcs_sync_all_products(true,$sync_categ,$sync_products_enabled);
 			if(!empty($sync_result['return_msg'])){
 				fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
 			}
@@ -88,4 +88,8 @@ if($mode=='images'){
 	if (!empty($_REQUEST['product_id'])) {
 		$pid = $_REQUEST['product_id'];	
 	}
+}
+
+if($mode=='test'){
+	
 }

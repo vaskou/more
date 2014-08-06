@@ -30,6 +30,12 @@ $schema['addons/mcs_menu_i/blocks/categories/mcs_menu_i.tpl'] = array (
 			'type'=>'checkbox',
 			'default_value'=>'N'
 		),
+		'mcs_brand_filter' => array(
+			'type' => 'template',
+			'template' => 'addons/mcs_menu_i/views/components/block_settings.tpl',
+			'hide_label' => true,
+			'function' => array('fn_mcs_get_filters'),
+		),
 	),
 	'fillings' => array('full_tree_cat', 'dynamic_tree_cat'),
 	'params' => array (

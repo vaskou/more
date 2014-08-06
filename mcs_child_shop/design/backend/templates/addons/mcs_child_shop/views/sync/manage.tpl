@@ -19,7 +19,7 @@ $(function(){
     	<input name="mcs_sync_categ" type="checkbox" value="true"/>
     </label>
     <label class="checkbox">Make Products Active
-    	<input name="mcs_sync_enabled" type="checkbox" value="true" />
+    	<input name="mcs_sync_products_enabled" type="checkbox" value="true" />
     </label>
     <input type="hidden" value="all" name="product_id" />
     {*<a class="cm-ajax btn" href="{"sync.manage&product_id=all"|fn_url}">First Time Synchronization</a>*}

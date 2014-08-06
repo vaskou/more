@@ -1,5 +1,10 @@
 <?php
 
+function fn_mcs_get_filters()
+{
+	return 'Vasilis';
+}
+
 function fn_mcs_category_subcategories($category_id,&$result)
 {
 	

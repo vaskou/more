@@ -35,6 +35,9 @@ $GLOBALS['mcs_parent_url']=fn_mcs_check_url($mcs_child_shop['mcs_general_parent_
 $GLOBALS['feature_ids']=array();
 $GLOBALS['variant_ids']=array();
 $GLOBALS['option_ids']=array();
+$GLOBALS['sync_products_enabled']=false;
+$GLOBALS['master_category_id']=799999;
+$GLOBALS['company_id']=(Registry::get('runtime.forced_company_id') ? Registry::get('runtime.forced_company_id') : Registry::get('runtime.company_id'));
 
 function fn_mcs_sync_product($product_id)
 {
@@ -83,8 +86,9 @@ function fn_mcs_sync_product($product_id)
 	return $put_result;
 }
 
-function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync_enabled=false)
+function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync_products_enabled=false)
 {
+	$GLOBALS['sync_products_enabled']=$sync_products_enabled;
 	$sync_result=array();
 	$product_data=array();
 
@@ -272,12 +276,17 @@ function fn_mcs_put_all_categories($data)
 	$result=array();
 	foreach($data as $k=>$v){
 		if(!empty($v)){
+			if($k=='products_categories'){
+				db_query("TRUNCATE TABLE  ?:products_categories");
+			}
 			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
 			if(in_array(false,$temp_result)){
 				$result[]=false;
 			}
 		}
 	}
+	
+	fn_update_product_count(array($GLOBALS['master_category_id']));
 	
 	if(in_array(false,$result)){
 		return false;
@@ -298,7 +307,9 @@ function fn_mcs_get_parent_main_data($product_id)
 		unset($data['mcs_child_sync_product']);
 		unset($data['mcs_child_sync_images']);
 		unset($data['mcs_child_sync_files']);
-		$data['status'] = 'D';
+		if($GLOBALS['sync_products_enabled']==false){
+			$data['status'] = 'D';
+		}
 		$data['timestamp'] = $data['updated_timestamp'] = time();
 		
 		$result=array('product_data'=>$data,'sync_data'=>$sync_data);
@@ -339,7 +350,7 @@ function fn_mcs_put_descriptions($data)
 	foreach($data as $k=>$v){
 		if(!empty($v)){
 			$temp_result=db_replace_into("product_descriptions",$v);
-			if(!$temp_result){
+			if($temp_result===false){
 				write_log("Error putting product description with product id=".$v['product_id']." and lang_code=".$v['lang_code']);
 				$result[]=false;
 			}
@@ -372,11 +383,28 @@ function fn_mcs_put_prices($data)
 
 function fn_mcs_put_product_to_demo_category($pid)
 {
+	$master_category=db_get_array("SELECT * FROM ?:categories WHERE category_id = ?i", $GLOBALS['master_category_id']);
+	if(empty($master_category)){
+		$master_category_data=array(
+			'category_id'=>$GLOBALS['master_category_id'],
+			'id_path'=>1,
+			'company_id'=>$GLOBALS['company_id'],
+			'product_details_layout'=>'default',
+			'timestamp'=>time()
+		);
+		$master_category_discriptions=array(
+			'category_id'=>$GLOBALS['master_category_id'],
+			'lang_code'=>CART_LANGUAGE,
+			'category'=>'Master Category'
+		);
+		db_replace_into("categories", $master_category_data);
+		db_replace_into("category_descriptions", $master_category_discriptions);
+	}
     $data = db_get_array("SELECT * FROM ?:products_categories WHERE product_id = ?i", $pid);
 	if(empty($data)){
 		$products_categories=array(
 			'product_id'=>$pid,
-			'category_id'=>1,
+			'category_id'=>$GLOBALS['master_category_id'],
 			'link_type'=>'M',
 			'position'=>0
 		);
@@ -824,7 +852,7 @@ function fn_mcs_update_image_pairs($icons, $detailed, $pairs_data, $object_id = 
 					'type'=>$p_data['type']					
 				);
 				$d_result=db_replace_into('images_links',$d);
-				if(!$d_result){
+				if($d_result===false){
 					if(array_key_exists($k,$detailed)){
 						write_log('Error putting data of image '.$detailed[$k]['name'].' in table image_links');
 					}else{
@@ -1105,7 +1133,12 @@ function fn_mcs_multi_db_replace_into($table,$data)
 {
 	$result=array();
 	foreach($data as $k=>$v){
-		$result[]=db_replace_into($table,$v);	
+		$tmp_result=db_replace_into($table,$v);
+		if($tmp_result===false){
+			$result[]=false;
+		}else{
+			$result[]=true;
+		}
 	}
 
 	return $result;
