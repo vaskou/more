@@ -1,5 +1,7 @@
 <?php
 
+$filter_list=fn_mcs_get_filters();
+
 $schema['addons/mcs_menu_i/blocks/categories/mcs_menu_i.tpl'] = array (
 	'settings' => array (
 		'dropdown_second_level_elements' => array (
@@ -26,15 +28,13 @@ $schema['addons/mcs_menu_i/blocks/categories/mcs_menu_i.tpl'] = array (
 			'type' => 'input',
 			'default_value' => '80'
 		),
-		'mcs_top_menu_responsive'=> array(
+		'mcs_show_brand_filter'=>array(
 			'type'=>'checkbox',
 			'default_value'=>'N'
 		),
 		'mcs_brand_filter' => array(
-			'type' => 'template',
-			'template' => 'addons/mcs_menu_i/views/components/block_settings.tpl',
-			'hide_label' => true,
-			'function' => array('fn_mcs_get_filters'),
+			'type'=>'selectbox',
+			'values'=>$filter_list
 		),
 	),
 	'fillings' => array('full_tree_cat', 'dynamic_tree_cat'),

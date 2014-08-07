@@ -1,5 +1,5 @@
 {capture name="mainbox"}
-<form action="admin.php" method="post" class="cm-ajax">
+<form action="{""|fn_url}" method="post" class="cm-ajax">
 {literal}
 <script>
 $(function(){

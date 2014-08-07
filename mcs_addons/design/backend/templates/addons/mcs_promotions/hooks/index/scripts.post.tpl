@@ -1,0 +1,1 @@
+{script src="js/addons/mcs_promotions/script.js"}

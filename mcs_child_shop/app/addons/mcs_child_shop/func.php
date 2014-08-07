@@ -1169,15 +1169,15 @@ function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang
 			}
 		}
 		
+		// Connect to child db
+		$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+		
+		// Check connection
+		if(!$db_result['db_init'] || !$db_result['db_con']){
+			write_log('Child database connection problem');
+			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+		}
 		if(!empty($images)){
-			// Connect to child db
-			$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
-			
-			// Check connection
-			if(!$db_result['db_init'] || !$db_result['db_con']){
-				write_log('Child database connection problem');
-				return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
-			}
 			
 			fn_mcs_put_image_pairs($images);
 		}
