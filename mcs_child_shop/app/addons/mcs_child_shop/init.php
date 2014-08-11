@@ -15,5 +15,6 @@
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 fn_register_hooks(
-    'update_product_post'
+    'update_product_post',
+	'gather_additional_product_data_post'
 );

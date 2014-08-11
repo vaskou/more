@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+	<id>mcs_parent_shop</id>
+	<version>4.2.0</version>
+	<name>More CS Cart: Parent shop</name>
+	<description>Connect the shop with More CS-Cart child shops</description>
+	<priority>4000000000</priority>
+	<authors>
+        <author>
+            <name>More CS Cart</name>
+            <email>info@morecscart.com</email>
+            <url>http://www.morecscart.com</url>
+        </author>
+    </authors>
+	<position>0</position>
+    
+	<language_variables>
+        <item lang="en" id="mcs_child_shop">Child Shop</item>
+        <item lang="el" id="mcs_child_shop">Child Shop</item>
+
+		<item lang="en" id="mcs_child_shops">Child Shops</item>
+        <item lang="el" id="mcs_child_shops">Child Shops</item>
+
+		<item lang="en" id="mcs_child_shops_include">Sync custom Name and Descr το the following Childs:</item>
+        <item lang="el" id="mcs_child_shops_include">Συχγρονισμός εναλλακτικού Όνοματος και Περιγραφής στα εξής Childs:</item>
+
+		
+        <item lang="en" id="mcs_child_shop_domain">Child Shop Domain</item>
+        <item lang="el" id="mcs_child_shop_domain">Child Shop Domain</item>
+
+		<item lang="en" id="mcs_child_shop_editing">Child Shop Editing</item>
+        <item lang="el" id="mcs_child_shop_editing">Επεξεργασία Child Shop</item>
+		
+		<item lang="en" id="mcs_child_shop_add">Add Child Shop</item>
+        <item lang="el" id="mcs_child_shop_add">Προσθήκη Child Shop</item>
+
+ 		<item lang="en" id="mcs_child_shop_domain_tooltip">Example: www.domainanme.com . Do not add protocol (i.e http://) or slashes (/)</item>
+        <item lang="el" id="mcs_child_shop_domain_tooltip">Παράδειγμα: www.domainname.gr. Μην βάζετε πρωτόκολλο (πχ http://) ή κάθετους (/).</item>
+
+        <item lang="en" id="mcs_sync">Sync to child</item>
+        <item lang="el" id="mcs_sync">Συγχ στο child</item>
+
+        <item lang="en" id="mcs_child_sync">Child shops Sync Settings</item>
+        <item lang="el" id="mcs_child_sync">Ρυθμίσεις συγχρονισμού Child Shops</item>
+
+        <item lang="en" id="mcs_child_sync_product_force">Force Re-Sync</item>
+        <item lang="el" id="mcs_child_sync_product_force">Επανασυγχρονισμός</item>
+
+		<item lang="en" id="mcs_child_sync_product">Sync to ALL child shops</item>
+		<item lang="el" id="mcs_child_sync_product">Συγχρονισμός σε ΟΛΑ τα child shops</item>
+        
+		<item lang="en" id="mcs_child_sync_images">Sync images to ALL child shops</item>
+		<item lang="el" id="mcs_child_sync_images">Συγχρονισμός εικόνων σε ΟΛΑ τα child shops</item>
+		
+        <item lang="en" id="mcs_child_sync_files">Sync files to ALL child shops</item>
+        <item lang="el" id="mcs_child_sync_files">Συγχρονισμός αρχείων σε ΟΛΑ τα child shops</item>
+
+        <item lang="en" id="mcs_child_product_name">Alternative name for Child Shops</item>
+        <item lang="el" id="mcs_child_product_name">Εναλλακτικό Όνομα για τα Child Shops</item>
+        
+		<item lang="en" id="mcs_child_full_description">Alternative desc for Child Shops</item>
+		<item lang="el" id="mcs_child_full_description">Εναλλακτική περιγραφή για τα Child Shops</item>
+		
+    </language_variables>
+	
+	<queries>
+		
+		<item>CREATE TABLE ?:mcs_child_shops (
+				`child_shop_id` mediumint(8) unsigned NOT NULL auto_increment, 
+                `domain` varchar(255) NOT NULL default '', 
+                `timestamp` int(11) unsigned NOT NULL default '0', 
+                `status` char(1) NOT NULL default 'A',
+				PRIMARY KEY (`child_shop_id`),
+                KEY `status` (`status`)
+            ) Engine=MyISAM DEFAULT CHARSET UTF8;
+		</item>
+		
+		<item>ALTER TABLE ?:products ADD `mcs_child_sync_product` char(1) NOT NULL default 'Y'</item>
+		<item>ALTER TABLE ?:products ADD `mcs_child_sync_images` char(1) NOT NULL default 'Y'</item>
+		<item>ALTER TABLE ?:products ADD `mcs_child_sync_files` char(1) NOT NULL default 'Y'</item>
+		<item>ALTER TABLE ?:products ADD `mcs_child_shops_domains` text NOT NULL</item>
+		<item>ALTER TABLE ?:product_descriptions ADD `mcs_child_product` varchar(255) NOT NULL default ''</item>
+		<item>ALTER TABLE ?:product_descriptions ADD `mcs_child_full_description` mediumtext NOT NULL</item>
+		
+		<!--
+		<item for="uninstall">DROP TABLE IF EXISTS ?:mcs_child_shops;</item>
+		<item for="uninstall">ALTER TABLE ?:products DROP COLUMN `mcs_child_sync_product`</item>
+		<item for="uninstall">ALTER TABLE ?:products DROP COLUMN `mcs_child_sync_images`</item>	
+		<item for="uninstall">ALTER TABLE ?:products DROP COLUMN `mcs_child_sync_files`</item>
+		<item for="uninstall">ALTER TABLE ?:products DROP COLUMN `mcs_child_shops_ids`</item> 
+		<item for="uninstall">ALTER TABLE ?:product_descriptions DROP COLUMN `mcs_child_product`</item>
+		<item for="uninstall">ALTER TABLE ?:product_descriptions DROP COLUMN `mcs_child_full_description`</item>	
+		-->
+		
+		</queries>
+	
+</addon>

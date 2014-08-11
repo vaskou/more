@@ -89,13 +89,20 @@
 		<item for="install">ALTER TABLE ?:destination_elements AUTO_INCREMENT=8000000;</item>
 		<item for="install">ALTER TABLE ?:states AUTO_INCREMENT=8000000;</item>
 		<item for="install">ALTER TABLE ?:categories AUTO_INCREMENT=8000000;</item>
+		<item for="install">ALTER TABLE ?:products ADD  mcs_lock_sync_product CHAR(1) NOT NULL DEFAULT  'N'</item>
 	</queries>
 	<language_variables>
         <item lang="en" id="mcs_synchronization">Synchronization</item>
 		<item lang="el" id="mcs_synchronization">Συγχρονισμός</item>
         <item lang="en" id="mcs_synchronize">Synchronize</item>
 		<item lang="el" id="mcs_synchronize">Συγχρονισμός</item>
+		<item lang="en" id="mcs_you_cant_sync">Currently you can't synchronize the products.</item>
+		<item lang="el" id="mcs_you_cant_sync">Δεν μπορείτε να συγχρονίσετε τα προϊόντα αυτή τη στιγμή.</item>
         <item lang="en" id="mcs_error_log">Error Log</item>
 		<item lang="el" id="mcs_error_log">Αρχείο Καταγραφής Σφαλμάτων</item>
+		<item lang="en" id="mcs_lock_sync">Lock Synchronization</item>
+		<item lang="el" id="mcs_lock_sync">Κλείδωμα Συγχρονισμού</item>
+		<item lang="en" id="mcs_lock_sync_product">Lock Product Synchronazation</item>
+		<item lang="el" id="mcs_lock_sync_product">Κλείδωμα Συγχρονισμού Προϊόντος</item>
 	</language_variables>
 </addon>

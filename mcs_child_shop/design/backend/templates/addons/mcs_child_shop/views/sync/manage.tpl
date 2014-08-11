@@ -12,23 +12,27 @@ $(function(){
 
 {/literal}
 
-<h1>{__("mcs_synchronization")} {$mcs_timestamp}</h1>
-{if $mcs_timestamp==0 || !$mcs_timestamp}
-	{*include file="buttons/button.tpl" but_text="First Time Synchronization" but_role="action" but_href="sync.manage&product_id=all" but_id="btn_sync"*}
-	<label class="checkbox">Synchronize Categories
-    	<input name="mcs_sync_categ" type="checkbox" value="true"/>
-    </label>
-    <label class="checkbox">Make Products Active
-    	<input name="mcs_sync_products_enabled" type="checkbox" value="true" />
-    </label>
-    <input type="hidden" value="all" name="product_id" />
-    {*<a class="cm-ajax btn" href="{"sync.manage&product_id=all"|fn_url}">First Time Synchronization</a>*}
-    <input type="submit" name="dispatch[sync.manage]" value="First Time Synchronization" class="btn" />
+<h1>{__("mcs_synchronization")}</h1>
+<h3>{$mcs_timestamp|date_format:"%A, %e %B, %Y, (%H:%M:%S)"}</h3>
+{if $auth.is_root == 'Y' && $mcs_child_shop_status=='A'}
+    {if $mcs_timestamp==0 || !$mcs_timestamp}
+        {*include file="buttons/button.tpl" but_text="First Time Synchronization" but_role="action" but_href="sync.manage&product_id=all" but_id="btn_sync"*}
+        <label class="checkbox">Synchronize Categories
+            <input name="mcs_sync_categ" type="checkbox" value="true"/>
+        </label>
+        <label class="checkbox">Make Products Active
+            <input name="mcs_sync_products_enabled" type="checkbox" value="true" />
+        </label>
+        <input type="hidden" value="all" name="product_id" />
+        {*<a class="cm-ajax btn" href="{"sync.manage&product_id=all"|fn_url}">First Time Synchronization</a>*}
+        <input type="submit" name="dispatch[sync.manage]" value="First Time Synchronization" class="btn" />
+    {else}
+        {*include file="buttons/button.tpl" but_text="New Products Synchronization" but_role="action" but_href="sync.manage&product_id=new" but_id="btn_sync"*}
+        <a class="cm-ajax btn" href="{"sync.manage&product_id=new"|fn_url}">New Products Synchronization</a>
+    {/if}
 {else}
-	{*include file="buttons/button.tpl" but_text="New Products Synchronization" but_role="action" but_href="sync.manage&product_id=new" but_id="btn_sync"*}
-    <a class="cm-ajax btn" href="{"sync.manage&product_id=new"|fn_url}">New Products Synchronization</a>
+	<h3>{__("mcs_you_cant_sync")}</h3>
 {/if}
-
 {if $mcs_sync_result}
 <table class="table table-striped">
     <thead>
