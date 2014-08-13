@@ -12,9 +12,23 @@
 * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
 ****************************************************************************/
 
+use Tygh\Registry;
+
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 fn_register_hooks(
     'update_product_post',
 	'gather_additional_product_data_post'
 );
+
+$addons=Registry::get('addons');
+
+if(empty($addons['attachments']) || $addons['attachments']['status']=='D')
+{
+	Registry::set('config.storage.attachments', array(
+		'prefix' => 'attachments',
+		'secured' => true,
+		'dir' => Registry::get('config.dir.var')
+	));
+}
+

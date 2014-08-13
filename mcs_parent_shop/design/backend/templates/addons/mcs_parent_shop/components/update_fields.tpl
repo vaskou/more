@@ -49,7 +49,7 @@
 		<div class="controls">
 			<select name="product_data[mcs_child_shops_domains][]" id="child_shops" multiple="multiple" size="5">
 				{foreach from=$all_child_shops[0] item=child_shop}
-					<option value="{$child_shop.domain}" {if in_array($child_shop.domain,$product_child_shops)} selected="selected"{/if}>{$child_shop.domain}</option>
+					<option value="{$child_shop.domain}" {if $product_child_shops && in_array($child_shop.domain,$product_child_shops)} selected="selected"{/if}>{$child_shop.domain}</option>
 				{/foreach}
 			</select>
 		</div>

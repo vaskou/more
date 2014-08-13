@@ -180,8 +180,9 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
 	
 	fn_mcs_send_sync_timestamp_to_parent(time());
-	
-	write_log("Synchronization finished without errors!");
+	if(!empty($pids)){
+		write_log("Synchronization finished!");
+	}
 	
 	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N', 'sync_result'=>$sync_result);
 }
@@ -214,7 +215,7 @@ function fn_mcs_get_all_product_data($product_id)
 	$options=fn_mcs_get_product_options($product_id);
 	// Sync features
 	$features=fn_mcs_get_product_features($product_id);
-
+	
 	$result=array(
 		'product_id'=>$product_id,
 		'main_data'=>$main_data,
@@ -406,6 +407,10 @@ function fn_mcs_put_list_prices_to_prices($data)
 	);
 	
 	$result=db_replace_into("product_prices",$product_prices);
+	
+	if($result===0){
+		$result=true;
+	}
 	
 	return $result;
 }
@@ -976,6 +981,74 @@ function fn_mcs_put_product_files($data,$product_id)
 	}
 }
 
+function fn_mcs_get_product_attachments($product_id)
+{
+	
+	$attachment_descriptions=array();
+	
+	$attachments = db_get_array("SELECT * FROM ?:attachments WHERE object_type = 'product' AND object_id = ?i", $product_id);
+	foreach ($attachments as &$attachment) {
+        $attachment_descriptions[] = db_get_array("SELECT * FROM ?:attachment_descriptions WHERE attachment_id = ?i", $attachment['attachment_id']);
+		
+	}
+	
+	$data=array(
+		'attachments'=>$attachments,
+		'attachment_descriptions'=>$attachment_descriptions
+	);
+	
+	return $data;
+}
+
+function fn_mcs_put_product_attachments($data)
+{
+	
+	foreach($data['attachments'] as $k=>$v){
+		$attachment=$v;
+		
+		$dir=$attachment['object_type']."/".$attachment['object_id'];
+		
+		$new_attachment = fn_get_url_data($GLOBALS['mcs_parent_url']."/var/attachments/".$dir."/".$attachment['filename']);
+		
+		$old_attachment = db_get_row('SELECT filename FROM ?:attachments WHERE attachment_id = ?i', $attachment['attachment_id']);
+
+		if (!empty($new_attachment) && !empty($old_attachment['filename'])) {
+			Storage::instance('attachments')->delete($dir . '/' . $old_attachment['filename']);
+		}
+		
+		$filename=$dir."/".$attachment['filename'];
+
+		Storage::instance('attachments')->put($filename, array(
+			'file' => $new_attachment['path'],
+			'overwrite' => true
+		));
+		
+	}
+	
+	$result=array();
+	foreach($data as $k=>$v){
+		if(!empty($v)){
+			if($k=='attachment_descriptions'){
+				foreach($v as $desc){
+					$temp_result=fn_mcs_multi_db_replace_into($k,$desc);
+				}
+			}else{
+				$temp_result=fn_mcs_multi_db_replace_into($k,$v);
+			}
+			if(in_array(false,$temp_result)){
+				$result[]=false;
+			}
+		}
+	}
+	
+	if(in_array(false,$result)){
+		return false;
+	}
+	
+	return true;
+	
+}
+
 function fn_mcs_get_all_taxes()
 {
 	$taxes=db_get_array("SELECT * FROM ?:taxes");
@@ -1133,6 +1206,11 @@ function fn_mcs_read_log($filename='')
 	return $result;
 }
 
+function fn_mcs_clear_log()
+{
+	return write_log('', true);
+}
+
 function fn_mcs_check_url($url)
 {
 	if(preg_match("@^http://@i",$url)){
@@ -1242,7 +1320,10 @@ function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang
 	if(!$create){
 		
 		$image_result=db_get_array("SELECT * FROM ?:images_links WHERE object_id = ?i AND object_type = 'product'", $product_id);
-		if(!empty($image_result)){
+		
+		$attachment_result=db_get_array("SELECT * FROM ?:attachments WHERE object_id = ?i AND object_type = 'product'", $product_id);
+		
+		if(!empty($image_result) && !empty($attachment_result)){
 			return true;	
 		}
 		
@@ -1254,10 +1335,13 @@ function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang
 			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 		}
 		
-		$data = db_get_row("SELECT mcs_child_sync_product, mcs_child_sync_images FROM ?:products WHERE product_id = ?i", $product_id);
+		$data = db_get_row("SELECT mcs_child_sync_product, mcs_child_sync_images, mcs_child_sync_files FROM ?:products WHERE product_id = ?i", $product_id);
 		if(!empty($data)){
 			if($data['mcs_child_sync_product']=='Y' && $data['mcs_child_sync_images']=='Y'){
 				$images=fn_mcs_get_image_pairs($product_id,'product');
+			}
+			if($data['mcs_child_sync_product']=='Y' && $data['mcs_child_sync_files']=='Y'){
+				$attachments=fn_mcs_get_product_attachments($product_id);
 			}
 		}
 		
@@ -1270,8 +1354,11 @@ function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang
 			return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 		}
 		if(!empty($images)){
-			
 			fn_mcs_put_image_pairs($images);
+		}
+		if(!empty($attachments)){
+			$attach_result=fn_mcs_put_product_attachments($attachments);
+			fn_mcs_error_logging($attach_result,'Error putting attachments with fn_mcs_put_product_attachments with product_id = '.$data['product_id']);
 		}
 	}
 }

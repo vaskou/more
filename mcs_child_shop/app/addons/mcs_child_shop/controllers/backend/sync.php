@@ -41,12 +41,24 @@ if($mode=='manage'){
 }
 
 if($mode=='error_log'){
+	
+	if (!empty($_REQUEST['clear'])){
+		if($_REQUEST['clear']==true){
+			$result=fn_mcs_clear_log();
+			if($result['status']==true){
+				fn_set_notification('N', __('notice'), $result['message']);
+				return true;
+			}
+		}
+	}
+	
 	$error_log=fn_mcs_read_log();
 	if(!empty($error_log['return_msg'])){
 		fn_set_notification($error_log['msg_type'], __('notice'), $error_log['return_msg']);
 	}else{
 		Registry::get('view')->assign('mcs_error_log',$error_log);
 	}
+	
 }
 
 if ($mode == 'product') {
@@ -96,6 +108,6 @@ if($mode=='images'){
 	}
 }
 
-if($mode=='test'){
-	
+if($mode=='test'){	
+			
 }

@@ -3,7 +3,7 @@ if (defined("DEFAULT_LOG") == FALSE) {
 	define("DEFAULT_LOG","app/addons/mcs_child_shop/error_log.log");
 }
 
-function write_log($message, $logfile='') {
+function write_log($message, $clear=false, $logfile='') {
 	// Determine log file
 	if($logfile == '') {
 		// checking if the constant for the log file is defined
@@ -16,7 +16,15 @@ function write_log($message, $logfile='') {
 			return array(status => false, message => 'No log file defined!');
 		}
 	}
- 
+	
+	if($clear==true){
+		if($fd = @fopen($logfile, "w")) {
+			fclose($fd);
+			return array('status' => true, 'message' => 'The log file is clear!');
+		}else{
+			return array('status' => false, 'message' => 'Unable to clear log '.$logfile.'!');
+		}
+	}
 	// Get time of request
 	if( ($time = $_SERVER['REQUEST_TIME']) == '') {
 		$time = time();

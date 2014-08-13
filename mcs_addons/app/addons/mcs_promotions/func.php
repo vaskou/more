@@ -17,6 +17,18 @@ function fn_mcs_promotions_get_categories($lang_code = CART_LANGUAGE)
 				$dashes.=" - ";
 			}
 			$res[$v['id_path']]['value'] = $dashes.$name;
+			$res[$v['id_path']]['variants'] = array(
+				'1' => '1',
+				'2' => '2',
+				'3' => '3',
+				'4' => '4',
+				'5' => '5',
+				'6' => '6',
+				'7' => '7',
+				'8' => '8',
+				'9' => '9',
+				'10' => '10'
+			);
 		}
 	}
 	
@@ -40,7 +52,7 @@ function fn_mcs_promotions_check_products_amount($promotion, $cart, $cart_produc
 	$prom_prod_amount = $promotion['value'];
 	$prom_operator = $promotion['operator'];
 	$prom_sel_category_subids=array();
-	
+
 	list($categories)=fn_get_categories(array('plain'=>true));
 	foreach($categories as $k=>$v){		
 		$ids=explode("/",$v['id_path']);
@@ -62,7 +74,7 @@ function fn_mcs_promotions_check_products_amount($promotion, $cart, $cart_produc
 		
 		$cat_ids=$v['category_ids'];
 		foreach($cat_ids as $k1=>$v1){
-			if(in_array($k1,$prom_sel_category_subids)){
+			if(in_array($v1,$prom_sel_category_subids)){
 				$amount+=$v['amount'];
 				break;
 			}
@@ -70,7 +82,7 @@ function fn_mcs_promotions_check_products_amount($promotion, $cart, $cart_produc
 	}
 	
 	switch($prom_operator){
-		case 'gte':
+		case 'gte':			
 			if($amount>=$prom_prod_amount){ return true; }else{ return false; }
 		case 'gt':
 			if($amount>$prom_prod_amount){ return true; }else{ return false; }
@@ -80,4 +92,3 @@ function fn_mcs_promotions_check_products_amount($promotion, $cart, $cart_produc
 			if($amount<$prom_prod_amount){ return true; }else{ return false; }
 	}
 }
-?>

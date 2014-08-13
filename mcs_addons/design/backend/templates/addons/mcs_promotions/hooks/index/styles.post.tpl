@@ -1,1 +1,0 @@
-{style src="addons/mcs_promotions/styles.less"}

@@ -5,6 +5,7 @@
 	<name>More CS Cart: Parent shop</name>
 	<description>Connect the shop with More CS-Cart child shops</description>
 	<priority>4000000000</priority>
+	<status>active</status>
 	<authors>
         <author>
             <name>More CS Cart</name>

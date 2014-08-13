@@ -1,4 +1,7 @@
 <?php
+
+use Tygh\Registry;
+
 if ( !defined('AREA') ) { die('Access denied'); }
 
 fn_register_hooks(
@@ -6,5 +9,3 @@ fn_register_hooks(
 	'update_product_pre',
 	'tools_change_status'
 );
-
-?>
