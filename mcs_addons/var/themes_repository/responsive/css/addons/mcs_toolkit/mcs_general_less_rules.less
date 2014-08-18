@@ -1,0 +1,121 @@
+/*Custom less rules*/
+
+.mcs_no_text_shadow{
+	input,a,i{
+		text-shadow:none;
+	}
+	text-shadow:none;
+}
+.mcs_button_text_color (@b) when (lightness(@b) >= 30%) {
+	a,i {
+		color: darken(@b, 100%);
+	}
+	color: darken(@b, 100%);
+	background-color:@b;
+}
+.mcs_button_text_color (@b) when (lightness(@b) < 70%) {
+	a,i {
+		color: lighten(@b, 100%);
+	}
+	color: lighten(@b, 100%);
+	background-color:@b;
+}
+.tab_text_color (@b) when (lightness(@b) >= 30%) {
+	i, a {
+		color: darken(@b, 100%);
+		vertical-align:middle;
+	}
+}
+.tab_text_color (@b) when (lightness(@b) < 70%) {
+	i, a {
+		color: lighten(@b, 100%);
+		vertical-align:middle;
+	}
+}
+.mcs_sidebox_header (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, a:link, a:visited, a:hover {
+	color: darken(@font, 20%);
+	text-shadow: none;
+	}
+}
+.mcs_sidebox_header (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, a:link, a:visited, a:hover {
+	color: lighten(@font, 100%);
+	text-shadow: none;
+	}
+}
+.mcs_sidebox_text (@sidebar) when (lightness(@sidebar) >= 70%) {
+	span, 
+	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
+	li, p, .product-filters .details, .price-slider,
+	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
+		color: @font;
+		text-shadow: none;
+		border-color: lighten(@font,20%);
+	}
+}
+.mcs_sidebox_text (@sidebar) when (lightness(@sidebar) < 70%) {
+	span, 
+	a, a:link, a:visited, a:hover, .product-filters li a.filter-item,
+	li, p, .product-filters .details, .price-slider,
+	.filter-wrap .icon-right-dir, .filter-wrap .icon-down-dir {
+		color: lighten(@font, 100%);
+		text-shadow: none;
+		border-color:lighten(@font, 70%);
+	}
+}
+.mcs_mmenu_text_color (@b) when (lightness(@b) >= 30%) {
+	color: darken(@b, 100%);
+	border-color:darken(@b, 100%)!important;
+	span{
+		background-color:darken(@b, 100%);
+	}
+	&.mean-expand:hover{
+		background:darken(@b, 100%);
+		color: lighten(@b, 100%);
+	}
+	&.mean-expand{
+		border-color:darken(@b, 100%)!important;
+	}
+}
+.mcs_mmenu_text_color (@b) when (lightness(@b) < 70%) {
+	color: lighten(@b, 100%);
+	border-color:lighten(@b, 100%)!important;
+	span{
+		background-color: lighten(@b, 100%);
+	}
+	&.mean-expand:hover{
+		background:lighten(@b, 100%);
+		color: darken(@b, 100%);
+	}
+	&.mean-expand{
+		border-color:lighten(@b, 100%)!important;
+	}
+}
+.mcs_text_color (@b) when (lightness(@b) >= 30%) {
+	color: darken(@b, 100%);
+}
+.mcs_text_color (@b) when (lightness(@b) < 70%) {
+	color: lighten(@b, 100%);
+}
+.mcs_neg_text_color (@b) when (lightness(@b) >= 30%) {
+	.mcs_text_color(darken(@b, 100%));
+}
+.mcs_neg_text_color (@b) when (lightness(@b) < 70%) {
+	.mcs_text_color(lighten(@b, 100%));
+}
+.mcs_no_shadow{
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+.mcs_neg_background_color (@b) when (lightness(@b) >= 30%) {
+	background: darken(@b, 100%);
+	filter:none;
+}
+.mcs_neg_background_color (@b) when (lightness(@b) < 70%) {
+	background: lighten(@b, 100%);
+	filter:none;
+}
+/***************************************************************************************/

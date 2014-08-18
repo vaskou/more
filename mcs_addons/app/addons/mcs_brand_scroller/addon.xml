@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>mcs_brand_scroller</id>
+	<name>More CS-Cart: Brand Scroller</name>
+    <version>1.0</version>
+    <priority>100000</priority>
+    <default_language>en</default_language>
+	<status>active</status>
+	
+	<language_variables>
+		<item lang="en" id="mcs_brand_scroller">More CS-Cart: Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart: Brand Scroller</item>
+		<item lang="en" id="block_mcs_brand_scroller_description">More CS-Cart: Brand Scroller</item>
+	</language_variables>
+</addon>

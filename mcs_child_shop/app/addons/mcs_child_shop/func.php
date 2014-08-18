@@ -244,7 +244,7 @@ function fn_mcs_put_all_product_data($data)
 	
 	// Sync prices
 	/*$prices_result=fn_mcs_put_prices($data['prices']);*/
-	$prices_result=fn_mcs_put_list_prices_to_prices($data['main_data']);
+	$prices_result=fn_mcs_put_list_prices_to_prices($data);
 	fn_mcs_error_logging($prices_result,'Error putting data with fn_mcs_put_list_prices_to_prices with product_id = '.$data['product_id']);
 	
 	// Put product on main category
@@ -320,6 +320,11 @@ function fn_mcs_get_parent_main_data($product_id)
 		unset($data['mcs_child_sync_images']);
 		unset($data['mcs_child_sync_files']);
 		unset($data['mcs_child_shops_domains']);
+		
+		unset($data['product_code']);
+		
+		$sync_data['list_price']=$data['list_price'];
+		unset($data['list_price']);
 		
 		if($GLOBALS['sync_products_enabled']==false){
 			$data['status'] = 'D';
@@ -398,9 +403,15 @@ function fn_mcs_put_prices($data)
 
 function fn_mcs_put_list_prices_to_prices($data)
 {
+	
+	$check_price=db_get_field("SELECT price FROM ?:product_prices WHERE product_id=?i", $data['product_id']);
+	if(!empty($check_price)){
+		return true;
+	}
+	
 	$product_prices=array(
 		'product_id'=>$data['product_id'],
-		'price'=>$data['list_price'],
+		'price'=>$data['sync_data']['list_price'],
 		'percentage_discount'=>0,
 		'lower_limit'=>1,
 		'usergroup_id'=>0

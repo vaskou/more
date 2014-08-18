@@ -71,5 +71,5 @@
 {*Line		11: Added {if $grid.full_width==Y}mcs-full-width{/if}											*}
 {*Line		12: Added {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}	*}
 {*Line		12: Added {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}					*}
-{*Lines	 16-31: Added lines 16-31																			*}
-{*Lines	 33-52: Added lines 33-52																			*}
+{*Lines	 17-38: Added lines 17-38																			*}
+{*Lines	 40-66: Added lines 40-66																			*}

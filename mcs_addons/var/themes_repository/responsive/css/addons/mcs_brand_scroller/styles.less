@@ -1,0 +1,72 @@
+[class^="mcs-brand-scroller-"] .brand-box{
+	padding:0;
+	text-align:center;
+	margin:10px;
+}
+[class^="mcs-brand-scroller-"] .brand-box.with-image:hover{
+	.box-shadow(0px 0px 15px 0px #cccccc);
+	.transition(all 150ms);
+}
+[class^="mcs-brand-scroller-"] .brand-image{
+	height:100px;
+	text-align:center;
+	line-height:100px;
+	margin-bottom:5px;
+}
+[class^="mcs-brand-scroller-"] .brand-image .no-image{
+	height:100%;
+	margin-bottom:5px;
+}
+[class^="mcs-brand-scroller-"] .brand-image img{
+	max-width:95%;
+	max-height:95%;
+	width:auto;
+	height:auto;
+	margin:auto;
+	display:inline-block;
+}
+[class^="mcs-brand-scroller-"] .brand-name{
+	display:block;
+	padding:10px;
+	border-top:1px solid;
+	border-color: darken(@base, 5%);
+}
+[class^="mcs-brand-scroller-"] .brand-name:hover{
+	text-decoration:underline;
+}
+
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button{
+	text-align:center;
+	padding:10px;
+	margin-bottom:30px;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
+	padding:10px;
+	.mcs_button_text_color(@links);
+	font-size:150%;
+	font-weight:600;
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover{
+	text-decoration:none;
+	.mcs_button_text_color(#000);
+}
+[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button i{
+	padding-right:5px;
+}
+
+[class^="mcs-brand-scroller-"] {
+	.owl-theme .owl-controls .owl-buttons div{
+		position:absolute;
+		top:40%;
+		line-height:12px;
+		padding:10px 12px 7px;
+		text-align:center;
+		.border-radius(0);
+	}
+	.owl-prev{
+		left:10px;
+	}
+	.owl-next{
+		right:10px;
+	}
+}
