@@ -1,0 +1,1 @@
+{style src="addons/mcs_toolkit/styles.less"}

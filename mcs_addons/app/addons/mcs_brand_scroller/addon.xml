@@ -11,5 +11,10 @@
 		<item lang="en" id="mcs_brand_scroller">More CS-Cart: Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller">More CS-Cart: Brand Scroller</item>
 		<item lang="en" id="block_mcs_brand_scroller_description">More CS-Cart: Brand Scroller</item>
+		<item lang="en" id="add_brands">Add Brands</item>
+		<item lang="en" id="add_brands_and_close">Add Brands and close</item>
+		<item lang="en" id="all_brands">All Brands</item>
+		<item lang="en" id="mcs_brand_scroller_button">Show "All Brands" button</item>
+		<item lang="en" id="mcs_brand_scroller_button_icon">"All Brands" button icon</item>
 	</language_variables>
 </addon>

@@ -61,7 +61,6 @@
         </div>
     </div>
     
-    {*if $addons.mcs_framework.mcs_general_mobile_devices_grid_detection=='Y'}
     <div class="control-group mcs_devices cm-no-hide-input">
         <label class="control-label" for="elm_grid_devices_{$id}">{__("devices")}</label>
         <div class="controls">
@@ -73,7 +72,6 @@
             <input id="elm_grid_devices_phone_{$id}" name="phone" value="Y" type="checkbox" {if $grid.phone=="Y" || $grid.phone==""}checked="checked"{/if} /><span>Phone</span><br/>
          </div>
     </div>
-    {/if*}
     
     <div class="control-group mcs_full_width cm-no-hide-input">
         <label class="control-label" for="elm_grid_full_width_{$id}">{__("mcs_full_width")}
@@ -87,7 +85,7 @@
          </div>
     </div>
     
-{*    <div class="control-group mcs_block_grouping cm-no-hide-input">
+    <div class="control-group mcs_block_grouping cm-no-hide-input">
         <label class="control-label" for="elm_grid_block_grouping_{$id}">{__("mcs_block_grouping")}</label>
         <div class="controls">
         <select id="elm_grid_block_grouping_{$id}" name="block_grouping">
@@ -96,7 +94,7 @@
             <option value="tabs" {if $grid.block_grouping == "tabs"}selected="selected"{/if}>Tabs</option>
         </select>
         </div>
-    </div> *}
+    </div> 
 </div>
 
 <div class="buttons-container">

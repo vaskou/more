@@ -1,0 +1,1 @@
+{style src="addons/my_changes/mcs_brands_page.less"}

@@ -1,0 +1,1 @@
+{style src="addons/mcs_brand_scroller/styles.less"}

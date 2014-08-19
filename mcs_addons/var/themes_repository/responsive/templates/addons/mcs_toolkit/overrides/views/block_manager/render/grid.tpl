@@ -9,12 +9,12 @@
 
 
 {if $grid.alpha}<div class="{if $layout_data.layout_width != "fixed"}row-fluid {else}row{/if} {if $grid.full_width==Y}mcs-full-width{/if}">{/if}
-    <div class="span{$fluid_width|default:$grid.width}{if $grid.offset} offset{$grid.offset}{/if} {$grid.user_class}  {*if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}" {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}{/if*}">
+    <div class="span{$fluid_width|default:$grid.width}{if $grid.offset} offset{$grid.offset}{/if} {$grid.user_class}  {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}" {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}>
         {if $grid.status == "A" && $content}
             {$content nofilter}
         {/if}
     </div>
-{*    {if $grid.block_grouping=="accordion"}
+    {if $grid.block_grouping=="accordion"}
     {literal}
         <script>
         $(function(){
@@ -47,7 +47,7 @@
 				i=0;
                 $(this).children('div').each(function(){
 					if($(this).hasClass('mcs-block-grouping-content')){
-                    	content+='<li><a href="#'+$(this).attr('id')+'">'+$(this).attr('data-title')+'</a></li>';
+                    	content+='<li class="mcs-tab-button"><a href="#'+$(this).attr('id')+'">'+$(this).attr('data-title')+'</a></li>';
 					}else{
 						content+='<li><a href="#error'+i+'">Error</a></li>';
 						$(this).replaceWith('<div id="error'+i+'" class="mcs-block-grouping-content"><h1 class="error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
@@ -63,7 +63,7 @@
         });
         </script>  
     {/literal}      
-    {/if} *}
+    {/if}
 
 {if $grid.omega}</div>{/if}
 
