@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>mcs_font_icons</id>
+	<name>More CS-Cart: Font Icons</name>
+    <version>1.0</version>
+    <priority>100000</priority>
+    <default_language>en</default_language>
+	<status>active</status>
+	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+			<section id="mcs_font_icons">
+                <name>Font Icons</name>
+                <items>
+					<item id="mcs_custom_icons">
+                        <type>checkbox</type>
+                        <name>Custom Set Of Icons</name>
+						<default_value>N</default_value>
+						<tooltip>If checked, a file with a custom set of icons will be loaded.</tooltip>
+                    </item>
+				</items>
+            </section>
+		</sections>
+	</settings>
+	
+	<language_variables>
+		
+	</language_variables>
+</addon>

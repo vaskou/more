@@ -1,0 +1,43 @@
+.ty-tabs{
+	#description, #features, #attachments{
+		.ty-tabs__a:before{
+			font-family:"icomoon";
+			vertical-align:bottom;
+			margin-right:5px;
+			font-size:150%;
+		}
+	}
+	#description .ty-tabs__a:before{
+		content: "\e298";
+	}
+	#features .ty-tabs__a:before{
+		content: "\e29d";
+	}
+	#attachments .ty-tabs__a:before{
+		content: "\e2d7";
+	}
+	
+	.ty-tabs__a{
+		padding-bottom:5px;
+	}
+}
+
+.ty-accordion{
+	#description, #features, #attachments{
+		&:before{
+		font-family:"icomoon";
+		vertical-align:bottom;
+		margin-right:5px;
+		font-size:150%;
+		}
+	}
+	#description:before{
+		content: "\e298";
+	}
+	#features:before{
+		content: "\e29d";
+	}
+	#attachments:before{
+		content: "\e2d7";
+	}
+}

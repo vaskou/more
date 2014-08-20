@@ -6,6 +6,22 @@
     <priority>100000</priority>
     <default_language>en</default_language>
 	<status>active</status>
+	
+	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+			<section id="mcs_custom_scripts">
+                <name>Custom Scripts</name>
+                <items>
+					<item id="mcs_scripts">
+                        <type>textarea</type>
+                        <name>Custom Scripts</name>
+						<tooltip></tooltip>
+                    </item>
+				</items>
+            </section>
+		</sections>
+	</settings>
+	
 	<queries>
 		<item for="install">ALTER TABLE ?:bm_grids ADD full_width VARCHAR( 128 ) DEFAULT  'N';</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD computer VARCHAR( 128 ) DEFAULT  'Y';</item>

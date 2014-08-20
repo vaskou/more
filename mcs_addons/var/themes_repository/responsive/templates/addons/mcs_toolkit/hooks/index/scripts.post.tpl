@@ -35,10 +35,10 @@ $(function(){
 {/literal}
 {* /MCS-PRICE *}
 
-{*if $mobiledetect.versionIE=='8.0'||$mobiledetect.versionIE=='9.0'*}
+{if $mobiledetect.versionIE=='8.0'||$mobiledetect.versionIE=='9.0'}
 	{script src="js/addons/mcs_toolkit/libs/media.match.min.js"}
     {script src="js/addons/mcs_toolkit/libs/html5shiv.js"}
-{*/if*}
+{/if}
 {script src="js/addons/mcs_toolkit/libs/enquire.min.js"}
 
 {script src="js/addons/mcs_toolkit/mcs_responsive_menu_fix.js"}
@@ -57,3 +57,13 @@ $(function(){
 });
 </script>
 {/literal}
+
+
+{* CUSTOM SCRIPTS *}
+
+	{assign var=scripts value="\n"|explode:$addons.mcs_toolkit.mcs_scripts}
+    {foreach from=$scripts item=script}
+		{script src="js/addons/mcs_toolkit/custom/`$script`"}
+    {/foreach}
+    
+{* /CUSTOM SCRIPTS *}
