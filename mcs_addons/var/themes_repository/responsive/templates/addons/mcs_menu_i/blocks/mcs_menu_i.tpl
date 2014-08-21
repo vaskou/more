@@ -1,7 +1,7 @@
 {hook name="blocks:mcs_menu_i"}
 
 {if $items}
-    <ul class="ty-menu__items cm-responsive-menu">
+    <ul class="ty-menu__items cm-responsive-menu mcs-menu-i">
         {hook name="blocks:mcs_topmenu_dropdown_top_menu"}
             <li class="ty-menu__item ty-menu__menu-btn visible-phone">
                 <a class="ty-menu__item-link">

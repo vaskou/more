@@ -1,10 +1,19 @@
+@fluidContainerMaxWidth:1175px;
+@max_width : (@fluidContainerMaxWidth - 95) / 7;
+
+@media (min-width: 768px){
+	.mcs-menu-i .ty-menu__submenu-items .ty-top-mine__submenu-col{
+		width:@max_width;
+	}
+}
+
 .mcs-category-img{
 	width:100%;
 	height:100px;
 }
 
 .mcs-category-img img{
-	width:100%;
+	max-width:100%;
 	height:auto;
 	max-height:100%;
 	display:block;

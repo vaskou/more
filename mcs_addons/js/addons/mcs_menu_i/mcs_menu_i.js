@@ -25,16 +25,16 @@ function fn_menu_third_level_hide_over(){
 
 	$(".ty-top-mine__submenu-col .ty-menu__submenu").hide();
 	
-	$(".ty-menu__submenu-item-header").hover(
+	$(".ty-top-mine__submenu-col").hover(
 	function(){
-		$(this).siblings(".ty-menu__submenu").slideDown(500);
+		$(this).children(".ty-menu__submenu").slideDown(500);
 	},
 	function(){
-		$(this).siblings(".ty-menu__submenu").stop().slideUp(1000);
+		$(this).children(".ty-menu__submenu").stop().slideUp(1000);
 	});
 }
 
 function fn_menu_third_level_hide_under(){
-	$(".ty-menu__submenu-item-header").unbind('mouseenter mouseleave');
-	$(".ty-menu__submenu-item-header").siblings(".ty-menu__submenu").removeAttr('style');
+	$(".ty-top-mine__submenu-col").unbind('mouseenter mouseleave');
+	$(".ty-top-mine__submenu-col").children(".ty-menu__submenu").removeAttr('style');
 }
