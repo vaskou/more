@@ -209,7 +209,9 @@
         {/hook}
     </ul>
 {/if}
-{if $block.properties.mcs_top_menu_hide_third_level=='Y'}
-	{script src="js/addons/mcs_menu_i/mcs_menu_i.js"}
+{if $addons.mcs_toolkit.status=='A' && $addons.mcs_toolkit}
+    {if $block.properties.mcs_top_menu_hide_third_level=='Y'}
+        {script src="js/addons/mcs_menu_i/mcs_menu_i.js"}
+    {/if}
 {/if}
 {/hook}

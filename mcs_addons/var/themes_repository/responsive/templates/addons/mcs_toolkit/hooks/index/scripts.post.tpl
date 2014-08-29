@@ -61,9 +61,11 @@ $(function(){
 
 {* CUSTOM SCRIPTS *}
 
-	{assign var=scripts value="\n"|explode:$addons.mcs_toolkit.mcs_scripts}
+	{assign var=scripts value=","|explode:$addons.mcs_toolkit.mcs_scripts}
+    
     {foreach from=$scripts item=script}
 		{script src="js/addons/mcs_toolkit/custom/`$script`"}
+        
     {/foreach}
     
 {* /CUSTOM SCRIPTS *}

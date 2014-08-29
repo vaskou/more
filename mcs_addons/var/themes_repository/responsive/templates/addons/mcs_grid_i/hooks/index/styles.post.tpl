@@ -1,0 +1,1 @@
+{style src="addons/mcs_grid_i/styles.less"}

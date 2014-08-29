@@ -11,7 +11,7 @@ $(function(){
 	
 	function isEntirelyVisible(main)
 	{
-		var l=main.offset().left;
+		var l=main.offset().left + 1; //To (+1) einai hack
 		var w=main.outerWidth();
 		//console.log(l+" "+w);
         var mnuW = main.closest(".ty-menu__items").outerWidth();
