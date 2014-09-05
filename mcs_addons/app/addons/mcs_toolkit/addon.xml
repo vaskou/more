@@ -13,10 +13,10 @@
                 <name>Custom Scripts</name>
                 <items>
 					<item id="mcs_scripts">
-                        <type>textarea</type>
-                        <name>Custom Scripts</name>
-						<tooltip></tooltip>
-                    </item>
+						<type>multiple checkboxes</type>
+						<name>Custom Scripts</name>
+						<variants></variants>
+					</item>
 				</items>
             </section>
 		</sections>
@@ -30,9 +30,4 @@
 		<item for="install">ALTER TABLE ?:bm_grids ADD block_grouping ENUM(  'none',  'accordion',  'tabs' ) NOT NULL DEFAULT  'none';</item>
 	</queries>
 	
-	<language_variables>
-		<item lang="en" id="mcs_full_width">Full Width</item>
-		<item lang="en" id="mcs_block_grouping">Block Grouping</item>
-		<item lang="en" id="mcs_block_grouping_wrapper">More CS-Cart Block Grouping Wrapper</item>
-	</language_variables>
 </addon>

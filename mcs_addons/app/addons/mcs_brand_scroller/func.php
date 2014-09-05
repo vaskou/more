@@ -30,7 +30,7 @@ function fn_get_brand_name($brand_id,$feature_id)
 
 function fn_get_selected_brands($params)
 {
-	$feature_id=$params['mcs_brand_feature_id'];
+	$feature_id=$params['mcs_brand_scroller_brand_feature_id'];
 	//var_dump($params);
 	$sel_brands=array();
 	list($brands, )=fn_get_brands($feature_id);

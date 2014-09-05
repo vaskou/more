@@ -1,0 +1,29 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_toolkit"
+msgid "More CS-Cart: Toolkit"
+msgstr "More CS-Cart: Toolkit"
+
+msgctxt "Addons::description::mcs_toolkit"
+msgid "More CS-Cart: Toolkit Description"
+msgstr "More CS-Cart: Toolkit Description"
+
+msgctxt "Languages::mcs_full_width"
+msgid "Full Width"
+msgstr "Full Width"
+
+msgctxt "Languages::mcs_block_grouping"
+msgid "Block Grouping"
+msgstr "Block Grouping"
+
+msgctxt "Languages::mcs_block_grouping_wrapper"
+msgid "More CS-Cart Block Grouping Wrapper"
+msgstr "More CS-Cart Block Grouping Wrapper"
+
+msgctxt "Languages::devices"
+msgid "Devices"
+msgstr "Devices"

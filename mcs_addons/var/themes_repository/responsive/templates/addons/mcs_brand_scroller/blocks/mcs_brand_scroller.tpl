@@ -19,7 +19,7 @@
         {/foreach}
     </div>
     
-    {assign var="filter_data" value=$block.properties.mcs_brand_feature_id|fn_mcs_product_get_feature_filter}
+    {assign var="filter_data" value=$block.properties.mcs_brand_scroller_brand_feature_id|fn_mcs_product_get_feature_filter}
     {assign var="filter_id" value=$filter_data|key}
     {assign var="filter_name" value=$filter_data[$filter_id]}
     {if $block.properties.mcs_brand_scroller_button=='Y'}

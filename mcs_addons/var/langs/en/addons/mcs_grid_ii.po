@@ -1,0 +1,17 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_grid_ii"
+msgid "More CS-Cart: Grid II"
+msgstr "More CS-Cart: Grid II"
+
+msgctxt "Addons::description::mcs_grid_ii"
+msgid "More CS-Cart: Grid II"
+msgstr "More CS-Cart: Grid II"
+
+msgctxt "Languages::mcs_grid_ii"
+msgid "More CS-Cart: Grid II"
+msgstr "More CS-Cart: Grid II"

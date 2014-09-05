@@ -28,11 +28,11 @@ $schema['addons/mcs_menu_i/blocks/categories/mcs_menu_i.tpl'] = array (
 			'type' => 'input',
 			'default_value' => '80'
 		),
-		'mcs_show_brand_filter'=>array(
+		'mcs_top_menu_show_brand_filter'=>array(
 			'type'=>'checkbox',
 			'default_value'=>'N'
 		),
-		'mcs_brand_filter' => array(
+		'mcs_top_menu_brand_filter' => array(
 			'type'=>'selectbox',
 			'values'=>$filter_list
 		),

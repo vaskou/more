@@ -2,7 +2,7 @@
     {assign var="brand" value=$default_name}
 {else}
 
-    {assign var="brand" value=$brand_id|fn_get_brand_name:$block.properties.mcs_brand_feature_id|default:"`$ldelim`brand`$rdelim`"}
+    {assign var="brand" value=$brand_id|fn_get_brand_name:$block.properties.mcs_brand_scroller_brand_feature_id|default:"`$ldelim`brand`$rdelim`"}
 {/if}
 
 <tr {if !$clone}id="{$holder}_{$brand_id}" {/if}class="cm-js-item{if $clone} cm-clone hidden{/if}">

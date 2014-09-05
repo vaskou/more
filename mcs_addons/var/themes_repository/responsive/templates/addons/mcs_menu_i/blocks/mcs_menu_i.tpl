@@ -17,13 +17,13 @@
 			
             {capture name="mcs_brands_list"}
             	<li class="ty-top-mine__submenu-col hidden-phone mcs-brands-list">
-                    {assign var=params value=['view_all'=>'Y','get_custom'=>'Y','filter_id'=>$block.properties.mcs_brand_filter,'category_id'=>$item1.category_id]}
+                    {assign var=params value=['view_all'=>'Y','get_custom'=>'Y','filter_id'=>$block.properties.mcs_top_menu_brand_filter,'category_id'=>$item1.category_id]}
                     {assign var="view_all_filter" value=$params|fn_get_filters_products_count}
                     {assign var="counter" value=0}
                     {foreach from=$view_all_filter item="itm"}
                         {if $itm|count > 0}
                             <div class="ty-menu__submenu-item-header">
-                                <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{$block.properties.mcs_brand_filter|fn_get_product_filter_name}</a>
+                                <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{$block.properties.mcs_top_menu_brand_filter|fn_get_product_filter_name}</a>
                             </div>
                             <div class="ty-menu__submenu">
                                 <ul class="ty-menu__submenu-list cm-responsive-menu-submenu">
@@ -40,7 +40,7 @@
                                                     </li>
                                                 {elseif $block.properties.dropdown_third_level_elements + 1 == $counter}
                                                     <li class="ty-menu__submenu-item ty-menu__submenu-alt-link">
-                                                        <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{__("text_topmenu_view_more")}</a>
+                                                        <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{__("text_topmenu_view_more")}</a>
                                                     </li>
                                                 {else}
                                                     {break}
@@ -112,7 +112,7 @@
                             </div>
                         </li>
                         {/hook}
-                        {if $block.properties.mcs_show_brand_filter=='Y'}
+                        {if $block.properties.mcs_top_menu_show_brand_filter=='Y'}
                             {$smarty.capture.mcs_brands_list nofilter}
                         {/if}
                     </ul>
@@ -136,7 +136,7 @@
 
                     {if !$item1.$childs|fn_check_second_level_child_array:$childs  && ($block.properties.mcs_top_menu_show_images!='Y')}
                     {* Only two levels. Vertical output *}
-                        {if $block.properties.mcs_show_brand_filter=='Y'}
+                        {if $block.properties.mcs_top_menu_show_brand_filter=='Y'}
                         	{$smarty.capture.mcs_simple_menu_with_brands nofilter}
                         {else}
                         	{$smarty.capture.mcs_simple_menu_without_brands nofilter}
@@ -189,7 +189,7 @@
                                             </div>
                                         </li>
                                     {/foreach}
-                                    {if $block.properties.mcs_show_brand_filter=='Y'}
+                                    {if $block.properties.mcs_top_menu_show_brand_filter=='Y'}
                                         {$smarty.capture.mcs_brands_list nofilter}
                                     {/if}
                                     {if $item1.show_more && $item1_url}

@@ -12,5 +12,7 @@
 		<item lang="en" id="mcs_top_menu_category_image_width">Menu image width</item>
 		<item lang="en" id="mcs_top_menu_category_image_height">Menu image height</item>
 		<item lang="en" id="mcs_top_menu_hide_third_level">Hide third level elements</item>
+		<item lang="en" id="mcs_top_menu_show_brand_filter">Show Category Brands</item>
+		<item lang="en" id="mcs_top_menu_brand_filter">Select Brands Filter</item>
 	</language_variables>
 </addon>

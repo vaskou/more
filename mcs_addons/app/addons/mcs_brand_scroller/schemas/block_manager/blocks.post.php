@@ -34,7 +34,7 @@ $schema['mcs_brand_scroller'] = array (
 			'type'=>'input',
 			'default_value'=>'ty-icon-right-open'
 		),
-		'mcs_brand_feature_id' => array(
+		'mcs_brand_scroller_brand_feature_id' => array(
 			'type'=>'selectbox',
 			'values'=>$features_list
 		)		
