@@ -1,0 +1,37 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_grid_i"
+msgid "More CS-Cart: Grid I"
+msgstr "More CS-Cart: Grid I"
+
+msgctxt "Addons::description::mcs_grid_i"
+msgid "More CS-Cart: Grid I"
+msgstr "More CS-Cart: Grid I"
+
+msgctxt "Languages::mcs_grid_i""
+msgid "More CS-Cart: Grid I"
+msgstr "More CS-Cart: Grid I"
+
+msgctxt "SettingsSections::mcs_grid_i::mcs_grid_settings"
+msgid "Grid Settings"
+msgstr "Grid Settings"
+
+msgctxt "SettingsOptions::mcs_grid_i::mcs_product_hidden_info_transition"
+msgid "Select how to show hidden info on hover"
+msgstr "Select how to show hidden info on hover"
+
+msgctxt "SettingsOptions::mcs_grid_i::mcs_product_hidden_info_duration"
+msgid "Set the duration of the animation"
+msgstr "Set the duration of the animation"
+
+msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_transition"
+msgid "Select the effect that will be applied when the user hovers on product grid."
+msgstr "Select the effect that will be applied when the user hovers on product grid."
+
+msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_duration"
+msgid "Select the duration (milliseconds) of the effect when the user hovers on product grid."
+msgstr "Select the duration (milliseconds) of the effect when the user hovers on product grid."

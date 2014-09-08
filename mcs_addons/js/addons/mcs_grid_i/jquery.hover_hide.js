@@ -5,7 +5,7 @@
         var settings = $.extend({
             transition: "mcs_show",
 			duration: 0,
-			hidden_elm:'.product-meta',
+			hidden_elm:'.mcs-grid-i-list__control',
 			fade_other_elms:true
         }, options );
 
@@ -20,7 +20,7 @@
 		$(settings.hidden_elm).addClass('hidden_elm');
 		$('.hidden_elm').hide();
 		this.addClass('hover_hide');
-		var h=$(".product-wrapper").height();
+		var h=$(this).height();
 		$(".hover_hide").css({"height":h});
 		return this.hover(
 			function(){
@@ -39,7 +39,7 @@
 				}
 				$(this).css({"z-index":"250"});
 				if(settings.fade_other_elms==true){
-					$('.product').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
+					$('.mcs-grid-i-list__item').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
 				}
 				var to;
 				clearTimeout(to);
@@ -65,7 +65,7 @@
 					break;
 				}
 				if(settings.fade_other_elms==true){
-					$('.product').delay(10).animate({opacity:1}, 100);
+					$('.mcs-grid-i-list__item').delay(10).animate({opacity:1}, 100);
 				}
 				var to;
 				to = setTimeout(function(){ },700);

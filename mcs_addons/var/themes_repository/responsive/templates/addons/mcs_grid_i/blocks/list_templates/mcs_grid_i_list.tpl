@@ -39,6 +39,7 @@
                             {include file="common/product_data.tpl" product=$product}
 
                             <div class="mcs-grid-i-list__item ty-quick-view-button__wrapper">
+                            	<div class="mcs-grid-i-list__item-wrapper">
                                 {assign var="form_open" value="form_open_`$obj_id`"}
                                 {$smarty.capture.$form_open nofilter}
                                 {hook name="products:product_multicolumns_list"}
@@ -104,14 +105,36 @@
                                         </div>
                                         
                                         <div class="mcs-grid-i-list__product_extra_info">
+                                        	{if $addons.mcs_grid_i.mcs_product_rating=='Y'}
+                                                {assign var="rating" value="rating_$obj_id"}
+                                                {if $smarty.capture.$rating}
+                                                    <div class="mcs-grid-ii-list__rating">
+                                                        {$smarty.capture.$rating nofilter}
+                                                    </div>
+                                                {/if}
+                                            {/if}
                                         	{hook name="products:mcs_grid_list_product_extra_info"}
                                             {/hook}
                                         </div>
                                         
                                         <div class="mcs-grid-i-list__control">
-                                            {*if $settings.Appearance.enable_quick_view == 'Y'}
+                                        	
+                                            <div class="ty-add-buttons-wrapper">
+                                                <div id="cart_buttons_block_{$obj_prefix}{$obj_id}" class="ty-add-to-wish">
+                                                    {hook name="products:buy_now"}
+                                                    {/hook}
+                                                </div>
+                                                <div class="ty-add-to-compare">
+                                                	{if $product.feature_comparison == "Y"}
+                                                    
+                                                        {include file="buttons/add_to_compare_list.tpl" product_id=$product.product_id}
+	                                                {/if}
+                                                </div>
+                                            </div>
+                                            
+                                            {if $settings.Appearance.enable_quick_view == 'Y'}
                                                 {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
-                                            {/if*}
+                                            {/if}
 
                                             {if $show_add_to_cart}
                                                 <div class="button-container">
@@ -123,6 +146,7 @@
                                 {/hook}
                                 {assign var="form_close" value="form_close_`$obj_id`"}
                                 {$smarty.capture.$form_close nofilter}
+                                </div>
                             </div>
                         {/if}
                     </div>
@@ -148,6 +172,41 @@
         {/strip}
         {script src="js/addons/mcs_grid_i/mcs_grid_i.js"}
     </div>
+
+{if $addons.mcs_grid_i.mcs_product_hidden_info_transition!='mcs_none'}
+{literal}
+<script>
+$(function(){
+	var trans={/literal}"{$addons.mcs_grid_i.mcs_product_hidden_info_transition}"{literal};
+	var dur={/literal}{if $addons.mcs_grid_i.mcs_product_hidden_info_duration==''}0{else}{$addons.mcs_grid_i.mcs_product_hidden_info_duration}{/if}{literal};
+	initBindings();
+	
+	$( document ).ajaxStop(function() 
+	{
+		initBindings();
+	});
+	
+	function initBindings(){	
+	
+		enquire.register("screen and (min-width:768px)",{
+			match:function(){
+				$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur});
+			}
+		});
+		enquire.register("screen and (max-width:767px)",{
+			match:function(){
+				hh=$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
+				hh.disable();
+			}
+		});
+	
+	};
+	
+	
+});
+</script>
+{/literal}
+{/if}
 
     {if !$no_pagination}
         {include file="common/pagination.tpl"}

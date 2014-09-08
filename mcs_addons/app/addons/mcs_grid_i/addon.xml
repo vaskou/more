@@ -6,7 +6,36 @@
     <priority>100000</priority>
     <default_language>en</default_language>
 	<status>active</status>
-	<language_variables>
-		<item lang="en" id="mcs_grid_i">More CS-Cart: Grid I</item>
-	</language_variables>
+	
+	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+			<section id="mcs_grid_settings">
+				<items>
+                	<item id="mcs_product_hidden_info_transition">
+                        <type>selectbox</type>
+						<variants>
+							<item id="mcs_none">
+                                <name>None</name>
+                            </item>
+							<item id="mcs_fade">
+                                <name>Fade</name>
+                            </item>
+							<item id="mcs_show">
+                                <name>Show</name>
+                            </item>
+                            <item id="mcs_slide">
+                                <name>Slide</name>
+                            </item>
+						</variants>
+						<default_value>mcs_none</default_value>
+                    </item>
+					<item id="mcs_product_hidden_info_duration">
+                        <type>input</type>
+						<default_value>0</default_value>
+                    </item>
+				</items>
+			</section>
+		</sections>
+	</settings>
+
 </addon>
