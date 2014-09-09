@@ -15,3 +15,7 @@ msgstr "More CS-Cart: Grid II"
 msgctxt "Languages::mcs_grid_ii"
 msgid "More CS-Cart: Grid II"
 msgstr "More CS-Cart: Grid II"
+
+msgctxt "Languages::mcs_grid_ii_scroller"
+msgid "More CS-Cart: Grid II Scroller"
+msgstr "More CS-Cart: Grid II Scroller"

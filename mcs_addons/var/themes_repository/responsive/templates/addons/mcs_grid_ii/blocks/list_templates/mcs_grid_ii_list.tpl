@@ -97,6 +97,13 @@
                                             {/if}
                                         </div>
                                         
+                                        {assign var="rating" value="rating_$obj_id"}
+                                        {if $smarty.capture.$rating}
+                                            <div class="mcs-grid-ii-list__rating">
+                                                {$smarty.capture.$rating nofilter}
+                                            </div>
+                                        {/if}
+                                        
                                         <div class="mcs-grid-ii-list__price {if $product.price == 0}ty-grid-list__no-price{/if}">
                                             {assign var="old_price" value="old_price_`$obj_id`"}
                                             {if $smarty.capture.$old_price|trim}{$smarty.capture.$old_price nofilter}{/if}
@@ -111,12 +118,7 @@
                                             {$smarty.capture.$list_discount nofilter}
                                         </div>
                                         
-                                        {assign var="rating" value="rating_$obj_id"}
-                                        {if $smarty.capture.$rating}
-                                            <div class="mcs-grid-ii-list__rating">
-                                                {$smarty.capture.$rating nofilter}
-                                            </div>
-                                        {/if}
+                                        
                         
                                         <div class="mcs-grid-ii-list__control">
                                             {*if $settings.Appearance.enable_quick_view == 'Y'}

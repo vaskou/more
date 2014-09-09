@@ -12,9 +12,29 @@ msgctxt "Addons::description::mcs_grid_i"
 msgid "More CS-Cart: Grid I"
 msgstr "More CS-Cart: Grid I"
 
-msgctxt "Languages::mcs_grid_i""
+msgctxt "Languages::mcs_grid_i"
 msgid "More CS-Cart: Grid I"
 msgstr "More CS-Cart: Grid I"
+
+msgctxt "Languages::mcs_grid_i_scroller"
+msgid "More CS-Cart: Grid I Scroller"
+msgstr "More CS-Cart: Grid I Scroller"
+
+msgctxt "Languages::enable_add_to_wish"
+msgid "Enable Add To Wish"
+msgstr "Enable Add To Wish"
+
+msgctxt "Languages::enable_add_to_compare"
+msgid "Enable Add To Compare"
+msgstr "Enable Add To Compare"
+
+msgctxt "Languages::mcs_product_hidden_info_transition"
+msgid "Select how to show hidden info on hover"
+msgstr "Select how to show hidden info on hover"
+
+msgctxt "Languages::mcs_product_hidden_info_duration"
+msgid "Set the duration of the animation"
+msgstr "Set the duration of the animation"
 
 msgctxt "SettingsSections::mcs_grid_i::mcs_grid_settings"
 msgid "Grid Settings"

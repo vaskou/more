@@ -26,7 +26,7 @@
 					}else{
 						content='<h3>Error</h3>';
 						$(this).before(content);
-						$(this).replaceWith('<div class=""><h1 class="error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
+						$(this).replaceWith('<div class=""><h1 class="ty-error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
 					}
                 });
                 $(this).accordion({ heightStyle: "content" });
@@ -50,7 +50,7 @@
                     	content+='<li class="mcs-tab-button"><a href="#'+$(this).attr('id')+'">'+$(this).attr('data-title')+'</a></li>';
 					}else{
 						content+='<li><a href="#error'+i+'">Error</a></li>';
-						$(this).replaceWith('<div id="error'+i+'" class="mcs-block-grouping-content"><h1 class="error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
+						$(this).replaceWith('<div id="error'+i+'" class="mcs-block-grouping-content"><h1 class="ty-error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
 					}
 					i++;
                 });

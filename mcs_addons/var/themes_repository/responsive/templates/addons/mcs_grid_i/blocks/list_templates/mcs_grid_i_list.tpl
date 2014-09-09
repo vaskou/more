@@ -171,42 +171,18 @@
             {/foreach}
         {/strip}
         {script src="js/addons/mcs_grid_i/mcs_grid_i.js"}
+        
     </div>
+	
+    {if $form_prefix == "block_manager"}
+    	{assign var=transition value=$block.properties.mcs_product_hidden_info_transition}
+        {assign var=duration value=$block.properties.mcs_product_hidden_info_duration}
+    {else}
+    	{assign var=transition value=$addons.mcs_grid_i.mcs_product_hidden_info_transition}
+        {assign var=duration value=$addons.mcs_grid_i.mcs_product_hidden_info_duration}
+    {/if}
 
-{if $addons.mcs_grid_i.mcs_product_hidden_info_transition!='mcs_none'}
-{literal}
-<script>
-$(function(){
-	var trans={/literal}"{$addons.mcs_grid_i.mcs_product_hidden_info_transition}"{literal};
-	var dur={/literal}{if $addons.mcs_grid_i.mcs_product_hidden_info_duration==''}0{else}{$addons.mcs_grid_i.mcs_product_hidden_info_duration}{/if}{literal};
-	initBindings();
-	
-	$( document ).ajaxStop(function() 
-	{
-		initBindings();
-	});
-	
-	function initBindings(){	
-	
-		enquire.register("screen and (min-width:768px)",{
-			match:function(){
-				$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur});
-			}
-		});
-		enquire.register("screen and (max-width:767px)",{
-			match:function(){
-				hh=$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
-				hh.disable();
-			}
-		});
-	
-	};
-	
-	
-});
-</script>
-{/literal}
-{/if}
+	{include file="addons/mcs_grid_i/common/hide_info.tpl" mcs_product_hidden_info_transition=$transition mcs_product_hidden_info_duration=$duration}
 
     {if !$no_pagination}
         {include file="common/pagination.tpl"}

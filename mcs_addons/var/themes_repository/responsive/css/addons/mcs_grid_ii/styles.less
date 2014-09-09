@@ -68,7 +68,7 @@ mcs_grid_ii
 }
 
 .mcs-grid-ii-list__rating{
-	float:left;
+//	float:left;
 	margin-top:10px;
 	margin-left:10px;
 	max-width:45%;
@@ -76,6 +76,8 @@ mcs_grid_ii
 	position:relative;
 	min-width:40%;
 	height:50px;
+	display:inline-block;
+	margin-bottom:10px;
 }
 .mcs-grid-ii-list__rating > span{
 	position:absolute;
@@ -85,14 +87,18 @@ mcs_grid_ii
 .mcs-grid-ii-list__control{
 	opacity:0;
 	.transition(opacity 1s ease 0s);
-	height:70px;
+//	height:70px;
 	position:relative;
 }
 
 .mcs-grid-ii-list__control .button-container{
 	position:absolute;
-	bottom:10px;
+	bottom:13px;
 	left:10px;
+	
+	.ty-btn{
+		font-size: @buttons_font_size;
+	}
 }
 
 .ty-icon-mcs-grid-ii {
@@ -111,3 +117,34 @@ mcs_grid_ii
 }
 
 /* /mcs_grid_ii */
+
+/* ==========================================================================
+mcs_grid_i_scroller
+========================================================================== */
+
+.mcs-grid-ii-scroller {
+	&.owl-theme .owl-controls .owl-buttons div{
+		position:absolute;
+		top:40%;
+		line-height:12px;
+		padding:10px 12px 7px;
+		text-align:center;
+		.border-radius(0);
+	}
+	.owl-prev{
+		left:10px;
+	}
+	.owl-next{
+		right:10px;
+	}
+	
+	.ty-quick-view-button{
+		visibility:visible;
+		position:absolute;
+		padding-top:0px;
+		left:10px;
+		bottom:13px;
+	}
+}
+
+/* /mcs_grid_i_scroller */
