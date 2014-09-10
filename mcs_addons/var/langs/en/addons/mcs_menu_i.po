@@ -1,0 +1,41 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_menu_i"
+msgid "More CS-Cart: Menu I"
+msgstr "More CS-Cart: Menu I"
+
+msgctxt "Addons::description::mcs_menu_i"
+msgid "More CS-Cart: Menu I"
+msgstr "More CS-Cart: Menu I"
+
+msgctxt "Languages::mcs_menu_i"
+msgid "More CS-Cart: Menu I"
+msgstr "More CS-Cart: Menu I"
+
+msgctxt "Languages::mcs_top_menu_show_images"
+msgid "Show images in menu"
+msgstr "Show images in menu"
+
+msgctxt "Languages::mcs_top_menu_category_image_width"
+msgid "Menu image width"
+msgstr "Menu image width"
+
+msgctxt "Languages::mcs_top_menu_category_image_height"
+msgid "Menu image height"
+msgstr "Menu image height"
+
+msgctxt "Languages::mcs_top_menu_hide_third_level"
+msgid "Hide third level elements"
+msgstr "Hide third level elements"
+
+msgctxt "Languages::mcs_top_menu_show_brand_filter"
+msgid "Show Category Brands"
+msgstr "Show Category Brands"
+
+msgctxt "Languages::mcs_top_menu_brand_filter"
+msgid "Select Brands Filter"
+msgstr "Select Brands Filter"

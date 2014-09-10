@@ -1,60 +1,66 @@
-[class^="mcs-brand-scroller-"] .brand-box{
-	padding:0;
-	text-align:center;
-	margin:10px;
-}
-[class^="mcs-brand-scroller-"] .brand-box.with-image:hover{
-	.box-shadow(0px 0px 15px 0px #cccccc);
-	.transition(all 150ms);
-}
-[class^="mcs-brand-scroller-"] .brand-image{
-	height:100px;
-	text-align:center;
-	line-height:100px;
-	margin-bottom:5px;
-}
-[class^="mcs-brand-scroller-"] .brand-image .no-image{
-	height:100%;
-	margin-bottom:5px;
-}
-[class^="mcs-brand-scroller-"] .brand-image img{
-	max-width:95%;
-	max-height:95%;
-	width:auto;
-	height:auto;
-	margin:auto;
-	display:inline-block;
-}
-[class^="mcs-brand-scroller-"] .brand-name{
-	display:block;
-	padding:10px;
-	border-top:1px solid;
-	border-color: darken(@base, 5%);
-}
-[class^="mcs-brand-scroller-"] .brand-name:hover{
-	text-decoration:underline;
+[class^="mcs-brand-scroller-"], .mcs-brands-page{
+	.brand-box{
+		padding:0;
+		text-align:center;
+	}
+	.brand-box.with-image:hover{
+		.box-shadow(0px 0px 15px 0px #cccccc);
+		.transition(all 150ms);
+	}
+	.brand-image{
+		height:100px;
+		text-align:center;
+		line-height:100px;
+		margin-bottom:5px;
+	}
+	.brand-image .no-image{
+		height:100%;
+		margin-bottom:5px;
+	}
+	.brand-image img{
+		max-width:95%;
+		max-height:95%;
+		width:auto;
+		height:auto;
+		margin:auto;
+		display:inline-block;
+	}
+	.brand-name{
+		display:block;
+		border-top:1px solid;
+		border-color: darken(@base, 5%);
+	}
+	.brand-name:hover{
+		text-decoration:underline;
+	}
+
 }
 
-[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button{
-	text-align:center;
-	padding:10px;
-	margin-bottom:30px;
-}
-[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a{
-	padding:10px;
-	.mcs_button_text_color(@links);
-	font-size:150%;
-	font-weight:600;
-}
-[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button a:hover{
-	text-decoration:none;
-	.mcs_button_text_color(#000);
-}
-[class^="mcs-brand-scroller-"] .mcs-brand-scroller-button i{
-	padding-right:5px;
-}
-
-[class^="mcs-brand-scroller-"] {
+[class^="mcs-brand-scroller-"]{
+	.brand-box{
+		margin:10px;
+	}
+	.brand-name{
+		padding:10px;
+	}
+	.mcs-brand-scroller-button{
+		text-align:center;
+		padding:10px;
+		margin-bottom:30px;
+	}
+	.mcs-brand-scroller-button a{
+		padding:10px;
+		.mcs_button_text_color(@links);
+		font-size:150%;
+		font-weight:600;
+	}
+	.mcs-brand-scroller-button a:hover{
+		text-decoration:none;
+		.mcs_button_text_color(#000);
+	}
+	.mcs-brand-scroller-button i{
+		padding-right:5px;
+	}
 	.owl-theme .owl-controls .owl-buttons div{
 		position:absolute;
 		top:40%;
@@ -68,5 +74,56 @@
 	}
 	.owl-next{
 		right:10px;
+	}
+}
+
+.mcs-brands-page{
+	.mcs-list-filter ul li{
+		float:left;
+		padding:0px;
+		margin:2px;
+		background-color:darken(@base, 5%);
+		
+		a{
+			display:block;
+			width:34px;
+			line-height:34px;
+			text-align:center;
+			.mcs_text_color(darken(@base, 5%));
+		}
+		
+		&.active,
+		&:hover{
+			background-color:@links;
+			.transition(all 150ms);
+			a{
+				.mcs_text_color(@links);
+			}
+		}
+	}
+	
+	.mcs-brands-row > .subheader{
+		margin-bottom:5px;
+		font-size:200%;
+	}
+	
+	.brand-box{
+		margin-bottom:20px;
+		&.first{
+			margin-left:0;
+		}
+	}
+	.brand-name{
+		padding:10px 10px 0;
+	}
+	.brand-url{
+		min-height:1.5em;
+		padding-bottom:8px;
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+	.brand-url a{
+		color:darken(@font,15%);
 	}
 }

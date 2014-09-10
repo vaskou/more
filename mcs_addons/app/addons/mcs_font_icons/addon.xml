@@ -9,20 +9,16 @@
 	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
 			<section id="mcs_font_icons">
-                <name>Font Icons</name>
                 <items>
+					<item id="mcs_icons_library">
+                        <type>multiple checkboxes</type>
+                    </item>
 					<item id="mcs_custom_icons">
-                        <type>checkbox</type>
-                        <name>Custom Set Of Icons</name>
-						<default_value>N</default_value>
-						<tooltip>If checked, a file with a custom set of icons will be loaded.</tooltip>
+                        <type>multiple checkboxes</type>
+						<variants></variants>
                     </item>
 				</items>
             </section>
 		</sections>
 	</settings>
-	
-	<language_variables>
-		
-	</language_variables>
 </addon>

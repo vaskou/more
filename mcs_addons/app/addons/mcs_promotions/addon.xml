@@ -1,13 +1,8 @@
 <?xml version="1.0"?>
 <addon scheme="3.0">
 	<id>mcs_promotions</id>
-	<name>More CS-Cart: Promotions</name>
 	<priority>100000</priority>
 	<position>0</position>
 	<status>active</status>
 	<dependencies></dependencies>
-	<language_variables>
-        <item lang="en" id="promotion_cond_mcs_products_in_category">Total products in the same category</item>
-		<item lang="el" id="promotion_cond_mcs_products_in_category">Σύνολο προϊόντων στην ίδια κατηγορία</item>
-	</language_variables>
 </addon>

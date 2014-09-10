@@ -1,13 +1,17 @@
 {style src="addons/mcs_font_icons/core.less"}
 
-{if $addons.mcs_font_icons.mcs_custom_icons=='Y'}
-	{style src="addons/mcs_font_icons/custom/style.css"}
-{else}
-	{style src="addons/mcs_font_icons/icomoon/style.css"}
-{/if}
+{foreach from=$addons.mcs_font_icons.mcs_icons_library key=k item=style}
+	{if $k != 'N'}
+	    {assign var=style_name value="_DOT_"|str_replace:".":$k}
+    	{assign var=style_name value="_SLASH_"|str_replace:"/":$style_name}
+	    {style src="addons/mcs_font_icons/libraries/`$style_name`"}
+    {/if}
+{/foreach}
 
-{style src="addons/mcs_font_icons/product_filters_icons.less"}
-{style src="addons/mcs_font_icons/breadcrumbs_icons.less"}
-{style src="addons/mcs_font_icons/my_account.less"}
-{style src="addons/mcs_font_icons/product_buttons_icons.less"}
-{style src="addons/mcs_font_icons/product_tabs_icons.less"}
+{foreach from=$addons.mcs_font_icons.mcs_custom_icons key=k item=style}
+	{if $k != 'N'}
+	    {assign var=style_name value="_DOT_"|str_replace:".":$k}
+    	{assign var=style_name value="_SLASH_"|str_replace:"/":$style_name}
+	    {style src="addons/mcs_font_icons/custom/`$style_name`"}
+    {/if}
+{/foreach}

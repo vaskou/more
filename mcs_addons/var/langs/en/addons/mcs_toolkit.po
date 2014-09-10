@@ -27,3 +27,11 @@ msgstr "More CS-Cart Block Grouping Wrapper"
 msgctxt "Languages::devices"
 msgid "Devices"
 msgstr "Devices"
+
+msgctxt "SettingsSections::mcs_toolkit::mcs_custom_scripts"
+msgid "Custom Scripts"
+msgstr "Custom Scripts"
+
+msgctxt "SettingsOptions::mcs_toolkit::mcs_scripts"
+msgid "Custom Scripts"
+msgstr "Custom Scripts"

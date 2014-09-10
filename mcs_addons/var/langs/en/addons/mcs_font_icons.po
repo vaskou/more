@@ -1,0 +1,26 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_font_icons"
+msgid "More CS-Cart: Font Icons"
+msgstr "More CS-Cart: Font Icons"
+
+msgctxt "Addons::description::mcs_font_icons"
+msgid "More CS-Cart: Font Icons"
+msgstr "More CS-Cart: Font Icons"
+
+msgctxt "SettingsSections::mcs_font_icons::mcs_font_icons"
+msgid "Font Icons"
+msgstr "Font Icons"
+
+msgctxt "SettingsOptions::mcs_font_icons::mcs_icons_library"
+msgid "Font Icons Libraries"
+msgstr "Font Icons Libraries"
+
+msgctxt "SettingsOptions::mcs_font_icons::mcs_custom_icons"
+msgid "Custom Icons Files"
+msgstr "Custom Icons Files"
+

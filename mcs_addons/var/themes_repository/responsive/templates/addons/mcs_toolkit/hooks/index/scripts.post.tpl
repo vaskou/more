@@ -62,8 +62,10 @@ $(function(){
 {* CUSTOM SCRIPTS *}
     
     {foreach from=$addons.mcs_toolkit.mcs_scripts key=k item=script}
-		{assign var=script_name value="_DOT_"|str_replace:".":$k}
-        {script src="js/addons/mcs_toolkit/custom/`$script_name`"}
+    	{if $k != 'N'}
+			{assign var=script_name value="_DOT_"|str_replace:".":$k}
+    	    {script src="js/addons/mcs_toolkit/custom/`$script_name`"}
+        {/if}
     {/foreach}
     
 {* /CUSTOM SCRIPTS *}

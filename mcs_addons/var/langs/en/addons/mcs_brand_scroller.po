@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mcsContent-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+
+msgctxt "Addons::name::mcs_brand_scroller"
+msgid "More CS-Cart: Brand Scroller"
+msgstr "More CS-Cart: Brand Scroller"
+
+msgctxt "Addons::description::mcs_brand_scroller"
+msgid "More CS-Cart: Brand Scroller"
+msgstr "More CS-Cart: Brand Scroller"
+
+msgctxt "Languages::mcs_brand_scroller"
+msgid "More CS-Cart: Brand Scroller"
+msgstr "More CS-Cart: Brand Scroller"
+
+msgctxt "Languages::block_mcs_brand_scroller"
+msgid "More CS-Cart: Brand Scroller"
+msgstr "More CS-Cart: Brand Scroller"
+
+msgctxt "Languages::block_mcs_brand_scroller_description"
+msgid "More CS-Cart: Brand Scroller"
+msgstr "More CS-Cart: Brand Scroller"
+
+msgctxt "Languages::add_brands"
+msgid "Add Brands"
+msgstr "Add Brands"
+
+msgctxt "Languages::add_brands_and_close"
+msgid "Add Brands and close"
+msgstr "Add Brands and close"
+
+msgctxt "Languages::all_brands"
+msgid "All Brands"
+msgstr "All Brands"
+
+msgctxt "Languages::mcs_brand_scroller_button"
+msgid "Show 'All Brands' button"
+msgstr "Show 'All Brands' button"
+
+msgctxt "Languages::mcs_brand_scroller_button_icon"
+msgid "'All Brands' button icon"
+msgstr "'All Brands' button icon"

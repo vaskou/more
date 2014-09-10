@@ -12,17 +12,15 @@ $(function(){
 });
 
 var header_hide_over_handler={
-	setup:function(){
+	match:function(){
 		fn_header_hide_over();
-	},
-	deferSetup:true
+	}
 }
 
 var header_hide_under_handler={
-	setup:function(){
+	match:function(){
 		fn_header_hide_under();
-	},
-	deferSetup:true
+	}
 }
 
 function fn_header_hide_over(){
@@ -53,6 +51,7 @@ function fn_header_hide_over(){
 
 function fn_header_hide_under(){
 	if($('#mcs_helper').hasClass('mcs_computer')){
+		$(window).unbind('scroll');
 		$(window).scroll(function(){
 			$(".tygh-content").css({"margin-top":"0px"});
 		});

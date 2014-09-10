@@ -10,11 +10,9 @@
 	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
 			<section id="mcs_custom_scripts">
-                <name>Custom Scripts</name>
                 <items>
 					<item id="mcs_scripts">
 						<type>multiple checkboxes</type>
-						<name>Custom Scripts</name>
 						<variants></variants>
 					</item>
 				</items>

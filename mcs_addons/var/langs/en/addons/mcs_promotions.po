@@ -1,0 +1,17 @@
+msgid ""
+msgstr "Project-Id-Version: mcs"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_promotions"
+msgid "More CS-Cart: Promotions"
+msgstr "More CS-Cart: Promotions"
+
+msgctxt "Addons::description::mcs_promotions"
+msgid "More CS-Cart: Promotions"
+msgstr "More CS-Cart: Promotions"
+
+msgctxt "Languages::promotion_cond_mcs_products_in_category"
+msgid "Total products in the same category"
+msgstr "Total products in the same category"
