@@ -1,0 +1,178 @@
+/* TOP PANEL */
+.tygh-top-panel { 
+    border-bottom:1px solid darken(@base,10%);
+}
+
+.ty-dropdown-box__title {
+	border-left-color:darken(@base,10%);
+}
+.ty-dropdown-box__title a,
+.ty-dropdown-box__title.logged a,
+.ty-minicart__icon,
+.ty-dropdown-box .ty-icon-down-micro {
+    color: @top_panel_text;
+}
+.ty-dropdown-box__title:hover,
+.ty-dropdown-box__title.logged.open{
+	a,i
+	{
+		color: #fff;
+		.transition(all 150ms);
+	}
+}
+.ty-dropdown-box__title:hover,
+.ty-dropdown-box__title.open {
+    background: @decorative;
+	.transition(all 200ms);
+}
+.ty-dropdown-box__content{
+	border-color:darken(@base,10%);
+}
+@media (max-width:767px){
+
+.top-cart-content{
+	margin:0;
+}
+.ty-minicart-title.empty-cart{
+	display:none;
+}
+.ty-minicart__icon.empty{
+	position:initial;
+}
+
+}
+@media (max-width:479px){
+	.top-cart-content .ty-dropdown-box__content{
+		right:-79px;
+	}
+}
+/*/ TOP PANEL */
+
+
+/* HEADER */
+.top-menu-grid { 
+	background:@menu;
+}
+.ty-logo-container{
+	margin-top:0;
+}
+.ty-logo-container__image {
+	padding:15px 0 20px;
+}
+.motto{
+	margin-left: 15px;
+	margin-top: 43px;
+}
+.motto p {
+	padding:0;
+	color: #ccc;
+	font-size: 21px;
+}
+
+.search-block-grid{
+	margin-top:25px;
+}
+.search-block-grid .ty-search-block__input{
+	float:right;
+	width:250px;
+	border:2px solid transparent;
+	height:50px;
+	background:@base;
+	color:@font;
+	font-size:110%;
+}
+.ty-search-magnifier {
+	background:@decorative;	
+	width:auto;
+	height:auto;
+	top:4px;
+	right:4px;
+	font-size:100%;
+	padding:6px 9px 4px;
+	}
+.ty-search-magnifier i{
+	font-size:30px;
+	color:#fff;
+}
+.search-block-grid .ty-search-block__input:focus{
+	width:95%;
+	font-size:100%;
+	.transition(all 1s ease-in-out);
+}
+.search-block-grid .ty-search-block__input:focus+button {
+	background: @decorative;
+	.transition(all 1s ease-in-out);
+}
+
+@media (max-width:1000px){
+
+.ty-logo-container__image{
+	padding-bottom:5px;
+	padding-top:5px;
+}
+.motto{
+	margin-top:0px;
+	margin-left:35px;
+	margin-bottom:5px;
+}
+
+}
+
+@media (max-width:767px){
+
+.top-logo,
+.motto{
+	float:none;
+	text-align:center;
+}
+.top-logo{
+	margin-left:-15px;
+}
+.motto{
+	margin-left:15px;
+}
+.ty-logo-container{ margin:0;}
+.search-block-grid{
+	margin:10px 0px 0px !important;
+	padding-bottom:10px;
+}
+.search-block-grid .ty-search-block{
+	width:300px;
+	margin:auto;
+}
+.search-block-grid .ty-search-block__input{
+	float:none;
+	width:100%;
+	margin:auto;
+	padding-right:43px;
+}
+
+.search-block-grid .ty-search-block__input:focus{
+	width:99%;
+}
+
+}
+/*/ HEADER */
+
+
+/* MCS BANNER */
+.banners.owl-theme .owl-controls .owl-buttons div{
+	position:absolute;
+	top:40%;
+	line-height:12px;
+	text-align:center;
+	.border-radius(0);
+}
+.banners .owl-prev{
+	left:10px;
+	padding:6px 15px 2px 13px !important;
+}
+.banners .owl-next{
+	right:10px;
+	padding:6px 13px 2px 15px !important;
+}
+.banners .owl-prev i,
+.banners .owl-next i{
+	font-size:40px;
+}
+/*/ MCS BANNER */

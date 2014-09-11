@@ -1,1 +1,1 @@
-{style src="addons/my_changes/mcs_brands_page.less"}
+{style src="addons/my_changes/styles.less"}

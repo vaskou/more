@@ -1,6 +1,6 @@
 <?php
 
-$schema['conditions']['mcs_products_in_category'] = array (
+$scheme['conditions']['mcs_products_in_category'] = array (
 	'operators' => array ('gte', 'gt', 'lte', 'lt'),
 	'type' => 'mixed',
 	'conditions_function' => array('fn_mcs_promotions_get_categories'),
@@ -8,4 +8,4 @@ $schema['conditions']['mcs_products_in_category'] = array (
 	'zones' => array('cart')
 );
 
-return $schema;
+return $scheme;
