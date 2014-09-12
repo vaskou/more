@@ -1,21 +1,7 @@
-.tygh-top-panel,
-.tygh-header,
-.tygh-content,
-.tygh-footer{
-	.container-fluid > .row-fluid{
-		border:1px solid;
-		border-color:darken(@base,20%);
-	}
-}
-.tygh-header,
-.tygh-content,
-.tygh-footer{
-	.container-fluid > .row-fluid{
-		border-top:none;
-	}
-}
 /* TOP PANEL */
-
+.tygh-top-panel { 
+    border-bottom:1px solid darken(@base,10%);
+}
 .top-panel-logo .ty-logo-container__image{
 	padding:4px 5px;
 	max-height:26px;
@@ -229,6 +215,9 @@
 
 
 /* FOOTER */
+.tygh-footer{
+	border-top:1px solid darken(@base, 10%);
+}
 .ty-footer-grid__full-width{
 	padding-left:0px !important;
 	padding-right:0px !important;
