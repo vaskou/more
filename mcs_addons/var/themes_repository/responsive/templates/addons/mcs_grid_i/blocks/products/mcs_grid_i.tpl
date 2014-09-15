@@ -5,6 +5,11 @@
 {else}
     {assign var="_show_add_to_cart" value=true}
 {/if}
+{if $block.properties.show_price == "Y"}
+    {assign var="_hide_price" value=false}
+{else}
+    {assign var="_hide_price" value=true}
+{/if}
 
 {include file="addons/mcs_grid_i/blocks/list_templates/mcs_grid_i_list.tpl"
 products=$items
@@ -26,4 +31,9 @@ but_role="action"
 show_discount_label=true
 show_features=true
 show_list_buttons=false
-show_descr=true}
+show_descr=true 
+show_product_rating=$block.properties.show_product_rating 
+hide_price=$_hide_price 
+enable_add_to_wish=$block.properties.enable_add_to_wish 
+enable_add_to_compare=$block.properties.enable_add_to_compare 
+enable_quick_view=$block.properties.enable_quick_view}

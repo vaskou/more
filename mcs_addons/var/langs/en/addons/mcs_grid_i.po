@@ -48,6 +48,10 @@ msgctxt "SettingsOptions::mcs_grid_i::mcs_product_hidden_info_duration"
 msgid "Set the duration of the animation"
 msgstr "Set the duration of the animation"
 
+msgctxt "SettingsOptions::mcs_grid_i::mcs_product_rating"
+msgid "Show product rating"
+msgstr "Show product rating"
+
 msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_transition"
 msgid "Select the effect that will be applied when the user hovers on product grid."
 msgstr "Select the effect that will be applied when the user hovers on product grid."

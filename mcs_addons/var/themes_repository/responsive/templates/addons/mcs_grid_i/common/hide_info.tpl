@@ -16,12 +16,12 @@ $(function(){
 	
 		enquire.register("screen and (min-width:768px)",{
 			match:function(){
-				$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur});
+				$('#mcs_grid_i_list_{/literal}{$block.block_id}{literal} .mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur});
 			}
 		});
 		enquire.register("screen and (max-width:767px)",{
 			match:function(){
-				hh=$('.mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
+				hh=$('#mcs_grid_i_list_{/literal}{$block.block_id}{literal} .mcs-grid-i-list__item').hover_hide({transition:trans,duration:dur,fade_other_elms:false});
 				hh.disable();
 			}
 		});

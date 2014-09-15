@@ -106,7 +106,7 @@
                 </div>
                 
                 <div class="mcs-grid-i-list__product_extra_info">
-                    {if $addons.mcs_grid_i.mcs_product_rating=='Y'}
+                    {if $block.properties.show_product_rating=='Y'}
                         {assign var="rating" value="rating_$obj_id"}
                         {if $smarty.capture.$rating}
                             <div class="mcs-grid-ii-list__rating">

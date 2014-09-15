@@ -50,3 +50,7 @@ msgstr "Show 'All Brands' button"
 msgctxt "Languages::mcs_brand_scroller_button_icon"
 msgid "'All Brands' button icon"
 msgstr "'All Brands' button icon"
+
+msgctxt "Languages::mcs_brand_scroller_brand_feature_id"
+msgid "Select Brand feature"
+msgstr "Select Brand feature"

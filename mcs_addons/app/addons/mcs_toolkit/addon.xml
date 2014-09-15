@@ -21,7 +21,7 @@
 	</settings>
 	
 	<queries>
-		<item for="install">ALTER TABLE ?:bm_grids ADD full_width VARCHAR( 128 ) DEFAULT  'N';</item>
+		<item for="install">ALTER TABLE ?:bm_grids ADD full_width VARCHAR( 128 );</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD computer VARCHAR( 128 ) DEFAULT  'Y';</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD tablet VARCHAR( 128 ) DEFAULT  'Y';</item>
 		<item for="install">ALTER TABLE ?:bm_grids ADD phone VARCHAR( 128 ) DEFAULT  'Y';</item>

@@ -8,7 +8,27 @@ $schema['addons/mcs_grid_i/blocks/products/mcs_grid_i.tpl'] = array (
 		),
 		'number_of_columns' => array (
 			'type' => 'input',
-			'default_value' => 2
+			'default_value' => 4
+		),
+		'show_price' => array (
+			'type' => 'checkbox',
+			'default_value' => 'Y'
+		),
+		'enable_quick_view' => array (
+			'type' => 'checkbox',
+			'default_value' => 'N'
+		),
+		'enable_add_to_wish' => array (
+			'type' => 'checkbox',
+			'default_value' => 'N'
+		),
+		'enable_add_to_compare' => array (
+			'type' => 'checkbox',
+			'default_value' => 'N'
+		),
+		'show_product_rating'=> array(
+			'type' => 'checkbox',
+			'default_value' => 'N'
 		),
 		'mcs_product_hidden_info_transition'=>array(
 			'type'=>'selectbox',
@@ -55,6 +75,10 @@ $schema['addons/mcs_grid_i/blocks/products/mcs_grid_i_scroller.tpl'] = array (
 			'type' => 'checkbox',
 			'default_value' => 'N'
 		),
+		'show_product_rating'=> array(
+			'type' => 'checkbox',
+			'default_value' => 'N'
+		),
 		'not_scroll_automatically' => array (
 			'type' => 'checkbox',
 			'default_value' => 'N'
@@ -73,7 +97,7 @@ $schema['addons/mcs_grid_i/blocks/products/mcs_grid_i_scroller.tpl'] = array (
 		),
 		'item_quantity' =>  array (
 			'type' => 'input',
-			'default_value' => 5
+			'default_value' => 4
 		),
 	),
 	'bulk_modifier' => array (

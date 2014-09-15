@@ -28,7 +28,7 @@
     {if $settings.Appearance.enable_quick_view == 'Y'}
         {$quick_nav_ids = $products|fn_fields_from_multi_level:"product_id":"product_id"}
     {/if}
-    <div class="mcs-grid-i-list">
+    <div class="mcs-grid-i-list" id="mcs_grid_i_list_{$block.block_id}">
         {strip}
             {foreach from=$splitted_products item="sproducts" name="sprod"}
                 {foreach from=$sproducts item="product" name="sproducts"}
@@ -89,26 +89,28 @@
                                                 {$smarty.capture.$name nofilter}
                                             </div>
                                             
-                                            <div class="mcs-grid-i-list__price {if $product.price == 0}ty-grid-list__no-price{/if}">
-                                                {assign var="old_price" value="old_price_`$obj_id`"}
-                                                {if $smarty.capture.$old_price|trim}{$smarty.capture.$old_price nofilter}{/if}
-                                                
-                                                {assign var="price" value="price_`$obj_id`"}
-                                                {$smarty.capture.$price nofilter} 
-    
-                                                {assign var="clean_price" value="clean_price_`$obj_id`"}
-                                                {$smarty.capture.$clean_price nofilter}
-    
-                                                {assign var="list_discount" value="list_discount_`$obj_id`"}
-                                                {$smarty.capture.$list_discount nofilter}
-                                            </div>
+                                            {if $hide_price == false}
+                                                <div class="mcs-grid-i-list__price {if $product.price == 0}ty-grid-list__no-price{/if}">
+                                                    {assign var="old_price" value="old_price_`$obj_id`"}
+                                                    {if $smarty.capture.$old_price|trim}{$smarty.capture.$old_price nofilter}{/if}
+                                                    
+                                                    {assign var="price" value="price_`$obj_id`"}
+                                                    {$smarty.capture.$price nofilter} 
+        
+                                                    {assign var="clean_price" value="clean_price_`$obj_id`"}
+                                                    {$smarty.capture.$clean_price nofilter}
+        
+                                                    {assign var="list_discount" value="list_discount_`$obj_id`"}
+                                                    {$smarty.capture.$list_discount nofilter}
+                                                </div>
+                                            {/if}
                                         </div>
                                         
                                         <div class="mcs-grid-i-list__product_extra_info">
-                                        	{if $addons.mcs_grid_i.mcs_product_rating=='Y'}
+                                        	{if $show_product_rating=='Y'}
                                                 {assign var="rating" value="rating_$obj_id"}
                                                 {if $smarty.capture.$rating}
-                                                    <div class="mcs-grid-ii-list__rating">
+                                                    <div class="mcs-grid-i-list__rating">
                                                         {$smarty.capture.$rating nofilter}
                                                     </div>
                                                 {/if}
@@ -120,22 +122,28 @@
                                         <div class="mcs-grid-i-list__control">
                                         	
                                             <div class="ty-add-buttons-wrapper">
-                                                <div id="cart_buttons_block_{$obj_prefix}{$obj_id}" class="ty-add-to-wish">
-                                                    {hook name="products:buy_now"}
-                                                    {/hook}
-                                                </div>
-                                                <div class="ty-add-to-compare">
-                                                	{if $product.feature_comparison == "Y"}
-                                                    
-                                                        {include file="buttons/add_to_compare_list.tpl" product_id=$product.product_id}
-	                                                {/if}
-                                                </div>
+                                            	{if $enable_add_to_wish == 'Y'}
+                                                    <div id="cart_buttons_block_{$obj_prefix}{$obj_id}" class="ty-add-to-wish">
+                                                        {hook name="products:buy_now"}
+                                                        {/hook}
+                                                    </div>
+                                                {/if}
+                                                {if $enable_add_to_compare == 'Y'}
+                                                    <div class="ty-add-to-compare">
+                                                        {if $product.feature_comparison == "Y"}
+                                                        
+                                                            {include file="buttons/add_to_compare_list.tpl" product_id=$product.product_id}
+                                                        {/if}
+                                                    </div>
+                                                {/if}
                                             </div>
                                             
-                                            {if $settings.Appearance.enable_quick_view == 'Y'}
-                                                {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
+                                            {if $enable_quick_view == 'Y'}
+	                                            {if $settings.Appearance.enable_quick_view == 'Y'}
+    	                                            {include file="views/products/components/quick_view_link.tpl" quick_nav_ids=$quick_nav_ids}
+        	                                    {/if}
                                             {/if}
-
+                                            
                                             {if $show_add_to_cart}
                                                 <div class="button-container">
                                                     {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}

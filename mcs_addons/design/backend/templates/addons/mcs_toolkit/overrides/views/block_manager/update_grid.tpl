@@ -74,10 +74,11 @@
     </div>
     
     <div class="control-group mcs_full_width cm-no-hide-input">
-        <label class="control-label" for="elm_grid_full_width_{$id}">{__("mcs_full_width")}</label>
+        <label class="control-label" for="elm_grid_full_width_{$id}">{__("mcs_full_width")}
+        	<a class="cm-tooltip" title="Insert the width of the grid in pixels(px) or in percentage(%)"><i class="icon-question-sign"></i></a>
+        </label>
         <div class="controls">
-            <input name="full_width" value="N" type="hidden" />
-            <input id="elm_grid_full_width_{$id}" name="full_width" value="Y" type="checkbox" {if $grid.full_width=="Y"}checked="checked"{/if} />
+            <input id="elm_grid_full_width_{$id}" name="full_width" value="{$grid.full_width}" type="text" />
          </div>
     </div>
     

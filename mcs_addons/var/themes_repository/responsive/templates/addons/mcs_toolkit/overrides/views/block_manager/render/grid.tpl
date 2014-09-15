@@ -8,7 +8,7 @@
 
 
 
-{if $grid.alpha}<div class="{if $layout_data.layout_width != "fixed"}row-fluid {else}row{/if} {if $grid.full_width==Y}mcs-full-width{/if}">{/if}
+{if $grid.alpha}<div class="{if $layout_data.layout_width != "fixed"}row-fluid {else}row{/if} {if $grid.full_width!=''}mcs-full-width{/if}" {if $grid.full_width!=''}style="width:{$grid.full_width}"{/if}>{/if}
     <div class="span{$fluid_width|default:$grid.width}{if $grid.offset} offset{$grid.offset}{/if} {$grid.user_class}  {if $grid.block_grouping!='none'}mcs-{$grid.block_grouping}-grid{/if}" {if $grid.block_grouping!="none"}id="mcs-{$grid.block_grouping}-{$grid.grid_id}"{/if}>
         {if $grid.status == "A" && $content}
             {$content nofilter}
