@@ -18,6 +18,23 @@
 	}
 }
 
+/*********************** breadcrumbs *******************************/
+.ty-breadcrumbs{
+	padding-left:10px;
+	padding-right:125px;
+}
+.ty-product-switcher{
+	right:15px;
+}
+@media (max-width: 767px){
+.ty-breadcrumbs{
+	padding-right:10px;
+}
+.ty-product-switcher{
+	right:0;
+}
+}
+/*******************************************************************/
 
 /*********************** mainbox2 *******************************/
 .mainbox2-container{
@@ -35,6 +52,43 @@
 	.mcs_text_color(darken(@base, 25%));
 }
 /***************************************************************/
+
+/*********************** sidebox ************************/
+.ty-sidebox{
+	margin-bottom:0px;
+	border-right:1px solid;
+	border-bottom:1px solid;
+	border-color:darken(@base,20%);
+}
+.ty-sidebox__title{
+	padding-top:7px;
+	padding-left:10px;
+	margin-bottom:0px;
+	border:none;
+}
+.ty-sidebox__title-wrapper, 
+.ty-sidebox__title span, 
+.ty-sidebox__title a{
+	font-weight:normal;
+	font-size:15px;
+	color:@font;
+}
+.ty-product-filters{
+	padding-top:0px;
+}
+.ty-product-filters__title{
+	font-size:15px;
+}
+.ty-product-filters__wrapper {
+    background: transparent;
+}
+.ty-product-filters__switch{
+	border:none;
+}
+.ty-range-slider .ui-slider-handle{
+	background:darken(@menu, 20%);
+}
+/*******************************************************/
 
 /*/ GENERAL */
 
@@ -279,3 +333,45 @@ h3.ty-social-link__title{
 	background-color: darken(@footer_bg, 9%);
 }
 /*/ FOOTER */
+
+/* CATEGORIES  */
+.categories_view .main-content-grid{
+	padding-right:20px;
+}
+/*/ CATEGORIES */
+
+/* PRODUCTS */
+.ty-product-block{
+	margin-top:0px;
+}
+.ty-product-img{
+	border:none;
+}
+.ty-product-block__img-wrapper{
+	border-right:1px solid darken(@base,20%);
+}
+.ty-product-thumbnails{
+	text-align:center;
+	width:100% !important;
+}
+.ty-product-thumbnails__item{
+	float:none;
+	display:inline-block;
+	border-color:darken(@base,20%);
+}
+.ty-product-thumbnails__item.active {
+    border-color:darken(@base,40%);
+}
+.ty-product-block-title{
+	font-size:26px;
+}
+.products_view .ty-tabs{
+	margin-top:0px;
+	border-top:3px solid darken(@base,20%);
+}
+.products_view .ty-tabs__item, 
+.products_view  .ty-tabs .subtab{
+	margin-top:0px;
+	margin-right:0px;
+}
+/*/ PRODUCTS */

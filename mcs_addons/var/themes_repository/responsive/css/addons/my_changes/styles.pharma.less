@@ -1,3 +1,65 @@
+/* GENERAL */
+
+/* SORTING */
+.ty-sort-container{
+	background:transparent;
+}
+.ty-sort-dropdown__wrapper{
+	border:2px solid transparent;
+	border-right:3px solid transparent;
+	padding-right:0px;
+	background:@base;
+	&:hover,
+	&.open{
+		border-color:@decorative;
+		background:#fff;
+		color:@decorative;
+		.ty-sort-dropdown__icon{
+			background:@decorative;
+			.mcs_text_color(@decorative);
+		}
+	}
+}
+.ty-sort-dropdown__icon{
+	padding:10px 13px 7px;
+	margin-left:10px;
+	background:darken(@base,30%);
+	.mcs_text_color(darken(@base,30%));
+	.transition(all 150ms);
+}
+.ty-sort-container__views-a{
+	&:hover,
+	&.active:hover{
+		background:@decorative;
+		.mcs_text_color(@decorative);
+	}
+	&.active{
+		background:darken(@base,30%);
+		.mcs_text_color(darken(@base,30%));
+	}
+}
+/*/ SORTING */
+
+/* PAGINATION */
+.ty-pagination__item:hover{
+	background:darken(@base,30%);
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item .ty-pagination__text-arrow{
+	display:none;
+}
+.ty-pagination__btn:hover{
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item, 
+.ty-pagination__selected{
+	.border-radius(0px);
+}
+
+/*/ PAGINATION */
+
+/*/ GENERAL */
+
 /* TOP PANEL */
 .tygh-top-panel { 
     border-bottom:1px solid darken(@base,10%);
@@ -64,7 +126,10 @@
 .ty-minicart-title.empty-cart{
 	display:none;
 }
-.ty-minicart__icon.empty{
+.ty-minicart-title{
+	padding-left:0px;
+}
+.ty-minicart__icon{
 	position:inherit;
 }
 .top-panel-search .ty-dropdown-box__content{
@@ -137,6 +202,22 @@
 .search-block-grid .ty-search-block__input:focus+button {
 	background: @decorative;
 	.transition(all 1s ease-in-out);
+}
+
+.ty-menu__submenu-items{
+    padding:10px 11px;
+}
+.ty-menu__submenu-items .ty-top-mine__submenu-col{
+    padding:5px;
+    .box-sizing(border-box);
+}
+.ty-top-mine__submenu-col.mcs-brands-list{
+    background:@decorative;
+    .ty-menu__submenu-item-header .ty-menu__submenu-link,
+    .ty-menu__submenu-item a,
+    .ty-menu__submenu-item a:hover{
+        .mcs_text_color(@decorative);
+    }
 }
 
 @media (max-width:1000px){
@@ -244,3 +325,44 @@ h3.ty-social-link__title{
 	background-color: darken(@footer_bg, 9%);
 }
 /*/ FOOTER */
+
+/* BRANDS PAGE */
+[class^="mcs-brand-scroller-"], .mcs-brands-page{
+	.brand-box{
+		border:10px solid #fff;
+		.transition(border-color 1s ease 0s);
+	}
+	.brand-box.with-image:hover{
+		.box-shadow(none);
+		.transition(border-color 300ms ease 0s);
+		border-color:#ebebeb;
+	}
+}
+/*/ BRANDS PAGE */
+
+/* PRODUCTS */
+.ty-product-options{
+	background:@base;
+	padding:10px;
+	
+	.ty-product-options__item-label,
+	.ty-input-text,
+	.ty-product-options__textarea,
+	select{
+		width:100%;
+	}
+	.ty-product-variant-image{
+		margin-left:0;
+	}
+	.ty-product-options__description{
+		.mcs_text_color(@base);
+		margin-left:0;
+	}
+	.ty-product-options__image{
+		border-color:darken(@base,20%);
+		&.is-selected{
+			border-color:@decorative;
+		}
+	}
+}
+/*/ PRODUCTS */

@@ -47,9 +47,9 @@
 				i=0;
                 $(this).children('div').each(function(){
 					if($(this).hasClass('mcs-block-grouping-content')){
-                    	content+='<li class="mcs-tab-button"><a href="#'+$(this).attr('id')+'">'+$(this).attr('data-title')+'</a></li>';
+                    	content+='<li class="mcs-tab-button"><a href="{/literal}{$smarty.server.REQUEST_URI}{literal}#'+$(this).attr('id')+'">'+$(this).attr('data-title')+'</a></li>';
 					}else{
-						content+='<li><a href="#error'+i+'">Error</a></li>';
+						content+='<li><a href="{/literal}{$smarty.server.REQUEST_URI}{literal}#error'+i+'">Error</a></li>';
 						$(this).replaceWith('<div id="error'+i+'" class="mcs-block-grouping-content"><h1 class="ty-error-text"><i class="icon-warning"></i> You have selected wrong wrapper for this block. Please select "More CS-Cart Block Grouping Wrapper".</h1></div>');
 					}
 					i++;
@@ -59,7 +59,7 @@
                 
                 $(this).tabs();
             });
-            
+
         });
         </script>  
     {/literal}      

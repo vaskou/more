@@ -24,7 +24,7 @@
 		}
 			
 		$('.slides-container').children().not('.progress-bar').addClass('slide');
-		$('.slides-container').children(settings.slide_element+':first-child').toggleClass('top-slide');
+		$('.slides-container').children(settings.slide_element+':first-child').addClass('top-slide');
 		
 		return this.hover(
 		function(){
