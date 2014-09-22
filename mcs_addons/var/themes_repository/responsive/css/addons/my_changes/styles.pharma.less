@@ -1,66 +1,8 @@
-/* GENERAL */
+/*********************** GENERAL *******************************/
 
-/* SORTING */
-.ty-sort-container{
-	background:transparent;
-}
-.ty-sort-dropdown__wrapper{
-	border:2px solid transparent;
-	border-right:3px solid transparent;
-	padding-right:0px;
-	background:@base;
-	&:hover,
-	&.open{
-		border-color:@decorative;
-		background:#fff;
-		color:@decorative;
-		.ty-sort-dropdown__icon{
-			background:@decorative;
-			.mcs_text_color(@decorative);
-		}
-	}
-}
-.ty-sort-dropdown__icon{
-	padding:10px 13px 7px;
-	margin-left:10px;
-	background:darken(@base,30%);
-	.mcs_text_color(darken(@base,30%));
-	.transition(all 150ms);
-}
-.ty-sort-container__views-a{
-	&:hover,
-	&.active:hover{
-		background:@decorative;
-		.mcs_text_color(@decorative);
-	}
-	&.active{
-		background:darken(@base,30%);
-		.mcs_text_color(darken(@base,30%));
-	}
-}
-/*/ SORTING */
+/***************************************************************/
 
-/* PAGINATION */
-.ty-pagination__item:hover{
-	background:darken(@base,30%);
-	.mcs_text_color(darken(@base,30%));
-}
-.ty-pagination__item .ty-pagination__text-arrow{
-	display:none;
-}
-.ty-pagination__btn:hover{
-	.mcs_text_color(darken(@base,30%));
-}
-.ty-pagination__item, 
-.ty-pagination__selected{
-	.border-radius(0px);
-}
-
-/*/ PAGINATION */
-
-/*/ GENERAL */
-
-/* TOP PANEL */
+/*********************** TOP PANEL *****************************/
 .tygh-top-panel { 
     border-bottom:1px solid darken(@base,10%);
 }
@@ -145,10 +87,9 @@
 	width:318px;
 }
 }
-/*/ TOP PANEL */
+/***************************************************************/
 
-
-/* HEADER */
+/************************* HEADER ******************************/
 .top-menu-grid { 
 	background:@menu;
 }
@@ -188,7 +129,7 @@
 	right:4px;
 	font-size:100%;
 	padding:6px 9px 4px;
-	}
+}
 .ty-search-magnifier i{
 	font-size:30px;
 	color:#fff;
@@ -270,10 +211,10 @@
 }
 
 }
-/*/ HEADER */
+/***************************************************************/
 
 
-/* MCS BANNER */
+/********************** MCS BANNER *****************************/
 .banners.owl-theme .owl-controls .owl-buttons div{
 	position:absolute;
 	top:40%;
@@ -293,10 +234,10 @@
 .banners .owl-next i{
 	font-size:40px;
 }
-/*/ MCS BANNER */
+/***************************************************************/
 
 
-/* FOOTER */
+/************************* FOOTER ******************************/
 .tygh-footer{
 	border-top:1px solid darken(@base, 10%);
 }
@@ -324,23 +265,67 @@ h3.ty-social-link__title{
 .footer-copyright {
 	background-color: darken(@footer_bg, 9%);
 }
-/*/ FOOTER */
+/***************************************************************/
 
-/* BRANDS PAGE */
-[class^="mcs-brand-scroller-"], .mcs-brands-page{
-	.brand-box{
-		border:10px solid #fff;
-		.transition(border-color 1s ease 0s);
-	}
-	.brand-box.with-image:hover{
-		.box-shadow(none);
-		.transition(border-color 300ms ease 0s);
-		border-color:#ebebeb;
+/*********************** SORTING *******************************/
+.ty-sort-container{
+	background:transparent;
+}
+.ty-sort-dropdown__wrapper{
+	border:2px solid transparent;
+	border-right:3px solid transparent;
+	padding-right:0px;
+	background:@base;
+	&:hover,
+	&.open{
+		border-color:@decorative;
+		background:#fff;
+		color:@decorative;
+		.ty-sort-dropdown__icon{
+			background:@decorative;
+			.mcs_text_color(@decorative);
+		}
 	}
 }
-/*/ BRANDS PAGE */
+.ty-sort-dropdown__icon{
+	padding:10px 13px 7px;
+	margin-left:10px;
+	background:darken(@base,30%);
+	.mcs_text_color(darken(@base,30%));
+	.transition(all 150ms);
+}
+.ty-sort-container__views-a{
+	&:hover,
+	&.active:hover{
+		background:@decorative;
+		.mcs_text_color(@decorative);
+	}
+	&.active{
+		background:darken(@base,30%);
+		.mcs_text_color(darken(@base,30%));
+	}
+}
+/***************************************************************/
 
-/* PRODUCTS */
+/************************ PAGINATION ***************************/
+.ty-pagination__item:hover{
+	background:darken(@base,30%);
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item .ty-pagination__text-arrow{
+	display:none;
+}
+.ty-pagination__btn:hover{
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item, 
+.ty-pagination__selected{
+	.border-radius(0px);
+}
+
+/***************************************************************/
+
+/********************* PRODUCT OPTIONS *************************/
 .ty-product-options{
 	background:@base;
 	padding:10px;
@@ -365,4 +350,18 @@ h3.ty-social-link__title{
 		}
 	}
 }
-/*/ PRODUCTS */
+/***************************************************************/
+
+/******************** BRANDS PAGE ******************************/
+[class^="mcs-brand-scroller-"], .mcs-brands-page{
+	.brand-box{
+		border:10px solid #fff;
+		.transition(border-color 1s ease 0s);
+	}
+	.brand-box.with-image:hover{
+		.box-shadow(none);
+		.transition(border-color 300ms ease 0s);
+		border-color:#ebebeb;
+	}
+}
+/***************************************************************/
