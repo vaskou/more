@@ -37,6 +37,14 @@
                         <type>checkbox</type>
 						<default_value>Y</default_value>
                     </item>
+					<item id="mcs_product_add_to_wish">
+                        <type>checkbox</type>
+						<default_value>Y</default_value>
+                    </item>
+					<item id="mcs_product_add_to_compare">
+                        <type>checkbox</type>
+						<default_value>Y</default_value>
+                    </item>
 				</items>
 			</section>
 		</sections>

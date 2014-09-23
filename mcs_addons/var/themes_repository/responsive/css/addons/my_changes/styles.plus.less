@@ -24,6 +24,7 @@
 .tygh-footer .container-fluid > .row-fluid:last-child{
 	border:none;
 }
+
 /*******************************************************************/
 
 /********************** TOP PANEL ****************************/
@@ -115,12 +116,21 @@
 .ty-dropdown-box__title.open {
     background: @decorative;
 }
-.ty-dropdown-box__content{
-	border-color:darken(@decorative,10%);
+.ty-dropdown-box__content .ty-dropdown-box__item{
+	&:hover{
+		.transition(none);
+		background:none;
+		a{
+			color:@decorative;
+		}
+	}
+	a{
+		.transition(none);
+		color:@font;
+	}
 }
-.ty-dropdown-box__content .ty-dropdown-box__item:hover,
-.ty-dropdown-box__content .ty-dropdown-box__item a{
-	.transition(none);
+.ty-dropdown-box__content .ty-account-info__buttons{
+	margin-top:0;
 }
 .ty-menu__items{
 	background:#fff;
@@ -303,7 +313,8 @@ h3.ty-social-link__title{
 	color: @links;
 }
 .footer-copyright {
-	background-color: darken(@footer_bg, 9%);
+	background-color: @footer_bg;
+	padding:12px 0;
 }
 /***************************************************************/
 
@@ -391,6 +402,18 @@ h3.ty-social-link__title{
 /******************* CATEGORIES  *******************************/
 .categories_view .main-content-grid{
 	padding-right:20px;
+}
+.ty-subcategories__item a{
+	padding:4px 17px;
+	border:1px solid;
+	border-color:@tertiary_button;
+	color:darken(@tertiary_button,10%);
+	display:block;
+	.transition(all 150ms);
+	&:hover{
+		background:@tertiary_button !important;
+		.mcs_text_color(darken(@tertiary_button,10%));
+	}
 }
 .mcs-grid-i-list__control .ty-add-buttons-wrapper .ty-btn__text{
 	color:darken(@tertiary_button,10%);
@@ -485,6 +508,13 @@ h3.ty-social-link__title{
 	.mcs_text_color(darken(@base,30%));
 	.transition(all 150ms);
 }
+.ty-sort-dropdown__content-item-a{
+	color:@font;
+	&:hover{
+		background:none;
+		color:@links;
+	}
+}
 .ty-sort-container__views-a{
 	&:hover,
 	&.active:hover{
@@ -541,4 +571,22 @@ h3.ty-social-link__title{
 	.border-radius(0px);
 }
 
+/***************************************************************/
+
+/********************** CHECKOUT *******************************/
+.checkout_checkout{
+	.main-content-grid{
+		padding-left:20px;
+	}
+	.ty-checkout__title{
+		margin-top:0;
+	}
+	.ty-order-summary{
+		margin-top:0;
+	}
+	.ty-sidebox{
+		border-right:none;
+		border-left:1px solid @border_color;
+	}
+}
 /***************************************************************/

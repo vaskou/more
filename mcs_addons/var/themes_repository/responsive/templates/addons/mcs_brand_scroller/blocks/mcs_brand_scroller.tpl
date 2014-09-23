@@ -8,7 +8,9 @@
             <a href="{"product_features.view?variant_id=`$brand.variant_id`"|fn_url}">
 
                 <div class="brand-image">
-                        {include file="common/image.tpl" images=$brand.image_pair}
+                	{if $brand.image_pair}
+	                	{include file="common/image.tpl" images=$brand.image_pair}
+                    {/if}
                 </div>
                 
                 <span class="brand-name">
@@ -24,7 +26,7 @@
     {assign var="filter_name" value=$filter_data[$filter_id]}
     {if $block.properties.mcs_brand_scroller_button=='Y'}
     	<div class="mcs-brand-scroller-button">
-    		<a href="index.php?dispatch=product_features.view_all&filter_id={$filter_id}"><i class="{$block.properties.mcs_brand_scroller_button_icon}"></i>{$filter_name}</a>
+    		<a href="index.php?dispatch=product_features.view_all&filter_id={$filter_id}" class="ty-btn {$block.properties.mcs_brand_scroller_button_style}"><i class="{$block.properties.mcs_brand_scroller_button_icon}"></i>{$filter_name}</a>
 	    </div>
     {/if}
 

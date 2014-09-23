@@ -2,6 +2,9 @@
 {assign var="filter_qstring" value=$smarty.request.q|fn_url}
 {assign var="filter_qstring" value=$filter_qstring|fn_query_remove:"result_ids":"filter_id":"features_hash"}
 {split data=$view_all_filter size="1" assign="splitted_filter" preverse_keys=true}
+{capture name="title"}
+	{$smarty.request.filter_id|fn_get_product_filter_name}
+{/capture}
     <div class="mcs-brands-page">
         <div id="div-ALL" class="mcs-list-filter">
             <ul>

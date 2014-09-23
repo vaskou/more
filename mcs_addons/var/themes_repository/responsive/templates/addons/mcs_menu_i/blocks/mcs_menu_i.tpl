@@ -24,7 +24,7 @@
                     {if $itm|count > 0}
                     	<li class="ty-top-mine__submenu-col hidden-phone mcs-brands-list">
                             <div class="ty-menu__submenu-item-header">
-                                <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{__("{$block.properties.mcs_top_menu_brand_filter|fn_get_product_filter_name}")}</a>
+                                <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{$block.properties.mcs_top_menu_brand_filter|fn_get_product_filter_name}</a>
                             </div>
                             <div class="ty-menu__submenu">
                                 <ul class="ty-menu__submenu-list cm-responsive-menu-submenu">

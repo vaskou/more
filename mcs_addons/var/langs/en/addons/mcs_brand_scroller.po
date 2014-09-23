@@ -47,6 +47,26 @@ msgctxt "Languages::mcs_brand_scroller_button"
 msgid "Show 'All Brands' button"
 msgstr "Show 'All Brands' button"
 
+msgctxt "Languages::mcs_brand_scroller_button_style"
+msgid "'All Brands' button style"
+msgstr "'All Brands' button style"
+
+msgctxt "Languages::mcs_text_button"
+msgid "Text link"
+msgstr "Text link"
+
+msgctxt "Languages::mcs_primary_button"
+msgid "Primary Button"
+msgstr "Primary Button"
+
+msgctxt "Languages::mcs_secondary_button"
+msgid "Secondary Button"
+msgstr "Secondary Button"
+
+msgctxt "Languages::mcs_tertiary_button"
+msgid "Tertiary Button"
+msgstr "Tertiary Button"
+
 msgctxt "Languages::mcs_brand_scroller_button_icon"
 msgid "'All Brands' button icon"
 msgstr "'All Brands' button icon"

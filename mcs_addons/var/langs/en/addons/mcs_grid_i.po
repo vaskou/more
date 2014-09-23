@@ -44,18 +44,26 @@ msgctxt "SettingsOptions::mcs_grid_i::mcs_product_hidden_info_transition"
 msgid "Select how to show hidden info on hover"
 msgstr "Select how to show hidden info on hover"
 
+msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_transition"
+msgid "Select the effect that will be applied when the user hovers on product grid."
+msgstr "Select the effect that will be applied when the user hovers on product grid."
+
 msgctxt "SettingsOptions::mcs_grid_i::mcs_product_hidden_info_duration"
 msgid "Set the duration of the animation"
 msgstr "Set the duration of the animation"
+
+msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_duration"
+msgid "Select the duration (milliseconds) of the effect when the user hovers on product grid."
+msgstr "Select the duration (milliseconds) of the effect when the user hovers on product grid."
 
 msgctxt "SettingsOptions::mcs_grid_i::mcs_product_rating"
 msgid "Show product rating"
 msgstr "Show product rating"
 
-msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_transition"
-msgid "Select the effect that will be applied when the user hovers on product grid."
-msgstr "Select the effect that will be applied when the user hovers on product grid."
+msgctxt "SettingsOptions::mcs_grid_i::mcs_product_add_to_wish"
+msgid "Show 'Add to wishlist' button"
+msgstr "Show 'Add to wishlist' button"
 
-msgctxt "SettingsTooltips::mcs_grid_i::mcs_product_hidden_info_duration"
-msgid "Select the duration (milliseconds) of the effect when the user hovers on product grid."
-msgstr "Select the duration (milliseconds) of the effect when the user hovers on product grid."
+msgctxt "SettingsOptions::mcs_grid_i::mcs_product_add_to_compare"
+msgid "Show 'Add to compare' button"
+msgstr "Show 'Add to compare' button"

@@ -30,6 +30,15 @@ $schema['mcs_brand_scroller'] = array (
 			'type'=>'checkbox',
 			'default_value'=>'Y'
 		),
+		'mcs_brand_scroller_button_style' => array(
+			'type'=>'selectbox',
+			'values'=>array(
+				'ty-btn__text'=>'mcs_text_button',
+				'ty-btn__primary'=>'mcs_primary_button',
+				'ty-btn__secondary'=>'mcs_secondary_button',
+				'ty-btn__tertiary'=>'mcs_tertiary_button',
+			)
+		),
 		'mcs_brand_scroller_button_icon'=>array(
 			'type'=>'input',
 			'default_value'=>'ty-icon-right-open'
