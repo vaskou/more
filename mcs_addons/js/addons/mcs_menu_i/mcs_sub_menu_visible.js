@@ -7,6 +7,8 @@ $(function(){
 		}
 	},
 	function(){
+		var main=$(this).find(".ty-menu__submenu-items");
+		main.css({"right":"auto"});
 	});
 	
 	function isEntirelyVisible(main)

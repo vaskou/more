@@ -39,3 +39,11 @@ msgstr "Show Category Brands"
 msgctxt "Languages::mcs_top_menu_brand_filter"
 msgid "Select Brands Filter"
 msgstr "Select Brands Filter"
+
+msgctxt "Languages::mcs_top_menu_brand_images"
+msgid "Brand Images"
+msgstr "Brand Images"
+
+msgctxt "Languages::mcs_top_menu_brand_image_size"
+msgid "Brand Image Size"
+msgstr "Brand Image Size"

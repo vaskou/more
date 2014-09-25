@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('BOOTSTRAP')) { die('Access denied'); }
+
 function fn_mcs_get_filters()
 {
 	$filter_list=array();

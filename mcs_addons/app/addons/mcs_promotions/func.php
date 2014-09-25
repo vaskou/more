@@ -1,7 +1,6 @@
 <?php
 
-if ( !defined('AREA') ) { die('Access denied'); }
-
+if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 function fn_mcs_promotions_get_categories($lang_code = CART_LANGUAGE)
 {

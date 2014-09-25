@@ -36,6 +36,14 @@ $schema['addons/mcs_menu_i/blocks/categories/mcs_menu_i.tpl'] = array (
 			'type'=>'selectbox',
 			'values'=>$filter_list
 		),
+		'mcs_top_menu_brand_images' => array (
+			'type' => 'input',
+			'default_value' => '15'
+		),
+		'mcs_top_menu_brand_image_size' => array (
+			'type' => 'input',
+			'default_value' => '50'
+		),
 	),
 	'fillings' => array('full_tree_cat', 'dynamic_tree_cat'),
 	'params' => array (

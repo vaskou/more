@@ -21,4 +21,7 @@
             </section>
 		</sections>
 	</settings>
+	<functions>
+		<item for="install">fn_copy_font_files</item>
+	</functions>
 </addon>

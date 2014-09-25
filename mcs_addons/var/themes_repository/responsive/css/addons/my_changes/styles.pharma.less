@@ -1,5 +1,7 @@
 /*********************** GENERAL *******************************/
-
+.ty-stars a{
+	color:#edc60d;
+}
 /***************************************************************/
 
 /*********************** TOP PANEL *****************************/
@@ -144,20 +146,29 @@
 	background: @decorative;
 	.transition(all 1s ease-in-out);
 }
-
 .ty-menu__submenu-items{
-    padding:10px 11px;
+	border-color:darken(@base,10%);
 }
-.ty-menu__submenu-items .ty-top-mine__submenu-col{
-    padding:5px;
-    .box-sizing(border-box);
+.ty-menu__submenu-items .ty-menu__submenu-link {
+    color: @font;
 }
+.no-touch .ty-menu__submenu-items .ty-menu__submenu-link:hover,
+.ty-menu__submenu-alt-link .ty-menu__submenu-link{
+    color: @links;
+}
+.ty-menu__submenu .ty-menu__submenu-items .ty-menu__submenu-item-active:hover a{
+	color:#fff;
+}
+.ty-menu__submenu-item-header .ty-menu__submenu-link {
+    color: @font;
+}
+
 .ty-top-mine__submenu-col.mcs-brands-list{
-    background:@decorative;
+    background:lighten(@base,2%);
     .ty-menu__submenu-item-header .ty-menu__submenu-link,
     .ty-menu__submenu-item a,
     .ty-menu__submenu-item a:hover{
-        .mcs_text_color(@decorative);
+        color:@font;
     }
 }
 
@@ -325,6 +336,21 @@ h3.ty-social-link__title{
 
 /***************************************************************/
 
+/******************* CATEGORIES  *******************************/
+.ty-subcategories__item a{
+	padding:4px 17px;
+	border:1px solid;
+	border-color:@tertiary_button;
+	color:darken(@tertiary_button,10%);
+	display:block;
+	.transition(all 150ms);
+	&:hover{
+		background:@tertiary_button !important;
+		.mcs_text_color(darken(@tertiary_button,10%));
+	}
+}
+/***************************************************************/
+
 /********************* PRODUCT OPTIONS *************************/
 .ty-product-options{
 	background:@base;
@@ -365,3 +391,27 @@ h3.ty-social-link__title{
 	}
 }
 /***************************************************************/
+
+/*********************** BREADCRUMBS *******************************/
+.breadcrumbs-grid{
+	border-bottom:1px solid darken(@base, 10%);
+	margin-bottom:15px;
+}
+.ty-breadcrumbs{
+	margin-bottom:0;
+	padding:14px 125px 13px 10px;
+}
+.ty-product-switcher{
+	right:15px;
+	top:16px;
+}
+@media (max-width: 767px){
+.ty-breadcrumbs{
+	padding-right:10px;
+}
+.ty-product-switcher{
+	right:0;
+	top:5px;
+}
+}
+/*******************************************************************/

@@ -22,10 +22,15 @@
                 {assign var="counter" value=0}
                 {foreach from=$view_all_filter item="itm"}
                     {if $itm|count > 0}
-                    	<li class="ty-top-mine__submenu-col hidden-phone mcs-brands-list">
+                    	{if $block.properties.mcs_top_menu_show_images=='N'}
+                    	<li class="ty-top-mine__submenu-col mcs-brands-list">
                             <div class="ty-menu__submenu-item-header">
                                 <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{$block.properties.mcs_top_menu_brand_filter|fn_get_product_filter_name}</a>
                             </div>
+                            <a class="ty-menu__item-toggle visible-phone cm-responsive-menu-toggle">
+                                <i class="ty-menu__icon-open ty-icon-down-open"></i>
+                                <i class="ty-menu__icon-hide ty-icon-up-open"></i>
+                            </a>
                             <div class="ty-menu__submenu">
                                 <ul class="ty-menu__submenu-list cm-responsive-menu-submenu">
                                     {foreach from=$itm item="ranges" key="index"}
@@ -54,6 +59,40 @@
                                 </ul>
                             </div>
                         </li>
+                        {else}
+                        <li class="ty-menu__submenu-dropdown-bottom mcs-brands-list">
+                        	{foreach from=$itm item="ranges" key="index"}
+                                {strip}
+                                    {if $ranges}                                                            
+                                        {foreach from=$ranges item="range"}
+                                            {$counter = $counter + 1}
+                                            {if $block.properties.mcs_top_menu_brand_images >= $counter}
+                                            	{assign var=variant_data value=$range.range_id|fn_get_product_feature_variant}
+                                                {if $variant_data.image_pair}
+                                                    <div class="ty-menu__brands">
+                                                        <a href="{"categories.view?category_id=`$params.category_id`&features_hash=V`$range.range_id`"|fn_url}" class="ty-menu__submenu-link">
+                                                            {*$range.range_name|fn_text_placeholders*}
+                                                            <div class="brand-image ty-grayscale">
+                                                                    {include file="common/image.tpl" images=$variant_data.image_pair image_width=$block.properties.mcs_top_menu_brand_image_size image_height=$block.properties.mcs_top_menu_brand_image_size}
+                                                            </div>
+                                                            
+                                                        </a>
+                                                    </div>
+                                                {/if}
+                                            {elseif $block.properties.mcs_top_menu_brand_images + 1 == $counter}
+                                                <div class="ty-menu__brands-more ty-menu__submenu-alt-link">
+                                                    <a href="{"product_features.view_all&filter_id=`$block.properties.mcs_top_menu_brand_filter`&category_id=`$params.category_id`"|fn_url}" class="ty-menu__submenu-link">{__("text_topmenu_view_more")}</a>
+                                                </div>
+                                            {else}
+                                                {break}
+                                            {/if}
+                                        {/foreach}
+                                    
+                                    {else}&nbsp;{/if}
+                                {strip}
+                            {/foreach}
+                        </li>
+                        {/if}
                     {/if}
                 {/foreach}
                 
@@ -122,7 +161,7 @@
             {/capture}
             
             {if $subitems_count}
-
+            
             {/if}
             <li class="ty-menu__item {if !$item1.$childs} ty-menu__item-nodrop{else} cm-menu-item-responsive{/if} {if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} ty-menu__item-active{/if}">
                     {if $item1.$childs}
@@ -143,7 +182,7 @@
                         {else}
                         	{$smarty.capture.mcs_simple_menu_without_brands nofilter}
                         {/if}
-                    {else}
+                    {else}                        
                         <div class="ty-menu__submenu" id="{$unique_elm_id}">
                             {hook name="blocks:mcs_topmenu_dropdown_3levels_cols"}
                                 <ul class="ty-menu__submenu-items cm-responsive-menu-submenu">
