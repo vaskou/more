@@ -74,11 +74,18 @@
     </div>
     
     <div class="control-group mcs_full_width cm-no-hide-input">
-        <label class="control-label" for="elm_grid_full_width_{$id}">{__("mcs_full_width")}
-        	<a class="cm-tooltip" title="Insert the width of the grid in pixels(px) or in percentage(%)"><i class="icon-question-sign"></i></a>
+        <label class="control-label" for="elm_grid_full_width_{$id}">{__("mcs_max_width")}
+        	{*<a class="cm-tooltip" title="Insert the width of the grid in pixels(px) or in percentage(%)"><i class="icon-question-sign"></i></a>*}
         </label>
         <div class="controls">
-            <input id="elm_grid_full_width_{$id}" name="full_width" value="{$grid.full_width}" type="text" />
+        	<select id="elm_grid_full_width_select_{$id}" name="sel_full_width">
+	            <option value="none" {if $grid.full_width == "none"}selected="selected"{/if}>{__("none")}</option>
+                <option value="full" {if $grid.full_width == "full"}selected="selected"{/if}>{__("mcs_full_width")}</option>            
+                <option value="layout" {if $grid.full_width == "layout"}selected="selected"{/if}>{__("mcs_layout_width")}</option>
+                <option value="custom" {if $grid.full_width!="none" && $grid.full_width!="full" && $grid.full_width!="layout" && $grid.full_width!=""}selected="selected"{/if}>{__("mcs_custom_width")}</option>
+            </select>
+            <input id="elm_grid_full_width_custom_{$id}" name="cust_full_width" value="{$grid.full_width}" type="text" />
+            <input id="elm_grid_full_width_{$id}" name="full_width" value="{$grid.full_width}" type="hidden" />
          </div>
     </div>
     
@@ -112,12 +119,41 @@ $(function(){
 			$('.mcs_full_width').show();
 		}
 	});
+	if($('#elm_grid_full_width_select_{$id} option:selected').val()=='custom'){
+		$('#elm_grid_full_width_custom_{$id}').show();
+		$('.btn-primary').click(function(){
+			var value=$('#elm_grid_full_width_custom_{$id}').val();
+			$('#elm_grid_full_width_{$id}').val();
+		});
+	}else{
+		$('#elm_grid_full_width_custom_{$id}').hide();
+		$('.btn-primary').click(function(){
+			var value=$('#elm_grid_full_width_select_{$id}').val();
+			$('#elm_grid_full_width_{$id}').val();
+		});
+	}
+	$('#elm_grid_full_width_select_{$id}').change(function(){
+		if($('#elm_grid_full_width_select_{$id} option:selected').val()=='custom'){
+			$('#elm_grid_full_width_custom_{$id}').show();
+			$('.btn-primary').click(function(){
+				var value=$('#elm_grid_full_width_custom_{$id}').val();
+				$('#elm_grid_full_width_{$id}').val(value);
+			});
+		}else{
+			$('#elm_grid_full_width_custom_{$id}').hide();
+			$('.btn-primary').click(function(){
+				var value=$('#elm_grid_full_width_select_{$id}').val();
+				$('#elm_grid_full_width_{$id}').val(value);
+			});
+		}
+	});
+	
 });
 </script>
 <!--grid_properties_{$id}--></div>
 
 {*********************************************MCS changes************************************************}
-{*Lines	64-76: Added lines 64 - 76																		*}
-{*Lines	78-88: Added lines 78 - 88																		*}
+{*Lines	64-74: Added lines 64 - 74																		*}
+{*Lines	76-83: Added lines 76 - 83																		*}
 {*Lines	90-99: Added lines 90 - 99																		*}
 {*lines 106-120: Added lines 106 - 121																	*}

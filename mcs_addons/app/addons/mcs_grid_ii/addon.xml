@@ -2,7 +2,7 @@
 <addon scheme="3.0">
     <id>mcs_grid_ii</id>
 	<name>More CS-Cart: Grid II</name>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <priority>100000</priority>
     <default_language>en</default_language>
 	<status>active</status>

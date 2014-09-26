@@ -16,6 +16,18 @@ msgctxt "Languages::mcs_full_width"
 msgid "Full Width"
 msgstr "Full Width"
 
+msgctxt "Languages::mcs_max_width"
+msgid "Max Width"
+msgstr "Max Width"
+
+msgctxt "Languages::mcs_layout_width"
+msgid "Layout Width"
+msgstr "Layout Width"
+
+msgctxt "Languages::mcs_custom_width"
+msgid "Custom Width"
+msgstr "Custom Width"
+
 msgctxt "Languages::mcs_block_grouping"
 msgid "Block Grouping"
 msgstr "Block Grouping"
