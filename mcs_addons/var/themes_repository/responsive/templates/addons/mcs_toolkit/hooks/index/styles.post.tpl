@@ -3,3 +3,4 @@
 {style src="addons/mcs_toolkit/mcs_slides.less"}
 {style src="addons/mcs_toolkit/mcs_prices.less"}
 {style src="addons/mcs_toolkit/mcs_block_grouping.less"}
+{style src="addons/mcs_toolkit/mcs_responsive_wrapper.less"}

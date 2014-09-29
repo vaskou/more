@@ -2,7 +2,7 @@
 <addon scheme="3.0">
     <id>mcs_toolkit</id>
 	<name>More CS-Cart: Toolkit</name>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
     <priority>100000</priority>
     <default_language>en</default_language>
 	<status>active</status>

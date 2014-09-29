@@ -36,6 +36,10 @@ msgctxt "Languages::mcs_block_grouping_wrapper"
 msgid "More CS-Cart Block Grouping Wrapper"
 msgstr "More CS-Cart Block Grouping Wrapper"
 
+msgctxt "Languages::mcs_responsive_wrapper"
+msgid "More CS-Cart Responsive Wrapper"
+msgstr "More CS-Cart Responsive Wrapper"
+
 msgctxt "Languages::devices"
 msgid "Devices"
 msgstr "Devices"

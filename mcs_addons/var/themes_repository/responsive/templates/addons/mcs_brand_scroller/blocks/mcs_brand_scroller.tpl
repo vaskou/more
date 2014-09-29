@@ -4,20 +4,20 @@
 <div class="mcs-brand-scroller-{$block.snapping_id}">
     <div id="brands_{$block.snapping_id}" class="owl-carousel">
         {foreach from=$items item="brand"}
-        <div class="brand-box with-image">
-            <a href="{"product_features.view?variant_id=`$brand.variant_id`"|fn_url}">
-
-                <div class="brand-image">
-                	{if $brand.image_pair}
-	                	{include file="common/image.tpl" images=$brand.image_pair}
-                    {/if}
-                </div>
-                
-                <span class="brand-name">
-                    {$brand.variant|fn_text_placeholders}
-                </span>
-            </a>
-        </div>
+        {if $brand.image_pair}
+            <div class="brand-box with-image">
+                <a href="{"product_features.view?variant_id=`$brand.variant_id`"|fn_url}">
+    
+                    <div class="brand-image">
+                            {include file="common/image.tpl" images=$brand.image_pair}
+                    </div>
+                    
+                    <span class="brand-name">
+                        {$brand.variant|fn_text_placeholders}
+                    </span>
+                </a>
+            </div>
+        {/if}
         {/foreach}
     </div>
     
