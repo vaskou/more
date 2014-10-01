@@ -28,7 +28,7 @@
     {if $settings.Appearance.enable_quick_view == 'Y'}
         {$quick_nav_ids = $products|fn_fields_from_multi_level:"product_id":"product_id"}
     {/if}
-    <div class="mcs-grid-i-list" id="mcs_grid_i_list_{$block.block_id}">
+    <div class="mcs-grid-i-list mcs-grid-container" id="mcs_grid_i_list_{$block.block_id}">
         {strip}
             {foreach from=$splitted_products item="sproducts" name="sprod"}
                 {foreach from=$sproducts item="product" name="sproducts"}

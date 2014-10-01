@@ -1,0 +1,13 @@
+msgid ""
+msgstr "Project-Id-Version: tygh"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::mcs_variant_product_stock"
+msgid "More CS-Cart: Variant Product Relation"
+msgstr "More CS-Cart: Variant Product Relation"
+
+msgctxt "Addons::description::mcs_variant_product_stock"
+msgid "More CS-Cart: Variant Product Relation"
+msgstr "More CS-Cart: Variant Product Relation"

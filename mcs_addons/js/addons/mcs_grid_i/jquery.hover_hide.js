@@ -12,7 +12,7 @@
 		this.disable=function(){
 			$('.hidden_elm').show();
 			$(settings.hidden_elm).removeClass('hidden_elm');
-			$(".hover_hide").css({"height":'auto'});
+			$(this).removeAttr('style');
 			this.removeClass('hover_hide');
 			return false;
 		}
@@ -20,11 +20,22 @@
 		$(settings.hidden_elm).addClass('hidden_elm');
 		$('.hidden_elm').hide();
 		this.addClass('hover_hide');
-		var h=$(this).height();
-		$(".hover_hide").css({"height":h});
+		if(this.is(":visible")){
+			var h=$(this).height();
+			$(this).css({"height":h});
+		}else{
+			$(this).removeAttr('style');
+		}
 		return this.hover(
 			function(){
-				var that=$(this);
+				if($(this).is(":visible")){
+					var h=$(this).height();
+					$(this).css({"height":h});
+				}else{
+					$(this).removeAttr('style');
+				}
+				var hovered=$(this).closest('.mcs-grid-container');
+				hovered.addClass('hovered');
 				switch(settings.transition)
 				{
 				case "mcs_slide":
@@ -39,13 +50,15 @@
 				}
 				$(this).css({"z-index":"250"});
 				if(settings.fade_other_elms==true){
-					$('.mcs-grid-i-list__item').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
+					$('.hovered .hover_hide').not($(this)).stop(true, false).animate({opacity:0.6}, 70);
 				}
 				var to;
 				clearTimeout(to);
 			},
 			function(){
 				var that=$(this);
+				var hovered=$(this).closest('.mcs-grid-container');
+				hovered.removeClass('hovered');
 				switch(settings.transition)
 				{
 				case "mcs_slide":
@@ -65,7 +78,7 @@
 					break;
 				}
 				if(settings.fade_other_elms==true){
-					$('.mcs-grid-i-list__item').delay(10).animate({opacity:1}, 100);
+					$('.hover_hide').delay(10).animate({opacity:1}, 100);
 				}
 				var to;
 				to = setTimeout(function(){ },700);

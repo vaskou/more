@@ -215,6 +215,7 @@
 		}
 	}
 	a{
+
 		.transition(none);
 		color:@font;
 	}
@@ -585,7 +586,7 @@ h3.ty-social-link__title{
 .products_view{
 	.ty-tabs{
 		margin-top:0px;
-		border-top:3px solid @border_color;
+		border-top:1px solid @border_color;
 	}
 	.ty-tabs__item, 
 	.ty-tabs .subtab{
@@ -645,6 +646,24 @@ h3.ty-social-link__title{
 }
 /***************************************************************/
 
+/************************ PAGINATION ***************************/
+.ty-pagination__item:hover{
+	background:darken(@base,30%);
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item .ty-pagination__text-arrow{
+	display:none;
+}
+.ty-pagination__btn:hover{
+	.mcs_text_color(darken(@base,30%));
+}
+.ty-pagination__item, 
+.ty-pagination__selected{
+	.border-radius(0px);
+}
+
+/***************************************************************/
+
 /********************** PRODUCT OPTIONS ************************/
 .ty-product-options{
 	background:@base;
@@ -670,24 +689,28 @@ h3.ty-social-link__title{
 		}
 	}
 }
-/*************************************************************/
+/***************************************************************/
 
-/************************ PAGINATION ***************************/
-.ty-pagination__item:hover{
-	background:darken(@base,30%);
-	.mcs_text_color(darken(@base,30%));
+/************************ MCS-TABS *****************************/
+.mcs-tabs-grid{
+	padding:0 !important;
+	.mcs-tab-button.ui-tabs-active{
+		a, &:hover a{
+			color:#fff;
+			cursor:pointer !important;
+		}
+		&:hover{
+			background: darken(@base, 20%);
+		}
+	}
+	.mcs-tab-button{
+		margin:0 !important;
+		padding-bottom:0 !important;
+		a, &:hover a{
+			color:#7c7e80;
+		}
+	}
 }
-.ty-pagination__item .ty-pagination__text-arrow{
-	display:none;
-}
-.ty-pagination__btn:hover{
-	.mcs_text_color(darken(@base,30%));
-}
-.ty-pagination__item, 
-.ty-pagination__selected{
-	.border-radius(0px);
-}
-
 /***************************************************************/
 
 /********************** CHECKOUT *******************************/
