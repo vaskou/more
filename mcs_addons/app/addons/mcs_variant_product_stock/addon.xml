@@ -5,4 +5,8 @@
 	<priority>100000</priority>
 	<status>active</status>
     <default_language>en</default_language>
+	
+	<queries>
+		<item for="install">ALTER TABLE ?:product_option_variants ADD mcs_related_product TEXT;</item>
+	</queries>
 </addon>
