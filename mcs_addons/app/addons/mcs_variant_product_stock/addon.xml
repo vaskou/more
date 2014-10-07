@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
-<addon scheme="3.0">
+<addon scheme="2.0">
 	<id>mcs_variant_product_stock</id>
-	<version>1.0.0</version>
+	<name>More CS-Cart: Variant Product Relation</name>
+	<description>More CS-Cart: Variant Product Relation</description>
+	<version>1.0.2</version>
 	<priority>100000</priority>
 	<status>active</status>
     <default_language>en</default_language>

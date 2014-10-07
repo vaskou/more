@@ -2,6 +2,19 @@
 .ty-stars a{
 	color:#edc60d;
 }
+
+.ty-ajax-loading-box {
+    background:url('../media/images/icons/pharma_loading.gif') no-repeat 10px 10px #fff;
+	border:4px solid #444;
+	opacity:1;
+}
+.ty-ajax-loading-box_text_block {
+    background-position: 44px 10px;
+}
+.ty-ajax-loading-box-with__text-wrapper{
+	color:@font;
+}
+
 /***************************************************************/
 
 /*********************** TOP PANEL *****************************/
@@ -352,27 +365,30 @@ h3.ty-social-link__title{
 /***************************************************************/
 
 /********************* PRODUCT OPTIONS *************************/
-.ty-product-options{
-	background:@base;
-	padding:10px;
-	
-	.ty-product-options__item-label,
-	.ty-input-text,
-	.ty-product-options__textarea,
-	select{
-		width:100%;
-	}
-	.ty-product-variant-image{
-		margin-left:0;
-	}
-	.ty-product-options__description{
-		.mcs_text_color(@base);
-		margin-left:0;
-	}
-	.ty-product-options__image{
-		border-color:darken(@base,20%);
-		&.is-selected{
-			border-color:@decorative;
+.products_view,
+.checkout_cart{
+	.ty-product-options{
+		background:@base;
+		padding:10px;
+		
+		.ty-product-options__item-label,
+		.ty-input-text,
+		.ty-product-options__textarea,
+		select{
+			width:100%;
+		}
+		.ty-product-variant-image{
+			margin-left:0;
+		}
+		.ty-product-options__description{
+			.mcs_text_color(@base);
+			margin-left:0;
+		}
+		.ty-product-options__image{
+			border-color:darken(@base,20%);
+			&.is-selected{
+				border-color:@decorative;
+			}
 		}
 	}
 }

@@ -1,0 +1,1 @@
+{style src="addons/mcs_variant_product_stock/styles.less"}
