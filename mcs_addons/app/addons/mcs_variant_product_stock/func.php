@@ -20,6 +20,8 @@ function fn_mcs_variant_product_stock_update_product_option_pre($option_data, $o
 	
 			$mcs_related_product=serialize($v['mcs_related_product']);
 			$option_data['variants'][$k]['mcs_related_product']=$mcs_related_product;
+		}else{
+			$option_data['variants'][$k]['mcs_related_product']='';
 		}
 	}
 }
