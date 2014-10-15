@@ -3,7 +3,7 @@
 	<id>mcs_variant_product_stock</id>
 	<name>More CS-Cart: Variant Product Relation</name>
 	<description>More CS-Cart: Variant Product Relation</description>
-	<version>1.0.3</version>
+	<version>1.0.5</version>
 	<priority>100000</priority>
 	<status>active</status>
     <default_language>en</default_language>

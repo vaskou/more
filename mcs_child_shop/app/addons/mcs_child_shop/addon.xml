@@ -68,6 +68,10 @@
 						<type>input</type>
 						<name>Child database name</name>
 					</item>
+					<item id="mcs_general_child_secret_key">
+						<type>input</type>
+						<name>Syncronization secret key</name>
+					</item>
 				</items>
 			</section>
 		</sections>

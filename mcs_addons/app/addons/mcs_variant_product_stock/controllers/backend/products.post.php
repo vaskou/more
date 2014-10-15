@@ -10,15 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($mode == 'update') {
 		if(!empty($_REQUEST['product_data'])){
 			if($_REQUEST['product_data']['tracking']=='B'){
-				$temp_ids=array();
-			
-				$result=db_get_array("SELECT product_id FROM ?:product_options_inventory");
-				foreach($result as $k=>$v){
-					if(!in_array($v['product_id'],$temp_ids)){
-						$temp_ids[]=$v['product_id'];
-						fn_rebuild_product_options_inventory($v['product_id'], 50);
-					}
-				}
+				fn_mcs_rebuild_inventory();
 			}
 		}
 	}
@@ -33,15 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 			
 			if($tracking == 'B'){
-				$temp_ids=array();
-				
-				$result=db_get_array("SELECT product_id FROM ?:product_options_inventory");
-				foreach($result as $k=>$v){
-					if(!in_array($v['product_id'],$temp_ids)){
-						$temp_ids[]=$v['product_id'];
-						fn_rebuild_product_options_inventory($v['product_id'], 50);
-					}
-				}
+				fn_mcs_rebuild_inventory();
 			}
 		}
 	}

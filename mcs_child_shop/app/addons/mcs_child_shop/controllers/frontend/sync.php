@@ -6,10 +6,12 @@ if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 if($mode=='manage'){
 	
-	$auth = & $_SESSION['auth'];
+//	$auth = & $_SESSION['auth'];
 	$child_shop_status=fn_mcs_get_child_sync_status_from_parent();
-
-	if($auth['is_root']=='Y' && $child_shop_status == 'A'){
+	$addons=Registry::get('addons');
+	
+//	if($auth['is_root']=='Y' && $child_shop_status == 'A'){
+	if($addons['mcs_child_shop']['mcs_general_child_secret_key']==$_REQUEST['secret_key'] && $child_shop_status == 'A'){
 		if (!empty($_REQUEST['product_id'])){
 			$pid = $_REQUEST['product_id'];
 			if($pid=='new'){
