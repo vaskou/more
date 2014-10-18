@@ -5,4 +5,22 @@
     <priority>100000</priority>
 	<status>active</status>
     <default_language>en</default_language>
+	
+	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+			<section id="mcs_features">
+                <items>
+					<item id="mcs_features_list">
+						<type>selectbox</type>
+						<variants></variants>
+					</item>
+				</items>
+            </section>
+		</sections>
+	</settings>
+	
+	<queries>
+		<item for="install">ALTER TABLE ?:companies ADD mcs_connected_brand MEDIUMINT(8) NULL;</item>
+	</queries>
+	
 </addon>

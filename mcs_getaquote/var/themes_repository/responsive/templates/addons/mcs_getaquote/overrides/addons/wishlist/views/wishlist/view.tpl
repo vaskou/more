@@ -10,7 +10,7 @@
 {if $vendor_products}	
     {foreach from=$vendor_products item="products" key="vid"}
     	<div class="ty-mainbox-container">
-            <h2 class="ty-mainbox-title">{$vendors.$vid.company}</h2>
+            <h1 class="ty-mainbox-title">{$vendors.$vid.company}</h1>
             {assign var="logo_image" value=$vendors.$vid.logos.theme.image}
             <div class="ty-company-detail__info">
                 <div class="ty-company-detail__logo">

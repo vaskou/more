@@ -11,3 +11,11 @@ msgstr "More CS-Cart: Get a quote"
 msgctxt "Addons::description::mcs_getaquote"
 msgid "More CS-Cart: Get a quote"
 msgstr "More CS-Cart: Get a quote"
+
+msgctxt "SettingsSections::mcs_getaquote::mcs_features"
+msgid "Features"
+msgstr "Features"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_features_list"
+msgid "Select Brand Feature"
+msgstr "Select Brand Feature"
