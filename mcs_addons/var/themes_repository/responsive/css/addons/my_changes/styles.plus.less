@@ -6,7 +6,7 @@
 .tygh-header,
 .tygh-content,
 .tygh-footer{
-	.container-fluid > .row-fluid{
+    .container-fluid > .row-fluid{
 		border:1px solid;
 		border-color:@border_color;
 	}
@@ -34,7 +34,12 @@
 /*******************************************************************/
 
 /********************** TOP PANEL ****************************/
-
+.mcs_computer,
+mcs_tablet{
+    .top-grid{
+        padding:9px 0 !important;
+    }
+}
 .top-links-grid{
 	height:34px;
 }
@@ -417,10 +422,10 @@
 
 /************************** FOOTER *****************************/
 .ty-footer-grid{
-	.ty-mainbox-title,
+    .ty-mainbox-title,
 	.mcs-responsive-wrapper__header{
 		font-weight:normal;
-		border-bottom-color:#dadcde;
+        border-bottom-color:#dadcde;
 	}
 }
 .ty-footer-grid__full-width{
@@ -527,6 +532,9 @@ h3.ty-social-link__title{
 	font-size:15px;
 	color:@font;
 }
+.ty-sidebox__body{
+    padding:0 10px 10px;
+}
 .ty-product-filters{
 	padding-top:0px;
 }
@@ -544,7 +552,8 @@ h3.ty-social-link__title{
 }
 @media (max-width:767px){
 .ty-sidebox{
-	border-right:none;
+	border-right:none !important;
+    border-left:none !important;
 }
 }
 /***************************************************************/
@@ -572,6 +581,12 @@ h3.ty-social-link__title{
 	&:hover{
 		color:@links;
 	}
+}
+@media (max-width:767px){
+.categories_view .main-content-grid{
+    padding-left:10px;
+    padding-right:10px;
+}
 }
 /***************************************************************/
 
@@ -650,7 +665,7 @@ h3.ty-social-link__title{
 	padding:0 10px;
 }
 .content-product_inquiry{
-	input[type="text"], input[type="password"], textarea, select{
+    input[type="text"], input[type="password"], textarea, select{
 		width:100%;
 	}
 }
@@ -769,13 +784,21 @@ h3.ty-social-link__title{
 		}
 	}
 }
+.products_view .mcs-tabs-grid .ui-tabs-nav li a{
+    padding-top:10px;
+    padding-bottom:10px;
+}
 /***************************************************************/
 
 /********************** CHECKOUT *******************************/
+@media (min-width:768px){
 .checkout_checkout{
-	.main-content-grid{
-		padding-left:20px;
+    .main-content-grid{
+    	padding-left:20px;
 	}
+}
+}
+.checkout_checkout{
 	.ty-checkout__title{
 		margin-top:0;
 	}
@@ -787,6 +810,17 @@ h3.ty-social-link__title{
 		border-left:1px solid @border_color;
 	}
 }
+.ty-multi-checkout__active .ty-multi-checkout__number {
+    background: @decorative;
+}
+.ty-multi-checkout__number{
+    .border-radius(0);
+    padding:0px;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
 /***************************************************************/
 
 /********************** BRAND SCROLLER *************************/
@@ -794,6 +828,15 @@ h3.ty-social-link__title{
 	color:@font;
 	&:hover{
 		color:@links;
+	}
+}
+/***************************************************************/
+
+/*************************** PAGES *****************************/
+.ty-text-links a{
+    color:@font;
+    &:hover{
+    	color:@links;
 	}
 }
 /***************************************************************/

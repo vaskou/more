@@ -13,7 +13,7 @@ function fn_mcs_toolkit_render_blocks($grid, $block, $this, $content)
 		
 		$tpl_vars=Registry::get('view')->{'tpl_vars'};
 		$deviceType=$tpl_vars['mobiledetect']->{'value'}['deviceType'];
-		//var_dump($deviceType);
+		
 		if(is_array($block['properties'])){
 			if(array_key_exists('devices',$block['properties'])){
 				

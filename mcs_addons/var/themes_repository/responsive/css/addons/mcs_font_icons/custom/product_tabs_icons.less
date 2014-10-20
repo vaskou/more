@@ -1,5 +1,5 @@
 .ty-tabs{
-	#description, #features, #attachments{
+	#description, #features, #attachments, #product_tab_11, #product_inquiry{
 		.ty-tabs__a:before{
 			font-family:"icomoon";
 			vertical-align:bottom;
@@ -16,14 +16,19 @@
 	#attachments .ty-tabs__a:before{
 		content: "\e2d7";
 	}
-	
+	#product_tab_11 .ty-tabs__a:before{
+        content: "\e260";
+    }
+    #product_inquiry .ty-tabs__a:before{
+        content: "\e48f";
+    }
 	.ty-tabs__a{
 		padding-bottom:5px;
 	}
 }
 
 .ty-accordion{
-	#description, #features, #attachments{
+	#description, #features, #attachments, #product_tab_11, #product_inquiry{
 		&:before{
 		font-family:"icomoon";
 		vertical-align:bottom;
@@ -40,4 +45,10 @@
 	#attachments:before{
 		content: "\e2d7";
 	}
+    #product_tab_11 .ty-tabs__a:before{
+        content: "\e260";
+    }
+    #product_inquiry .ty-tabs__a:before{
+        content: "\e48f";
+    }
 }
