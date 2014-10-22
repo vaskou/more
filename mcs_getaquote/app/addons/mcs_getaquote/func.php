@@ -31,7 +31,7 @@ function fn_mcs_seperate_products_by_vendor($products)
 	return array($vendor_products,$vendors);
 }
 
-function fn_mcs_vendor_wishlist_view($vendor_id)
+function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
 {
 	$_SESSION['wishlist'] = isset($_SESSION['wishlist']) ? $_SESSION['wishlist'] : array();
 	$wishlist = & $_SESSION['wishlist'];
@@ -90,9 +90,16 @@ function fn_mcs_vendor_wishlist_view($vendor_id)
 
 	$temp_products=array();
 	
+	$addons=Registry::get('addons');
+	$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
+	
 	foreach($products as $key=>$product){
 		if($product['company_id']==$vendor_id){
-			$temp_products[$key]=$product;
+			foreach($product['header_features'] as $feature){
+				if($feature['feature_id']==$mcs_feature_id && $feature['variant_id']==$mcs_variant_id){
+					$temp_products[$key]=$product;
+				}
+			}
 		}
 	}
 	$products=$temp_products;

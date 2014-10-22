@@ -44,7 +44,7 @@ $(function(){
     {foreach from=$mcs_sync_result item=product}
         <tr>
             <td>{$product.product_id}</td>
-            <td><a href="admin.php?dispatch=products.update&product_id={$product.product_id}" target="_blank">{$product.name}</a></td>
+            <td><a href="{"products.update&product_id=`$product.product_id`"|fn_url}" target="_blank">{$product.name}</a></td>
         </tr>
     {/foreach}
     </tbody>

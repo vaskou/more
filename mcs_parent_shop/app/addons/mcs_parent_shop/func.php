@@ -101,7 +101,7 @@ function fn_mcs_parent_shop_update_product_pre(&$product_data, &$product_id, &$l
 	if($product_data['mcs_child_sync_product_force']=="Y"||$status_changed)
 		$product_data['timestamp']=$today;
 	
-	$product_data['mcs_child_shops_domains']=($product_data['mcs_child_shops_domains'])?serialize($product_data['mcs_child_shops_domains']):'';
+	$product_data['mcs_child_shops_domains']=(isset($product_data['mcs_child_shops_domains']))?serialize($product_data['mcs_child_shops_domains']):'';
 	
 	return $product_data;
 }

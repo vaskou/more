@@ -44,12 +44,13 @@
                                 
                                 {if $is_wishlist}
                                     <div class="ty-twishlist-item">
-                                    	<input type="hidden" name="cart_id" value="{$product.cart_id}" />
-                                        <a href="{"wishlist.delete?cart_id=`$product.cart_id`"|fn_url}" class="ty-twishlist-item__remove ty-remove cm-ajax" title="{__("remove")}"><i class="ty-remove__icon ty-icon-cancel-circle"></i><span class="ty-twishlist-item__txt ty-remove__txt">{__("remove")}</span></a>
+                                    	<input type="hidden" name="mcs_cart_id" value="{$product.cart_id}" />
+                                        <input type="hidden" name="variant_id" value="{$variant_data.variant_id}"/>
+                                        <a class="ty-twishlist-item__remove ty-remove cm-submit" title="{__("remove")}" data-ca-dispatch="dispatch[wishlist.delete]"><i class="ty-remove__icon ty-icon-cancel-circle"></i><span class="ty-twishlist-item__txt ty-remove__txt">{__("remove")}</span></a>
                                     </div>
                                 {/if}
-                                <div class="ty-grid-list__image">
-                                    {include file="views/products/components/product_icon.tpl" product=$product show_gallery=true}
+                                <div class="ty-grid-list__image" style="min-height:0;padding:0;">
+                                    {include file="views/products/components/product_icon.tpl" product=$product show_gallery=false}
 
                                     {assign var="discount_label" value="discount_label_`$obj_prefix``$obj_id`"}
                                     {$smarty.capture.$discount_label nofilter}

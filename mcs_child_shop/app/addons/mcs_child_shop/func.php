@@ -13,31 +13,33 @@ include("read_log.php");
 $addons=Registry::get('addons');
 $mcs_child_shop=$addons['mcs_child_shop'];
 
-$GLOBALS['db_parent_params']=array(
-	'server'=>$mcs_child_shop['mcs_general_parent_server'],
-	'username'=>$mcs_child_shop['mcs_general_parent_username'],
-	'password'=>$mcs_child_shop['mcs_general_parent_password'],
-	'table_prefix'=>$mcs_child_shop['mcs_general_parent_table_prefix'],
-	'db_name'=>$mcs_child_shop['mcs_general_parent_db_name'],
-	'dbc_name'=>'parent'
-);
-$GLOBALS['db_child_params']=array(
-	'server'=>$mcs_child_shop['mcs_general_child_server'],
-	'username'=>$mcs_child_shop['mcs_general_child_username'],
-	'password'=>$mcs_child_shop['mcs_general_child_password'],
-	'table_prefix'=>$mcs_child_shop['mcs_general_child_table_prefix'],
-	'db_name'=>$mcs_child_shop['mcs_general_child_db_name'],
-	'dbc_name'=>'child'
-);
-
-$GLOBALS['mcs_parent_url']=fn_mcs_check_url($mcs_child_shop['mcs_general_parent_url']);
-
-$GLOBALS['feature_ids']=array();
-$GLOBALS['variant_ids']=array();
-$GLOBALS['option_ids']=array();
-$GLOBALS['sync_products_enabled']=false;
-$GLOBALS['master_category_id']=799999;
-$GLOBALS['company_id']=(Registry::get('runtime.forced_company_id') ? Registry::get('runtime.forced_company_id') : Registry::get('runtime.company_id'));
+if(array_key_exists('mcs_general_parent_server',$mcs_child_shop)){
+	$GLOBALS['db_parent_params']=array(
+		'server'=>$mcs_child_shop['mcs_general_parent_server'],
+		'username'=>$mcs_child_shop['mcs_general_parent_username'],
+		'password'=>$mcs_child_shop['mcs_general_parent_password'],
+		'table_prefix'=>$mcs_child_shop['mcs_general_parent_table_prefix'],
+		'db_name'=>$mcs_child_shop['mcs_general_parent_db_name'],
+		'dbc_name'=>'parent'
+	);
+	$GLOBALS['db_child_params']=array(
+		'server'=>$mcs_child_shop['mcs_general_child_server'],
+		'username'=>$mcs_child_shop['mcs_general_child_username'],
+		'password'=>$mcs_child_shop['mcs_general_child_password'],
+		'table_prefix'=>$mcs_child_shop['mcs_general_child_table_prefix'],
+		'db_name'=>$mcs_child_shop['mcs_general_child_db_name'],
+		'dbc_name'=>'child'
+	);
+	
+	$GLOBALS['mcs_parent_url']=fn_mcs_check_url($mcs_child_shop['mcs_general_parent_url']);
+	
+	$GLOBALS['feature_ids']=array();
+	$GLOBALS['variant_ids']=array();
+	$GLOBALS['option_ids']=array();
+	$GLOBALS['sync_products_enabled']=false;
+	$GLOBALS['master_category_id']=799999;
+	$GLOBALS['company_id']=(Registry::get('runtime.forced_company_id') ? Registry::get('runtime.forced_company_id') : Registry::get('runtime.company_id'));
+}
 
 function fn_mcs_sync_product($product_id)
 {
@@ -1267,9 +1269,11 @@ function fn_mcs_check_child_shop_domain($domains)
 {
 	$temp_domains=unserialize($domains);
 	$config=Registry::get('config');
-	foreach($temp_domains as $domain){
-		if($domain==$config['http_host']){
-			return true;
+	if(!empty($temp_domains)){
+		foreach($temp_domains as $domain){
+			if($domain==$config['http_host']){
+				return true;
+			}
 		}
 	}
 	

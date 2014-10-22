@@ -1,5 +1,5 @@
 <h1>TEST</h1>
-{assign var="columns" value=4}
+{assign var="columns" value=10}
 {if !$wishlist_is_empty}
 
     {script src="js/tygh/exceptions.js"}
@@ -14,7 +14,7 @@
     {include file="addons/mcs_getaquote/blocks/mcs_vendor_wishlist_grid.tpl" 
         products=$wishlist_products
         columns=$columns
-        show_empty=true
+        show_empty=false
         show_trunc_name=true 
         show_old_price=true 
         show_price=true 
@@ -26,7 +26,7 @@
         is_wishlist=true}
     <form class="cm-ajax cm-ajax-full-render" action="{""|fn_url}" method="post" name="vendor_form_{$vid}" enctype="multipart/form-data">
         <input type="hidden" name="redirect_url" value="{$config.current_url}" />
-        <input type="hidden" name="result_ids" value="cart_status*,wish_list*" />
+        <input type="hidden" name="result_ids" value="cart_status*,wish_list*,vendor_wishlist*" />
         {foreach from=$wishlist_products item="_product"}
             <input type="hidden" name="product_data[{$_product.product_id}][product_id]" value="{$_product.product_id}" />
             <input type="hidden" name="product_data[{$_product.product_id}][amount]" value="1" />
@@ -75,10 +75,11 @@
 				result=$.parseJSON(xhr.responseText);
 				console.log(result);
 				$(".mcs-vendor-wishlist").html(result.html.vendor_wishlist_{$block.block_id});
-			}else if(url.indexOf('dispatch=wishlist.delete')>-1){
+			}/*else if(url.indexOf('dispatch=wishlist.delete')>-1){
 				result=$.parseJSON(xhr.responseText);
+				console.log(result);
 				$(".mcs-vendor-wishlist").html(result.text);
-			}
+			}*/
 			/*result=$.parseJSON(xhr.responseText);
 			console.log(result);
 			$(".mcs-vendor-wishlist").html(result.html.vendor_wishlist_{$block.block_id});*/

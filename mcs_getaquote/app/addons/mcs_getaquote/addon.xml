@@ -20,7 +20,7 @@
 	</settings>
 	
 	<queries>
-		<item for="install">ALTER TABLE ?:companies ADD mcs_connected_brand MEDIUMINT(8) NULL;</item>
+		<item for="install">ALTER TABLE ?:product_feature_variant_descriptions ADD mcs_connected_company INT(11) NOT NULL DEFAULT '0';</item>
 	</queries>
 	
 </addon>
