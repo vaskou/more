@@ -13,3 +13,16 @@ function fn_settings_variants_addons_mcs_getaquote_mcs_features_list()
 	}
 	return $features;
 }
+
+function fn_settings_variants_addons_mcs_getaquote_mcs_pages_list()
+{
+	$pages=array();
+	list($pages_list)=fn_get_pages();
+	foreach($pages_list as $page){
+		if($page['page_type']=='F'){
+			$pages[$page['page_id']]=$page['page'];
+		}
+	}
+	
+	return $pages;
+}

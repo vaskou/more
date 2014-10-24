@@ -14,6 +14,10 @@
 						<type>selectbox</type>
 						<variants></variants>
 					</item>
+					<item id="mcs_pages_list">
+						<type>selectbox</type>
+						<variants></variants>
+					</item>
 				</items>
             </section>
 		</sections>
