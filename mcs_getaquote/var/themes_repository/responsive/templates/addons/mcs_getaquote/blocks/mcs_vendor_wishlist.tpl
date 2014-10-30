@@ -37,6 +37,8 @@
             {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
             <input type="hidden" name="mcs_product_data" value="{$prod_data}" />
             <input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_pages_list}" />
+            <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
+            <input type="hidden" name="mcs_vendor_id" value="{$mcs_vendor_id}" />
             {include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="text"}
             {*<a href="{"pages.view&page_id=`$addons.mcs_getaquote.mcs_pages_list`&pd=$prod_data"|fn_url}" class="ty-btn__secondary ty-btn cm-submit cm-dialog-opener cm-dialog-auto-size" data-ca-dialog-title="TEST">Form</a>*}
             {include file="buttons/continue_shopping.tpl" but_href=$continue_url|fn_url but_role="text"}

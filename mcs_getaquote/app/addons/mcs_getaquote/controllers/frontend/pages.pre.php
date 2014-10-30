@@ -32,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$_page = fn_get_page_data($p_id);
 				fn_add_breadcrumb($_page['page'], ($p_id == $page['page_id']) ? '' : ($_page['page_type'] == PAGE_TYPE_LINK && !empty($_page['link']) ? $_page['link'] : "pages.view?page_id=$p_id"));
 			}
-		
+		//mcs_getaquote addition
+			$page['page_type']='MCS';
 			Registry::get('view')->assign('page', $page);
 		
 		//Form builder pages.post frontend controller code	
@@ -51,12 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 		
 		//mcs_getaquote code
-			$last_key=end(array_keys($page['form']['elements']));
-			Registry::get('view')->assign('mcs_last_key',$last_key);	
 			Registry::get('view')->assign('mcs_product_data',$_REQUEST['mcs_product_data']);
+			Registry::get('view')->assign('mcs_variant_id', $_REQUEST['mcs_variant_id']);
+			Registry::get('view')->assign('mcs_vendor_id', $_REQUEST['mcs_vendor_id']);
 			
 			$title = __('product_added_to_wl');
-            $msg = Registry::get('view')->fetch('addons\mcs_getaquote\common\form_notification.tpl');
+            $msg = Registry::get('view')->fetch('addons/mcs_getaquote/common/form_notification.tpl');
             fn_set_notification('I', $title, $msg);
 			
 			return;

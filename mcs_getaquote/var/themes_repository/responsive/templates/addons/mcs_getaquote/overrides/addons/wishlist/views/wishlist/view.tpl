@@ -36,12 +36,20 @@
             <form class="cm-ajax cm-ajax-full-render" action="{""|fn_url}" method="post" name="vendor_form_{$vid}" enctype="multipart/form-data">
                 <input type="hidden" name="redirect_url" value="{$config.current_url}" />
                 <input type="hidden" name="result_ids" value="cart_status*,wish_list*" />
+                {assign var=prod_data value=array()}
                 {foreach from=$products item="_product"}
                 	<input type="hidden" name="product_data[{$_product.product_id}][product_id]" value="{$_product.product_id}" />
                     <input type="hidden" name="product_data[{$_product.product_id}][amount]" value="1" />
+					{append var=prod_data value=['product_id'=>$_product.product_id,'product_name'=>$_product.product,'main_pair'=>$_product.main_pair,'product_code'=>$_product.product_code] index=$_product.product_id}
                 {/foreach}
+				{assign var=prod_data value=$prod_data|json_encode}
                 <div class="buttons-container ty-wish-list__buttons">
                     {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$vid`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
+					<input type="hidden" name="mcs_product_data" value="{$prod_data}" />
+					<input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_pages_list}" />
+					<input type="hidden" name="mcs_variant_id" value="wishlist" />
+					<input type="hidden" name="mcs_vendor_id" value="{$vid}" />
+					{include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$vid`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="text"}
                     {*include file="buttons/button.tpl" but_text=__("clear_wishlist") but_href="wishlist.clear" but_meta="ty-btn__tertiary"}
                     {include file="buttons/continue_shopping.tpl" but_href=$continue_url|fn_url but_role="text"*}
                 </div>

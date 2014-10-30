@@ -34,6 +34,7 @@ function fn_mcs_seperate_products_by_vendor($products)
 
 function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
 {
+	
 //Wishlist frontend controller code
 	$_SESSION['wishlist'] = isset($_SESSION['wishlist']) ? $_SESSION['wishlist'] : array();
 	$wishlist = & $_SESSION['wishlist'];
@@ -93,20 +94,25 @@ function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
 //mcs_getaquote code
 	$temp_products=array();
 	
-	$addons=Registry::get('addons');
-	$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
-	
-	foreach($products as $key=>$product){
-		if($product['company_id']==$vendor_id){
-			foreach($product['header_features'] as $feature){
-				if($feature['feature_id']==$mcs_feature_id && $feature['variant_id']==$mcs_variant_id){
-					$temp_products[$key]=$product;
+	if($vendor_id>0){
+		$addons=Registry::get('addons');
+		$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
+		
+		foreach($products as $key=>$product){
+			if($product['company_id']==$vendor_id){
+				foreach($product['header_features'] as $feature){
+					if($feature['feature_id']==$mcs_feature_id && $feature['variant_id']==$mcs_variant_id){
+						$temp_products[$key]=$product;
+					}
 				}
 			}
 		}
 	}
 	$products=$temp_products;
-
+	if(empty($products)){
+		$wishlist_is_empty=true;
+	}
+	
     Registry::get('view')->assign('show_qty', true);
     Registry::get('view')->assign('wishlist_products', $products);
     Registry::get('view')->assign('wishlist_is_empty', $wishlist_is_empty);
@@ -114,6 +120,8 @@ function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
     Registry::get('view')->assign('wishlist', $wishlist);
     Registry::get('view')->assign('continue_url', $_SESSION['continue_url']);
 	
+	Registry::get('view')->assign('mcs_variant_id', $mcs_variant_id);
+	Registry::get('view')->assign('mcs_vendor_id', $vendor_id);
 	/*list($vendor_products,$vendors)=fn_mcs_seperate_products_by_vendor($products);
 	
 	Registry::get('view')->assign('vendor_products', $vendor_products);
@@ -184,8 +192,12 @@ function fn_mcs_send_form($page_id, $form_values)
 					'description' =>  'products',
 				);
 				
-				var_dump($page_data);
-				var_dump($form_values);
+				//$form_values['mcs_vendor_id'];
+				$vendor_email=db_get_field("SELECT email FROM ?:companies WHERE company_id=?i",$form_values['mcs_vendor_id']);
+				$page_data['form']['general'][FORM_RECIPIENT]=array($page_data['form']['general'][FORM_RECIPIENT],$vendor_email);
+				
+				//var_dump($page_data);
+				//var_dump($form_values);
 				//die;
                 fn_set_hook('mcs_send_form', $page_data, $form_values, $result, $from, $sender, $attachments, $is_html);
 
