@@ -28,7 +28,7 @@
     {if $settings.Appearance.enable_quick_view == 'Y'}
         {$quick_nav_ids = $products|fn_fields_from_multi_level:"product_id":"product_id"}
     {/if}
-    <div class="grid-list" id="grid_list_{$block.snapping_id}">
+    <div class="mcs-vendor-list" id="mcs_vendor_list_{$block.snapping_id}">
         {strip}
             {foreach from=$splitted_products item="sproducts" name="sprod"}
                 {foreach from=$sproducts item="product" name="sproducts"}
@@ -38,7 +38,7 @@
                             {assign var="obj_id_prefix" value="`$obj_prefix``$product.product_id`"}
                             {include file="common/product_data.tpl" product=$product}
 
-                            <div class="ty-grid-list__item ty-quick-view-button__wrapper">
+                            <div class="mcs-vendor-list__item">
                                 {assign var="form_open" value="form_open_`$obj_id`"}
                                 {$smarty.capture.$form_open nofilter}
                                 
@@ -49,7 +49,7 @@
                                         <a class="ty-twishlist-item__remove ty-remove cm-submit" title="{__("remove")}" data-ca-dispatch="dispatch[wishlist.delete]"><i class="ty-remove__icon ty-icon-cancel-circle"></i><span class="ty-twishlist-item__txt ty-remove__txt">{__("remove")}</span></a>
                                     </div>
                                 {/if}
-                                <div class="ty-grid-list__image" style="min-height:0;padding:0;">
+                                <div class="mcs-vendor-list__image">
                                     {include file="views/products/components/product_icon.tpl" product=$product show_gallery=false}
 
                                     {assign var="discount_label" value="discount_label_`$obj_prefix``$obj_id`"}
