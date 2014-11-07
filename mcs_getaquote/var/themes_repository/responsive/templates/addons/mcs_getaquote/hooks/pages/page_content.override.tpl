@@ -15,7 +15,7 @@
         <div class="ty-form-builder__description">{$page.description nofilter}</div>
     {/if}
 
-<div class="ty-form-builder">
+<div class="ty-form-builder cm-notification-max-height">
     <form action="{""|fn_url}" method="post" name="forms_form" enctype="multipart/form-data">
     <input type="hidden" name="fake" value="1" />
     <input type="hidden" name="page_id" value="{$page.page_id}" />

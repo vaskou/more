@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			Registry::get('view')->assign('mcs_variant_id', $_REQUEST['mcs_variant_id']);
 			Registry::get('view')->assign('mcs_vendor_id', $_REQUEST['mcs_vendor_id']);
 			
-			$title = __('product_added_to_wl');
+			$title = __('get_a_quote');
             $msg = Registry::get('view')->fetch('addons/mcs_getaquote/common/form_notification.tpl');
             fn_set_notification('I', $title, $msg);
 			

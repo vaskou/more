@@ -11,24 +11,23 @@ function fn_mcs_seperate_products_by_vendor($products)
 	$vendors=array();
 	$vendor_products=array();
 	
+	$addons=Registry::get('addons');
+	$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
+	
 	foreach($products as $product){
-		$vendor_products[$product['company_id']][$product['cart_id']]=$product;	
-		if(!in_array($product['company_id'],$vendor_ids)){
-			$vendor_ids[]=$product['company_id'];
+		if(isset($product['header_features'][$mcs_feature_id]['variant_id'])){
+			$temp_key=$product['header_features'][$mcs_feature_id]['variant_id'];
+			$vendor_products[$temp_key][$product['cart_id']]=$product;	
+			if(!in_array($temp_key,$vendor_ids)){
+				$vendor_ids[]=$temp_key;
+			}
 		}
 	}
 	
 	foreach($vendor_ids as $vid){
-		$vendors[$vid]=fn_get_company_data($vid);
-		if (fn_allowed_for('MULTIVENDOR')) {
-			if (!empty($vid)) {
-				$vendors[$vid]['logos'] = fn_get_logos($vid);
-			}
-	
-			//Registry::get('view')->assign('logo_types', fn_get_logo_types(true));
-		}
+		$vendors[$vid] = fn_get_product_feature_variant($vid);
+		
 	}
-	
 	return array($vendor_products,$vendors);
 }
 
@@ -192,13 +191,9 @@ function fn_mcs_send_form($page_id, $form_values)
 					'description' =>  'products',
 				);
 				
-				//$form_values['mcs_vendor_id'];
 				$vendor_email=db_get_field("SELECT email FROM ?:companies WHERE company_id=?i",$form_values['mcs_vendor_id']);
 				$page_data['form']['general'][FORM_RECIPIENT]=array($page_data['form']['general'][FORM_RECIPIENT],$vendor_email);
 				
-				//var_dump($page_data);
-				//var_dump($form_values);
-				//die;
                 fn_set_hook('mcs_send_form', $page_data, $form_values, $result, $from, $sender, $attachments, $is_html);
 
                 if ($result == true) {

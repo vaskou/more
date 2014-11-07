@@ -10,7 +10,7 @@
 {if $vendor_products}	
     {foreach from=$vendor_products item="products" key="vid"}
     	<div class="mainbox-container">
-            <h1 class="mainbox-title"><span>{$vendors.$vid.company}</span></h1>
+            {*<h1 class="mainbox-title"><span>{$vendors.$vid.company}</span></h1>
             {assign var="logo_image" value=$vendors.$vid.logos.theme.image}
             <div class="clearfix">
                 <div class="feature-image">
@@ -19,6 +19,19 @@
             
                 <div class="feature-description">
                     <p>{$vendors.$vid.company_description|truncate:500:"...":true nofilter}</p>
+                </div>
+            </div>*}
+            <div class="clearfix mcs-wishlist-view">
+                <div class="feature-image">
+                	<a href="{"product_features.view&variant_id=`$vid`"|fn_url}">
+	                    {include file="common/image.tpl" images=$vendors.$vid.image_pair image_width="120"}
+                    </a>
+                    <div class="mcs-producer-link">
+                    	<a href="{"product_features.view&variant_id=`$vid`"|fn_url}">{__("mcs_view_producer_page")}</a>
+                    </div>
+                </div>
+                <div class="feature-description">
+                    {$vendors.$vid.description|truncate:500:"...":true nofilter}
                 </div>
             </div>
             {include file="blocks/list_templates/grid_list.tpl" 
@@ -57,7 +70,7 @@
                     <input type="hidden" name="mcs_variant_id" value="wishlist" />
                     <input type="hidden" name="mcs_vendor_id" value="{$vid}" />
                     {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$vid`" but_meta="mcs-vendor-wishlist__button" but_name="dispatch[checkout.add]" but_role="action"}
-                    {include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$vid`" but_meta="mcs-vendor-wishlist__button" but_name="dispatch[pages.view]" but_role="action"}
+                    {include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$vid`" but_meta="mcs-vendor-wishlist__button" but_name="dispatch[pages.view]" but_role="action"}
                 </div>
             </form>
 		</div>

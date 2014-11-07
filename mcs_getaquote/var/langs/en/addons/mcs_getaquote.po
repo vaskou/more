@@ -31,3 +31,19 @@ msgstr "More CS-Cart: Vendor Wishlist"
 msgctxt "Languages::block_mcs_vendor_wishlist_description"
 msgid "More CS-Cart: Vendor Wishlist"
 msgstr "More CS-Cart: Vendor Wishlist"
+
+msgctxt "Languages::mcs_vendor_wishlist"
+msgid "More CS-Cart: Vendor Wishlist"
+msgstr "More CS-Cart: Vendor Wishlist"
+
+msgctxt "Languages::get_a_quote"
+msgid "Get a quote"
+msgstr "Get a quote"
+
+msgctxt "Languages::mcs_vendor_wishlist_message"
+msgid "Click <a class='vs-button'><i class='vs-icon-wishlist'></i></a> to select products and contact the supplier"
+msgstr "Click <a class='vs-button'><i class='vs-icon-wishlist'></i></a> to select products and contact the supplier"
+
+msgctxt "Languages::mcs_view_producer_page"
+msgid "View producer page"
+msgstr "View producer page"

@@ -8,7 +8,7 @@
 {/if}
 
 <div id="vendor_wishlist_{$block.snapping_id}">
-<p>Click + to select products and contact the supplier</p>
+<div class="mcs-vendor-wishlist__message"><p>{__("mcs_vendor_wishlist_message")}</p></div>
 {if $wishlist_products}
 <div class="mcs-vendor-wishlist">
     {include file="addons/mcs_getaquote/blocks/mcs_vendor_wishlist_grid.tpl" 
@@ -41,10 +41,28 @@
                 <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
                 <input type="hidden" name="mcs_vendor_id" value="{$mcs_vendor_id}" />
                 {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
-                {include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
+                {include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
             </div>
         </form>
 	</div>
+    {literal}
+    <script>
+		$(function(){
+			function fn_no_image_height(){
+				var no_image=$(".mcs-vendor-wishlist .mcs-vendor-list__image .no-image");
+				var max_width=no_image.outerWidth();
+				no_image.css({"height":max_width});
+			}
+			fn_no_image_height();
+			$(window).resize(function(){
+				fn_no_image_height();
+			});
+			$(document).ajaxStop(function() {
+                fn_no_image_height();
+            });
+		});
+	</script>
+    {/literal}
 </div>
 {/if}
 <!--vendor_wishlist_{$block.snapping_id}--></div>

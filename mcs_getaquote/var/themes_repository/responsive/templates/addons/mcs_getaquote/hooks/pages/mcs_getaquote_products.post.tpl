@@ -1,21 +1,16 @@
 <div class="ty-control-group">
-	<h3>Products</h3>
+	<label class="ty-control-group__title">Products</label>
 
 	{assign var=product_data value=$mcs_product_data|json_decode:true}
 
-	{*$product_data|var_dump*}
     {foreach from=$product_data key="product_id" item="product"}
     	<div class="ty-column6">
         	<div class="ty-grid-list__item">
-	    		<div class="ty-grid-list__image" style="min-height:0;padding:0;">
-    		        {include file="views/products/components/product_icon.tpl" product=$product }
+	    		<div class="ty-grid-list__image mcs-vendor-list__image" style="min-height:0;padding:0;">
+    		       {include file="common/image.tpl" images=$product.main_pair image_width=50 image_height=50}
 	    	    </div>
             </div>
         </div>
-        {*$product|var_dump*}
-        {*<input type="hidden" name="form_values[products][{$product_id}][product_name]" value="{$product.product_name}" />
-        <input type="hidden" name="form_values[products][{$product_id}][image]" value="{$product.main_pair.detailed.http_image_path}" />
-        <input type="hidden" name="form_values[products][{$product_id}][product_code]" value="{$product.product_code}" />*}
         <input type="hidden" name="form_values[products][{$product_id}]" value="{$product|json_encode}" />
     {/foreach}
     

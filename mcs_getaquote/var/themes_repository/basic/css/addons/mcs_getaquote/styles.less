@@ -1,3 +1,17 @@
+.mcs-vendor-wishlist__message{
+	.vs-button{
+		color: #ffffff;
+		margin-right: 1px;
+		text-decoration: none;
+		display:inline-block;
+		background: @grid_icon_add_wishlist_bkg;
+		cursor:default;
+		i{
+			display:block;
+			padding:5px 5px 4px 4px;
+		}
+	}
+}
 .mcs-vendor-wishlist{
 	border:1px solid lighten(@base,43%);
 	margin-bottom:20px;
@@ -34,7 +48,7 @@
 	border: 1px solid #ebebeb;
 	background: #fff;
 	text-align: center;
-	img{
+	img,.no-image{
 		padding-bottom:1px;
 		max-width: 100%;
 		height: auto;
@@ -51,16 +65,35 @@
 	text-align:center;
 }
 .mcs-vendor-list__buttons{
-	padding:5px;
-	background:lighten(@base,43%);
 	margin:10px 10px 10px 0;
 	text-align:center;
 }
 .mcs-vendor-list__buttons .ty-btn{
 	margin:5px 0;
 }
+.mcs-vendor-list__buttons{
+	.button-wrap-left{
+		margin-top:5px;
+		&:last-child{
+			margin-left:5px;
+			margin-bottom:5px;
+		}
+	}
+}
 
-
+.mcs-vendor-list .ty-column10{
+	padding:0;
+}
+@media (min-width:768px) and (max-width: 1006px){
+	.mcs-vendor-list__buttons-form{
+		width:100%;
+	}
+	.mcs-vendor-list__buttons{
+		margin:10px;
+		padding:5px;
+		background:lighten(@base,43%);
+	}
+}
 @media (max-width: 767px) {
 	.mcs-vendor-list{
 		width:100%;
@@ -73,10 +106,24 @@
 	}
 	.mcs-vendor-list__buttons{
 		margin:10px;
+		padding:5px;
+		background:lighten(@base,43%);
 	}
 }
 
 /******* wishlist view ************/
+.mcs-wishlist-view .feature-image{
+	text-align:center;
+	.mcs-producer-link{
+		margin-top:5px;
+		a:hover{
+			text-decoration:none;
+			.transition(all 0.5s ease);
+			color:@secondary_button;
+		}
+		
+	}
+}
 .mcs-vendor-wishlist__buttons > span{
 	margin-right:5px;	
 }

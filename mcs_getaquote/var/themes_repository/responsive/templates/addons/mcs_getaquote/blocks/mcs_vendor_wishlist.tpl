@@ -36,15 +36,33 @@
             
             {assign var=prod_data value=$prod_data|json_encode}
             <div class="mcs-vendor-list__buttons">
-                {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
                 <input type="hidden" name="mcs_product_data" value="{$prod_data}" />
                 <input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_pages_list}" />
                 <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
                 <input type="hidden" name="mcs_vendor_id" value="{$mcs_vendor_id}" />
-                {include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="text"}
+                {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
+                {include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
             </div>
         </form>
 	</div>
+    {literal}
+	<script>
+        $(function(){
+            function fn_no_image_height(){
+                var no_image=$(".mcs-vendor-wishlist .mcs-vendor-list__image .ty-no-image");
+                var max_width=no_image.outerWidth();
+                no_image.css({"min-height":max_width});
+            }
+            fn_no_image_height();
+            $(window).resize(function(){
+                fn_no_image_height();
+            });
+            $(document).ajaxStop(function() {
+                fn_no_image_height();
+            });
+        });
+    </script>
+    {/literal}
 </div>
 {/if}
 <!--vendor_wishlist_{$block.snapping_id}--></div>

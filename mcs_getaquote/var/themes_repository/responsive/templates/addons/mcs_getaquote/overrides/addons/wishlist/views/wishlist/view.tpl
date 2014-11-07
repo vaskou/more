@@ -9,16 +9,18 @@
 
 {if $vendor_products}	
     {foreach from=$vendor_products item="products" key="vid"}
-    	<div class="ty-mainbox-container">
-            <h1 class="ty-mainbox-title">{$vendors.$vid.company}</h1>
-            {assign var="logo_image" value=$vendors.$vid.logos.theme.image}
-            <div class="ty-company-detail__info">
-                <div class="ty-company-detail__logo">
-                    {include file="common/image.tpl" images=$vendors.$vid.logos.theme.image image_width="120" class="ty-company-image"}
+    	<div class="ty-mainbox-container mcs-wishlist-view">
+            <div class="ty-feature">
+                <div class="ty-feature__image">
+                	<a href="{"product_features.view&variant_id=`$vid`"|fn_url}">
+                    	{include file="common/image.tpl" images=$vendors.$vid.image_pair image_width="160"}
+                    </a>
+                    <div class="mcs-producer-link">
+                    	<a href="{"product_features.view&variant_id=`$vid`"|fn_url}">{__("mcs_view_producer_page")}</a>
+                    </div>
                 </div>
-            
                 <div class="ty-feature__description ty-wysiwyg-content">
-                    {$vendors.$vid.company_description nofilter}
+                    {$vendors.$vid.description nofilter}
                 </div>
             </div>
             {include file="blocks/list_templates/grid_list.tpl" 
@@ -49,9 +51,7 @@
 					<input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_pages_list}" />
 					<input type="hidden" name="mcs_variant_id" value="wishlist" />
 					<input type="hidden" name="mcs_vendor_id" value="{$vid}" />
-					{include file="buttons/button.tpl" but_text=__("communicate_with_vendor") but_id="communicate_vendor_button_`$vid`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="text"}
-                    {*include file="buttons/button.tpl" but_text=__("clear_wishlist") but_href="wishlist.clear" but_meta="ty-btn__tertiary"}
-                    {include file="buttons/continue_shopping.tpl" but_href=$continue_url|fn_url but_role="text"*}
+					{include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$vid`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
                 </div>
             </form>
 		</div>

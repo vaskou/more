@@ -36,8 +36,10 @@
         	{foreach from=$value key=product_id item=product}
                 {assign var=prod value=$product|json_decode:true}
                 {assign var=path value='[themes]/[theme]/templates/common/image.tpl'|fn_get_theme_path:'C'}
-                {include file=$path obj_id=$obj_id_prefix images=$prod.main_pair image_width=100 image_height=100}
-                <a href="{"products.view?product_id=`$product_id`"|fn_url}" style="display:block;">{$prod.product_name}</a>
+                <div style="display:inline-block;">
+                    {include file=$path obj_id=$obj_id_prefix images=$prod.main_pair image_width=100 image_height=100}
+                    <a href="{"products.view?product_id=`$product_id`"|fn_url}" style="display:block;">{$prod.product_name}</a>
+                </div>
             {/foreach}
         {else}
             {$value}
