@@ -73,8 +73,20 @@ function fn_mcs_get_product_status($product_id)
 
 function fn_mcs_update_product_timestamp($product_id)
 {
-	$today=fn_parse_date(date("m/d/y"));
+	$today=fn_mcs_parse_date();
 	db_query("UPDATE ?:products SET timestamp= '".$today."' WHERE product_id = '".$product_id."'" );
+}
+
+function fn_mcs_parse_date()
+{
+	$format=Registry::get('settings.Appearance.calendar_date_format');
+	if($format=='day_first'){
+		$today=fn_parse_date(date("d/m/y"));
+	}elseif($format=='month_first'){
+		$today=fn_parse_date(date("m/d/y"));
+	}
+	
+	return $today;
 }
 
 /* [HOOKS] */
@@ -96,7 +108,7 @@ function fn_mcs_parent_shop_update_product_pre(&$product_data, &$product_id, &$l
 	$status_new=$product_data['status'];
 	$status_changed=($status!=$status_new)?true:false;
 	
-	$today=fn_parse_date(date("m/d/y"));
+	$today=fn_mcs_parse_date();
 	
 	if($product_data['mcs_child_sync_product_force']=="Y"||$status_changed)
 		$product_data['timestamp']=$today;

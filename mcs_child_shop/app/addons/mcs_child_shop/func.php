@@ -178,7 +178,7 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 	}
 	
 	// Update timestamp of sync
-	$today=fn_parse_date(date('m/d/Y'));
+	$today=fn_mcs_parse_date();
 	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
 	
 	fn_mcs_send_sync_timestamp_to_parent(time());
@@ -1329,6 +1329,18 @@ function fn_mcs_get_child_sync_status_from_parent()
 	return $result;
 }
 
+function fn_mcs_parse_date()
+{
+	$format=Registry::get('settings.Appearance.calendar_date_format');
+	if($format=='day_first'){
+		$today=fn_parse_date(date("d/m/y"));
+	}elseif($format=='month_first'){
+		$today=fn_parse_date(date("m/d/y"));
+	}
+	
+	return $today;
+}
+
 // HOOKS
 function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
 {
@@ -1373,7 +1385,7 @@ function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang
 		}
 		if(!empty($attachments)){
 			$attach_result=fn_mcs_put_product_attachments($attachments);
-			fn_mcs_error_logging($attach_result,'Error putting attachments with fn_mcs_put_product_attachments with product_id = '.$data['product_id']);
+			fn_mcs_error_logging($attach_result,'Error putting attachments with fn_mcs_put_product_attachments with product_id = '.$product_id);
 		}
 	}
 }
