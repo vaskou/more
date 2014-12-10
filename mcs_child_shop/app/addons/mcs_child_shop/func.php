@@ -103,17 +103,17 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 		write_log('Parent database connection problem');
 		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 	}
-	
-	// Get all categories from parent
-	if($sync_categories){
-		$categories=fn_mcs_get_all_categories();
-	}
 
 	// Get product ids of products to be synced
 	$pids = db_get_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp);
 	foreach($pids as $k=>$v){
 		//$sync_result[]=fn_mcs_sync_product($v['product_id']);
 		$product_data[$v['product_id']]=fn_mcs_get_all_product_data($v['product_id']);
+	}
+	
+	// Get all categories from parent
+	if($sync_categories){
+		$categories=fn_mcs_get_all_categories($product_data);
 	}
 	
 	// Get taxes, destinations and states tables from parent
@@ -141,20 +141,6 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 		}
 	}
 	
-	// Put products to be synced
-	foreach($product_data as $k=>$v){
-		if(empty($v['msg_type'])){
-			$lock_result = db_get_row("SELECT mcs_lock_sync_product FROM ?:products WHERE product_id = ?i ", $v['product_id']);
-			if(empty($lock_result) || $lock_result['mcs_lock_sync_product']=='N'){
-				$product_result=fn_mcs_put_all_product_data($v);
-				$sync_result[]=array(
-					'name'=>$v['descriptions'][CART_LANGUAGE]['product'],
-					'product_id'=>$v['descriptions'][CART_LANGUAGE]['product_id']
-				);
-			}
-		}
-	}
-	
 	// Put taxes, destinations and states tables to child
 	if($sync_taxes){
 		if(empty($taxes['msg_type'])){
@@ -174,6 +160,20 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 			fn_mcs_error_logging($states_result,'Error putting data with fn_mcs_put_all_states');
 		}else{
 			fn_set_notification($states['msg_type'], __('notice'), $states['return_msg']);
+		}
+	}
+	
+	// Put products to be synced
+	foreach($product_data as $k=>$v){
+		if(empty($v['msg_type'])){
+			$lock_result = db_get_row("SELECT mcs_lock_sync_product FROM ?:products WHERE product_id = ?i ", $v['product_id']);
+			if(empty($lock_result) || $lock_result['mcs_lock_sync_product']=='N'){
+				$product_result=fn_mcs_put_all_product_data($v);
+				$sync_result[]=array(
+					'name'=>$v['descriptions'][CART_LANGUAGE]['product'],
+					'product_id'=>$v['descriptions'][CART_LANGUAGE]['product_id']
+				);
+			}
 		}
 	}
 	
@@ -262,7 +262,7 @@ function fn_mcs_put_all_product_data($data)
 	return array('return_msg' => 'The product was copied', 'msg_type'=>'N');
 }
 
-function fn_mcs_get_all_categories()
+function fn_mcs_get_all_categories($data)
 {
 	$categories=db_get_array("SELECT * FROM ?:categories");
 	if(empty($categories)){
@@ -272,9 +272,15 @@ function fn_mcs_get_all_categories()
 	}
 	$category_descriptions=db_get_array("SELECT category_id, lang_code, category FROM ?:category_descriptions");
 	fn_mcs_error_logging($category_descriptions,'Error getting data from category_descriptions table');
-	$products_categories=db_get_array("SELECT * FROM ?:products_categories");
+	$p_ids=array();
+	foreach($data as $p_data){
+		if(isset($p_data['product_id'])){
+			$p_ids[]=$p_data['product_id'];
+		}
+	}
+	$products_categories=db_get_array("SELECT * FROM ?:products_categories WHERE product_id IN (".implode(",",$p_ids)."0)");
 	fn_mcs_error_logging($products_categories,'Error getting data from products_categories table');
-	
+
 	$result=array(
 		'categories'=>$categories,
 		'category_descriptions'=>$category_descriptions,
@@ -296,10 +302,15 @@ function fn_mcs_put_all_categories($data)
 			if(in_array(false,$temp_result)){
 				$result[]=false;
 			}
+			if($k=='categories'){
+				$c_ids=array();
+				foreach($v as $categ){
+					$c_ids[]=$categ['category_id'];
+				}
+			}
 		}
 	}
-	
-	fn_update_product_count(array($GLOBALS['master_category_id']));
+	fn_update_product_count($c_ids);
 	
 	if(in_array(false,$result)){
 		return false;
@@ -312,7 +323,7 @@ function fn_mcs_get_parent_main_data($product_id)
 {
 	$sync_data=array();
 	$result=array();
-	$data = db_get_row("SELECT * FROM ?:products WHERE product_id = ?i AND status='A'", $product_id);
+	$data = db_get_row("SELECT * FROM ?:products WHERE product_id = ?i AND ( status='A' OR status='H' )", $product_id);
 	if(!empty($data)){
 		$sync_data['mcs_child_sync_product']=$data['mcs_child_sync_product'];
 		$sync_data['mcs_child_sync_images']=$data['mcs_child_sync_images'];
@@ -411,9 +422,14 @@ function fn_mcs_put_list_prices_to_prices($data)
 		return true;
 	}
 	
+	$base_price=$data['sync_data']['list_price'];
+	$tax_ids=$data['main_data']['tax_ids'];
+	$tax_rate=db_get_field("SELECT rate_value FROM ?:tax_rates WHERE tax_id=?i AND destination_id=1", $tax_ids);
+	$tax = fn_format_price($base_price * ($tax_rate / 100));
+    $taxed_price = $base_price + $tax;
 	$product_prices=array(
 		'product_id'=>$data['product_id'],
-		'price'=>$data['sync_data']['list_price'],
+		'price'=>$taxed_price,
 		'percentage_discount'=>0,
 		'lower_limit'=>1,
 		'usergroup_id'=>0
@@ -1089,6 +1105,11 @@ function fn_mcs_put_all_taxes($data)
 	$result=array();
 	foreach($data as $k=>$v){
 		if(!empty($v)){
+			if($k=='taxes'){
+				foreach($v as $k1=>$v1){
+					$v[$k1]['price_includes_tax']='Y';
+				}
+			}
 			$temp_result=fn_mcs_multi_db_replace_into($k,$v);
 			if(in_array(false,$temp_result)){
 				$result[]=false;
