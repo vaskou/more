@@ -176,7 +176,9 @@ function fn_mcs_sync_all_products($sync_taxes=false,$sync_categories=false,$sync
 			}
 		}
 	}
-	
+	if(!empty($sync_result)){
+		fn_mcs_child_shop_synced_products_log($sync_result);
+	}
 	// Update timestamp of sync
 	$today=fn_mcs_parse_date();
 	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
@@ -259,7 +261,7 @@ function fn_mcs_put_all_product_data($data)
 	$feat_result=fn_mcs_put_product_features($data['features']);
 	fn_mcs_error_logging($feat_result,'Error putting data with fn_mcs_put_product_features with product_id = '.$data['product_id']);
 	
-	return array('return_msg' => 'The product was copied', 'msg_type'=>'N');
+	return array('return_msg' => 'The product with id = '.$data['product_id'].' was copied', 'msg_type'=>'N');
 }
 
 function fn_mcs_get_all_categories($data)
@@ -351,6 +353,11 @@ function fn_mcs_get_parent_main_data($product_id)
 
 function fn_mcs_put_parent_main_data($data)
 {
+	$check_status=db_get_field("SELECT status FROM ?:products WHERE product_id=?i", $data['product_id']);
+	if(!empty($check_status)){
+		$data['status']=$check_status;
+	}
+	
 	$result=db_replace_into("products", $data);
 	
 	return $result;
@@ -1362,6 +1369,16 @@ function fn_mcs_parse_date()
 	return $today;
 }
 
+function fn_mcs_child_shop_synced_products_log($sync_result)
+{
+
+	$today=time();
+	$dir='var/mcs_child_shop/';
+	
+	$msg=json_encode($sync_result);
+	$result=fn_put_contents($dir.$today.'.log',$msg);
+	
+}
 // HOOKS
 function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
 {

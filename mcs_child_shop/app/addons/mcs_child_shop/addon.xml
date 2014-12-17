@@ -125,6 +125,15 @@
 		<item lang="en" id="mcs_clear_error_log">Clear Error Log</item>
 		<item lang="el" id="mcs_clear_error_log">Καθαρισμός Αρχείου Καταγραφής Σφαλμάτων</item>
 		
+		<item lang="en" id="mcs_sync_log">Synchronization Log</item>
+		<item lang="el" id="mcs_sync_log">Αρχείο Συγχρονισμού</item>
+		
+		<item lang="en" id="mcs_show_log">Show Log</item>
+		<item lang="el" id="mcs_show_log">Εμφάσιση Αρχείου Συγχρονισμού</item>
+		
+		<item lang="en" id="mcs_no_sync_logs">No Synchronization Log</item>
+		<item lang="el" id="mcs_no_sync_logs">Δεν Υπάρχει Αρχείο Συγχρονισμού</item>
+		
 		<item lang="en" id="mcs_lock_sync">Lock Synchronization</item>
 		<item lang="el" id="mcs_lock_sync">Κλείδωμα Συγχρονισμού</item>
 		

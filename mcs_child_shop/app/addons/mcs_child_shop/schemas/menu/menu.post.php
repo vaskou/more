@@ -14,6 +14,13 @@ $schema['central']['mcs_synchronization'] = array(
 			),
 			'href'=>'sync.error_log',
 			'position'=>200
+		),
+		'mcs_sync_log'=> array(
+			'attrs' => array(
+				'class'=>'is-addon'
+			),
+			'href'=>'sync.sync_log',
+			'position'=>300
 		)
 	),
 	'position' => 1000

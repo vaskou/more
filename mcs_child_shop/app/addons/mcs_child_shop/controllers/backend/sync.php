@@ -61,6 +61,28 @@ if($mode=='error_log'){
 	
 }
 
+if($mode=='sync_log'){
+	
+	$sync_log=array();
+	$fname=(isset($_REQUEST['fname']))?$_REQUEST['fname']:'';
+	$dir='var/mcs_child_shop/';
+	$files=fn_get_dir_contents($dir,true,true,'','',true);
+	
+	if(empty($files)){
+		return false;
+	}
+	if($fname!=''){
+		$sync_log=fn_get_contents($dir.$files[$fname]);
+		$sync_log=json_decode($sync_log,true);
+	}
+	
+	Registry::get('view')->assign('mcs_files',$files);
+	Registry::get('view')->assign('mcs_fname',$fname);
+	Registry::get('view')->assign('mcs_sync_log',$sync_log);
+	
+	
+}
+
 if ($mode == 'product') {
 
 	if (!empty($_REQUEST['product_id'])) {
