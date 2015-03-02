@@ -12,7 +12,7 @@ function fn_mcs_seperate_products_by_vendor($products)
 	$vendor_products=array();
 	
 	$addons=Registry::get('addons');
-	$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
+	$mcs_feature_id=$addons['mcs_getaquote']['mcs_getaquote_features_list'];
 	
 	foreach($products as $product){
 		if(isset($product['header_features'][$mcs_feature_id]['variant_id'])){
@@ -31,8 +31,13 @@ function fn_mcs_seperate_products_by_vendor($products)
 	return array($vendor_products,$vendors);
 }
 
-function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
+function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id,$show_getaquote_block)
 {
+	
+	Registry::get('view')->assign('show_getaquote_block', $show_getaquote_block);
+	if(!$show_getaquote_block){
+		return false;
+	}
 	
 //Wishlist frontend controller code
 	$_SESSION['wishlist'] = isset($_SESSION['wishlist']) ? $_SESSION['wishlist'] : array();
@@ -95,7 +100,7 @@ function fn_mcs_vendor_wishlist_view($vendor_id,$mcs_variant_id)
 	
 	if($vendor_id>0){
 		$addons=Registry::get('addons');
-		$mcs_feature_id=$addons['mcs_getaquote']['mcs_features_list'];
+		$mcs_feature_id=$addons['mcs_getaquote']['mcs_getaquote_features_list'];
 		
 		foreach($products as $key=>$product){
 			if($product['company_id']==$vendor_id){
@@ -225,4 +230,30 @@ function fn_mcs_getaquote_send_form($page_data, $form_values, $result, $from, $s
 		$result=false;
 		return $result;
 	}
+}
+
+function fn_mcs_getaquote_show_getaquote_block($vendor_id)
+{
+	$usergroup_ids=db_get_fields("SELECT a.usergroup_id FROM ?:usergroup_links as a INNER JOIN ?:users as b ON a.user_id=b.user_id WHERE b.company_id=?i AND a.status='A'",$vendor_id);
+	
+	$addons=Registry::get('addons');
+	$mcs_getaquote_usergroups_list=$addons['mcs_getaquote']['mcs_getaquote_usergroups_list'];
+	
+	$show_getaquote_block=false;
+	
+	foreach($mcs_getaquote_usergroups_list as $usergroup_id=>$usergroup_status){
+		if($usergroup_status=='Y' && in_array($usergroup_id,$usergroup_ids)){
+			$show_getaquote_block=true;
+			break;
+		}
+	}
+	
+	return $show_getaquote_block;
+}
+
+function fn_mcs_getaquote_get_vendor_id($variant_id){
+	
+	$vendor_id=db_get_field("SELECT mcs_connected_company FROM ?:product_feature_variant_descriptions WHERE variant_id=?i AND lang_code=?s",$variant_id,CART_LANGUAGE);
+	
+	return $vendor_id;
 }

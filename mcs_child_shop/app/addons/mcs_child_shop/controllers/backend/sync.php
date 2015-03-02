@@ -10,18 +10,33 @@ if($mode=='manage'){
 	$child_shop_status=fn_mcs_get_child_sync_status_from_parent();
 
 	if($auth['is_root']=='Y' && $child_shop_status == 'A'){
-		if (!empty($_REQUEST['product_id'])){
-			$pid = $_REQUEST['product_id'];
-			if($pid=='new'){
-				$sync_result=fn_mcs_sync_all_products();
+		if (!empty($_REQUEST['sync_mode'])){
+			$sync_mode = $_REQUEST['sync_mode'];
+			if($sync_mode=='check'){
+				$sync_result=fn_mcs_get_products_to_sync();
 				if(!empty($sync_result['return_msg'])){
 					fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
 				}
-				if(!empty($sync_result['sync_result'])){
-					Registry::get('view')->assign('mcs_sync_result',$sync_result['sync_result']);
+				list($products_to_sync,$products_to_sync_ids)=$sync_result;
+				$products_to_sync_ids=json_encode($products_to_sync_ids);
+				Registry::get('view')->assign('mcs_products_to_sync',$products_to_sync);
+				Registry::get('view')->assign('mcs_products_to_sync_ids',$products_to_sync_ids);
+			}elseif($sync_mode=='new'){
+				if(!empty($_REQUEST['product_ids'])){
+					$pids=$_REQUEST['product_ids'];
+					$sync_result=fn_mcs_sync_selected_products($pids);
+					if(!empty($sync_result['return_msg'])){
+						fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
+					}
+					if(!empty($sync_result['sync_result'])){
+						Registry::get('view')->assign('mcs_sync_result',$sync_result['sync_result']);
+					}				
 				}
-			}
-			if($pid=='all'){
+				if(!empty($_REQUEST['unsynced_products'])){
+					$unsynced_products=fn_mcs_update_unsynced_table($_REQUEST['unsynced_products'],$_REQUEST['product_ids']);
+					Registry::get('view')->assign('mcs_unsynced_products',$unsynced_products);
+				}
+			}elseif($sync_mode=='all'){
 				$sync_categ = (!empty($_REQUEST['mcs_sync_categ']) ? $_REQUEST['mcs_sync_categ'] : false);
 				$sync_products_enabled = (!empty($_REQUEST['mcs_sync_products_enabled']) ? $_REQUEST['mcs_sync_products_enabled'] : false);
 				$sync_result=fn_mcs_sync_all_products(true,$sync_categ,$sync_products_enabled);
@@ -83,27 +98,6 @@ if($mode=='sync_log'){
 	
 }
 
-if ($mode == 'product') {
+if($mode=='test'){
 
-	if (!empty($_REQUEST['product_id'])) {
-        $pid = $_REQUEST['product_id'];
-		if($pid=='all'){
-			$pdata=fn_mcs_sync_all_products(true,true);
-			/*if(!empty($pdata['return_msg'])){
-				fn_set_notification($pdata['msg_type'], __('notice'), $pdata['return_msg']);
-			}*/
-		}else{
-			$pdata = fn_mcs_sync_product($pid);
-			if(!empty($pdata['return_msg'])){
-				fn_set_notification($pdata['msg_type'], __('notice'), $pdata['return_msg']);
-			}
-		}
-
-        //return array(CONTROLLER_STATUS_REDIRECT, "products.update?product_id=$pid");
-		//print_r($pdata);
-    }
-}
-
-if($mode=='test'){	
-			
 }

@@ -38,7 +38,7 @@
                             {assign var="obj_id_prefix" value="`$obj_prefix``$product.product_id`"}
                             {include file="common/product_data.tpl" product=$product}
 
-                            <div class="mcs-vendor-list__item">
+                            <div class="mcs-vendor-list__item css-transforms">
                                 {assign var="form_open" value="form_open_`$obj_id`"}
                                 {$smarty.capture.$form_open nofilter}
                                 
@@ -49,7 +49,7 @@
                                         <a class="ty-twishlist-item__remove ty-remove cm-submit" title="{__("remove")}" data-ca-dispatch="dispatch[wishlist.delete]"><i class="ty-remove__icon icon-cancel-circle"></i><span class="ty-twishlist-item__txt ty-remove__txt">{__("remove")}</span></a>
                                     </div>
                                 {/if}
-                                <div class="mcs-vendor-list__image">
+                                <div class="mcs-vendor-list__image animate">
                                     {include file="views/products/components/product_icon.tpl" product=$product show_gallery=false}
 
                                     {assign var="discount_label" value="discount_label_`$obj_prefix``$obj_id`"}

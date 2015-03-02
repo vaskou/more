@@ -12,17 +12,21 @@ msgctxt "Addons::description::mcs_getaquote"
 msgid "More CS-Cart: Get a quote"
 msgstr "More CS-Cart: Get a quote"
 
-msgctxt "SettingsSections::mcs_getaquote::mcs_features"
+msgctxt "SettingsSections::mcs_getaquote::mcs_getaquote_features"
 msgid "Features"
 msgstr "Features"
 
-msgctxt "SettingsOptions::mcs_getaquote::mcs_features_list"
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_features_list"
 msgid "Select Brand Feature"
 msgstr "Select Brand Feature"
 
-msgctxt "SettingsOptions::mcs_getaquote::mcs_pages_list"
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_pages_list"
 msgid "Select Form Page"
 msgstr "Select Form Page"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_usergroups_list"
+msgid "Check in which Usergroups the 'Get a quote' block will be visible"
+msgstr "Check in which Usergroups the 'Get a quote' block will be visible"
 
 msgctxt "Languages::block_mcs_vendor_wishlist"
 msgid "More CS-Cart: Vendor Wishlist"

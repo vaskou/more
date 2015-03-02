@@ -10,6 +10,7 @@
 .mcs_form .vs-page-form-form{
 	float:none;
 	width:100%;
+	min-height:440px;
 }
 .mcs_form .vs-page-form-form form .control-group{
 	margin-top:0;

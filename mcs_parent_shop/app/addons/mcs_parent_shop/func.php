@@ -103,6 +103,10 @@ function fn_mcs_parent_shop_gather_additional_product_data_post(&$product, $auth
 
 function fn_mcs_parent_shop_update_product_pre(&$product_data, &$product_id, &$lang_code, &$can_update)
 {
+	if(!isset($product_data['status'])){
+		return $product_data;
+	}
+	
 	//Check if product status has changed to 
 	$status=fn_mcs_get_product_status($product_id);
 	$status_new=$product_data['status'];

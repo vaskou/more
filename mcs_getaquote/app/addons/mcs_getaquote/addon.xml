@@ -1,21 +1,25 @@
 <?xml version="1.0"?>
 <addon scheme="3.0">
     <id>mcs_getaquote</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <priority>100000</priority>
 	<status>active</status>
     <default_language>en</default_language>
 	
 	<settings layout="separate" edition_type="ROOT,ULT:VENDOR">
         <sections>
-			<section id="mcs_features">
+			<section id="mcs_getaquote_features">
                 <items>
-					<item id="mcs_features_list">
+					<item id="mcs_getaquote_features_list">
 						<type>selectbox</type>
 						<variants></variants>
 					</item>
-					<item id="mcs_pages_list">
+					<item id="mcs_getaquote_pages_list">
 						<type>selectbox</type>
+						<variants></variants>
+					</item>
+					<item id="mcs_getaquote_usergroups_list">
+						<type>multiple checkboxes</type>
 						<variants></variants>
 					</item>
 				</items>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <addon scheme="2.0">
 	<id>mcs_parent_shop</id>
-	<version>4.2.0</version>
+	<version>1.0.2</version>
 	<name>More CS Cart: Parent shop</name>
 	<description>Connect the shop with More CS-Cart child shops</description>
 	<priority>4000000000</priority>

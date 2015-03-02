@@ -3,7 +3,7 @@
     <id>mcs_child_shop</id>
     <name>More CS-Cart: Child Shop</name>
     <description>More CS-Cart Child Shop</description>
-    <version>1.0</version>
+    <version>1.1.1</version>
     <priority>200000</priority>
     <position>0</position>
     <default_language>en</default_language>
@@ -96,6 +96,11 @@
 		<item for="install">ALTER TABLE ?:attachments AUTO_INCREMENT=8000000;</item>
 		<item for="install">ALTER TABLE ?:attachment_descriptions AUTO_INCREMENT=8000000;</item>
 		<item for="install">ALTER TABLE ?:products ADD  mcs_lock_sync_product CHAR(1) NOT NULL DEFAULT  'N'</item>
+		<item for="install">
+			CREATE TABLE IF NOT EXISTS ?:mcs_products_unsynced (un_id int(11) NOT NULL AUTO_INCREMENT, product_id int(11) NOT NULL, 
+			PRIMARY KEY (`un_id`), UNIQUE KEY `un_id` (`un_id`), UNIQUE KEY `product_id` (`product_id`));
+		</item>
+		<item for="install">ALTER TABLE ?:product_feature_variant_descriptions ADD mcs_lock_feature CHAR(1) NOT NULL DEFAULT 'N';</item>
 	</queries>
 	<language_variables>
         <item lang="en" id="mcs_synchronization">Synchronization</item>
@@ -137,7 +142,25 @@
 		<item lang="en" id="mcs_lock_sync">Lock Synchronization</item>
 		<item lang="el" id="mcs_lock_sync">Κλείδωμα Συγχρονισμού</item>
 		
-		<item lang="en" id="mcs_lock_sync_product">Lock Product Synchronazation</item>
+		<item lang="en" id="mcs_lock_sync_product">Lock Product Synchronization</item>
 		<item lang="el" id="mcs_lock_sync_product">Κλείδωμα Συγχρονισμού Προϊόντος</item>
+		
+		<item lang="en" id="mcs_last_synchronization">Last Synchronization</item>
+		<item lang="el" id="mcs_last_synchronization">Τελευταίος Συγχρονισμού Προϊόντων</item>
+		
+		<item lang="en" id="mcs_check_products_to_sync">Check For Product To Synchronize</item>
+		<item lang="el" id="mcs_check_products_to_sync">Έλεγχος Προϊόντων Για Συγχρονισμό</item>
+		
+		<item lang="en" id="mcs_product_u">Can Update</item>
+		<item lang="el" id="mcs_product_u">Μπορεί Να Ανανεωθεί</item>
+		
+		<item lang="en" id="mcs_product_n">Is New</item>
+		<item lang="el" id="mcs_product_n">Είναι Νέο Προϊόν</item>
+		
+		<item lang="en" id="mcs_product_l">Is Locked</item>
+		<item lang="el" id="mcs_product_l">Είναι Κλειδωμένο</item>
+		
+		<item lang="en" id="mcs_lock_feature">Lock Feature</item>
+		<item lang="el" id="mcs_lock_feature">Κλείδωμα Χαρακτηριστικού</item>
 	</language_variables>
 </addon>

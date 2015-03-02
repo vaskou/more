@@ -704,15 +704,29 @@ function fn_mcs_put_product_features($data)
 {
 	$result=array();
 	foreach($data as $k=>$v){
-		if($k!='feature_variant_images'){
+		
+		if($k=='feature_variant_images'||$k=='product_feature_variant_descriptions'){
+			foreach($v as $k1=>$v1){
+				if($k=='feature_variant_images'){
+					$vid=$v1['object_id'];
+				}else{
+					$vid=$v1['variant_id'];
+				}
+				$mcs_lock_feature=db_get_field("SELECT mcs_lock_feature FROM ?:product_feature_variant_descriptions WHERE variant_id=?i AND lang_code=?s",$vid,CART_LANGUAGE);
+				if(!empty($mcs_lock_feature)&&$mcs_lock_feature=='Y'){
+					unset($v[$k1]);
+				}
+			}
+		}
+		if($k=='feature_variant_images'){
+			fn_mcs_put_image_pairs($v);
+		}else{
 			if(!empty($v)){
 				$temp_result=fn_mcs_multi_db_replace_into($k,$v);
 				if(in_array(false,$temp_result)){
 					$result[]=false;
 				}
 			}
-		}else{
-			fn_mcs_put_image_pairs($v);
 		}
 	}
 	
@@ -1379,6 +1393,146 @@ function fn_mcs_child_shop_synced_products_log($sync_result)
 	$result=fn_put_contents($dir.$today.'.log',$msg);
 	
 }
+
+function fn_mcs_get_product_lock_status($product_id)
+{	
+	$lock_status=db_get_row("SELECT mcs_lock_sync_product FROM ?:products WHERE product_id = ?i ", $product_id);
+	
+	return $lock_status;
+}
+function fn_mcs_get_products_to_sync()
+{
+	$sync_result=array();
+	$product_data=array();
+	$products_to_sync=array();
+	$product_to_sync_ids=array();
+
+	$last_sync_timestamp=fn_mcs_get_timestamp_of_sync();
+	// Get not synced products
+	$pids_not_synced = db_get_hash_single_array("SELECT product_id FROM ?:mcs_products_unsynced",array('product_id','product_id'));
+	
+	// Connect to parent db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Parent database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	// Get product ids of products to be synced
+	$pids_to_sync = db_get_hash_single_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp,array('product_id','product_id'));
+	// Merge the product ids
+	$pids=array_merge($pids_not_synced,$pids_to_sync);
+	$pids=array_unique($pids);
+	
+	foreach($pids as $k=>$v){
+		//$sync_result[]=fn_mcs_sync_product($v['product_id']);
+		$product_data[$v]=fn_mcs_get_all_product_data($v);
+	}
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	foreach($product_data as $id=>$product){
+		if(empty($product['msg_type'])){
+			$lock_status=fn_mcs_get_product_lock_status($id);
+			$products_to_sync[$id]['product_id']=$product['product_id'];
+			$products_to_sync[$id]['name']=$product['descriptions'][CART_LANGUAGE]['product'];
+			$products_to_sync[$id]['update_status']='U';
+			if(empty($lock_status)){
+				$products_to_sync[$id]['update_status']='N';
+			}elseif($lock_status['mcs_lock_sync_product']=='Y'){
+				$products_to_sync[$id]['update_status']='L';
+			}
+			$product_to_sync_ids[]=$product['product_id'];
+		}
+	}
+				
+	return array($products_to_sync,$product_to_sync_ids);
+}
+
+function fn_mcs_sync_selected_products($products_to_sync, $sync_products_enabled=false)
+{
+	$GLOBALS['sync_products_enabled']=$sync_products_enabled;
+	$sync_result=array();
+	$product_data=array();
+	
+	// Connect to parent db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_parent_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Parent database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+
+	// Get product ids of products to be synced
+	foreach($products_to_sync as $pid){
+		//$sync_result[]=fn_mcs_sync_product($v['product_id']);
+		$product_data[$pid]=fn_mcs_get_all_product_data($pid);
+	}
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	// Put products to be synced
+	foreach($product_data as $k=>$v){
+		if(empty($v['msg_type'])){
+			$lock_result = db_get_row("SELECT mcs_lock_sync_product FROM ?:products WHERE product_id = ?i ", $v['product_id']);
+			if(empty($lock_result) || $lock_result['mcs_lock_sync_product']=='N'){
+				$product_result=fn_mcs_put_all_product_data($v);
+				$sync_result[]=array(
+					'name'=>$v['descriptions'][CART_LANGUAGE]['product'],
+					'product_id'=>$v['descriptions'][CART_LANGUAGE]['product_id']
+				);
+			}
+		}
+	}
+	if(!empty($sync_result)){
+		fn_mcs_child_shop_synced_products_log($sync_result);
+	}
+	// Update timestamp of sync
+	$today=fn_mcs_parse_date();
+	db_replace_into("mcs_timestamp_of_sync",array('id'=>1,'timestamp'=>$today));
+	
+	fn_mcs_send_sync_timestamp_to_parent(time());
+	if(!empty($products_to_sync)){
+		write_log("Synchronization finished!");
+	}
+	
+	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N', 'sync_result'=>$sync_result);
+}
+
+function fn_mcs_update_unsynced_table($all_pids,$synced_pids)
+{
+	$all_pids=json_decode($all_pids,true);
+	$products_not_synced=array_diff($all_pids,$synced_pids);
+	
+	// Connect to child db
+	$db_result=fn_mcs_db_connect($GLOBALS['db_child_params']);
+	// Check connection
+	if(!$db_result['db_init'] || !$db_result['db_con']){
+		write_log('Child database connection problem');
+		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
+	}
+	
+	$result=db_query("TRUNCATE TABLE ?:mcs_products_unsynced");
+	
+	foreach($products_not_synced as $v){
+		db_query("INSERT INTO ?:mcs_products_unsynced (product_id) VALUES (?i)",$v);
+	}
+	
+	return $products_not_synced;
+}
+
 // HOOKS
 function fn_mcs_child_shop_update_product_post($product_data, $product_id, $lang_code, $create)
 {

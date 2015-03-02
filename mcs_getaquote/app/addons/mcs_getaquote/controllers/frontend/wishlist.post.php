@@ -16,3 +16,18 @@ if ($mode == 'view') {
 	Registry::get('view')->assign('vendors', $vendors);
 	
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if ($mode == 'add') {
+		if (!empty($_SESSION['notifications'])) {
+			foreach ($_SESSION['notifications'] as $k => $v) {
+				if ($v['message_state']=='I' & $v['type']=='I') {
+					unset($_SESSION['notifications'][$k]);
+				}
+			}
+		}
+	
+		return true;
+	}
+}
