@@ -8,3 +8,14 @@
 <input type="hidden" name="product_data[{$obj_id}][product_id]" value="{$product.product_id}" />
 {/if}
 {/capture}
+
+{* Get a quote button login popup *}
+{if !$auth.user_id}
+    {if $settings.General.secure_auth != "Y"}
+        <div  id="login_block{$block.snapping_id}" class="hidden" title="{__("sign_in")}">
+            <div class="login-popup">
+                {include file="views/auth/login_form.tpl" style="popup" id="popup`$block.snapping_id`"}
+            </div>
+        </div>
+    {/if}
+{/if}

@@ -34,6 +34,9 @@
                 <input type="hidden" name="product_data[{$_product.product_id}][product_id]" value="{$_product.product_id}" />
                 <input type="hidden" name="product_data[{$_product.product_id}][amount]" value="1" />
                 {append var=prod_data value=['product_id'=>$_product.product_id,'product_name'=>$_product.product,'main_pair'=>$_product.main_pair,'product_code'=>$_product.product_code] index=$_product.product_id}
+                {if !$_product.price|floatval && $_product.zero_price_action == "R"}
+                    {assign var=flag_hide_add_all_button value=true}
+                {/if}
             {/foreach}
             
             {assign var=prod_data value=$prod_data|json_encode}
@@ -42,10 +45,29 @@
                 <input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_getaquote_pages_list}" />
                 <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
                 <input type="hidden" name="mcs_vendor_id" value="{$mcs_vendor_id}" />
-                {include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
-                {include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
+                {if !$flag_hide_add_all_button}
+                	{include file="buttons/button.tpl" but_text=__("add_all_to_cart") but_id="vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[checkout.add]" but_role="action"}
+                {/if}
+                {if $auth.user_id}
+                	{include file="buttons/button.tpl" but_text=__("get_a_quote") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary" but_name="dispatch[pages.view]" but_role="action"}
+                {else}
+                    <span id="wrap_communicate_vendor_button_{$block.block_id}" class="button-submit-action button-wrap-left">
+                    	<span class="button-action button-wrap-right">
+                        	<a href="{if $runtime.controller == "auth" && $runtime.mode == "login_form"}{$config.current_url|fn_url}{else}{"auth.login_form?return_url=`$config.current_url`"|fn_url}{/if}" {if $settings.General.secure_auth != "Y"} data-ca-target-id="login_block{$block.snapping_id}" class="cm-dialog-opener cm-dialog-auto-size ty-btn__secondary account"{else}class="account"{/if} rel="nofollow">{__("get_a_quote")}</a>
+                        </span>
+                    </span>	
+                {/if}
             </div>
         </form>
+        {if !$auth.user_id}
+        	{if $settings.General.secure_auth != "Y"}
+                <div  id="login_block{$block.snapping_id}" class="hidden" title="{__("sign_in")}">
+                    <div class="login-popup">
+                        {include file="views/auth/login_form.tpl" style="popup" id="popup`$block.snapping_id`"}
+                    </div>
+                </div>
+            {/if}  
+        {/if}
 	</div>
     {literal}
     <script>
