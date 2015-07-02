@@ -14,7 +14,7 @@
     {if $settings.General.secure_auth != "Y"}
         <div  id="login_block{$block.snapping_id}" class="hidden" title="{__("sign_in")}">
             <div class="login-popup">
-                {include file="views/auth/login_form.tpl" style="popup" id="popup`$block.snapping_id`"}
+                {include file="views/auth/login_form.tpl" style="popup" id="popup`$block.snapping_id`" show_register="true"}
             </div>
         </div>
     {/if}

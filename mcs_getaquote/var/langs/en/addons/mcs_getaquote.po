@@ -51,3 +51,7 @@ msgstr "Click <a class='vs-button'><i class='vs-icon-wishlist'></i></a> to selec
 msgctxt "Languages::mcs_view_producer_page"
 msgid "View producer page"
 msgstr "View producer page"
+
+msgctxt "Languages::mcs_you_dont_have_an_account"
+msgid "You don't have an account?"
+msgstr "You don't have an account?"
