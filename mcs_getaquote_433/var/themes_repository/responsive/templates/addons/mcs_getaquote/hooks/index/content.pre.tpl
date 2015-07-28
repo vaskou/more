@@ -1,0 +1,1 @@
+<div id="mcs_helper" class="{$_REQUEST.dispatch|replace:'.':'_'} mcs_{$mobiledetect.deviceType} {if $auth.user_id==0}mcs-logged-out{else}mcs-logged-in{/if}">

@@ -1,0 +1,133 @@
+.mcs-vendor-wishlist__message{
+	.vs-button{
+		padding: 2px 3px 1px 3px;
+		color: #fff;
+	}
+}
+.mcs-vendor-wishlist{
+	border:1px solid lighten(@base,30%);
+}
+.mcs-vendor-list{
+	width:80%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:-0.25em;
+}
+.mcs-vendor-list__item {
+	margin:10px;
+	position:relative;
+}
+.mcs-vendor-list{
+	.ty-twishlist-item {
+		height: auto; 
+		margin-bottom: 0; 
+		position: absolute;
+		z-index: 5;
+		right: 5px;
+		display:none;
+	}
+	.mcs-vendor-list__item:hover .ty-twishlist-item{
+		display:block;
+	}
+	.ty-remove__txt{
+		display:none;
+	}
+}
+.mcs-vendor-list__image {
+	position: relative;
+	border: 1px solid #ebebeb;
+	background: #fff;
+	text-align: center;
+	img{
+		padding-bottom:1px;
+	}
+	.ty-no-image{
+		min-width:100% !important;
+	}
+}
+
+.mcs-vendor-list__buttons-form{
+	width:20%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:-0.25em;
+	text-align:center;
+}
+.mcs-vendor-list__buttons{
+	padding:5px;
+	margin:10px 10px 10px 0;
+}
+.mcs-vendor-list__buttons .ty-btn{
+	margin:5px 0;
+}
+
+
+@media (max-width: 767px) {
+	.mcs-vendor-list{
+		width:100%;
+		.ty-column10{
+			width:20%;
+		}
+	}
+	.mcs-vendor-list__buttons-form{
+		width:100%;
+	}
+	.mcs-vendor-list__buttons{
+		margin:10px;
+	}
+}
+
+/******** wishlist view**************/
+.mcs-wishlist-view .ty-feature__image{
+	text-align:center;
+	.mcs-producer-link{
+		margin-top:5px;
+	}
+}
+
+/************ mcs-badge ***************/
+#wish_btn_1 .mcs-badge{
+	display:block;
+    .border-radius(50%) !important;
+	background:#e7c686;
+    padding:0px;
+    width:27px;
+    height:27px;
+    line-height:27px;
+    text-align:center;
+	margin:auto;
+}
+
+/********** contact us button**********/
+
+.mcs-contact-us-btn{
+    display:none !important;
+}
+.product-main-info .mcs-contact-us-btn{
+    display:block !important;
+}
+
+/********** popup register **********/
+.vs-my-account {
+	.ty-login__remember-me,
+	.ty-float-right {
+		display:none;
+	}
+}
+
+.mcs-register-button{
+	border-top:1px solid #d0cece;
+	margin-top:25px;
+	padding: 10px 20px 0;
+	position: relative;
+	left: -20px;
+	width: 100%;
+	
+	.mcs-register-question{
+		display:inline-block;
+		padding:9px 0;
+	}
+	a{
+		float:right;
+	}
+}

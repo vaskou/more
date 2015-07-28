@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mcs_getaquote\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+
+msgctxt "Addons::name::mcs_getaquote"
+msgid "More CS-Cart: Get a quote"
+msgstr "More CS-Cart: Get a quote"
+
+msgctxt "Addons::description::mcs_getaquote"
+msgid "More CS-Cart: Get a quote"
+msgstr "More CS-Cart: Get a quote"
+
+msgctxt "SettingsSections::mcs_getaquote::mcs_getaquote_features"
+msgid "Features"
+msgstr "Features"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_features_list"
+msgid "Select Brand Feature"
+msgstr "Select Brand Feature"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_pages_list"
+msgid "Select Form Page"
+msgstr "Select Form Page"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_usergroups_list"
+msgid "Check in which Usergroups the 'Get a quote' block will be visible"
+msgstr "Check in which Usergroups the 'Get a quote' block will be visible"
+
+msgctxt "SettingsOptions::mcs_getaquote::mcs_getaquote_email_domain"
+msgid "Insert email domain for the messaging system"
+msgstr "Insert email domain for the messaging system"
+
+msgctxt "Languages::block_mcs_vendor_wishlist"
+msgid "More CS-Cart: Vendor Wishlist"
+msgstr "More CS-Cart: Vendor Wishlist"
+
+msgctxt "Languages::block_mcs_vendor_wishlist_description"
+msgid "More CS-Cart: Vendor Wishlist"
+msgstr "More CS-Cart: Vendor Wishlist"
+
+msgctxt "Languages::mcs_vendor_wishlist"
+msgid "More CS-Cart: Vendor Wishlist"
+msgstr "More CS-Cart: Vendor Wishlist"
+
+msgctxt "Languages::get_a_quote"
+msgid "Get a quote"
+msgstr "Get a quote"
+
+msgctxt "Languages::mcs_vendor_wishlist_message"
+msgid "Click <a class='vs-button'><i class='vs-icon-wishlist'></i></a> to select products and contact the supplier"
+msgstr "Click <a class='vs-button'><i class='vs-icon-wishlist'></i></a> to select products and contact the supplier"
+
+msgctxt "Languages::mcs_view_producer_page"
+msgid "View producer page"
+msgstr "View producer page"
+
+msgctxt "Languages::mcs_you_dont_have_an_account"
+msgid "You don't have an account?"
+msgstr "You don't have an account?"
