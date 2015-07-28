@@ -19,7 +19,8 @@
         {assign var=prod_data value=$prod_data|json_encode}
         <input type="hidden" name="mcs_product_data" value="{$prod_data}" />
     	<input type="hidden" name="page_id" value="{$addons.mcs_getaquote.mcs_getaquote_pages_list}" />
-        <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
+        <input type="hidden" name="product_id" value="{$product.product_id}" />
+        <input type="hidden" name="mcs_variant_id" value="products" />
         <input type="hidden" name="mcs_vendor_id" value="{$mcs_vendor_id}" />
         {if $auth.user_id}
         	{include file="buttons/button.tpl" but_text=__("contact_us_for_price") but_id="communicate_vendor_button_`$block.block_id`" but_meta="ty-btn__secondary mcs-contact-us-btn" but_name="dispatch[pages.view]" but_role="action"}

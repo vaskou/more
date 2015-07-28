@@ -14,7 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			if($_REQUEST['mcs_variant_id']=='wishlist'){
 				return array(CONTROLLER_STATUS_REDIRECT, "wishlist.view");
 			}
-			return array(CONTROLLER_STATUS_REDIRECT, "product_features.view?variant_id=$_REQUEST[mcs_variant_id]");
+			if($_REQUEST['mcs_variant_id']=='products'){
+				return array(CONTROLLER_STATUS_REDIRECT, "products.view?product_id=".$_REQUEST['product_id']);
+			}
+			return array(CONTROLLER_STATUS_REDIRECT, "product_features.view?variant_id=".$_REQUEST['mcs_variant_id']);
 			
         }
 
@@ -26,7 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($_REQUEST['mcs_variant_id']=='wishlist'){
 			return array(CONTROLLER_STATUS_REDIRECT, "wishlist.view");
 		}
-        return array(CONTROLLER_STATUS_OK, "product_features.view?variant_id=$_REQUEST[mcs_variant_id]" . $suffix);
+		if($_REQUEST['mcs_variant_id']=='products'){
+				return array(CONTROLLER_STATUS_REDIRECT, "products.view?product_id=".$_REQUEST['product_id']);
+			}
+        return array(CONTROLLER_STATUS_OK, "product_features.view?variant_id=".$_REQUEST['mcs_variant_id'] . $suffix);
 		
     }
 	

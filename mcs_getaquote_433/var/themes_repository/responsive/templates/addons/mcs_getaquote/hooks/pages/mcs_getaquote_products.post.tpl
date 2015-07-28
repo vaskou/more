@@ -18,5 +18,8 @@
     <input type="hidden" name="mcs_last_key" value="{$mcs_last_key}" />
     <input type="hidden" name="mcs_product_data" value="{$mcs_product_data}" />
     <input type="hidden" name="mcs_variant_id" value="{$mcs_variant_id}" />
+    {if $mcs_variant_id=='products'}
+    	<input type="hidden" name="product_id" value="{$product_id}" />
+    {/if}
 	<input type="hidden" name="form_values[mcs_vendor_id]" value="{$mcs_vendor_id}" />
 </div>

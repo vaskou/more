@@ -183,7 +183,9 @@ function fn_mcs_send_form($page_id, $form_values, $auth)
             if ($result == true) {
 				
 				$user_info=fn_get_user_info($auth['user_id']);
-                $from = $user_info['email'];
+                $sender=$user_info['email'];
+
+                $from = 'default_company_support_department';
                 $is_html = true;
 				
 				$page_data['form']['elements']['products']=array(
@@ -200,8 +202,14 @@ function fn_mcs_send_form($page_id, $form_values, $auth)
 				
 				$addons=Registry::get('addons');
 				$mcs_email_domain=$addons['mcs_getaquote']['mcs_getaquote_email_domain'];
-				//OLD CODE - $vendor_email=db_get_field("SELECT email FROM ?:companies WHERE company_id=?i",$form_values['mcs_vendor_id']);
-				$vendor_email=fn_seo_get_name('m', $form_values['mcs_vendor_id']).$mcs_email_domain;
+								
+				if(isset($addons['seo']) && $addons['seo']['status']=='A'){
+					$vendor_email=fn_seo_get_name('m', $form_values['mcs_vendor_id']).$mcs_email_domain;
+				}else{
+					// If seo addon is disabled 
+					$vendor_email=db_get_field("SELECT email FROM ?:companies WHERE company_id=?i",$form_values['mcs_vendor_id']);
+				}
+				
 				$page_data['form']['general'][FORM_RECIPIENT]=array($page_data['form']['general'][FORM_RECIPIENT],$vendor_email);
 				
                 fn_set_hook('mcs_send_form', $page_data, $form_values, $result, $from, $sender, $attachments, $is_html);
