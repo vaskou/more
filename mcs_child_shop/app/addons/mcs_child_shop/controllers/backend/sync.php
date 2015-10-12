@@ -22,8 +22,8 @@ if($mode=='manage'){
 				Registry::get('view')->assign('mcs_products_to_sync',$products_to_sync);
 				Registry::get('view')->assign('mcs_products_to_sync_ids',$products_to_sync_ids);
 			}elseif($sync_mode=='new'){
-				if(!empty($_REQUEST['product_ids'])){
-					$pids=$_REQUEST['product_ids'];
+				$pids = (!empty($_REQUEST['product_ids'])) ? $_REQUEST['product_ids'] : array();
+				if(!empty($pids)){
 					$sync_result=fn_mcs_sync_selected_products($pids);
 					if(!empty($sync_result['return_msg'])){
 						fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
@@ -33,7 +33,7 @@ if($mode=='manage'){
 					}				
 				}
 				if(!empty($_REQUEST['unsynced_products'])){
-					$unsynced_products=fn_mcs_update_unsynced_table($_REQUEST['unsynced_products'],$_REQUEST['product_ids']);
+					$unsynced_products=fn_mcs_update_unsynced_table($_REQUEST['unsynced_products'],$pids);
 					Registry::get('view')->assign('mcs_unsynced_products',$unsynced_products);
 				}
 			}elseif($sync_mode=='all'){

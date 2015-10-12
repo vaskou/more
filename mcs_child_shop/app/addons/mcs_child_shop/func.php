@@ -1257,7 +1257,7 @@ function fn_mcs_read_log($filename='')
 	if($result['status']==false){
 		return array('return_msg'=>$result['message'], 'msg_type'=>'N');
 	}
-	$result=explode("\n",$result);
+	$result=explode("\n",$result['message']);
 	return $result;
 }
 
@@ -1496,8 +1496,11 @@ function fn_mcs_sync_selected_products($products_to_sync, $sync_products_enabled
 			}
 		}
 	}
+	
 	if(!empty($sync_result)){
 		fn_mcs_child_shop_synced_products_log($sync_result);
+	}else{
+		return array('return_msg'=>'No products synchronized', 'msg_type'=>'N', 'sync_result'=>$sync_result);
 	}
 	// Update timestamp of sync
 	$today=fn_mcs_parse_date();

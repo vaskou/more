@@ -25,7 +25,7 @@ function read_log($logfile='') {
 		}
 		fclose($fd);	
 		if($result){
-			return $result; 
+			return array('status' => true, 'message' => $result);
 		}else{
 			return array('status' => false, 'message' => 'Log file is empty.');
 		}
