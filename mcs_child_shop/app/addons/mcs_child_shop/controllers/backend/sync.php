@@ -12,6 +12,7 @@ if($mode=='manage'){
 	if($auth['is_root']=='Y' && $child_shop_status == 'A'){
 		if (!empty($_REQUEST['sync_mode'])){
 			$sync_mode = $_REQUEST['sync_mode'];
+			Registry::get('view')->assign('mcs_sync_mode',$sync_mode);
 			if($sync_mode=='check'){
 				$sync_result=fn_mcs_get_products_to_sync();
 				if(!empty($sync_result['return_msg'])){
@@ -24,12 +25,16 @@ if($mode=='manage'){
 			}elseif($sync_mode=='new'){
 				$pids = (!empty($_REQUEST['product_ids'])) ? $_REQUEST['product_ids'] : array();
 				if(!empty($pids)){
+					//fn_backup_database_tables();
+				}
+				if(!empty($pids)){
 					$sync_result=fn_mcs_sync_selected_products($pids);
 					if(!empty($sync_result['return_msg'])){
 						fn_set_notification($sync_result['msg_type'], __('notice'), $sync_result['return_msg']);
 					}
 					if(!empty($sync_result['sync_result'])){
 						Registry::get('view')->assign('mcs_sync_result',$sync_result['sync_result']);
+						Registry::get('view')->assign('master_category_id',$sync_result['master_category_id']);
 					}				
 				}
 				if(!empty($_REQUEST['unsynced_products'])){
@@ -100,4 +105,50 @@ if($mode=='sync_log'){
 
 if($mode=='test'){
 
+}
+
+function fn_backup_database_tables()
+{
+	fn_define('DB_MAX_ROW_SIZE', 10000);
+	fn_define('DB_ROWS_PER_PASS', 40);
+	
+	set_time_limit(3600);
+	$status_data = db_get_array("SHOW TABLE STATUS");
+    $database_size = 0;
+    $all_tables = array();
+    foreach ($status_data as $k => $v) {
+        $database_size += $v['Data_length'] + $v['Index_length'];
+        $all_tables[] = $v['Name'];
+    }
+	
+	$dbdump_filename = 'dump_' . time() . '.sql';
+	
+	if (!fn_mkdir(Registry::get('config.dir.database'))) {
+		fn_set_notification('E', __('error'), __('text_cannot_create_directory', array(
+			'[directory]' => fn_get_rel_dir(Registry::get('config.dir.database'))
+		)));
+		exit;
+	}
+
+	$dump_file = Registry::get('config.dir.database') . $dbdump_filename;
+
+	if (is_file($dump_file)) {
+		if (!is_writable($dump_file)) {
+			fn_set_notification('E', __('error'), __('dump_file_not_writable'));
+			exit;
+		}
+	}
+	$dbdump_tables = $all_tables;
+	$dbdump_schema = true;
+	$dbdump_data = true;
+
+	db_export_to_file($dump_file, $dbdump_tables, $dbdump_schema, $dbdump_data);
+	
+	$result = false;
+	
+	fn_set_progress('echo', '<br />' . __('compressing_backup') . '...', false);
+
+	$result = fn_compress_files($dbdump_filename . '.tgz', $dbdump_filename, dirname($dump_file));
+	unlink($dump_file);
+	
 }

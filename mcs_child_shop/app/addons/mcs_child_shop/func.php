@@ -1419,7 +1419,7 @@ function fn_mcs_get_products_to_sync()
 		return array('return_msg'=>'Database connection problem', 'msg_type'=>'E');
 	}
 	// Get product ids of products to be synced
-	$pids_to_sync = db_get_hash_single_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp >= ".$last_sync_timestamp,array('product_id','product_id'));
+	$pids_to_sync = db_get_hash_single_array("SELECT product_id FROM ?:products WHERE mcs_child_sync_product='Y' AND timestamp > ".$last_sync_timestamp,array('product_id','product_id'));
 	// Merge the product ids
 	$pids=array_merge($pids_not_synced,$pids_to_sync);
 	$pids=array_unique($pids);
@@ -1511,7 +1511,7 @@ function fn_mcs_sync_selected_products($products_to_sync, $sync_products_enabled
 		write_log("Synchronization finished!");
 	}
 	
-	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N', 'sync_result'=>$sync_result);
+	return array('return_msg'=>'Synchronization finished', 'msg_type'=>'N', 'sync_result'=>$sync_result, 'master_category_id'=>$GLOBALS['master_category_id']);
 }
 
 function fn_mcs_update_unsynced_table($all_pids,$synced_pids)
