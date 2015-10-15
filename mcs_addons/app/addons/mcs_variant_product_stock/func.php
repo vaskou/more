@@ -1,6 +1,6 @@
 <?php
 
-function fn_mcs_variant_product_stock_update_product_option_pre($option_data, $option_id, $lang_code)
+function fn_mcs_variant_product_stock_update_product_option_pre(&$option_data, $option_id, $lang_code)
 {	
 	$product_id=$option_data['product_id'];
 	$tracking=db_get_field("SELECT tracking FROM ?:products WHERE product_id = ?i",$product_id);
@@ -27,7 +27,7 @@ function fn_mcs_variant_product_stock_update_product_option_pre($option_data, $o
 }
 
 
-function fn_mcs_variant_product_stock_look_through_variants_update_combination($combination, $_data, $product_id, $amount, $options, $variants)
+function fn_mcs_variant_product_stock_look_through_variants_update_combination($combination, &$_data, $product_id, $amount, $options, $variants)
 {
 	
 	$temp_amount=array();
@@ -41,9 +41,11 @@ function fn_mcs_variant_product_stock_look_through_variants_update_combination($
 				$tracking=db_get_field("SELECT tracking FROM ?:products WHERE product_id = ?i",$v1['product_id']);
 				//if(array_key_exists('product_options',$v1)){
 				if($tracking=='O'){
-					$temp_amount[]=db_get_field('SELECT amount FROM ?:product_options_inventory WHERE combination_hash = ?i',$v1['comb_hash']);
+					$temp=db_get_field('SELECT amount FROM ?:product_options_inventory WHERE combination_hash = ?i',$v1['comb_hash']);
+					$temp_amount[]=(!empty($temp)) ? $temp : '0';
 				}elseif($tracking=='B'){
-					$temp_amount[]=db_get_field('SELECT amount FROM ?:products WHERE product_id = ?i',$v1['product_id']);
+					$temp=db_get_field('SELECT amount FROM ?:products WHERE product_id = ?i',$v1['product_id']);
+					$temp_amount[]=(!empty($temp)) ? $temp : '0';
 				}
 			}
 		}
@@ -195,7 +197,7 @@ function fn_mcs_look_through_variants($product_id, $amount, $options, $variants)
                     . "WHERE product_id = ?i AND combination_hash = ?i AND temp = 'Y'",
                     $product_id, $_data['combination_hash']
                 );
-
+				
                 $_data['amount'] = isset($old_data['amount']) ? $old_data['amount'] : $amount;
                 $_data['product_code'] = isset($old_data['product_code']) ? $old_data['product_code'] : '';
 
