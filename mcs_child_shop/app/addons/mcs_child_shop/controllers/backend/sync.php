@@ -87,12 +87,13 @@ if($mode=='sync_log'){
 	$fname=(isset($_REQUEST['fname']))?$_REQUEST['fname']:'';
 	$dir='var/mcs_child_shop/';
 	$files=fn_get_dir_contents($dir,true,true,'','',true);
+	arsort($files, SORT_STRING);
 	
 	if(empty($files)){
 		return false;
 	}
 	if($fname!=''){
-		$sync_log=fn_get_contents($dir.$files[$fname]);
+		$sync_log=fn_get_contents($dir.$fname.".log");
 		$sync_log=json_decode($sync_log,true);
 	}
 	

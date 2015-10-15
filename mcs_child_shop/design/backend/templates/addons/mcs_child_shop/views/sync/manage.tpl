@@ -89,26 +89,28 @@ $(function(){
 	<h3>{__("mcs_you_cant_sync")}</h3>
 {/if}
 {if $mcs_sync_result}
-{assign var="category_name" value=$master_category_id|fn_get_category_name}
-{assign var="url" value="{"products.manage?cid=`$master_category_id`"|fn_url}"}
-{__("mcs_sync_complete_message", ["[category_name]" => $category_name,"[url]" => $url])}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th style="width:100px">Product ID</th>
-            <th>Product Name</th>
-        </tr>
-    </thead>
-    <tbody>
-    {foreach from=$mcs_sync_result item=product}
-        <tr>
-            <td>{$product.product_id}</td>
-            <td><a href="{"products.update&product_id=`$product.product_id`"|fn_url}" target="_blank">{$product.name}</a></td>
-        </tr>
-    {/foreach}
-    </tbody>
-</table>
-{*$mcs_unsynced_products|var_dump*}
+    
+    {assign var="category_name" value=$master_category_id|fn_get_category_name}
+    {assign var="url" value="{"products.manage?cid=`$master_category_id`"|fn_url}"}
+    {__("mcs_sync_complete_message", ["[category_name]" => $category_name,"[url]" => $url])}
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:100px">Product ID</th>
+                <th>Product Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach from=$mcs_sync_result item=product}
+            <tr>
+                <td>{$product.product_id}</td>
+                <td><a href="{"products.update&product_id=`$product.product_id`"|fn_url}" target="_blank">{$product.name}</a></td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {*$mcs_unsynced_products|var_dump*}
 {/if}
 
 {capture name="buttons"}

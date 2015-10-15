@@ -1,7 +1,5 @@
 {capture name="mainbox"}
 
-<h1>{__("mcs_sync_log")}</h1>
-
 <div id="sync_log">
 
 {if $mcs_files}
@@ -12,7 +10,7 @@
     	{foreach from=$mcs_files key=fkey item=file}
         	{assign var=tstamp value=".log"|str_replace:"":$file}
             {assign var=f_name value="Y-m-d H:i:s"|date:$tstamp}
-        	<option value="{$fkey}" {if $mcs_fname==$fkey}selected="selected"{/if}>{$f_name}</option>
+        	<option value="{$tstamp}" {if $mcs_fname==$tstamp}selected="selected"{/if}>{$f_name}</option>
         {/foreach}
     </select>
     </div>
