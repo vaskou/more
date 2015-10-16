@@ -3,9 +3,9 @@
 <div id="sync_log">
 
 {if $mcs_files}
-<form class="cm-ajax cm-ajax-full-render" action="{""|fn_url}" method="post" name="sync_log">
+<form class="cm-ajax cm-ajax-full-render form-inline" action="{""|fn_url}" method="post" name="sync_log">
     <input type="hidden" name="result_ids" value="sync_log" />
-    <div class="controls">
+    
     <select name="fname" id="f_select">
     	{foreach from=$mcs_files key=fkey item=file}
         	{assign var=tstamp value=".log"|str_replace:"":$file}
@@ -13,7 +13,7 @@
         	<option value="{$tstamp}" {if $mcs_fname==$tstamp}selected="selected"{/if}>{$f_name}</option>
         {/foreach}
     </select>
-    </div>
+    
     {include file="buttons/button.tpl" but_text=__("mcs_show_log") but_id="sync_log_button" but_meta="ty-btn__secondary" but_name="dispatch[sync.sync_log]" but_role="submit"}
 </form>
 {else}
@@ -25,8 +25,8 @@
     <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width:100px">Product ID</th>
-            <th>Product Name</th>
+            <th style="width:100px">{__('product_id')}</span></th>
+            <th><span>{__('product_name')}</span></th>
         </tr>
     </thead>
     <tbody>

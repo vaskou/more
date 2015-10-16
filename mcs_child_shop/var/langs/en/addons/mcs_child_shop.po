@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: More CS-Cart: Child Shop\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+
+msgctxt "Addons::name::mcs_child_shop"
+msgid "More CS-Cart: Child Shop"
+msgstr "More CS-Cart: Child Shop"
+
+msgctxt "Addons::description::mcs_child_shop"
+msgid "More CS-Cart: Child Shop"
+msgstr "More CS-Cart: Child Shop"
+
+msgctxt "SettingsSections::mcs_child_shop::mcs_general"
+msgid "Generic settings"
+msgstr "Generic settings"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_header"
+msgid "Parent Settings"
+msgstr "Parent Settings"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_server"
+msgid "Parent server"
+msgstr "Parent server"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_username"
+msgid "Parent username"
+msgstr "Parent username"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_password"
+msgid "Parent password"
+msgstr "Parent password"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_table_prefix"
+msgid "Parent table prefix"
+msgstr "Parent table prefix"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_db_name"
+msgid "Parent database name"
+msgstr "Parent database name"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_parent_url"
+msgid "Parent shop URL"
+msgstr "Parent shop URL"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_child_header"
+msgid "Child Settings"
+msgstr "Child Settings"
+
+msgctxt "SettingsOptions::mcs_child_shop::mcs_general_child_secret_key"
+msgid "Syncronization secret key"
+msgstr "Syncronization secret key"
+
+msgctxt "Languages::mcs_synchronization"
+msgid "Product Synchronization"
+msgstr "Product Synchronization"
+
+msgctxt "Languages::mcs_synchronize"
+msgid "Synchronize"
+msgstr "Synchronize"
+
+msgctxt "Languages::mcs_synchronize_categories"
+msgid "Synchronize Categories"
+msgstr "Synchronize Categories"
+
+msgctxt "Languages::mcs_make_products_active"
+msgid "Make Products Active"
+msgstr "Make Products Active"
+
+msgctxt "Languages::mcs_first_time_sync"
+msgid "First Time Synchronization"
+msgstr "First Time Synchronization"
+
+msgctxt "Languages::mcs_new_products_sync"
+msgid "Selected Products Synchronization"
+msgstr "Selected Products Synchronization"
+
+msgctxt "Languages::mcs_you_cant_sync"
+msgid "Currently you can't synchronize the products."
+msgstr "Currently you can't synchronize the products."
+
+msgctxt "Languages::mcs_error_log"
+msgid "Error Log"
+msgstr "Error Log"
+
+msgctxt "Languages::mcs_clear_error_log"
+msgid "Clear Error Log"
+msgstr "Clear Error Log"
+
+msgctxt "Languages::mcs_sync_log"
+msgid "Synchronization Log"
+msgstr "Synchronization Log"
+
+msgctxt "Languages::mcs_show_log"
+msgid "Show Log"
+msgstr "Show Log"
+
+msgctxt "Languages::mcs_no_sync_logs"
+msgid "No Synchronization Log"
+msgstr "No Synchronization Log"
+
+msgctxt "Languages::mcs_lock_sync"
+msgid "Lock Synchronization"
+msgstr "Lock Synchronization"
+
+msgctxt "Languages::mcs_lock_sync_product"
+msgid "Lock Product Synchronization"
+msgstr "Lock Product Synchronization"
+
+msgctxt "Languages::mcs_last_synchronization"
+msgid "Last Synchronization"
+msgstr "Last Synchronization"
+
+msgctxt "Languages::mcs_check_products_to_sync"
+msgid "Check For Product To Synchronize"
+msgstr "Check For Product To Synchronize"
+
+msgctxt "Languages::mcs_product_u"
+msgid "<span class=\"text-error\">Attention! Existing product</span>"
+msgstr "<span class=\"text-error\">Attention! Existing product</span>"
+
+msgctxt "Languages::mcs_product_n"
+msgid "<p class=\"text-success\">New Product</p>"
+msgstr "<p class=\"text-success\">New Product</p>"
+
+msgctxt "Languages::mcs_product_l"
+msgid "Locked"
+msgstr "Locked"
+
+msgctxt "Languages::mcs_product_u_tooltip"
+msgid "If you update this product, this values will not change: Price, Category, Status. The rest values will be changed with the updated information."
+msgstr "If you update this product, this values will not change: Price, Category, Status. The rest values will be changed with the updated information."
+
+msgctxt "Languages::mcs_product_l_tooltip"
+msgid "In order to synchronize this product, you must unlock it from the edit product page."
+msgstr "In order to synchronize this product, you must unlock it from the edit product page."
+
+msgctxt "Languages::mcs_lock_feature"
+msgid "Lock Feature"
+msgstr "Lock Feature"
+
+msgctxt "Languages::mcs_no_product_selected"
+msgid "No product selected"
+msgstr "No product selected"
+
+msgctxt "Languages::mcs_sync_complete_message"
+msgid "<p class=\"text-success\">Selected products synchronization completed.</p><p>The new products are set in category <a href=\"[url]\" target=\"_blank\">[category_name]</a>, and they are not visible in your store for now. You can edit the products and set their values: Price, Category and more.</p>"
+msgstr "<p class=\"text-success\">Selected products synchronization completed.</p><p>The new products are set in category <a href=\"[url]\" target=\"_blank\">[category_name]</a>, and they are not visible in your store for now. You can edit the products and set their values: Price, Category and more.</p>"
+
+msgctxt "Languages::mcs_db_backup_attention"
+msgid "<p class=\"text-error\">Attention! You must wait for the synchronization to finish. Do not browse another page.</p>"
+msgstr "<p class=\"text-error\">Attention! You must wait for the synchronization to finish. Do not browse another page.</p>"

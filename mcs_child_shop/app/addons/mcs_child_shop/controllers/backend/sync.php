@@ -8,8 +8,11 @@ if($mode=='manage'){
 	
 	$auth = & $_SESSION['auth'];
 	$child_shop_status=fn_mcs_get_child_sync_status_from_parent();
+	if(!empty($child_shop_status['return_msg'])){
+		fn_set_notification($child_shop_status['msg_type'], __('notice'), $child_shop_status['return_msg']);
+	}
 
-	if($auth['is_root']=='Y' && $child_shop_status == 'A'){
+	if( $child_shop_status == 'A'){
 		if (!empty($_REQUEST['sync_mode'])){
 			$sync_mode = $_REQUEST['sync_mode'];
 			Registry::get('view')->assign('mcs_sync_mode',$sync_mode);
@@ -24,8 +27,12 @@ if($mode=='manage'){
 				Registry::get('view')->assign('mcs_products_to_sync_ids',$products_to_sync_ids);
 			}elseif($sync_mode=='new'){
 				$pids = (!empty($_REQUEST['product_ids'])) ? $_REQUEST['product_ids'] : array();
+				if(empty($pids)){
+					fn_set_notification('W', __('notice'), __("mcs_no_product_selected"), "I");
+					return array(CONTROLLER_STATUS_OK, "sync.manage?sync_mode=check");
+				}
 				if(!empty($pids)){
-					//fn_backup_database_tables();
+					fn_mcs_backup_database_tables();
 				}
 				if(!empty($pids)){
 					$sync_result=fn_mcs_sync_selected_products($pids);
@@ -58,25 +65,28 @@ if($mode=='manage'){
 	$last_sync_timestamp=fn_mcs_get_timestamp_of_sync();
 	Registry::get('view')->assign('mcs_timestamp',$last_sync_timestamp);
 	Registry::get('view')->assign('mcs_child_shop_status',$child_shop_status);
+	Registry::get('view')->assign('master_category_id',fn_mcs_get_master_category_id());
+	
 }
 
 if($mode=='error_log'){
-	
-	if (!empty($_REQUEST['clear'])){
-		if($_REQUEST['clear']==true){
-			$result=fn_mcs_clear_log();
-			if($result['status']==true){
-				fn_set_notification('N', __('notice'), $result['message']);
-				return true;
+	if($auth['is_root']=='Y'){
+		if (!empty($_REQUEST['clear'])){
+			if($_REQUEST['clear']==true){
+				$result=fn_mcs_clear_log();
+				if($result['status']==true){
+					fn_set_notification('N', __('notice'), $result['message']);
+					return true;
+				}
 			}
 		}
-	}
-	
-	$error_log=fn_mcs_read_log();
-	if(!empty($error_log['return_msg'])){
-		fn_set_notification($error_log['msg_type'], __('notice'), $error_log['return_msg']);
-	}else{
-		Registry::get('view')->assign('mcs_error_log',$error_log);
+		
+		$error_log=fn_mcs_read_log();
+		if(!empty($error_log['return_msg'])){
+			fn_set_notification($error_log['msg_type'], __('notice'), $error_log['return_msg']);
+		}else{
+			Registry::get('view')->assign('mcs_error_log',$error_log);
+		}
 	}
 	
 }
@@ -108,7 +118,7 @@ if($mode=='test'){
 
 }
 
-function fn_backup_database_tables()
+function fn_mcs_backup_database_tables()
 {
 	fn_define('DB_MAX_ROW_SIZE', 10000);
 	fn_define('DB_ROWS_PER_PASS', 40);

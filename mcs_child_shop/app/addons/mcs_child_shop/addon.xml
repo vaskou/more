@@ -1,76 +1,43 @@
 <?xml version="1.0"?>
-<addon scheme="2.0">
+<addon scheme="3.0">
     <id>mcs_child_shop</id>
-    <name>More CS-Cart: Child Shop</name>
-    <description>More CS-Cart Child Shop</description>
-    <version>1.1.2</version>
+    <version>1.2.0</version>
     <priority>200000</priority>
     <position>0</position>
     <default_language>en</default_language>
 	<status>active</status>
-    <translations>
-    </translations>
+
 	<settings layout="separate">
         <sections>
-            <section id="mcs_general">
-                <name>Generic settings</name>        
+            <section id="mcs_general">        
                 <items>
 					<item id="mcs_general_parent_header">
 						<type>header</type>
-						<name>Parent Settings</name>
 					</item>
 					<item id="mcs_general_parent_server">
 						<type>input</type>
-						<name>Parent server</name>
 					</item>
 					<item id="mcs_general_parent_username">
 						<type>input</type>
-						<name>Parent username</name>
 					</item>
 					<item id="mcs_general_parent_password">
 						<type>password</type>
-						<name>Parent password</name>
 					</item>
 					<item id="mcs_general_parent_table_prefix">
 						<type>input</type>
-						<name>Parent table prefix</name>
 					</item>
 					<item id="mcs_general_parent_db_name">
 						<type>input</type>
-						<name>Parent database name</name>
 					</item>
 					<item id="mcs_general_parent_url">
 						<type>input</type>
-						<name>Parent shop URL</name>
 					</item>
 					
 					<item id="mcs_general_child_header">
 						<type>header</type>
-						<name>Child Settings</name>
-					</item>
-					<item id="mcs_general_child_server">
-						<type>input</type>
-						<name>Child server</name>
-					</item>
-					<item id="mcs_general_child_username">
-						<type>input</type>
-						<name>Child username</name>
-					</item>
-					<item id="mcs_general_child_password">
-						<type>password</type>
-						<name>Child password</name>
-					</item>
-					<item id="mcs_general_child_table_prefix">
-						<type>input</type>
-						<name>Child table prefix</name>
-					</item>
-					<item id="mcs_general_child_db_name">
-						<type>input</type>
-						<name>Child database name</name>
 					</item>
 					<item id="mcs_general_child_secret_key">
 						<type>input</type>
-						<name>Syncronization secret key</name>
 					</item>
 				</items>
 			</section>
@@ -102,74 +69,5 @@
 		</item>
 		<item for="install">ALTER TABLE ?:product_feature_variant_descriptions ADD mcs_lock_feature CHAR(1) NOT NULL DEFAULT 'N';</item>
 	</queries>
-	<language_variables>
-        <item lang="en" id="mcs_synchronization">Product Synchronization</item>
-		<item lang="el" id="mcs_synchronization">Συγχρονισμός Προϊόντων</item>
-		
-        <item lang="en" id="mcs_synchronize">Synchronize</item>
-		<item lang="el" id="mcs_synchronize">Συγχρονισμός</item>
-		
-		<item lang="en" id="mcs_synchronize_categories">Synchronize Categories</item>
-		<item lang="el" id="mcs_synchronize_categories">Συγχρονισμός Κατηγοριών</item>
-		
-		<item lang="en" id="mcs_make_products_active">Make Products Active</item>
-		<item lang="el" id="mcs_make_products_active">Κάνε Τα Προϊόντα Ενεργά</item>
-		
-		<item lang="en" id="mcs_first_time_sync">First Time Synchronization</item>
-		<item lang="el" id="mcs_first_time_sync">Αρχικός Συγχρονισμός</item>
-		
-		<item lang="en" id="mcs_new_products_sync">Selected Products Synchronization</item>
-		<item lang="el" id="mcs_new_products_sync">Συγχρονισμός Επιλεγμένων Προϊόντων</item>
-		
-		<item lang="en" id="mcs_you_cant_sync">Currently you can't synchronize the products.</item>
-		<item lang="el" id="mcs_you_cant_sync">Δεν μπορείτε να συγχρονίσετε τα προϊόντα αυτή τη στιγμή.</item>
-		
-        <item lang="en" id="mcs_error_log">Error Log</item>
-		<item lang="el" id="mcs_error_log">Αρχείο Καταγραφής Σφαλμάτων</item>
-		
-		<item lang="en" id="mcs_clear_error_log">Clear Error Log</item>
-		<item lang="el" id="mcs_clear_error_log">Καθαρισμός Αρχείου Καταγραφής Σφαλμάτων</item>
-		
-		<item lang="en" id="mcs_sync_log">Synchronization Log</item>
-		<item lang="el" id="mcs_sync_log">Αρχείο Συγχρονισμού</item>
-		
-		<item lang="en" id="mcs_show_log">Show Log</item>
-		<item lang="el" id="mcs_show_log">Εμφάσιση Αρχείου Συγχρονισμού</item>
-		
-		<item lang="en" id="mcs_no_sync_logs">No Synchronization Log</item>
-		<item lang="el" id="mcs_no_sync_logs">Δεν Υπάρχει Αρχείο Συγχρονισμού</item>
-		
-		<item lang="en" id="mcs_lock_sync">Lock Synchronization</item>
-		<item lang="el" id="mcs_lock_sync">Κλείδωμα Συγχρονισμού</item>
-		
-		<item lang="en" id="mcs_lock_sync_product">Lock Product Synchronization</item>
-		<item lang="el" id="mcs_lock_sync_product">Κλείδωμα Συγχρονισμού Προϊόντος</item>
-		
-		<item lang="en" id="mcs_last_synchronization">Last Synchronization</item>
-		<item lang="el" id="mcs_last_synchronization">Τελευταίος Συγχρονισμού Προϊόντων</item>
-		
-		<item lang="en" id="mcs_check_products_to_sync">Check For Product To Synchronize</item>
-		<item lang="el" id="mcs_check_products_to_sync">Έλεγχος Προϊόντων Για Συγχρονισμό</item>
-		
-		<item lang="en" id="mcs_product_u">Can Update</item>
-		<item lang="el" id="mcs_product_u">Προσοχή! Υπάρχον Προϊόν</item>
-		
-		<item lang="en" id="mcs_product_n">New Product</item>
-		<item lang="el" id="mcs_product_n">Νέο Προϊόν</item>
-		
-		<item lang="en" id="mcs_product_l">Locked</item>
-		<item lang="el" id="mcs_product_l">Κλειδωμένο</item>
-		
-		<item lang="en" id="mcs_product_u_tooltip">If you update this product, this values will not change: Price, Category, Status. The rest values will be changed with the updated information.</item>
-		<item lang="el" id="mcs_product_u_tooltip">Αν κάνετε συγχρονισμό θα παραμείνουν τα εξής στοιχεία: Τιμή, Κατηγορία, Κατάσταση. Όλα τα υπόλοιπα στοιχεία θα αντικατασταθούν με την ανανεωμένη πληροφορία.</item>
-		
-		<item lang="en" id="mcs_product_l_tooltip">In order to synchronize this product, you must unlock it from the edit product page.</item>
-		<item lang="el" id="mcs_product_l_tooltip">Για να συγχρονίσετε αυτό το προϊόν, πρέπει να το ξεκλειδώσετε από την σελίδα επεξεργασίας προϊόντος.</item>
-		
-		<item lang="en" id="mcs_lock_feature">Lock Feature</item>
-		<item lang="el" id="mcs_lock_feature">Κλείδωμα Χαρακτηριστικού</item>
-		
-		<item lang="en" id="mcs_sync_complete_message">Lock Feature</item>
-		<item lang="el" id="mcs_sync_complete_message"><p>Ο συγχρονισμός των επιλεγμένων προϊόντων ολοκληρώθηκε. Τα νέα προϊόντα έχουν καταχωρηθεί στην κατηγορία <a href="[url]" target="_blank">[category_name]</a> και αυτή τη στιγμή δεν φαίνονται στο κατάστημά σας. Μπορείτε να επεξεργαστείτε τα προϊόντα και να καταχωρίσετε: Τιμή, Κατηγορία και λοιπές πληροφορίες.</p></item>
-	</language_variables>
+	
 </addon>

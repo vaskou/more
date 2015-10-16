@@ -15,12 +15,12 @@ $(function(){
 
 {/literal*}
 
-{assign var="category_name" value="{"799999"|fn_get_category_name}"}
-{assign var="url" value="{"products.manage?cid=799999"|fn_url}"}
-{__("mcs_sync_complete_message", ["[category_name]" => $category_name,"[url]" => $url])}
+{*assign var="category_name" value=$master_category_id|fn_get_category_name}
+{assign var="url" value="{"products.manage?cid=`$master_category_id`"|fn_url}"}
+{__("mcs_sync_complete_message", ["[category_name]" => $category_name,"[url]" => $url])*}
 
 
-{if $auth.is_root == 'Y' && $mcs_child_shop_status=='A'}
+{if  $mcs_child_shop_status=='A'}
     {if $mcs_timestamp==0 || !$mcs_timestamp}
         <label class="checkbox">{__("mcs_synchronize_categories")}
             <input name="mcs_sync_categ" type="checkbox" value="true"/>
@@ -31,21 +31,20 @@ $(function(){
         <input type="hidden" value="all" name="sync_mode" />
         <input type="submit" name="dispatch[sync.manage]" value="{__('mcs_first_time_sync')}" class="btn btn-primary" />
     {else}
-    	{if $mcs_products_to_sync}
-            {if $mcs_timestamp!=0}
-                <h3>{__("mcs_last_synchronization")} : {$mcs_timestamp|date_format:"%A, %e %B %Y"}</h3>
-            {/if}
-        
+    	{if $mcs_timestamp!=0}
+            <h3>{__("mcs_last_synchronization")} : {$mcs_timestamp|date_format:"%A, %e %B %Y"}</h3>
+        {/if}
+    	{if $mcs_products_to_sync}        
             <table class="table table-striped">
                 <thead>
                     <tr>
                     	<th class="left">
                             {include file="common/check_items.tpl" check_statuses=''}
                         </th>
-                        <th style="width:70px"><span>{__('product_id')}</span></th>
+                        <th style="width:85px"><span>{__('product_id')}</span></th>
                         <th><span>{__('product_name')}</span></th>
                         <th style="width:200px"></th>
-                        <th style="width:100px"><span>{__('update_status')}</span></th>
+                        <th style="width:190px"><span>{__('update_status')}</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,13 +70,15 @@ $(function(){
                             {/if}
                         </td>
                         <td>
+                        	{if $tooltip}{include file="common/tooltip.tpl" tooltip={__($tooltip)}}{/if}
                         	{__("mcs_product_`$product.update_status|lower`")}
-                            {include file="common/tooltip.tpl" tooltip=$tooltip}
+                        	
                         </td>
                     </tr>
                 {/foreach}
                 </tbody>
             </table>
+            <h5>{__("mcs_db_backup_attention")}</h5>
             <input type="hidden" value="{$mcs_products_to_sync_ids}" name="unsynced_products" />
             <input type="hidden" value="new" name="sync_mode" />
 	        <input type="submit" name="dispatch[sync.manage]" value="{__('mcs_new_products_sync')}" class="btn btn-primary" />

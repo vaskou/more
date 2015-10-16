@@ -1,4 +1,5 @@
 <?php
+
 $schema['central']['mcs_synchronization'] = array(
 	'items'=>array(
 		'mcs_synchronize' => array(
@@ -25,5 +26,9 @@ $schema['central']['mcs_synchronization'] = array(
 	),
 	'position' => 1000
 );
+
+if( isset($_SESSION['auth']['is_root']) && $_SESSION['auth']['is_root']=='N' ){
+	unset($schema['central']['mcs_synchronization']['items']['mcs_error_log']);
+}
 
 return $schema;

@@ -23,11 +23,11 @@ if(array_key_exists('mcs_general_parent_server',$mcs_child_shop)){
 		'dbc_name'=>'parent'
 	);
 	$GLOBALS['db_child_params']=array(
-		'server'=>$mcs_child_shop['mcs_general_child_server'],
-		'username'=>$mcs_child_shop['mcs_general_child_username'],
-		'password'=>$mcs_child_shop['mcs_general_child_password'],
-		'table_prefix'=>$mcs_child_shop['mcs_general_child_table_prefix'],
-		'db_name'=>$mcs_child_shop['mcs_general_child_db_name'],
+		'server'=>Registry::get('config.db_host'),
+		'username'=>Registry::get('config.db_user'),
+		'password'=>Registry::get('config.db_password'),
+		'table_prefix'=>Registry::get('config.table_prefix'),
+		'db_name'=>Registry::get('config.db_name'),
 		'dbc_name'=>'child'
 	);
 	
@@ -1268,6 +1268,7 @@ function fn_mcs_clear_log()
 
 function fn_mcs_check_url($url)
 {
+	$url=trim($url);
 	if(preg_match("@^http://@i",$url)){
 		$url = preg_replace("@(http://)+@i",'http://',$url);
 	}else{
@@ -1534,6 +1535,11 @@ function fn_mcs_update_unsynced_table($all_pids,$synced_pids)
 	}
 	
 	return $products_not_synced;
+}
+
+function fn_mcs_get_master_category_id()
+{
+	return $GLOBALS['master_category_id'];
 }
 
 // HOOKS
