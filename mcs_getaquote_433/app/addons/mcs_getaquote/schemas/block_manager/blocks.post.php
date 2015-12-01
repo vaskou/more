@@ -19,4 +19,9 @@ $schema['mcs_vendor_wishlist']=array (
 	'wrappers' => 'blocks/wrappers',
 );
 
+$schema['mcs_wishlist_button']=array (
+	'templates' => 'addons/mcs_getaquote/blocks/mcs_wishlist_button.tpl',
+	'wrappers' => 'blocks/wrappers',
+);
+
 return $schema;

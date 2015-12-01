@@ -66,3 +66,15 @@ msgstr "View producer page"
 msgctxt "Languages::mcs_you_dont_have_an_account"
 msgid "You don't have an account?"
 msgstr "You don't have an account?"
+
+msgctxt "Languages::block_mcs_wishlist_button"
+msgid "More CS-Cart: Wishlist Button"
+msgstr "More CS-Cart: Wishlist Button"
+
+msgctxt "Languages::block_mcs_wishlist_button_description"
+msgid "More CS-Cart: Wishlist Button"
+msgstr "More CS-Cart: Wishlist Button"
+
+msgctxt "Languages::mcs_wishlist_button"
+msgid "More CS-Cart: Wishlist Button"
+msgstr "More CS-Cart: Wishlist Button"
